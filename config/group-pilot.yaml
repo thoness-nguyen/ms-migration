@@ -1,0 +1,4 @@
+migration_id: group-pilot-001
+users: mapping.example.json
+workloads:
+  teams: teams.mapping.example.yaml

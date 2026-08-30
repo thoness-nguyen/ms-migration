@@ -1,0 +1,26 @@
+[
+    {
+        "key": "thanh.nguyen",
+        "display_name": "Thanh Nguyen",
+        "source_upn": "thanh.nguyen@harbouroutdoor.com",
+        "target_upn": "thanh.nguyen@paizes.com",
+        "source_id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+        "target_id": "321275e4-70d6-4e5e-9c31-2eca9216b8a1"
+    },
+    {
+        "key": "dung.nguyen",
+        "display_name": "Dung Nguyen",
+        "source_upn": "dung.nguyen@harbouroutdoor.com",
+        "target_upn": "dung.nguyen@paizes.com",
+        "source_id": "9863b4dd-8086-4b2b-8d19-9064186aa653",
+        "target_id": "5b25cb69-5efe-423d-9a9e-bbbb9bf212fa"
+    },
+    {
+        "key": "tinh",
+        "display_name": "Tinh",
+        "source_upn": "tinh@harbouroutdoor.com",
+        "target_upn": "tinh@paizes.com",
+        "source_id": "acebbf4e-1dbe-4f25-9b93-6b867cb39d53",
+        "target_id": "13551cca-efaa-4191-8cc8-092729bd2e02"
+    }
+]

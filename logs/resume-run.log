@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+
+[DEBUG] Processing site: Harbour PD Work Flow
+[DEBUG] Source site ID: harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06
+[DEBUG] Target site ID: paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48
+[DEBUG] Discovering libraries in source site...
+[DEBUG] Found 2 libraries in source site
+[DEBUG] Discovering libraries in target site...
+[DEBUG] Found 1 libraries in target site
+[DEBUG] Copying library: Documents
+[FAIL] Non-retriable error on attempt 1: 'charmap' codec can't encode character '\u2713' in position 2: character maps to <undefined>
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Admin\Downloads\ms-migration\.venv\Scripts\tenant-migrator.exe\__main__.py", line 5, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\Admin\Downloads\ms-migration\tenant_migrator\cli.py", line 71, in main
+    report = run_batch(source_client, target_client, plan, args.config.parent, state, args.report, args.dry_run)
+  File "C:\Users\Admin\Downloads\ms-migration\tenant_migrator\batch.py", line 359, in run_batch
+    "error": stats.get("errors", [{"error": "Unknown error"}])[0].get("error", "Copy failed"),
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

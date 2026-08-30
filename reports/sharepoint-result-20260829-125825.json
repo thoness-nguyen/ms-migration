@@ -1,0 +1,1503 @@
+{
+  "migration_id": "sharepoint-pilot-001",
+  "generated_at": "2026-08-29T07:04:14.292179+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "workload": "sharepoint",
+      "site": "Harbour PD Work Flow",
+      "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+      "status": "completed",
+      "libraries": [
+        {
+          "name": "Documents",
+          "status": "completed",
+          "items": 343,
+          "stats": {
+            "files_copied": 334,
+            "folders_created": 9,
+            "skipped": 3453,
+            "failed": 252,
+            "oversized_skipped": 0,
+            "errors": [
+              {
+                "item": "ANTI-04A-ALTAU-ROLGR-PANMAR-TAUPE-S.jpg",
+                "type": "file",
+                "size_mb": 0.3855171203613281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-04A-ALTAU-ROLGR-PANMAR-TAUPE-S-1.jpg",
+                "type": "file",
+                "size_mb": 0.3515205383300781,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-04A-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.47751808166503906,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7118043899536133,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.3475074768066406,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.3824224472045898,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.449601173400879,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.564417839050293,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.5108661651611328,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.6790313720703125,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7195730209350586,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.3394031524658203,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.2963218688964844,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.4831123352050781,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.4966602325439453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.5516796112060547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-05A-ALTAU-ROLGR-PANMAR- TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.6519107818603516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7699003219604492,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.4103660583496094,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.4472503662109375,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.7074880599975586,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.7443761825561523,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.726262092590332,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.7955493927001953,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.796112060546875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5502548217773438,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.6512651443481445,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.6189498901367188,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.6228189468383789,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6298437118530273,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06A-ALTAU-ROLGR-PANMAR- TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.7563228607177734,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.6489524841308594,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.7401227951049805,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.7401905059814453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 2.228069305419922,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.6689605712890625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.7536525726318359,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.8827657699584961,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7570075988769531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.483262062072754,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.480515480041504,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 2.261472702026367,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.6152868270874023,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6098661422729492,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06B-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.7005348205566406,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-D2PANGRA-ASTEROID-.jpg",
+                "type": "file",
+                "size_mb": 1.6583375930786133,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7112417221069336,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.6676816940307617,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.4939603805541992,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.785548210144043,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.7423925399780273,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.7950868606567383,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7285327911376953,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.506058692932129,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.6072006225585938,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.6423797607421875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.5770912170410156,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6684579849243164,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CL-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.7063179016113281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.6236906051635742,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.1056547164916992,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.4156599044799805,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.5236339569091797,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.7336063385009766,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6569347381591797,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.7951583862304688,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7034282684326172,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5633697509765625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.5698566436767578,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.6619949340820312,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.6472434997558594,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6255607604980469,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-06CR-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.6892356872558594,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.8095121383666992,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5671358108520508,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.3714923858642578,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.6564006805419922,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.6320056915283203,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6275501251220703,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.5439949035644531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.6959457397460938,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7147674560546875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.4590063095092773,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.5450716018676758,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.588719367980957,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.5112447738647461,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.49071407318115234,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-S.jpg",
+                "type": "file",
+                "size_mb": 0.5216875076293945,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07A-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.569091796875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7135429382324219,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5164794921875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.8199434280395508,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.5409049987792969,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.5794286727905273,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.5736637115478516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.5365924835205078,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.7704973220825195,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7022342681884766,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5718212127685547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-D2.jpg",
+                "type": "file",
+                "size_mb": 2.315916061401367,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-D3.jpg",
+                "type": "file",
+                "size_mb": 1.764871597290039,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-F.jpg",
+                "type": "file",
+                "size_mb": 0.4942789077758789,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-F45.jpg",
+                "type": "file",
+                "size_mb": 0.5559711456298828,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-S.jpg",
+                "type": "file",
+                "size_mb": 0.5269441604614258,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BL-ALTAU-ROLGR-PANMAR-TAUP-T.jpg",
+                "type": "file",
+                "size_mb": 0.695765495300293,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7795925140380859,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.580587387084961,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.9558601379394531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.785466194152832,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.48883724212646484,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.5532045364379883,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.587890625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.690460205078125,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7958602905273438,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.36376953125,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.8735027313232422,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.9800796508789062,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.4691963195800781,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.4996805191040039,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-S.jpg",
+                "type": "file",
+                "size_mb": 0.5146617889404297,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-07BR-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.5554676055908203,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.6364574432373047,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.5042123794555664,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.5926570892333984,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 2.1343250274658203,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.5191516876220703,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6079435348510742,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.5475692749023438,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.6906967163085938,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7102766036987305,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.3081274032592773,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.534994125366211,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 2.4156322479248047,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.4920635223388672,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6466045379638672,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-S.jpg",
+                "type": "file",
+                "size_mb": 0.6474809646606445,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08A-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.6490240097045898,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.6746501922607422,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.4574127197265625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.7653684616088867,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.623612403869629,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.5637226104736328,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6283740997314453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-F45-1.jpg",
+                "type": "file",
+                "size_mb": 0.5252542495727539,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.6024341583251953,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.6826667785644531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.7009267807006836,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.7479066848754883,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 2.37772274017334,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 2.222414016723633,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-F.jpg",
+                "type": "file",
+                "size_mb": 0.4724607467651367,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6013832092285156,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-F45-1.jpg",
+                "type": "file",
+                "size_mb": 0.6165342330932617,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-S.jpg",
+                "type": "file",
+                "size_mb": 0.4890460968017578,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08C-ALTAU-ROLGR-PANMAR-TAUPE-T.jpg",
+                "type": "file",
+                "size_mb": 0.5950784683227539,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-B45.jpg",
+                "type": "file",
+                "size_mb": 0.5555915832519531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-D1.jpg",
+                "type": "file",
+                "size_mb": 1.6799869537353516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-D2.jpg",
+                "type": "file",
+                "size_mb": 1.3251304626464844,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-D3.jpg",
+                "type": "file",
+                "size_mb": 1.5623054504394531,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-F.jpg",
+                "type": "file",
+                "size_mb": 0.5888080596923828,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-F45.jpg",
+                "type": "file",
+                "size_mb": 0.6709966659545898,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-S.jpg",
+                "type": "file",
+                "size_mb": 0.45560741424560547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALAST-RODGR-PANGRA-ASTEROID-T.jpg",
+                "type": "file",
+                "size_mb": 0.6015396118164062,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALTAU-ROLGR-PANMAR-TAUPE-B45.jpg",
+                "type": "file",
+                "size_mb": 0.6049041748046875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALTAU-ROLGR-PANMAR-TAUPE-D1.jpg",
+                "type": "file",
+                "size_mb": 1.3347549438476562,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALTAU-ROLGR-PANMAR-TAUPE-D2.jpg",
+                "type": "file",
+                "size_mb": 1.8521919250488281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "ANTI-08D-ALTAU-ROLGR-PANMAR-TAUPE-D3.jpg",
+                "type": "file",
+                "size_mb": 1.6079998016357422,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "folder": "01P23IA5WVJ2JGTBJHMNCLYOLJBZ7ARU2A",
+                "error": "GraphError: GET https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1AMaf-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QI"
+              },
+              {
+                "item": "PSD",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARNOUR 2025-3",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN SILM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HENRY COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HO Sectional",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HUGO ALUMINUM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HY CUSTOMER IMAGE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LIVI BRASS PLANTERS (RH)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Madison Side Table - Aluminum Base",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MILAN",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MLB COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "NEWPORT",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "pacific collection",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PEDSTAL TABLE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Price",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "rh fire table and propane sq cover",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH MR15",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH TERANO DINING TABLE OPTIONS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH VIGO SAMPLE PHOTOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH. TERRANO ALU APPROVE DWG",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTORINI COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Terrano",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TERRANO PRICES",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VENICE COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Victoria",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Vienna Cafe",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VN PHOTOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "aomei outdoor stock list 10.17.xlsx",
+                "type": "file",
+                "size_mb": 15.598837852478027,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 12.21.xls",
+                "type": "file",
+                "size_mb": 15.38916015625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 2.15.xls",
+                "type": "file",
+                "size_mb": 14.60107421875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B (1).pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B.pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "china indoor stock 10.17. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 10.145842552185059,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 12.21. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.9252309799194336,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 2.15. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.925230026245117,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HAR PRODUCT INFORMATION UPDATE LIST   2021.06.15.xlsx",
+                "type": "file",
+                "size_mb": 24.626376152038574,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR fabeic swatch shot 4-2.rar",
+                "type": "file",
+                "size_mb": 303.0282955169678,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR FABRIC SWATCH 6.15 72jpg.rar",
+                "type": "file",
+                "size_mb": 180.84745597839355,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches JPG.rar",
+                "type": "file",
+                "size_mb": 94.75250148773193,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches TIF.rar",
+                "type": "file",
+                "size_mb": 1965.8192596435547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "hk open pos-outdoor aluminum 2024.12.21.xlsx",
+                "type": "file",
+                "size_mb": 0.08559513092041016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image0.jpeg",
+                "type": "file",
+                "size_mb": 0.07837772369384766,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image1.jpeg",
+                "type": "file",
+                "size_mb": 0.08980369567871094,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image2.jpeg",
+                "type": "file",
+                "size_mb": 0.06433296203613281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "OLIVIA - REV B.pdf",
+                "type": "file",
+                "size_mb": 3.0939273834228516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Olivia Resin Options.pdf",
+                "type": "file",
+                "size_mb": 0.22547340393066406,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "RESIN WARPNIG.jpeg",
+                "type": "file",
+                "size_mb": 0.8160104751586914,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.28 AM.png",
+                "type": "file",
+                "size_mb": 0.15405559539794922,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.55 AM.png",
+                "type": "file",
+                "size_mb": 0.15429019927978516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-09-23 at 8.22.44 am.png",
+                "type": "file",
+                "size_mb": 0.9108829498291016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 1.png",
+                "type": "file",
+                "size_mb": 0.0875101089477539,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 2.png",
+                "type": "file",
+                "size_mb": 1.1568164825439453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "AOMEI PPIC AND SHIPPING",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "BACKBONE (PD SYSTEM)  PLUS SALES FORCE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CASTE GLASS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "COMPLETED PD PHOTOGRAPHY",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CONTRACT HOSPITALITY",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "danielle@harbouroutdoor.com",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "EASYWAY FABRIC STOCK",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "FORD COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "General",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "H.S",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Harbour Approved DWG China",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR STUDIO",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (CHINA)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (INDONESIA)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (VIETNAM)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LAGOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARCELLO",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARK D. COLLECTION - MODERN SLOPE ARM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Master Dimensions sheet",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MAUI COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MENA - APAC PD",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PMT FILES",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PTC  - TEAK PROPOSAL",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH EU PROGRAM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SAN BIANCO - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTA BARBARA - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SUPPLIER PRICING",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TEAK DEVELOPMENT",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - OUTDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              }
+            ],
+            "retry_count": 0
+          },
+          "retries": 0
+        },
+        {
+          "name": "Teams Wiki Data",
+          "status": "skipped",
+          "reason": "target library not found"
+        }
+      ]
+    }
+  ],
+  "planned_workloads": {
+    "sharepoint": {
+      "sites": [
+        {
+          "name": "Harbour PD Work Flow",
+          "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+          "target_site_id": "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
+        }
+      ]
+    }
+  }
+}

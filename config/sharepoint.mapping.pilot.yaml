@@ -1,0 +1,7 @@
+# SharePoint site migration with auto-discovery of all libraries
+# Simply provide source and target site URLs (or IDs if you have them).
+# The code will discover all document libraries automatically.
+sites:
+  - name: "Harbour Outdoor → Paizes"
+    source_site_url: "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD"
+    target_site_url: "https://paizes.sharepoint.com/sites/HarbourPD"

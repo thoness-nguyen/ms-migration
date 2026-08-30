@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "migration-platform"
+version = "0.2.0"
+description = "In-house cross-domain Microsoft 365 migration platform (SharePoint, Teams, OneDrive)"
+requires-python = ">=3.11"
+dependencies = ["msal>=1.30", "requests>=2.32", "PyYAML>=6.0", "python-dotenv>=1.0"]
+
+[project.scripts]
+tenant-migrator = "migration.orchestration.cli:main"
+migration-panel = "migration.orchestration.panel:main"
+
+[tool.setuptools.packages.find]
+include = ["migration*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

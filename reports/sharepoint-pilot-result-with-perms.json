@@ -1,0 +1,763 @@
+{
+  "migration_id": "sharepoint-pilot-001",
+  "generated_at": "2026-08-29T03:31:29.875970+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "workload": "sharepoint",
+      "site": "Harbour PD Work Flow",
+      "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+      "status": "completed",
+      "libraries": [
+        {
+          "name": "Documents",
+          "status": "completed",
+          "items": 240,
+          "stats": {
+            "files_copied": 234,
+            "folders_created": 6,
+            "skipped": 2980,
+            "failed": 130,
+            "oversized_skipped": 0,
+            "errors": [
+              {
+                "item": "HARBOUR 10-2420177.jpg",
+                "type": "file",
+                "size_mb": 4.1029253005981445,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420179.jpg",
+                "type": "file",
+                "size_mb": 5.9337663650512695,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420180.jpg",
+                "type": "file",
+                "size_mb": 5.646442413330078,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420182.jpg",
+                "type": "file",
+                "size_mb": 6.042848587036133,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420185.jpg",
+                "type": "file",
+                "size_mb": 12.837873458862305,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420188.jpg",
+                "type": "file",
+                "size_mb": 3.9835329055786133,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420190.jpg",
+                "type": "file",
+                "size_mb": 4.453683853149414,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420191.jpg",
+                "type": "file",
+                "size_mb": 6.75822639465332,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420192.jpg",
+                "type": "file",
+                "size_mb": 10.672811508178711,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420193.jpg",
+                "type": "file",
+                "size_mb": 13.19964599609375,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420194.jpg",
+                "type": "file",
+                "size_mb": 14.130595207214355,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420196.jpg",
+                "type": "file",
+                "size_mb": 4.693850517272949,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420198.jpg",
+                "type": "file",
+                "size_mb": 3.9862794876098633,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420203.jpg",
+                "type": "file",
+                "size_mb": 4.672284126281738,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420204.jpg",
+                "type": "file",
+                "size_mb": 4.863527297973633,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420205.jpg",
+                "type": "file",
+                "size_mb": 5.946157455444336,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420207.jpg",
+                "type": "file",
+                "size_mb": 10.366228103637695,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420208.jpg",
+                "type": "file",
+                "size_mb": 11.77945327758789,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420214.jpg",
+                "type": "file",
+                "size_mb": 4.59722900390625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420216.jpg",
+                "type": "file",
+                "size_mb": 4.668547630310059,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420219.jpg",
+                "type": "file",
+                "size_mb": 6.100796699523926,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420221.jpg",
+                "type": "file",
+                "size_mb": 14.656538009643555,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420222.jpg",
+                "type": "file",
+                "size_mb": 11.826671600341797,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420223.jpg",
+                "type": "file",
+                "size_mb": 9.118257522583008,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420224.jpg",
+                "type": "file",
+                "size_mb": 1.749429702758789,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420226.jpg",
+                "type": "file",
+                "size_mb": 4.021492958068848,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420231.jpg",
+                "type": "file",
+                "size_mb": 4.538729667663574,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420234.jpg",
+                "type": "file",
+                "size_mb": 4.013314247131348,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420236.jpg",
+                "type": "file",
+                "size_mb": 4.058480262756348,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420238.jpg",
+                "type": "file",
+                "size_mb": 4.959293365478516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420241.jpg",
+                "type": "file",
+                "size_mb": 6.01959228515625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420242.jpg",
+                "type": "file",
+                "size_mb": 5.880998611450195,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420243.jpg",
+                "type": "file",
+                "size_mb": 6.959099769592285,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420244.jpg",
+                "type": "file",
+                "size_mb": 9.665300369262695,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420247.jpg",
+                "type": "file",
+                "size_mb": 6.132662773132324,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420250.jpg",
+                "type": "file",
+                "size_mb": 9.831427574157715,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420252.jpg",
+                "type": "file",
+                "size_mb": 8.607651710510254,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420254.jpg",
+                "type": "file",
+                "size_mb": 8.151835441589355,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420255.jpg",
+                "type": "file",
+                "size_mb": 26.858671188354492,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420256.jpg",
+                "type": "file",
+                "size_mb": 13.222135543823242,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR 10-2420258.jpg",
+                "type": "file",
+                "size_mb": 9.773664474487305,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "PSD",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR -2025-5",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR 2025-6",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR2025 NEW",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR-2025-7",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARNOUR 2025-3",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN SILM",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HENRY COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HO Sectional",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HUGO ALUMINUM",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HY CUSTOMER IMAGE",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LIVI BRASS PLANTERS (RH)",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Madison Side Table - Aluminum Base",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MILAN",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MLB COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "NEWPORT",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "pacific collection",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PEDSTAL TABLE",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Price",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "rh fire table and propane sq cover",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH MR15",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH TERANO DINING TABLE OPTIONS",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH VIGO SAMPLE PHOTOS",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH. TERRANO ALU APPROVE DWG",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTORINI COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Terrano",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TERRANO PRICES",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VENICE COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Victoria",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Vienna Cafe",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VN PHOTOS",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "aomei outdoor stock list 10.17.xlsx",
+                "type": "file",
+                "size_mb": 15.598837852478027,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 12.21.xls",
+                "type": "file",
+                "size_mb": 15.38916015625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 2.15.xls",
+                "type": "file",
+                "size_mb": 14.60107421875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B (1).pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B.pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "china indoor stock 10.17. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 10.145842552185059,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 12.21. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.9252309799194336,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 2.15. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.925230026245117,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HAR PRODUCT INFORMATION UPDATE LIST   2021.06.15.xlsx",
+                "type": "file",
+                "size_mb": 24.626376152038574,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR fabeic swatch shot 4-2.rar",
+                "type": "file",
+                "size_mb": 303.0282955169678,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR FABRIC SWATCH 6.15 72jpg.rar",
+                "type": "file",
+                "size_mb": 180.84745597839355,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches JPG.rar",
+                "type": "file",
+                "size_mb": 94.75250148773193,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches TIF.rar",
+                "type": "file",
+                "size_mb": 1965.8192596435547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "hk open pos-outdoor aluminum 2024.12.21.xlsx",
+                "type": "file",
+                "size_mb": 0.08559513092041016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image0.jpeg",
+                "type": "file",
+                "size_mb": 0.07837772369384766,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image1.jpeg",
+                "type": "file",
+                "size_mb": 0.08980369567871094,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image2.jpeg",
+                "type": "file",
+                "size_mb": 0.06433296203613281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "OLIVIA - REV B.pdf",
+                "type": "file",
+                "size_mb": 3.0939273834228516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Olivia Resin Options.pdf",
+                "type": "file",
+                "size_mb": 0.22547340393066406,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "RESIN WARPNIG.jpeg",
+                "type": "file",
+                "size_mb": 0.8160104751586914,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.28 AM.png",
+                "type": "file",
+                "size_mb": 0.15405559539794922,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.55 AM.png",
+                "type": "file",
+                "size_mb": 0.15429019927978516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-09-23 at 8.22.44 am.png",
+                "type": "file",
+                "size_mb": 0.9108829498291016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 1.png",
+                "type": "file",
+                "size_mb": 0.0875101089477539,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 2.png",
+                "type": "file",
+                "size_mb": 1.1568164825439453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "AOMEI PPIC AND SHIPPING",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "BACKBONE (PD SYSTEM)  PLUS SALES FORCE",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CASTE GLASS",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "COMPLETED PD PHOTOGRAPHY",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CONTRACT HOSPITALITY",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "danielle@harbouroutdoor.com",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "EASYWAY FABRIC STOCK",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "FORD COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "General",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "H.S",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Harbour Approved DWG China",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR STUDIO",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (CHINA)",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (INDONESIA)",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (VIETNAM)",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LAGOS",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARCELLO",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARK D. COLLECTION - MODERN SLOPE ARM",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Master Dimensions sheet",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MAUI COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MENA - APAC PD",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PMT FILES",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PTC  - TEAK PROPOSAL",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH EU PROGRAM",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SAN BIANCO - INDOOR",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTA BARBARA - INDOOR",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SUPPLIER PRICING",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TEAK DEVELOPMENT",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - INDOOR",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - OUTDOOR",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              }
+            ],
+            "retry_count": 0
+          },
+          "retries": 0
+        },
+        {
+          "name": "Teams Wiki Data",
+          "status": "skipped",
+          "reason": "target library not found"
+        }
+      ]
+    }
+  ],
+  "planned_workloads": {
+    "sharepoint": {
+      "sites": [
+        {
+          "name": "Harbour PD Work Flow",
+          "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+          "target_site_id": "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
+        }
+      ]
+    }
+  }
+}

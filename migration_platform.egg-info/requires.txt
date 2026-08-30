@@ -1,0 +1,4 @@
+msal>=1.30
+requests>=2.32
+PyYAML>=6.0
+python-dotenv>=1.0

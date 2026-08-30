@@ -1,0 +1,7 @@
+migration_id: pilot-001
+users: mapping.example.json
+workloads:
+  teams: teams.mapping.example.yaml
+  exchange: exchange.mapping.example.yaml
+  onedrive: onedrive.mapping.example.yaml
+  sharepoint: sharepoint.mapping.example.yaml

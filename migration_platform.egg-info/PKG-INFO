@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: migration-platform
+Version: 0.2.0
+Summary: In-house cross-domain Microsoft 365 migration platform (SharePoint, Teams, OneDrive)
+Requires-Python: >=3.11
+Requires-Dist: msal>=1.30
+Requires-Dist: requests>=2.32
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: python-dotenv>=1.0

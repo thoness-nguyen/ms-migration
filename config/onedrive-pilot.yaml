@@ -1,0 +1,4 @@
+migration_id: onedrive-pilot-001
+users: mapping.example.json
+workloads:
+  onedrive: onedrive.mapping.pilot.yaml

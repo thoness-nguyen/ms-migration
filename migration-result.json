@@ -1,0 +1,970 @@
+{
+  "migration_id": "sharepoint-pilot-001",
+  "generated_at": "2026-08-30T02:39:43.696062+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "workload": "sharepoint",
+      "site": "Harbour PD Work Flow",
+      "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+      "status": "completed",
+      "libraries": [
+        {
+          "name": "Documents",
+          "status": "completed_with_failures",
+          "items": 235,
+          "stats": {
+            "files_copied": 233,
+            "folders_created": 2,
+            "skipped": 4615,
+            "failed": 163,
+            "oversized_skipped": 0,
+            "errors": [
+              {
+                "item": "BRXL-06A-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 17.111319541931152,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 10.959394454956055,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 36.84526348114014,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 36.23127555847168,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 34.63470458984375,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 12.197737693786621,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 11.220069885253906,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06B-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 17.133112907409668,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 10.250199317932129,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 20.907422065734863,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 32.72412872314453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 22.46915054321289,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 11.582277297973633,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 11.183189392089844,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CL-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 17.655123710632324,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-.psd",
+                "type": "file",
+                "size_mb": 11.85718059539795,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 10.109335899353027,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 26.478638648986816,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 34.264039039611816,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 24.068008422851562,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 10.494405746459961,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-06CR-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 17.818737983703613,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-B.psd",
+                "type": "file",
+                "size_mb": 11.647066116333008,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 18.58985137939453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 21.91031837463379,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 40.5487003326416,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 24.058076858520508,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 11.055710792541504,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 11.949882507324219,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-OV45.psd",
+                "type": "file",
+                "size_mb": 17.01072120666504,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07A-ALAST-PANGRA-ASTEROID-S.psd",
+                "type": "file",
+                "size_mb": 9.646839141845703,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 15.261263847351074,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 28.59194850921631,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 21.019390106201172,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 23.493887901306152,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 8.9016752243042,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 10.014174461364746,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-S.psd",
+                "type": "file",
+                "size_mb": 8.243301391601562,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BL-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 13.40107250213623,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-B.psd",
+                "type": "file",
+                "size_mb": 7.699217796325684,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 14.687402725219727,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 22.925636291503906,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 33.56872272491455,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 38.79549789428711,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 8.19880199432373,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 10.838743209838867,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-OV45.psd",
+                "type": "file",
+                "size_mb": 16.62391471862793,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07BR-ALAST-PANGRA-ASTEROID-S.psd",
+                "type": "file",
+                "size_mb": 8.928869247436523,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 12.5493803024292,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 24.289427757263184,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 21.766976356506348,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 29.823447227478027,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 11.648518562316895,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 12.906579971313477,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-F45-1.psd",
+                "type": "file",
+                "size_mb": 12.672073364257812,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-S.psd",
+                "type": "file",
+                "size_mb": 9.200058937072754,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-07C-ALAST-TENAT-PANGRA-ASTEROID-S-1.psd",
+                "type": "file",
+                "size_mb": 9.223855972290039,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-B45.psd",
+                "type": "file",
+                "size_mb": 9.224363327026367,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-D1.psd",
+                "type": "file",
+                "size_mb": 22.07780170440674,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-D2.psd",
+                "type": "file",
+                "size_mb": 36.97976779937744,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-D3.psd",
+                "type": "file",
+                "size_mb": 23.18333339691162,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-F.psd",
+                "type": "file",
+                "size_mb": 9.162093162536621,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-F45.psd",
+                "type": "file",
+                "size_mb": 9.309654235839844,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-S.psd",
+                "type": "file",
+                "size_mb": 7.502658843994141,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08A-ALAST-PANGRA-ASTEROID-T.psd",
+                "type": "file",
+                "size_mb": 12.95726203918457,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-B45.psd",
+                "type": "file",
+                "size_mb": 10.560585975646973,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-D1.psd",
+                "type": "file",
+                "size_mb": 31.362357139587402,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-D2.psd",
+                "type": "file",
+                "size_mb": 34.29161071777344,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-D3.psd",
+                "type": "file",
+                "size_mb": 32.828715324401855,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-F.psd",
+                "type": "file",
+                "size_mb": 10.80311393737793,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-F45.psd",
+                "type": "file",
+                "size_mb": 12.508772850036621,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-F45-1.psd",
+                "type": "file",
+                "size_mb": 9.621195793151855,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-S.psd",
+                "type": "file",
+                "size_mb": 11.003276824951172,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "BRXL-08C-ALAST-PANGRA [ALUMINUM ASTEROID]-T.psd",
+                "type": "file",
+                "size_mb": 15.671464920043945,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HAMILTON",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN ALU",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LOOP",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PACIFIC ALUMINUM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARNOUR 2025-3",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HAYMAN SILM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HENRY COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HO Sectional",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HUGO ALUMINUM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HY CUSTOMER IMAGE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LIVI BRASS PLANTERS (RH)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Madison Side Table - Aluminum Base",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MILAN",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MLB COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "NEWPORT",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "pacific collection",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PEDSTAL TABLE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Price",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "rh fire table and propane sq cover",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH MR15",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH TERANO DINING TABLE OPTIONS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH VIGO SAMPLE PHOTOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH. TERRANO ALU APPROVE DWG",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTORINI COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Terrano",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TERRANO PRICES",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VENICE COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Victoria",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Vienna Cafe",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VN PHOTOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "aomei outdoor stock list 10.17.xlsx",
+                "type": "file",
+                "size_mb": 15.598837852478027,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 12.21.xls",
+                "type": "file",
+                "size_mb": 15.38916015625,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "aomei outdoor stock list 2.15.xls",
+                "type": "file",
+                "size_mb": 14.60107421875,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B (1).pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CELEST - SPEC REV B.pdf",
+                "type": "file",
+                "size_mb": 3.206059455871582,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "china indoor stock 10.17. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 10.145842552185059,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 12.21. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.9252309799194336,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "CHINA INDOOR STOCK 2.15. xlsx.xlsx",
+                "type": "file",
+                "size_mb": 3.925230026245117,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HAR PRODUCT INFORMATION UPDATE LIST   2021.06.15.xlsx",
+                "type": "file",
+                "size_mb": 24.626376152038574,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR fabeic swatch shot 4-2.rar",
+                "type": "file",
+                "size_mb": 303.0282955169678,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR FABRIC SWATCH 6.15 72jpg.rar",
+                "type": "file",
+                "size_mb": 180.84745597839355,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches JPG.rar",
+                "type": "file",
+                "size_mb": 94.75250148773193,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "HARBOUR3-22Fabric swatches TIF.rar",
+                "type": "file",
+                "size_mb": 1965.8192596435547,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "hk open pos-outdoor aluminum 2024.12.21.xlsx",
+                "type": "file",
+                "size_mb": 0.08559513092041016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image0.jpeg",
+                "type": "file",
+                "size_mb": 0.07837772369384766,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image1.jpeg",
+                "type": "file",
+                "size_mb": 0.08980369567871094,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "image2.jpeg",
+                "type": "file",
+                "size_mb": 0.06433296203613281,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "OLIVIA - REV B.pdf",
+                "type": "file",
+                "size_mb": 3.0939273834228516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Olivia Resin Options.pdf",
+                "type": "file",
+                "size_mb": 0.22547340393066406,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "RESIN WARPNIG.jpeg",
+                "type": "file",
+                "size_mb": 0.8160104751586914,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.28 AM.png",
+                "type": "file",
+                "size_mb": 0.15405559539794922,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-06-29 at 10.37.55 AM.png",
+                "type": "file",
+                "size_mb": 0.15429019927978516,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "Screen Shot 2021-09-23 at 8.22.44 am.png",
+                "type": "file",
+                "size_mb": 0.9108829498291016,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 1.png",
+                "type": "file",
+                "size_mb": 0.0875101089477539,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "weave 2.png",
+                "type": "file",
+                "size_mb": 1.1568164825439453,
+                "error": "HTTPError: 401 Client Error: Unauthorized for url: https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1"
+              },
+              {
+                "item": "AOMEI PPIC AND SHIPPING",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "BACKBONE (PD SYSTEM)  PLUS SALES FORCE",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CASTE GLASS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "COMPLETED PD PHOTOGRAPHY",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "CONTRACT HOSPITALITY",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "danielle@harbouroutdoor.com",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "EASYWAY FABRIC STOCK",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "FORD COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "General",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "H.S",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Harbour Approved DWG China",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "HARBOUR STUDIO",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (CHINA)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (INDONESIA)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "INDOOR PD (VIETNAM)",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "LAGOS",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARCELLO",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MARK D. COLLECTION - MODERN SLOPE ARM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "Master Dimensions sheet",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MAUI COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "MENA - APAC PD",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PMT FILES",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "PTC  - TEAK PROPOSAL",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "RH EU PROGRAM",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SAN BIANCO - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SANTA BARBARA - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "SUPPLIER PRICING",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TEAK DEVELOPMENT",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - INDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "TRAVERTINE - OUTDOOR",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "VICTORIA COLLECTION",
+                "type": "folder",
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              }
+            ]
+          },
+          "retries": 0,
+          "validation": {
+            "source_files": 0,
+            "target_files": 0,
+            "source_folders": 0,
+            "target_folders": 0,
+            "missing_files": [],
+            "status": "error",
+            "match": false,
+            "error": "GET https://graph.microsoft.com/v1.0/drives/b!3ts3eAaJCkWlpU7dT1AMaf-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd/root/children failed (401): {\"error\":{\"code\":\"InvalidAuthenticationToken\",\"message\":\"Lifetime validation failed, the token is expired.\",\"innerError\":{\"date\":\"2026-08-30T02:39:44\",\"request-id\":\"1f074879-eeca-4f47-b50d-5ce7d910c6fa\",\"client-request-id\":\"1f074879-eeca-4f47-b50d-5ce7d910c6fa\"}}}"
+          }
+        },
+        {
+          "name": "Teams Wiki Data",
+          "status": "skipped",
+          "reason": "target library not found"
+        }
+      ]
+    }
+  ],
+  "planned_workloads": {
+    "sharepoint": {
+      "sites": [
+        {
+          "name": "Harbour PD Work Flow",
+          "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+          "target_site_id": "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
+        }
+      ]
+    }
+  }
+}

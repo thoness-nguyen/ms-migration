@@ -1,0 +1,1189 @@
+{
+  "chat": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#chats/$entity",
+    "id": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+    "topic": null,
+    "createdDateTime": "2026-04-10T07:53:09.846Z",
+    "lastUpdatedDateTime": "2026-04-10T07:53:09.846Z",
+    "chatType": "oneOnOne",
+    "webUrl": "https://teams.microsoft.com/l/chat/19%3A358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78%40unq.gbl.spaces/0?tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa",
+    "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa",
+    "isHiddenForAllMembers": false,
+    "viewpoint": null,
+    "onlineMeetingInfo": null
+  },
+  "members": [
+    {
+      "@odata.type": "#microsoft.graph.aadUserConversationMember",
+      "id": "MCMjMCMjZDhmZjdiMDItNTAyZi00NjI5LTk0MjktZTQ3MzVlMmVlMWFhIyMxOTozNTg4NDFjMS0zNTgyLTQwODEtOWEyZC04MzVlYmRhYWQ2YTZfOTU0ZWFkZmQtMTRkYS00MTY3LTg2ZGUtZjFlMzdlMWY4ZTc4QHVucS5nYmwuc3BhY2VzIyMzNTg4NDFjMS0zNTgyLTQwODEtOWEyZC04MzVlYmRhYWQ2YTY=",
+      "roles": [
+        "owner"
+      ],
+      "displayName": "Natalie Nguyen",
+      "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+      "userId": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+      "email": "natalie@harbouroutdoor.com",
+      "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+    },
+    {
+      "@odata.type": "#microsoft.graph.aadUserConversationMember",
+      "id": "MCMjMCMjZDhmZjdiMDItNTAyZi00NjI5LTk0MjktZTQ3MzVlMmVlMWFhIyMxOTozNTg4NDFjMS0zNTgyLTQwODEtOWEyZC04MzVlYmRhYWQ2YTZfOTU0ZWFkZmQtMTRkYS00MTY3LTg2ZGUtZjFlMzdlMWY4ZTc4QHVucS5nYmwuc3BhY2VzIyM5NTRlYWRmZC0xNGRhLTQxNjctODZkZS1mMWUzN2UxZjhlNzg=",
+      "roles": [
+        "owner"
+      ],
+      "displayName": "Thanh Nguyen",
+      "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+      "userId": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+      "email": "thanh.nguyen@harbouroutdoor.com",
+      "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1775810230367",
+      "replyToId": null,
+      "etag": "1775810268612",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:37:10.367Z",
+      "lastModifiedDateTime": "2026-04-10T08:37:48.612Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>thi\u1ebfu \u0111\u1ebfn \u0111\u00e2u n\u00f3i chi</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "\u2764\ufe0f",
+          "displayName": "Heart",
+          "reactionContentUrl": null,
+          "createdDateTime": "2026-04-10T08:37:48.624Z",
+          "user": {
+            "application": null,
+            "device": null,
+            "user": {
+              "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+              "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+              "displayName": null,
+              "userIdentityType": "aadUser",
+              "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1775810225212",
+      "replyToId": null,
+      "etag": "1775810225212",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:37:05.212Z",
+      "lastModifiedDateTime": "2026-04-10T08:37:05.212Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>l\u00e0m di</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775810220615",
+      "replyToId": null,
+      "etag": "1775810220615",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:37:00.615Z",
+      "lastModifiedDateTime": "2026-04-10T08:37:00.615Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>ok nhe</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775810206307",
+      "replyToId": null,
+      "etag": "1775810206307",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:36:46.307Z",
+      "lastModifiedDateTime": "2026-04-10T08:36:46.307Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>E \u0111\u1ee3i \u0111\u1ea7u ra c\u1ee7a Alisa r\u1ed3i b\u00e1o l\u1ea1i ch\u1ecb sau&nbsp;</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775810205255",
+      "replyToId": null,
+      "etag": "1775810205255",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:36:45.255Z",
+      "lastModifiedDateTime": "2026-04-10T08:36:45.255Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>D\u1ea1 noted</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775810093565",
+      "replyToId": null,
+      "etag": "1775810093565",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:34:53.565Z",
+      "lastModifiedDateTime": "2026-04-10T08:34:53.565Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>ch\u1ecb m\u1edbi t\u1ea1o dc SO nhe</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775810089400",
+      "replyToId": null,
+      "etag": "1775810089400",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:34:49.4Z",
+      "lastModifiedDateTime": "2026-04-10T08:34:49.4Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>n\u1ebfu m\u1ea5y c\u00e1i ch\u1ecb check l\u00e0 tai kho\u1ea3n Lurline, m\u00e0 ch\u1ecb t\u00ecm ko th\u1ea5y file tren mail, th\u00ec g\u1edfi ch\u1ecb file PDF &nbsp;</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775809966614",
+      "replyToId": null,
+      "etag": "1775809966614",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:32:46.614Z",
+      "lastModifiedDateTime": "2026-04-10T08:32:46.614Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>thi\u1ebfu thong tin ko t\u1ea1o dc SO ah</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775809942049",
+      "replyToId": null,
+      "etag": "1775809942049",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:32:22.049Z",
+      "lastModifiedDateTime": "2026-04-10T08:32:22.049Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>uh</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775809222406",
+      "replyToId": null,
+      "etag": "1775809225554",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:20:22.406Z",
+      "lastModifiedDateTime": "2026-04-10T08:20:25.554Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p><img src=\"https://graph.microsoft.com/v1.0/chats/19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces/messages/1775809222406/hostedContents/aWQ9eF8wLWpoYi1kOC1iN2M4MDRjYTFlMjY2YWEzOGMxNDgzMDg5YzY0NGZmNSx0eXBlPTEsdXJsPWh0dHBzOi8vYXMtYXBpLmFzbS5za3lwZS5jb20vdjEvb2JqZWN0cy8wLWpoYi1kOC1iN2M4MDRjYTFlMjY2YWEzOGMxNDgzMDg5YzY0NGZmNS92aWV3cy9pbWdv/$value\" width=\"449.6835443037975\" height=\"250\" alt=\"image\" itemid=\"0-jhb-d8-b7c804ca1e266aa38c1483089c644ff5\"></p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775809218225",
+      "replyToId": null,
+      "etag": "1775809218225",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:20:18.225Z",
+      "lastModifiedDateTime": "2026-04-10T08:20:18.225Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Tr\u00ean invoice \u0111\u1ea7u v\u00e0o c\u1ee7a Doris \u0111\u1ec3 to\u00e0n b\u1ed9 c\u00e1c PO n\u00e0y c\u1ee7a Paizes (c\u1ea3 PO e c\u00f3 h\u1ecfi ch\u1ecb). Nh\u01b0ng ch\u01b0a nh\u1eadn \u0111\u01b0\u1ee3c \u0111\u1ea7u ra c\u1ee7a Alisa \u0111\u1ec3 check n\u00ean e ch\u1eeba l\u1ea1i \u00e1 ch\u1ecb</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775809215160",
+      "replyToId": null,
+      "etag": "1775809215160",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:20:15.16Z",
+      "lastModifiedDateTime": "2026-04-10T08:20:15.16Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>\u00dd ch\u1ecb l\u00e0 PO n\u00e0y h\u1ea3 ch\u1ecb</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808915321",
+      "replyToId": null,
+      "etag": "1775808915321",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:15:15.321Z",
+      "lastModifiedDateTime": "2026-04-10T08:15:15.321Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>v\u1eabn xu\u1ea5t hoa don tr\u00ean Paizes dung ko em</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808876519",
+      "replyToId": null,
+      "etag": "1775808876519",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:14:36.519Z",
+      "lastModifiedDateTime": "2026-04-10T08:14:36.519Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>thanks ch\u1ecb</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808874498",
+      "replyToId": null,
+      "etag": "1775808874498",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:14:34.498Z",
+      "lastModifiedDateTime": "2026-04-10T08:14:34.498Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>E ch\u1eeba l\u1ea1i ch\u01b0a issue invoice, \u0111\u1ee3i invoice \u0111\u1ea7u ra c\u1ee7a Alisa \u0111\u1ec3 check l\u1ea1i l\u1ea7n n\u1eefa</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808187078",
+      "replyToId": null,
+      "etag": "1775808187078",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:03:07.078Z",
+      "lastModifiedDateTime": "2026-04-10T08:03:07.078Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>em hay l\u00e0m tr\u1ef1c ti\u1ebfp voi Doris h\u1ea3</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808172429",
+      "replyToId": null,
+      "etag": "1775808172429",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:52.429Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:52.429Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>giai \u0111o\u1ea1n chuy\u1ec3n \u0111\u1ed5i qua paizes m\u00e0</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808158484",
+      "replyToId": null,
+      "etag": "1775808158484",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:38.484Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:38.484Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>roi em lam invoice</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808154323",
+      "replyToId": null,
+      "etag": "1775808154323",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:34.323Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:34.323Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>chi tao PO cho em</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808148396",
+      "replyToId": null,
+      "etag": "1775808148396",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:28.396Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:28.396Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>ko sao</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808146478",
+      "replyToId": null,
+      "etag": "1775808146478",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:26.478Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:26.478Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>report cua Doris de la Lurline</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808125861",
+      "replyToId": null,
+      "etag": "1775808125861",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:02:05.861Z",
+      "lastModifiedDateTime": "2026-04-10T08:02:05.861Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>D\u1ea1 ch\u1ecb \u0111\u1ee3i e h\u1ecfi l\u1ea1i b\u00ean Doris th\u1eed c\u1ee7a Paizes hay Lurline nha ch\u1ecb. T\u1ea1i v\u00ec e th\u1ea5y tr\u00ean invoice c\u1ee7a Doris \u0111\u1ec3 Paizes</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775808002600",
+      "replyToId": null,
+      "etag": "1775808002600",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T08:00:02.6Z",
+      "lastModifiedDateTime": "2026-04-10T08:00:02.6Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>ch\u1ecb t\u1ea1o xong ch\u1ecb b\u00e1o em</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807973641",
+      "replyToId": null,
+      "etag": "1775807973641",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:59:33.641Z",
+      "lastModifiedDateTime": "2026-04-10T07:59:33.641Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>gi\u1edd paizes xu\u1ea5t h\u00f3a \u0111\u01a1n h\u1ea3 em</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807967481",
+      "replyToId": null,
+      "etag": "1775807967481",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:59:27.481Z",
+      "lastModifiedDateTime": "2026-04-10T07:59:27.481Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>ko peel qua paizes</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807963106",
+      "replyToId": null,
+      "etag": "1775807963106",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:59:23.106Z",
+      "lastModifiedDateTime": "2026-04-10T07:59:23.106Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>po n\u00e0y c\u1ee7a Lurline</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807597763",
+      "replyToId": null,
+      "etag": "1775807597763",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:53:17.763Z",
+      "lastModifiedDateTime": "2026-04-10T07:53:17.763Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+          "displayName": "Natalie Nguyen",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>OK</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807592303",
+      "replyToId": null,
+      "etag": "1775807592303",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:53:12.303Z",
+      "lastModifiedDateTime": "2026-04-10T07:53:12.303Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>D\u1ea1 PO #5054966 e t\u00ecm tr\u00ean Netsuite kh\u00f4ng c\u00f3. Ch\u1ecb check gi\u00fap e v\u1edbi \u1ea1</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807590719",
+      "replyToId": null,
+      "etag": "1775807590719",
+      "messageType": "message",
+      "createdDateTime": "2026-04-10T07:53:10.719Z",
+      "lastModifiedDateTime": "2026-04-10T07:53:10.719Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+          "displayName": "Thanh",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Hi ch\u1ecb</p>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1775807590367",
+      "replyToId": null,
+      "etag": "1775807590367",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-04-10T07:53:10.367Z",
+      "lastModifiedDateTime": "2026-04-10T07:53:10.367Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": null,
+      "from": null,
+      "channelIdentity": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "2026-04-10T07:53:09.846Z",
+        "members": [
+          {
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          },
+          {
+            "id": "358841c1-3582-4081-9a2d-835ebdaad6a6",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    }
+  ]
+}

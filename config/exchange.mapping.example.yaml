@@ -1,0 +1,6 @@
+# Planning file. Exchange PST export/import remains an operator workflow.
+mailboxes:
+  - user: alice
+    source_upn: alice@old.example.com
+    target_upn: alice@new.example.com
+    action: purview-pst

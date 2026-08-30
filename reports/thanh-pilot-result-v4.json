@@ -1,0 +1,16 @@
+{
+  "migration_id": "thanh-pilot-001",
+  "generated_at": "2026-08-26T09:53:21.803461+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "name": "thanh-nguyen-pilot",
+      "source_chat_id": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "status": "completed",
+      "messages": 29,
+      "target_chat_id": "19:321275e4-70d6-4e5e-9c31-2eca9216b8a1_4bca892f-0165-4630-ab4d-5d12ead28aee@unq.gbl.spaces",
+      "bundle": "thanh-nguyen-pilot.chat-bundle.json"
+    }
+  ],
+  "planned_workloads": {}
+}

@@ -1,0 +1,12 @@
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.venv/
+__pycache__/
+*.py[cod]
+messages.json
+chat-bundle.json
+user-map.json
+*.chat-bundle.json
+migration-report.json

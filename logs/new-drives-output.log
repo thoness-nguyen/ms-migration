@@ -1,0 +1,465 @@
+[
+  {
+    "site": "Apps",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,9c5a97ea-942a-405e-883e-4755d1a54dd5,2eff7520-6a07-4c33-8fc8-c32024fa3ffa",
+    "drive": "Client Side Assets",
+    "drive_id": "b!6pdanCqUXkCIPkdV0aVN1SB1_y4HajNMj8jDICT6P_oWVPP4yedUQLJeHtwkjkfG",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Apps",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,9c5a97ea-942a-405e-883e-4755d1a54dd5,2eff7520-6a07-4c33-8fc8-c32024fa3ffa",
+    "drive": "Apps for Office",
+    "drive_id": "b!6pdanCqUXkCIPkdV0aVN1SB1_y4HajNMj8jDICT6P_oQirqlIxL3RK7rYM-PN3zx",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Apps",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,9c5a97ea-942a-405e-883e-4755d1a54dd5,2eff7520-6a07-4c33-8fc8-c32024fa3ffa",
+    "drive": "Apps for SharePoint",
+    "drive_id": "b!6pdanCqUXkCIPkdV0aVN1SB1_y4HajNMj8jDICT6P_rFN51YlRqwRojrtNPyrcgu",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Deprecated - All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,a68501ea-8d01-447f-aad5-df9a21853715,29d19799-7ea7-4c57-9b2a-a61371546b3a",
+    "drive": "Documents",
+    "drive_id": "b!6gGFpgGNf0Sq1d-aIYU3FZmX0SmnfldMmyqmE3FUazqfdIANlXtHSJ9-1S6nWJ3X",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,7e0eb4ce-3e51-4880-bc1f-2f4eb9937471,29d19799-7ea7-4c57-9b2a-a61371546b3a",
+    "drive": "Documents",
+    "drive_id": "b!zrQOflE-gEi8Hy9OuZN0cZmX0SmnfldMmyqmE3FUazqfdIANlXtHSJ9-1S6nWJ3X",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f22f393a-4c6c-4fed-a3b6-bb5b3d0f5e80,29d19799-7ea7-4c57-9b2a-a61371546b3a",
+    "drive": "Documents",
+    "drive_id": "b!Ojkv8mxM7U-jtrtbPQ9egJmX0SmnfldMmyqmE3FUazqfdIANlXtHSJ9-1S6nWJ3X",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,51a96de5-185b-4b30-bffa-cc9fa16cd523,29d19799-7ea7-4c57-9b2a-a61371546b3a",
+    "drive": "Documents",
+    "drive_id": "b!5W2pUVsYMEu_-syfoWzVI5mX0SmnfldMmyqmE3FUazqfdIANlXtHSJ9-1S6nWJ3X",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,ee35add0-fa32-4f4b-aeae-20939a22cb6e,29d19799-7ea7-4c57-9b2a-a61371546b3a",
+    "drive": "Documents",
+    "drive_id": "b!0K017jL6S0-uriCTmiLLbpmX0SmnfldMmyqmE3FUazqfdIANlXtHSJ9-1S6nWJ3X",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "EU Group",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,5c9168f9-98f1-4483-8ee5-eda7c9a258a4,bfc595de-4c23-4f8b-a3d3-8b7396dc054b",
+    "drive": "Documents",
+    "drive_id": "b!-WiRXPGYg0SO5e2nyaJYpN6Vxb8jTItPo9OLc5bcBUvxvwDOviW2Q5YwqEBDXjc0",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Copilot Studio",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d2e324fc-b3bd-40a7-9cdb-a08b019c644f,9d1bc40f-8d62-4c93-9638-74d99d581af0",
+    "drive": "Documents",
+    "drive_id": "b!_CTj0r2zp0Cc26CLAZxkTw_EG51ijZNMljh02Z1YGvBvU3BLrI87S7AJ6UT-pLBi",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Harbour SSR",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,73e32163-7a6f-43e2-a980-b3a21108539f,6ec39565-7372-4c2a-921a-2e6deb3f86ea",
+    "drive": "Documents",
+    "drive_id": "b!YyHjc2964kOpgLOiEQhTn2WVw25ycypMkhoubes_huorL4DeiUphT6StDyVq6qHt",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Project Web App",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47",
+    "drive": "Shared Documents",
+    "drive_id": "b!niaNGJ_BV0m21-EvuWm5E732sNKSNkJCp1ZlWgAmq0fAu1vN9gzMTZhXCQAQTFg3",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Project Web App",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47",
+    "drive": "Project Detail Pages",
+    "drive_id": "b!niaNGJ_BV0m21-EvuWm5E732sNKSNkJCp1ZlWgAmq0eOUrnf_AbLRpTVOZuzK8k_",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Project Web App",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47",
+    "drive": "PWA Data Connections",
+    "drive_id": "b!niaNGJ_BV0m21-EvuWm5E732sNKSNkJCp1ZlWgAmq0dN5TkhmyInToAbtAkveTsw",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Project Web App",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47",
+    "drive": "PWA Templates",
+    "drive_id": "b!niaNGJ_BV0m21-EvuWm5E732sNKSNkJCp1ZlWgAmq0fSp3bJ_9ohQbkY2pcBWWu6",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Project Web App",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47",
+    "drive": "PWA Reports",
+    "drive_id": "b!niaNGJ_BV0m21-EvuWm5E732sNKSNkJCp1ZlWgAmq0dxritavHBiTYtj99gRQz7N",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "PI PER PO ZIP FILE ARCHIVE",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,83be13d1-7ce3-47c5-9d46-97a594a87951,88ec9da8-ded1-4764-b12d-3f4c7e2e08ef",
+    "drive": "Documents",
+    "drive_id": "b!0RO-g-N8xUedRpellKh5Uaid7IjR3mRHsS0_TH4uCO-LBG7jG21jQKd7YvIqui1T",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "QC REPORT",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,7cb43fc7-38e5-4301-b793-3484aeaa050f,7534c371-c3c4-4c4c-903d-df27c3a5827b",
+    "drive": "Documents",
+    "drive_id": "b!xz-0fOU4AUO3kzSErqoFD3HDNHXEw0xMkD3fJ8Olgnu46DTeQgUhQqGNSAIDCGz-",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "CMS",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c",
+    "drive": "Contracts",
+    "drive_id": "b!8lG6lgk1Jki-I9F-_26xvwUPSmG9riNFi-7FxllwFDxm2pZAX7rmTLFyI-Qq659C",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "CMS",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c",
+    "drive": "Documents",
+    "drive_id": "b!8lG6lgk1Jki-I9F-_26xvwUPSmG9riNFi-7FxllwFDyqsybY30-EQ4J8OXCEC0pK",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "CMS",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c",
+    "drive": "Templates",
+    "drive_id": "b!8lG6lgk1Jki-I9F-_26xvwUPSmG9riNFi-7FxllwFDypmp3LuG5sTKNSlLVfKQZw",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HOA",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,4f0e7e39-4f3f-465e-b7ef-d06f89abdc83,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "Documents",
+    "drive_id": "b!OX4OTz9PXka379BviavcgybNU23ZkYBMoR8iYylRZqW_1fdZvosPS4TFEcgMDnAC",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HARBOUR VN/RH - Merchandising",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d865b0bf-db0d-4e1b-b3dc-fe61367f9bbb,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "Documents",
+    "drive_id": "b!v7Bl2A3bG06z3P5hNn-buybNU23ZkYBMoR8iYylRZqW_1fdZvosPS4TFEcgMDnAC",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HARBOUR VN/RH - Merchandising",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d865b0bf-db0d-4e1b-b3dc-fe61367f9bbb,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "HB Price list - master file",
+    "drive_id": "b!v7Bl2A3bG06z3P5hNn-buybNU23ZkYBMoR8iYylRZqWxFKq1uZNLRqyvyIR0onIs",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HARBOUR VN/RH - Merchandising",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d865b0bf-db0d-4e1b-b3dc-fe61367f9bbb,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "HB - RH Claim tracker",
+    "drive_id": "b!v7Bl2A3bG06z3P5hNn-buybNU23ZkYBMoR8iYylRZqVe2Vj3gGAHQaJw07BKLlZF",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Sales Asia Pacific",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,ebbef1e3-9ce8-451d-ae1e-8f8c95bf21b2,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "Documents",
+    "drive_id": "b!4_G-6-icHUWuHo-Mlb8hsibNU23ZkYBMoR8iYylRZqW_1fdZvosPS4TFEcgMDnAC",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HK Sales",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,07d638fb-4774-4fef-bb63-a2a39d2526b7,6d53cd26-91d9-4c80-a11f-2263295166a5",
+    "drive": "Documents",
+    "drive_id": "b!-zjWB3RH70-7Y6KjnSUmtybNU23ZkYBMoR8iYylRZqW_1fdZvosPS4TFEcgMDnAC",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Marketing materials",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,325085ce-9050-40fa-9567-4e6c71d15479,c0a7238d-d3df-487b-a763-80ade77ba880",
+    "drive": "Documents",
+    "drive_id": "b!zoVQMlCQ-kCVZ05scdFUeY0jp8Df03tIp2OAred7qID2xSboqlJtSbzZfYTCNK7H",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Merchandising",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,3ccd1ead-3be3-4964-9f67-a33d681840ec,504d648f-6d95-415b-89e2-259dc56dc894",
+    "drive": "Documents",
+    "drive_id": "b!rR7NPOM7ZEmfZ6M9aBhA7I9kTVCVbVtBieIlncVtyJTTd_-sORjaQqc2vQ4JR_vN",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Support",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d35527a0-e8ef-4bd4-803f-8f79c4ee1def,46aae2e4-9cb7-4c4e-b410-8542395dcc68",
+    "drive": "Documents",
+    "drive_id": "b!oCdV0-_o1EuAP495xO4d7-Tiqka3nE5MtBCFQjldzGigxiz497ZYRanscvCdVxr2",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Support US",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,ad26ab78-1527-4d7a-bd81-28c29f5819cf,46aae2e4-9cb7-4c4e-b410-8542395dcc68",
+    "drive": "Documents",
+    "drive_id": "b!eKsmrScVek29gSjCn1gZz-Tiqka3nE5MtBCFQjldzGigxiz497ZYRanscvCdVxr2",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Travis",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,ffa82ef0-82db-4797-9637-94cd98f220f0,46aae2e4-9cb7-4c4e-b410-8542395dcc68",
+    "drive": "Documents",
+    "drive_id": "b!8C6o_9uCl0eWN5TNmPIg8OTiqka3nE5MtBCFQjldzGigxiz497ZYRanscvCdVxr2",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.HK-Asia Design Discussion Group",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f8c8cb19-52dc-42b6-9739-53aecce01a0d,0a4f8c74-c7ce-4d49-9df3-83ead510bb71",
+    "drive": "Documents",
+    "drive_id": "b!GcvI-NxStkKXOVOuzOAaDXSMTwrOx0lNnfOD6tUQu3G35O3r7CR1T71Ugkp9Kklo",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "My Plan",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,cdd32446-b847-4b51-8bb7-1dfd9b2c17a6,f7b13130-f9f9-4100-9372-df164f63ab89",
+    "drive": "Documents",
+    "drive_id": "b!RiTTzUe4UUuLtx39mywXpjAxsff5-QBBk3LfFk9jq4lMvpqjHJWjSouFF-0D40-d",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Harley xinh \u0111\u1eb9p",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,86783d55-3c06-4900-9c87-6a760053079b,f7b13130-f9f9-4100-9372-df164f63ab89",
+    "drive": "Documents",
+    "drive_id": "b!VT14hgY8AEmch2p2AFMHmzAxsff5-QBBk3LfFk9jq4lMvpqjHJWjSouFF-0D40-d",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "My plan",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,4c55ca22-5afb-4f71-9b78-00ad334fcbfb,37c8b25d-4063-4c35-9354-08a1ac81ebdc",
+    "drive": "Documents",
+    "drive_id": "b!IspVTPtacU-beACtM0_L-12yyDdjQDVMk1QIoayB69wPpfcOtApHRqSyXgbZ1iQb",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.VN",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,6ae2adcb-2d24-40ed-bc0f-d9f5ef7f68f2,2d46c7e8-2cf0-47fc-adfb-86e6c55af199",
+    "drive": "Documents",
+    "drive_id": "b!y63iaiQt7UC8D9n1739o8ujHRi3wLPxHrfuG5sVa8ZkKGdlnmbCySoqlUh_ZwhyV",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HB Showroom and Office",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d99ce5a1-dc4d-4ee8-88b2-448604a55ea4,405f4a42-4c5e-40bc-9ccd-0da79efebf94",
+    "drive": "Documents",
+    "drive_id": "b!oeWc2U3c6E6IskSGBKVepEJKX0BeTLxAnM0Np57-v5SFTOE-DHwhT6EHn0w-Egd5",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Design Team Tasks",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f214e993-9c32-4d7e-9dad-ffa29395cff2,b02e5875-364b-4306-8e3b-12810bf9af6b",
+    "drive": "Documents",
+    "drive_id": "b!k-kU8jKcfk2drf-ik5XP8nVYLrBLNgZDjjsSgQv5r2upQTSBY2VLSbh8mB3sSTBr",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Design Team Tasks",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,c827c10a-e802-4763-82a0-26efc45340f4,b02e5875-364b-4306-8e3b-12810bf9af6b",
+    "drive": "Documents",
+    "drive_id": "b!CsEnyALoY0eCoCbvxFNA9HVYLrBLNgZDjjsSgQv5r2upQTSBY2VLSbh8mB3sSTBr",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.HK-Contracts to Tricor",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,0f0c7348-2918-4e2d-aafc-5d307aff3ca1,de85ba4d-6983-46ce-9f8b-095fefbb075d",
+    "drive": "Documents",
+    "drive_id": "b!SHMMDxgpLU6q_F0wev88oU26hd6Dac5Gn4sJX--7B124-rpO0rcESaRUXFiCRxO0",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Zhente",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,e7f87cdf-8a51-45b5-b1be-603d555eb405,7ab5a170-4c94-4b2e-acfc-f6fc06dc74b0",
+    "drive": "Documents",
+    "drive_id": "b!33z451GKtUWxvmA9VV60BXChtXqUTC5LrPz2_AbcdLDndtXBrCWuT6v3dnRRzkRQ",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "05 PARNELL LAYOUT",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f001378b-2b12-468e-b387-7a3d297474db,0bfe4420-c4ec-4718-9bb1-116d43b0dbf9",
+    "drive": "Documents",
+    "drive_id": "b!izcB8BIrjkazh3o9KXR02yBE_gvsxBhHm7ERbUOw2_niIF4quojZRrzFf0DD6zkU",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Design Task",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,21bfca00-1e94-4cf6-bcec-0cb9692e0127,0bfe4420-c4ec-4718-9bb1-116d43b0dbf9",
+    "drive": "Documents",
+    "drive_id": "b!AMq_IZQe9ky87Ay5aS4BJyBE_gvsxBhHm7ERbUOw2_niIF4quojZRrzFf0DD6zkU",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "BACKBONE",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d00c351c-84f6-4d4c-a84d-fdc23aaf1020,ef4ef297-ffa0-443e-97be-f6295045880c",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!HDUM0PaETE2oTf3COq8QIJfyTu-g_z5El772KVBFiAwMbaCwV2trSZPqaqT73-G6",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "BACKBONE",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,d00c351c-84f6-4d4c-a84d-fdc23aaf1020,ef4ef297-ffa0-443e-97be-f6295045880c",
+    "drive": "Documents",
+    "drive_id": "b!HDUM0PaETE2oTf3COq8QIJfyTu-g_z5El772KVBFiAwdTUg6hn0mRYVbsTodDKVQ",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Product Information",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,157362cd-9026-480b-b781-dcf99dd934fd,de4c3453-4e90-456c-aed4-3a1da8579813",
+    "drive": "Documents",
+    "drive_id": "b!zWJzFSaQC0i3gdz5ndk0_VM0TN6QTmxFrtQ6HahXmBNLCegyf3sVQYAXVS-RCaX3",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "MARKTING",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,38596c70-317c-436d-b484-c37a602580f0,38039b6a-9dd4-4d53-b8b0-8aecaac60685",
+    "drive": "Documents",
+    "drive_id": "b!cGxZOHwxbUO0hMN6YCWA8GqbAzjUnVNNuLCK7KrGBoX3dM4pAV2-QpcQ9NhZsBus",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "ha",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f7400c58-776e-4c4e-bccb-857f2235abb4,ef858b52-1c52-4502-9b7f-a1537de6fe7c",
+    "drive": "Documents",
+    "drive_id": "b!WAxA9253Tky8y4V_IjWrtFKLhe9SHAJFm3-hU33m_nwZQeU8eYofQZLuYTBfa4je",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "All Company",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,f7209b2c-90af-4cdf-a62a-358bc915eae0,c8106fc7-a80d-434d-98e6-69a886f1e1bb",
+    "drive": "Documents",
+    "drive_id": "b!LJsg96-Q30ymKjWLyRXq4MdvEMgNqE1DmOZpqIbx4bvZLHW4uczKR59dGJ6mt26u",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "QC TEAM FOR INDOOR (CHINA+INDO)",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,447650e6-a07f-4df9-90b7-5cd93493111c,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!5lB2RH-g-U2Qt1zZNJMRHP-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "QC TEAM FOR INDOOR (CHINA+INDO)",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,447650e6-a07f-4df9-90b7-5cd93493111c,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!5lB2RH-g-U2Qt1zZNJMRHP-bU8mkyvdOjJy0dkN2LgbWKVUhBAq7RqiGwVbh0cFC",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "To-Do",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,97574d75-f4a2-470d-990d-90b24d987bff,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!dU1Xl6L0DUeZDZCyTZh7__-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "QC TEAM FOR OUTDOOR",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,887f4b8d-e54a-42ad-9dbe-883477844ed5,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!jUt_iErlrUKdvog0d4RO1f-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "QC TEAM FOR OUTDOOR",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,887f4b8d-e54a-42ad-9dbe-883477844ed5,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!jUt_iErlrUKdvog0d4RO1f-bU8mkyvdOjJy0dkN2LgaAXgsE_4QhRKpA85zP43xD",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "PG",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,b3fef104-954b-43f1-b3ab-836d96ae36b4,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!BPH-s0uV8UOzq4Ntlq42tP-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.CHINA",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,a8f9bfdd-962c-4bf7-919a-76e953c374bd,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!3b_5qCyW90uRmnbpU8N0vf-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,2314b866-7a75-4e7b-95fe-c04353db595e,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!ZrgUI3V6e06V_sBDU9tZXv-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Asia Pacific  Sales Teams",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,a5b4f6d4-4ebc-443d-b160-53c50a66e70b,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!1Pa0pbxOPUSxYFPFCmbnC_-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Asia Pacific  Sales Teams",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,a5b4f6d4-4ebc-443d-b160-53c50a66e70b,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!1Pa0pbxOPUSxYFPFCmbnC_-bU8mkyvdOjJy0dkN2LgYSECWjv-NDTbN8ONkRipnT",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Harbour PD Work Flow",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!3ts3eAaJCkWlpU7dT1AMaf-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Harbour PD Work Flow",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!3ts3eAaJCkWlpU7dT1AMaf-bU8mkyvdOjJy0dkN2LgbPYlUvHBl8TZgnlUP_dFdj",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.HK",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,80d9189e-d83b-49c0-be0a-4ec386685a35,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Documents",
+    "drive_id": "b!nhjZgDvYwEm-Ck7DhmhaNf-bU8mkyvdOjJy0dkN2LgYRSFmYYiK4QIr2GaFfTldd",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "HO.HK",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,80d9189e-d83b-49c0-be0a-4ec386685a35,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+    "drive": "Teams Wiki Data",
+    "drive_id": "b!nhjZgDvYwEm-Ck7DhmhaNf-bU8mkyvdOjJy0dkN2Lgbv1jipym6gRY9QQLW72zUu",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Communication site",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,7d7c41e2-b3ea-468f-9553-93cc4819b453,7082c7dd-64ba-43c9-8aba-4097e092a99b",
+    "drive": "Documents",
+    "drive_id": "b!4kF8feqzj0aVU5PMSBm0U93HgnC6ZMlDirpAl-CSqZuEnvZbVdkwRq2w6JP3NzMk",
+    "type": "documentLibrary"
+  },
+  {
+    "site": "Team Site",
+    "site_id": "harbouroutdoorasialimited.sharepoint.com,51a84366-7d04-4c1d-ba7d-0a404b06d586,028866b2-568c-432a-9bab-bd5111682300",
+    "drive": "Documents",
+    "drive_id": "b!ZkOoUQR9HUy6fQpASwbVhrJmiAKMVipDm6u9URFoIwCFje9Yp0-sSL_VujGc_F95",
+    "type": "documentLibrary"
+  }
+]
+Processed 66 item(s).

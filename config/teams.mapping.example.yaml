@@ -1,0 +1,7 @@
+chats:
+  - name: group-pilot
+    source_chat_id: 19:5bb175ea45f24cf48ef0d43c4725e75e@thread.v2
+    users:
+      - thanh.nguyen
+      - dung.nguyen
+      - tinh

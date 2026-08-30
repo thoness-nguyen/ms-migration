@@ -1,0 +1,15 @@
+{
+  "migration_id": "thanh-pilot-001",
+  "generated_at": "2026-08-26T09:37:38.205219+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "name": "thanh-nguyen-pilot",
+      "source_chat_id": "19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces",
+      "status": "failed",
+      "messages": 0,
+      "error": "POST https://graph.microsoft.com/v1.0/chats/dry-run:19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces/startMigration failed (404): {\"error\":{\"code\":\"NotFound\",\"message\":\"Chat dry-run:19:358841c1-3582-4081-9a2d-835ebdaad6a6_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces is not found.\",\"innerError\":{\"date\":\"2026-08-26T09:37:38\",\"request-id\":\"1210b94e-171e-48c6-bb1d-e412c6d3d603\",\"client-request-id\":\"1210b94e-171e-48c6-bb1d-e412c6d3d603\"}}}"
+    }
+  ],
+  "planned_workloads": {}
+}
