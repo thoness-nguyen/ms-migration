@@ -24,6 +24,12 @@ def test_batch_rejects_unmapped_member(tmp_path):
         def pages(self, path):
             return iter([{"userId": "source-2"}] if path.endswith("members") else [])
 
-    report = run_batch(Source(), FakeGraph(), {"chats": [{"source_chat_id": "chat-1", "user_map": {"source-1": "target-1"}}]}, tmp_path, StateStore(tmp_path / "state.sqlite"), tmp_path / "report.json", True)
-    assert report["results"][0]["status"] == "failed"
-    assert "source-2" in report["results"][0]["error"]
+    states = {
+        "sharepoint": StateStore(tmp_path / "sharepoint-checkpoint.sqlite"),
+        "onedrive": StateStore(tmp_path / "onedrive-checkpoint.sqlite"),
+        "teams": StateStore(tmp_path / "teams-checkpoint.sqlite"),
+    }
+    report = run_batch(Source(), FakeGraph(), {"chats": [{"source_chat_id": "chat-1", "user_map": {"source-1": "target-1"}}]}, tmp_path, states, tmp_path, True)
+    teams_report = report["areas"]["teams"]
+    assert teams_report["results"][0]["status"] == "failed"
+    assert "source-2" in teams_report["results"][0]["error"]

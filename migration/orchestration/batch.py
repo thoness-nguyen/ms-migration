@@ -173,10 +173,10 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                             # run would skip this user and never retry the missing items.
                             state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) failed - will retry on next run")
                 else:
-                    error_msg = f"{type(last_error).__name__}: {str(last_error)[:200]}" if last_error else "Copy failed"
+                    error_msg = f"{type(last_error).__name__}: {str(last_error)[:1000]}" if last_error else "Copy failed"
                     result.update({"status": "failed", "error": error_msg, "retry_count": attempts - 1})
                     if not dry_run:
-                        state.mark("batch-onedrive", str(user_key), "failed", detail=error_msg[:200])
+                        state.mark("batch-onedrive", str(user_key), "failed", detail=error_msg[:2000])
         except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
             result["error"] = str(error)
             if not dry_run:
@@ -343,7 +343,7 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
                                     state.mark("batch-sharepoint", state_key, "pending",
                                                detail=f"{reason} - will retry on next run")
                         else:
-                            error_msg = f"{type(last_error).__name__}: {str(last_error)[:200]}" if last_error else "Copy failed"
+                            error_msg = f"{type(last_error).__name__}: {str(last_error)[:1000]}" if last_error else "Copy failed"
                             lib_result.update({
                                 "status": "failed",
                                 "error": error_msg,
@@ -352,12 +352,12 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
                             })
                             if not dry_run:
                                 state.mark("batch-sharepoint", state_key, "failed",
-                                         detail=f"Retried {attempts - 1} times, failed: {error_msg[:150]}")
+                                         detail=f"Retried {attempts - 1} times, failed: {error_msg[:2000]}")
                 
                 except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
-                    lib_result["error"] = str(error)[:100]
+                    lib_result["error"] = str(error)[:1000]
                     if not dry_run:
-                        state.mark("batch-sharepoint", state_key, "failed", detail=str(error)[:200])
+                        state.mark("batch-sharepoint", state_key, "failed", detail=str(error)[:2000])
                 
                 result["libraries"].append(lib_result)
             
@@ -366,7 +366,7 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
         except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
             result["error"] = str(error)
             if not dry_run:
-                state.mark("batch-sharepoint", f"{source_site_id}:all", "failed", detail=str(error)[:200])
+                state.mark("batch-sharepoint", f"{source_site_id}:all", "failed", detail=str(error)[:2000])
         
         results.append(result)
     return results
@@ -414,8 +414,9 @@ def _summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def _print_summary(summary: dict[str, Any]) -> None:
+def _print_summary(area: str, summary: dict[str, Any]) -> None:
     print("\n" + "=" * 80)
+    print(f"AREA: {area}")
     if summary["overall_status"] == "completed":
         print("✅ Migration run COMPLETE - every item copied and source/target counts match.")
     elif summary["overall_status"] == "completed_with_failed_items":
@@ -428,22 +429,52 @@ def _print_summary(summary: dict[str, Any]) -> None:
         print("   'tenant-migrator batch ... --retry-failed-only'.")
     else:
         print("❌ Migration run INCOMPLETE - the following did not finish at all:")
-        for area in summary["areas_needing_attention"]:
-            print(f"   - {area}")
+        for area_item in summary["areas_needing_attention"]:
+            print(f"   - {area_item}")
         print("   Re-run 'Start migration' (option 2) to retry these from where they left off.")
     print("=" * 80 + "\n")
 
 
-def run_batch(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, output: Path, dry_run: bool = False, retry_failed_only: bool = False) -> dict[str, Any]:
-    """Coordinate execution across domains. Contains no domain-specific migration logic itself."""
-    results: list[dict[str, Any]] = []
-    results.extend(_run_batch_chats(source_graph, target_graph, plan, plan_dir, state, dry_run))
-    results.extend(_run_batch_onedrive(source_graph, target_graph, plan, state, dry_run, retry_failed_only))
-    results.extend(_run_batch_sharepoint(source_graph, target_graph, plan, state, dry_run, retry_failed_only))
-    planned = {workload: value for workload, value in plan.get("workloads", {}).items() if workload != "teams"}
-    summary = _summarize(results)
-    report = {"migration_id": plan.get("migration_id"), "generated_at": datetime.now(UTC).isoformat(), "dry_run": dry_run, "summary": summary, "results": results, "planned_workloads": planned}
-    output.write_text(json.dumps(report, indent=2), encoding="utf-8")
-    if not dry_run:
-        _print_summary(summary)
-    return report
+def run_batch(
+    source_graph: Any,
+    target_graph: Any,
+    plan: dict[str, Any],
+    plan_dir: Path,
+    states: dict[str, StateStore],
+    output_dir: Path,
+    dry_run: bool = False,
+    retry_failed_only: bool = False,
+) -> dict[str, Any]:
+    """Coordinate execution across domains. Contains no domain-specific migration logic itself.
+
+    `states` must provide one StateStore per area ("sharepoint", "onedrive",
+    "teams" - see common/checkpoint.py's CHECKPOINT_AREAS) so each area's
+    checkpoint data lives in its own database. Each area also gets its own
+    `<area>-migration-result.json` report under `output_dir` instead of one
+    generic combined file, so results are easy to find per workload.
+    """
+    output_dir.mkdir(parents=True, exist_ok=True)
+    area_results = {
+        "teams": _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run),
+        "onedrive": _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only),
+        "sharepoint": _run_batch_sharepoint(source_graph, target_graph, plan, states["sharepoint"], dry_run, retry_failed_only),
+    }
+    planned = plan.get("workloads", {})
+    generated_at = datetime.now(UTC).isoformat()
+    areas_report: dict[str, Any] = {}
+    for area, results in area_results.items():
+        summary = _summarize(results)
+        report = {
+            "migration_id": plan.get("migration_id"),
+            "area": area,
+            "generated_at": generated_at,
+            "dry_run": dry_run,
+            "summary": summary,
+            "results": results,
+            "planned_workload": planned.get(area),
+        }
+        (output_dir / f"{area}-migration-result.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+        areas_report[area] = report
+        if not dry_run:
+            _print_summary(area, summary)
+    return {"migration_id": plan.get("migration_id"), "generated_at": generated_at, "dry_run": dry_run, "areas": areas_report}

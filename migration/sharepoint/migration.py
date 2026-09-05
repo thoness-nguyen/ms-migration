@@ -20,13 +20,6 @@ class _FileWork:
     target_parent: str
 
 
-@dataclass
-class _PermissionWork:
-    source_item_id: str
-    target_item_id: str
-    item_name: str
-
-
 def _transfer_one_file(
     source_graph: GraphClient,
     target_graph: GraphClient,
@@ -35,7 +28,6 @@ def _transfer_one_file(
     state: StateStore,
     stats: dict[str, Any],
     stats_lock: threading.Lock,
-    permission_work: list[_PermissionWork],
     work: _FileWork,
     max_file_size_mb: int,
 ) -> None:
@@ -141,12 +133,11 @@ def _transfer_one_file(
         print(f"  [+] Copied file: {item_name} ({file_size_mb:.2f} MB)")
         with stats_lock:
             stats["files_copied"] += 1
-            permission_work.append(_PermissionWork(item["id"], target_item.get("id"), item_name))
 
     except (GraphError, OSError, ConnectionError, ConnectionResetError, BrokenPipeError, TypeError, ValueError, KeyError, AttributeError) as e:
         # Keep enough of the message to see the actual HTTP status/reason (not
         # just "GraphError: PUT https://...verylongurl") when diagnosing later.
-        state.mark("sharepoint", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:300]}")
+        state.mark("sharepoint", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:2000]}")
         error_type = type(e).__name__
         with stats_lock:
             stats["failed"] += 1
@@ -154,7 +145,7 @@ def _transfer_one_file(
                 "item": item_name,
                 "type": "file",
                 "size_mb": file_size_mb,
-                "error": f"{error_type}: {str(e)[:200]}"
+                "error": f"{error_type}: {str(e)[:1000]}"
             })
 
 
@@ -165,8 +156,7 @@ def retry_failed_sharepoint_files(
     target_drive_id: str,
     state: StateStore,
     content_concurrency: int = 4,
-    permission_concurrency: int = 2,
-    max_file_size_mb: int = 5000,
+    max_file_size_mb: int = 20000,
 ) -> dict[str, Any]:
     """Re-attempt only the items already recorded as "failed" for this
     library, instead of re-walking the whole (mostly already-migrated) tree.
@@ -181,7 +171,6 @@ def retry_failed_sharepoint_files(
     """
     stats: dict[str, Any] = {"files_copied": 0, "skipped": 0, "failed": 0, "still_missing_parent": 0, "errors": []}
     stats_lock = threading.Lock()
-    permission_work: list[_PermissionWork] = []
 
     prefix = f"{source_drive_id}:"
     failed_ids = [source_id for source_id in state.list_ids("sharepoint", "failed") if source_id.startswith(prefix)]
@@ -196,9 +185,9 @@ def retry_failed_sharepoint_files(
         try:
             item = source_graph.request("GET", f"/drives/{source_drive_id}/items/{item_id}?$select=id,name,size,parentReference,folder")
         except GraphError as e:
-            state.mark("sharepoint", source_id, "failed", detail=f"re-fetch failed: {type(e).__name__}: {str(e)[:280]}")
+            state.mark("sharepoint", source_id, "failed", detail=f"re-fetch failed: {type(e).__name__}: {str(e)[:2000]}")
             stats["failed"] += 1
-            stats["errors"].append({"item": item_id, "type": "file", "error": str(e)[:200]})
+            stats["errors"].append({"item": item_id, "type": "file", "error": str(e)[:1000]})
             continue
 
         if "folder" in item:
@@ -221,14 +210,13 @@ def retry_failed_sharepoint_files(
     target_graph.set_throttle_hook(content_gate.record_throttle)
     run_workers(
         file_work,
-        lambda work: _transfer_one_file(source_graph, target_graph, source_drive_id, target_drive_id, state, stats, stats_lock, permission_work, work, max_file_size_mb),
+        lambda work: _transfer_one_file(source_graph, target_graph, source_drive_id, target_drive_id, state, stats, stats_lock, work, max_file_size_mb),
         max_workers=content_concurrency,
         gate=content_gate,
     )
 
-    permission_gate = AdaptiveGate(initial=permission_concurrency, minimum=1, maximum=permission_concurrency)
-    source_graph.set_throttle_hook(permission_gate.record_throttle)
-    target_graph.set_throttle_hook(permission_gate.record_throttle)
+    source_graph.set_throttle_hook(None)
+    target_graph.set_throttle_hook(None)
     return stats
 
 
@@ -239,17 +227,15 @@ def copy_library(
     target_drive_id: str,
     state: StateStore,
     dry_run: bool = False,
-    max_file_size_mb: int = 5000,  # 5 GB limit for individual files
+    max_file_size_mb: int = 20000,  # 20 GB limit for individual files - larger files must be migrated manually
     content_concurrency: int = 4,
-    permission_concurrency: int = 2,
 ) -> dict[str, Any]:
     """Copy files and folders from source to target library.
 
     Runs in stages (ARCHITECHTURE_UPGRADE.md ss8): a sequential discovery pass
-    that also creates/reuses folders (parent must exist before its children,
-    and folder creation is cheap), followed by concurrent bounded file-content
-    workers, followed by concurrent bounded permission-grant workers. A file
-    or folder failure is isolated to that item and never blocks the others.
+    that also creates/reuses folders (parent must exist before its children),
+    followed by concurrent bounded file-content workers. A file or folder
+    failure is isolated to that item and never blocks the others.
 
     Args:
         source_graph: Source tenant Graph client
@@ -258,11 +244,8 @@ def copy_library(
         target_drive_id: Target library ID
         state: Migration state tracker
         dry_run: Preview without making changes
-        max_file_size_mb: Skip files larger than this (default: 5000 MB = 5 GB)
+        max_file_size_mb: Skip files larger than this (default: 20000 MB = 20 GB)
         content_concurrency: max concurrent file downloads/uploads (default: 4)
-        permission_concurrency: max concurrent permission grants (default: 2 -
-            kept lower than content since permission APIs can have different
-            service limits and side effects)
 
     Returns:
         Dictionary with copy statistics
@@ -277,7 +260,6 @@ def copy_library(
     }
     stats_lock = threading.Lock()
     file_work: list[_FileWork] = []
-    permission_work: list[_PermissionWork] = []
 
     def discover_and_prepare_folders(source_parent: str, target_parent: str, depth: int = 0) -> None:
         """Sequential discovery + folder pre-creation pass (stage 2/3).
@@ -345,14 +327,11 @@ def copy_library(
                                 print(f"  [+] Created folder: {item_name}")
                                 stats["folders_created"] += 1
                             
-                            # Permissions are granted later, concurrently, in their own stage
-                            permission_work.append(_PermissionWork(item["id"], target_folder_id, item_name))
-                            
                             discover_and_prepare_folders(item_id, target_folder_id, depth + 1)
                         except (GraphError, TypeError, ValueError, KeyError, AttributeError, OSError) as e:
-                            state.mark("sharepoint", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:300]}")
+                            state.mark("sharepoint", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:2000]}")
                             stats["failed"] += 1
-                            stats["errors"].append({"item": item_name, "type": "folder", "error": f"{type(e).__name__}: {str(e)[:200]}"})
+                            stats["errors"].append({"item": item_name, "type": "folder", "error": f"{type(e).__name__}: {str(e)[:1000]}"})
                     else:
                         discover_and_prepare_folders(item_id, target_parent, depth + 1)
                     continue
@@ -368,7 +347,7 @@ def copy_library(
             print(f"  ✗ Error walking folder {source_parent}: {error_type}: {str(e)[:200]}")
             stats["errors"].append({
                 "folder": source_parent,
-                "error": f"{error_type}: {str(e)[:200]}"
+                "error": f"{error_type}: {str(e)[:1000]}"
             })
             # Always re-raise: a failed children listing means this entire subtree
             # was skipped, not just one item. Swallowing it here (previously only
@@ -393,12 +372,11 @@ def copy_library(
     target_graph.set_throttle_hook(content_gate.record_throttle)
 
     def copy_one_file(work: _FileWork) -> None:
-        _transfer_one_file(source_graph, target_graph, source_drive_id, target_drive_id, state, stats, stats_lock, permission_work, work, max_file_size_mb)
+        _transfer_one_file(source_graph, target_graph, source_drive_id, target_drive_id, state, stats, stats_lock, work, max_file_size_mb)
 
     run_workers(file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate)
 
-    # Stage 6: concurrent bounded permission grants (folders + files together)
-    permission_gate = AdaptiveGate(initial=permission_concurrency, minimum=1, maximum=permission_concurrency)
-    source_graph.set_throttle_hook(permission_gate.record_throttle)
-    target_graph.set_throttle_hook(permission_gate.record_throttle)
+    source_graph.set_throttle_hook(None)
+    target_graph.set_throttle_hook(None)
+    stats["throttle_events"] = content_gate.throttle_events
     return stats

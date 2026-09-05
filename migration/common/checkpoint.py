@@ -4,6 +4,20 @@ import sqlite3
 import threading
 from pathlib import Path
 
+# Each migration area gets its own checkpoint file so a run targeting one
+# workload can never accidentally read/write another's checkpoint data.
+CHECKPOINT_AREAS = ("sharepoint", "onedrive", "teams")
+
+
+def open_state_store(state_dir: str | Path, area: str, batch_size: int = 1) -> StateStore:
+    """Open (creating the directory/file if needed) the checkpoint database
+    for one migration area: `<state_dir>/<area>-checkpoint.sqlite`."""
+    if area not in CHECKPOINT_AREAS:
+        raise ValueError(f"Unknown checkpoint area: {area!r} (expected one of {CHECKPOINT_AREAS})")
+    directory = Path(state_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+    return StateStore(directory / f"{area}-checkpoint.sqlite", batch_size=batch_size)
+
 
 class StateStore:
     """Small durable checkpoint store used to make migration jobs restartable.

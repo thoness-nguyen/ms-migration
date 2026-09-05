@@ -62,10 +62,10 @@ def _transfer_one_file(
         with stats_lock:
             stats["files_copied"] += 1
     except (GraphError, OSError, ConnectionError, ConnectionResetError, BrokenPipeError, TypeError, ValueError, KeyError, AttributeError) as e:
-        state.mark("onedrive", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:300]}")
+        state.mark("onedrive", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:2000]}")
         with stats_lock:
             stats["failed"] += 1
-            stats["errors"].append({"item": item.get("name", "unknown"), "error": f"{type(e).__name__}: {str(e)[:200]}"})
+            stats["errors"].append({"item": item.get("name", "unknown"), "error": f"{type(e).__name__}: {str(e)[:1000]}"})
 
 
 def retry_failed_onedrive_files(
@@ -95,9 +95,9 @@ def retry_failed_onedrive_files(
         try:
             item = source_graph.request("GET", f"/users/{source_user}/drive/items/{item_id}?$select=id,name,size,parentReference,folder")
         except GraphError as e:
-            state.mark("onedrive", source_id, "failed", detail=f"re-fetch failed: {type(e).__name__}: {str(e)[:280]}")
+            state.mark("onedrive", source_id, "failed", detail=f"re-fetch failed: {type(e).__name__}: {str(e)[:2000]}")
             stats["failed"] += 1
-            stats["errors"].append({"item": item_id, "error": str(e)[:200]})
+            stats["errors"].append({"item": item_id, "error": str(e)[:1000]})
             continue
 
         if "folder" in item:
@@ -167,10 +167,10 @@ def copy_drive(source_graph: GraphClient, target_graph: GraphClient, source_user
                                 state.mark("onedrive", source_id, "completed", target_folder_id)
                             discover_and_prepare_folders(item_id, target_folder_id)
                         except (GraphError, TypeError, ValueError, KeyError, AttributeError, OSError) as e:
-                            state.mark("onedrive", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:300]}")
+                            state.mark("onedrive", source_id, "failed", detail=f"{type(e).__name__}: {str(e)[:2000]}")
                             with stats_lock:
                                 stats["failed"] += 1
-                                stats["errors"].append({"item": item.get("name", "unknown"), "type": "folder", "error": f"{type(e).__name__}: {str(e)[:200]}"})
+                                stats["errors"].append({"item": item.get("name", "unknown"), "type": "folder", "error": f"{type(e).__name__}: {str(e)[:1000]}"})
                     else:
                         discover_and_prepare_folders(item_id, target_parent)
                     continue
@@ -182,7 +182,7 @@ def copy_drive(source_graph: GraphClient, target_graph: GraphClient, source_user
         except (GraphError, ConnectionError, ConnectionResetError, BrokenPipeError, TypeError, ValueError, KeyError, AttributeError, OSError) as e:
             print(f"  ✗ Error walking folder {source_parent}: {type(e).__name__}: {str(e)[:200]}")
             with stats_lock:
-                stats["errors"].append({"folder": source_parent, "error": f"{type(e).__name__}: {str(e)[:200]}"})
+                stats["errors"].append({"folder": source_parent, "error": f"{type(e).__name__}: {str(e)[:1000]}"})
             # Always re-raise - a failed children listing means this whole subtree
             # was skipped, not just one item (see sharepoint/migration.py for why).
             raise

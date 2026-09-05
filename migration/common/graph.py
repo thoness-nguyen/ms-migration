@@ -92,7 +92,10 @@ class GraphClient:
                 time.sleep(delay)
                 continue
             if not response.ok:
-                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:500]}")
+                # Keep the full response body (not just the first ~500 chars) - the
+                # actual reason (e.g. an invalid-character filename) is often past
+                # where the long drive/item-id URL alone would already eat the budget.
+                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:4000]}")
             return response.json() if response.content else None
         raise GraphError(f"{method} {url} failed after retries")
 
