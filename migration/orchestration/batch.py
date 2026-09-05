@@ -10,8 +10,8 @@ import yaml
 from ..common.checkpoint import StateStore
 from ..common.graph import GraphError
 from ..common.retry import with_retry
-from ..onedrive.migration import copy_drive
-from ..sharepoint.migration import copy_library
+from ..onedrive.migration import copy_drive, retry_failed_onedrive_files
+from ..sharepoint.migration import copy_library, retry_failed_sharepoint_files
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
 from ..teams.services import extract_chat, import_chat
@@ -130,7 +130,7 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
     return results
 
 
-def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
+def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     content_concurrency = _concurrency(plan, "onedrive", "content", default=4)
     for entry in plan.get("workloads", {}).get("onedrive", {}).get("users", []):
@@ -144,17 +144,34 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             target_id = user["target_id"]
             if state.status("batch-onedrive", source_id) == "completed":
                 result.update({"status": "skipped", "reason": "already completed"})
+            elif retry_failed_only:
+                print(f"[DEBUG] Retry-failed-only mode: re-attempting previously failed items for OneDrive user {user_key}")
+                stats = retry_failed_onedrive_files(source_graph, target_graph, source_id, target_id, state, content_concurrency=content_concurrency)
+                failed_count = stats.get("failed", 0) + stats.get("still_missing_parent", 0)
+                result.update({"status": "completed" if failed_count == 0 else "completed_with_failures", "items": stats.get("files_copied", 0), "stats": stats})
+                if failed_count == 0:
+                    state.mark("batch-onedrive", source_id, "completed", target_id)
+                else:
+                    state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) still failing after targeted retry")
             else:
-                count, success, last_error, attempts = with_retry(
+                stats, success, last_error, attempts = with_retry(
                     copy_drive, source_graph, target_graph, source_id, target_id, state, dry_run,
                     content_concurrency=content_concurrency,
                     max_retries=3,
                     on_retry=lambda attempt, error: print(f"[RETRY] OneDrive {user_key} attempt {attempt} failed: {type(error).__name__}: {error}"),
                 )
                 if success:
-                    result.update({"status": "dry-run" if dry_run else "completed", "items": count, "retry_count": attempts - 1})
+                    failed_count = stats.get("failed", 0) if isinstance(stats, dict) else 0
+                    items = stats.get("files_copied", 0) if isinstance(stats, dict) else stats
+                    fully_complete = failed_count == 0
+                    result.update({"status": ("dry-run" if dry_run else ("completed" if fully_complete else "completed_with_failures")), "items": items, "stats": stats if isinstance(stats, dict) else None, "retry_count": attempts - 1})
                     if not dry_run:
-                        state.mark("batch-onedrive", source_id, "completed", target_id)
+                        if fully_complete:
+                            state.mark("batch-onedrive", source_id, "completed", target_id)
+                        else:
+                            # Per-item failures exist - do NOT mark complete, or a future
+                            # run would skip this user and never retry the missing items.
+                            state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) failed - will retry on next run")
                 else:
                     error_msg = f"{type(last_error).__name__}: {str(last_error)[:200]}" if last_error else "Copy failed"
                     result.update({"status": "failed", "error": error_msg, "retry_count": attempts - 1})
@@ -168,10 +185,9 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
     return results
 
 
-def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
+def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     content_concurrency = _concurrency(plan, "sharepoint", "content", default=4)
-    permission_concurrency = _concurrency(plan, "sharepoint", "permissions", default=2)
     for site in plan.get("workloads", {}).get("sharepoint", {}).get("sites", []):
         # Resolve site IDs from URLs if provided
         source_site_id = site.get("source_site_id")
@@ -266,10 +282,35 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
                         # In dry-run, skip file traversal to avoid timeout - just report success
                         print(f"[DEBUG] Dry-run mode: skipping file traversal for {src_lib_name}")
                         lib_result.update({"status": "dry-run", "items": "N/A (skipped traversal)", "note": "Run without --dry-run to copy"})
+                    elif retry_failed_only:
+                        # Skip the (potentially hours-long) full tree walk on a mostly-done
+                        # library - just re-attempt the small set already marked "failed".
+                        print(f"[DEBUG] Retry-failed-only mode: re-attempting previously failed items in {src_lib_name}")
+                        stats = retry_failed_sharepoint_files(
+                            source_graph, target_graph, src_lib_id, tgt_lib_id, state,
+                            content_concurrency=content_concurrency,
+                        )
+                        total_items = stats.get("files_copied", 0)
+                        failed_count = stats.get("failed", 0) + stats.get("still_missing_parent", 0)
+                        validation = validate_library_migration(source_graph, target_graph, src_lib_id, tgt_lib_id)
+                        validated = validation.get("match", False) or validation.get("status") == "error"
+                        fully_complete = failed_count == 0 and validated
+                        lib_result.update({
+                            "status": "completed" if fully_complete else "completed_with_failures",
+                            "items": total_items,
+                            "stats": stats,
+                            "validation": validation,
+                        })
+                        if fully_complete:
+                            state.mark("batch-sharepoint", state_key, "completed", tgt_lib_id)
+                        else:
+                            reason = f"{failed_count} item(s) still failing" if failed_count else "source/target count mismatch"
+                            state.mark("batch-sharepoint", state_key, "pending",
+                                       detail=f"{reason} after targeted retry - consider a full discovery run")
                     else:
                         stats, success, last_error, attempts = with_retry(
                             copy_library, source_graph, target_graph, src_lib_id, tgt_lib_id, state, dry_run,
-                            content_concurrency=content_concurrency, permission_concurrency=permission_concurrency,
+                            content_concurrency=content_concurrency,
                             max_retries=3, backoff_base_seconds=10,
                             on_retry=lambda attempt, error: print(f"[RETRY] {src_lib_name} attempt {attempt} failed: {type(error).__name__}: {error}"),
                         )
@@ -279,21 +320,28 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
                             failed_count = stats.get("failed", 0)
                             # ADR "Validate" step: confirm source/target counts line up after the copy
                             validation = validate_library_migration(source_graph, target_graph, src_lib_id, tgt_lib_id)
+                            # A clean stats["failed"] count doesn't guarantee nothing was lost
+                            # (e.g. a whole subtree skipped by a transient listing error) - trust
+                            # the independent count comparison too before declaring victory.
+                            validated = validation.get("match", False) or validation.get("status") == "error"
+                            fully_complete = failed_count == 0 and validated
                             lib_result.update({
-                                "status": "completed" if failed_count == 0 else "completed_with_failures",
+                                "status": "completed" if fully_complete else "completed_with_failures",
                                 "items": total_items,
                                 "stats": stats,
                                 "retries": attempts - 1,
                                 "validation": validation,
                             })
                             if not dry_run:
-                                if failed_count == 0:
+                                if fully_complete:
                                     state.mark("batch-sharepoint", state_key, "completed", tgt_lib_id)
                                 else:
-                                    # Per-item failures exist (e.g. 401s) - do NOT mark the library
-                                    # complete, or future runs would skip it and never retry them.
+                                    # Per-item failures and/or a count mismatch exist - do NOT mark
+                                    # the library complete, or future runs would skip it and never
+                                    # retry the missing items.
+                                    reason = f"{failed_count} item(s) failed" if failed_count else "source/target count mismatch"
                                     state.mark("batch-sharepoint", state_key, "pending",
-                                               detail=f"{failed_count} item(s) failed - will retry on next run")
+                                               detail=f"{reason} - will retry on next run")
                         else:
                             error_msg = f"{type(last_error).__name__}: {str(last_error)[:200]}" if last_error else "Copy failed"
                             lib_result.update({
@@ -324,13 +372,78 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
     return results
 
 
-def run_batch(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, output: Path, dry_run: bool = False) -> dict[str, Any]:
+def _summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
+    """Roll the per-site/per-user results up into one unambiguous answer to
+    "is the migration actually done?" - a mismatch or a handful of failed
+    items still leaves the overall run "completed" (every site/user was
+    processed), it just means some individual items need a retry pass."""
+    failed_items = 0
+    mismatched_libraries: list[str] = []
+    incomplete_areas: list[str] = []
+    for result in results:
+        workload = result.get("workload")
+        if workload == "sharepoint":
+            for lib in result.get("libraries", []):
+                stats = lib.get("stats") or {}
+                failed_items += stats.get("failed", 0)
+                validation = lib.get("validation") or {}
+                if validation and not validation.get("match", True) and validation.get("status") != "error":
+                    mismatched_libraries.append(f"{result.get('site')}/{lib.get('name')}")
+                if lib.get("status") == "failed":
+                    incomplete_areas.append(f"sharepoint:{result.get('site')}/{lib.get('name')}")
+        elif workload == "onedrive":
+            stats = result.get("stats") or {}
+            failed_items += stats.get("failed", 0)
+            if result.get("status") == "failed":
+                incomplete_areas.append(f"onedrive:{result.get('user')}")
+        elif ("source_chat_id" in result or result.get("name")) and result.get("status") == "failed":
+            incomplete_areas.append(f"teams-chat:{result.get('name')}")
+
+    if incomplete_areas:
+        overall = "incomplete"
+    elif failed_items or mismatched_libraries:
+        overall = "completed_with_failed_items"
+    else:
+        overall = "completed"
+
+    return {
+        "overall_status": overall,
+        "failed_item_count": failed_items,
+        "mismatched_libraries": mismatched_libraries,
+        "areas_needing_attention": incomplete_areas,
+    }
+
+
+def _print_summary(summary: dict[str, Any]) -> None:
+    print("\n" + "=" * 80)
+    if summary["overall_status"] == "completed":
+        print("✅ Migration run COMPLETE - every item copied and source/target counts match.")
+    elif summary["overall_status"] == "completed_with_failed_items":
+        print("✅ Migration run COMPLETE (every site/user was processed), but ⚠ not every")
+        print(f"   item copied successfully: {summary['failed_item_count']} item(s) are marked 'failed'")
+        if summary["mismatched_libraries"]:
+            print(f"   and these libraries have a source/target count mismatch: {', '.join(summary['mismatched_libraries'])}")
+        print("   These are tracked in the checkpoint DB and safe to retry without redoing")
+        print("   the whole run - use panel option 6 (Retry failed items) or")
+        print("   'tenant-migrator batch ... --retry-failed-only'.")
+    else:
+        print("❌ Migration run INCOMPLETE - the following did not finish at all:")
+        for area in summary["areas_needing_attention"]:
+            print(f"   - {area}")
+        print("   Re-run 'Start migration' (option 2) to retry these from where they left off.")
+    print("=" * 80 + "\n")
+
+
+def run_batch(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, output: Path, dry_run: bool = False, retry_failed_only: bool = False) -> dict[str, Any]:
     """Coordinate execution across domains. Contains no domain-specific migration logic itself."""
     results: list[dict[str, Any]] = []
     results.extend(_run_batch_chats(source_graph, target_graph, plan, plan_dir, state, dry_run))
-    results.extend(_run_batch_onedrive(source_graph, target_graph, plan, state, dry_run))
-    results.extend(_run_batch_sharepoint(source_graph, target_graph, plan, state, dry_run))
+    results.extend(_run_batch_onedrive(source_graph, target_graph, plan, state, dry_run, retry_failed_only))
+    results.extend(_run_batch_sharepoint(source_graph, target_graph, plan, state, dry_run, retry_failed_only))
     planned = {workload: value for workload, value in plan.get("workloads", {}).items() if workload != "teams"}
-    report = {"migration_id": plan.get("migration_id"), "generated_at": datetime.now(UTC).isoformat(), "dry_run": dry_run, "results": results, "planned_workloads": planned}
+    summary = _summarize(results)
+    report = {"migration_id": plan.get("migration_id"), "generated_at": datetime.now(UTC).isoformat(), "dry_run": dry_run, "summary": summary, "results": results, "planned_workloads": planned}
     output.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    if not dry_run:
+        _print_summary(summary)
     return report

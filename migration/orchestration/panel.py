@@ -42,7 +42,7 @@ def print_menu(area: str | None) -> None:
     print("  3. Monitor progress (real-time)")
     print("  4. Show migration status")
     print("  5. Generate failed items report")
-    print("  6. Mark failed items for retry")
+    print("  6. Retry failed items (fast - skips full re-scan, all areas)")
     print("  7. Clear batch checkpoint (reset if stuck)")
     print("  8. Exit")
     print()
@@ -64,7 +64,7 @@ def _workloads_for(area: str) -> list[str]:
     return AREA_WORKLOADS.get(area, ["sharepoint"])
 
 
-def start_migration(area: str) -> None:
+def start_migration(area: str, retry_failed_only: bool = False) -> None:
     print(f"\n🚀 Starting migration ({area})...")
     if area != "sharepoint" and area != "all":
         print(f"   ℹ️  {area} runs through the same 'batch' command — it only processes")
@@ -75,6 +75,8 @@ def start_migration(area: str) -> None:
         "batch", "--config", CONFIG_FILE,
         "--report", "migration-result.json",
     ]
+    if retry_failed_only:
+        cmd.append("--retry-failed-only")
     subprocess.run(cmd, cwd=os.getcwd())
 
 
@@ -176,25 +178,27 @@ def generate_failed_report(area: str) -> None:
     print(f"Report exported to: {report_path}")
 
 
-def mark_for_retry(area: str) -> None:
+def retry_failed_items(area: str) -> None:
+    """Option 6: re-attempt only the items already marked 'failed' in the
+    checkpoint for this area, without redoing the (potentially hours-long)
+    full folder walk. Applies to SharePoint and OneDrive (both share the
+    same tree-walk cost problem); Teams chats/messages already only
+    reprocess non-completed items every run, so this is a normal run for
+    that area - no separate fast path needed.
+    """
     workloads = _workloads_for(area)
     placeholders = ",".join("?" for _ in workloads)
     conn = sqlite3.connect(STATE_DB)
     cur = conn.cursor()
     cur.execute(f"SELECT COUNT(*) FROM checkpoints WHERE status='failed' AND workload IN ({placeholders})", workloads)
     count = cur.fetchone()[0]
-    if count == 0:
-        print("\n  ✅ No failed items to retry\n")
-        conn.close()
-        return
-    print(f"\n  🔄 Marking {count} failed items for retry...")
-    cur.execute(f"UPDATE checkpoints SET status='pending' WHERE status='failed' AND workload IN ({placeholders})", workloads)
-    batch_workloads = [f"batch-{w.split('-')[0]}" for w in workloads]
-    batch_placeholders = ",".join("?" for _ in batch_workloads)
-    cur.execute(f"DELETE FROM checkpoints WHERE workload IN ({batch_placeholders})", batch_workloads)
-    conn.commit()
     conn.close()
-    print(f"  ✓ {count} items marked as pending. Use option 2 to retry.\n")
+    if count == 0:
+        print("\n  ✅ No failed items recorded for this area - nothing to retry.\n")
+        return
+    print(f"\n  🔄 {count} item(s) marked failed for '{area}'. Re-attempting just those (fast path)...\n")
+    start_migration(area, retry_failed_only=True)
+    print("\n  ℹ️  See migration-result.json's 'summary' field, or option 4/5, for the updated status.\n")
 
 
 def clear_batch_state(area: str) -> None:
@@ -227,7 +231,7 @@ def main() -> None:
         elif choice == "5":
             generate_failed_report(area)
         elif choice == "6":
-            mark_for_retry(area)
+            retry_failed_items(area)
         elif choice == "7":
             clear_batch_state(area)
         elif choice == "8":

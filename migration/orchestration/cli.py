@@ -36,6 +36,7 @@ def main() -> int:
     batch = sub.add_parser("batch")
     batch.add_argument("--config", type=Path, required=True, help="YAML or JSON batch plan")
     batch.add_argument("--report", type=Path, default=Path("migration-report.json"))
+    batch.add_argument("--retry-failed-only", action="store_true", help="Skip the full folder-tree walk on libraries/drives that already have a checkpoint and only re-attempt items previously marked failed (SharePoint + OneDrive)")
     drive = sub.add_parser("onedrive")
     drive.add_argument("--source-user", required=True)
     drive.add_argument("--target-user", required=True)
@@ -53,7 +54,7 @@ def main() -> int:
             plan = load_plan(args.config)
             source_client = GraphClient(source_token())
             target_client = GraphClient(target_token())
-            report = run_batch(source_client, target_client, plan, args.config.parent, state, args.report, args.dry_run)
+            report = run_batch(source_client, target_client, plan, args.config.parent, state, args.report, args.dry_run, args.retry_failed_only)
             count = len(report["results"])
         elif args.command == "extract-chat":
             source_client = GraphClient(source_token())
@@ -112,7 +113,8 @@ def main() -> int:
         else:
             source_client = GraphClient(source_token())
             target_client = GraphClient(target_token())
-            count = copy_drive(source_client, target_client, args.source_user, args.target_user, state, args.dry_run)
+            drive_stats = copy_drive(source_client, target_client, args.source_user, args.target_user, state, args.dry_run)
+            count = drive_stats.get("files_copied", 0) if isinstance(drive_stats, dict) else drive_stats
     finally:
         state.close()
     print(f"Processed {count} item(s){' (dry run)' if args.dry_run else ''}.")

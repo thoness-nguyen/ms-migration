@@ -51,6 +51,40 @@ class StateStore:
             ).fetchone()
             return row[0] if row else None
 
+    def list_ids(self, workload: str, status: str) -> list[str]:
+        """All source_ids currently recorded for workload with the given status
+        (persisted rows overlaid with any not-yet-flushed pending marks). Lets a
+        caller target a retry at just the handful of failed items instead of
+        re-walking a whole tree to rediscover them."""
+        with self._lock:
+            merged: dict[str, str] = dict(
+                self.connection.execute(
+                    "SELECT source_id, status FROM checkpoints WHERE workload = ?",
+                    (workload,),
+                ).fetchall()
+            )
+            for (pending_workload, source_id), (_, pending_status, _) in self._pending.items():
+                if pending_workload == workload:
+                    merged[source_id] = pending_status
+            return [source_id for source_id, row_status in merged.items() if row_status == status]
+
+    def count_by_status(self, workload: str) -> dict[str, int]:
+        """Status -> count breakdown for a workload, pending writes included."""
+        with self._lock:
+            merged: dict[str, str] = dict(
+                self.connection.execute(
+                    "SELECT source_id, status FROM checkpoints WHERE workload = ?",
+                    (workload,),
+                ).fetchall()
+            )
+            for (pending_workload, source_id), (_, pending_status, _) in self._pending.items():
+                if pending_workload == workload:
+                    merged[source_id] = pending_status
+            counts: dict[str, int] = {}
+            for row_status in merged.values():
+                counts[row_status] = counts.get(row_status, 0) + 1
+            return counts
+
     def mark(self, workload: str, source_id: str, status: str, target_id: str | None = None, detail: str | None = None) -> None:
         with self._lock:
             self._pending[(workload, source_id)] = (target_id, status, detail)

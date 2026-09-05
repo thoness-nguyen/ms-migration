@@ -83,7 +83,14 @@ def validate_library_migration(
         if report["match"]:
             print(f"[OK] Validation passed: {source_files} files, {source_folders} folders")
         else:
-            print(f"⚠ Mismatch: source {source_files}F/{source_folders}D, target {target_files}F/{target_folders}D")
+            missing_files = max(0, source_files - target_files)
+            missing_folders = max(0, source_folders - target_folders)
+            print(
+                f"✅ Copy pass finished, but ⚠ counts don't match: source has {source_files} files/"
+                f"{source_folders} folders, target has {target_files} files/{target_folders} folders "
+                f"({missing_files} file(s) and {missing_folders} folder(s) short) "
+                f"Use panel option 6 (Retry failed items) "
+            )
         
     except GraphError as e:
         report["status"] = "error"

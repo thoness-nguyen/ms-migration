@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from urllib.parse import quote
 
 from ..common.graph import GraphClient, GraphError
 
@@ -44,6 +45,19 @@ def resolve_site_url(graph_client: GraphClient, site_url: str) -> str:
                     f"Get it from: tenant-migrator list-drives --tenant source"
         raise GraphError(error_msg)
 
+def encode_graph_path_segment(value: str) -> str:
+    """
+    URL-encode a single Microsoft Graph path segment.
+
+    Use this for user-controlled/resource names such as:
+    - file names
+    - folder names
+
+    Example:
+        HONGTAI #PO.xlsx
+        -> HONGTAI%20%23PO.xlsx
+    """
+    return quote(str(value), safe="")
 
 def discover_sites(graph_client: GraphClient, exclude_personal: bool = True) -> list[dict[str, Any]]:
     """Discover all SharePoint sites in tenant.
@@ -283,96 +297,3 @@ def get_site_groups(graph_client: GraphClient, site_id: str) -> list[dict[str, A
         return []
 
 
-# ============================================================================
-# PERMISSIONS & SHARING
-# ============================================================================
-
-def copy_item_permissions(
-    source_graph: GraphClient,
-    target_graph: GraphClient,
-    source_drive_id: str,
-    target_drive_id: str,
-    source_item_id: str,
-    target_item_id: str,
-    user_map: dict[str, str] | None = None,
-) -> dict[str, Any]:
-    """Copy file/folder permissions from source to target.
-    
-    Ensures target item has edit permissions for all users.
-    
-    Args:
-        source_graph: Source tenant Graph client
-        target_graph: Target tenant Graph client
-        source_drive_id: Source library ID
-        target_drive_id: Target library ID
-        source_item_id: Source item ID
-        target_item_id: Target item ID
-        user_map: Mapping of source users to target users
-        
-    Returns:
-        Permission copy status
-    """
-    stats = {
-        "permissions_copied": 0,
-        "permissions_skipped": 0,
-        "errors": []
-    }
-    
-    if user_map is None:
-        user_map = {}
-    
-    try:
-        # Grant edit (write) permission to Everyone in target
-        # This ensures all users can edit migrated files/folders
-        payload = {
-            "roles": ["edit"],
-            "grantedToIdentities": [
-                {
-                    "application": {
-                        "displayName": "Everyone",
-                        "id": "c:0!.s|true"  # Special ID for "Everyone" in SharePoint
-                    }
-                }
-            ]
-        }
-        
-        try:
-            target_graph.request(
-                "POST",
-                f"/drives/{target_drive_id}/items/{target_item_id}/invite",
-                json=payload
-            )
-            stats["permissions_copied"] += 1
-            print(f"    [*] Granted edit permission: Everyone")
-        except GraphError as e:
-            # If "Everyone" fails, try granting to organizational users
-            if "invalid" in str(e).lower() or "not found" in str(e).lower():
-                payload_org = {
-                    "roles": ["edit"],
-                    "grantedToIdentities": [
-                        {
-                            "application": {
-                                "displayName": "Organization",
-                                "id": "c:0!.s|windows"
-                            }
-                        }
-                    ]
-                }
-                try:
-                    target_graph.request(
-                        "POST",
-                        f"/drives/{target_drive_id}/items/{target_item_id}/invite",
-                        json=payload_org
-                    )
-                    stats["permissions_copied"] += 1
-                except GraphError as e2:
-                    # If automatic permission fails, just skip
-                    # Permissions may need manual configuration
-                    stats["permissions_skipped"] += 1
-            else:
-                stats["permissions_skipped"] += 1
-        
-    except GraphError as e:
-        stats["errors"].append(str(e))
-    
-    return stats
