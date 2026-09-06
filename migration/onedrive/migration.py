@@ -35,8 +35,14 @@ def _copy_item_permissions(
     the item only has via folder inheritance are skipped on purpose - the
     target's own folder tree already provides that access, and re-applying
     it per-file would just create redundant unique permissions.
+
+    Only ~50 of 200 users are moving to the target tenant; the rest stay on
+    `source_user`'s original tenant. So for each grantee: if they moved
+    (present in `user_map`), grant the migrated target account; if they
+    didn't move (no entry in `user_map`), re-grant their original source
+    email as an external/guest invite instead of dropping the permission.
     """
-    result: dict[str, Any] = {"links_created": 0, "invites_sent": 0, "skipped": 0, "errors": []}
+    result: dict[str, Any] = {"links_created": 0, "invites_sent": 0, "invites_to_source_tenant": 0, "skipped": 0, "errors": []}
     try:
         permissions = list(source_graph.pages(f"/users/{source_user}/drive/items/{source_item_id}/permissions"))
     except GraphError as e:
@@ -62,13 +68,27 @@ def _copy_item_permissions(
             granted = perm.get("grantedToV2") or {}
             identities = perm.get("grantedToIdentitiesV2") or ([granted] if granted else [])
             recipients = []
+            recipients_from_source_tenant = 0
             for identity in identities:
+                identity_email = (identity.get("user") or {}).get("email")
+                if identity_email and identity_email.lower() in (source_user.lower(), target_user.lower()):
+                    # Just the drive owner's own baseline permission (as the source
+                    # account, or already re-shared to their own target-tenant email
+                    # as a guest) - not a real "share", the target already owns the
+                    # file on their own drive.
+                    result["skipped"] += 1
+                    continue
                 source_identity_id = (identity.get("user") or {}).get("id")
                 target_identity_id = user_map.get(source_identity_id) if source_identity_id else None
-                if not target_identity_id:
-                    result["errors"].append(f"no target mapping for permission grantee {source_identity_id}")
-                    continue
-                recipients.append({"objectId": target_identity_id})
+                if target_identity_id:
+                    recipients.append({"objectId": target_identity_id})
+                elif identity_email:
+                    # Grantee never moved to the target tenant - keep their access by
+                    # re-inviting their original source-tenant email as a guest.
+                    recipients.append({"email": identity_email})
+                    recipients_from_source_tenant += 1
+                else:
+                    result["errors"].append(f"no target mapping or email for permission grantee {source_identity_id}")
             if not recipients:
                 result["skipped"] += 1
                 continue
@@ -79,6 +99,7 @@ def _copy_item_permissions(
                 json={"requireSignIn": True, "sendInvitation": False, "roles": perm.get("roles", ["read"]), "recipients": recipients},
             )
             result["invites_sent"] += 1
+            result["invites_to_source_tenant"] += recipients_from_source_tenant
         except (GraphError, TypeError, ValueError, KeyError) as e:
             result["errors"].append(f"{type(e).__name__}: {str(e)[:500]}")
     return result

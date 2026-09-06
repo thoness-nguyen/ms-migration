@@ -47,6 +47,9 @@ def main() -> int:
     drive = sub.add_parser("onedrive")
     drive.add_argument("--source-user", required=True)
     drive.add_argument("--target-user", required=True)
+    drive.add_argument("--migrate-permissions", action="store_true", help="Recreate each file/folder's sharing (direct grants + anyone/organization links) on the target - requires --user-map")
+    drive.add_argument("--user-map", type=Path, help="JSON file mapping users (same format as mapping.json's list of {source_id, target_id, ...}) - used to translate permission grantees when --migrate-permissions is set")
+    drive.add_argument("--user-key", help="Optional mapping-file key to stamp onto this drive's checkpoint rows (for validate/status filtering)")
     list_drives = sub.add_parser("list-drives", help="List SharePoint sites and their document library drive IDs")
     list_drives.add_argument("--tenant", choices=["source", "target"], default="source")
     list_drives.add_argument("--test-site", help="Test access to a specific site by ID (e.g., site.sharepoint.com,guid1,guid2)")
@@ -135,7 +138,23 @@ def main() -> int:
         else:
             source_client = GraphClient(source_token())
             target_client = GraphClient(target_token())
-            drive_stats = copy_drive(source_client, target_client, args.source_user, args.target_user, area_state("onedrive"), args.dry_run)
+            user_map = None
+            if args.user_map:
+                entries = json.loads(args.user_map.read_text(encoding="utf-8"))
+                user_map = {u["source_id"]: u["target_id"] for u in entries if u.get("source_id") and u.get("target_id")}
+            if args.migrate_permissions and not user_map:
+                print("⚠ --migrate-permissions requires --user-map to translate permission grantees; continuing without permission migration.")
+            drive_stats = copy_drive(
+                source_client,
+                target_client,
+                args.source_user,
+                args.target_user,
+                area_state("onedrive"),
+                args.dry_run,
+                user_key=args.user_key,
+                user_map=user_map,
+                migrate_permissions=bool(args.migrate_permissions and user_map),
+            )
             count = drive_stats.get("files_copied", 0) if isinstance(drive_stats, dict) else drive_stats
     finally:
         for store in open_stores.values():

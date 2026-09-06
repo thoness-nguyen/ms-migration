@@ -1,3 +1,7 @@
+migrate_permissions: true
 users:
   - user: thanh.nguyen
+    action: graph-copy
+
+  - user: kevinc
     action: graph-copy

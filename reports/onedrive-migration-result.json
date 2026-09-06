@@ -1,11 +1,11 @@
 {
   "migration_id": "onedrive-pilot-001",
   "area": "onedrive",
-  "generated_at": "2026-09-06T05:45:11.120196+00:00",
+  "generated_at": "2026-09-06T09:39:36.048231+00:00",
   "dry_run": false,
   "summary": {
-    "overall_status": "completed",
-    "failed_item_count": 0,
+    "overall_status": "completed_with_failed_items",
+    "failed_item_count": 5,
     "mismatched_libraries": [],
     "areas_needing_attention": []
   },
@@ -13,21 +13,59 @@
     {
       "workload": "onedrive",
       "user": "thanh.nguyen",
-      "status": "completed",
-      "items": 6,
+      "status": "skipped",
+      "items": 0,
+      "reason": "already completed"
+    },
+    {
+      "workload": "onedrive",
+      "user": "kevinc",
+      "status": "completed_with_failures",
+      "items": 0,
       "stats": {
-        "files_copied": 6,
-        "skipped": 5,
-        "failed": 0,
-        "errors": []
+        "files_copied": 0,
+        "skipped": 0,
+        "failed": 5,
+        "errors": [
+          {
+            "item": "Attachments",
+            "type": "folder",
+            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"214f0f24-bae3-42cd-97a7-2c303f716d10\",\"client-request-id\":\"214f0f24-bae3-42cd-97a7-2c303f716d10\"}}}"
+          },
+          {
+            "item": "Meetings",
+            "type": "folder",
+            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"26c1ad90-b214-4917-b783-0df428780b86\",\"client-request-id\":\"26c1ad90-b214-4917-b783-0df428780b86\"}}}"
+          },
+          {
+            "item": "Microsoft Copilot Chat Files",
+            "type": "folder",
+            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"839d50b1-7184-4fcd-a855-c3871c620b18\",\"client-request-id\":\"839d50b1-7184-4fcd-a855-c3871c620b18\"}}}"
+          },
+          {
+            "item": "Microsoft Teams Chat Files",
+            "type": "folder",
+            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"a1b53eff-8eff-42fa-8e22-a2b2758d29b8\",\"client-request-id\":\"a1b53eff-8eff-42fa-8e22-a2b2758d29b8\"}}}"
+          },
+          {
+            "item": "Recordings",
+            "type": "folder",
+            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"b354aace-fb8f-4de0-b3fc-4119b5a09631\",\"client-request-id\":\"b354aace-fb8f-4de0-b3fc-4119b5a09631\"}}}"
+          }
+        ]
       },
       "retry_count": 0
     }
   ],
   "planned_workload": {
+    "migrate_permissions": true,
     "users": [
       {
         "user": "thanh.nguyen",
+        "action": "graph-copy"
+      },
+      {
+        "user": "kevinc",
         "action": "graph-copy"
       }
     ]

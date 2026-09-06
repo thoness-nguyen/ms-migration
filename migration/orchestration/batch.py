@@ -38,13 +38,16 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
     users = _load_data((plan_dir / plan["users"]).resolve()) if isinstance(plan["users"], str) else plan["users"]
     if not isinstance(users, list):
         raise TypeError("users must be a list or a mapping-file path")
+    seen_keys: set[str] = set()
     user_map: dict[str, str] = {}
     for user in users:
-        if not isinstance(user, dict) or not user.get("key") or not user.get("source_id") or not user.get("target_id"):
-            raise ValueError("Each user requires key, source_id, and target_id")
-        if user["key"] in user_map:
+        if not isinstance(user, dict) or not user.get("key") or not user.get("source_id"):
+            raise ValueError("Each user requires key and source_id (target_id is optional - omit it for users who stayed in the source tenant)")
+        if user["key"] in seen_keys:
             raise ValueError(f"Duplicate user key: {user['key']}")
-        user_map[user["key"]] = user["target_id"]
+        seen_keys.add(user["key"])
+        if user.get("target_id"):
+            user_map[user["key"]] = user["target_id"]
 
     workloads = plan.get("workloads", {})
     if not isinstance(workloads, dict):
