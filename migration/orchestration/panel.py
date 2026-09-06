@@ -2,10 +2,10 @@
 """Migration Control Panel - lightweight terminal interface (ADR-0001).
 
 Supports area selection across all migration domains (SharePoint, Teams,
-OneDrive, or Run All) with a consistent start / monitor / report / retry /
-status interface. Each area has its own checkpoint database under STATE_DIR
-(<area>-checkpoint.sqlite), so a run/query against one area can never touch
-another area's data.
+OneDrive) with a consistent start / monitor / report / retry / status
+interface. Each area has its own checkpoint database under STATE_DIR
+(<area>-checkpoint.sqlite) and its own config file, so a run against one
+area can never touch another area's config, checkpoint data, or report.
 """
 from __future__ import annotations
 
@@ -22,8 +22,13 @@ for _stream in (sys.stdout, sys.stderr):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
 STATE_DIR = os.environ.get("MIGRATION_STATE_DIR", "state")
-CONFIG_FILE = os.environ.get("MIGRATION_CONFIG", "config/sharepoint-pilot.yaml")
 REPORT_DIR = os.environ.get("MIGRATION_REPORT_DIR", "reports")
+
+CONFIG_FILES = {
+    "sharepoint": "config/sharepoint-pilot.yaml",
+    "teams": "config/teams-pilot.yaml",
+    "onedrive": "config/onedrive-pilot.yaml",
+}
 
 AREAS = ("sharepoint", "onedrive", "teams")
 
@@ -31,9 +36,14 @@ AREAS = ("sharepoint", "onedrive", "teams")
 def _db_path(area: str) -> str:
     return os.path.join(STATE_DIR, f"{area}-checkpoint.sqlite")
 
+def _config_path(area: str) -> str:
+    return os.environ.get(
+        "MIGRATION_CONFIG",
+        CONFIG_FILES[area],
+    )
 
 def _areas_for(area: str) -> list[str]:
-    return list(AREAS) if area == "all" else [area]
+    return [area]
 
 
 def print_menu(area: str | None) -> None:
@@ -43,14 +53,15 @@ def print_menu(area: str | None) -> None:
     print(f"Area: {label}")
     print("=" * 80)
     print()
-    print("  1. Select migration area (SharePoint / Teams / OneDrive / Run All)")
+    print("  1. Select migration area (SharePoint / Teams / OneDrive)")
     print("  2. Start migration")
     print("  3. Monitor progress (real-time)")
     print("  4. Show migration status")
     print("  5. Generate failed items report")
-    print("  6. Retry failed items (fast - skips full re-scan, all areas)")
-    print("  7. Clear batch checkpoint (reset if stuck)")
-    print("  8. Exit")
+    print("  6. Retry failed items (fast - skips full re-scan)")
+    print("  7. Validate migrated data (post-migration integrity check)")
+    print("  8. Clear batch checkpoint (reset if stuck)")
+    print("  9. Exit")
     print()
 
 
@@ -59,25 +70,66 @@ def select_area() -> str:
     print("  [1] SharePoint")
     print("  [2] Teams")
     print("  [3] OneDrive")
-    print("  [4] Run All")
-    choice = input("Select area (1-4): ").strip()
-    return {"1": "sharepoint", "2": "teams", "3": "onedrive", "4": "all"}.get(choice, "sharepoint")
+    choice = input("Select area (1-3): ").strip()
+    return {"1": "sharepoint", "2": "teams", "3": "onedrive"}.get(choice, "sharepoint")
 
 
 def start_migration(area: str, retry_failed_only: bool = False) -> None:
-    print(f"\n🚀 Starting migration ({area})...")
-    if area != "sharepoint" and area != "all":
-        print(f"   ℹ️  {area} runs through the same 'batch' command — it only processes")
-        print(f"      what's defined under 'workloads.{area}' in {CONFIG_FILE}.")
+    """Start migration for the selected area."""
+
+    config_file = _config_path(area)
+
+    print()
+    print(f"🚀 Starting migration ({area})...")
+    print(f"   📄 Config: {config_file}")
+    print(f"   💾 State:  {_db_path(area)}")
+
+    if area == "onedrive":
+        print(
+            "   ℹ️  OneDrive runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.onedrive' in the selected config."
+        )
+
+    elif area == "teams":
+        print(
+            "   ℹ️  Teams runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.teams' in the selected config."
+        )
+
+    elif area == "sharepoint":
+        print(
+            "   ℹ️  SharePoint runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.sharepoint' in the selected config."
+        )
+
     cmd = [
-        sys.executable, "-m", "migration.orchestration.cli",
-        "--state-dir", STATE_DIR,
-        "batch", "--config", CONFIG_FILE,
-        "--report-dir", REPORT_DIR,
+        sys.executable,
+        "-m",
+        "migration.orchestration.cli",
+        "--state-dir",
+        STATE_DIR,
+        "batch",
+        "--config",
+        config_file,
+        "--report-dir",
+        REPORT_DIR,
+        "--area",
+        area,
     ]
     if retry_failed_only:
         cmd.append("--retry-failed-only")
-    subprocess.run(cmd, cwd=os.getcwd())
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        print()
+        print(f"❌ Migration failed with exit code {exc.returncode}")
+    except KeyboardInterrupt:
+        print()
+        print("⏹️ Migration stopped by user.")
 
 
 def monitor_progress(area: str) -> None:
@@ -232,11 +284,54 @@ def clear_batch_state(area: str) -> None:
     print("✓ Batch checkpoint cleared\n")
 
 
+def validate_migration(area: str) -> None:
+    """Option 7: post-migration integrity check - a separate pass from the
+    copy itself (size always, content hash optionally). SharePoint's
+    file/folder counts are already checked as part of the retry pass
+    (option 6), so this is onedrive/teams only.
+    """
+    if area == "sharepoint":
+        print(f"\n  ℹ️  SharePoint validation already runs as part of option 6's retry pass - see {REPORT_DIR}/sharepoint-migration-result.json's 'validation' field.\n")
+        return
+
+    config_file = _config_path(area)
+    verify_hash = False
+    if area == "onedrive":
+        answer = input("Also compare content hashes, not just file size? Slower but higher confidence (y/N): ").strip().lower()
+        verify_hash = answer in ("y", "yes")
+
+    print(f"\n🔍 Validating migrated {area} data against source...")
+    cmd = [
+        sys.executable,
+        "-m",
+        "migration.orchestration.cli",
+        "--state-dir",
+        STATE_DIR,
+        "validate",
+        "--config",
+        config_file,
+        "--area",
+        area,
+        "--report-dir",
+        REPORT_DIR,
+    ]
+    if verify_hash:
+        cmd.append("--hash")
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        print()
+        print(f"❌ Validation failed with exit code {exc.returncode}")
+        return
+    print(f"\n  ℹ️  See {REPORT_DIR}/{area}-validation-result.json for the full per-item report.\n")
+
+
 def main() -> None:
     area = "sharepoint"
     while True:
         print_menu(area)
-        choice = input("Enter choice (1-8): ").strip()
+        choice = input("Enter choice (1-9): ").strip()
         if choice == "1":
             area = select_area()
         elif choice == "2":
@@ -250,8 +345,10 @@ def main() -> None:
         elif choice == "6":
             retry_failed_items(area)
         elif choice == "7":
-            clear_batch_state(area)
+            validate_migration(area)
         elif choice == "8":
+            clear_batch_state(area)
+        elif choice == "9":
             print("\n✅ Goodbye!\n")
             sys.exit(0)
         else:

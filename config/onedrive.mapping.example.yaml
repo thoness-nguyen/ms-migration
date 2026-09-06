@@ -1,6 +1,0 @@
-# OneDrive is user-owned and can use the master user mapping.
-users:
-  - user: alice
-    action: graph-copy
-  - user: bob
-    action: graph-copy

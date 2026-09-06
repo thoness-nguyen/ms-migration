@@ -1,0 +1,35 @@
+{
+  "migration_id": "onedrive-pilot-001",
+  "area": "onedrive",
+  "generated_at": "2026-09-06T05:45:11.120196+00:00",
+  "dry_run": false,
+  "summary": {
+    "overall_status": "completed",
+    "failed_item_count": 0,
+    "mismatched_libraries": [],
+    "areas_needing_attention": []
+  },
+  "results": [
+    {
+      "workload": "onedrive",
+      "user": "thanh.nguyen",
+      "status": "completed",
+      "items": 6,
+      "stats": {
+        "files_copied": 6,
+        "skipped": 5,
+        "failed": 0,
+        "errors": []
+      },
+      "retry_count": 0
+    }
+  ],
+  "planned_workload": {
+    "users": [
+      {
+        "user": "thanh.nguyen",
+        "action": "graph-copy"
+      }
+    ]
+  }
+}

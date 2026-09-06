@@ -56,7 +56,7 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
         missing = [key for key in member_keys if key not in user_map]
         if missing:
             raise ValueError(f"Chat {entry.get('name', entry.get('source_chat_id'))} references unknown users: {', '.join(missing)}")
-        chats.append({"name": entry.get("name"), "source_chat_id": entry.get("source_chat_id"), "user_map": {next(user["source_id"] for user in users if user["key"] == key): user_map[key] for key in member_keys}})
+        chats.append({"name": entry.get("name"), "source_chat_id": entry.get("source_chat_id"), "user_map": {next(user["source_id"] for user in users if user["key"] == key): user_map[key] for key in member_keys}, "member_keys": member_keys})
     normalized_workloads: dict[str, Any] = {key: value for key, value in workloads.items() if key != "teams"}
     if isinstance(normalized_workloads.get("onedrive"), str):
         normalized_workloads["onedrive"] = _load_data((plan_dir / normalized_workloads["onedrive"]).resolve())
@@ -99,6 +99,10 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
     results: list[dict[str, Any]] = []
     for index, entry in enumerate(plan.get("chats", []), start=1):
         name = entry.get("name", f"chat-{index}")
+        # "user_key" for a chat is every member's mapping-file key joined together
+        # (a chat isn't owned by one user), so status/validation can be filtered
+        # to "everything involving user X" the same way onedrive items are.
+        user_key = ",".join(entry.get("member_keys", [])) or None
         result: dict[str, Any] = {"name": name, "source_chat_id": entry.get("source_chat_id"), "status": "failed", "messages": 0}
         try:
             source_chat_id = entry.get("source_chat_id")
@@ -118,14 +122,14 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats)
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key)
             result.update({"status": "dry-run" if dry_run else "completed", "target_chat_id": target_chat_id, "messages": count, "bundle": str(bundle_path), "skipped_system_messages": stats.get("skipped_system", 0), "unsupported_features": stats.get("unsupported_features", 0)})
             if not dry_run:
-                state.mark("batch-chat", source_chat_id, "completed", target_chat_id)
+                state.mark("batch-chat", source_chat_id, "completed", target_chat_id, user_key=user_key)
         except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
             result["error"] = str(error)
             if not dry_run:
-                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=str(error))
+                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=str(error), user_key=user_key)
         results.append(result)
     return results
 
@@ -133,6 +137,10 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
 def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     content_concurrency = _concurrency(plan, "onedrive", "content", default=4)
+    migrate_permissions = bool(plan.get("workloads", {}).get("onedrive", {}).get("migrate_permissions", False))
+    # Full source->target user_map (not just this one user) so a file's
+    # sharing grants to *other* migrated users can also be translated.
+    tenant_user_map = {u["source_id"]: u["target_id"] for u in plan.get("users", []) if u.get("source_id") and u.get("target_id")}
     for entry in plan.get("workloads", {}).get("onedrive", {}).get("users", []):
         user_key = entry.get("user")
         user = next((item for item in plan.get("users", []) if item.get("key") == user_key), None)
@@ -146,17 +154,18 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 result.update({"status": "skipped", "reason": "already completed"})
             elif retry_failed_only:
                 print(f"[DEBUG] Retry-failed-only mode: re-attempting previously failed items for OneDrive user {user_key}")
-                stats = retry_failed_onedrive_files(source_graph, target_graph, source_id, target_id, state, content_concurrency=content_concurrency)
+                stats = retry_failed_onedrive_files(source_graph, target_graph, source_id, target_id, state, content_concurrency=content_concurrency, user_key=user_key, user_map=tenant_user_map, migrate_permissions=migrate_permissions)
                 failed_count = stats.get("failed", 0) + stats.get("still_missing_parent", 0)
                 result.update({"status": "completed" if failed_count == 0 else "completed_with_failures", "items": stats.get("files_copied", 0), "stats": stats})
                 if failed_count == 0:
-                    state.mark("batch-onedrive", source_id, "completed", target_id)
+                    state.mark("batch-onedrive", source_id, "completed", target_id, user_key=user_key)
                 else:
-                    state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) still failing after targeted retry")
+                    state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) still failing after targeted retry", user_key=user_key)
             else:
                 stats, success, last_error, attempts = with_retry(
                     copy_drive, source_graph, target_graph, source_id, target_id, state, dry_run,
                     content_concurrency=content_concurrency,
+                    user_key=user_key, user_map=tenant_user_map, migrate_permissions=migrate_permissions,
                     max_retries=3,
                     on_retry=lambda attempt, error: print(f"[RETRY] OneDrive {user_key} attempt {attempt} failed: {type(error).__name__}: {error}"),
                 )
@@ -167,20 +176,20 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                     result.update({"status": ("dry-run" if dry_run else ("completed" if fully_complete else "completed_with_failures")), "items": items, "stats": stats if isinstance(stats, dict) else None, "retry_count": attempts - 1})
                     if not dry_run:
                         if fully_complete:
-                            state.mark("batch-onedrive", source_id, "completed", target_id)
+                            state.mark("batch-onedrive", source_id, "completed", target_id, user_key=user_key)
                         else:
                             # Per-item failures exist - do NOT mark complete, or a future
                             # run would skip this user and never retry the missing items.
-                            state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) failed - will retry on next run")
+                            state.mark("batch-onedrive", source_id, "pending", detail=f"{failed_count} item(s) failed - will retry on next run", user_key=user_key)
                 else:
                     error_msg = f"{type(last_error).__name__}: {str(last_error)[:1000]}" if last_error else "Copy failed"
                     result.update({"status": "failed", "error": error_msg, "retry_count": attempts - 1})
                     if not dry_run:
-                        state.mark("batch-onedrive", str(user_key), "failed", detail=error_msg[:2000])
+                        state.mark("batch-onedrive", str(user_key), "failed", detail=error_msg[:2000], user_key=user_key)
         except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
             result["error"] = str(error)
             if not dry_run:
-                state.mark("batch-onedrive", str(user_key), "failed", detail=str(error))
+                state.mark("batch-onedrive", str(user_key), "failed", detail=str(error), user_key=user_key)
         results.append(result)
     return results
 
@@ -444,37 +453,46 @@ def run_batch(
     output_dir: Path,
     dry_run: bool = False,
     retry_failed_only: bool = False,
+    area: str | None = None,
 ) -> dict[str, Any]:
     """Coordinate execution across domains. Contains no domain-specific migration logic itself.
 
-    `states` must provide one StateStore per area ("sharepoint", "onedrive",
-    "teams" - see common/checkpoint.py's CHECKPOINT_AREAS) so each area's
-    checkpoint data lives in its own database. Each area also gets its own
-    `<area>-migration-result.json` report under `output_dir` instead of one
-    generic combined file, so results are easy to find per workload.
+    `states` must provide one StateStore per area to be run ("sharepoint",
+    "onedrive", "teams" - see common/checkpoint.py's CHECKPOINT_AREAS) so each
+    area's checkpoint data lives in its own database. Each area also gets its
+    own `<area>-migration-result.json` report under `output_dir` instead of
+    one generic combined file, so results are easy to find per workload.
+
+    If `area` is given, only that area is run (and only its report file is
+    written) - a run scoped to one area must never execute, or overwrite the
+    report of, another area.
     """
     output_dir.mkdir(parents=True, exist_ok=True)
-    area_results = {
-        "teams": _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run),
-        "onedrive": _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only),
-        "sharepoint": _run_batch_sharepoint(source_graph, target_graph, plan, states["sharepoint"], dry_run, retry_failed_only),
+    area_runners = {
+        "teams": lambda: _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run),
+        "onedrive": lambda: _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only),
+        "sharepoint": lambda: _run_batch_sharepoint(source_graph, target_graph, plan, states["sharepoint"], dry_run, retry_failed_only),
     }
+    if area is not None and area not in area_runners:
+        raise ValueError(f"Unknown area: {area!r} (expected one of {tuple(area_runners)})")
+    selected_areas = [area] if area is not None else list(area_runners)
+    area_results = {a: area_runners[a]() for a in selected_areas}
     planned = plan.get("workloads", {})
     generated_at = datetime.now(UTC).isoformat()
     areas_report: dict[str, Any] = {}
-    for area, results in area_results.items():
+    for a, results in area_results.items():
         summary = _summarize(results)
         report = {
             "migration_id": plan.get("migration_id"),
-            "area": area,
+            "area": a,
             "generated_at": generated_at,
             "dry_run": dry_run,
             "summary": summary,
             "results": results,
-            "planned_workload": planned.get(area),
+            "planned_workload": planned.get(a),
         }
-        (output_dir / f"{area}-migration-result.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
-        areas_report[area] = report
+        (output_dir / f"{a}-migration-result.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+        areas_report[a] = report
         if not dry_run:
-            _print_summary(area, summary)
+            _print_summary(a, summary)
     return {"migration_id": plan.get("migration_id"), "generated_at": generated_at, "dry_run": dry_run, "areas": areas_report}
