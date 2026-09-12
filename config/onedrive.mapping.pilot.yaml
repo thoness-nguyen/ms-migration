@@ -1,7 +1,230 @@
 migrate_permissions: true
+
 users:
-  - user: thanh.nguyen
+  - user: andrew
+    action: graph-copy
+
+  - user: angel
+    action: graph-copy
+
+  - user: anh
+    action: graph-copy
+
+  - user: anh.thi
+    action: graph-copy
+
+  - user: anna
+    action: graph-copy
+
+  - user: anthony
+    action: graph-copy
+
+  - user: cecilia
+    action: graph-copy
+
+  - user: chinh
+    action: graph-copy
+
+  - user: chloe
+    action: graph-copy
+
+  - user: daisy
+    action: graph-copy
+
+  - user: danny
+    action: graph-copy
+
+  - user: daphnee
+    action: graph-copy
+
+  - user: diep
+    action: graph-copy
+
+  - user: dung.nguyen
+    action: graph-copy
+
+  - user: emma
+    action: graph-copy
+
+  - user: felix
+    action: graph-copy
+
+  - user: fred
+    action: graph-copy
+
+  - user: glen
+    action: graph-copy
+
+  - user: ha.ho
+    action: graph-copy
+
+  - user: hana
+    action: graph-copy
+
+  - user: hank
+    action: graph-copy
+
+  - user: hien
+    action: graph-copy
+
+  - user: hoaianh
+    action: graph-copy
+
+  - user: hoanganh
+    action: graph-copy
+
+  - user: hongan
+    action: graph-copy
+
+  - user: hop
+    action: graph-copy
+
+  - user: hung
+    action: graph-copy
+
+  - user: huyen
+    action: graph-copy
+
+  - user: james
+    action: graph-copy
+
+  - user: jason
+    action: graph-copy
+
+  - user: kevin
     action: graph-copy
 
   - user: kevinc
+    action: graph-copy
+
+  - user: khanhha
+    action: graph-copy
+
+  - user: kim.loan
+    action: graph-copy
+
+  - user: marcus
+    action: graph-copy
+
+  - user: ngoc
+    action: graph-copy
+
+  - user: nguyen
+    action: graph-copy
+
+  - user: nguyet
+    action: graph-copy
+
+  - user: nhattan
+    action: graph-copy
+
+  - user: nhuy
+    action: graph-copy
+
+  - user: ni
+    action: graph-copy
+
+  - user: oanh
+    action: graph-copy
+
+  - user: patryc
+    action: graph-copy
+
+  - user: paul.gerrard
+    action: graph-copy
+
+  - user: phuongchi
+    action: graph-copy
+
+  - user: quoc
+    action: graph-copy
+
+  - user: quynh.anh
+    action: graph-copy
+
+  - user: raymond
+    action: graph-copy
+
+  - user: sana
+    action: graph-copy
+
+  - user: sarah
+    action: graph-copy
+
+  - user: sophia
+    action: graph-copy
+
+  - user: su
+    action: graph-copy
+
+  - user: suong
+    action: graph-copy
+
+  - user: tam
+    action: graph-copy
+
+  - user: thanh.nguyen
+    action: graph-copy
+
+  - user: thohuong
+    action: graph-copy
+
+  - user: thu.truong
+    action: graph-copy
+
+  - user: thuy
+    action: graph-copy
+
+  - user: thuydung
+    action: graph-copy
+
+  - user: tinh
+    action: graph-copy
+
+  - user: toan
+    action: graph-copy
+
+  - user: toan.le
+    action: graph-copy
+
+  - user: trang
+    action: graph-copy
+
+  - user: trang.nguyen
+    action: graph-copy
+
+  - user: travis
+    action: graph-copy
+
+  - user: truc
+    action: graph-copy
+
+  - user: uyen
+    action: graph-copy
+
+  - user: van
+    action: graph-copy
+
+  - user: vanlanh
+    action: graph-copy
+
+  - user: winnie
+    action: graph-copy
+
+  - user: winson
+    action: graph-copy
+
+  - user: yen
+    action: graph-copy
+
+  - user: yen.hoang
+    action: graph-copy
+
+  - user: jimmy
+    action: graph-copy
+
+  - user: khanh
+    action: graph-copy
+
+  - user: trinh.nguyen
     action: graph-copy

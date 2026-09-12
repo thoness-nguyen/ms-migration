@@ -1,11 +1,11 @@
 {
   "migration_id": "onedrive-pilot-001",
   "area": "onedrive",
-  "generated_at": "2026-09-06T09:39:36.048231+00:00",
+  "generated_at": "2026-09-12T04:43:53.855347+00:00",
   "dry_run": false,
   "summary": {
-    "overall_status": "completed_with_failed_items",
-    "failed_item_count": 5,
+    "overall_status": "completed",
+    "failed_item_count": 0,
     "mismatched_libraries": [],
     "areas_needing_attention": []
   },
@@ -20,37 +20,1485 @@
     {
       "workload": "onedrive",
       "user": "kevinc",
-      "status": "completed_with_failures",
-      "items": 0,
+      "status": "completed",
+      "items": 240,
       "stats": {
-        "files_copied": 0,
+        "files_copied": 240,
         "skipped": 0,
-        "failed": 5,
-        "errors": [
+        "failed": 0,
+        "errors": [],
+        "permission_errors": [
           {
             "item": "Attachments",
-            "type": "folder",
-            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"214f0f24-bae3-42cd-97a7-2c303f716d10\",\"client-request-id\":\"214f0f24-bae3-42cd-97a7-2c303f716d10\"}}}"
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GBPD2ITNGWGFF23LUH7J7QDYAH/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:25\",\"request-id\":\"96f05bb4-6ee1-40f4-a7c0-0578ce0eeb2e\",\"client-request-id\":\"96f05bb4-6ee1-40f4-a7c0-0578ce0eeb2e\"}}}"
+            ]
           },
           {
             "item": "Meetings",
-            "type": "folder",
-            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"26c1ad90-b214-4917-b783-0df428780b86\",\"client-request-id\":\"26c1ad90-b214-4917-b783-0df428780b86\"}}}"
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H3764I663UJZFJCU2EET6KX2AJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:26\",\"request-id\":\"847e581c-0ccf-46b6-bea2-28eb317fc0f4\",\"client-request-id\":\"847e581c-0ccf-46b6-bea2-28eb317fc0f4\"}}}",
+              "no target mapping or email for permission grantee None"
+            ]
           },
           {
             "item": "Microsoft Copilot Chat Files",
-            "type": "folder",
-            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"839d50b1-7184-4fcd-a855-c3871c620b18\",\"client-request-id\":\"839d50b1-7184-4fcd-a855-c3871c620b18\"}}}"
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D4SQCE3N4MXFGKAY6P5X7SY4HK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:28\",\"request-id\":\"3fbbb841-652c-4267-aa90-e7d3281d7918\",\"client-request-id\":\"3fbbb841-652c-4267-aa90-e7d3281d7918\"}}}"
+            ]
           },
           {
             "item": "Microsoft Teams Chat Files",
-            "type": "folder",
-            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"a1b53eff-8eff-42fa-8e22-a2b2758d29b8\",\"client-request-id\":\"a1b53eff-8eff-42fa-8e22-a2b2758d29b8\"}}}"
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HKUI2VKOGUZVGLUA7LZS6U5KQC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:29\",\"request-id\":\"e537cdcd-cfd5-4802-95ed-ec501229cf32\",\"client-request-id\":\"e537cdcd-cfd5-4802-95ed-ec501229cf32\"}}}"
+            ]
           },
           {
             "item": "Recordings",
-            "type": "folder",
-            "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-06T09:39:35\",\"request-id\":\"b354aace-fb8f-4de0-b3fc-4119b5a09631\",\"client-request-id\":\"b354aace-fb8f-4de0-b3fc-4119b5a09631\"}}}"
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AHCA53K4R7NNDKTESUOD56LWAH/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:32\",\"request-id\":\"0eb66fbb-01f2-4027-93c8-6a8c0e8f7d72\",\"client-request-id\":\"0eb66fbb-01f2-4027-93c8-6a8c0e8f7d72\"}}}",
+              "no target mapping or email for permission grantee None"
+            ]
+          },
+          {
+            "item": "[Template] Probation Onboarding Performance Appraisal - Manager Name.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G6ORVBUKEPNVE2HDNGSTGN54GI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:36\",\"request-id\":\"d2d6b45e-775a-4b8c-bf05-ac27f48b1404\",\"client-request-id\":\"d2d6b45e-775a-4b8c-bf05-ac27f48b1404\"}}}"
+            ]
+          },
+          {
+            "item": "(Draft) Service Agreement PAIZES VN - PAIZES HK.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GZCUEM3UHWXZEKOCUE346GPJQP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:36\",\"request-id\":\"3d2fb5ff-33f0-4383-a149-d1ea84a04c97\",\"client-request-id\":\"3d2fb5ff-33f0-4383-a149-d1ea84a04c97\"}}}"
+            ]
+          },
+          {
+            "item": "0.1.1927. Ca\u0302\u0301p mo\u031b\u0301i GPL\u0110 CO\u0302NG TY TNHH PAIZES TRADING VIE\u0323\u0302T NAM-MAI BOSCO KHOI.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AOVTZAWBDCBJGL6FL4XZMMUWDX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:37\",\"request-id\":\"1cb2bfaf-ca1f-4e87-9cce-598a46314dbc\",\"client-request-id\":\"1cb2bfaf-ca1f-4e87-9cce-598a46314dbc\"}}}"
+            ]
+          },
+          {
+            "item": "03. Ba\u0309ng Lie\u0323\u0302t Ke\u0302 Thie\u0302\u0301t Bi\u0323 SD \u0110ie\u0323\u0302n D6.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H4QUTMB4REOFDZZRH3OVDIM7V4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:40\",\"request-id\":\"aad7cbc3-2940-44e9-b979-6961e44a0e5b\",\"client-request-id\":\"aad7cbc3-2940-44e9-b979-6961e44a0e5b\"}}}"
+            ]
+          },
+          {
+            "item": "03. Ba\u0309ng Lie\u0323\u0302t Ke\u0302 Thie\u0302\u0301t Bi\u0323 SD \u0110ie\u0323\u0302n E6.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FKKK34U6UBSRAIW2NL4HH45DFA/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:40\",\"request-id\":\"bf6ba31f-8f00-43a9-b498-56be8c0acb29\",\"client-request-id\":\"bf6ba31f-8f00-43a9-b498-56be8c0acb29\"}}}"
+            ]
+          },
+          {
+            "item": "04. Bie\u0302\u0309u \u0110o\u0302\u0300 Phu\u0323 Ta\u0309i D6.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FC5YDZED4W35AZPQKWHXRKYTDB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:40\",\"request-id\":\"29208d0b-af3d-4088-81b7-778eb1530b04\",\"client-request-id\":\"29208d0b-af3d-4088-81b7-778eb1530b04\"}}}"
+            ]
+          },
+          {
+            "item": "008 - Paizes VN x BMK - Corporate Governance - EL - Signed.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FC3SEJZFRN35AI5GOIWAUDG7UU/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:41\",\"request-id\":\"0806a512-36a0-4a86-8f64-2cc59d935c57\",\"client-request-id\":\"0806a512-36a0-4a86-8f64-2cc59d935c57\"}}}"
+            ]
+          },
+          {
+            "item": "1 - Cv Nguyen Ngoc Minh (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DT2QC2FDJBWJGZQEXQCS7T2PKC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:43\",\"request-id\":\"28e65462-1f27-48ea-8d7f-59c0db263865\",\"client-request-id\":\"28e65462-1f27-48ea-8d7f-59c0db263865\"}}}"
+            ]
+          },
+          {
+            "item": "04. Bie\u0302\u0309u \u0110o\u0302\u0300 Phu\u0323 Ta\u0309i E6.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DUAHQ63OK3ERBK7DS6HZKLJR6L/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:43\",\"request-id\":\"4e549b50-cbac-4a72-b14c-5b9d23d75ba4\",\"client-request-id\":\"4e549b50-cbac-4a72-b14c-5b9d23d75ba4\"}}}"
+            ]
+          },
+          {
+            "item": "1- TEST Packing (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AOXIB35SV2SJEJMT2WIQOF2AP4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:44\",\"request-id\":\"12947229-fe52-4579-a1f9-6e935744c770\",\"client-request-id\":\"12947229-fe52-4579-a1f9-6e935744c770\"}}}"
+            ]
+          },
+          {
+            "item": "1 - TEST DAYBED (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HSRNEUX5MVCJFJ5QGW6WMBZ7OD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:45\",\"request-id\":\"f5e78676-34cb-4bdc-9c41-9000748abc04\",\"client-request-id\":\"f5e78676-34cb-4bdc-9c41-9000748abc04\"}}}"
+            ]
+          },
+          {
+            "item": "1.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CVZEA7TI4WHZAY33URH52KRH4L/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:45\",\"request-id\":\"e8758c36-78b2-4e0a-a684-fa75d80a7c50\",\"client-request-id\":\"e8758c36-78b2-4e0a-a684-fa75d80a7c50\"}}}"
+            ]
+          },
+          {
+            "item": "14 - HCM Accountant AP NGUYEN TRAN THUC ANH.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HB3SXBWHQFDVG25JRIGKWIK4XT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:46\",\"request-id\":\"0273aaf1-9bb3-43c0-a181-1a1925e57cba\",\"client-request-id\":\"0273aaf1-9bb3-43c0-a181-1a1925e57cba\"}}}"
+            ]
+          },
+          {
+            "item": "1-P17 Harbour Cost - Zhengte 240920.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FSCBPILNY5HNFIN4D4CWAC66LD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:47\",\"request-id\":\"6bdf70dd-5fdc-417d-b505-be3d5d6c194b\",\"client-request-id\":\"6bdf70dd-5fdc-417d-b505-be3d5d6c194b\"}}}"
+            ]
+          },
+          {
+            "item": "16 - HCM_AP&AR_Thuy Hang (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EIOUDNKVPN7JAZWURVLIUZSTQY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:47\",\"request-id\":\"ab856663-c585-4fbb-b7e7-4a8319ef9d6a\",\"client-request-id\":\"ab856663-c585-4fbb-b7e7-4a8319ef9d6a\"}}}"
+            ]
+          },
+          {
+            "item": "1-P17 Harbour Cost - Zhengte.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DIIU3TBTDQKFHLG2JIETSJU5SK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:48\",\"request-id\":\"61a618bf-995f-4270-96fa-46e5a77a4769\",\"client-request-id\":\"61a618bf-995f-4270-96fa-46e5a77a4769\"}}}"
+            ]
+          },
+          {
+            "item": "2 - Nguyen_Tran_Thao__Nguyen_373432AA.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FHJFAN43XWCBF24DWEOKPTQS4G/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:49\",\"request-id\":\"7878bb5d-0e55-4637-93ea-dfd83f8424af\",\"client-request-id\":\"7878bb5d-0e55-4637-93ea-dfd83f8424af\"}}}"
+            ]
+          },
+          {
+            "item": "2 - Vo Van Trung.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EL7MAP245AXNGIIUSL5VY2TWYA/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:51\",\"request-id\":\"3f92b38b-445b-42cd-87fd-ac6f67acab02\",\"client-request-id\":\"3f92b38b-445b-42cd-87fd-ac6f67acab02\"}}}"
+            ]
+          },
+          {
+            "item": "2 - TEST Mr Trung_Daybed_2025 October 24 TEST (2).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FPM56ZCXHQGZALD7OVFOTUJAZG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:51\",\"request-id\":\"039097ec-9d2d-4264-9de9-6d6f1ecbf839\",\"client-request-id\":\"039097ec-9d2d-4264-9de9-6d6f1ecbf839\"}}}"
+            ]
+          },
+          {
+            "item": "2.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BUBNTHTM7QABCYNCP32BVBFRFY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:51\",\"request-id\":\"09def44f-5ad0-415c-8fdd-2e5f9f48cd2c\",\"client-request-id\":\"09def44f-5ad0-415c-8fdd-2e5f9f48cd2c\"}}}"
+            ]
+          },
+          {
+            "item": "2024 Calendar - Vietnamese Public Holidays.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DQ5S6KGOCMXNBJ6Z3CBX34PBE4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:51\",\"request-id\":\"f30f8264-7dd1-4064-b833-bb3263b6dba1\",\"client-request-id\":\"f30f8264-7dd1-4064-b833-bb3263b6dba1\"}}}"
+            ]
+          },
+          {
+            "item": "2026_Nguyen Vi Hoang Yen_CV Accountant 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HPGU552NYVLVC2CWE6DYLJY37T/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:54\",\"request-id\":\"2046f72f-4357-410b-ae8c-2283925b1169\",\"client-request-id\":\"2046f72f-4357-410b-ae8c-2283925b1169\"}}}"
+            ]
+          },
+          {
+            "item": "2024. EVISA - THO\u0302NG TIN CUNG CA\u0302\u0301P (7).docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FO7JWK3GZW55EYBU2JL4253WII/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:54\",\"request-id\":\"b2d18905-dc65-453f-9736-0cdf6f7ce8ad\",\"client-request-id\":\"b2d18905-dc65-453f-9736-0cdf6f7ce8ad\"}}}"
+            ]
+          },
+          {
+            "item": "20250311_Submission drawing_Harbour_Fitout (dragged).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CA6AMLWLMDTZA2D3YL65KTVWW3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:54\",\"request-id\":\"b87c4458-eca2-486e-b255-4eafad82e5f8\",\"client-request-id\":\"b87c4458-eca2-486e-b255-4eafad82e5f8\"}}}"
+            ]
+          },
+          {
+            "item": "2026_Nguyen Vi Hoang Yen_CV Accountant.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FLFOAQ4H7LFNH2FYZFXQ74R7VM/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:54\",\"request-id\":\"5c5d1879-3824-4985-ac76-78ccce5e3a6b\",\"client-request-id\":\"5c5d1879-3824-4985-ac76-78ccce5e3a6b\"}}}"
+            ]
+          },
+          {
+            "item": "23 - CV_HUYNH THI TRUC CHI_GENERAL  ACCOUNTANT.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D3CPVSXXFRYRE2F6RSAJWP5JSV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:56\",\"request-id\":\"5abf3170-c8c3-4ff0-b66d-9bc63d6d9ab4\",\"client-request-id\":\"5abf3170-c8c3-4ff0-b66d-9bc63d6d9ab4\"}}}"
+            ]
+          },
+          {
+            "item": "21 - Chief Acc HCMC CV - Thuong Tran - Chief Accountant (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C4T6JECJYC3REJW3G66MOGDURM/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:56\",\"request-id\":\"a6131e8a-9bd8-444b-9a27-e053f0687d59\",\"client-request-id\":\"a6131e8a-9bd8-444b-9a27-e053f0687d59\"}}}"
+            ]
+          },
+          {
+            "item": "24 - Minh Tri Dang_Jan 25.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EUJKAHTTDWZVGJLXWZ7TWQQWIA/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:57\",\"request-id\":\"25e5b0a0-d5f4-4df2-91a0-677b68cacec1\",\"client-request-id\":\"25e5b0a0-d5f4-4df2-91a0-677b68cacec1\"}}}"
+            ]
+          },
+          {
+            "item": "24 11 18 EVISA RESULT OF YE GAO FEI .pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CMNTVSNUGAPRELH36NLP6GKCMI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:57\",\"request-id\":\"8d2b6c79-bf5f-47a2-89d8-635ebcc0edb1\",\"client-request-id\":\"8d2b6c79-bf5f-47a2-89d8-635ebcc0edb1\"}}}"
+            ]
+          },
+          {
+            "item": "240718 Invoice IDA 2024071817 - VN office suppl.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CZM72WL4YSMVFKJRCTPULEFCPT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:59\",\"request-id\":\"7391e93a-0bca-4d8c-998c-7808831dfd89\",\"client-request-id\":\"7391e93a-0bca-4d8c-998c-7808831dfd89\"}}}"
+            ]
+          },
+          {
+            "item": "2409 VN Operation - Financial Report.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CAOU2TWI2AMZG3FGKAENHHOTIX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:59\",\"request-id\":\"83b493a4-07ac-4db2-81d5-395e976a772c\",\"client-request-id\":\"83b493a4-07ac-4db2-81d5-395e976a772c\"}}}"
+            ]
+          },
+          {
+            "item": "241125 Contract Management - Key Infos Tracking.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EYOOYMQJ5L3VF2SPUPBOJFVACV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:40:59\",\"request-id\":\"562e5f21-2daf-4d72-b438-7153d2626ea5\",\"client-request-id\":\"562e5f21-2daf-4d72-b438-7153d2626ea5\"}}}"
+            ]
+          },
+          {
+            "item": "25 VN Operation - Financial Report 251031 WINNIE.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CFCVTCTZ6QJNH2374BMO3JZFQ2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:01\",\"request-id\":\"bca9b63d-304b-428c-9289-16733be66be8\",\"client-request-id\":\"bca9b63d-304b-428c-9289-16733be66be8\"}}}"
+            ]
+          },
+          {
+            "item": "25 VN Operation - Financial Report 251125 forecast vWinnie.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AYWI726TWXRJH2SRKRZSNC7XPF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:01\",\"request-id\":\"c5cde38d-a721-41d9-a011-4b2aa530ccd7\",\"client-request-id\":\"c5cde38d-a721-41d9-a011-4b2aa530ccd7\"}}}"
+            ]
+          },
+          {
+            "item": "25 VN Operation - Financial Report 251130 v2 Winnie.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D7M3SPJ7CXX5AY5OGU73LRONNX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:02\",\"request-id\":\"32199c8e-df70-40c1-8de5-93b5b385dc80\",\"client-request-id\":\"32199c8e-df70-40c1-8de5-93b5b385dc80\"}}}"
+            ]
+          },
+          {
+            "item": "250811 Foger Appraisal.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CWO5QMOZ3PGFDJ3OO6WTHOYNJL/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:03\",\"request-id\":\"5d2edac0-bd25-4d49-88d1-0a03a9838c54\",\"client-request-id\":\"5d2edac0-bd25-4d49-88d1-0a03a9838c54\"}}}"
+            ]
+          },
+          {
+            "item": "260116 Forescast Paizes VN 2025-2026.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73APCVVYF7JV4NHJ3F6SAQKKFROV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:03\",\"request-id\":\"ee46c7ef-5da2-450b-afdc-fd3a13e66160\",\"client-request-id\":\"ee46c7ef-5da2-450b-afdc-fd3a13e66160\"}}}"
+            ]
+          },
+          {
+            "item": "260204 Financial forescast Paizes VN 2025-2026.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C45V6RAV2Q3RGYEPSTCPP7LS5R/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:04\",\"request-id\":\"4262daf4-9e01-4636-bcf0-c837179f6c9c\",\"client-request-id\":\"4262daf4-9e01-4636-bcf0-c837179f6c9c\"}}}"
+            ]
+          },
+          {
+            "item": "260318 Financial and cash reports Paizes VN 2025-2026 v2.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DRNUAP5477JVHYT6F6KNGPMWEI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:04\",\"request-id\":\"c055448a-9265-40ad-a687-65bd3ce9fb13\",\"client-request-id\":\"c055448a-9265-40ad-a687-65bd3ce9fb13\"}}}"
+            ]
+          },
+          {
+            "item": "260325 Financial and cash reports Paizes VN 2025-2026 v2.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DDNHKWDH2VYVCY67K6TIL44JS7/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:06\",\"request-id\":\"ababdf0c-7d0c-43f7-a33c-e31d277c29d9\",\"client-request-id\":\"ababdf0c-7d0c-43f7-a33c-e31d277c29d9\"}}}"
+            ]
+          },
+          {
+            "item": "260331 HOA Bosco Resignation Letter.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ARYQIPWRE4ZJELLQUX3BQP33JU/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:06\",\"request-id\":\"5caa9599-c493-4d17-97f2-da3fa274e07c\",\"client-request-id\":\"5caa9599-c493-4d17-97f2-da3fa274e07c\"}}}"
+            ]
+          },
+          {
+            "item": "260504 Financial and cash reports Paizes VN 2025-2026 v2 copy.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BKEKEEIIRUS5CIUIXGD3UEFUFX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:06\",\"request-id\":\"ea5ab201-837d-4f98-8627-882b174c29b8\",\"client-request-id\":\"ea5ab201-837d-4f98-8627-882b174c29b8\"}}}"
+            ]
+          },
+          {
+            "item": "260514 Treasury_Request_May2026.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EW6MUQ4HHBUNEJNZVZXXXZZOXK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:07\",\"request-id\":\"3ce09b5f-fbea-4b1c-85b3-c990798a1069\",\"client-request-id\":\"3ce09b5f-fbea-4b1c-85b3-c990798a1069\"}}}"
+            ]
+          },
+          {
+            "item": "260618 Cashflow_May2026 (1).xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EWD44QCGDEOBEL4ZSL3ZPFWQHE/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:08\",\"request-id\":\"b96d5234-4165-48fd-bc4f-7b062b89ffd2\",\"client-request-id\":\"b96d5234-4165-48fd-bc4f-7b062b89ffd2\"}}}"
+            ]
+          },
+          {
+            "item": "260625 Cash reports Paizes VN 2025-2026 v2 copy.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GUMJ2CEGRRU5ELPR6OGVOYJSL2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:09\",\"request-id\":\"0277f212-fa10-4ae9-a99e-70d4ca0f0f11\",\"client-request-id\":\"0277f212-fa10-4ae9-a99e-70d4ca0f0f11\"}}}"
+            ]
+          },
+          {
+            "item": "3 - Nguyen Ngoc Phuong Chi_Senior Accountant (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EMQPGJSBR5ZFAZERBWHB5W7OBZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:09\",\"request-id\":\"7022c273-e257-4a13-9d9b-b22e6e1eb26f\",\"client-request-id\":\"7022c273-e257-4a13-9d9b-b22e6e1eb26f\"}}}"
+            ]
+          },
+          {
+            "item": "3 - Certificate of change of name.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HUQ3IYJN5MFBE2SDSKL2FGV2PZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:12\",\"request-id\":\"78c0f200-f9e4-4782-8eac-b99903d3cee9\",\"client-request-id\":\"78c0f200-f9e4-4782-8eac-b99903d3cee9\"}}}"
+            ]
+          },
+          {
+            "item": "3 - \u4e2a\u4eba\u7b80\u5386 -\u6885\u6625\u548c-Xuan Hoa (Design Engineer)-Chinese.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D2SBRN6GFZDFHZWSLS6UHOVBGY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:12\",\"request-id\":\"a40ada50-d464-4a43-a01d-860ef8289202\",\"client-request-id\":\"a40ada50-d464-4a43-a01d-860ef8289202\"}}}"
+            ]
+          },
+          {
+            "item": "3.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GATKQ6ON2ZAJGL3BZT3UI6XIWC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:15\",\"request-id\":\"04e98d39-964c-46ff-8f8d-7727857e26f8\",\"client-request-id\":\"04e98d39-964c-46ff-8f8d-7727857e26f8\"}}}"
+            ]
+          },
+          {
+            "item": "31 - AP HCM Accountant_Ms Phuong.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AU5MHHX6SPLJDJQP2XZWGGNR5P/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:15\",\"request-id\":\"f7239454-2bcd-4349-991c-ca50361b4e47\",\"client-request-id\":\"f7239454-2bcd-4349-991c-ca50361b4e47\"}}}"
+            ]
+          },
+          {
+            "item": "32 - AR-GA CV ACC- TRUC VO - 0589988718.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FT6X3FAVZIBNCLYTFWU5TB7AFD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:18\",\"request-id\":\"08715fe0-0860-4a11-bee0-2588ff8ac9a4\",\"client-request-id\":\"08715fe0-0860-4a11-bee0-2588ff8ac9a4\"}}}"
+            ]
+          },
+          {
+            "item": "34 - HCM_APAR Phuong Giao.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BVIETYGH32VVE3H4I4UEP7SSZK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:18\",\"request-id\":\"e2b21322-62bf-483d-ba4c-f54924bd94c9\",\"client-request-id\":\"e2b21322-62bf-483d-ba4c-f54924bd94c9\"}}}"
+            ]
+          },
+          {
+            "item": "39 - APAR CV_LE THI KIM NGAN_ACCOUNTANT.-1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AVQC6NYF2IDBD2YBEUKATLD2WF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:22\",\"request-id\":\"dd77f964-ca7d-4692-90cf-d1ad897a8e32\",\"client-request-id\":\"dd77f964-ca7d-4692-90cf-d1ad897a8e32\"}}}"
+            ]
+          },
+          {
+            "item": "3 - XUAN HOA Design specification-\u8aaa\u660e\u66f8 2026.3.18 (1).dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AE6WNZ234BP5AL5HRETP334MMP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:24\",\"request-id\":\"2de96098-f30a-49b2-ad28-dfe8bd70767b\",\"client-request-id\":\"2de96098-f30a-49b2-ad28-dfe8bd70767b\"}}}"
+            ]
+          },
+          {
+            "item": "3 - XUAN HOA Matira Ext Line - 2026.3.18 (1).dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DWTM6CWFQJNNHJ5R64ZEE2772I/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:25\",\"request-id\":\"262c4b5c-0440-4da7-8cc8-a2df822f23a8\",\"client-request-id\":\"262c4b5c-0440-4da7-8cc8-a2df822f23a8\"}}}"
+            ]
+          },
+          {
+            "item": "38 - Senior Acc HCM_Accountant Netsuite Ms My Nhung.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HAJY6EEMEBRZGKZQ7DX7PAAK32/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:26\",\"request-id\":\"fda2220e-54fc-49b5-88e5-57de94376584\",\"client-request-id\":\"fda2220e-54fc-49b5-88e5-57de94376584\"}}}"
+            ]
+          },
+          {
+            "item": "4.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GEN7K5V5KY65C3LTZVCX2IPHID/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:26\",\"request-id\":\"d0019e88-adcd-4b23-b0a9-198af4952bdf\",\"client-request-id\":\"d0019e88-adcd-4b23-b0a9-198af4952bdf\"}}}"
+            ]
+          },
+          {
+            "item": "4 - K_y_S_u_X_a_Y_D_uN_G_To_Thanh_375D9C5D_1775711070.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BLCDI6LQ45FRA2KF3M6MZQFATO/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:28\",\"request-id\":\"0feb5929-5a42-453f-8146-036da65d3d65\",\"client-request-id\":\"0feb5929-5a42-453f-8146-036da65d3d65\"}}}"
+            ]
+          },
+          {
+            "item": "40 - Accountant_NGUYEN_NGOC_CAM_TIEN_3766586D_1780045855.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G3H4VB2B2DONBYJIW5BU2RZ322/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:28\",\"request-id\":\"11774b0e-8dd4-4cb0-8d24-58220a339f03\",\"client-request-id\":\"11774b0e-8dd4-4cb0-8d24-58220a339f03\"}}}"
+            ]
+          },
+          {
+            "item": "41 - Payable_Receivable_Accountant_Le_Thao_3764B872_1780045802.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ABIKFIPIZ72ZDZODH3A6WD6CFR/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:29\",\"request-id\":\"49d49873-297f-4b11-ae82-d2f7c41341e0\",\"client-request-id\":\"49d49873-297f-4b11-ae82-d2f7c41341e0\"}}}"
+            ]
+          },
+          {
+            "item": "5- Cong_viec_ung_tuyen_Nhan_vien_thiet_ke._nguyen_thanh_chung_375F989D_1775711126.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HTOQYLZZU7RRGIMQGXXF4TLJHK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:31\",\"request-id\":\"732e3ec3-09ea-414b-93bd-3ded34e8f956\",\"client-request-id\":\"732e3ec3-09ea-414b-93bd-3ded34e8f956\"}}}"
+            ]
+          },
+          {
+            "item": "5 - Giu\u031bo\u031b\u0300ng nho\u0302m ( Nguye\u0302\u0303n Tha\u0300nh Chung).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CBFA7G34V6BVGKU2BSSEQJX2VR/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:32\",\"request-id\":\"23ee93ba-0e82-42df-a4cc-e76d607de530\",\"client-request-id\":\"23ee93ba-0e82-42df-a4cc-e76d607de530\"}}}"
+            ]
+          },
+          {
+            "item": "6 - HCM SeniorAcc AP AR DUNG NGUYENTHIHONG.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CRP2S7YYJKEZHYG2ZEEN6ZTRWF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:34\",\"request-id\":\"b6b68842-0ce3-4467-a650-76f3b1fc2bf7\",\"client-request-id\":\"b6b68842-0ce3-4467-a650-76f3b1fc2bf7\"}}}"
+            ]
+          },
+          {
+            "item": "6 - Mr.Bach..pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GNTIQI3BMOIVDYOKCY4MO3IAX4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:35\",\"request-id\":\"fec0f66e-a66f-4401-9841-c0510b2f0efa\",\"client-request-id\":\"fec0f66e-a66f-4401-9841-c0510b2f0efa\"}}}"
+            ]
+          },
+          {
+            "item": "50 NEW OFFICE & SHOWROOM revise 1 (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HNE2RB3FOT7NHK4RZRWI2XQK6Q/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:36\",\"request-id\":\"5be880ba-9699-4748-b5ef-555016accfcd\",\"client-request-id\":\"5be880ba-9699-4748-b5ef-555016accfcd\"}}}"
+            ]
+          },
+          {
+            "item": "6 - mr.Bach.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GFLPE2CDBSCBC3YVEZZ3MUQ6BC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:37\",\"request-id\":\"2e8e4270-3e8d-4acd-95ad-12976f906023\",\"client-request-id\":\"2e8e4270-3e8d-4acd-95ad-12976f906023\"}}}"
+            ]
+          },
+          {
+            "item": "7 - Drafter DN_Nguyen Ba Phi.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AUJFIASUWEBREZFOL32OZMTQIN/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:40\",\"request-id\":\"486535f8-49fb-4dd9-98df-597b234419a1\",\"client-request-id\":\"486535f8-49fb-4dd9-98df-597b234419a1\"}}}"
+            ]
+          },
+          {
+            "item": "6 - Product_Design_Engineer_Nguyen_Bach_375F3DEB_1775711112.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HQ7IN6V66LCVEZN674OTZQHXV4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:40\",\"request-id\":\"ec90c9f0-27d9-46e8-91ce-8562d26e3296\",\"client-request-id\":\"ec90c9f0-27d9-46e8-91ce-8562d26e3296\"}}}"
+            ]
+          },
+          {
+            "item": "7 - test Daybed.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DJQT3FBCL3GBE3JIXVWNWDQTHK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:40\",\"request-id\":\"93256855-49ad-42e3-84c9-422d4558c303\",\"client-request-id\":\"93256855-49ad-42e3-84c9-422d4558c303\"}}}"
+            ]
+          },
+          {
+            "item": "5 - Giu\u031bo\u031b\u0300ng nho\u0302m ( Nguye\u0302\u0303n Tha\u0300nh Chung).dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FRPVGXN4GPFRHLOUGMMEGSF4WZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:42\",\"request-id\":\"d18ff926-513f-4b40-a202-cad59f891761\",\"client-request-id\":\"d18ff926-513f-4b40-a202-cad59f891761\"}}}"
+            ]
+          },
+          {
+            "item": "AME PO.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BQPW5LAL7BKFAJCVLS5MMT64AK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:43\",\"request-id\":\"a8f481b2-6701-40a5-bfa2-ed05475cf339\",\"client-request-id\":\"a8f481b2-6701-40a5-bfa2-ed05475cf339\"}}}"
+            ]
+          },
+          {
+            "item": "Annual review - Foger.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BNLTYILKRDMVCZBXWVUG3RODVZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:43\",\"request-id\":\"73375cc1-d568-4161-a656-341ac3ba51e9\",\"client-request-id\":\"73375cc1-d568-4161-a656-341ac3ba51e9\"}}}"
+            ]
+          },
+          {
+            "item": "9 - HCM Accountant. AP AR PHA\u0323M THI\u0323 TRU\u0301C LINH.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GQ4JPAMPFLURHLKQHTNEPK7GX2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:43\",\"request-id\":\"fe7da8e6-0054-46fa-b292-79f250c96f78\",\"client-request-id\":\"fe7da8e6-0054-46fa-b292-79f250c96f78\"}}}"
+            ]
+          },
+          {
+            "item": "AP - VN 260107 PAIZES - HOA 1.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ATP744INY64ZFYLN5UMJ3DP2HZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:44\",\"request-id\":\"81bf9223-1fb1-4e6b-b1f9-ecd10155452a\",\"client-request-id\":\"81bf9223-1fb1-4e6b-b1f9-ecd10155452a\"}}}"
+            ]
+          },
+          {
+            "item": "AP - VN 260107 PAIZES - HOA.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DAFWW7CHI2HVAJXZRLDSSFRB3Y/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:45\",\"request-id\":\"23d52a3a-f4d5-4947-b107-d949f41e4800\",\"client-request-id\":\"23d52a3a-f4d5-4947-b107-d949f41e4800\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260129 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BS3XDP46CK3FGYG2PIXWM5YNKX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:45\",\"request-id\":\"38925d3e-a181-4250-8be2-38422e9bafa6\",\"client-request-id\":\"38925d3e-a181-4250-8be2-38422e9bafa6\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260203 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E5IH5HDE3CNFDKIZKZ7YMMZCEV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:45\",\"request-id\":\"ec8d24f6-a420-4dfc-8c35-1b7dd21ad406\",\"client-request-id\":\"ec8d24f6-a420-4dfc-8c35-1b7dd21ad406\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260304 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AV3J272H6LTNDYA24TCOI7SZ7O/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:47\",\"request-id\":\"d532ad9c-2786-4e9f-b3a5-1e5516e3c5d0\",\"client-request-id\":\"d532ad9c-2786-4e9f-b3a5-1e5516e3c5d0\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260310 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CMNQYIG6INJBC2OF6YWREKLZ6T/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:47\",\"request-id\":\"1f0c5ee3-b795-43d4-81b5-9c9f7417019d\",\"client-request-id\":\"1f0c5ee3-b795-43d4-81b5-9c9f7417019d\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260325 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BTDRHDOVU4VFE3THOSB5UWNSG7/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:48\",\"request-id\":\"d1ece904-e1b4-4678-8d97-eb3883443c1e\",\"client-request-id\":\"d1ece904-e1b4-4678-8d97-eb3883443c1e\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260401 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HDIWQKJN3DIRFLUW5GEASMT7MS/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:48\",\"request-id\":\"640db598-9d85-4e6d-ae91-97afd1ad572a\",\"client-request-id\":\"640db598-9d85-4e6d-ae91-97afd1ad572a\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260408 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C37IPHO64CY5E2GN4YHH5CAN7Y/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:49\",\"request-id\":\"2c590553-bd21-4360-a838-27fd8afde9c8\",\"client-request-id\":\"2c590553-bd21-4360-a838-27fd8afde9c8\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260422 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DQIOYZF3ZAUFBY5AAOH2Z3VJ7E/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:50\",\"request-id\":\"f7eadc65-f9de-452c-b991-427bf95b1879\",\"client-request-id\":\"f7eadc65-f9de-452c-b991-427bf95b1879\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260506 PAIZES - HOA VN copy.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GOFPECMYBKPBB3IHJVRZHWINZD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:50\",\"request-id\":\"19c55688-e6b5-4a32-b3cb-560ee92ac079\",\"client-request-id\":\"19c55688-e6b5-4a32-b3cb-560ee92ac079\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260514 PAIZES - HOA VN.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FTG2D6XBVTKNCK7VG5JQIG3OO3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:50\",\"request-id\":\"2d99024b-1739-4c5c-9349-b5f44c8d5634\",\"client-request-id\":\"2d99024b-1739-4c5c-9349-b5f44c8d5634\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260528 PAIZES - HOA VN copy.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FUED3URLBF3RBZBPPQVKOCYDFL/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:51\",\"request-id\":\"bd1f8742-e461-44b1-8a8e-c31151c01277\",\"client-request-id\":\"bd1f8742-e461-44b1-8a8e-c31151c01277\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260605 PAIZES - HOA VN copy 2 1.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E5ERLWYIUIMREKMBY655WRFCUQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:52\",\"request-id\":\"b2b19d97-9cb3-40e8-b6cd-537f1a7d2d8f\",\"client-request-id\":\"b2b19d97-9cb3-40e8-b6cd-537f1a7d2d8f\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260605 PAIZES - HOA VN copy 2.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E5UWS3YDFPUNAJZWITXFA3LVJK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:52\",\"request-id\":\"ca6ad530-0c7b-4b6f-9560-02f203f6de08\",\"client-request-id\":\"ca6ad530-0c7b-4b6f-9560-02f203f6de08\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260622 PAIZES - HOA VN v2.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BAEFEX5SO7GRBJTIGQ6SQGTKCT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:52\",\"request-id\":\"8c736ec9-c840-466f-888c-9c248c62d346\",\"client-request-id\":\"8c736ec9-c840-466f-888c-9c248c62d346\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260622 PAIZES - HOA VN v3.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D65UFEEFJCMZCIFGLVRWGYJCKC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:54\",\"request-id\":\"eaff288b-cbc1-4c72-9ba8-e95aece7f472\",\"client-request-id\":\"eaff288b-cbc1-4c72-9ba8-e95aece7f472\"}}}"
+            ]
+          },
+          {
+            "item": "APv2 - VN 260701 PAIZES - HOA VN v3.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EK6KY2AWE4FBE26AR5JNW6TE44/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:54\",\"request-id\":\"2a1219a0-06c6-464d-9aa7-343b8d8727ff\",\"client-request-id\":\"2a1219a0-06c6-464d-9aa7-343b8d8727ff\"}}}"
+            ]
+          },
+          {
+            "item": "ARK Letter signed Paul stamped.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BBKKTG6SXNRRFZITBKSIB7PHJ2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:55\",\"request-id\":\"ac480781-e5f0-4764-bfda-49425f17656e\",\"client-request-id\":\"ac480781-e5f0-4764-bfda-49425f17656e\"}}}"
+            ]
+          },
+          {
+            "item": "ARK Letter signed Paul.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BCY4TTLDVECJEK2P5DHLVETXST/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:55\",\"request-id\":\"8901317c-fea9-4a73-bc9b-116125b130a2\",\"client-request-id\":\"8901317c-fea9-4a73-bc9b-116125b130a2\"}}}"
+            ]
+          },
+          {
+            "item": "Assistant_manager_Huynh_Van_Phuoc_375FF392_1775711129.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EYJKDRXGCX3RAL42MDYKDTK45L/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:57\",\"request-id\":\"7a69f751-bcab-4ad8-a87a-86a6358df6f8\",\"client-request-id\":\"7a69f751-bcab-4ad8-a87a-86a6358df6f8\"}}}"
+            ]
+          },
+          {
+            "item": "BAOHUNG-CV.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73B7X2VUAQIBXJBLOMFJ55T6NGXP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:58\",\"request-id\":\"b5742c31-ddc3-48ed-b384-98d9a3ff0895\",\"client-request-id\":\"b5742c31-ddc3-48ed-b384-98d9a3ff0895\"}}}"
+            ]
+          },
+          {
+            "item": "BA\u0301O GIA\u0301 - PAIZES TRADING-ENG-T12.2025-18.12 (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GUOCEGXAQD3RF3RRZ3YZK2B5MA/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:58\",\"request-id\":\"31214d8c-c914-47d7-a694-3e3b76108dad\",\"client-request-id\":\"31214d8c-c914-47d7-a694-3e3b76108dad\"}}}"
+            ]
+          },
+          {
+            "item": "BUITHIAIHAU-CV (2).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E6WQACKMRYDRDK4QSQXZUNYESJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:41:59\",\"request-id\":\"6afda7f2-8de7-4370-b141-0146503cbcce\",\"client-request-id\":\"6afda7f2-8de7-4370-b141-0146503cbcce\"}}}"
+            ]
+          },
+          {
+            "item": "Chair-Model.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DLZXLAVWEY5JHZQ5GIOVFA6UG3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:00\",\"request-id\":\"f67dfb93-23e9-4eb8-9cff-d1e9b75ad25f\",\"client-request-id\":\"f67dfb93-23e9-4eb8-9cff-d1e9b75ad25f\"}}}"
+            ]
+          },
+          {
+            "item": "Contract.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FXADNO4UIQPFDLCPXCSXQMKKTS/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:00\",\"request-id\":\"a4d764c9-e1e0-4eee-ad26-8203d2780f27\",\"client-request-id\":\"a4d764c9-e1e0-4eee-ad26-8203d2780f27\"}}}"
+            ]
+          },
+          {
+            "item": "CN trip Thuy+Travis.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AO27HEZD2FKJEK6TNUXHVQSDNB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:01\",\"request-id\":\"0d404e02-6295-4cc1-b4d3-fd5a424284ec\",\"client-request-id\":\"0d404e02-6295-4cc1-b4d3-fd5a424284ec\"}}}"
+            ]
+          },
+          {
+            "item": "CV ACC- TRUC VO - 0589988718.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GKBWCERLVYONCZBYYLXURJ3K75/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:02\",\"request-id\":\"8d58d128-6f60-42ff-a452-4f6fa26387f4\",\"client-request-id\":\"8d58d128-6f60-42ff-a452-4f6fa26387f4\"}}}"
+            ]
+          },
+          {
+            "item": "Cv Nguyen Ngoc Minh.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73B4PIMNGXNL7FB3UYOKAIUTLX5C/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:03\",\"request-id\":\"d402ba26-02b6-4b17-8ed5-69b36f18665d\",\"client-request-id\":\"d402ba26-02b6-4b17-8ed5-69b36f18665d\"}}}"
+            ]
+          },
+          {
+            "item": "Dau Giay Factory Layout update Apr21.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GAM34NKDR24NDZJWEZTRCUVZOF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:04\",\"request-id\":\"e140197f-773e-411d-bd3f-5e1056dd7608\",\"client-request-id\":\"e140197f-773e-411d-bd3f-5e1056dd7608\"}}}"
+            ]
+          },
+          {
+            "item": "CV Nghia Nguyen 2026_English.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BVI2DREHMNMBBZLX4MRFBBJSMR/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:04\",\"request-id\":\"3c73af2e-6a8c-46ac-9b2c-98fe6281248f\",\"client-request-id\":\"3c73af2e-6a8c-46ac-9b2c-98fe6281248f\"}}}"
+            ]
+          },
+          {
+            "item": "DAYBED.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CLYVKO377O6VBLMZDGDOOW2KV3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:05\",\"request-id\":\"e363b9c6-de01-40a6-b132-a8fa3ba27519\",\"client-request-id\":\"e363b9c6-de01-40a6-b132-a8fa3ba27519\"}}}"
+            ]
+          },
+          {
+            "item": "DN-PZ-2026-01 - advance payment PAIZES HK to PAIZES VN.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EB67VXPRYR4VDKTLBZ5O2HT47D/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:05\",\"request-id\":\"76e21c43-381d-4c96-a5b4-42ead4ca209a\",\"client-request-id\":\"76e21c43-381d-4c96-a5b4-42ead4ca209a\"}}}"
+            ]
+          },
+          {
+            "item": "DN-PZ-2026-01_Debit_Note_VN_Style.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HN6LVRB2TUQJHLHYD65MNDOYD5/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:06\",\"request-id\":\"5a8f04ad-495b-46b6-9ed3-364930940501\",\"client-request-id\":\"5a8f04ad-495b-46b6-9ed3-364930940501\"}}}"
+            ]
+          },
+          {
+            "item": "Email address List - Harbour ASIA (except AOMEI).xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BWGB3N5R6LXJHISYUKHXPLODOW/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:06\",\"request-id\":\"d41cc0ca-3e3c-4a18-b0af-de51320db8f0\",\"client-request-id\":\"d41cc0ca-3e3c-4a18-b0af-de51320db8f0\"}}}"
+            ]
+          },
+          {
+            "item": "Example upcoming expenses list.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CLE3NO7B2NZJDZM2CQVATIZSIJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:07\",\"request-id\":\"539c4cda-3b5a-4428-9449-dc4d442a7fff\",\"client-request-id\":\"539c4cda-3b5a-4428-9449-dc4d442a7fff\"}}}"
+            ]
+          },
+          {
+            "item": "Expense Reimbursement - June.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EDF43TB6FX5RCYT3VTMOBUEESZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:08\",\"request-id\":\"523abf10-5d6e-45df-b806-a5c530569993\",\"client-request-id\":\"523abf10-5d6e-45df-b806-a5c530569993\"}}}"
+            ]
+          },
+          {
+            "item": "Expense Reimbursement - May.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AABD4WGDGAIFB2IBSKUNYI4NKH/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:08\",\"request-id\":\"3d4ec5a9-12ca-413e-9b5a-5060ea1ec0c3\",\"client-request-id\":\"3d4ec5a9-12ca-413e-9b5a-5060ea1ec0c3\"}}}"
+            ]
+          },
+          {
+            "item": "Expense Reimbursement - April.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EXHNI57JMTHVHZCIESESM6VSU3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:09\",\"request-id\":\"dd6cfa47-cc48-47bf-b18b-5c37e6214418\",\"client-request-id\":\"dd6cfa47-cc48-47bf-b18b-5c37e6214418\"}}}"
+            ]
+          },
+          {
+            "item": "Expense Reimbursement - Your Name (Period of Time).xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BXT5OP6MRVOZBKOH7FPUIBXOKV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:10\",\"request-id\":\"fa0e10a6-40f8-4cfd-ae2b-fdc16f6d7fba\",\"client-request-id\":\"fa0e10a6-40f8-4cfd-ae2b-fdc16f6d7fba\"}}}"
+            ]
+          },
+          {
+            "item": "Fast Track Angel and Roy.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BKQZFDYR5N4FH3VDDWRUDYX2HH/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:11\",\"request-id\":\"8ee86323-d309-4291-812a-587d1898bd0c\",\"client-request-id\":\"8ee86323-d309-4291-812a-587d1898bd0c\"}}}"
+            ]
+          },
+          {
+            "item": "FEBC PQ Questionnaire 1.doc",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EEPMEI5GUWGNDLKG3LTYN3D4MP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:12\",\"request-id\":\"096da0c3-42ab-4b11-9520-2fa1ef48517d\",\"client-request-id\":\"096da0c3-42ab-4b11-9520-2fa1ef48517d\"}}}"
+            ]
+          },
+          {
+            "item": "FEBC PQ Questionnaire.doc",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E2OLQNXI6VJRAL4T6NTAJ6NHBI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:12\",\"request-id\":\"2e37fa25-8d66-4c68-a2e6-034ac5cdc2b8\",\"client-request-id\":\"2e37fa25-8d66-4c68-a2e6-034ac5cdc2b8\"}}}"
+            ]
+          },
+          {
+            "item": "Felix to VN-CN - 0526 Paizes_Travel_Budget_Template_Condos Metal copy.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BAPBHBYQ227JGJHYU5OQ6BN7MP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:13\",\"request-id\":\"b514185d-4f69-4acf-89f1-be1a7828e401\",\"client-request-id\":\"b514185d-4f69-4acf-89f1-be1a7828e401\"}}}"
+            ]
+          },
+          {
+            "item": "Foger - Notice of Labor Contract Expiration and Non-Renewal.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BWIAR65D6C65EK3JQKGOAI4CVH/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:14\",\"request-id\":\"53fe6df1-d3b8-4dbb-8a94-2ecb3f2d999b\",\"client-request-id\":\"53fe6df1-d3b8-4dbb-8a94-2ecb3f2d999b\"}}}"
+            ]
+          },
+          {
+            "item": "FOGER Appraisal Form S1 2025.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GPTZEZQVNL2ZBLVOMFF7WO4VJM/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:15\",\"request-id\":\"ce6e9cad-f551-47fa-a18f-15c0fe1dde37\",\"client-request-id\":\"ce6e9cad-f551-47fa-a18f-15c0fe1dde37\"}}}"
+            ]
+          },
+          {
+            "item": "Factory pictures-20250618T102450Z-1-001.zip",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GMTYPRFI2Y3JGZJUSXJKI2ULFV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:16\",\"request-id\":\"1e9d28ac-bae8-4ef3-90e5-ac251fbd6fab\",\"client-request-id\":\"1e9d28ac-bae8-4ef3-90e5-ac251fbd6fab\"}}}"
+            ]
+          },
+          {
+            "item": "Foger's final payment.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ATDC75EN6Y3RAL5HYEVZEQMAOT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:16\",\"request-id\":\"04d55120-6233-48f5-9db9-691a3273d83b\",\"client-request-id\":\"04d55120-6233-48f5-9db9-691a3273d83b\"}}}"
+            ]
+          },
+          {
+            "item": "Forecast 2026_Draft (KC update 22Jul) - updated v2.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FJNT3CUZVFNVB2NBMBXW4U3DRJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:17\",\"request-id\":\"d264e85f-655e-45d0-b196-c910aa2fd200\",\"client-request-id\":\"d264e85f-655e-45d0-b196-c910aa2fd200\"}}}"
+            ]
+          },
+          {
+            "item": "Glen business trip VN-HK - May 2026 (Glen Version 23 April).xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C54EGKPCG36ZGYR7UDE77RTCGG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:17\",\"request-id\":\"f460fd13-f221-423a-9853-e46f5dd33e44\",\"client-request-id\":\"f460fd13-f221-423a-9853-e46f5dd33e44\"}}}"
+            ]
+          },
+          {
+            "item": "Habour Reservation Lease ENG 21 Mar .docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EVJEKEI5T4F5CJ6EVIBSHLXLGK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:18\",\"request-id\":\"66f06114-9a05-4b42-ba61-1b37f57a8107\",\"client-request-id\":\"66f06114-9a05-4b42-ba61-1b37f57a8107\"}}}"
+            ]
+          },
+          {
+            "item": "HARBOUR ASIA - whole org chart.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C7SA2BWE5XYZBY5V7VGDVFLI6A/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:19\",\"request-id\":\"7cff08e7-a193-466b-b07d-cc83b8c167cb\",\"client-request-id\":\"7cff08e7-a193-466b-b07d-cc83b8c167cb\"}}}"
+            ]
+          },
+          {
+            "item": "Harbour Business 2025 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HXEGTCZ2SCI5CJ4SXBSNIXJ2GN/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:19\",\"request-id\":\"1a7853db-de4b-4c5f-9272-3e7de68e6f2a\",\"client-request-id\":\"1a7853db-de4b-4c5f-9272-3e7de68e6f2a\"}}}"
+            ]
+          },
+          {
+            "item": "Harbour Business 2025.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CRNWTVBESO2NHYCLQRCPLO4RB3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:20\",\"request-id\":\"9e162753-8bb7-4a0b-8500-7379abedcac5\",\"client-request-id\":\"9e162753-8bb7-4a0b-8500-7379abedcac5\"}}}"
+            ]
+          },
+          {
+            "item": "HARBOUR\u00a0OUTDOOR\u00a0ASIA\u00a0LIMITED-Hangzhou-Middle-Service-Agreement-20250922.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HWHETNIUDFARFJ7B6GL3S7N4LY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:21\",\"request-id\":\"313af837-f6a1-44e7-bfad-90c813bc452f\",\"client-request-id\":\"313af837-f6a1-44e7-bfad-90c813bc452f\"}}}"
+            ]
+          },
+          {
+            "item": "Harbour's Location.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BVUTEMKW3EQJGLP6HUD36ODUFO/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:22\",\"request-id\":\"452cf33e-147c-4521-8f4f-64f69cfb6b9d\",\"client-request-id\":\"452cf33e-147c-4521-8f4f-64f69cfb6b9d\"}}}"
+            ]
+          },
+          {
+            "item": "HARBOUR.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73A7TGXOGBXZABFIK5DQ5D75WIQX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:22\",\"request-id\":\"47b3b414-6257-499b-9673-d80eb8d3e67d\",\"client-request-id\":\"47b3b414-6257-499b-9673-d80eb8d3e67d\"}}}"
+            ]
+          },
+          {
+            "item": "HB Indo org chart.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EOUAQIS7FQUZBK4CWIE6SCBLZL/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:23\",\"request-id\":\"e9dc0039-b0f0-4504-9df0-5ba793f793e5\",\"client-request-id\":\"e9dc0039-b0f0-4504-9df0-5ba793f793e5\"}}}"
+            ]
+          },
+          {
+            "item": "HB PAIZES business chart updated March24 2025 v2.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DVX3Z25POL45BK5UN2I5GWS7HJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:24\",\"request-id\":\"ca2cc24a-4954-4369-a5f5-0a6e02040ee6\",\"client-request-id\":\"ca2cc24a-4954-4369-a5f5-0a6e02040ee6\"}}}"
+            ]
+          },
+          {
+            "item": "HB PAIZES business chart updated March24 2025.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DYMYDC2PKSPNHYSIJECKMJKUX2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:24\",\"request-id\":\"05303662-a5c8-46e0-8a99-0f6a69875b85\",\"client-request-id\":\"05303662-a5c8-46e0-8a99-0f6a69875b85\"}}}"
+            ]
+          },
+          {
+            "item": "HUYEN visa China.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AKQIHMWBV535EZLSN2XUPHZ3XJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:26\",\"request-id\":\"e7181370-f099-4bf3-94b7-63425969bc44\",\"client-request-id\":\"e7181370-f099-4bf3-94b7-63425969bc44\"}}}"
+            ]
+          },
+          {
+            "item": "Huyen VOEV147454025_10170883.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EPIT3MOQ7Y7JCZJK6TPMRHEUVQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:26\",\"request-id\":\"73979118-a477-406b-be8f-a460a9ce8305\",\"client-request-id\":\"73979118-a477-406b-be8f-a460a9ce8305\"}}}"
+            ]
+          },
+          {
+            "item": "HOP DONG DAT COC GIU CHO.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73F4XYXEYRPHLVHZ35Q32MYPZM6J/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:28\",\"request-id\":\"63f44a26-06d2-4601-b3eb-04f199c243f6\",\"client-request-id\":\"63f44a26-06d2-4601-b3eb-04f199c243f6\"}}}"
+            ]
+          },
+          {
+            "item": "IMG_5932.HEIC",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EFJRBUWAKUAJAKOWXF3YKAMGUO/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:28\",\"request-id\":\"b6d3bc23-d352-4d54-a100-1657d5e3cc57\",\"client-request-id\":\"b6d3bc23-d352-4d54-a100-1657d5e3cc57\"}}}"
+            ]
+          },
+          {
+            "item": "IMG_7017.HEIC",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C7OGWIK3CVPZF2NDZTZU4ZQV5U/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:30\",\"request-id\":\"3418ff2a-445e-4237-8dcf-2acb3c0d8791\",\"client-request-id\":\"3418ff2a-445e-4237-8dcf-2acb3c0d8791\"}}}"
+            ]
+          },
+          {
+            "item": "IMG_5933.HEIC",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FJKMO75JPRRVDLVFPBUZEBROPI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:31\",\"request-id\":\"bf55cf65-4f2e-44d2-a12b-53693af0f6b3\",\"client-request-id\":\"bf55cf65-4f2e-44d2-a12b-53693af0f6b3\"}}}"
+            ]
+          },
+          {
+            "item": "Invitation Letter Thuy v2 2411.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CF3IGKCTUH4FHJE7TZ3CGNOTKN/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:31\",\"request-id\":\"04100648-1162-4a51-8cc1-b4a139787508\",\"client-request-id\":\"04100648-1162-4a51-8cc1-b4a139787508\"}}}"
+            ]
+          },
+          {
+            "item": "Investment Report Tam Yen.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DOXDIZOA3ZYBGKBPHGOOX2CSEQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:31\",\"request-id\":\"44565686-883a-4b6d-9c38-df63cbfe7e96\",\"client-request-id\":\"44565686-883a-4b6d-9c38-df63cbfe7e96\"}}}"
+            ]
+          },
+          {
+            "item": "Invoice INV-2112.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CZJSTN2IZINZE2H7GJJ4EF7SEZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:33\",\"request-id\":\"3848136c-50b0-435a-b39e-4098bc861e16\",\"client-request-id\":\"3848136c-50b0-435a-b39e-4098bc861e16\"}}}"
+            ]
+          },
+          {
+            "item": "INVOICE April - Andrew.xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C5ONAM3YMVVVFYLH7X5PJCVOFV/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:33\",\"request-id\":\"7a6373d5-25d8-4971-88d7-535d4f9cd4e7\",\"client-request-id\":\"7a6373d5-25d8-4971-88d7-535d4f9cd4e7\"}}}"
+            ]
+          },
+          {
+            "item": "INVOICE May.xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FM7UCIQFMXMNBI2AHR2EBJULJO/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:34\",\"request-id\":\"5aa2a422-c2c4-4f8e-b23c-6c9873803a63\",\"client-request-id\":\"5aa2a422-c2c4-4f8e-b23c-6c9873803a63\"}}}"
+            ]
+          },
+          {
+            "item": "Itinerary Go250703305125400012.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HWU3JVR4PY4VDLGYKHHUWTJISQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:34\",\"request-id\":\"8c11bcbb-4398-461e-9262-f778ccea37bb\",\"client-request-id\":\"8c11bcbb-4398-461e-9262-f778ccea37bb\"}}}"
+            ]
+          },
+          {
+            "item": "Jason YE  Zhengte project.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ENDWKXWOPIR5BJAJNQBPFJJPMT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:36\",\"request-id\":\"6659ee4d-64ce-4655-9321-cfcc530d2e80\",\"client-request-id\":\"6659ee4d-64ce-4655-9321-cfcc530d2e80\"}}}"
+            ]
+          },
+          {
+            "item": "Jason YE  Zhengte project 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HAE6CT4PPVUZHY37PO5TEU6SAP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:37\",\"request-id\":\"88b8d9d4-7cba-4c27-87b8-1f25a7b0f7b0\",\"client-request-id\":\"88b8d9d4-7cba-4c27-87b8-1f25a7b0f7b0\"}}}"
+            ]
+          },
+          {
+            "item": "JASON FLIGHT.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HLYELDD226RFCLH75I7NXVFOW4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:38\",\"request-id\":\"5054d2e4-d243-4373-bb03-b1171763ff8d\",\"client-request-id\":\"5054d2e4-d243-4373-bb03-b1171763ff8d\"}}}"
+            ]
+          },
+          {
+            "item": "JASON FLIGHT 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HQV45BGQ6EONALHE4L6D7J2ZRG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:38\",\"request-id\":\"a22047fe-5910-485c-9364-fa18b5aef050\",\"client-request-id\":\"a22047fe-5910-485c-9364-fa18b5aef050\"}}}"
+            ]
+          },
+          {
+            "item": "JD Merchandiser US team (1) 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CIMDF6SGBEE5GYKLLQEAZ7SKZF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:39\",\"request-id\":\"f8a5793c-9f05-4596-a74a-5b01fc9edad1\",\"client-request-id\":\"f8a5793c-9f05-4596-a74a-5b01fc9edad1\"}}}"
+            ]
+          },
+          {
+            "item": "JD Merchandiser US team (1).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73A75Z7UIJKPBRHJMJDF4EIDN5LT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:40\",\"request-id\":\"4cd09480-9cc9-4a3b-8dfb-b01156b0fd8b\",\"client-request-id\":\"4cd09480-9cc9-4a3b-8dfb-b01156b0fd8b\"}}}"
+            ]
+          },
+          {
+            "item": "JD_Merchandise_Paizes_Apr_2026.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FQR33XUV5N5VFKTZCHUM3RFHXC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:40\",\"request-id\":\"12d1c11b-4460-4b92-9436-34778c4b95d3\",\"client-request-id\":\"12d1c11b-4460-4b92-9436-34778c4b95d3\"}}}"
+            ]
+          },
+          {
+            "item": "LI JIANHUA.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73F7WDLM3GUTFRBLIHMIRYQULN6M/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:41\",\"request-id\":\"c8165ac0-1656-4c4f-ad6b-81be99db0419\",\"client-request-id\":\"c8165ac0-1656-4c4f-ad6b-81be99db0419\"}}}"
+            ]
+          },
+          {
+            "item": "LURLINE BAY LLC-Hangzhou-Middle-Service-Agreement-20250826(2).pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EP4IHYCBXMPZFJBKIMOTTAJTEO/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:42\",\"request-id\":\"97108b8b-b895-4904-96df-524b25b237df\",\"client-request-id\":\"97108b8b-b895-4904-96df-524b25b237df\"}}}"
+            ]
+          },
+          {
+            "item": "maker64 net emails.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CSOV3GWRII4REJVVS52TFRXI5A/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:43\",\"request-id\":\"8b32ef4b-40d9-41f1-b2f9-ef98e353e0f8\",\"client-request-id\":\"8b32ef4b-40d9-41f1-b2f9-ef98e353e0f8\"}}}"
+            ]
+          },
+          {
+            "item": "Merch cost.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73F46GWA4QGUBJB37RI3GWXA4CAZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:44\",\"request-id\":\"72090715-608b-41ad-a1ef-b08c8bff4ce8\",\"client-request-id\":\"72090715-608b-41ad-a1ef-b08c8bff4ce8\"}}}"
+            ]
+          },
+          {
+            "item": "Matira Ext Line.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G5XXFHPFG42ZBZCX3UKPN7R7FD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:44\",\"request-id\":\"31f38082-375f-44f0-8c2a-664fe5086f02\",\"client-request-id\":\"31f38082-375f-44f0-8c2a-664fe5086f02\"}}}"
+            ]
+          },
+          {
+            "item": "Matira Ext Line3D.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BQCJOH3242JRFLLDQT2Y65BHU6/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:44\",\"request-id\":\"31a4392b-3fa5-46da-bd80-a937f5bd6613\",\"client-request-id\":\"31a4392b-3fa5-46da-bd80-a937f5bd6613\"}}}"
+            ]
+          },
+          {
+            "item": "Mr Hung_demo matira daybed .stp",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BY5G2HNBFB3VAZ2GU4AUAYSAJQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:47\",\"request-id\":\"c3753cf5-0c45-4a30-bdbd-d810032cff2a\",\"client-request-id\":\"c3753cf5-0c45-4a30-bdbd-d810032cff2a\"}}}"
+            ]
+          },
+          {
+            "item": "MSG - Airport transfer confirmation letter - 1039499.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73F6Z4T2UC2NXRGZWGCIZDU7YXHJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:47\",\"request-id\":\"aa0d788f-dd83-4e5f-8b58-d883db2210d9\",\"client-request-id\":\"aa0d788f-dd83-4e5f-8b58-d883db2210d9\"}}}"
+            ]
+          },
+          {
+            "item": "Mr Trung_Daybed_2025 October 24 TEST.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GCULQZLO5VXJHI7BWW23RDJ2MU/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:49\",\"request-id\":\"76e68c8c-e419-4075-830a-57d31802d962\",\"client-request-id\":\"76e68c8c-e419-4075-830a-57d31802d962\"}}}"
+            ]
+          },
+          {
+            "item": "Ms Tuyen - Mandarin answer.m4a",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GX5HR4DR6NLVALYIJGYUDGW6TD/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:49\",\"request-id\":\"90d57ab2-ce29-4ad2-a862-a6c59e44efc6\",\"client-request-id\":\"90d57ab2-ce29-4ad2-a862-a6c59e44efc6\"}}}"
+            ]
+          },
+          {
+            "item": "Namecard_Layout.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CPUO7JJCF2KBC2EXE24PZ6YWJ4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:49\",\"request-id\":\"a4370645-2fa1-4098-be14-05ceda4aec89\",\"client-request-id\":\"a4370645-2fa1-4098-be14-05ceda4aec89\"}}}"
+            ]
+          },
+          {
+            "item": "Name Card info 260817.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FGXOMUB53X2VC3HZZJCDDMYLTI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:50\",\"request-id\":\"d91bd30e-e939-415d-99aa-b3b931fd412b\",\"client-request-id\":\"d91bd30e-e939-415d-99aa-b3b931fd412b\"}}}"
+            ]
+          },
+          {
+            "item": "Packing.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BABFTTCQDFVNDK242ROUEH37DY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:52\",\"request-id\":\"694c777b-851d-42d2-8d88-7cc4276360bd\",\"client-request-id\":\"694c777b-851d-42d2-8d88-7cc4276360bd\"}}}"
+            ]
+          },
+          {
+            "item": "NIM TRUNG DI-CV-APPLY SHIPPING OR SALES DEPARMENT.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CVRQPNMF7RFZG2SER6LERZX7W6/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:52\",\"request-id\":\"687b239c-5d6b-4afb-baa5-5442c51b41f6\",\"client-request-id\":\"687b239c-5d6b-4afb-baa5-5442c51b41f6\"}}}"
+            ]
+          },
+          {
+            "item": "Paizes - Lease Agreement - Review and Assistance - EL(554515632.1).docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ERMPZ25M7TYREI2IKS3XBP3THE/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:52\",\"request-id\":\"d63b577e-dcbc-487b-b7a5-14139e9b31c8\",\"client-request-id\":\"d63b577e-dcbc-487b-b7a5-14139e9b31c8\"}}}"
+            ]
+          },
+          {
+            "item": "Paizes - EL 25-24-011 (EN-VI)_20251023_updated 12.Nov.25.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DTPVB5M5PEKBAJ2A6K6EPYXQVG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:53\",\"request-id\":\"bd343ac2-9e12-427e-8e6f-9fa5a1ef650a\",\"client-request-id\":\"bd343ac2-9e12-427e-8e6f-9fa5a1ef650a\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES Factory draft org chart 251114.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E3KVALQERKMJFY2ARCEL3TQXP5/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:55\",\"request-id\":\"c90c7ff6-301e-4446-bcba-544a9e84bcd6\",\"client-request-id\":\"c90c7ff6-301e-4446-bcba-544a9e84bcd6\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES VN - PROFESSIONAL SERVICE DIVISION  \u2014  Profit and Loss  FY 2026 - (July 30 2026).xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CIYU6ZHDRJ5BFJEQORI6JRW7HX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:55\",\"request-id\":\"4d3affac-461c-4152-a84c-8798895c81a7\",\"client-request-id\":\"4d3affac-461c-4152-a84c-8798895c81a7\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES VIETNAM MASTER FILE 251121.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73F6IXU363IGAVBYRXKZIG6GDWHQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:55\",\"request-id\":\"14205539-de8c-4b35-8bff-55778ecead2b\",\"client-request-id\":\"14205539-de8c-4b35-8bff-55778ecead2b\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES Factory draft org chart 251113.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CJFRQXDMRJZFA27IRF3J4YKB57/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:55\",\"request-id\":\"597df097-606c-4a8a-b6a6-da631d8bef8f\",\"client-request-id\":\"597df097-606c-4a8a-b6a6-da631d8bef8f\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES VN - Service Charge Back Jan to May26.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BJXJRUGKBTG5CYIQH3B6IUF4K3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:58\",\"request-id\":\"9e9fa9ca-a299-47d7-85b9-311e081967bf\",\"client-request-id\":\"9e9fa9ca-a299-47d7-85b9-311e081967bf\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES_PI-SVC-2026-01.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DOSNGL3SXFPJC3HJBY533G4SAL/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:58\",\"request-id\":\"adfbacad-4736-444c-9713-6904f7166420\",\"client-request-id\":\"adfbacad-4736-444c-9713-6904f7166420\"}}}"
+            ]
+          },
+          {
+            "item": "PAIZES VN - Service Charge Back Jan to July26.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AKQNZYKSMJ3FDZLL4MRUQE6L3C/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:58\",\"request-id\":\"bc7e9756-e5f1-4c1b-85e4-addbcb396aa7\",\"client-request-id\":\"bc7e9756-e5f1-4c1b-85e4-addbcb396aa7\"}}}"
+            ]
+          },
+          {
+            "item": "Paizes-BPS-25-767-B30042026.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ETM3HYDWW7ZJBYEICJ6CI7FNAX/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:42:58\",\"request-id\":\"c2cd4558-918f-410c-999c-f4a2d994b5d6\",\"client-request-id\":\"c2cd4558-918f-410c-999c-f4a2d994b5d6\"}}}"
+            ]
+          },
+          {
+            "item": "Pending AP.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BK2VSZU5DRIZFZERE24EPIQENZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:00\",\"request-id\":\"21a75fbe-01a8-481d-b766-144624da471f\",\"client-request-id\":\"21a75fbe-01a8-481d-b766-144624da471f\"}}}"
+            ]
+          },
+          {
+            "item": "PAUL_GERRARD_NAMECARD.zip",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FCTX36LBP4CRGLWSWU5JONSEVB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:00\",\"request-id\":\"85061972-39d5-4fcb-93b1-72fa38523994\",\"client-request-id\":\"85061972-39d5-4fcb-93b1-72fa38523994\"}}}"
+            ]
+          },
+          {
+            "item": "Permanent Staff Performance Appraisal - Name.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G5JKKEO3Q6PNH3OMHOCZRHBJAU/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:01\",\"request-id\":\"ed509e24-9c38-472c-bfa8-0aa4c494693e\",\"client-request-id\":\"ed509e24-9c38-472c-bfa8-0aa4c494693e\"}}}"
+            ]
+          },
+          {
+            "item": "Picture1.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AOEDEMGAROI5BYC6NSXA46QZDF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:03\",\"request-id\":\"221ac9a0-9c98-4896-8739-d40beb0a9b24\",\"client-request-id\":\"221ac9a0-9c98-4896-8739-d40beb0a9b24\"}}}"
+            ]
+          },
+          {
+            "item": "PI-PZ-2026-01_Matira_Collection VF 1.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CFWJPHXYGZMBG3ETY57V4IBXJB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:03\",\"request-id\":\"948b81b5-b1e3-4793-964d-8be3294d4637\",\"client-request-id\":\"948b81b5-b1e3-4793-964d-8be3294d4637\"}}}"
+            ]
+          },
+          {
+            "item": "Phu Quoc Trip.com.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HIHNTYJRKDXRH3IINFOB2LF3Q7/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:03\",\"request-id\":\"fb731d3b-a18d-422a-9d4f-540150523570\",\"client-request-id\":\"fb731d3b-a18d-422a-9d4f-540150523570\"}}}"
+            ]
+          },
+          {
+            "item": "PI-PZ-2026-01_Matira_Collection VF.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ARIISRSS7NQBELZBNVEJMEPUVC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:05\",\"request-id\":\"0bacbc11-7682-421e-931e-2a8585fbe4d2\",\"client-request-id\":\"0bacbc11-7682-421e-931e-2a8585fbe4d2\"}}}"
+            ]
+          },
+          {
+            "item": "PI-PZ-2026-01_Proforma_Invoice.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73B7AMEVCCJHRVGJIVPXFCB644YZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:06\",\"request-id\":\"2270893d-54d1-4d38-931b-e3a27c196798\",\"client-request-id\":\"2270893d-54d1-4d38-931b-e3a27c196798\"}}}"
+            ]
+          },
+          {
+            "item": "PI-PZ-2026-02_Matira_Collection.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HLN4T24BNRKVE23WYED2KRR5DW/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:06\",\"request-id\":\"80075a65-1478-4ab4-a7bd-f40adb1ddf23\",\"client-request-id\":\"80075a65-1478-4ab4-a7bd-f40adb1ddf23\"}}}"
+            ]
+          },
+          {
+            "item": "PG.AOMEI SECOND hand machine with hs code ENG.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G4NVBJIVMPZJE2PMUITIXXBAQG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:06\",\"request-id\":\"117ab6b7-6411-4579-b816-ab1eb85fea75\",\"client-request-id\":\"117ab6b7-6411-4579-b816-ab1eb85fea75\"}}}"
+            ]
+          },
+          {
+            "item": "PO-PZ-2026-02_AEGEAN_BALMAIN 260507.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FYDUR6UZJZANG2W7Q55N6ZLCUF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:08\",\"request-id\":\"6c3c35ad-f1fb-4941-b0c5-21c597b25ba2\",\"client-request-id\":\"6c3c35ad-f1fb-4941-b0c5-21c597b25ba2\"}}}"
+            ]
+          },
+          {
+            "item": "PO-PZ-2026-04_SEP_260625.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C7JQSPCDRPR5DIEZQNRBLC7JL5/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:08\",\"request-id\":\"72a1bff3-ae8f-4001-a4b5-b1bb6073d7e0\",\"client-request-id\":\"72a1bff3-ae8f-4001-a4b5-b1bb6073d7e0\"}}}"
+            ]
+          },
+          {
+            "item": "PO-PZ-2026-04_SEP_260625 1.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73G2KF6KHLAXJND2D5CC7IVHYZBI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:08\",\"request-id\":\"ede07420-d9b4-4c52-bfb4-970ffbea0ab5\",\"client-request-id\":\"ede07420-d9b4-4c52-bfb4-970ffbea0ab5\"}}}"
+            ]
+          },
+          {
+            "item": "PO-PZ-2026-05_222277.57.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H3PFCPPNZLSBDIIV5PIMIGTIML/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:09\",\"request-id\":\"ed424e4d-218e-45ec-bc1b-2723481a95d5\",\"client-request-id\":\"ed424e4d-218e-45ec-bc1b-2723481a95d5\"}}}"
+            ]
+          },
+          {
+            "item": "PO-PZ-2026-06_297331.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EF3JNWQANH6RB3EGZSPR4OVZOS/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:10\",\"request-id\":\"48790757-0e24-429c-8f8d-fca06552348e\",\"client-request-id\":\"48790757-0e24-429c-8f8d-fca06552348e\"}}}"
+            ]
+          },
+          {
+            "item": "POs TINH LOI BEN PHAT.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EFYWX2ED4AWVD2WBSBASAJPIXL/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:11\",\"request-id\":\"aea07e90-0706-4dab-b305-88966cd804e0\",\"client-request-id\":\"aea07e90-0706-4dab-b305-88966cd804e0\"}}}"
+            ]
+          },
+          {
+            "item": "Price list PZ VN shipping Aug26.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CAJ5SF2IQ7PNEINOJ7WS36NWF6/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:11\",\"request-id\":\"336a3d39-6835-4bd7-b147-9a322cb26c2e\",\"client-request-id\":\"336a3d39-6835-4bd7-b147-9a322cb26c2e\"}}}"
+            ]
+          },
+          {
+            "item": "PZ - List of applicants 18.12.2025.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BXBER4QQDQUJCY26BO26M6LJ5G/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:11\",\"request-id\":\"01a0fe9b-ba2c-45ea-af4b-ac17bc0da35c\",\"client-request-id\":\"01a0fe9b-ba2c-45ea-af4b-ac17bc0da35c\"}}}"
+            ]
+          },
+          {
+            "item": "Recommendation letter_Foger.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C7NQYFTK4DU5B3QBKKU2ARMW2Z/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:13\",\"request-id\":\"ea3e78d7-2576-4883-a0c4-1153f8a93999\",\"client-request-id\":\"ea3e78d7-2576-4883-a0c4-1153f8a93999\"}}}"
+            ]
+          },
+          {
+            "item": "Q126 PAIZES VN (VND current account) bank transactions.xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DUQ7OKU773MBDZBVDAF56SKSME/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:13\",\"request-id\":\"2840440b-4661-4dcc-8f84-2a3a244deb4d\",\"client-request-id\":\"2840440b-4661-4dcc-8f84-2a3a244deb4d\"}}}"
+            ]
+          },
+          {
+            "item": "Receipt.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DNXOEFUSWIUBAYCFZ45HG4TUS2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:14\",\"request-id\":\"26e6345f-a304-488a-9d95-1c9c35711cdf\",\"client-request-id\":\"26e6345f-a304-488a-9d95-1c9c35711cdf\"}}}"
+            ]
+          },
+          {
+            "item": "Recommendation letter_Foger 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73B7KEJ4BLUVUVHYMXPNAZBLF33R/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:14\",\"request-id\":\"ef3c8b90-9d73-4afb-857e-faf1d957f741\",\"client-request-id\":\"ef3c8b90-9d73-4afb-857e-faf1d957f741\"}}}"
+            ]
+          },
+          {
+            "item": "Schedule 2 - Confidentiality.docx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73D7X5MKR4UNEBFJP5XULIKDI3M4/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:16\",\"request-id\":\"0a5168a2-691c-48e6-8f37-71817a3543fd\",\"client-request-id\":\"0a5168a2-691c-48e6-8f37-71817a3543fd\"}}}"
+            ]
+          },
+          {
+            "item": "Resume_Le Kim Tam_Paizes VN_v1 (1).doc",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73E4UY7EAT57FFEJDA5UNFD2HKN5/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:16\",\"request-id\":\"5e93e535-f456-4f5f-88b7-f65f6873f0fc\",\"client-request-id\":\"5e93e535-f456-4f5f-88b7-f65f6873f0fc\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2025-03-27 at 08.41.29.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CQFSRRTSCHOJHKKJGZPTPBVMYA/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:16\",\"request-id\":\"2a6afc87-a678-4b49-8551-8f1f894ffe5f\",\"client-request-id\":\"2a6afc87-a678-4b49-8551-8f1f894ffe5f\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2025-03-28 at 16.25.02.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73EGIFUNJ5AXEVCIXXXI73PPTPMB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:17\",\"request-id\":\"ad0d8edf-1d82-4799-801b-f6fe94aa79e0\",\"client-request-id\":\"ad0d8edf-1d82-4799-801b-f6fe94aa79e0\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2025-04-02 at 11.28.27.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GOLDUJKEFSMZD3S63MUC3CJFON/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:18\",\"request-id\":\"edce925a-144d-428b-8e7c-712da5a2f964\",\"client-request-id\":\"edce925a-144d-428b-8e7c-712da5a2f964\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2025-04-14 at 15.38.47.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HIPSFJAUIIOJH2TNOSHE7BNTHP/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:19\",\"request-id\":\"b73cb89e-a03b-4db3-8e81-0d619eca2f19\",\"client-request-id\":\"b73cb89e-a03b-4db3-8e81-0d619eca2f19\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2026-02-06 at 09.46.15.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73A7REMQGT7KWNG2AVECLVTRTCVT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:19\",\"request-id\":\"434ab252-9a23-4ec8-a416-0cc0b0199c8e\",\"client-request-id\":\"434ab252-9a23-4ec8-a416-0cc0b0199c8e\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2026-02-06 at 09.46.24.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AUQYQUAFCGZZGK2BYSLH7YIFZI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:20\",\"request-id\":\"16960644-2410-4563-8da2-66da7499857d\",\"client-request-id\":\"16960644-2410-4563-8da2-66da7499857d\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2026-04-01 at 16.56.45.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DRJXUZBCFBN5EJY743UIEKI7BJ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:21\",\"request-id\":\"125e9fc5-2f91-4939-829a-a2e5ce8ff19a\",\"client-request-id\":\"125e9fc5-2f91-4939-829a-a2e5ce8ff19a\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot 2026-06-25 at 12.35.11.png",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ETK2TY5KLHU5E2RPSURC7YQV36/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:21\",\"request-id\":\"7d925eac-0e49-466d-b7fb-161156b6eb77\",\"client-request-id\":\"7d925eac-0e49-466d-b7fb-161156b6eb77\"}}}"
+            ]
+          },
+          {
+            "item": "Screenshot from Misa presentation.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HDBYQ6GYQOABD2JWRI2P5UKNOZ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:22\",\"request-id\":\"05138ec0-5458-4dd1-96ef-b0bb8c9c0ee2\",\"client-request-id\":\"05138ec0-5458-4dd1-96ef-b0bb8c9c0ee2\"}}}"
+            ]
+          },
+          {
+            "item": "Shop Harbour x Deel Services - July 2024 .pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HNTN2BISWLJRG3Y5JHVJWAATZI/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:23\",\"request-id\":\"ecbb2b53-93c4-4b18-840a-2416bb75c8c3\",\"client-request-id\":\"ecbb2b53-93c4-4b18-840a-2416bb75c8c3\"}}}"
+            ]
+          },
+          {
+            "item": "SOPHIA visa China.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HFWUKJYFUQYZFYA2EDKZY2DDUN/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:24\",\"request-id\":\"ae604ad6-9eae-4ec5-ab53-f2a97ca6fb33\",\"client-request-id\":\"ae604ad6-9eae-4ec5-ab53-f2a97ca6fb33\"}}}"
+            ]
+          },
+          {
+            "item": "Sophia VOEV147442925_10170343.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DE5YRXWXVJVNB3Y6IX34RQOL5I/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:24\",\"request-id\":\"a73f5b8f-116f-405a-855b-07dcf07630d6\",\"client-request-id\":\"a73f5b8f-116f-405a-855b-07dcf07630d6\"}}}"
+            ]
+          },
+          {
+            "item": "Tony - CBH Packaging Specification Template_06 27 2023.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DMZE33LYW4DJDZJUDGYXZMJX4J/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:26\",\"request-id\":\"6041f00f-b7d1-489b-afe2-2776270b9df0\",\"client-request-id\":\"6041f00f-b7d1-489b-afe2-2776270b9df0\"}}}"
+            ]
+          },
+          {
+            "item": "Tony - CBH Packaging Specification Template - trace_media_credenza 1.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73ETWDL7ASCT3BGYNLXYRC7S3OGT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:27\",\"request-id\":\"8630b9a6-905e-460e-94f7-6af9ab3b3822\",\"client-request-id\":\"8630b9a6-905e-460e-94f7-6af9ab3b3822\"}}}"
+            ]
+          },
+          {
+            "item": "Tony - Furniture_Packaging_Guidelines.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FHR4UYSOI5QNAYGQU2KHB5OEIB/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:27\",\"request-id\":\"0c9062c6-8779-4fbd-934b-0b33e17819a3\",\"client-request-id\":\"0c9062c6-8779-4fbd-934b-0b33e17819a3\"}}}"
+            ]
+          },
+          {
+            "item": "Tony - PS-Koda-LOWE DINING CHAIR HAIR ON HIDE-157925-16042024-Final approval.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AUWSESWWXEQFCJIKHWLNJZW4FE/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:28\",\"request-id\":\"64c32c88-cadd-41d2-8bfb-92d052400fc9\",\"client-request-id\":\"64c32c88-cadd-41d2-8bfb-92d052400fc9\"}}}"
+            ]
+          },
+          {
+            "item": "Travel Reservation April 22 for MR RUI HE.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73HAH7MS7G5ATFG2IDF2OJDQBL2O/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:30\",\"request-id\":\"3a6ac856-33e2-4e94-825e-97a8c6778f9c\",\"client-request-id\":\"3a6ac856-33e2-4e94-825e-97a8c6778f9c\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (1).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H67UUFVHEZFVELS3NJGCCVN5LC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:30\",\"request-id\":\"fc1a2e0f-d958-42ce-82bd-d880880ff2dc\",\"client-request-id\":\"fc1a2e0f-d958-42ce-82bd-d880880ff2dc\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (2).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BTYOAIJUURRBGYJWBPGUNLCNJT/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:30\",\"request-id\":\"e6cd5286-db0e-4938-95ee-4ffc0c91bd90\",\"client-request-id\":\"e6cd5286-db0e-4938-95ee-4ffc0c91bd90\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (3).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73CNYQ6PASR4ZZCLXBI6PIRKXU4T/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:32\",\"request-id\":\"a061bb14-b009-421b-a4c3-b7e5397924b8\",\"client-request-id\":\"a061bb14-b009-421b-a4c3-b7e5397924b8\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (4).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FICTKPLQUTEFGK2FOF5UYNN7N2/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:32\",\"request-id\":\"6b604983-3d9c-4e3e-b4a8-fd1d82dfad80\",\"client-request-id\":\"6b604983-3d9c-4e3e-b4a8-fd1d82dfad80\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (5).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GJ5VMKBQAJW5F24GX5RAU55DUQ/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:33\",\"request-id\":\"cabe126f-c416-4b00-842a-cbfea1d1fa40\",\"client-request-id\":\"cabe126f-c416-4b00-842a-cbfea1d1fa40\"}}}"
+            ]
+          },
+          {
+            "item": "Tony - 2021_Furniture_Packaging_Guidelines.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H5BF3Y5QTKEFHKZM3VJ6XMRR4B/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:34\",\"request-id\":\"da11f799-b3aa-4481-b09d-6244f426d2ec\",\"client-request-id\":\"da11f799-b3aa-4481-b09d-6244f426d2ec\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (6).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H3YUAFXHQE7FEKI3L4EF5KNYUM/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:34\",\"request-id\":\"f5193183-7b4d-4744-b96b-6021eba6877d\",\"client-request-id\":\"f5193183-7b4d-4744-b96b-6021eba6877d\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (7).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FUJF22XQFT4RFYFRTOE6COQYEF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:35\",\"request-id\":\"fbd92b61-b5d7-4f9e-be51-96d980a789ad\",\"client-request-id\":\"fbd92b61-b5d7-4f9e-be51-96d980a789ad\"}}}"
+            ]
+          },
+          {
+            "item": "Vietcombank_Account_Statement (8).xls",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GA4B2JWBMIGZDZ43UR2AOB472H/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:35\",\"request-id\":\"a97e9f91-ddd8-4f30-b79e-fd1ce96d1c6f\",\"client-request-id\":\"a97e9f91-ddd8-4f30-b79e-fd1ce96d1c6f\"}}}"
+            ]
+          },
+          {
+            "item": "Vietnam KC.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BI7XAT6SI5S5B3R7BYGPUB3A57/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:37\",\"request-id\":\"c7286fbc-6ffd-4c15-b9b2-d4119bfefa5f\",\"client-request-id\":\"c7286fbc-6ffd-4c15-b9b2-d4119bfefa5f\"}}}"
+            ]
+          },
+          {
+            "item": "VIETNAM MASTER FILE 251121 rev.xlsx",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DKY6NBGRM6VVG2O7A2OH3NMYKS/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:37\",\"request-id\":\"e3cab27e-8131-47b8-b817-d429388f2b4f\",\"client-request-id\":\"e3cab27e-8131-47b8-b817-d429388f2b4f\"}}}"
+            ]
+          },
+          {
+            "item": "Visa VOEV147442925.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AVXV42KR6GBZGZXHPSQGQUBGNC/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:37\",\"request-id\":\"e81d7264-aa87-4bfc-b5f6-70dfe15d1c11\",\"client-request-id\":\"e81d7264-aa87-4bfc-b5f6-70dfe15d1c11\"}}}"
+            ]
+          },
+          {
+            "item": "VN ADDRESS_NAMECARD.zip",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FJMTXLFENTJFF2X5XPCS35LLWF/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:38\",\"request-id\":\"8028ddab-44c0-41d7-af6d-e16f9c90924f\",\"client-request-id\":\"8028ddab-44c0-41d7-af6d-e16f9c90924f\"}}}"
+            ]
+          },
+          {
+            "item": "Waiting area fast track.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AMVPVQK7TFKRHJB3NHG6HAHVYY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:40\",\"request-id\":\"98bbfb5d-bd1e-48f9-80fa-6d90f8c4f6bf\",\"client-request-id\":\"98bbfb5d-bd1e-48f9-80fa-6d90f8c4f6bf\"}}}"
+            ]
+          },
+          {
+            "item": "XU BEI.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GVKZF6RJJQ2ZCLV7ZLEEUOFE4B/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:40\",\"request-id\":\"791e0131-e0e9-4916-853c-1b1959561bad\",\"client-request-id\":\"791e0131-e0e9-4916-853c-1b1959561bad\"}}}"
+            ]
+          },
+          {
+            "item": "YE GAOFEI.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73FK2CQIRRKPRVB233SFMPQV3S6W/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:42\",\"request-id\":\"4bc45e15-b75c-4419-bd65-6f2b716f9924\",\"client-request-id\":\"4bc45e15-b75c-4419-bd65-6f2b716f9924\"}}}"
+            ]
+          },
+          {
+            "item": "z5679917364298_4f90e28aa5c629cc1ed745c90353a594.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DO3WSLT53SZBDIZ5L36IDSR2CG/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:43\",\"request-id\":\"5019bfb8-bbc1-4b09-a3fc-5eef93e030dd\",\"client-request-id\":\"5019bfb8-bbc1-4b09-a3fc-5eef93e030dd\"}}}"
+            ]
+          },
+          {
+            "item": "z5679917419346_8e727e54717a6f26194262194a145d22.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73GPCKZ3BYXO3RB3446TZD6TW2SY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:45\",\"request-id\":\"6a8fb830-c7b8-4c8c-90ac-effb84caab16\",\"client-request-id\":\"6a8fb830-c7b8-4c8c-90ac-effb84caab16\"}}}"
+            ]
+          },
+          {
+            "item": "z6249609971252_267ad31664c76c2c0e9dbbf3860676bc.jpg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73DY275DFUQU3VHYMCKM57HD4CLY/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:46\",\"request-id\":\"eb5cbefe-0f41-4b6d-9f0f-0296e0a33326\",\"client-request-id\":\"eb5cbefe-0f41-4b6d-9f0f-0296e0a33326\"}}}"
+            ]
+          },
+          {
+            "item": "ZHANG HAITAO.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73C5XJ4B2XOKOVAJW6DZMVXLFKN3/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:48\",\"request-id\":\"c92b2519-bcd8-43b1-ae79-ac22e8a870c5\",\"client-request-id\":\"c92b2519-bcd8-43b1-ae79-ac22e8a870c5\"}}}"
+            ]
+          },
+          {
+            "item": "\u4e25\u4e2d\u6021-\u4e2a\u4eba\u7b80\u5386-\u7533\u8bf7\u9500\u552e\u90e8-\u8239\u52a1\u90e8.pdf",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73AQ55RLIFHT7VB3LBVFIYJQLSTK/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:50\",\"request-id\":\"7a0a5446-5601-44d1-b45b-309bf957ecdc\",\"client-request-id\":\"7a0a5446-5601-44d1-b45b-309bf957ecdc\"}}}"
+            ]
+          },
+          {
+            "item": "XUAN HOA Design specification-\u8aaa\u660e\u66f8 2026.3.18.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73BOB2VDKNTQSRDZSWTEAPXX44KE/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:53\",\"request-id\":\"08585a1f-d95a-44a5-b928-ec417c950722\",\"client-request-id\":\"08585a1f-d95a-44a5-b928-ec417c950722\"}}}"
+            ]
+          },
+          {
+            "item": "XUAN HOA Matira Ext Line - 2026.3.18.dwg",
+            "errors": [
+              "GraphError: POST https://graph.microsoft.com/v1.0/users/5aded254-f6cc-490d-8213-adfb28a64aea/drive/items/017YJS73H355FBVJWZNJE2U2XGYYMQC7UN/invite failed (400): {\"error\":{\"code\":\"invalidRequest\",\"message\":\"Invalid value for role\",\"innerError\":{\"date\":\"2026-09-12T04:43:53\",\"request-id\":\"33a7e08a-f1cd-4b09-92ac-2decb28e7685\",\"client-request-id\":\"33a7e08a-f1cd-4b09-92ac-2decb28e7685\"}}}"
+            ]
           }
         ]
       },

@@ -13,12 +13,6 @@ class GraphError(RuntimeError):
     pass
 
 
-# Transient network-layer failures (dropped/reset connections, read timeouts) that
-# can happen at any point during a long-running migration - distinct from the
-# HTTP-status-code retries below because these raise before a response even exists.
-TRANSIENT_NETWORK_ERRORS = (requests.exceptions.ConnectionError, requests.exceptions.ChunkedEncodingError, requests.exceptions.Timeout)
-
-
 class GraphClient:
     def __init__(
         self,
@@ -65,15 +59,7 @@ class GraphClient:
         url = path if path.startswith("https://") else f"{self.base_url}/{path.lstrip('/')}"
         self._record("requests")
         for attempt in range(6):
-            try:
-                response = self.session.request(method, url, timeout=120, **kwargs)
-            except TRANSIENT_NETWORK_ERRORS as network_error:
-                if attempt >= 5:
-                    raise GraphError(f"{method} {url} failed after retries (connection kept dropping): {network_error}") from network_error
-                delay = min(60, 2**attempt)
-                print(f"  [network] {type(network_error).__name__} on {method} {url} - waiting {delay}s and retrying (attempt {attempt + 1}/6): {network_error}")
-                time.sleep(delay)
-                continue
+            response = self.session.request(method, url, timeout=120, **kwargs)
             if response.status_code == 401 and attempt < 5:
                 # Token expired/invalid mid-run - refresh and retry once per attempt
                 self._record("auth_refreshes")
@@ -92,10 +78,7 @@ class GraphClient:
                 time.sleep(delay)
                 continue
             if not response.ok:
-                # Keep the full response body (not just the first ~500 chars) - the
-                # actual reason (e.g. an invalid-character filename) is often past
-                # where the long drive/item-id URL alone would already eat the budget.
-                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:4000]}")
+                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:500]}")
             return response.json() if response.content else None
         raise GraphError(f"{method} {url} failed after retries")
 
@@ -106,15 +89,7 @@ class GraphClient:
         """
         self._record("requests")
         for attempt in range(3):
-            try:
-                response = self.session.request(method, url, **kwargs)
-            except TRANSIENT_NETWORK_ERRORS as network_error:
-                if attempt >= 2:
-                    raise GraphError(f"{method} {url} failed after retries (connection kept dropping): {network_error}") from network_error
-                delay = min(60, 2**attempt)
-                print(f"  [network] {type(network_error).__name__} during transfer, waiting {delay}s and retrying: {method} {url}")
-                time.sleep(delay)
-                continue
+            response = self.session.request(method, url, **kwargs)
             if response.status_code == 401 and attempt < 2:
                 self._record("auth_refreshes")
                 print(f"  [auth] Token rejected (401) during transfer, refreshing: {method} {url}")
