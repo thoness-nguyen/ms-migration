@@ -34,9 +34,20 @@ def _copy_item_permissions(
     recreation call on the target actually succeeded - this drives the
     checkpoint's `permission_status` ("shared" vs "private") for that item.
     """
-    result: dict[str, Any] = {"links_created": 0, "invites_sent": 0, "invites_to_source_tenant": 0, "skipped": 0, "errors": [], "had_shared_permissions": False}
+    result: dict[str, Any] = {
+        "links_created": 0,
+        "invites_sent": 0,
+        "invites_to_source_tenant": 0,
+        "skipped": 0,
+        "errors": [],
+        "had_shared_permissions": False,
+    }
     try:
-        permissions = list(source_graph.pages(f"/users/{source_user}/drive/items/{source_item_id}/permissions"))
+        permissions = list(
+            source_graph.pages(
+                f"/users/{source_user}/drive/items/{source_item_id}/permissions"
+            )
+        )
     except GraphError as error:
         result["errors"].append(f"list permissions failed: {str(error)[:200]}")
         return result
@@ -54,7 +65,10 @@ def _copy_item_permissions(
                 target_graph.request(
                     "POST",
                     f"/users/{target_user}/drive/items/{target_item_id}/createLink",
-                    json={"type": link.get("type", "view"), "scope": link.get("scope", "anonymous")},
+                    json={
+                        "type": link.get("type", "view"),
+                        "scope": link.get("scope", "anonymous"),
+                    },
                 )
                 result["links_created"] += 1
             except GraphError as error:
@@ -65,14 +79,23 @@ def _copy_item_permissions(
         granted = permission.get("grantedToV2") or permission.get("grantedTo")
         if granted:
             identities.append(granted)
-        identities.extend(permission.get("grantedToIdentitiesV2") or permission.get("grantedToIdentities") or [])
+        identities.extend(
+            permission.get("grantedToIdentitiesV2")
+            or permission.get("grantedToIdentities")
+            or []
+        )
 
         recipients: list[dict[str, str]] = []
         for identity in identities:
             user_identity = identity.get("user") or {}
             identity_id = user_identity.get("id")
-            identity_email = user_identity.get("email") or user_identity.get("userPrincipalName")
-            if identity_email and identity_email.lower() in (source_user.lower(), target_user.lower()):
+            identity_email = user_identity.get("email") or user_identity.get(
+                "userPrincipalName"
+            )
+            if identity_email and identity_email.lower() in (
+                source_user.lower(),
+                target_user.lower(),
+            ):
                 # the owner's own baseline permission - not a real share
                 continue
             target_identity_id = user_map.get(identity_id) if identity_id else None
@@ -82,7 +105,9 @@ def _copy_item_permissions(
                 recipients.append({"email": identity_email})
                 result["invites_to_source_tenant"] += 1
             else:
-                result["errors"].append(f"no mapping or email for identity {identity_id}")
+                result["errors"].append(
+                    f"no mapping or email for identity {identity_id}"
+                )
 
         if not recipients:
             result["skipped"] += 1
@@ -93,7 +118,12 @@ def _copy_item_permissions(
             target_graph.request(
                 "POST",
                 f"/users/{target_user}/drive/items/{target_item_id}/invite",
-                json={"requireSignIn": False, "sendInvitation": False, "roles": permission.get("roles", ["read"]), "recipients": recipients},
+                json={
+                    "requireSignIn": True,
+                    "sendInvitation": False,
+                    "roles": permission.get("roles", ["read", "write"]),
+                    "recipients": recipients,
+                },
             )
             result["invites_sent"] += 1
         except GraphError as error:
@@ -125,8 +155,16 @@ def _transfer_one_file(
     item_name = item["name"]
     # skip file if an item with the same name already exists in the target folder
     try:
-        existing = target_graph.request("GET", f"/users/{target_user}/drive/items/{target_parent}:/{item_name}")
-        state.mark("onedrive", source_id, "completed", existing.get("id") if existing else None, user_key=user_key)
+        existing = target_graph.request(
+            "GET", f"/users/{target_user}/drive/items/{target_parent}:/{item_name}"
+        )
+        state.mark(
+            "onedrive",
+            source_id,
+            "completed",
+            existing.get("id") if existing else None,
+            user_key=user_key,
+        )
         with stats_lock:
             stats["files_copied"] += 1
         return
@@ -134,27 +172,59 @@ def _transfer_one_file(
         pass
 
     try:
-        content = source_graph.raw_request("GET", f"{source_graph.base_url}/users/{source_user}/drive/items/{item['id']}/content", timeout=120)
+        content = source_graph.raw_request(
+            "GET",
+            f"{source_graph.base_url}/users/{source_user}/drive/items/{item['id']}/content",
+            timeout=120,
+        )
         content.raise_for_status()
         data = content.content
         file_size_mb = len(data) / (1024 * 1024)
         if len(data) <= 4 * 1024 * 1024:
-            target = target_graph.request("PUT", f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/content", data=data)
+            target = target_graph.request(
+                "PUT",
+                f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/content",
+                data=data,
+            )
         else:
-            session = target_graph.request("POST", f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/createUploadSession", json={"item": {"@microsoft.graph.conflictBehavior": "replace", "name": item_name}})
+            session = target_graph.request(
+                "POST",
+                f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/createUploadSession",
+                json={
+                    "item": {
+                        "@microsoft.graph.conflictBehavior": "replace",
+                        "name": item_name,
+                    }
+                },
+            )
             upload_url = session["uploadUrl"]
             target = None
-            for chunk_index, start in enumerate(range(0, len(data), CHUNK_SIZE), start=1):
-                chunk = data[start:start + CHUNK_SIZE]
-                response = target_graph.raw_request("PUT", upload_url, headers={"Content-Length": str(len(chunk)), "Content-Range": f"bytes {start}-{start + len(chunk) - 1}/{len(data)}"}, data=chunk, timeout=120)
+            for chunk_index, start in enumerate(
+                range(0, len(data), CHUNK_SIZE), start=1
+            ):
+                chunk = data[start : start + CHUNK_SIZE]
+                response = target_graph.raw_request(
+                    "PUT",
+                    upload_url,
+                    headers={
+                        "Content-Length": str(len(chunk)),
+                        "Content-Range": f"bytes {start}-{start + len(chunk) - 1}/{len(data)}",
+                    },
+                    data=chunk,
+                    timeout=120,
+                )
                 response.raise_for_status()
                 target = response.json() if response.content else target
                 if chunk_index % 5 == 0:
                     uploaded_mb = (start + len(chunk)) / (1024 * 1024)
                     pct = int(100 * (start + len(chunk)) / len(data))
-                    print(f"    >> {who}{item_name}: {pct}% ({uploaded_mb:.1f} MB / {file_size_mb:.1f} MB)")
+                    print(
+                        f"    >> {who}{item_name}: {pct}% ({uploaded_mb:.1f} MB / {file_size_mb:.1f} MB)"
+                    )
     except (GraphError, OSError) as error:
-        state.mark("onedrive", source_id, "failed", detail=str(error)[:200], user_key=user_key)
+        state.mark(
+            "onedrive", source_id, "failed", detail=str(error)[:200], user_key=user_key
+        )
         with stats_lock:
             stats["failed"] = stats.get("failed", 0) + 1
         return
@@ -164,12 +234,29 @@ def _transfer_one_file(
 
     permission_status = None
     if migrate_permissions and user_map and target_item_id:
-        perm_result = _copy_item_permissions(source_graph, target_graph, source_user, target_user, item["id"], target_item_id, user_map)
+        perm_result = _copy_item_permissions(
+            source_graph,
+            target_graph,
+            source_user,
+            target_user,
+            item["id"],
+            target_item_id,
+            user_map,
+        )
         if perm_result["errors"]:
             with stats_lock:
-                stats.setdefault("permission_errors", []).append({"item": item_name, "errors": perm_result["errors"]})
+                stats.setdefault("permission_errors", []).append(
+                    {"item": item_name, "errors": perm_result["errors"]}
+                )
         permission_status = _permission_status_for(perm_result)
-        state.mark("onedrive", source_id, "completed", target_item_id, user_key=user_key, permission_status=permission_status)
+        state.mark(
+            "onedrive",
+            source_id,
+            "completed",
+            target_item_id,
+            user_key=user_key,
+            permission_status=permission_status,
+        )
 
     suffix = " with 'shared' permission." if permission_status == "shared" else ""
     print(f"  [+] {who}Copied file: {item_name} ({file_size_mb:.2f} MB){suffix}")
@@ -188,7 +275,7 @@ def copy_drive(
     target_user: str,
     state: StateStore,
     dry_run: bool = False,
-    content_concurrency: int = 4,
+    content_concurrency: int = 8,
     user_key: str | None = None,
     user_map: dict[str, str] | None = None,
     migrate_permissions: bool = False,
@@ -202,7 +289,11 @@ def copy_drive(
     who = f"[{user_key}] " if user_key else ""
 
     def discover_and_prepare_folders(source_parent: str, target_parent: str) -> None:
-        for item in source_graph.pages(f"/users/{source_user}/drive/items/{source_parent}/children" if source_parent != "root" else f"/users/{source_user}/drive/root/children"):
+        for item in source_graph.pages(
+            f"/users/{source_user}/drive/items/{source_parent}/children"
+            if source_parent != "root"
+            else f"/users/{source_user}/drive/root/children"
+        ):
             item_id = item["id"]
             source_id = f"{source_user}:{item_id}"
             if state.status("onedrive", source_id) == "completed":
@@ -218,21 +309,64 @@ def copy_drive(
                     # a duplicate / risking data loss via conflictBehavior=replace
                     target_folder_id = None
                     try:
-                        existing = target_graph.request("GET", f"/users/{target_user}/drive/items/{target_parent}:/{item['name']}")
+                        existing = target_graph.request(
+                            "GET",
+                            f"/users/{target_user}/drive/items/{target_parent}:/{item['name']}",
+                        )
                         target_folder_id = existing["id"]
-                        state.mark("onedrive", source_id, "completed", target_folder_id, user_key=user_key)
+                        state.mark(
+                            "onedrive",
+                            source_id,
+                            "completed",
+                            target_folder_id,
+                            user_key=user_key,
+                        )
                     except GraphError:
                         pass  # Folder doesn't exist yet, proceed with creation
                     if target_folder_id is None:
-                        created = target_graph.request("POST", f"/users/{target_user}/drive/items/{target_parent}/children", json={"name": item["name"], "folder": {}, "@microsoft.graph.conflictBehavior": "fail"})
+                        created = target_graph.request(
+                            "POST",
+                            f"/users/{target_user}/drive/items/{target_parent}/children",
+                            json={
+                                "name": item["name"],
+                                "folder": {},
+                                "@microsoft.graph.conflictBehavior": "fail",
+                            },
+                        )
                         target_folder_id = created["id"]
-                        state.mark("onedrive", source_id, "completed", target_folder_id, user_key=user_key)
+                        state.mark(
+                            "onedrive",
+                            source_id,
+                            "completed",
+                            target_folder_id,
+                            user_key=user_key,
+                        )
                     if migrate_permissions and user_map:
-                        perm_result = _copy_item_permissions(source_graph, target_graph, source_user, target_user, item_id, target_folder_id, user_map)
+                        perm_result = _copy_item_permissions(
+                            source_graph,
+                            target_graph,
+                            source_user,
+                            target_user,
+                            item_id,
+                            target_folder_id,
+                            user_map,
+                        )
                         if perm_result["errors"]:
                             with stats_lock:
-                                stats.setdefault("permission_errors", []).append({"item": item["name"], "errors": perm_result["errors"]})
-                        state.mark("onedrive", source_id, "completed", target_folder_id, user_key=user_key, permission_status=_permission_status_for(perm_result))
+                                stats.setdefault("permission_errors", []).append(
+                                    {
+                                        "item": item["name"],
+                                        "errors": perm_result["errors"],
+                                    }
+                                )
+                        state.mark(
+                            "onedrive",
+                            source_id,
+                            "completed",
+                            target_folder_id,
+                            user_key=user_key,
+                            permission_status=_permission_status_for(perm_result),
+                        )
                     print(f"  [+] {who}Created folder: {item['name']}")
                     discover_and_prepare_folders(item_id, target_folder_id)
                 else:
@@ -249,14 +383,32 @@ def copy_drive(
     if dry_run:
         return stats
 
-    content_gate = AdaptiveGate(initial=content_concurrency, minimum=1, maximum=content_concurrency)
+    content_gate = AdaptiveGate(
+        initial=content_concurrency, minimum=1, maximum=content_concurrency
+    )
     source_graph.set_throttle_hook(content_gate.record_throttle)
     target_graph.set_throttle_hook(content_gate.record_throttle)
 
     def copy_one_file(work: _FileWork) -> None:
-        _transfer_one_file(source_graph, target_graph, source_user, target_user, work.item, work.source_id, work.target_parent, state, user_key, user_map, migrate_permissions, stats, stats_lock)
+        _transfer_one_file(
+            source_graph,
+            target_graph,
+            source_user,
+            target_user,
+            work.item,
+            work.source_id,
+            work.target_parent,
+            state,
+            user_key,
+            user_map,
+            migrate_permissions,
+            stats,
+            stats_lock,
+        )
 
-    run_workers(file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate)
+    run_workers(
+        file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
+    )
 
     source_graph.set_throttle_hook(None)
     target_graph.set_throttle_hook(None)
@@ -279,32 +431,59 @@ def retry_failed_onedrive_files(
     stats: dict[str, Any] = {"files_copied": 0}
     stats_lock = threading.Lock()
     prefix = f"{source_user}:"
-    failed_ids = [source_id for source_id in state.list_ids("onedrive", "failed") if source_id.startswith(prefix)]
+    failed_ids = [
+        source_id
+        for source_id in state.list_ids("onedrive", "failed")
+        if source_id.startswith(prefix)
+    ]
     file_work: list[_FileWork] = []
 
     for source_id in failed_ids:
-        item_id = source_id[len(prefix):]
+        item_id = source_id[len(prefix) :]
         try:
-            item = source_graph.request("GET", f"/users/{source_user}/drive/items/{item_id}?$select=id,name,folder,parentReference")
+            item = source_graph.request(
+                "GET",
+                f"/users/{source_user}/drive/items/{item_id}?$select=id,name,folder,parentReference",
+            )
         except GraphError:
             continue
         if "folder" in item:
             continue
         parent_ref = item.get("parentReference") or {}
-        target_parent = state.target("onedrive", f"{source_user}:{parent_ref.get('id')}") or "root"
+        target_parent = (
+            state.target("onedrive", f"{source_user}:{parent_ref.get('id')}") or "root"
+        )
         file_work.append(_FileWork(item, source_id, target_parent))
 
     if not file_work:
         return stats
 
-    content_gate = AdaptiveGate(initial=content_concurrency, minimum=1, maximum=content_concurrency)
+    content_gate = AdaptiveGate(
+        initial=content_concurrency, minimum=1, maximum=content_concurrency
+    )
     source_graph.set_throttle_hook(content_gate.record_throttle)
     target_graph.set_throttle_hook(content_gate.record_throttle)
 
     def copy_one_file(work: _FileWork) -> None:
-        _transfer_one_file(source_graph, target_graph, source_user, target_user, work.item, work.source_id, work.target_parent, state, user_key, user_map, migrate_permissions, stats, stats_lock)
+        _transfer_one_file(
+            source_graph,
+            target_graph,
+            source_user,
+            target_user,
+            work.item,
+            work.source_id,
+            work.target_parent,
+            state,
+            user_key,
+            user_map,
+            migrate_permissions,
+            stats,
+            stats_lock,
+        )
 
-    run_workers(file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate)
+    run_workers(
+        file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
+    )
 
     source_graph.set_throttle_hook(None)
     target_graph.set_throttle_hook(None)
