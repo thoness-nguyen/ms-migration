@@ -52,6 +52,11 @@ def _copy_item_permissions(
         result["errors"].append(f"list permissions failed: {str(error)[:200]}")
         return result
 
+    # A private item has only one permission, belonging to the owner.
+    if len(permissions) == 1 and "owner" in (permissions[0].get("roles") or []):
+        result["skipped"] += 1
+        return result
+
     for permission in permissions:
         if permission.get("inheritedFrom"):
             # inherited from a parent folder - the target's own folder tree already covers this
