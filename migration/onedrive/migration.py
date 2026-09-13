@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from shlex import quote
 import threading
 from dataclasses import dataclass
 from typing import Any
@@ -140,6 +141,19 @@ def _copy_item_permissions(
 def _permission_status_for(perm_result: dict[str, Any]) -> str:
     return "shared" if perm_result.get("had_shared_permissions") else "private"
 
+def encode_graph_path_segment(value: str) -> str:
+    """
+    URL-encode a single Microsoft Graph path segment.
+
+    Use this for user-controlled/resource names such as:
+    - file names
+    - folder names
+
+    Example:
+        HONGTAI #PO.xlsx
+        -> HONGTAI%20%23PO.xlsx
+    """
+    return quote(str(value), safe="")
 
 def _transfer_one_file(
     source_graph: GraphClient,
@@ -161,7 +175,7 @@ def _transfer_one_file(
     # skip file if an item with the same name already exists in the target folder
     try:
         existing = target_graph.request(
-            "GET", f"/users/{target_user}/drive/items/{target_parent}:/{item_name}"
+            "GET", f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}"
         )
         state.mark(
             "onedrive",
@@ -188,13 +202,13 @@ def _transfer_one_file(
         if len(data) <= 4 * 1024 * 1024:
             target = target_graph.request(
                 "PUT",
-                f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/content",
+                f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/content",
                 data=data,
             )
         else:
             session = target_graph.request(
                 "POST",
-                f"/users/{target_user}/drive/items/{target_parent}:/{item_name}:/createUploadSession",
+                f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/createUploadSession",
                 json={
                     "item": {
                         "@microsoft.graph.conflictBehavior": "replace",
