@@ -1,0 +1,14 @@
+{
+  "migration_id": "onedrive-pilot-001",
+  "area": "sharepoint",
+  "generated_at": "2026-09-06T03:18:34.003779+00:00",
+  "dry_run": false,
+  "summary": {
+    "overall_status": "completed",
+    "failed_item_count": 0,
+    "mismatched_libraries": [],
+    "areas_needing_attention": []
+  },
+  "results": [],
+  "planned_workload": null
+}

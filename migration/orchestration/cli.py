@@ -8,17 +8,18 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from ..common.auth import source_token, target_token
-from ..common.checkpoint import StateStore
+from ..common.checkpoint import StateStore, open_state_store
 from ..common.graph import GraphClient, GraphError
 from ..onedrive.migration import copy_drive
 from ..teams.services import extract_chat, import_channel_messages, import_chat
 from .batch import load_plan, run_batch
+from .validate import run_validation
 
 
 def main() -> int:
     load_dotenv()
     parser = argparse.ArgumentParser(description="Resumable Microsoft 365 tenant migration helpers")
-    parser.add_argument("--state", default="migration-state.sqlite")
+    parser.add_argument("--state-dir", default="state", help="Directory holding per-area checkpoint databases (sharepoint/onedrive/teams-checkpoint.sqlite)")
     parser.add_argument("--dry-run", action="store_true")
     sub = parser.add_subparsers(dest="command", required=True)
     teams = sub.add_parser("teams-channel")
@@ -35,16 +36,31 @@ def main() -> int:
     complete.add_argument("--chat-id", required=True, help="Target chat ID currently in migration mode")
     batch = sub.add_parser("batch")
     batch.add_argument("--config", type=Path, required=True, help="YAML or JSON batch plan")
-    batch.add_argument("--report", type=Path, default=Path("migration-report.json"))
+    batch.add_argument("--report-dir", type=Path, default=Path("reports"), help="Directory to write <area>-migration-result.json reports into")
+    batch.add_argument("--area", choices=["sharepoint", "onedrive", "teams"], help="Restrict the run to a single migration area (omit to run every area defined in the config)")
     batch.add_argument("--retry-failed-only", action="store_true", help="Skip the full folder-tree walk on libraries/drives that already have a checkpoint and only re-attempt items previously marked failed (SharePoint + OneDrive)")
+    validate = sub.add_parser("validate", help="Post-migration integrity check (size/hash for onedrive, message+member counts for teams) - a separate pass from 'batch'")
+    validate.add_argument("--config", type=Path, required=True, help="YAML or JSON batch plan (same file used for 'batch')")
+    validate.add_argument("--area", choices=["onedrive", "teams"], required=True)
+    validate.add_argument("--report-dir", type=Path, default=Path("reports"), help="Directory to write <area>-validation-result.json into")
+    validate.add_argument("--hash", action="store_true", help="OneDrive only: also compare content hashes, not just size - slower but higher confidence")
     drive = sub.add_parser("onedrive")
     drive.add_argument("--source-user", required=True)
     drive.add_argument("--target-user", required=True)
+    drive.add_argument("--migrate-permissions", action="store_true", help="Recreate each file/folder's sharing (direct grants + anyone/organization links) on the target - requires --user-map")
+    drive.add_argument("--user-map", type=Path, help="JSON file mapping users (same format as mapping.json's list of {source_id, target_id, ...}) - used to translate permission grantees when --migrate-permissions is set")
+    drive.add_argument("--user-key", help="Optional mapping-file key to stamp onto this drive's checkpoint rows (for validate/status filtering)")
     list_drives = sub.add_parser("list-drives", help="List SharePoint sites and their document library drive IDs")
     list_drives.add_argument("--tenant", choices=["source", "target"], default="source")
     list_drives.add_argument("--test-site", help="Test access to a specific site by ID (e.g., site.sharepoint.com,guid1,guid2)")
     args = parser.parse_args()
-    state = StateStore(args.state)
+    open_stores: dict[str, StateStore] = {}
+
+    def area_state(area: str) -> StateStore:
+        if area not in open_stores:
+            open_stores[area] = open_state_store(args.state_dir, area)
+        return open_stores[area]
+
     try:
         if args.command == "complete-chat":
             target_client = GraphClient(target_token())
@@ -54,7 +70,16 @@ def main() -> int:
             plan = load_plan(args.config)
             source_client = GraphClient(source_token())
             target_client = GraphClient(target_token())
-            report = run_batch(source_client, target_client, plan, args.config.parent, state, args.report, args.dry_run, args.retry_failed_only)
+            areas = [args.area] if args.area else ["sharepoint", "onedrive", "teams"]
+            states = {a: area_state(a) for a in areas}
+            report = run_batch(source_client, target_client, plan, args.config.parent, states, args.report_dir, args.dry_run, args.retry_failed_only, args.area)
+            count = sum(len(area_report.get("results", [])) for area_report in report["areas"].values())
+        elif args.command == "validate":
+            plan = load_plan(args.config)
+            source_client = GraphClient(source_token())
+            target_client = GraphClient(target_token())
+            states = {args.area: area_state(args.area)}
+            report = run_validation(source_client, target_client, plan, states, args.report_dir, args.area, args.hash)
             count = len(report["results"])
         elif args.command == "extract-chat":
             source_client = GraphClient(source_token())
@@ -62,10 +87,10 @@ def main() -> int:
             count = 1
         elif args.command == "teams-channel":
             target_client = GraphClient(target_token())
-            count = import_channel_messages(target_client, args.team_id, args.channel_id, json.loads(args.messages.read_text(encoding="utf-8")), state, args.dry_run)
+            count = import_channel_messages(target_client, args.team_id, args.channel_id, json.loads(args.messages.read_text(encoding="utf-8")), area_state("teams"), args.dry_run)
         elif args.command == "teams-chat":
             target_client = GraphClient(target_token())
-            target_chat_id, count = import_chat(target_client, json.loads(args.bundle.read_text(encoding="utf-8")), json.loads(args.user_map.read_text(encoding="utf-8")), state, args.dry_run)
+            target_chat_id, count = import_chat(target_client, json.loads(args.bundle.read_text(encoding="utf-8")), json.loads(args.user_map.read_text(encoding="utf-8")), area_state("teams"), args.dry_run)
             print(f"Target chat: {target_chat_id}")
         elif args.command == "list-drives":
             client = GraphClient(source_token() if args.tenant == "source" else target_token())
@@ -113,10 +138,27 @@ def main() -> int:
         else:
             source_client = GraphClient(source_token())
             target_client = GraphClient(target_token())
-            drive_stats = copy_drive(source_client, target_client, args.source_user, args.target_user, state, args.dry_run)
+            user_map = None
+            if args.user_map:
+                entries = json.loads(args.user_map.read_text(encoding="utf-8"))
+                user_map = {u["source_id"]: u["target_id"] for u in entries if u.get("source_id") and u.get("target_id")}
+            if args.migrate_permissions and not user_map:
+                print("⚠ --migrate-permissions requires --user-map to translate permission grantees; continuing without permission migration.")
+            drive_stats = copy_drive(
+                source_client,
+                target_client,
+                args.source_user,
+                args.target_user,
+                area_state("onedrive"),
+                args.dry_run,
+                user_key=args.user_key,
+                user_map=user_map,
+                migrate_permissions=bool(args.migrate_permissions and user_map),
+            )
             count = drive_stats.get("files_copied", 0) if isinstance(drive_stats, dict) else drive_stats
     finally:
-        state.close()
+        for store in open_stores.values():
+            store.close()
     print(f"Processed {count} item(s){' (dry run)' if args.dry_run else ''}.")
     return 0
 

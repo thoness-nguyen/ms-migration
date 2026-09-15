@@ -1,0 +1,772 @@
+{
+  "migration_id": "onedrive-pilot-001",
+  "area": "onedrive",
+  "generated_at": "2026-09-15T15:17:21.053459+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "workload": "onedrive",
+      "user": "andrew",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "angel",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "anh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "anh.thi",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "anna",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "anthony",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "cecilia",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "chinh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0,
+        "permission_errors": [
+          {
+            "item": "9. 28-AUG-2026 RH APPROVED FOR TTTL TO USE BACK HAFELE",
+            "errors": [
+              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676UNRRAKP34B5ZHJTAHSJUSO66XP/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
+            ]
+          },
+          {
+            "item": "8-14-SEP-2026 TTTL UPDATED AFTER MEETING",
+            "errors": [
+              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676SJHGLMSWDRKVH3CGSARA7S6ZVU/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
+            ]
+          },
+          {
+            "item": "3- HARRY COMMENT",
+            "errors": [
+              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676VSLW4STQSW3FD2VMKZWUAJEO7F/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
+            ]
+          }
+        ]
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "chloe",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "daisy",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "danny",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "daphnee",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "diep",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "dung.nguyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "emma",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "felix",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "fred",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "glen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "ha.ho",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hana",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hank",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hien",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hoaianh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hoanganh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hongan",
+      "status": "skipped",
+      "items": 0,
+      "reason": "source OneDrive is not provisioned"
+    },
+    {
+      "workload": "onedrive",
+      "user": "hop",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "hung",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "huyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "james",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "jason",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "kevin",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "kevinc",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "khanhha",
+      "status": "skipped",
+      "items": 0,
+      "reason": "source OneDrive is not provisioned"
+    },
+    {
+      "workload": "onedrive",
+      "user": "kim.loan",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "marcus",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "ngoc",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "nguyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "nguyet",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "nhattan",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "nhuy",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "ni",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "oanh",
+      "status": "skipped",
+      "items": 0,
+      "reason": "source OneDrive is not provisioned"
+    },
+    {
+      "workload": "onedrive",
+      "user": "patryc",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "paul.gerrard",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "phuongchi",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "quoc",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "quynh.anh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "raymond",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "sana",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "sarah",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "sophia",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "su",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "suong",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "tam",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "thanh.nguyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "thohuong",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "thu.truong",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "thuy",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "thuydung",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "tinh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "toan",
+      "status": "failed",
+      "items": 0,
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/d24c753e-be1a-4afb-9423-8d6f77b79c76/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "stats": {},
+      "retry_count": 2
+    },
+    {
+      "workload": "onedrive",
+      "user": "toan.le",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "trang",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "trang.nguyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "travis",
+      "status": "failed",
+      "items": 0,
+      "error": "ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+      "stats": {},
+      "retry_count": 2
+    },
+    {
+      "workload": "onedrive",
+      "user": "truc",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "uyen",
+      "status": "failed",
+      "items": 0,
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/ea2bbfca-95e9-4b0b-8ec1-57527e8355eb/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "stats": {},
+      "retry_count": 2
+    },
+    {
+      "workload": "onedrive",
+      "user": "van",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "vanlanh",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "winnie",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "winson",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "yen",
+      "status": "failed",
+      "items": 0,
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/c194948e-3e13-4f8e-b070-343c47dcda7c/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "stats": {},
+      "retry_count": 2
+    },
+    {
+      "workload": "onedrive",
+      "user": "yen.hoang",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "jimmy",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    },
+    {
+      "workload": "onedrive",
+      "user": "khanh",
+      "status": "skipped",
+      "items": 0,
+      "reason": "source OneDrive is not provisioned"
+    },
+    {
+      "workload": "onedrive",
+      "user": "trinh.nguyen",
+      "status": "completed",
+      "items": 0,
+      "stats": {
+        "files_copied": 0
+      },
+      "retry_count": 0
+    }
+  ]
+}

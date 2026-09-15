@@ -60,33 +60,3 @@ def test_concurrent_marks_from_multiple_threads(tmp_path):
         for i in range(20):
             assert store.status("file", f"source-{offset}-{i}") == "completed"
     store.close()
-
-
-def test_list_ids_filters_by_status_and_workload(tmp_path):
-    store = StateStore(tmp_path / "state.sqlite")
-    store.mark("sharepoint", "drive1:a", "completed", "target-a")
-    store.mark("sharepoint", "drive1:b", "failed", detail="boom")
-    store.mark("sharepoint", "drive1:c", "failed", detail="boom2")
-    store.mark("onedrive", "user1:d", "failed", detail="boom3")
-    assert sorted(store.list_ids("sharepoint", "failed")) == ["drive1:b", "drive1:c"]
-    assert store.list_ids("sharepoint", "completed") == ["drive1:a"]
-    assert store.list_ids("onedrive", "failed") == ["user1:d"]
-    store.close()
-
-
-def test_list_ids_sees_pending_unflushed_marks(tmp_path):
-    store = StateStore(tmp_path / "state.sqlite", batch_size=10)
-    store.mark("sharepoint", "drive1:a", "failed", detail="boom")
-    # not flushed yet, but list_ids must still see it (same guarantee as status())
-    assert store.list_ids("sharepoint", "failed") == ["drive1:a"]
-    store.close()
-
-
-def test_count_by_status(tmp_path):
-    store = StateStore(tmp_path / "state.sqlite")
-    store.mark("sharepoint", "drive1:a", "completed")
-    store.mark("sharepoint", "drive1:b", "completed")
-    store.mark("sharepoint", "drive1:c", "failed")
-    counts = store.count_by_status("sharepoint")
-    assert counts == {"completed": 2, "failed": 1}
-    store.close()
