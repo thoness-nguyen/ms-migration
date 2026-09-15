@@ -40,6 +40,7 @@ def _copy_item_permissions(
         "invites_sent": 0,
         "invites_to_source_tenant": 0,
         "skipped": 0,
+        "skip_reasons": [],
         "errors": [],
         "had_shared_permissions": False,
     }
@@ -66,6 +67,11 @@ def _copy_item_permissions(
 
         link = permission.get("link")
         if link:
+            # skip anonymous links
+            if link.get("scope") == "anonymous":
+                result["skipped"] += 1
+                continue
+            
             result["had_shared_permissions"] = True
             try:
                 target_graph.request(
@@ -98,6 +104,15 @@ def _copy_item_permissions(
             identity_email = user_identity.get("email") or user_identity.get(
                 "userPrincipalName"
             )
+            
+            if not identity_email and not identity_id:
+                result["skipped"] += 1
+                result.setdefault("skip_reasons", []).append(
+                    f"{source_item_id}: permission has no "
+                    "resolvable user email or object ID"
+                )
+                continue
+            
             if identity_email and identity_email.lower() in (
                 source_user.lower(),
                 target_user.lower(),
@@ -127,7 +142,7 @@ def _copy_item_permissions(
                 json={
                     "requireSignIn": True,
                     "sendInvitation": False,
-                    "roles": permission.get("roles", ["read", "write"]),
+                    "roles": ["write"],
                     "recipients": recipients,
                 },
             )
@@ -154,6 +169,30 @@ def encode_graph_path_segment(value: str) -> str:
         -> HONGTAI%20%23PO.xlsx
     """
     return quote(str(value), safe="")
+
+def ensure_user_drive(source_graph: GraphClient, source_user: str) -> bool:
+    try:
+        source_graph.request(
+            "GET",
+            f"/users/{source_user}/drive?$select=id,driveType,webUrl",
+        )
+        return True
+
+    except GraphError as error:
+        message = str(error).lower()
+
+        if (
+            "user's mysite not found" in message
+            or '"code":"resourcenotfound"' in message
+            and "mysite" in message
+        ):
+            print(
+                f"[SKIP] OneDrive is not provisioned for "
+                f"{source_user}; skipping this user."
+            )
+            return False
+
+        raise
 
 def _transfer_one_file(
     source_graph: GraphClient,

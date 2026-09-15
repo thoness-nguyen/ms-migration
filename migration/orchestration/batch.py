@@ -10,7 +10,7 @@ import yaml
 from ..common.checkpoint import StateStore
 from ..common.graph import GraphError
 from ..common.retry import with_retry
-from ..onedrive.migration import copy_drive, retry_failed_onedrive_files
+from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure_user_drive
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
@@ -135,52 +135,265 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
 
 def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
+
     content_concurrency = _concurrency(plan, "onedrive", "content", default=4)
+
     onedrive_config = plan.get("workloads", {}).get("onedrive", {})
-    migrate_permissions = bool(onedrive_config.get("migrate_permissions", False)) if isinstance(onedrive_config, dict) else False
-    tenant_user_map = {u["source_id"]: u["target_id"] for u in plan.get("users", []) if u.get("source_id") and u.get("target_id")}
-    for entry in onedrive_config.get("users", []) if isinstance(onedrive_config, dict) else []:
+
+    migrate_permissions = (
+        bool(onedrive_config.get("migrate_permissions", False))
+        if isinstance(onedrive_config, dict)
+        else False
+    )
+
+    tenant_user_map = {
+        user["source_id"]: user["target_id"]
+        for user in plan.get("users", [])
+        if user.get("source_id") and user.get("target_id")
+    }
+
+    onedrive_users = (
+        onedrive_config.get("users", [])
+        if isinstance(onedrive_config, dict)
+        else []
+    )
+
+    for entry in onedrive_users:
         user_key = entry.get("user")
-        user = next((item for item in plan.get("users", []) if item.get("key") == user_key), None)
-        result: dict[str, Any] = {"workload": "onedrive", "user": user_key, "status": "failed", "items": 0}
+
+        result: dict[str, Any] = {
+            "workload": "onedrive",
+            "user": user_key,
+            "status": "failed",
+            "items": 0,
+        }
+
+        source_id: str | None = None
+        target_id: str | None = None
+
         try:
+            if not user_key:
+                raise ValueError("OneDrive user entry is missing 'user'")
+
+            user = next(
+                (
+                    item
+                    for item in plan.get("users", [])
+                    if item.get("key") == user_key
+                ),
+                None,
+            )
+
             if not user:
-                raise ValueError(f"Unknown OneDrive user: {user_key}")
-            source_id = user["source_id"]
+                raise ValueError(
+                    f"Unknown OneDrive user: {user_key}"
+                )
+
+            source_id = user.get("source_id")
             target_id = user.get("target_id")
-            if not target_id:
-                result.update({"status": "skipped", "reason": "no target_id mapped for this user"})
+
+            if not source_id:
+                result.update({
+                    "status": "skipped",
+                    "reason": "no source_id mapped for this user",
+                })
                 results.append(result)
                 continue
-            if state.status("batch-onedrive", source_id) == "completed" and not retry_failed_only:
-                result.update({"status": "skipped", "reason": "already completed"})
+
+            if not target_id:
+                result.update({
+                    "status": "skipped",
+                    "reason": "no target_id mapped for this user",
+                })
+                results.append(result)
+                continue
+
+            # Check whether the source user's OneDrive exists.
+            # This must happen after resolving source_id and target_id.
+            if not ensure_user_drive(source_graph, source_id):
+                result.update({
+                    "status": "skipped",
+                    "reason": "source OneDrive is not provisioned",
+                    "items": 0,
+                })
+
+                if not dry_run:
+                    state.mark(
+                        "batch-onedrive",
+                        source_id,
+                        "skipped",
+                        target_id,
+                        detail="source OneDrive is not provisioned",
+                        user_key=user_key,
+                    )
+
+                results.append(result)
+                continue
+
+            # A completed batch can be skipped during a normal resume.
+            # retry_failed_only intentionally bypasses this check.
+            if (
+                state.status("batch-onedrive", source_id) == "completed"
+                and not retry_failed_only
+            ):
+                result.update({
+                    "status": "skipped",
+                    "reason": "already completed",
+                })
+
+                results.append(result)
+                continue
+
+            copy_fn = retry_failed_onedrive_files if retry_failed_only else copy_drive
+
+            if retry_failed_only:
+                call_args = (source_graph, target_graph, source_id, target_id, state)
             else:
-                copy_fn = retry_failed_onedrive_files if retry_failed_only else copy_drive
-                call_args = (source_graph, target_graph, source_id, target_id, state) if retry_failed_only else (source_graph, target_graph, source_id, target_id, state, dry_run)
-                stats, success, last_error, attempts = with_retry(
-                    copy_fn, *call_args,
-                    content_concurrency=content_concurrency,
-                    user_key=user_key,
-                    user_map=tenant_user_map,
-                    migrate_permissions=migrate_permissions,
-                    max_retries=3,
-                    on_retry=lambda attempt, error, user_key=user_key: print(f"[RETRY] OneDrive {user_key} attempt {attempt} failed: {type(error).__name__}: {error}"),
-                )
-                if success:
-                    items = stats.get("files_copied", 0) if isinstance(stats, dict) else stats
-                    result.update({"status": "dry-run" if dry_run else "completed", "items": items, "stats": stats if isinstance(stats, dict) else None, "retry_count": attempts - 1})
-                    if not dry_run:
-                        state.mark("batch-onedrive", source_id, "completed", target_id, user_key=user_key)
+                call_args = (source_graph, target_graph, source_id, target_id, state, dry_run)
+
+            stats, success, last_error, attempts = with_retry(
+                copy_fn,
+                *call_args,
+                content_concurrency=content_concurrency,
+                user_key=user_key,
+                user_map=tenant_user_map,
+                migrate_permissions=migrate_permissions,
+                max_retries=3,
+                on_retry=lambda attempt, error, user_key=user_key: print(
+                    f"[RETRY] OneDrive {user_key} attempt {attempt} failed: "
+                    f"{type(error).__name__}: {error}"
+                ),
+            )
+
+            stats_dict = stats if isinstance(stats, dict) else {}
+            items = stats_dict.get("files_copied", 0)
+            failed_count = int(stats_dict.get("failed", 0) or 0)
+            skipped = bool(stats_dict.get("skipped", False))
+
+            # copy_drive() may return a normal skipped result when the
+            # source OneDrive is not provisioned.
+            if skipped:
+                result.update({
+                    "status": "skipped",
+                    "reason": stats_dict.get(
+                        "skip_reason",
+                        "source OneDrive is not provisioned",
+                    ),
+                    "items": items,
+                    "stats": stats_dict,
+                    "retry_count": attempts - 1,
+                })
+
+                if not dry_run:
+                    state.mark(
+                        "batch-onedrive",
+                        source_id,
+                        "skipped",
+                        target_id,
+                        detail=result["reason"],
+                        user_key=user_key,
+                    )
+
+                results.append(result)
+                continue
+
+            if success:
+                # A successful function call does not necessarily mean that
+                # every individual file succeeded. copy_drive() catches
+                # per-file failures and reports them in stats["failed"].
+                if dry_run:
+                    batch_status = "dry-run"
+                elif failed_count > 0:
+                    batch_status = "completed_with_failures"
                 else:
-                    error_msg = f"{type(last_error).__name__}: {str(last_error)[:200]}" if last_error else "Copy failed"
-                    result.update({"status": "failed", "error": error_msg, "retry_count": attempts - 1})
-                    if not dry_run:
-                        state.mark("batch-onedrive", source_id, "failed", detail=error_msg[:200], user_key=user_key)
-        except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
-            result["error"] = str(error)
+                    batch_status = "completed"
+
+                result.update({
+                    "status": batch_status,
+                    "items": items,
+                    "stats": stats_dict,
+                    "retry_count": attempts - 1,
+                })
+
+                if not dry_run:
+                    if failed_count == 0:
+                        state.mark(
+                            "batch-onedrive",
+                            source_id,
+                            "completed",
+                            target_id,
+                            user_key=user_key,
+                        )
+                    else:
+                        # Do not mark the user as completed. Keeping the
+                        # batch pending allows a later resume to revisit
+                        # unfinished items.
+                        state.mark(
+                            "batch-onedrive",
+                            source_id,
+                            "pending",
+                            target_id,
+                            detail=(
+                                f"{failed_count} item(s) failed; "
+                                "the user remains resumable"
+                            ),
+                            user_key=user_key,
+                        )
+
+            else:
+                error_msg = (
+                    f"{type(last_error).__name__}: "
+                    f"{str(last_error)[:200]}"
+                    if last_error
+                    else "Copy failed"
+                )
+
+                result.update({
+                    "status": "failed",
+                    "error": error_msg,
+                    "items": items,
+                    "stats": stats_dict,
+                    "retry_count": attempts - 1,
+                })
+
+                if not dry_run:
+                    state.mark(
+                        "batch-onedrive",
+                        source_id,
+                        "failed",
+                        target_id,
+                        detail=error_msg[:200],
+                        user_key=user_key,
+                    )
+
+        except (
+            GraphError,
+            OSError,
+            TypeError,
+            ValueError,
+            KeyError,
+        ) as error:
+            error_msg = f"{type(error).__name__}: {str(error)[:200]}"
+
+            result.update({
+                "status": "failed",
+                "error": error_msg,
+            })
+
             if not dry_run:
-                state.mark("batch-onedrive", str(user_key), "failed", detail=str(error), user_key=user_key)
+                # Use source_id when available. Do not use user_key here,
+                # because the checkpoint entity is keyed by source_id.
+                state.mark(
+                    "batch-onedrive",
+                    source_id or str(user_key),
+                    "failed",
+                    target_id,
+                    detail=error_msg,
+                    user_key=user_key,
+                )
+
         results.append(result)
+
     return results
 
 
