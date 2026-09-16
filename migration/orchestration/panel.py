@@ -2,8 +2,10 @@
 """Migration Control Panel - lightweight terminal interface (ADR-0001).
 
 Supports area selection across all migration domains (SharePoint, Teams,
-OneDrive, or Run All) with a consistent start / monitor / report / retry /
-status interface, backed by the shared checkpoint database.
+OneDrive) with a consistent start / monitor / report / retry / status
+interface. Each area has its own checkpoint database under STATE_DIR
+(<area>-checkpoint.sqlite) and its own config file, so a run against one
+area can never touch another area's config, checkpoint data, or report.
 """
 from __future__ import annotations
 
@@ -19,15 +21,29 @@ for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, "reconfigure"):
         _stream.reconfigure(encoding="utf-8", errors="replace")
 
-STATE_DB = os.environ.get("MIGRATION_STATE_DB", "sharepoint-pilot.sqlite")
-CONFIG_FILE = os.environ.get("MIGRATION_CONFIG", "sharepoint-pilot.yaml")
+STATE_DIR = os.environ.get("MIGRATION_STATE_DIR", "state")
+REPORT_DIR = os.environ.get("MIGRATION_REPORT_DIR", "reports")
 
-# Maps each ADR migration area to the checkpoint "workload" prefixes it owns.
-AREA_WORKLOADS = {
-    "sharepoint": ["sharepoint"],
-    "teams": ["teams-channel", "teams-message", "teams-chat", "teams-chat-message"],
-    "onedrive": ["onedrive"],
+CONFIG_FILES = {
+    "sharepoint": "config/sharepoint-pilot.yaml",
+    "teams": "config/teams-pilot.yaml",
+    "onedrive": "config/onedrive-pilot.yaml",
 }
+
+AREAS = ("sharepoint", "onedrive", "teams")
+
+
+def _db_path(area: str) -> str:
+    return os.path.join(STATE_DIR, f"{area}-checkpoint.sqlite")
+
+def _config_path(area: str) -> str:
+    return os.environ.get(
+        "MIGRATION_CONFIG",
+        CONFIG_FILES[area],
+    )
+
+def _areas_for(area: str) -> list[str]:
+    return [area]
 
 
 def print_menu(area: str | None) -> None:
@@ -37,14 +53,15 @@ def print_menu(area: str | None) -> None:
     print(f"Area: {label}")
     print("=" * 80)
     print()
-    print("  1. Select migration area (SharePoint / Teams / OneDrive / Run All)")
+    print("  1. Select migration area (SharePoint / Teams / OneDrive)")
     print("  2. Start migration")
     print("  3. Monitor progress (real-time)")
     print("  4. Show migration status")
     print("  5. Generate failed items report")
-    print("  6. Retry failed items (fast - skips full re-scan, all areas)")
-    print("  7. Clear batch checkpoint (reset if stuck)")
-    print("  8. Exit")
+    print("  6. Retry failed items (fast - skips full re-scan)")
+    print("  7. Validate migrated data (post-migration integrity check)")
+    print("  8. Clear batch checkpoint (reset if stuck)")
+    print("  9. Exit")
     print()
 
 
@@ -53,45 +70,84 @@ def select_area() -> str:
     print("  [1] SharePoint")
     print("  [2] Teams")
     print("  [3] OneDrive")
-    print("  [4] Run All")
-    choice = input("Select area (1-4): ").strip()
-    return {"1": "sharepoint", "2": "teams", "3": "onedrive", "4": "all"}.get(choice, "sharepoint")
-
-
-def _workloads_for(area: str) -> list[str]:
-    if area == "all":
-        return [w for workloads in AREA_WORKLOADS.values() for w in workloads]
-    return AREA_WORKLOADS.get(area, ["sharepoint"])
+    choice = input("Select area (1-3): ").strip()
+    return {"1": "sharepoint", "2": "teams", "3": "onedrive"}.get(choice, "sharepoint")
 
 
 def start_migration(area: str, retry_failed_only: bool = False) -> None:
-    print(f"\n🚀 Starting migration ({area})...")
-    if area != "sharepoint" and area != "all":
-        print(f"   ℹ️  {area} runs through the same 'batch' command — it only processes")
-        print(f"      what's defined under 'workloads.{area}' in {CONFIG_FILE}.")
+    """Start migration for the selected area."""
+
+    config_file = _config_path(area)
+
+    print()
+    print(f"🚀 Starting migration ({area})...")
+    print(f"   📄 Config: {config_file}")
+    print(f"   💾 State:  {_db_path(area)}")
+
+    if area == "onedrive":
+        print(
+            "   ℹ️  OneDrive runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.onedrive' in the selected config."
+        )
+
+    elif area == "teams":
+        print(
+            "   ℹ️  Teams runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.teams' in the selected config."
+        )
+
+    elif area == "sharepoint":
+        print(
+            "   ℹ️  SharePoint runs through the same 'batch' command — "
+            "it only processes what's defined under "
+            "'workloads.sharepoint' in the selected config."
+        )
+
     cmd = [
-        sys.executable, "-m", "migration.orchestration.cli",
-        "--state", STATE_DB,
-        "batch", "--config", CONFIG_FILE,
-        "--report", "migration-result.json",
+        sys.executable,
+        "-m",
+        "migration.orchestration.cli",
+        "--state-dir",
+        STATE_DIR,
+        "batch",
+        "--config",
+        config_file,
+        "--report-dir",
+        REPORT_DIR,
+        "--area",
+        area,
     ]
     if retry_failed_only:
         cmd.append("--retry-failed-only")
-    subprocess.run(cmd, cwd=os.getcwd())
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        print()
+        print(f"❌ Migration failed with exit code {exc.returncode}")
+    except KeyboardInterrupt:
+        print()
+        print("⏹️ Migration stopped by user.")
 
 
 def monitor_progress(area: str) -> None:
     print("\n📊 Monitoring progress (Ctrl+C to stop)...\n")
     import time
-    workloads = _workloads_for(area)
-    placeholders = ",".join("?" for _ in workloads)
     try:
         while True:
-            conn = sqlite3.connect(STATE_DB)
-            cur = conn.cursor()
-            cur.execute(f"SELECT status, COUNT(*) FROM checkpoints WHERE workload IN ({placeholders}) GROUP BY status", workloads)
-            stats = dict(cur.fetchall())
-            conn.close()
+            stats: dict[str, int] = {}
+            for a in _areas_for(area):
+                path = _db_path(a)
+                if not os.path.exists(path):
+                    continue
+                conn = sqlite3.connect(path)
+                cur = conn.cursor()
+                cur.execute("SELECT status, COUNT(*) FROM checkpoints GROUP BY status")
+                for status, count in cur.fetchall():
+                    stats[status] = stats.get(status, 0) + count
+                conn.close()
             completed = stats.get("completed", 0)
             pending = stats.get("pending", 0) + stats.get("started", 0) + stats.get("created", 0)
             failed = stats.get("failed", 0)
@@ -105,16 +161,21 @@ def monitor_progress(area: str) -> None:
 
 
 def show_status(area: str) -> None:
-    workloads = _workloads_for(area)
-    placeholders = ",".join("?" for _ in workloads)
     try:
-        conn = sqlite3.connect(STATE_DB)
-        cur = conn.cursor()
         print("\n" + "=" * 80)
         print(f"MIGRATION STATUS ({area})")
         print("=" * 80)
-        cur.execute(f"SELECT status, COUNT(*) FROM checkpoints WHERE workload IN ({placeholders}) GROUP BY status", workloads)
-        stats = dict(cur.fetchall())
+        stats: dict[str, int] = {}
+        for a in _areas_for(area):
+            path = _db_path(a)
+            if not os.path.exists(path):
+                continue
+            conn = sqlite3.connect(path)
+            cur = conn.cursor()
+            cur.execute("SELECT status, COUNT(*) FROM checkpoints GROUP BY status")
+            for status, count in cur.fetchall():
+                stats[status] = stats.get(status, 0) + count
+            conn.close()
         completed = stats.get("completed", 0)
         pending = sum(v for k, v in stats.items() if k not in ("completed", "failed"))
         failed = stats.get("failed", 0)
@@ -133,7 +194,6 @@ def show_status(area: str) -> None:
         else:
             print(f"\n  ✅ Migration complete!")
         print("\n" + "=" * 80 + "\n")
-        conn.close()
     except Exception as e:
         print(f"  ❌ Error: {e}")
 
@@ -143,13 +203,16 @@ def generate_failed_report(area: str) -> None:
     from datetime import datetime
     import json
 
-    workloads = _workloads_for(area)
-    placeholders = ",".join("?" for _ in workloads)
-    conn = sqlite3.connect(STATE_DB)
-    cur = conn.cursor()
-    cur.execute(f"SELECT workload, source_id, detail FROM checkpoints WHERE status='failed' AND workload IN ({placeholders})", workloads)
-    rows = cur.fetchall()
-    conn.close()
+    rows: list[tuple[str, str, str | None]] = []
+    for a in _areas_for(area):
+        path = _db_path(a)
+        if not os.path.exists(path):
+            continue
+        conn = sqlite3.connect(path)
+        cur = conn.cursor()
+        cur.execute("SELECT workload, source_id, detail FROM checkpoints WHERE status='failed'")
+        rows.extend(cur.fetchall())
+        conn.close()
 
     print("\n" + "=" * 100)
     print(f"FAILED ITEMS REPORT ({area}) - Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -171,7 +234,8 @@ def generate_failed_report(area: str) -> None:
             print(f"   [{item['workload']}] {item['source_id']}")
         print()
 
-    report_path = f"failed-items-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.json"
+    os.makedirs(REPORT_DIR, exist_ok=True)
+    report_path = os.path.join(REPORT_DIR, f"failed-items-report-{area}-{datetime.now().strftime('%Y%m%d-%H%M%S')}.json")
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump({"generated_at": datetime.now().isoformat(), "area": area, "total_failed": len(rows),
                     "failed_items": [{"workload": w, "source_id": s, "detail": d} for w, s, d in rows]}, f, indent=2)
@@ -186,40 +250,88 @@ def retry_failed_items(area: str) -> None:
     reprocess non-completed items every run, so this is a normal run for
     that area - no separate fast path needed.
     """
-    workloads = _workloads_for(area)
-    placeholders = ",".join("?" for _ in workloads)
-    conn = sqlite3.connect(STATE_DB)
-    cur = conn.cursor()
-    cur.execute(f"SELECT COUNT(*) FROM checkpoints WHERE status='failed' AND workload IN ({placeholders})", workloads)
-    count = cur.fetchone()[0]
-    conn.close()
+    count = 0
+    for a in _areas_for(area):
+        path = _db_path(a)
+        if not os.path.exists(path):
+            continue
+        conn = sqlite3.connect(path)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM checkpoints WHERE status='failed'")
+        count += cur.fetchone()[0]
+        conn.close()
     if count == 0:
         print("\n  ✅ No failed items recorded for this area - nothing to retry.\n")
         return
     print(f"\n  🔄 {count} item(s) marked failed for '{area}'. Re-attempting just those (fast path)...\n")
     start_migration(area, retry_failed_only=True)
-    print("\n  ℹ️  See migration-result.json's 'summary' field, or option 4/5, for the updated status.\n")
+    print(f"\n  ℹ️  See {REPORT_DIR}/<area>-migration-result.json's 'summary' field, or option 4/5, for the updated status.\n")
 
 
 def clear_batch_state(area: str) -> None:
     confirm = input("\n⚠️  Clear batch-level checkpoint for this area? (yes/no): ")
     if confirm.lower() != "yes":
         return
-    batch_workloads = list({f"batch-{w.split('-')[0]}" for w in _workloads_for(area)})
-    placeholders = ",".join("?" for _ in batch_workloads)
-    conn = sqlite3.connect(STATE_DB)
-    cur = conn.cursor()
-    cur.execute(f"DELETE FROM checkpoints WHERE workload IN ({placeholders})", batch_workloads)
-    conn.commit()
-    conn.close()
+    for a in _areas_for(area):
+        path = _db_path(a)
+        if not os.path.exists(path):
+            continue
+        conn = sqlite3.connect(path)
+        cur = conn.cursor()
+        cur.execute("DELETE FROM checkpoints WHERE workload LIKE 'batch-%'")
+        conn.commit()
+        conn.close()
     print("✓ Batch checkpoint cleared\n")
+
+
+def validate_migration(area: str) -> None:
+    """Option 7: post-migration integrity check - a separate pass from the
+    copy itself (size always, content hash optionally). SharePoint's
+    file/folder counts are already checked as part of the retry pass
+    (option 6), so this is onedrive/teams only.
+    """
+    if area == "sharepoint":
+        print(f"\n  ℹ️  SharePoint validation already runs as part of option 6's retry pass - see {REPORT_DIR}/sharepoint-migration-result.json's 'validation' field.\n")
+        return
+
+    config_file = _config_path(area)
+    verify_hash = False
+    if area == "onedrive":
+        answer = input("Also compare content hashes, not just file size? Slower but higher confidence (y/N): ").strip().lower()
+        verify_hash = answer in ("y", "yes")
+
+    print(f"\n🔍 Validating migrated {area} data against source...")
+    cmd = [
+        sys.executable,
+        "-m",
+        "migration.orchestration.cli",
+        "--state-dir",
+        STATE_DIR,
+        "validate",
+        "--config",
+        config_file,
+        "--area",
+        area,
+        "--report-dir",
+        REPORT_DIR,
+    ]
+    if verify_hash:
+        cmd.append("--hash")
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as exc:
+        print()
+        print(f"❌ Validation failed with exit code {exc.returncode}")
+        return
+    print(f"\n  ℹ️  See {REPORT_DIR}/{area}-validation-result.json for the full per-item report.\n")
 
 
 def main() -> None:
     area = "sharepoint"
     while True:
         print_menu(area)
-        choice = input("Enter choice (1-8): ").strip()
+        choice = input("Enter choice (1-9): ").strip()
         if choice == "1":
             area = select_area()
         elif choice == "2":
@@ -233,8 +345,10 @@ def main() -> None:
         elif choice == "6":
             retry_failed_items(area)
         elif choice == "7":
-            clear_batch_state(area)
+            validate_migration(area)
         elif choice == "8":
+            clear_batch_state(area)
+        elif choice == "9":
             print("\n✅ Goodbye!\n")
             sys.exit(0)
         else:

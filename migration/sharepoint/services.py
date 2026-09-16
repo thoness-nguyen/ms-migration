@@ -297,3 +297,34 @@ def get_site_groups(graph_client: GraphClient, site_id: str) -> list[dict[str, A
         return []
 
 
+def copy_item_permissions(
+    source_graph: GraphClient,
+    target_graph: GraphClient,
+    source_drive_id: str,
+    target_drive_id: str,
+    source_item_id: str,
+    target_item_id: str,
+) -> None:
+    """Recreate a drive item's sharing links on the target drive (best-effort).
+
+    Direct-grant permissions are not recreated here since group/user mapping
+    is out of scope for the SharePoint library copy path; only anyone/organization
+    sharing links (which need no identity mapping) are reproduced.
+    """
+    try:
+        permissions = list(source_graph.pages(f"/drives/{source_drive_id}/items/{source_item_id}/permissions"))
+    except GraphError:
+        return
+    for permission in permissions:
+        if permission.get("inheritedFrom"):
+            continue
+        link = permission.get("link")
+        if not link:
+            continue
+        target_graph.request(
+            "POST",
+            f"/drives/{target_drive_id}/items/{target_item_id}/createLink",
+            json={"type": link.get("type", "view"), "scope": link.get("scope", "anonymous")},
+        )
+
+
