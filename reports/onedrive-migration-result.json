@@ -1,268 +1,176 @@
 {
   "migration_id": "onedrive-pilot-001",
   "area": "onedrive",
-  "generated_at": "2026-09-15T15:17:21.053459+00:00",
+  "generated_at": "2026-09-16T08:35:09.249501+00:00",
   "dry_run": false,
   "results": [
     {
       "workload": "onedrive",
       "user": "andrew",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "angel",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "anh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "anh.thi",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "anna",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "anthony",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "cecilia",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "chinh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0,
-        "permission_errors": [
-          {
-            "item": "9. 28-AUG-2026 RH APPROVED FOR TTTL TO USE BACK HAFELE",
-            "errors": [
-              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676UNRRAKP34B5ZHJTAHSJUSO66XP/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
-            ]
-          },
-          {
-            "item": "8-14-SEP-2026 TTTL UPDATED AFTER MEETING",
-            "errors": [
-              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676SJHGLMSWDRKVH3CGSARA7S6ZVU/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
-            ]
-          },
-          {
-            "item": "3- HARRY COMMENT",
-            "errors": [
-              "invite failed: POST https://graph.microsoft.com/v1.0/users/8c6904c2-75d2-4ee0-a0c1-b064b963a820/drive/items/01WFX676VSLW4STQSW3FD2VMKZWUAJEO7F/invite failed (400): {\"error\":{\"code\":\"sharingFailed\",\"message\":\"There w"
-            ]
-          }
-        ]
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "chloe",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "daisy",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "danny",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "daphnee",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "diep",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "dung.nguyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "emma",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "felix",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "fred",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "glen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "ha.ho",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hana",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hank",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hien",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hoaianh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hoanganh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -274,72 +182,51 @@
     {
       "workload": "onedrive",
       "user": "hop",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "hung",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "huyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "james",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "jason",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "kevin",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "kevinc",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -351,82 +238,58 @@
     {
       "workload": "onedrive",
       "user": "kim.loan",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "marcus",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "ngoc",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "nguyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "nguyet",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "nhattan",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "nhuy",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "ni",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -438,182 +301,128 @@
     {
       "workload": "onedrive",
       "user": "patryc",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "paul.gerrard",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "phuongchi",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "quoc",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "quynh.anh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "raymond",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "sana",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "sarah",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "sophia",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "su",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "suong",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "tam",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "thanh.nguyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "thohuong",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "thu.truong",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "thuy",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "thuydung",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "tinh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -627,51 +436,40 @@
     {
       "workload": "onedrive",
       "user": "toan.le",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "trang",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "trang.nguyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "travis",
-      "status": "failed",
-      "items": 0,
-      "error": "ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
-      "stats": {},
-      "retry_count": 2
-    },
-    {
-      "workload": "onedrive",
-      "user": "truc",
       "status": "completed",
       "items": 0,
       "stats": {
         "files_copied": 0
       },
-      "retry_count": 0
+      "retry_count": 1
+    },
+    {
+      "workload": "onedrive",
+      "user": "truc",
+      "status": "skipped",
+      "items": 0,
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -685,42 +483,30 @@
     {
       "workload": "onedrive",
       "user": "van",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "vanlanh",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "winnie",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "winson",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -734,22 +520,16 @@
     {
       "workload": "onedrive",
       "user": "yen.hoang",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
       "user": "jimmy",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -761,12 +541,9 @@
     {
       "workload": "onedrive",
       "user": "trinh.nguyen",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 0
+      "reason": "already completed"
     }
   ]
 }
