@@ -1,0 +1,298 @@
+[
+  {
+    "id": "1605087718452",
+    "replyToId": null,
+    "etag": "1605166522413",
+    "messageType": "message",
+    "createdDateTime": "2020-11-11T09:41:58.452Z",
+    "lastModifiedDateTime": "2020-11-12T07:35:22.413Z",
+    "lastEditedDateTime": "2020-11-12T07:35:22.413Z",
+    "deletedDateTime": null,
+    "subject": "HO.HK shipping docs",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1605087718452?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605087718452&parentMessageId=1605087718452",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "(enter order #)"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605087750830",
+    "replyToId": null,
+    "etag": "1607036800361",
+    "messageType": "message",
+    "createdDateTime": "2020-11-11T09:42:30.83Z",
+    "lastModifiedDateTime": "2020-12-03T23:06:40.361Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2020-12-03T23:06:40.361Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1605087750830?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605087750830&parentMessageId=1605087750830",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605087774859",
+    "replyToId": null,
+    "etag": "1607126309189",
+    "messageType": "message",
+    "createdDateTime": "2020-11-11T09:42:54.859Z",
+    "lastModifiedDateTime": "2020-12-04T23:58:29.189Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2020-12-04T23:58:29.189Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1605087774859?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605087774859&parentMessageId=1605087774859",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605165925565",
+    "replyToId": null,
+    "etag": "1605165925565",
+    "messageType": "message",
+    "createdDateTime": "2020-11-12T07:25:25.565Z",
+    "lastModifiedDateTime": "2020-11-12T07:25:25.565Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HO. CHINA shopping docs",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1605165925565?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605165925565&parentMessageId=1605165925565",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "(enter order#)"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605582255630",
+    "replyToId": null,
+    "etag": "1605582255630",
+    "messageType": "message",
+    "createdDateTime": "2020-11-17T03:04:15.63Z",
+    "lastModifiedDateTime": "2020-11-17T03:04:15.63Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1605582255630?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605582255630&parentMessageId=1605582255630",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "b3260c73-e24c-4bc2-b8fb-a9a285a3b79f",
+        "displayName": "Jason",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"877261a1-a5bb-42b8-9842-1e5fa2d422c3\"></attachment><attachment id=\"c0ec622e-2597-4b6d-995f-3e525ef6e1aa\"></attachment><attachment id=\"16e2e623-6e21-4e7b-b154-cab06b3d1665\"></attachment><attachment id=\"5cfd9b08-64ce-4cf1-ab48-6959478d2b5c\"></attachment><attachment id=\"4ece9722-37d3-4c17-a9aa-585d467fca65\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "877261a1-a5bb-42b8-9842-1e5fa2d422c3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/pacific  DIRECTORS CHAIR (1).JPG",
+        "content": null,
+        "name": "pacific  DIRECTORS CHAIR (1).JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c0ec622e-2597-4b6d-995f-3e525ef6e1aa",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/pacific  DIRECTORS CHAIR (2).JPG",
+        "content": null,
+        "name": "pacific  DIRECTORS CHAIR (2).JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "16e2e623-6e21-4e7b-b154-cab06b3d1665",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/pacific  DIRECTORS CHAIR (3).JPG",
+        "content": null,
+        "name": "pacific  DIRECTORS CHAIR (3).JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5cfd9b08-64ce-4cf1-ab48-6959478d2b5c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/pacific  DIRECTORS CHAIR (4).JPG",
+        "content": null,
+        "name": "pacific  DIRECTORS CHAIR (4).JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4ece9722-37d3-4c17-a9aa-585d467fca65",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/pacific  DIRECTORS CHAIR (5).JPG",
+        "content": null,
+        "name": "pacific  DIRECTORS CHAIR (5).JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1641342615289",
+    "replyToId": null,
+    "etag": "1641342615289",
+    "messageType": "message",
+    "createdDateTime": "2022-01-05T00:30:15.289Z",
+    "lastModifiedDateTime": "2022-01-05T00:30:15.289Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ae5498d9f1c5543d1b9cc68ba4fd68379%40thread.tacv2/1641342615289?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1641342615289&parentMessageId=1641342615289",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+        "displayName": "Hank",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"f10aec51-ccc6-4cfc-b525-176fd1815b53\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f10aec51-ccc6-4cfc-b525-176fd1815b53",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/AOMEI PPIC AND SHIPPING/aomei stock list(1.4.2022）.xlsx",
+        "content": null,
+        "name": "aomei stock list(1.4.2022）.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

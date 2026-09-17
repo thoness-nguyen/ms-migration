@@ -1,0 +1,2128 @@
+[
+  {
+    "id": "1605686317301",
+    "replyToId": null,
+    "etag": "1605686317301",
+    "messageType": "message",
+    "createdDateTime": "2020-11-18T07:58:37.301Z",
+    "lastModifiedDateTime": "2020-11-18T07:58:37.301Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "RH INDOOR: SAN BIANCO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1605686317301?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605686317301&parentMessageId=1605686317301",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<ul>\n\n\t\n<li>LOUNGE SAMPLE\n</li></ul>\n\n</div><attachment id=\"2fb37d13-9154-4568-9c8b-4e62edd302db\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2fb37d13-9154-4568-9c8b-4e62edd302db",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Harbour San Bianco_9.29drawings_RH approved to sample_10.11.pdf",
+        "content": null,
+        "name": "Harbour San Bianco_9.29drawings_RH approved to sample_10.11.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605747903400",
+    "replyToId": null,
+    "etag": "1605747903400",
+    "messageType": "message",
+    "createdDateTime": "2020-11-19T01:05:03.4Z",
+    "lastModifiedDateTime": "2020-11-19T01:05:03.4Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LORENZO & GABRIEL DWGS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1605747903400?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605747903400&parentMessageId=1605747903400",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "NICK approved Nov 19th<attachment id=\"dd9c3733-a731-4c82-9fbd-110b1b93312a\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "dd9c3733-a731-4c82-9fbd-110b1b93312a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lorenzo and Gabiel Sofas for Harbour-2020-11-18(2).pdf",
+        "content": null,
+        "name": "Lorenzo and Gabiel Sofas for Harbour-2020-11-18(2).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605762456463",
+    "replyToId": null,
+    "etag": "1609813429418",
+    "messageType": "message",
+    "createdDateTime": "2020-11-19T05:07:36.463Z",
+    "lastModifiedDateTime": "2021-01-05T02:23:49.418Z",
+    "lastEditedDateTime": "2021-01-05T02:23:49.418Z",
+    "deletedDateTime": null,
+    "subject": "TRAVERTINE (OUTDOOR) FIRE BOXES, OCCASSIONAL TABLES & PLANTERS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1605762456463?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605762456463&parentMessageId=1605762456463",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>\n<div>\n<div>\n<div>\n<div>(<at id=\"0\">Ally</at>&nbsp;<at id=\"1\">Felix Ho</at>&nbsp;please attached files)</div>\n</div>\n</div>\n</div>\n</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Ally",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+            "displayName": "Ally",
+            "userIdentityType": "aadUser"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Felix Ho",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "73dd6840-0b54-4e6a-ab8a-f46aa1075acb",
+            "displayName": "Felix Ho",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1606185005543",
+    "replyToId": null,
+    "etag": "1606185005543",
+    "messageType": "message",
+    "createdDateTime": "2020-11-24T02:30:05.543Z",
+    "lastModifiedDateTime": "2020-11-24T02:30:05.543Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "OCEAN CLASSIC SOFA",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1606185005543?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606185005543&parentMessageId=1606185005543",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:small\"></span>\n<div><span style=\"font-size:small\">OCEAN Corner (Classic)</span></div>\n\n<div><span style=\"font-size:small\">OCEAN Armless (Classic)</span></div>\n\n\n<div style=\"font-size:small\">OCEAN Ottoman (Classic)</div>\n</div>\n</div><attachment id=\"8ada9d84-1dc6-419b-9462-5626151bcede\"></attachment><attachment id=\"2f0d29fb-7b9d-434a-92ed-60a68dcc4921\"></attachment><attachment id=\"d2bb5fb5-d516-420b-a1e2-fce9c477b11f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "8ada9d84-1dc6-419b-9462-5626151bcede",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/OCEAN   Classic  OCEA-08C CORNER  2020.11.09.pdf",
+        "content": null,
+        "name": "OCEAN   Classic  OCEA-08C CORNER  2020.11.09.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2f0d29fb-7b9d-434a-92ed-60a68dcc4921",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/OCEAN   Classic  OCEA-08D SINGLE ARMLESS  2020.11.09.pdf",
+        "content": null,
+        "name": "OCEAN   Classic  OCEA-08D SINGLE ARMLESS  2020.11.09.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "d2bb5fb5-d516-420b-a1e2-fce9c477b11f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/OCEAN   Classic  OCEA-09A OTTOMAN  2020.11.09.pdf",
+        "content": null,
+        "name": "OCEAN   Classic  OCEA-09A OTTOMAN  2020.11.09.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606193905558",
+    "replyToId": null,
+    "etag": "1606193905558",
+    "messageType": "message",
+    "createdDateTime": "2020-11-24T04:58:25.558Z",
+    "lastModifiedDateTime": "2020-11-24T04:58:25.558Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "KES PRODUCTION DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1606193905558?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606193905558&parentMessageId=1606193905558",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"19a5512c-9c9d-4c55-a1d6-05ca75c597c5\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "19a5512c-9c9d-4c55-a1d6-05ca75c597c5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/KES Drawings 8-24-20.pdf",
+        "content": null,
+        "name": "KES Drawings 8-24-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606263899926",
+    "replyToId": null,
+    "etag": "1606263899926",
+    "messageType": "message",
+    "createdDateTime": "2020-11-25T00:24:59.926Z",
+    "lastModifiedDateTime": "2020-11-25T00:24:59.926Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LAGUNA METAL DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1606263899926?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606263899926&parentMessageId=1606263899926",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "(These DWG's used for teak series)<attachment id=\"286cccd2-0d0b-45ab-9b40-de7f3f4f4c23\"></attachment><attachment id=\"47af61b8-3540-49ee-9d05-c2c7b9c14515\"></attachment><attachment id=\"151d201d-8a17-4768-98b1-a300bfa1e9af\"></attachment><attachment id=\"529353ec-ccc1-4f05-8a27-32f2561d8b12\"></attachment><attachment id=\"df0e4470-e1b1-452d-9f4e-81dcfa0ef4e1\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "286cccd2-0d0b-45ab-9b40-de7f3f4f4c23",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Laguna Dining Table 2600 2020.01.29.pdf",
+        "content": null,
+        "name": "Laguna Dining Table 2600 2020.01.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "47af61b8-3540-49ee-9d05-c2c7b9c14515",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Laguna Coffee table 1600 2020.01.29.pdf",
+        "content": null,
+        "name": "Laguna Coffee table 1600 2020.01.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "151d201d-8a17-4768-98b1-a300bfa1e9af",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Laguna Dining Chair 2020.01.29.pdf",
+        "content": null,
+        "name": "Laguna Dining Chair 2020.01.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "529353ec-ccc1-4f05-8a27-32f2561d8b12",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Laguna 3 Seat 2020.01.29.pdf",
+        "content": null,
+        "name": "Laguna 3 Seat 2020.01.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "df0e4470-e1b1-452d-9f4e-81dcfa0ef4e1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Laguna  Lounge Chair 2020.01.29.pdf",
+        "content": null,
+        "name": "Laguna  Lounge Chair 2020.01.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606974900795",
+    "replyToId": null,
+    "etag": "1606974900795",
+    "messageType": "message",
+    "createdDateTime": "2020-12-03T05:55:00.795Z",
+    "lastModifiedDateTime": "2020-12-03T05:55:00.795Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LARA (HO)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1606974900795?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606974900795&parentMessageId=1606974900795",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "DINING SIDE & ARM CHAIR<attachment id=\"94bb7605-5814-435b-9f07-3b034751aee2\"></attachment><attachment id=\"83878ee2-273c-4747-8395-71aba9f7bf6a\"></attachment><attachment id=\"6fbb3551-ea86-4966-ba30-c56ae2b03322\"></attachment><attachment id=\"68a8d5d7-3a61-4fa5-b75f-7b492aef3267\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "94bb7605-5814-435b-9f07-3b034751aee2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara-Dining Chair Opt 3_2020 April 28.dwg",
+        "content": null,
+        "name": "Lara-Dining Chair Opt 3_2020 April 28.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "83878ee2-273c-4747-8395-71aba9f7bf6a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara-Dining Chair Opt 3_2020 April 28.pdf",
+        "content": null,
+        "name": "Lara-Dining Chair Opt 3_2020 April 28.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "6fbb3551-ea86-4966-ba30-c56ae2b03322",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/LARA-SIDE CHAIR OPT 2_2020 April 28-01.pdf",
+        "content": null,
+        "name": "LARA-SIDE CHAIR OPT 2_2020 April 28-01.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "68a8d5d7-3a61-4fa5-b75f-7b492aef3267",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/LARA-SIDE CHAIR OPT 2_2020 April 28.dwg",
+        "content": null,
+        "name": "LARA-SIDE CHAIR OPT 2_2020 April 28.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607316080073",
+    "replyToId": null,
+    "etag": "1607316080073",
+    "messageType": "message",
+    "createdDateTime": "2020-12-07T04:41:20.073Z",
+    "lastModifiedDateTime": "2020-12-07T04:41:20.073Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "PLINTH TRAVERTINE CASE GOODS DINING & OCCASSIONAL",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1607316080073?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607316080073&parentMessageId=1607316080073",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<ul itemprop=\"copy-paste-block\">\n\n\t\n<li>Revised grids&nbsp; Occasional &amp; dining\n\t</li><li>Approved DWGs to commence samples Occasional &amp; dining&nbsp;\n</li></ul>\n\n</div><attachment id=\"ee544f4a-4ada-4358-bda1-f62f6a824b85\"></attachment><attachment id=\"09b2caa8-4513-446c-bc46-0aba4b7ec811\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "ee544f4a-4ada-4358-bda1-f62f6a824b85",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Plinth Travertine Occasional and Dining.pdf",
+        "content": null,
+        "name": "Plinth Travertine Occasional and Dining.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "09b2caa8-4513-446c-bc46-0aba4b7ec811",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Plinth Travertine.pdf",
+        "content": null,
+        "name": "Plinth Travertine.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607564527073",
+    "replyToId": null,
+    "etag": "1607564527073",
+    "messageType": "message",
+    "createdDateTime": "2020-12-10T01:42:07.073Z",
+    "lastModifiedDateTime": "2020-12-10T01:42:07.073Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "(RH) SANTORINI OUTDOOR + ANDERSON",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1607564527073?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607564527073&parentMessageId=1607564527073",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"bc5606ee-623f-419b-9dd5-05cc1fc99cdf\"></attachment><attachment id=\"38851104-3f2e-4f14-919f-911b7542e3b9\"></attachment><attachment id=\"5a7dbb16-8a5f-402e-9910-27f90fbc0e6f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "bc5606ee-623f-419b-9dd5-05cc1fc99cdf",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Santorini_ApproveSamples_12.9.20.pdf",
+        "content": null,
+        "name": "Santorini_ApproveSamples_12.9.20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "38851104-3f2e-4f14-919f-911b7542e3b9",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Anderson_ApproveSamples_12.9.20.pdf",
+        "content": null,
+        "name": "Anderson_ApproveSamples_12.9.20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5a7dbb16-8a5f-402e-9910-27f90fbc0e6f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Harbour_SampleRecap_12.9.20 (1).pdf",
+        "content": null,
+        "name": "Harbour_SampleRecap_12.9.20 (1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607564658133",
+    "replyToId": null,
+    "etag": "1607564658133",
+    "messageType": "message",
+    "createdDateTime": "2020-12-10T01:44:18.133Z",
+    "lastModifiedDateTime": "2020-12-10T01:44:18.133Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SAN BIANCO (INDOOR) RH",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1607564658133?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607564658133&parentMessageId=1607564658133",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>note changes for outdoor from BillY</div>\n\n\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\"><b>San Bianco SKIRTED ONLY</b></div>\n\n\n<div style=\"font-size:small\">- Attached are the redlines for the lounge. Can we raise the seat deck, and make the cushion 5\" to be a 17\" seat height.&nbsp;</div>\n\n\n<div style=\"font-size:small\">- Need to find a better color for the WGTK resin. The one for NATL looks very natural, while the grey reads more synthetic.&nbsp;</div>\n\n\n<div style=\"font-size:small\">\n<div>- Needed Samples listed below:</div>\n</div>\n</div>\n</div><attachment id=\"0a41e20c-0969-4f93-acc1-c71a110423ca\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "0a41e20c-0969-4f93-acc1-c71a110423ca",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/RH comments_San Bianco Lounge_12.8.pdf",
+        "content": null,
+        "name": "RH comments_San Bianco Lounge_12.8.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1608604962984",
+    "replyToId": null,
+    "etag": "1608605167636",
+    "messageType": "message",
+    "createdDateTime": "2020-12-22T02:42:42.984Z",
+    "lastModifiedDateTime": "2020-12-22T02:46:07.636Z",
+    "lastEditedDateTime": "2020-12-22T02:46:07.636Z",
+    "deletedDateTime": null,
+    "subject": "BALI OUTDOOR - APPROVED DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1608604962984?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1608604962984&parentMessageId=1608604962984",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Approved DEC 22nd"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1608605259622",
+    "replyToId": null,
+    "etag": "1608605275021",
+    "messageType": "message",
+    "createdDateTime": "2020-12-22T02:47:39.622Z",
+    "lastModifiedDateTime": "2020-12-22T02:47:55.021Z",
+    "lastEditedDateTime": "2020-12-22T02:47:55.021Z",
+    "deletedDateTime": null,
+    "subject": "SAN BIANCO OUTDOOR",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1608605259622?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1608605259622&parentMessageId=1608605259622",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Final PDF files (waiting on DWG files)<attachment id=\"4c9591db-7a82-4fa1-bd94-dbc306d362b7\"></attachment><attachment id=\"29a90c65-7375-471e-b481-e7d62f74d795\"></attachment><attachment id=\"5d43ffb7-a447-43c8-8ed1-1efc1152ef98\"></attachment><attachment id=\"2f377756-f6f9-473d-82bd-cd900b961e9b\"></attachment><attachment id=\"75039d73-e1c7-4145-91d7-c12cf1dbe0c3\"></attachment><attachment id=\"6a631853-55ea-4d64-9e4b-e373ecc8d239\"></attachment><attachment id=\"f85809e8-bdd0-4110-82b2-35faad133b8d\"></attachment><attachment id=\"493f5379-5c3a-4d7c-8ddc-7b9cdeaa3b1d\"></attachment><attachment id=\"ecfc7c35-6ec0-4c1e-8dd4-5abf2065ca62\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "4c9591db-7a82-4fa1-bd94-dbc306d362b7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Lounge Chair Full Weaving_2020 December 18.pdf",
+        "content": null,
+        "name": "San Bianco - Lounge Chair Full Weaving_2020 December 18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "29a90c65-7375-471e-b481-e7d62f74d795",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Ottoman_2020 December 18.pdf",
+        "content": null,
+        "name": "San Bianco - Ottoman_2020 December 18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5d43ffb7-a447-43c8-8ed1-1efc1152ef98",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - 5 feet Sofa_2020 December 21.pdf",
+        "content": null,
+        "name": "San Bianco - 5 feet Sofa_2020 December 21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2f377756-f6f9-473d-82bd-cd900b961e9b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - 6 feet Sofa_2020 December 21.pdf",
+        "content": null,
+        "name": "San Bianco - 6 feet Sofa_2020 December 21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "75039d73-e1c7-4145-91d7-c12cf1dbe0c3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - 7 feet Sofa_2020 December 21.pdf",
+        "content": null,
+        "name": "San Bianco - 7 feet Sofa_2020 December 21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "6a631853-55ea-4d64-9e4b-e373ecc8d239",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - 8 feet Sofa_2020 December 18.pdf",
+        "content": null,
+        "name": "San Bianco - 8 feet Sofa_2020 December 18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "f85809e8-bdd0-4110-82b2-35faad133b8d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - 9 feet Sofa_2020 December 21.pdf",
+        "content": null,
+        "name": "San Bianco - 9 feet Sofa_2020 December 21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "493f5379-5c3a-4d7c-8ddc-7b9cdeaa3b1d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Coffee Table 76in_2020 December 21.pdf",
+        "content": null,
+        "name": "San Bianco - Coffee Table 76in_2020 December 21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ecfc7c35-6ec0-4c1e-8dd4-5abf2065ca62",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Swivel Lounge Chair_2020 December 18.pdf",
+        "content": null,
+        "name": "San Bianco - Swivel Lounge Chair_2020 December 18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1609383119975",
+    "replyToId": null,
+    "etag": "1609999646587",
+    "messageType": "message",
+    "createdDateTime": "2020-12-31T02:51:59.975Z",
+    "lastModifiedDateTime": "2021-01-07T06:07:26.587Z",
+    "lastEditedDateTime": "2021-01-07T06:07:26.587Z",
+    "deletedDateTime": null,
+    "subject": "UBUD CASE",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1609383119975?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609383119975&parentMessageId=1609383119975",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": ".."
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1609727900938",
+    "replyToId": null,
+    "etag": "1609727900938",
+    "messageType": "message",
+    "createdDateTime": "2021-01-04T02:38:20.938Z",
+    "lastModifiedDateTime": "2021-01-04T02:38:20.938Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "TRAVERTINE CASE GOODS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1609727900938?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609727900938&parentMessageId=1609727900938",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>approved Side Board DWGs:</div>\n\n\n</div><attachment id=\"9ba1e306-8421-4db3-926d-eb497880fed1\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "9ba1e306-8421-4db3-926d-eb497880fed1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/SIDEBOARD-2020-12-19(1).pdf",
+        "content": null,
+        "name": "SIDEBOARD-2020-12-19(1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1609729956380",
+    "replyToId": null,
+    "etag": "1609729956380",
+    "messageType": "message",
+    "createdDateTime": "2021-01-04T03:12:36.38Z",
+    "lastModifiedDateTime": "2021-01-04T03:12:36.38Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "FAN COLLECTION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1609729956380?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609729956380&parentMessageId=1609729956380",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>D/T DWG APPROVED <at id=\"0\">Ally</at>&nbsp;<at id=\"1\">Felix Ho</at></div>\n</div><attachment id=\"c845be24-e718-4ecd-8b03-6f0381ed1f80\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c845be24-e718-4ecd-8b03-6f0381ed1f80",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/FAN DINING TABLE-2020-12-26.pdf",
+        "content": null,
+        "name": "FAN DINING TABLE-2020-12-26.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Ally",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+            "displayName": "Ally",
+            "userIdentityType": "aadUser"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Felix Ho",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "73dd6840-0b54-4e6a-ab8a-f46aa1075acb",
+            "displayName": "Felix Ho",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1609999650205",
+    "replyToId": null,
+    "etag": "1609999650205",
+    "messageType": "message",
+    "createdDateTime": "2021-01-07T06:07:30.205Z",
+    "lastModifiedDateTime": "2021-01-07T06:07:30.205Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UBUD UPH (RH)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1609999650205?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609999650205&parentMessageId=1609999650205",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<ul>\n\n\t\n<li>9' SOFA&nbsp;\n</li></ul>\n\n</div><attachment id=\"04d1c51f-d96b-4112-b68d-ffbc37cc407c\"></attachment><attachment id=\"694edee1-7599-4f8d-8c38-030b36759274\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "04d1c51f-d96b-4112-b68d-ffbc37cc407c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/UBUD_9’ SOFA 2020-1-06(1).pdf",
+        "content": null,
+        "name": "UBUD_9’ SOFA 2020-1-06(1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "694edee1-7599-4f8d-8c38-030b36759274",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/UBUD_9%27Sofa-2021-1-07.dwg",
+        "content": null,
+        "name": "UBUD_9'Sofa-2021-1-07.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1613980641702",
+    "replyToId": null,
+    "etag": "1613980641702",
+    "messageType": "message",
+    "createdDateTime": "2021-02-22T07:57:21.702Z",
+    "lastModifiedDateTime": "2021-02-22T07:57:21.702Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "INDOOR SOFA (LORENZO, GABRIEL, MODERN SLOPE ARM)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1613980641702?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1613980641702&parentMessageId=1613980641702",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "approved files<attachment id=\"99d1bd47-a576-40de-9122-81784d77a88b\"></attachment><attachment id=\"374b9ff4-9936-437e-ae50-32e8d7fdb4ef\"></attachment><attachment id=\"46dc5704-62a9-4703-ab8e-8cc25de3b60e\"></attachment><attachment id=\"a0881070-9701-4e09-9a64-798b0eec16f6\"></attachment><attachment id=\"7afd9828-0384-4085-8c0c-15c0bca382eb\"></attachment><attachment id=\"12cba254-ec5b-47cd-8265-1e2b2204af19\"></attachment><attachment id=\"b430c6e8-02b0-4205-8f40-294c43ea44fd\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "99d1bd47-a576-40de-9122-81784d77a88b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lorenzo Sofas for Harbour-2020-11-21.dwg",
+        "content": null,
+        "name": "Lorenzo Sofas for Harbour-2020-11-21.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "374b9ff4-9936-437e-ae50-32e8d7fdb4ef",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Modern Slope  3 seat sofa  2020.11.11  Modify2020.11.18.pdf",
+        "content": null,
+        "name": "Modern Slope  3 seat sofa  2020.11.11  Modify2020.11.18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "46dc5704-62a9-4703-ab8e-8cc25de3b60e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Modern Slope  Armchair  2020.11.11  Modify2020.11.18.pdf",
+        "content": null,
+        "name": "Modern Slope  Armchair  2020.11.11  Modify2020.11.18.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a0881070-9701-4e09-9a64-798b0eec16f6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Modern Slope Dining  Chair  2020.11.11  Modify2020.11.17.pdf",
+        "content": null,
+        "name": "Modern Slope Dining  Chair  2020.11.11  Modify2020.11.17.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7afd9828-0384-4085-8c0c-15c0bca382eb",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lorenzo and Gabiel Sofas for Harbour-2020-11-18(2).pdf",
+        "content": null,
+        "name": "Lorenzo and Gabiel Sofas for Harbour-2020-11-18(2).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "12cba254-ec5b-47cd-8265-1e2b2204af19",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Gabiel Sofas for Harbour-2020-12-03.dwg",
+        "content": null,
+        "name": "Gabiel Sofas for Harbour-2020-12-03.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b430c6e8-02b0-4205-8f40-294c43ea44fd",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Gabiel Sofas for Harbour-2020-12-03.pdf",
+        "content": null,
+        "name": "Gabiel Sofas for Harbour-2020-12-03.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614041912877",
+    "replyToId": null,
+    "etag": "1614041912877",
+    "messageType": "message",
+    "createdDateTime": "2021-02-23T00:58:32.877Z",
+    "lastModifiedDateTime": "2021-02-23T00:58:32.877Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "VICTORIA TEAK",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1614041912877?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614041912877&parentMessageId=1614041912877",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div><a href=\"https://teams.microsoft.com/_#/files/TEAK%20(INDONESIA)?threadId=19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2&amp;ctx=channel&amp;context=VICTORIA&amp;rootfolder=%252Fsites%252FHarbourPD%252FShared%2520Documents%252FTEAK%2520DEVELOPMENT%252FVICTORIA\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://teams.microsoft.com/_#/files/teak%20(indonesia)?threadid=19%3a735d1507dd4c48c78892ef45f060a097%40thread.tacv2&amp;ctx=channel&amp;context=victoria&amp;rootfolder=%252fsites%252fharbourpd%252fshared%2520documents%252fteak%2520development%252fvictoria\">https://teams.microsoft.com/_#/files/TEAK%20(INDONESIA)?threadId=19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2&amp;ctx=channel&amp;context=VICTORIA&amp;rootfolder=%252Fsites%252FHarbourPD%252FShared%2520Documents%252FTEAK%2520DEVELOPMENT%252FVICTORIA</a></div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614226151731",
+    "replyToId": null,
+    "etag": "1614226429891",
+    "messageType": "message",
+    "createdDateTime": "2021-02-25T04:09:11.731Z",
+    "lastModifiedDateTime": "2021-02-25T04:13:49.891Z",
+    "lastEditedDateTime": "2021-02-25T04:13:49.891Z",
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1614226151731?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614226151731&parentMessageId=1614226151731",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>\n<div>\n<div>\n<div>\n<div>\n\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:22px\">SOFA 96'' ARMLESS - METAL 2021.02.04- APPROVED DWG</span></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"7f42ae30-3977-442c-92d3-368303cf3be2\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "7f42ae30-3977-442c-92d3-368303cf3be2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/UbudMtl_ApprovedSample_2.22.21.pdf",
+        "content": null,
+        "name": "UbudMtl_ApprovedSample_2.22.21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614243281541",
+    "replyToId": null,
+    "etag": "1614243281541",
+    "messageType": "message",
+    "createdDateTime": "2021-02-25T08:54:41.541Z",
+    "lastModifiedDateTime": "2021-02-25T08:54:41.541Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1614243281541?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614243281541&parentMessageId=1614243281541",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:22px\">HK INDOOR STOCK ORDER PLACING IN FEB 2021</span></div>\n\n\n<div itemprop=\"copy-paste-block\"><at id=\"0\">Paul Gerrard</at>&nbsp;</div>\n\n\n<div itemprop=\"copy-paste-block\">&nbsp;\n<div>DWG (attached)</div>\n\n<div>&nbsp;</div>\n\n<div>\n<div>Product specs:</div>\n\n<div>\n\n<ul>\n\n\t\n<li>Items should include:&nbsp;\n\t\n<ul>\n\n\t\t\n<li>Twisted Viro Rope\n\t\t</li><li>Windsor Sand Dollar fabric (ivan already stocks for us)\n\t\t</li><li>Alu Taupe (new taupe at Aomei, attached) for any exposed powder coat parts. This will match the Viro rope best.&nbsp;\n\t</li></ul>\n\n\t\n\t</li><li>Daybed - We narrowed down to only one style to buy (removed the 2nd)\n\t</li><li>Sun Lounge - We narrowed down to only one style to buy (removed the 2nd)\n\t\n<ul>\n\n\t\t\n<li>The cushion is loose / removable on the sun lounge\n\t</li></ul>\n\n\t\n</li></ul>\n\n\n<div>Other comment for final samples:</div>\n\n<div>\n\n<ul>\n\n\t\n<li>Lounge chair\n\t\n<ul>\n\n\t\t\n<li>Please try two back cushion options:\n\t\t\n<ul>\n\n\t\t\t\n<li>Option 1 loose round pillow like render\n\t\t\t</li><li>Option 2 - fixed back pillow that fits into the center frame of the back (similar to Dining Chair C)\n\t\t</li></ul>\n\n\t\t\n\t</li></ul>\n\n\t\n</li></ul>\n\n</div>\n</div>\n\n<div>The Attachments:</div>\n\n<div>\n\n<ol>\n\n\t\n<li>Quantity for the order.\n\t</li><li>Metal color.\n\t</li><li>The third to the 7th files are PDF drawings. I will send you CAD drawing in another email.\n\t</li><li>Woven reference PDF file.\n</li></ol>\n\n</div>\n\n\n</div>\n</div>\n</div><attachment id=\"f97c23f3-d479-4306-91ac-fe0983f0f989\"></attachment><attachment id=\"7769e493-6b15-4e7d-907f-2c467ce32b10\"></attachment><attachment id=\"771ad462-d075-476b-983b-3600c3e167de\"></attachment><attachment id=\"fd10661e-0d9d-4d57-a64e-3020c9ff40f4\"></attachment><attachment id=\"97191683-1aec-4085-8932-d7dc23c43c90\"></attachment><attachment id=\"4ea12317-15d1-414a-983b-cf8ac2896441\"></attachment><attachment id=\"98de1bbc-4819-42e3-b957-8d7d68c379c2\"></attachment><attachment id=\"9834c60b-c333-46c1-8e5e-0a1e4afa6d3b\"></attachment><attachment id=\"621d4a0c-b13d-41da-9669-47fd6e2fa1a5\"></attachment><attachment id=\"5d60dde2-b66c-4a85-9138-82494c708fa6\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f97c23f3-d479-4306-91ac-fe0983f0f989",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/2021_01_29_Harbour_Maui_weaving_cs (2).pdf",
+        "content": null,
+        "name": "2021_01_29_Harbour_Maui_weaving_cs (2).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7769e493-6b15-4e7d-907f-2c467ce32b10",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui 3 SEAT SOFA 2020.12.02Modify2021.02.19.pdf",
+        "content": null,
+        "name": "Maui 3 SEAT SOFA 2020.12.02Modify2021.02.19.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "771ad462-d075-476b-983b-3600c3e167de",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui ARM CHAIR 2020.12.02Modify2021.02.03.pdf",
+        "content": null,
+        "name": "Maui ARM CHAIR 2020.12.02Modify2021.02.03.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "fd10661e-0d9d-4d57-a64e-3020c9ff40f4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui ARM CHAIR 2020.12.02Modify2021.02.19.pdf",
+        "content": null,
+        "name": "Maui ARM CHAIR 2020.12.02Modify2021.02.19.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "97191683-1aec-4085-8932-d7dc23c43c90",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui DAYBED (V4)   2020.12.02 Modify 2020.12.29.pdf",
+        "content": null,
+        "name": "Maui DAYBED (V4)   2020.12.02 Modify 2020.12.29.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4ea12317-15d1-414a-983b-cf8ac2896441",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui DINING CHAIR A 2020.12.02Modify2021.01.19.pdf",
+        "content": null,
+        "name": "Maui DINING CHAIR A 2020.12.02Modify2021.01.19.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "98de1bbc-4819-42e3-b957-8d7d68c379c2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui DINING CHAIR B 2020.12.02Modify2021.01.19.pdf",
+        "content": null,
+        "name": "Maui DINING CHAIR B 2020.12.02Modify2021.01.19.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9834c60b-c333-46c1-8e5e-0a1e4afa6d3b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Maui SUN LOUNGE (V2) 2020.11.24.pdf",
+        "content": null,
+        "name": "Maui SUN LOUNGE (V2) 2020.11.24.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "621d4a0c-b13d-41da-9669-47fd6e2fa1a5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/prices (Jacob order ignore qty_s on this file.pdf",
+        "content": null,
+        "name": "prices (Jacob order ignore qty_s on this file.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5d60dde2-b66c-4a85-9138-82494c708fa6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Screen Shot 2021-02-18 at 1.54.16 PM.png",
+        "content": null,
+        "name": "Screen Shot 2021-02-18 at 1.54.16 PM.png",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1615278507501",
+    "replyToId": null,
+    "etag": "1615278507501",
+    "messageType": "message",
+    "createdDateTime": "2021-03-09T08:28:27.501Z",
+    "lastModifiedDateTime": "2021-03-09T08:28:27.501Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "ROZELLE COFFEE TABLE-CUSTOM SPEC",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1615278507501?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615278507501&parentMessageId=1615278507501",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>Hi Chris</div>\n\n<div>&nbsp;</div>\n\n<div>Could you pls provide the price and lead time for below item when you back to office? thanks!</div>\n\n<div>&nbsp;</div>\n\n<div>\n\n<blockquote type=\"cite\">\n\n<blockquote>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div><b>ROZELLE COFFEE TABLE (CUSTOM SPEC) (x3 units)</b></div>\n\n<div>- 60CM DIAMETER</div>\n\n<div>- 45CM HEIGHT&nbsp;</div>\n\n<div>- Natural wood finish</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</blockquote>\n\n</blockquote>\n\n</div>\n\n<div>&nbsp;</div>\n\n<div>&nbsp;</div>\n\n\n<hr>\n\n<div><span></span>\n\n<div><span>Best Regards</span></div>\n\n<div>&nbsp;</div>\n\n<div><span>Miffy Deng</span></div>\n\n<div>&nbsp;</div>\n\n<div><span>Production Manager</span></div>\n\n<div><span>Indoor Furniture</span></div>\n\n<div>&nbsp;</div>\n\n<div><span>China cell: +86 13805776050</span></div>\n\n<div><span>Email:&nbsp;<a href=\"mailto:Miffy@harbour1976.com.cn\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"mailto:miffy@harbour1976.com.cn\" style=\"color:rgb(104,136,201)\">Miffy@harbour1976.com.cn</a></span></div>\n</div>\n</div>\n</div><attachment id=\"c8a91623-5041-4c2c-90c7-07354bea7d52\"></attachment><attachment id=\"6a06f6ae-f49d-44b1-b7fb-d4d098d5d850\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c8a91623-5041-4c2c-90c7-07354bea7d52",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Dia 800 coffee table drawing 3-9-21.dwg",
+        "content": null,
+        "name": "Dia 800 coffee table drawing 3-9-21.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "6a06f6ae-f49d-44b1-b7fb-d4d098d5d850",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Dia 800 coffee table drawing 3-9-21.pdf",
+        "content": null,
+        "name": "Dia 800 coffee table drawing 3-9-21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615880859454",
+    "replyToId": null,
+    "etag": "1615880859454",
+    "messageType": "message",
+    "createdDateTime": "2021-03-16T07:47:39.454Z",
+    "lastModifiedDateTime": "2021-03-16T07:47:39.454Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1615880859454?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615880859454&parentMessageId=1615880859454",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">&nbsp;\n\n<h2 style=\"font-size:1.375rem\">HO Heathcoate Square coffee table DWG</h2>\n\n<span></span></div>\n</div><attachment id=\"1ba34337-9a12-4dfb-9fee-6c888466c124\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "1ba34337-9a12-4dfb-9fee-6c888466c124",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Heathcote-02 Coffee table HL-6161-NK 1220x1220x380h 2017.04.07-Model.pdf",
+        "content": null,
+        "name": "Heathcote-02 Coffee table HL-6161-NK 1220x1220x380h 2017.04.07-Model.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615948423301",
+    "replyToId": null,
+    "etag": "1615948423301",
+    "messageType": "message",
+    "createdDateTime": "2021-03-17T02:33:43.301Z",
+    "lastModifiedDateTime": "2021-03-17T02:33:43.301Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HO Santa Barb coffee table DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1615948423301?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615948423301&parentMessageId=1615948423301",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"45c6b7bd-704c-4ded-8753-55ab783ec60a\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "45c6b7bd-704c-4ded-8753-55ab783ec60a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/rehosantabarbcoffeetabledwg.zip",
+        "content": null,
+        "name": "rehosantabarbcoffeetabledwg.zip",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615972238003",
+    "replyToId": null,
+    "etag": "1615972238003",
+    "messageType": "message",
+    "createdDateTime": "2021-03-17T09:10:38.003Z",
+    "lastModifiedDateTime": "2021-03-17T09:10:38.003Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LAURA NIGHT STAND drawing",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1615972238003?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615972238003&parentMessageId=1615972238003",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"728ca1da-20bb-45a4-96bc-2fa1f7502a77\"></attachment><attachment id=\"6eb62167-cc87-4806-abb3-aea9e5a610ad\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "728ca1da-20bb-45a4-96bc-2fa1f7502a77",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Nightstand_2018 November 15.dwg",
+        "content": null,
+        "name": "Lara Nightstand_2018 November 15.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "6eb62167-cc87-4806-abb3-aea9e5a610ad",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Nightstand_2018 November 15.pdf",
+        "content": null,
+        "name": "Lara Nightstand_2018 November 15.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1616644841809",
+    "replyToId": null,
+    "etag": "1616644841809",
+    "messageType": "message",
+    "createdDateTime": "2021-03-25T04:00:41.809Z",
+    "lastModifiedDateTime": "2021-03-25T04:00:41.809Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1616644841809?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1616644841809&parentMessageId=1616644841809",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:22px\">Plot 18 - Hotel L17 Signature Restaurant and L29 Rooftop Bar</span></div>\n</div><attachment id=\"703f6d70-8b68-46a3-94a3-91126fd1bf05\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "703f6d70-8b68-46a3-94a3-91126fd1bf05",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/BALMAIN-DINING CHAIR -2018-12-18.dwg",
+        "content": null,
+        "name": "BALMAIN-DINING CHAIR -2018-12-18.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1617156705428",
+    "replyToId": null,
+    "etag": "1617156705428",
+    "messageType": "message",
+    "createdDateTime": "2021-03-31T02:11:45.428Z",
+    "lastModifiedDateTime": "2021-03-31T02:11:45.428Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Grandmaster - Final Updates",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1617156705428?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1617156705428&parentMessageId=1617156705428",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"267f2ae7-71ac-4be2-83b5-0a55d8857d48\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "267f2ae7-71ac-4be2-83b5-0a55d8857d48",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/fwdgrandmasterfinalupdatesforgoahead.zip",
+        "content": null,
+        "name": "fwdgrandmasterfinalupdatesforgoahead.zip",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1617415404515",
+    "replyToId": null,
+    "etag": "1617415404515",
+    "messageType": "message",
+    "createdDateTime": "2021-04-03T02:03:24.515Z",
+    "lastModifiedDateTime": "2021-04-03T02:03:24.515Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "DAVOS BEDROOM",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1617415404515?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1617415404515&parentMessageId=1617415404515",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"c3984e24-fd40-4ef8-b0d3-32e79a31349c\"></attachment><attachment id=\"7e95b5ce-2582-452e-960a-1b1d11b142ce\"></attachment><attachment id=\"efdadfb2-e5d0-494c-b15b-a54c0ab49718\"></attachment><attachment id=\"1afbf3b3-2cbd-4385-a217-c4f5c4edefc4\"></attachment><attachment id=\"5cf80b2d-7a63-49d5-9fe3-6d21ad5b06b4\"></attachment><attachment id=\"3e43d9ce-d6d5-4069-91b4-b4eee3248d2a\"></attachment><attachment id=\"dca69d29-06d6-4a0d-a869-e96768bda7b7\"></attachment><attachment id=\"a2b0da71-3d42-4a5e-8c72-7b8a51a48803\"></attachment><attachment id=\"162e0fce-69b9-4cf2-8eb1-af5bc786013d\"></attachment><attachment id=\"ae456013-c102-48d0-b5a4-8925b02edb81\"></attachment><attachment id=\"024e62cc-39eb-482a-9c88-7357fcc8bcea\"></attachment><attachment id=\"36e0f948-27c4-4460-9110-99845f06006f\"></attachment><attachment id=\"a76c392c-0d2b-4c6a-bbfb-4cab661000ce\"></attachment><attachment id=\"42408fd9-3ea1-4944-bad4-64ac04f4a583\"></attachment><attachment id=\"2d39e49c-a999-43ed-bd4c-cc1fc0e211c3\"></attachment><attachment id=\"09173900-9182-4ba9-af8c-cb01d741ec8c\"></attachment><attachment id=\"a0056281-18c9-434e-bd22-19ad099a9583\"></attachment><attachment id=\"086aeca1-ca09-42bc-ba5a-1bc983c38183\"></attachment><attachment id=\"3c30592e-1dfc-4162-9d09-92a713cd5ef1\"></attachment><attachment id=\"30662bb2-b8d5-46d1-9f89-36270e196fad\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c3984e24-fd40-4ef8-b0d3-32e79a31349c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/KATWARA PRICE LIST 2020 17-02-2020.pdf",
+        "content": null,
+        "name": "KATWARA PRICE LIST 2020 17-02-2020.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7e95b5ce-2582-452e-960a-1b1d11b142ce",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Ski House - UPH King Bed Canopy 90IN_2020 May 14.pdf",
+        "content": null,
+        "name": "Lara Ski House - UPH King Bed Canopy 90IN_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "efdadfb2-e5d0-494c-b15b-a54c0ab49718",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Ski House - Open Nightstand 34in_2019 Oktober 23.pdf",
+        "content": null,
+        "name": "Lara Ski House - Open Nightstand 34in_2019 Oktober 23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1afbf3b3-2cbd-4385-a217-c4f5c4edefc4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Ski House - Closed Nightstand 34%27%27_2019 Oktober 23.pdf",
+        "content": null,
+        "name": "Lara Ski House - Closed Nightstand 34''_2019 Oktober 23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5cf80b2d-7a63-49d5-9fe3-6d21ad5b06b4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Ski House - Closed Nightstand 26%27%27_2019 Oktober 23.pdf",
+        "content": null,
+        "name": "Lara Ski House - Closed Nightstand 26''_2019 Oktober 23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "3e43d9ce-d6d5-4069-91b4-b4eee3248d2a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara Ski House - Open Nightstand 26in_2019 Oktober 23.pdf",
+        "content": null,
+        "name": "Lara Ski House - Open Nightstand 26in_2019 Oktober 23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "dca69d29-06d6-4a0d-a869-e96768bda7b7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara - Ski House - 9 Drawer Dresser 84 - 2019 Oktober 24.pdf",
+        "content": null,
+        "name": "Lara - Ski House - 9 Drawer Dresser 84 - 2019 Oktober 24.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a2b0da71-3d42-4a5e-8c72-7b8a51a48803",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara - Ski House - 12 Drawer Dresser 72in_2019 Oktober 24.pdf",
+        "content": null,
+        "name": "Lara - Ski House - 12 Drawer Dresser 72in_2019 Oktober 24.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "162e0fce-69b9-4cf2-8eb1-af5bc786013d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Lara - Ski House - 6 Drawer Dresser 72inch - 2019 Oktober 24.pdf",
+        "content": null,
+        "name": "Lara - Ski House - 6 Drawer Dresser 72inch - 2019 Oktober 24.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ae456013-c102-48d0-b5a4-8925b02edb81",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_WOOD QUEEN BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_WOOD QUEEN BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "024e62cc-39eb-482a-9c88-7357fcc8bcea",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_WOOD KING BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_WOOD KING BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "36e0f948-27c4-4460-9110-99845f06006f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_WOOD CAL KING BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_WOOD CAL KING BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a76c392c-0d2b-4c6a-bbfb-4cab661000ce",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_UPH QUEEN BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_UPH QUEEN BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "42408fd9-3ea1-4944-bad4-64ac04f4a583",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_UPH KING BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_UPH KING BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2d39e49c-a999-43ed-bd4c-cc1fc0e211c3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/DAVOS_UPH CAL KING BED CANOPY 102%27%27_2020 May 14.pdf",
+        "content": null,
+        "name": "DAVOS_UPH CAL KING BED CANOPY 102''_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "09173900-9182-4ba9-af8c-cb01d741ec8c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Davos - Wood Queen Bed_2020 May 14.pdf",
+        "content": null,
+        "name": "Davos - Wood Queen Bed_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a0056281-18c9-434e-bd22-19ad099a9583",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Davos - Wood Queen Bed Canopy 90IN_2020 May 14.pdf",
+        "content": null,
+        "name": "Davos - Wood Queen Bed Canopy 90IN_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "086aeca1-ca09-42bc-ba5a-1bc983c38183",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Davos - Wood King Bed Canopy 90IN_2020 May 14.pdf",
+        "content": null,
+        "name": "Davos - Wood King Bed Canopy 90IN_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "3c30592e-1dfc-4162-9d09-92a713cd5ef1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Davos - Wood King Bed_2020 May 14.pdf",
+        "content": null,
+        "name": "Davos - Wood King Bed_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "30662bb2-b8d5-46d1-9f89-36270e196fad",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Davos - Wood Cal King Bed_2020 May 14.pdf",
+        "content": null,
+        "name": "Davos - Wood Cal King Bed_2020 May 14.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618452813300",
+    "replyToId": null,
+    "etag": "1635407993687",
+    "messageType": "message",
+    "createdDateTime": "2021-04-15T02:13:33.3Z",
+    "lastModifiedDateTime": "2021-10-28T07:59:53.687Z",
+    "lastEditedDateTime": "2021-10-28T07:59:53.687Z",
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1618452813300?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618452813300&parentMessageId=1618452813300",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>\n<div>\n\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:22px\">SAN BIANCO and Mykonos product development</span></div>\n</div>\n</div>\n</div><attachment id=\"7363fc2b-17ff-44b5-81df-777e632c86ed\"></attachment><attachment id=\"b350bb3a-d93a-48ac-a896-0b1ffd8cfaea\"></attachment><attachment id=\"da114312-8725-4283-be37-d3b79aadf3f4\"></attachment><attachment id=\"8e7490d5-9967-46cb-bd66-66071d63189a\"></attachment><attachment id=\"dc83f6fa-fc69-4a13-847f-ac80dd063c77\"></attachment><attachment id=\"80ea3e2f-6eb4-41aa-ba04-63c16e444c53\"></attachment><attachment id=\"c0207aa6-b8bf-4cd9-8f0d-ce04ea5cbdb4\"></attachment><attachment id=\"44a187b4-1ca3-4ac2-b085-54a3a4df8fed\"></attachment><attachment id=\"0273c107-becf-45c4-8bb1-43d883dbb0b9\"></attachment><attachment id=\"8c6d3caa-ddd3-4e52-b2a2-e9c2fee0a914\"></attachment><attachment id=\"b54e0f48-9afb-41eb-8fe7-56f7005f0dcf\"></attachment><attachment id=\"07aeb141-9392-465a-8e27-b691df89191d\"></attachment><attachment id=\"b59a1853-a677-4e9d-82a6-3d555b65840e\"></attachment><attachment id=\"a9150f6d-980e-47e7-94f1-0bbf46699102\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "7363fc2b-17ff-44b5-81df-777e632c86ed",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Mykonos - Side Chair_2020 June 08.pdf",
+        "content": null,
+        "name": "Mykonos - Side Chair_2020 June 08.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b350bb3a-d93a-48ac-a896-0b1ffd8cfaea",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Mykonos - Arm Chair_2020 June 09.pdf",
+        "content": null,
+        "name": "Mykonos - Arm Chair_2020 June 09.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "da114312-8725-4283-be37-d3b79aadf3f4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Kiing Bed_2020 February 17.pdf",
+        "content": null,
+        "name": "San Bianco - Kiing Bed_2020 February 17.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8e7490d5-9967-46cb-bd66-66071d63189a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/108+Dining+Table+11-8-19-Model.pdf",
+        "content": null,
+        "name": "108+Dining+Table+11-8-19-Model.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "dc83f6fa-fc69-4a13-847f-ac80dd063c77",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Kiing Bed_2020 February 17.dwg",
+        "content": null,
+        "name": "San Bianco - Kiing Bed_2020 February 17.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "80ea3e2f-6eb4-41aa-ba04-63c16e444c53",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Mykonos - Side Chair_2020 June 08.dwg",
+        "content": null,
+        "name": "Mykonos - Side Chair_2020 June 08.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c0207aa6-b8bf-4cd9-8f0d-ce04ea5cbdb4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/108+Dining+Table+11-8-19.dwg",
+        "content": null,
+        "name": "108+Dining+Table+11-8-19.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "44a187b4-1ca3-4ac2-b085-54a3a4df8fed",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Mykonos - Arm Chair_2020 June 09.dwg",
+        "content": null,
+        "name": "Mykonos - Arm Chair_2020 June 09.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "0273c107-becf-45c4-8bb1-43d883dbb0b9",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Open Nightstand_2020 February 17.pdf",
+        "content": null,
+        "name": "San Bianco - Open Nightstand_2020 February 17.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8c6d3caa-ddd3-4e52-b2a2-e9c2fee0a914",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Sideboard Weaving Doors 80in_2020 February 13.pdf",
+        "content": null,
+        "name": "San Bianco - Sideboard Weaving Doors 80in_2020 February 13.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b54e0f48-9afb-41eb-8fe7-56f7005f0dcf",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/SAN BIANCO COLLECTION - 48%27%27 WEAVING CABINET_2019 Febuary 12.pdf",
+        "content": null,
+        "name": "SAN BIANCO COLLECTION - 48'' WEAVING CABINET_2019 Febuary 12.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "07aeb141-9392-465a-8e27-b691df89191d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/SAN BIANCO COLLECTION - 48%27%27 WEAVING CABINET_2019 Febuary 12.dwg",
+        "content": null,
+        "name": "SAN BIANCO COLLECTION - 48'' WEAVING CABINET_2019 Febuary 12.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b59a1853-a677-4e9d-82a6-3d555b65840e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Sideboard Weaving Doors 80in_2020 February 13.dwg",
+        "content": null,
+        "name": "San Bianco - Sideboard Weaving Doors 80in_2020 February 13.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a9150f6d-980e-47e7-94f1-0bbf46699102",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/San Bianco - Open Nightstand_2020 February 17.dwg",
+        "content": null,
+        "name": "San Bianco - Open Nightstand_2020 February 17.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1619134464317",
+    "replyToId": null,
+    "etag": "1619134464317",
+    "messageType": "message",
+    "createdDateTime": "2021-04-22T23:34:24.317Z",
+    "lastModifiedDateTime": "2021-04-22T23:34:24.317Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "TRAVERTINE INDOOR PLINTH COLLECTION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A207dda3e513f420eaafca826095363ea%40thread.tacv2/1619134464317?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1619134464317&parentMessageId=1619134464317",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"de5912b9-d56c-4733-ba04-f8e63bc10d84\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:207dda3e513f420eaafca826095363ea@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "de5912b9-d56c-4733-ba04-f8e63bc10d84",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/ALL APPROVED DWG RH HO CONTRACT/Plinth Travertine Drawings (1).pdf",
+        "content": null,
+        "name": "Plinth Travertine Drawings (1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

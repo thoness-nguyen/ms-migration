@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1622166986759",
+    "replyToId": null,
+    "etag": "1622167006408",
+    "messageType": "message",
+    "createdDateTime": "2021-05-28T01:56:26.759Z",
+    "lastModifiedDateTime": "2021-05-28T01:56:46.408Z",
+    "lastEditedDateTime": "2021-05-28T01:56:46.408Z",
+    "deletedDateTime": null,
+    "subject": "ALL APPROVED CHINA DWG CAN BE FOUND IN FILES TAB",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A06cd9919421043e78c77a0452d0176ff%40thread.tacv2/1622166986759?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1622166986759&parentMessageId=1622166986759",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": ".."
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:06cd9919421043e78c77a0452d0176ff@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  }
+]

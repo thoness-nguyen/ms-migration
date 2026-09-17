@@ -1,0 +1,1470 @@
+[
+  {
+    "id": "1604471357591",
+    "replyToId": null,
+    "etag": "1604471357591",
+    "messageType": "message",
+    "createdDateTime": "2020-11-04T06:29:17.591Z",
+    "lastModifiedDateTime": "2020-11-04T06:29:17.591Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "VICTORIA",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1604471357591?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604471357591&parentMessageId=1604471357591",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>VICTORIA PRICING&nbsp;</div>\n\n\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:medium\">\n<div><span style=\"font-size:0.875rem; background-color:initial\">Hi Nick,</span></div>\n</div>\n\n\n<div style=\"font-size:medium\">\n\n<div style=\"font-size:0.875rem\">\n<div>&nbsp;</div>\n\n<div>See below - Pak Arief continue tomorrow to sent us the prices</div>\n\n<div>&nbsp;</div>\n\n<div>Victoria (frame only)</div>\n\n<div>- Dining Chair; 229.00</div>\n\n<div>- Lounge Chair; 471.00</div>\n\n<div>- Sun Lounger; 381.00</div>\n\n<div>- Sofa 72; 681.00</div>\n\n<div>- Sofa 94; 785.00</div>\n</div>\n</div>\n</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604550326334",
+    "replyToId": null,
+    "etag": "1604550326334",
+    "messageType": "message",
+    "createdDateTime": "2020-11-05T04:25:26.334Z",
+    "lastModifiedDateTime": "2020-11-05T04:25:26.334Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "TERRANO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1604550326334?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604550326334&parentMessageId=1604550326334",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>\n<div>&nbsp;</div>\n\n\n<div style=\"font-size:0.875rem\">\n<div>\n<div>\n<div><span style=\"font-size:inherit\"><at id=\"0\">Dian Darmono</at>&nbsp;CAN YOU PLEASE UPDATE THE TERRANO teak samples</span></div>\n\n<div>&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Hi&nbsp;Harriet,&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Please see the attached approved for production drawings for Terrano Teak and Metal Lounge and Sofas.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Do we have an ETA on the Natural teak samples?&nbsp;</div>\n\n<div>Can you also please send tracking for the metal samples? We are very anxious to review them so we can approve the rest of the collections&nbsp;for production.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank you!<br>\n\nB</div>\n<span></span>\n\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Dian Darmono",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+            "displayName": "Dian Darmono",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1604550779473",
+    "replyToId": null,
+    "etag": "1604550779473",
+    "messageType": "message",
+    "createdDateTime": "2020-11-05T04:32:59.473Z",
+    "lastModifiedDateTime": "2020-11-05T04:32:59.473Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "WOVEN LAUNDRY BASKET",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1604550779473?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604550779473&parentMessageId=1604550779473",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "FACTORY PRICE $179<attachment id=\"52d51b6c-c59f-4130-9696-bf0a0f29fdaa\"></attachment><attachment id=\"88e5485b-2ebc-4b1e-ba33-b1d97e02798e\"></attachment><attachment id=\"d59be5fe-9bca-43fb-a7be-08a566db4259\"></attachment><attachment id=\"fa76712f-674b-413d-8631-d1f5e30576f8\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "52d51b6c-c59f-4130-9696-bf0a0f29fdaa",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Woven Laundry Basket_2020 August 12.pdf",
+        "content": null,
+        "name": "Woven Laundry Basket_2020 August 12.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "88e5485b-2ebc-4b1e-ba33-b1d97e02798e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_0035.JPG",
+        "content": null,
+        "name": "IMG_0035.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "d59be5fe-9bca-43fb-a7be-08a566db4259",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_0044.JPG",
+        "content": null,
+        "name": "IMG_0044.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "fa76712f-674b-413d-8631-d1f5e30576f8",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_0048.JPG",
+        "content": null,
+        "name": "IMG_0048.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604898453795",
+    "replyToId": null,
+    "etag": "1605071762181",
+    "messageType": "message",
+    "createdDateTime": "2020-11-09T05:07:33.795Z",
+    "lastModifiedDateTime": "2020-11-11T05:16:02.181Z",
+    "lastEditedDateTime": "2020-11-11T05:16:02.181Z",
+    "deletedDateTime": null,
+    "subject": "PTC TEAK PROGRAM - RESOURCING TO INDO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1604898453795?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604898453795&parentMessageId=1604898453795",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "PTC best sellers for pricing exercise<attachment id=\"c4948f81-8573-4cf8-bffd-c10d2f2ebbb5\"></attachment><attachment id=\"cef0ad50-1d4b-4f91-af1a-113eb0ab01bb\"></attachment><attachment id=\"2955e1de-2a41-4b14-b164-0cdbbda42d76\"></attachment><attachment id=\"7d01b9f2-caaa-4f76-a5ed-4529977525f0\"></attachment><attachment id=\"c15b9756-42d4-4a21-8e22-d956f27435db\"></attachment><attachment id=\"f1ffcc1d-5628-40d1-996b-feadf1267adc\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c4948f81-8573-4cf8-bffd-c10d2f2ebbb5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH624750.OGT.00          68090162TEAK  LEAGRAVE 6FT BENCH N.pdf",
+        "content": null,
+        "name": "RH624750.OGT.00          68090162TEAK  LEAGRAVE 6FT BENCH N.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "cef0ad50-1d4b-4f91-af1a-113eb0ab01bb",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH624751.OGT.00          68090170TEAK  LEAGRAVE SIDE CHAIR N.pdf",
+        "content": null,
+        "name": "RH624751.OGT.00          68090170TEAK  LEAGRAVE SIDE CHAIR N.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2955e1de-2a41-4b14-b164-0cdbbda42d76",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH624754.OGT.00          68090165TEAK  LEAGRAVE CHAISE N.pdf",
+        "content": null,
+        "name": "RH624754.OGT.00          68090165TEAK  LEAGRAVE CHAISE N.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7d01b9f2-caaa-4f76-a5ed-4529977525f0",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH814756.OGT.11          10060205TEAK  96IN BEAM EXT DIN TBL N.pdf",
+        "content": null,
+        "name": "RH814756.OGT.11          10060205TEAK  96IN BEAM EXT DIN TBL N.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c15b9756-42d4-4a21-8e22-d956f27435db",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH814761.OGT.00          64520974TEAK  55IN BEAM COFFEE TABLE.pdf",
+        "content": null,
+        "name": "RH814761.OGT.00          64520974TEAK  55IN BEAM COFFEE TABLE.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "f1ffcc1d-5628-40d1-996b-feadf1267adc",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/RH814764.OGT.00          64520977TEAK  BEAM SIDE TABLE.pdf",
+        "content": null,
+        "name": "RH814764.OGT.00          64520977TEAK  BEAM SIDE TABLE.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604920953327",
+    "replyToId": null,
+    "etag": "1604920953327",
+    "messageType": "message",
+    "createdDateTime": "2020-11-09T11:22:33.327Z",
+    "lastModifiedDateTime": "2020-11-09T11:22:33.327Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "BALMAIN + AEGEAN OCCASSIONAL TABLES",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1604920953327?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604920953327&parentMessageId=1604920953327",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "NEWNESS 2021<attachment id=\"2510270a-296b-4b0e-8697-daaa38aae5b6\"></attachment><attachment id=\"81c5d214-7f62-495e-850c-009c3b724a57\"></attachment><attachment id=\"61d68f04-c3dd-4151-a574-615ffad1b1c1\"></attachment><attachment id=\"da2fa63d-21d5-4013-af41-878272a1e717\"></attachment><attachment id=\"9fc5cf0c-5aff-4763-b40e-37186ca49522\"></attachment><attachment id=\"cb045e22-a84b-4e3f-b02e-9dfb6e36eefe\"></attachment><attachment id=\"44979bca-1db5-4e55-9803-2cf544f6b5bb\"></attachment><attachment id=\"1c99870d-740e-4476-b74b-7adbdd481699\"></attachment><attachment id=\"e18706e2-471d-4380-8af0-4346213c4813\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2510270a-296b-4b0e-8697-daaa38aae5b6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5214.JPG",
+        "content": null,
+        "name": "IMG_5214.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "81c5d214-7f62-495e-850c-009c3b724a57",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5217.JPG",
+        "content": null,
+        "name": "IMG_5217.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "61d68f04-c3dd-4151-a574-615ffad1b1c1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5218.JPG",
+        "content": null,
+        "name": "IMG_5218.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "da2fa63d-21d5-4013-af41-878272a1e717",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5234.JPG",
+        "content": null,
+        "name": "IMG_5234.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9fc5cf0c-5aff-4763-b40e-37186ca49522",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5240.JPG",
+        "content": null,
+        "name": "IMG_5240.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "cb045e22-a84b-4e3f-b02e-9dfb6e36eefe",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5251.JPG",
+        "content": null,
+        "name": "IMG_5251.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "44979bca-1db5-4e55-9803-2cf544f6b5bb",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5254.JPG",
+        "content": null,
+        "name": "IMG_5254.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1c99870d-740e-4476-b74b-7adbdd481699",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5255.JPG",
+        "content": null,
+        "name": "IMG_5255.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "e18706e2-471d-4380-8af0-4346213c4813",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5258.JPG",
+        "content": null,
+        "name": "IMG_5258.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605662680196",
+    "replyToId": null,
+    "etag": "1605662680196",
+    "messageType": "message",
+    "createdDateTime": "2020-11-18T01:24:40.196Z",
+    "lastModifiedDateTime": "2020-11-18T01:24:40.196Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "TERRANO IMAGES",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1605662680196?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605662680196&parentMessageId=1605662680196",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div><at id=\"0\">Dian Darmono</at>&nbsp;<at id=\"1\">Harriet</at></div>\n</div><attachment id=\"580ed261-00be-4553-8ac5-1ded90b6b5f4\"></attachment><attachment id=\"a8e50aec-e97e-4a94-adf9-c844aba8c7d6\"></attachment><attachment id=\"024ae867-95dd-474a-b55e-b1cefb021678\"></attachment><attachment id=\"5b4c2d79-4f0d-4b38-8bd6-eb66774d1f6a\"></attachment><attachment id=\"7404a7c0-f894-44a8-bebc-f9f29c383b7f\"></attachment><attachment id=\"97f772c5-2d3e-40c4-9412-ea54baf029a7\"></attachment><attachment id=\"182ebdea-ad18-48e4-929d-ec71bb63ab0c\"></attachment><attachment id=\"39713b36-04da-4a47-9fff-492712b17a66\"></attachment><attachment id=\"545e8191-4449-43bb-8f0f-f256955f7001\"></attachment><attachment id=\"4ccad872-a2d3-41e2-8972-c722baedcc80\"></attachment><attachment id=\"1852c17f-754a-40b6-a25b-1655d9872459\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "580ed261-00be-4553-8ac5-1ded90b6b5f4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_63017.jpg",
+        "content": null,
+        "name": "IMG_63017.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a8e50aec-e97e-4a94-adf9-c844aba8c7d6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5963.JPG",
+        "content": null,
+        "name": "IMG_5963.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "024ae867-95dd-474a-b55e-b1cefb021678",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5969.JPG",
+        "content": null,
+        "name": "IMG_5969.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5b4c2d79-4f0d-4b38-8bd6-eb66774d1f6a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5977.JPG",
+        "content": null,
+        "name": "IMG_5977.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7404a7c0-f894-44a8-bebc-f9f29c383b7f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_52983.jpg",
+        "content": null,
+        "name": "IMG_52983.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "97f772c5-2d3e-40c4-9412-ea54baf029a7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_53995.jpg",
+        "content": null,
+        "name": "IMG_53995.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "182ebdea-ad18-48e4-929d-ec71bb63ab0c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_55997.jpg",
+        "content": null,
+        "name": "IMG_55997.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "39713b36-04da-4a47-9fff-492712b17a66",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_59590.jpg",
+        "content": null,
+        "name": "IMG_59590.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "545e8191-4449-43bb-8f0f-f256955f7001",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_60046.jpg",
+        "content": null,
+        "name": "IMG_60046.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4ccad872-a2d3-41e2-8972-c722baedcc80",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_60150.jpg",
+        "content": null,
+        "name": "IMG_60150.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1852c17f-754a-40b6-a25b-1655d9872459",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/IMG_5965.JPG",
+        "content": null,
+        "name": "IMG_5965.JPG",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Dian Darmono",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+            "displayName": "Dian Darmono",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Harriet",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "93f46b48-612c-47cf-b88d-201fd98e75f2",
+            "displayName": "Harriet",
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1605942282347",
+    "replyToId": null,
+    "etag": "1605942282347",
+    "messageType": "message",
+    "createdDateTime": "2020-11-21T07:04:42.347Z",
+    "lastModifiedDateTime": "2020-11-21T07:04:42.347Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1605942282347?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605942282347&parentMessageId=1605942282347",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hi All,&nbsp;</div>\n\n<div>Please see attached the open order report outdoors for this week.</div>\n</div><attachment id=\"8644d318-0e26-469c-9bee-87b770f58465\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "8644d318-0e26-469c-9bee-87b770f58465",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 16 NOVEMBER - 20 NOVEMBER 2020.xlsx",
+        "content": null,
+        "name": "Shipment Deduction Harbour 16 NOVEMBER - 20 NOVEMBER 2020.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606131508178",
+    "replyToId": null,
+    "etag": "1606220954357",
+    "messageType": "message",
+    "createdDateTime": "2020-11-23T11:38:28.178Z",
+    "lastModifiedDateTime": "2020-11-24T12:29:14.357Z",
+    "lastEditedDateTime": "2020-11-24T12:29:14.357Z",
+    "deletedDateTime": null,
+    "subject": "SAN BIANCO + SANTA BARB",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1606131508178?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606131508178&parentMessageId=1606131508178",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "pricing Nov 20th"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606207067028",
+    "replyToId": null,
+    "etag": "1606207067028",
+    "messageType": "message",
+    "createdDateTime": "2020-11-24T08:37:47.028Z",
+    "lastModifiedDateTime": "2020-11-24T08:37:47.028Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MAUI TEAK ITEMS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1606207067028?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606207067028&parentMessageId=1606207067028",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "latest pricing and sample list for teak tables<attachment id=\"f896ceee-30cb-4e60-8e36-2ef47ea7a830\"></attachment><attachment id=\"aa5ef638-83c2-4fe1-ac8e-6f6a764c1e8b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f896ceee-30cb-4e60-8e36-2ef47ea7a830",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/MW SAMPLE LIST.xlsx",
+        "content": null,
+        "name": "MW SAMPLE LIST.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "aa5ef638-83c2-4fe1-ac8e-6f6a764c1e8b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/SQ Inkase for Harbour 2nd Inquiry.xlsx",
+        "content": null,
+        "name": "SQ Inkase for Harbour 2nd Inquiry.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606294810806",
+    "replyToId": null,
+    "etag": "1606294903455",
+    "messageType": "message",
+    "createdDateTime": "2020-11-25T09:00:10.806Z",
+    "lastModifiedDateTime": "2020-11-25T09:01:43.455Z",
+    "lastEditedDateTime": "2020-11-25T09:01:43.455Z",
+    "deletedDateTime": null,
+    "subject": "LAGUNA TEAK",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1606294810806?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606294810806&parentMessageId=1606294810806",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>DWG'S yet to be signed off and pricing <at id=\"0\">jacob</at>&nbsp;<at id=\"1\">Dian Darmono</at>&nbsp;<at id=\"2\">Nikco</at>&nbsp;<at id=\"3\">Harry</at></div>\n</div><attachment id=\"d88f05c9-90df-4a73-9d65-a68e220d9005\"></attachment><attachment id=\"5b9a955f-a8f7-45c0-ab2d-2a1f2e0df611\"></attachment><attachment id=\"59e9beac-12ef-47d6-b1d0-e960a709df87\"></attachment><attachment id=\"605428c8-b170-4a86-8c96-e90f35def14e\"></attachment><attachment id=\"1fff0c8c-c589-49e2-b19e-17cf894bfe4d\"></attachment><attachment id=\"2e3438d5-a782-4bfe-a4c3-efd910f66934\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "d88f05c9-90df-4a73-9d65-a68e220d9005",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Laguna - Coffee Table 1600_2020 Januari 03.pdf",
+        "content": null,
+        "name": "Laguna - Coffee Table 1600_2020 Januari 03.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5b9a955f-a8f7-45c0-ab2d-2a1f2e0df611",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Laguna Dining Chair_2019 August 23.pdf",
+        "content": null,
+        "name": "Laguna Dining Chair_2019 August 23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "59e9beac-12ef-47d6-b1d0-e960a709df87",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/LAGUNA DINING TABLE_2019-08-23.pdf",
+        "content": null,
+        "name": "LAGUNA DINING TABLE_2019-08-23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "605428c8-b170-4a86-8c96-e90f35def14e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Laguna Sun lounge 2019-08-23.pdf",
+        "content": null,
+        "name": "Laguna Sun lounge 2019-08-23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1fff0c8c-c589-49e2-b19e-17cf894bfe4d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Laguna Teak - Sofa 3 Seat_2019-08-23.pdf",
+        "content": null,
+        "name": "Laguna Teak - Sofa 3 Seat_2019-08-23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2e3438d5-a782-4bfe-a4c3-efd910f66934",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/PRICE LIST HARBOUR - RH 14-08-2019.xls",
+        "content": null,
+        "name": "PRICE LIST HARBOUR - RH 14-08-2019.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "jacob",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "99bbbd8f-89a2-4f9f-a01c-4deb7883622e",
+            "displayName": "jacob",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Dian Darmono",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+            "displayName": "Dian Darmono",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "mentionText": "Nikco",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "510f54b0-652c-43b8-8e71-4a3cbf04045a",
+            "displayName": "Nikco",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "mentionText": "Harry",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "a0684fcb-0d58-4276-86d5-ddb239606cd2",
+            "displayName": "Harry",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1606534967245",
+    "replyToId": null,
+    "etag": "1606534967245",
+    "messageType": "message",
+    "createdDateTime": "2020-11-28T03:42:47.245Z",
+    "lastModifiedDateTime": "2020-11-28T03:42:47.245Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1606534967245?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606534967245&parentMessageId=1606534967245",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hi All,&nbsp;</div>\n\n<div>Please see the update open order Teak outdoor for this week.</div>\n</div><attachment id=\"2fc1b641-b1ea-43d5-8697-85708137e6af\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2fc1b641-b1ea-43d5-8697-85708137e6af",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 23 NOVEMBER - 27 NOVEMBER 2020.xlsx",
+        "content": null,
+        "name": "Shipment Deduction Harbour 23 NOVEMBER - 27 NOVEMBER 2020.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607414998902",
+    "replyToId": null,
+    "etag": "1607414998902",
+    "messageType": "message",
+    "createdDateTime": "2020-12-08T08:09:58.902Z",
+    "lastModifiedDateTime": "2020-12-08T08:09:58.902Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1607414998902?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607414998902&parentMessageId=1607414998902",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>MA - capacity</div>\n\n\n\n\n</div><attachment id=\"38b958a7-c7df-4a63-911d-b4d734dbb24b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "38b958a7-c7df-4a63-911d-b4d734dbb24b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Screen Shot 2020-12-08 at 4.07.22 PM.png",
+        "content": null,
+        "name": "Screen Shot 2020-12-08 at 4.07.22 PM.png",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607415836092",
+    "replyToId": null,
+    "etag": "1607415836092",
+    "messageType": "message",
+    "createdDateTime": "2020-12-08T08:23:56.092Z",
+    "lastModifiedDateTime": "2020-12-08T08:23:56.092Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "AVALON SECTIONALS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1607415836092?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607415836092&parentMessageId=1607415836092",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "(DWGS)"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607674584233",
+    "replyToId": null,
+    "etag": "1607674584233",
+    "messageType": "message",
+    "createdDateTime": "2020-12-11T08:16:24.233Z",
+    "lastModifiedDateTime": "2020-12-11T08:16:24.233Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1607674584233?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607674584233&parentMessageId=1607674584233",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hi All,</div>\n\n<div>Please see attached the open closed record&nbsp;for Teak outdoor.</div>\n</div><attachment id=\"00a9736b-3318-4a0c-8344-dfb3eddf5813\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "00a9736b-3318-4a0c-8344-dfb3eddf5813",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 07 DECEMBER - 11 DECEMBER 2020.xlsx",
+        "content": null,
+        "name": "Shipment Deduction Harbour 07 DECEMBER - 11 DECEMBER 2020.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1609381721346",
+    "replyToId": null,
+    "etag": "1609381721346",
+    "messageType": "message",
+    "createdDateTime": "2020-12-31T02:28:41.346Z",
+    "lastModifiedDateTime": "2020-12-31T02:28:41.346Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1609381721346?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609381721346&parentMessageId=1609381721346",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hi All,</div>\n\n<div>Please see attached open Teak outdoor report this week.</div>\n</div><attachment id=\"e80f0f4e-ec4e-4c40-909d-b896c2f67ab6\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "e80f0f4e-ec4e-4c40-909d-b896c2f67ab6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 21 DECEMBER - 30 DECEMBER 2020.xlsx",
+        "content": null,
+        "name": "Shipment Deduction Harbour 21 DECEMBER - 30 DECEMBER 2020.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1610169674476",
+    "replyToId": null,
+    "etag": "1610169674476",
+    "messageType": "message",
+    "createdDateTime": "2021-01-09T05:21:14.476Z",
+    "lastModifiedDateTime": "2021-01-09T05:21:14.476Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1610169674476?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1610169674476&parentMessageId=1610169674476",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hi All,</div>\n\n<div>Please see attached open close Teak outdoor report this week.</div>\n</div><attachment id=\"9294f1e8-da1a-42d4-b41b-acc61b8d0c33\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "9294f1e8-da1a-42d4-b41b-acc61b8d0c33",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 04 JANUARY - 08 JANUARY 2020.xlsx",
+        "content": null,
+        "name": "Shipment Deduction Harbour 04 JANUARY - 08 JANUARY 2020.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1616970435278",
+    "replyToId": null,
+    "etag": "1616970435278",
+    "messageType": "message",
+    "createdDateTime": "2021-03-28T22:27:15.278Z",
+    "lastModifiedDateTime": "2021-03-28T22:27:15.278Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1616970435278?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1616970435278&parentMessageId=1616970435278",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "displayName": "Yansen",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Hi All, please see the open order Teak report.<attachment id=\"ed6fa54a-1162-4acb-829b-8f2f74832daa\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "ed6fa54a-1162-4acb-829b-8f2f74832daa",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Shipment Deduction Harbour 22 - 26 MARCH 2021.xls",
+        "content": null,
+        "name": "Shipment Deduction Harbour 22 - 26 MARCH 2021.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1623716458690",
+    "replyToId": null,
+    "etag": "1623716458690",
+    "messageType": "message",
+    "createdDateTime": "2021-06-15T00:20:58.69Z",
+    "lastModifiedDateTime": "2021-06-15T00:20:58.69Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "CELEST",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1623716458690?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1623716458690&parentMessageId=1623716458690",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"df9e92e1-e30c-4524-957a-a015758f4f47\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "df9e92e1-e30c-4524-957a-a015758f4f47",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/CELEST - C - Alt Leg.pdf",
+        "content": null,
+        "name": "CELEST - C - Alt Leg.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1625789006585",
+    "replyToId": null,
+    "etag": "1625789006585",
+    "messageType": "message",
+    "createdDateTime": "2021-07-09T00:03:26.585Z",
+    "lastModifiedDateTime": "2021-07-09T00:03:26.585Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "ORA",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1625789006585?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1625789006585&parentMessageId=1625789006585",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">A couple of tweaks to these designs per my conversation&nbsp;with Harry.\n<div>&nbsp;</div>\n\n<div>Dining Table-&nbsp;</div>\n\n\n<blockquote>\n<div>Revise the direction of the slats on the top to go longways- like Agean (see attached)</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Remove metal breadboard, should be constructed like Agean</div>\n\n<div>&nbsp;</div>\n</blockquote>\n\n\n<div>Coffee Table-</div>\n\n<div>\n\n<blockquote>\n<div>Revise the direction of the slats on the top to go longways- like Agean (see attached)</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Remove metal breadboard, should be constructed like Agean</div>\n\n<div>&nbsp;</div>\n</blockquote>\n\nOUR ORA-</div>\n\n<div>We need to rename the dining table to Byron and have it sit with that collection.&nbsp; Should be done ASAP before RH checks it out.&nbsp;</div>\n\n\n</div>\n</div><attachment id=\"36a770de-eae1-430a-b5da-de2841322295\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "36a770de-eae1-430a-b5da-de2841322295",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Ora.jpg",
+        "content": null,
+        "name": "Ora.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1627265900385",
+    "replyToId": null,
+    "etag": "1627265900385",
+    "messageType": "message",
+    "createdDateTime": "2021-07-26T02:18:20.385Z",
+    "lastModifiedDateTime": "2021-07-26T02:18:20.385Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "CARBONIZED TEAK PROGRAM",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1627265900385?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627265900385&parentMessageId=1627265900385",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Dian findings 2020<attachment id=\"87ca5ebe-2792-486d-be79-2fb46ae73c1d\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "87ca5ebe-2792-486d-be79-2fb46ae73c1d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/CARBONIZED TMT - RESEARCH.ppt",
+        "content": null,
+        "name": "CARBONIZED TMT - RESEARCH.ppt",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1628648367803",
+    "replyToId": null,
+    "etag": "1628648367803",
+    "messageType": "message",
+    "createdDateTime": "2021-08-11T02:19:27.803Z",
+    "lastModifiedDateTime": "2021-08-11T02:19:27.803Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Taverna Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1628648367803?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1628648367803&parentMessageId=1628648367803",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "newness spring 2022"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1628649808799",
+    "replyToId": null,
+    "etag": "1628649808799",
+    "messageType": "message",
+    "createdDateTime": "2021-08-11T02:43:28.799Z",
+    "lastModifiedDateTime": "2021-08-11T02:43:28.799Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Logan Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A735d1507dd4c48c78892ef45f060a097%40thread.tacv2/1628649808799?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1628649808799&parentMessageId=1628649808799",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<attachment id=\"2891880c-1a3d-4a9d-bc38-39ef438cdea3\"></attachment><attachment id=\"5870c3f5-35cf-4e43-b5c4-969c32c9705f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2891880c-1a3d-4a9d-bc38-39ef438cdea3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Logan - SPECS rev A.pdf",
+        "content": null,
+        "name": "Logan - SPECS rev A.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5870c3f5-35cf-4e43-b5c4-969c32c9705f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/TEAK DEVELOPMENT/Logan.pdf",
+        "content": null,
+        "name": "Logan.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

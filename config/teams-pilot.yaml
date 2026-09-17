@@ -1,4 +1,27 @@
-migration_id: teams-pilot-001
-users: mapping.example.json
-workloads:
-  teams: teams.mapping.example.yaml
+chats:
+  - name: one-on-one-015
+    source_chat_id: 19:954eadfd-14da-4167-86de-f1e37e1f8e78_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces
+    users:
+      - thanh.nguyen
+      - nguyet
+  - name: group-009
+    source_chat_id: 19:5bb175ea45f24cf48ef0d43c4725e75e@thread.v2
+    users:
+      - thanh.nguyen
+      - dung.nguyen
+      - tinh
+
+channels:
+  - name: ALL APPROVED DWG RH HO CONTRACT
+    source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+    source_channel_id: 19:207dda3e513f420eaafca826095363ea@thread.tacv2
+    target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+    target_channel_id: 19:233894f4ae314485aac22c45618a8f1a@thread.tacv2
+    messages: data/teams/all-approved-dwg-rh-ho-contract.messages.json
+
+  - name: ALL APPROVED HO DWG FILES
+    source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+    source_channel_id: 19:5b5994750df149b08dc54babe00ac783@thread.tacv2
+    target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+    target_channel_id: 19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2
+    messages: data/teams/all-approved-ho-dwg-files.messages.json

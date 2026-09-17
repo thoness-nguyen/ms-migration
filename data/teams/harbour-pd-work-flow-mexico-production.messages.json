@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1640155295669",
+    "replyToId": null,
+    "etag": "1640155295669",
+    "messageType": "message",
+    "createdDateTime": "2021-12-22T06:41:35.669Z",
+    "lastModifiedDateTime": "2021-12-22T06:41:35.669Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aec4cdc6356164fbc865ce6fa9a912592%40thread.tacv2/1640155295669?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1640155295669&parentMessageId=1640155295669",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\"><b>LAGOS</b>&nbsp;(Chunky)</div>\n\n\n<div style=\"font-size:small\"><i>Mexican Oak</i></div>\n\n\n<div style=\"font-size:small\"><i>Finishes: Bleached &amp; Natural</i></div>\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos Rectangle Dining Table</div>\n\n<div>\n\n<blockquote>\n<div>Lagos Rectangle 120\" Dining Table</div>\n</blockquote>\n\n</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>\n\n<blockquote>\n<div>Lagos Rectangle 108\" Dining Table</div>\n</blockquote>\n\n</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos Coffee Table (14/15\" H)</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Lagos Rectangle Coffee</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Lagos Square Coffee</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos Side Table (needs to also double as a nightstand)</div>\n\n<div>Lagos 90\" Closed Sideboard</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos 90\" Open Sideboard</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos Bed (HB only/Platform)</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Lagos Queen Bed</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Lagos King Bed</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Lagos Mirrors (how thick the frame is determines the mirror size- sizes below are based on 4.5\" outside wood frame)</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>Lagos Wall - 30 x 40\"&nbsp;</blockquote>\n\n\n\n<blockquote>Lagos Floor Length - 28 x 76\"</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>*Lagos Sofa and side chair will be Phase II</div>\n</blockquote>\n\n</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:ec4cdc6356164fbc865ce6fa9a912592@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1640233517894",
+    "replyToId": null,
+    "etag": "1640233517894",
+    "messageType": "message",
+    "createdDateTime": "2021-12-23T04:25:17.894Z",
+    "lastModifiedDateTime": "2021-12-23T04:25:17.894Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Taracea | Tierra Collection - Harbour Indoor Fall 2022",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aec4cdc6356164fbc865ce6fa9a912592%40thread.tacv2/1640233517894?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1640233517894&parentMessageId=1640233517894",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\"><b>TIERRA</b>&nbsp;(Live Edge)</div>\n\n\n<div style=\"font-size:small\"><i>Yuka Wood</i></div>\n\n\n<div style=\"font-size:small\"><i>Finishes: Natural &amp; Black</i></div>\n\n\n<div style=\"font-size:small\"><i>Bookmatch Veneer</i></div>\n\n\n<div style=\"font-size:small\"><i>Engineered Live Edge</i></div>\n\n\n<blockquote style=\"font-size:small\">Tiera Dining Tables:</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Tierra Rectangle 120\" Dining Table</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Tierra Round 60\" Dining Table</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Tierra Coffee Tables:</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Tierra 60\" Rectangle Coffee</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Tierra 36-48\" Round Coffee</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">Tierra Side Tables (both need to work as nightstands):\n\n<blockquote>Tierra Square Side\n<div>Tierra Round Side</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Tierra Console</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Tierra Console 60\"</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Tierra Console 72\"</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>Tierra Bed (HB only/Platform)</div>\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n\n<blockquote>\n<div>Tierra Queen Bed</div>\n</blockquote>\n\n\n\n<blockquote>\n<div>Tierra King Bed</div>\n</blockquote>\n\n</blockquote>\n\n\n\n<blockquote style=\"font-size:small\">\n<div>*Version with metal legs to be Phase II</div>\n</blockquote>\n\n</div>\n</div><attachment id=\"af039df5-d630-4a60-8abe-ee4de5762086\"></attachment><attachment id=\"5b7d2c62-1079-49c6-bc1d-282421f175b7\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:ec4cdc6356164fbc865ce6fa9a912592@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "af039df5-d630-4a60-8abe-ee4de5762086",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/LAGOS/TIERRA.pdf",
+        "content": null,
+        "name": "TIERRA.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5b7d2c62-1079-49c6-bc1d-282421f175b7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/LAGOS/Ref_Natural.webp",
+        "content": null,
+        "name": "Ref_Natural.webp",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

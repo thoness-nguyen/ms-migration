@@ -1,0 +1,138 @@
+[
+  {
+    "id": "1649321534663",
+    "replyToId": null,
+    "etag": "1649321534663",
+    "messageType": "message",
+    "createdDateTime": "2022-04-07T08:52:14.663Z",
+    "lastModifiedDateTime": "2022-04-07T08:52:14.663Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "DATA DUMP",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af854190788474b9f8f58ad1e701d4483%40thread.tacv2/1649321534663?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1649321534663&parentMessageId=1649321534663",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"dfa465e6-af6e-4ce0-90d3-aa0f07d1773b\"></attachment><attachment id=\"c0c024cd-cfa4-4253-9234-af3e59ba8a16\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f854190788474b9f8f58ad1e701d4483@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "dfa465e6-af6e-4ce0-90d3-aa0f07d1773b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)/Backbone 2ND Import Sheet - Balance of Outdoor Furniture.xlsx",
+        "content": null,
+        "name": "Backbone 2ND Import Sheet - Balance of Outdoor Furniture.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c0c024cd-cfa4-4253-9234-af3e59ba8a16",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)/Backbone Test Import Sheet - SS22 Outdoor Newness.xlsx",
+        "content": null,
+        "name": "Backbone Test Import Sheet - SS22 Outdoor Newness.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1658455442427",
+    "replyToId": null,
+    "etag": "1658455442427",
+    "messageType": "message",
+    "createdDateTime": "2022-07-22T02:04:02.427Z",
+    "lastModifiedDateTime": "2022-07-22T02:04:02.427Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SF IMPLEMENTATION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af854190788474b9f8f58ad1e701d4483%40thread.tacv2/1658455442427?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1658455442427&parentMessageId=1658455442427",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"text-align:start; text-indent:0px\">\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span>We have&nbsp;<a href=\"https://app.salesforceiq.com/r?target=62a884bf8c92c828166e649e&amp;t=AFwhZf0T8HfYA8TPOwgOj6Hp0X9K3znKh4Pg8VLI7nSUv9VwLfdynfOr5jy86inQObddStKOypY2N8F9Dnnv3PQNF3HN0TedMvbigL03UD3xS7YWbL9eEDhCUqMZxpXwSLf4Kra7vwyA&amp;url=https%3A%2F%2Fsalesforce.vidyard.com%2Fwatch%2F5RfkEMgjRxUgNm3AdBW39s\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://app.salesforceiq.com/r?target=62a884bf8c92c828166e649e&amp;t=afwhzf0t8hfya8tpowgoj6hp0x9k3znkh4pg8vli7nsuv9vwlfdynfor5jy86inqobddstkoypy2n8f9dnnv3pqnf3hn0tedmvbigl03ud3xs7ywbl9eedhcuqmzxpxwslf4kra7vwya&amp;url=https%3a%2f%2fsalesforce.vidyard.com%2fwatch%2f5rfkemgjrxugnm3adbw39s\" style=\"color:rgb(104,136,201)\">Sales Cloud Micro Demo</a>&nbsp;(password: salesforce) that provides a helpful overview of what sales cloud can do.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"auto\">&nbsp;</div>\n\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span>Additionally, the below resources are typically very helpful for new users of Salesforce.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n</div>\n\n\n<div dir=\"auto\" style=\"text-align:start; text-indent:0px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n<div><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<ul dir=\"auto\">\n\n\t\n<li style=\"margin-left:14px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span><font face=\"arial, sans-serif\"><font style=\"font-size:1rem\"><a href=\"https://app.salesforceiq.com/r?target=6271653e6294c317a598973e&amp;t=AFwhZf3A_XwJH8TuxPkeYqTdEfJcBNQhkKPXaqnGz6nBqnR7hgcyhCRWEhhVT4H_fTuDSzu3r_QeJhq0uO8TTdLfMWshIfSXYZHaWyrDEtyXR84-0hmJce22EvCYdPPhMlEcV5C2rNjH&amp;url=https%3A%2F%2Fwebevents.force.com%2FIman%2Fs%2Fgetting-started\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://app.salesforceiq.com/r?target=6271653e6294c317a598973e&amp;t=afwhzf3a_xwjh8tuxpkeyqtdefjcbnqhkkpxaqngz6nbqnr7hgcyhcrwehhvt4h_ftudszu3r_qejhq0uo8ttdlfmwshifsxyzhawyrdetyxr84-0hmjce22evcydpphmlecv5c2rnjh&amp;url=https%3a%2f%2fwebevents.force.com%2fiman%2fs%2fgetting-started\" style=\"font-size:1rem; color:rgb(104,136,201)\">Iman's Webinars</a>- saved webinars from one of our master solution engineers</font></font></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>\n\t\n<li style=\"margin-left:14px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span><a href=\"https://app.salesforceiq.com/r?target=6271653e6294c317a598973f&amp;t=AFwhZf3A_XwJH8TuxPkeYqTdEfJcBNQhkKPXaqnGz6nBqnR7hgcyhCRWEhhVT4H_fTuDSzu3r_QeJhq0uO8TTdLfMWshIfSXYZHaWyrDEtyXR84-0hmJce22EvCYdPPhMlEcV5C2rNjH&amp;url=https%3A%2F%2Fsuccess.salesforce.com%2F\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://app.salesforceiq.com/r?target=6271653e6294c317a598973f&amp;t=afwhzf3a_xwjh8tuxpkeyqtdefjcbnqhkkpxaqngz6nbqnr7hgcyhcrwehhvt4h_ftudszu3r_qejhq0uo8ttdlfmwshifsxyzhawyrdetyxr84-0hmjce22evcydpphmlecv5c2rnjh&amp;url=https%3a%2f%2fsuccess.salesforce.com%2f\" style=\"color:rgb(104,136,201)\"><font face=\"arial, sans-serif\"><font style=\"font-size:1rem\">Trailblazer Community</font></font></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>\n\t\n<li style=\"margin-left:14px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span><a href=\"https://app.salesforceiq.com/r?target=6271653e6294c317a5989740&amp;t=AFwhZf3A_XwJH8TuxPkeYqTdEfJcBNQhkKPXaqnGz6nBqnR7hgcyhCRWEhhVT4H_fTuDSzu3r_QeJhq0uO8TTdLfMWshIfSXYZHaWyrDEtyXR84-0hmJce22EvCYdPPhMlEcV5C2rNjH&amp;url=https%3A%2F%2Ftrailhead.salesforce.com%2F\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://app.salesforceiq.com/r?target=6271653e6294c317a5989740&amp;t=afwhzf3a_xwjh8tuxpkeyqtdefjcbnqhkkpxaqngz6nbqnr7hgcyhcrwehhvt4h_ftudszu3r_qejhq0uo8ttdlfmwshifsxyzhawyrdetyxr84-0hmjce22evcydpphmlecv5c2rnjh&amp;url=https%3a%2f%2ftrailhead.salesforce.com%2f\" style=\"color:rgb(104,136,201)\"><font face=\"arial, sans-serif\"><font style=\"font-size:1rem\">Trailhead</font></font></a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>\n\t\n<li style=\"margin-left:14px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span><font face=\"arial, sans-serif\"><font style=\"font-size:1rem\"><a href=\"https://app.salesforceiq.com/r?target=6271653e6294c317a5989741&amp;t=AFwhZf3A_XwJH8TuxPkeYqTdEfJcBNQhkKPXaqnGz6nBqnR7hgcyhCRWEhhVT4H_fTuDSzu3r_QeJhq0uO8TTdLfMWshIfSXYZHaWyrDEtyXR84-0hmJce22EvCYdPPhMlEcV5C2rNjH&amp;url=https%3A%2F%2Fapp.salesforceiq.com%2Fr%3Ftarget%3D5ee7cc674cedfd0078b1c3b5%26t%3DAFwhZf28okJlwUsahVQeJcK-kzoJrIxaZ-K_y4bpEyFcUihjcn6qZ1pA59MOl22wUH3rxlWmU-HajuS07CCRk0ftM7MsfG_GRnYIXmac0-xfiy2PLjTG4YqS-QPEc15MWNXbh0r9NxH0%26url%3Dhttps%253A%252F%252Fhelp.salesforce.com%252FarticleVi\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://app.salesforceiq.com/r?target=6271653e6294c317a5989741&amp;t=afwhzf3a_xwjh8tuxpkeyqtdefjcbnqhkkpxaqngz6nbqnr7hgcyhcrwehhvt4h_ftudszu3r_qejhq0uo8ttdlfmwshifsxyzhawyrdetyxr84-0hmjce22evcydpphmlecv5c2rnjh&amp;url=https%3a%2f%2fapp.salesforceiq.com%2fr%3ftarget%3d5ee7cc674cedfd0078b1c3b5%26t%3dafwhzf28okjlwusahvqejck-kzojrixaz-k_y4bpeyfcuihjcn6qz1pa59mol22wuh3rxlwmu-hajus07ccrk0ftm7msfg_grnyixmac0-xfiy2pljtg4yqs-qpec15mwnxbh0r9nxh0%26url%3dhttps%253a%252f%252fhelp.salesforce.com%252farticlevi\" style=\"color:rgb(104,136,201)\">Create&nbsp;a&nbsp;Support&nbsp;Case</a></font></font></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></li>\n</ul>\n\n\n\n<div dir=\"auto\">&nbsp;</div>\n\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span>Let me know if you need additional information! If you’re able to sign for the licenses before the end of the month I will be able to offer a one time discount on pricing.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"auto\">&nbsp;</div>\n\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span>Thank you,</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"auto\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span><span><span><span style=\"word-spacing:1px\"><span>Eileen </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"afae4736-57ab-4425-9cc6-17beea1cb931\"></attachment><attachment id=\"2b1c349c-d334-4ede-b2df-9cfb5a4d00a3\"></attachment><attachment id=\"3b03cab0-a955-4a88-acb2-d143116c185a\"></attachment><attachment id=\"27bb53d3-6dbd-4cde-87a6-aee05259665e\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f854190788474b9f8f58ad1e701d4483@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "afae4736-57ab-4425-9cc6-17beea1cb931",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)  PLUS SALES FORCE/Harbour Outdoor Add On Quote 6-9-22 (1).pdf",
+        "content": null,
+        "name": "Harbour Outdoor Add On Quote 6-9-22 (1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2b1c349c-d334-4ede-b2df-9cfb5a4d00a3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)  PLUS SALES FORCE/Harbour Outdoor Add On Quote 6-9-22.pdf",
+        "content": null,
+        "name": "Harbour Outdoor Add On Quote 6-9-22.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "3b03cab0-a955-4a88-acb2-d143116c185a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)  PLUS SALES FORCE/Service Cloud Edition Comparison (1).pdf",
+        "content": null,
+        "name": "Service Cloud Edition Comparison (1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "27bb53d3-6dbd-4cde-87a6-aee05259665e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/BACKBONE (PD SYSTEM)  PLUS SALES FORCE/Sales Cloud Edition Comparison (2).pdf",
+        "content": null,
+        "name": "Sales Cloud Edition Comparison (2).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

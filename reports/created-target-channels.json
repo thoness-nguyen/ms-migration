@@ -1,0 +1,191 @@
+[
+  {
+    "index": 1,
+    "name": "ALL APPROVED DWG RH HO CONTRACT",
+    "source_channel_id": "19:207dda3e513f420eaafca826095363ea@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:233894f4ae314485aac22c45618a8f1a@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 2,
+    "name": "ALL APPROVED HO DWG FILES",
+    "source_channel_id": "19:5b5994750df149b08dc54babe00ac783@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 3,
+    "name": "AOMEI PD PHOTOGRAPHY",
+    "source_channel_id": "19:e3505fbb064f48689021432d529da569@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:7248aa799e094322a8a6a0c3ce37a84f@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 4,
+    "name": "AOMEI PPIC AND SHIPPING",
+    "source_channel_id": "19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:06773f61c4c44e0990b1343de9736b87@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 5,
+    "name": "BACKBONE (PD SYSTEM)  PLUS SALES FORCE",
+    "source_channel_id": "19:f854190788474b9f8f58ad1e701d4483@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:1e5c4456e3324ca39c15a3706e25502c@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 6,
+    "name": "CONTRACT HOSPITALITY",
+    "source_channel_id": "19:b869488beb094c4aa51f4ff539ed7548@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:3bbbb85b87a84106a519e48e7b951dc3@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 7,
+    "name": "EASYWAY FABRIC STOCK",
+    "source_channel_id": "19:acf4722e7eb34daea47e44565576a28f@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:495728e71a4a43b08a1e20ce3be052ba@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 8,
+    "name": "General",
+    "source_channel_id": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2",
+    "status": "existing",
+    "message": "Target channel already exists; reusing it"
+  },
+  {
+    "index": 9,
+    "name": "Harbour Approved DWG China",
+    "source_channel_id": "19:06cd9919421043e78c77a0452d0176ff@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:3d127d625af74e17bcd94e798a02a17e@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 10,
+    "name": "HARBOUR STUDIO",
+    "source_channel_id": "19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:4173875ee3cd443398fa1a74af4599b7@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 11,
+    "name": "INDOOR PD (CHINA)",
+    "source_channel_id": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:6b0e09f18c7643428d7101f8f6135572@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 12,
+    "name": "INDOOR PD (INDONESIA)",
+    "source_channel_id": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:1250e5966ce7400d9c04880c194c12e9@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 13,
+    "name": "INDOOR PD (VIETNAM)",
+    "source_channel_id": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:ec4cae61d733429aa8c24b358317480f@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 14,
+    "name": "MASTER DIMENSIONS SHEET",
+    "source_channel_id": "19:ab4c7f400df74b308fce1b8539329ca3@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:4458270488a444c39bf9090e9c5624cd@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 15,
+    "name": "MENA - APAC PD",
+    "source_channel_id": "19:b8e997819c9f4c1e9e47d734ef7639e2@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:922487cf26884819ba2176ce5450df7e@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 16,
+    "name": "MEXICO PRODUCTION",
+    "source_channel_id": "19:ec4cdc6356164fbc865ce6fa9a912592@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:2ce2370e8b124b2eacd4d820cf62044e@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 17,
+    "name": "OUTDOOR (CHINA) NON-AOMEI",
+    "source_channel_id": "19:870fd063a3724b76a8b97752879a816e@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:dfedd89a95934efcb02a751053da6fc3@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 18,
+    "name": "PMT FILES",
+    "source_channel_id": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:4b2335f4dacb4bbc98d30124c45404d6@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 19,
+    "name": "RH EU PROGRAM",
+    "source_channel_id": "19:fa5f850b5609494d8cf6d6c9f1e5a916@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:72e30be9e7684a3c8a49a9ac2e08695d@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 20,
+    "name": "SUPPLIER PRICING",
+    "source_channel_id": "19:f27b4ce703e947b3bf347216476de530@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:e4a2873965174547bc2cb4513b51b430@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  },
+  {
+    "index": 21,
+    "name": "TEAK (INDONESIA)",
+    "source_channel_id": "19:735d1507dd4c48c78892ef45f060a097@thread.tacv2",
+    "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+    "target_channel_id": "19:0a9a64d00ea74ac7bf4af1f91d89f881@thread.tacv2",
+    "status": "created",
+    "message": "Target channel created"
+  }
+]
