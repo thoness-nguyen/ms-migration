@@ -163,4 +163,6 @@ def test_import_chat_starts_with_source_creation_time(tmp_path):
     state = StateStore(tmp_path / "state.sqlite")
     import_chat(graph, bundle, {"source-1": "target-1"}, state)
     start = next(call for call in graph.calls if call[1] == "/chats/target-chat-1/startMigration")
-    assert start[2]["json"] == {"conversationCreationDateTime": "2025-01-01T00:00:00Z"}
+    # conversationCreationDateTime is backdated 1s before the source chat's own
+    # createdDateTime so it's strictly earlier than the first migrated message.
+    assert start[2]["json"] == {"conversationCreationDateTime": "2024-12-31T23:59:59.000Z"}

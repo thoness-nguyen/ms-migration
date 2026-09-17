@@ -15,7 +15,7 @@ from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_chat, import_channel_messages, import_chat
+from ..teams.services import extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -102,25 +102,57 @@ def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) 
     return int(value) if isinstance(value, (int, float)) else default
 
 
-def _global_user_id_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
-    """source_id -> target_id table used to auto-resolve chat members and channel
-    message senders when an entry has no explicit user_map. Hierarchical plans
-    already expose the resolved `users` list (see load_hierarchical_plan);
-    standalone plans (e.g. teams-pilot.yaml) can point `user_mapping` at the
-    same kind of file (config/mapping.example.json) directly."""
+def _global_users_list(plan: dict[str, Any], plan_dir: Path) -> list[Any]:
+    """Shared users list backing both _global_user_id_map and _global_upn_map.
+    Hierarchical plans already expose the resolved `users` list (see
+    load_hierarchical_plan); standalone plans (e.g. teams-pilot.yaml) can point
+    `user_mapping` at the same kind of file (config/mapping.example.json) directly."""
     users = plan.get("users")
     if users is None:
         source = plan.get("user_mapping")
         if not source:
-            return {}
+            return []
         users = _load_data((plan_dir / source).resolve()) if isinstance(source, str) else source
-    if not isinstance(users, list):
-        return {}
+    return users if isinstance(users, list) else []
+
+
+def _global_user_id_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
+    """source_id -> target_id table used to auto-resolve chat members and channel
+    message senders when an entry has no explicit user_map."""
     return {
         user["source_id"]: user["target_id"]
-        for user in users
+        for user in _global_users_list(plan, plan_dir)
         if isinstance(user, dict) and user.get("source_id") and user.get("target_id")
     }
+
+
+def _global_upn_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
+    """source_upn -> target_upn table used to rewrite SharePoint/OneDrive attachment
+    links in migrated messages (see teams.services.make_attachment_resolver)."""
+    return {
+        user["source_upn"]: user["target_upn"]
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_upn") and user.get("target_upn")
+    }
+
+
+def _ensure_guest_mapping(state: StateStore, target_graph: Any, users_by_source_id: dict[str, Any], source_id: str) -> str | None:
+    """Best-effort B2B guest invite for a source user with no target-tenant account,
+    cached in the checkpoint db (workload 'user-invite') so repeat runs don't
+    re-invite the same person. Opt-in only: plan must set `invite_missing_users: true`
+    (see _run_batch_chats) - untested against a live tenant, verify on a small pilot
+    chat before relying on it broadly."""
+    cached = state.target("user-invite", source_id)
+    if cached:
+        return cached
+    user = users_by_source_id.get(source_id)
+    if not user or not user.get("source_upn"):
+        return None
+    guest_id = invite_guest_user(target_graph, user["source_upn"], user.get("display_name"))
+    if guest_id:
+        state.mark("user-invite", source_id, "invited", guest_id)
+        print(f"  [+] Invited {user['source_upn']} as a target-tenant guest: {guest_id}")
+    return guest_id
 
 
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
@@ -128,7 +160,15 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
     content_concurrency = max(1, _concurrency(plan, "teams", "content", default=4))
     entries = list(plan.get("chats", []))
     global_id_map = _global_user_id_map(plan, plan_dir)
-    
+    upn_map = _global_upn_map(plan, plan_dir)
+    attachment_resolver = make_attachment_resolver(target_graph, upn_map) if upn_map else None
+    invite_missing_users = bool(plan.get("invite_missing_users"))
+    users_by_source_id = {
+        user["source_id"]: user
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_id")
+    }
+
     total_chats = len(entries)
 
     def migrate_chat(entry: dict[str, Any], index: int) -> dict[str, Any]:
@@ -160,6 +200,15 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                 # global source_id -> target_id table (see _global_user_id_map).
                 user_map = {member_id: global_id_map[member_id] for member_id in member_ids if member_id in global_id_map}
             missing = sorted(member_id for member_id in member_ids if member_id not in user_map)
+            if missing and invite_missing_users and not dry_run:
+                still_missing = []
+                for member_id in missing:
+                    guest_id = _ensure_guest_mapping(state, target_graph, users_by_source_id, member_id)
+                    if guest_id:
+                        user_map[member_id] = guest_id
+                    else:
+                        still_missing.append(member_id)
+                missing = still_missing
             if missing:
                 if not user_map and not global_id_map:
                     raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
@@ -167,7 +216,7 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key)
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver)
             result.update(
                 {
                     "status": "dry-run" if dry_run else "completed",
@@ -246,6 +295,8 @@ def _run_batch_channels(
     # senders are remapped to a valid target-tenant identity (fixes Graph 400
     # "message sender/initiator must be same as tenantId on the token").
     global_id_map = _global_user_id_map(plan, plan_dir)
+    upn_map = _global_upn_map(plan, plan_dir)
+    attachment_resolver = make_attachment_resolver(target_graph, upn_map) if upn_map else None
 
     content_concurrency = max(
         1,
@@ -346,6 +397,7 @@ def _run_batch_channels(
                 state,
                 dry_run,
                 user_map=global_id_map or None,
+                attachment_resolver=attachment_resolver,
             )
 
             result.update({

@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import json
 import re
 from html import escape
-from typing import Any
+from typing import Any, Callable
+from urllib.parse import unquote
 
 from ..common.checkpoint import StateStore
 from ..common.graph import GraphClient, GraphError
@@ -12,15 +13,71 @@ from ..common.graph import GraphClient, GraphError
 # matches both <attachment id="X"></attachment> and <attachment id="X"/>
 _ATTACHMENT_TAG = re.compile(r'<attachment\s+id="([^"]+)"(?:\s*/>|>\s*</attachment>)', re.DOTALL)
 
+# SharePoint/OneDrive personal-site attachment links, e.g.
+# https://contoso-my.sharepoint.com/personal/nguyet_harbouroutdoor_com/Documents/foo.pdf
+_SHAREPOINT_PERSONAL_URL = re.compile(r"https://[^/]+/personal/(?P<owner>[^/]+)/Documents/(?P<path>.+)$")
 
-def _timestamp(value: str, last: datetime | None) -> str:
-    parsed = datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+AttachmentResolver = Callable[[str], str]
+
+
+def _upn_to_personal_segment(upn: str) -> str:
+    """SharePoint/OneDrive personal-site URLs encode a UPN as <local>_<domain-with-dots-as-_>."""
+    return re.sub(r"[.@]", "_", upn.lower())
+
+
+def make_attachment_resolver(target_graph: GraphClient, upn_map: dict[str, str]) -> AttachmentResolver:
+    """Best-effort resolver for message attachment links: if a source SharePoint/OneDrive
+    personal-site link's owner is in upn_map, look up the same relative file path under the
+    target-tenant owner's OneDrive (already migrated separately) and use its webUrl instead.
+    Falls back to the original source link when the owner is unknown or the file isn't found
+    on the target side - never raises, so a lookup miss never blocks message migration."""
+    segment_to_target_upn = {_upn_to_personal_segment(source_upn): target_upn for source_upn, target_upn in upn_map.items()}
+    cache: dict[str, str] = {}
+
+    def resolve(url: str) -> str:
+        if url in cache:
+            return cache[url]
+        match = _SHAREPOINT_PERSONAL_URL.match(url)
+        if not match:
+            cache[url] = url
+            return url
+        target_upn = segment_to_target_upn.get(match.group("owner").lower())
+        if not target_upn:
+            cache[url] = url
+            return url
+        relative_path = unquote(match.group("path"))
+        try:
+            item = target_graph.request("GET", f"/users/{target_upn}/drive/root:/{relative_path}")
+        except GraphError:
+            item = None
+        target_url = item.get("webUrl") if isinstance(item, dict) else None
+        cache[url] = target_url or url
+        return cache[url]
+
+    return resolve
+
+
+def _timestamp(
+    value: str,
+    last: datetime | None,
+    minimum: datetime | None = None,
+) -> str:
+    parsed = datetime.fromisoformat(
+        value.replace("Z", "+00:00")
+    ).astimezone(timezone.utc)
+
+    if minimum and parsed <= minimum:
+        parsed = minimum + timedelta(milliseconds=1)
+
     if last and parsed <= last:
-        parsed = last.replace(microsecond=last.microsecond + 1000)
-    return parsed.isoformat(timespec="milliseconds").replace("+00:00", "Z")
+        parsed = last + timedelta(milliseconds=1)
+
+    return parsed.isoformat(
+        timespec="milliseconds"
+    ).replace("+00:00", "Z")
 
 
-def _import_body(message: dict[str, Any]) -> dict[str, str]:
+def _import_body(message: dict[str, Any], attachment_resolver: AttachmentResolver | None = None) -> dict[str, str]:
     body = message.get("body") or {"contentType": "html", "content": ""}
     raw_attachments = message.get("attachments") or []
     if not raw_attachments:
@@ -40,6 +97,8 @@ def _import_body(message: dict[str, Any]) -> dict[str, str]:
             except json.JSONDecodeError:
                 return ""
         url = att.get("contentUrl")
+        if url and attachment_resolver:
+            url = attachment_resolver(url)
         name = att.get("name") or url
         if url:
             return f'<p>Attachment: <a href="{escape(url)}">{escape(str(name))}</a></p>'
@@ -49,7 +108,7 @@ def _import_body(message: dict[str, Any]) -> dict[str, str]:
     return {"contentType": body.get("contentType", "html"), "content": resolved}
 
 
-def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: datetime | None) -> dict[str, Any]:
+def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: datetime | None, attachment_resolver: AttachmentResolver | None = None) -> dict[str, Any]:
     source_from = (message.get("from") or {}).get("user") or {}
     source_id = source_from.get("id")
     target_id = user_map.get(source_id)
@@ -58,7 +117,7 @@ def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: dat
     payload: dict[str, Any] = {
         "createdDateTime": _timestamp(message["createdDateTime"], last),
         "from": {"user": {"id": target_id, "userIdentityType": "aadUser"}},
-        "body": _import_body(message),
+        "body": _import_body(message, attachment_resolver),
     }
     hosted_contents = message.get("hostedContents")
     if hosted_contents:
@@ -79,6 +138,14 @@ def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: dat
         payload["_unsupported"] = unsupported
     return payload
 
+def _is_migration_window_closed(error: GraphError) -> bool:
+    """True for the Graph 403 raised when a channel/chat is no longer in migration
+    mode (e.g. completeMigration already ran) - message-level writes then require
+    createdDateTime >= the thread's real creation time, so old timestamps are rejected."""
+    message = str(error)
+    return "MessageWritesBlocked" in message or "is less than thread creation time" in message
+
+
 def _channel_already_has_messages(graph: GraphClient, target_team: str, target_channel: str) -> bool:
     """Best-effort check for messages already present on the target channel -
     guards against duplicate imports when the local checkpoint db was lost/reset
@@ -91,7 +158,7 @@ def _channel_already_has_messages(graph: GraphClient, target_team: str, target_c
     return bool(values)
 
 
-def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False, user_map: dict[str, str] | None = None) -> int:
+def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False, user_map: dict[str, str] | None = None, attachment_resolver: AttachmentResolver | None = None) -> int:
     # user_map is optional: when omitted, the source "from" identity is sent as-is
     # (only valid if the caller already sends target-tenant ids). When provided,
     # senders without a target mapping are skipped instead of failing the batch -
@@ -114,8 +181,16 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         return 0
     print(f"  [+] channel {target_channel}: starting migration ({total} messages)")
     if not dry_run and state.status("teams-channel", target_channel) != "started":
-        graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/startMigration")
-        state.mark("teams-channel", target_channel, "started", teams_type="channel")
+        try:
+            graph.request(
+                "POST",
+                f"/teams/{target_team}/channels/{target_channel}/startMigration"
+            )
+        except GraphError as error:
+            if "already in migration mode" not in str(error):
+                raise
+            print(f"  [!] channel {target_channel}: already in migration mode; resuming")
+        state.mark("teams-channel", target_channel, "started", teams_type="channel",)
     for message in ordered:
         source_id = str(message["id"])
         if state.status("channel-message", source_id) == "completed":
@@ -133,12 +208,23 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         payload = {
             "createdDateTime": _timestamp(message["createdDateTime"], last),
             "from": from_field,
-            "body": _import_body(message),
+            "body": _import_body(message, attachment_resolver),
         }
         if message.get("hostedContents"):
             payload["hostedContents"] = message["hostedContents"]
         if not dry_run:
-            graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
+            try:
+                graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
+            except GraphError as error:
+                if _is_migration_window_closed(error):
+                    raise GraphError(
+                        f"Channel {target_channel} is no longer accepting historical (migration-mode) "
+                        "timestamps - it was likely already fully migrated in a prior run (completeMigration "
+                        "already ran) or wasn't provisioned in migration mode. Verify target channel content "
+                        f"before retrying. {imported}/{total} messages were imported before this happened. "
+                        f"Original error: {error}"
+                    ) from error
+                raise
             state.mark("channel-message", source_id, "completed", teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
@@ -160,6 +246,28 @@ def extract_chat(graph: GraphClient, chat_id: str) -> dict[str, Any]:
     return {"chat": chat, "members": members, "messages": messages}
 
 
+def invite_guest_user(target_graph: GraphClient, source_upn: str, display_name: str | None = None, redirect_url: str = "https://myapps.microsoft.com") -> str | None:
+    """Best-effort B2B guest invite for a source-tenant user with no target-tenant
+    account, so chats/messages can still reference them instead of being skipped.
+    Requires the target token to have Invitation.ReadWrite.All consented - any
+    failure (missing permission, throttling, already-exists, etc.) returns None so
+    callers can fall back to skipping that user rather than failing the whole chat."""
+    payload: dict[str, Any] = {
+        "invitedUserEmailAddress": source_upn,
+        "inviteRedirectUrl": redirect_url,
+        "sendInvitationMessage": False,
+    }
+    if display_name:
+        payload["invitedUserDisplayName"] = display_name
+    try:
+        result = target_graph.request("POST", "/invitations", json=payload)
+    except GraphError as error:
+        print(f"  [!] Guest invite failed for {source_upn}: {error}")
+        return None
+    invited_user = result.get("invitedUser") if isinstance(result, dict) else None
+    return invited_user.get("id") if isinstance(invited_user, dict) else None
+
+
 def target_member(source_member: dict[str, Any], user_map: dict[str, str]) -> dict[str, Any]:
     source_id = source_member.get("userId")
     target_id = user_map.get(source_id)
@@ -171,9 +279,17 @@ def target_member(source_member: dict[str, Any], user_map: dict[str, str]) -> di
         "user@odata.bind": f"https://graph.microsoft.com/v1.0/users('{target_id}')",
     }
 
+def _migration_conversation_creation_time(value: str) -> str:
+    parsed = (
+        datetime.fromisoformat(value.replace("Z", "+00:00"))
+        .astimezone(timezone.utc)
+        - timedelta(seconds=1)
+    )
+    return parsed.isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
-def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, str], state: StateStore, dry_run: bool = False, stats: dict[str, int] | None = None, user_key: str | None = None) -> tuple[str, int]:
+def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, str], state: StateStore, dry_run: bool = False, stats: dict[str, int] | None = None, user_key: str | None = None, attachment_resolver: AttachmentResolver | None = None) -> tuple[str, int]:
     source_chat_id = bundle["chat"]["id"]
+    chat_type = bundle["chat"].get("chatType")
     who = f"[{user_key}] " if user_key else ""
     target_chat_id = state.target("teams-chat", source_chat_id)
     if not target_chat_id:
@@ -214,11 +330,18 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
     last: datetime | None = None
     imported = 0
     if not dry_run and state.status("teams-chat", source_chat_id) != "started":
-        graph.request(
-            "POST",
-            f"/chats/{target_chat_id}/startMigration",
-            json={"conversationCreationDateTime": bundle["chat"]["createdDateTime"]},
-        )
+        try:
+            graph.request(
+                "POST",
+                f"/chats/{target_chat_id}/startMigration",
+                json={"conversationCreationDateTime": _migration_conversation_creation_time(
+                    bundle["chat"]["createdDateTime"]
+            )},
+            )
+        except GraphError as error:
+            if "already in migration mode" not in str(error):
+                raise
+            print(f"  [!] {who}chat {source_chat_id}: already in migration mode; resuming")
         state.mark("teams-chat", source_chat_id, "started", target_chat_id, user_key=user_key, teams_type=chat_type)
     for message in messages:
         source_id = str(message["id"])
@@ -236,7 +359,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
                 state.mark("teams-chat-message", source_id, "skipped", detail="deleted", user_key=user_key, teams_type=chat_type)
             continue
         try:
-            payload = _import_payload(message, user_map, last)
+            payload = _import_payload(message, user_map, last, attachment_resolver)
         except ValueError as error:
             # Sender has no target mapping (e.g. member skipped above) - skip
             # just this message instead of failing the whole chat migration.
@@ -249,7 +372,18 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         if stats is not None:
             stats["unsupported_features"] = stats.get("unsupported_features", 0) + len(unsupported)
         if not dry_run:
-            graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
+            try:
+                graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
+            except GraphError as error:
+                if _is_migration_window_closed(error):
+                    raise GraphError(
+                        f"Chat {source_chat_id} is no longer accepting historical (migration-mode) "
+                        "timestamps - it was likely already fully migrated in a prior run (completeMigration "
+                        "already ran) or the resumed startMigration call didn't reopen it. Verify target chat "
+                        f"content before retrying. {imported}/{total} messages were imported before this happened. "
+                        f"Original error: {error}"
+                    ) from error
+                raise
             state.mark("teams-chat-message", source_id, "completed", user_key=user_key, teams_type=chat_type)
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1

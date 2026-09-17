@@ -1,7 +1,7 @@
 {
   "migration_id": null,
   "area": "teams",
-  "generated_at": "2026-09-17T13:13:56.651845+00:00",
+  "generated_at": "2026-09-17T13:52:09.491471+00:00",
   "dry_run": false,
   "results": [
     {
@@ -9,9 +9,9 @@
       "name": "one-on-one-015",
       "source_chat_id": "19:954eadfd-14da-4167-86de-f1e37e1f8e78_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces",
       "user_key": null,
-      "status": "skipped",
+      "status": "failed",
       "messages": 0,
-      "reason": "already completed"
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/chats/19:2a419d78-a323-4d78-b557-fc742fbacaed_321275e4-70d6-4e5e-9c31-2eca9216b8a1@unq.gbl.spaces/startMigration failed (400): {\"error\":{\"code\":\"BadRequest\",\"message\":\"Chat '19:2a419d78-a323-4d78-b557-fc742fbacaed_321275e4-70d6-4e5e-9c31-2eca9216b8a1@unq.gbl.spaces' is already in migration mode.\",\"innerError\":{\"date\":\"2026-09-17T13:52:08\",\"request-id\":\"e7dd2b45-b720-4c49-bbae-1b2263a360e9\",\"client-request-id\":\"e7dd2b45-b720-4c49-bbae-1b2263a360e9\"}}}"
     },
     {
       "workload": "teams-chat",
@@ -31,7 +31,7 @@
       "target_channel_id": "19:233894f4ae314485aac22c45618a8f1a@thread.tacv2",
       "status": "failed",
       "messages": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:233894f4ae314485aac22c45618a8f1a@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1605686317301 is less than thread creation time 1789636230525.\",\"date\":\"2026-09-17T13:13:57\",\"request-id\":\"b5b9c3b3-0a72-4178-8e33-22e4c9577d43\",\"client-request-id\":\"b5b9c3b3-0a72-4178-8e33-22e4c9577d43\"}}}"
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:233894f4ae314485aac22c45618a8f1a@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1605686317301 is less than thread creation time 1789636230525.\",\"date\":\"2026-09-17T13:52:09\",\"request-id\":\"db11539d-eee0-4938-a533-ab9eaef6ff07\",\"client-request-id\":\"db11539d-eee0-4938-a533-ab9eaef6ff07\"}}}"
     },
     {
       "workload": "teams-channel",
@@ -42,7 +42,7 @@
       "target_channel_id": "19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2",
       "status": "failed",
       "messages": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1627607843036 is less than thread creation time 1789636236091.\",\"date\":\"2026-09-17T13:13:57\",\"request-id\":\"38d3aa50-d4d7-46c4-9244-cee71523d55c\",\"client-request-id\":\"38d3aa50-d4d7-46c4-9244-cee71523d55c\"}}}"
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1627607843036 is less than thread creation time 1789636236091.\",\"date\":\"2026-09-17T13:52:09\",\"request-id\":\"ac4f71b9-620e-41a1-9516-391b16bde363\",\"client-request-id\":\"ac4f71b9-620e-41a1-9516-391b16bde363\"}}}"
     }
   ]
 }
