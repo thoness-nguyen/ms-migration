@@ -1,14 +1,48 @@
 {
-  "migration_id": "onedrive-pilot-001",
+  "migration_id": null,
   "area": "teams",
-  "generated_at": "2026-09-06T03:18:34.003779+00:00",
+  "generated_at": "2026-09-17T13:13:56.651845+00:00",
   "dry_run": false,
-  "summary": {
-    "overall_status": "completed",
-    "failed_item_count": 0,
-    "mismatched_libraries": [],
-    "areas_needing_attention": []
-  },
-  "results": [],
-  "planned_workload": null
+  "results": [
+    {
+      "workload": "teams-chat",
+      "name": "one-on-one-015",
+      "source_chat_id": "19:954eadfd-14da-4167-86de-f1e37e1f8e78_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces",
+      "user_key": null,
+      "status": "skipped",
+      "messages": 0,
+      "reason": "already completed"
+    },
+    {
+      "workload": "teams-chat",
+      "name": "group-009",
+      "source_chat_id": "19:5bb175ea45f24cf48ef0d43c4725e75e@thread.v2",
+      "user_key": null,
+      "status": "skipped",
+      "messages": 0,
+      "reason": "already completed"
+    },
+    {
+      "workload": "teams-channel",
+      "name": "ALL APPROVED DWG RH HO CONTRACT",
+      "source_team_id": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "source_channel_id": "19:207dda3e513f420eaafca826095363ea@thread.tacv2",
+      "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+      "target_channel_id": "19:233894f4ae314485aac22c45618a8f1a@thread.tacv2",
+      "status": "failed",
+      "messages": 0,
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:233894f4ae314485aac22c45618a8f1a@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1605686317301 is less than thread creation time 1789636230525.\",\"date\":\"2026-09-17T13:13:57\",\"request-id\":\"b5b9c3b3-0a72-4178-8e33-22e4c9577d43\",\"client-request-id\":\"b5b9c3b3-0a72-4178-8e33-22e4c9577d43\"}}}"
+    },
+    {
+      "workload": "teams-channel",
+      "name": "ALL APPROVED HO DWG FILES",
+      "source_team_id": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "source_channel_id": "19:5b5994750df149b08dc54babe00ac783@thread.tacv2",
+      "target_team_id": "80c11791-41a0-48ad-b394-063b75595b32",
+      "target_channel_id": "19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2",
+      "status": "failed",
+      "messages": 0,
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/teams/80c11791-41a0-48ad-b394-063b75595b32/channels/19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2/messages failed (403): {\"error\":{\"code\":\"Forbidden\",\"message\":\"InsufficientPrivileges\",\"innerError\":{\"code\":\"1\",\"message\":\"MessageWritesBlocked-OriginalArrivalTime 1627607843036 is less than thread creation time 1789636236091.\",\"date\":\"2026-09-17T13:13:57\",\"request-id\":\"38d3aa50-d4d7-46c4-9244-cee71523d55c\",\"client-request-id\":\"38d3aa50-d4d7-46c4-9244-cee71523d55c\"}}}"
+    }
+  ]
 }

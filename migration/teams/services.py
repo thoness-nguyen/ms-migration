@@ -91,11 +91,18 @@ def _channel_already_has_messages(graph: GraphClient, target_team: str, target_c
     return bool(values)
 
 
-def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False) -> int:
+def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False, user_map: dict[str, str] | None = None) -> int:
+    # user_map is optional: when omitted, the source "from" identity is sent as-is
+    # (only valid if the caller already sends target-tenant ids). When provided,
+    # senders without a target mapping are skipped instead of failing the batch -
+    # Graph rejects channel messages whose sender isn't in the token's tenant.
     ordered = sorted(messages, key=lambda message: message["createdDateTime"])
+    total = len(ordered)
     last: datetime | None = None
     imported = 0
+    skipped_no_mapping = 0
     if state.status("teams-channel", target_channel) == "completed":
+        print(f"  [=] channel {target_channel}: already completed - skipping")
         return 0
     if (
         not dry_run
@@ -103,7 +110,9 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         and _channel_already_has_messages(graph, target_team, target_channel)
     ):
         state.mark("teams-channel", target_channel, "completed", detail="target channel already had messages - skipped to avoid duplicates", teams_type="channel")
+        print(f"  [=] channel {target_channel}: target already had messages - skipped to avoid duplicates")
         return 0
+    print(f"  [+] channel {target_channel}: starting migration ({total} messages)")
     if not dry_run and state.status("teams-channel", target_channel) != "started":
         graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/startMigration")
         state.mark("teams-channel", target_channel, "started", teams_type="channel")
@@ -111,9 +120,19 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         source_id = str(message["id"])
         if state.status("channel-message", source_id) == "completed":
             continue
+        from_field = message.get("from")
+        if user_map is not None:
+            sender_id = ((message.get("from") or {}).get("user") or {}).get("id")
+            target_sender_id = user_map.get(sender_id) if sender_id else None
+            if not target_sender_id:
+                skipped_no_mapping += 1
+                if not dry_run:
+                    state.mark("channel-message", source_id, "skipped", detail=f"sender {sender_id} has no target mapping", teams_type="channel_message")
+                continue
+            from_field = {"user": {"id": target_sender_id, "userIdentityType": "aadUser"}}
         payload = {
             "createdDateTime": _timestamp(message["createdDateTime"], last),
-            "from": message.get("from"),
+            "from": from_field,
             "body": _import_body(message),
         }
         if message.get("hostedContents"):
@@ -123,9 +142,14 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
             state.mark("channel-message", source_id, "completed", teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
+        if total and (imported % 20 == 0 or imported == total):
+            pct = int(imported / total * 100)
+            print(f"    >> channel {target_channel}: {imported}/{total} messages migrated ({pct}%)")
     if not dry_run:
         graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/completeMigration")
         state.mark("teams-channel", target_channel, "completed", teams_type="channel")
+    skip_suffix = f", {skipped_no_mapping} skipped (no target mapping)" if skipped_no_mapping else ""
+    print(f"  [+] channel {target_channel}: completed ({imported}/{total} messages migrated{skip_suffix})")
     return imported
 
 
@@ -156,7 +180,25 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         chat_type = bundle["chat"].get("chatType")
         if chat_type not in {"oneOnOne", "group"}:
             raise ValueError(f"Unsupported chat type: {chat_type}")
-        members = [target_member(member, user_map) for member in bundle["members"]]
+        members: list[dict[str, Any]] = []
+        unmapped_members: list[str] = []
+        for member in bundle["members"]:
+            try:
+                members.append(target_member(member, user_map))
+            except ValueError:
+                unmapped_members.append(str(member.get("userId")))
+        if chat_type == "oneOnOne":
+            # A 1:1 chat needs both parties to exist in the target tenant.
+            if unmapped_members:
+                raise ValueError(f"Missing target mapping for source user(s): {', '.join(unmapped_members)}")
+        else:
+            # Group chats can tolerate some source members having no target
+            # account (e.g. source tenant has more users than target) -
+            # skip them instead of failing the whole chat migration.
+            if len(members) < 2:
+                raise ValueError(f"Not enough target-mapped members to create chat (no target mapping for: {', '.join(unmapped_members)})")
+            if unmapped_members:
+                print(f"  [!] {who}Skipping {len(unmapped_members)} member(s) with no target mapping: {', '.join(unmapped_members)}")
         payload: dict[str, Any] = {"chatType": chat_type, "members": members}
         if chat_type == "group" and bundle["chat"].get("topic"):
             payload["topic"] = bundle["chat"]["topic"]
@@ -193,7 +235,16 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             if not dry_run:
                 state.mark("teams-chat-message", source_id, "skipped", detail="deleted", user_key=user_key, teams_type=chat_type)
             continue
-        payload = _import_payload(message, user_map, last)
+        try:
+            payload = _import_payload(message, user_map, last)
+        except ValueError as error:
+            # Sender has no target mapping (e.g. member skipped above) - skip
+            # just this message instead of failing the whole chat migration.
+            if stats is not None:
+                stats["skipped_no_mapping"] = stats.get("skipped_no_mapping", 0) + 1
+            if not dry_run:
+                state.mark("teams-chat-message", source_id, "skipped", detail=str(error), user_key=user_key, teams_type=chat_type)
+            continue
         unsupported = payload.pop("_unsupported", [])
         if stats is not None:
             stats["unsupported_features"] = stats.get("unsupported_features", 0) + len(unsupported)
@@ -205,7 +256,8 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         if stats is not None:
             stats["imported"] = stats.get("imported", 0) + 1
         if imported % 20 == 0:
-            print(f"    >> {who}chat {source_chat_id}: {imported}/{total} messages migrated")
+            pct = int(imported / total * 100) if total else 100
+            print(f"    >> {who}chat {source_chat_id}: {imported}/{total} messages migrated ({pct}%)")
     if not dry_run:
         graph.request("POST", f"/chats/{target_chat_id}/completeMigration")
         # PATCH (405) is unsupported; delete+re-add each member with full history for group chats

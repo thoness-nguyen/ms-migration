@@ -39,7 +39,6 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
     users = _load_data((plan_dir / plan["users"]).resolve()) if isinstance(plan["users"], str) else plan["users"]
     if not isinstance(users, list):
         raise TypeError("users must be a list or a mapping-file path")
-    user_map: dict[str, str] = {}
     seen_keys: set[str] = set()
     for user in users:
         if not isinstance(user, dict) or not user.get("key") or not user.get("source_id"):
@@ -47,34 +46,19 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
         if user["key"] in seen_keys:
             raise ValueError(f"Duplicate user key: {user['key']}")
         seen_keys.add(user["key"])
-        if user.get("target_id"):
-            user_map[user["key"]] = user["target_id"]
 
     workloads = plan.get("workloads", {})
     if not isinstance(workloads, dict):
         raise TypeError("workloads must be an object")
     teams = _load_data((plan_dir / workloads["teams"]).resolve()) if isinstance(workloads.get("teams"), str) else workloads.get("teams", {})
-    chats = []
-    for entry in teams.get("chats", []) if isinstance(teams, dict) else []:
-        member_keys = entry.get("users", [])
-        missing = [key for key in member_keys if key not in user_map]
-        if missing:
-            raise ValueError(f"Chat {entry.get('name', entry.get('source_chat_id'))} references unknown users: {', '.join(missing)}")
-        chats.append(
-            {
-                "name": entry.get("name"),
-                "source_chat_id": entry.get("source_chat_id"),
-                "user_key": entry.get("user_key"),
-                "user_map": {
-                    next(
-                        user["source_id"]
-                        for user in users
-                        if user["key"] == key
-                    ): user_map[key]
-                    for key in member_keys
-                },
-            }
-        )
+    chats = [
+        {
+            "name": entry.get("name"),
+            "source_chat_id": entry.get("source_chat_id"),
+            "user_key": entry.get("user_key"),
+        }
+        for entry in (teams.get("chats", []) if isinstance(teams, dict) else [])
+    ]
     channels_config = teams.get("channels", []) if isinstance(teams, dict) else []
     if not isinstance(channels_config, list):
         raise TypeError("workloads.teams.channels must be a list")
@@ -118,18 +102,42 @@ def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) 
     return int(value) if isinstance(value, (int, float)) else default
 
 
+def _global_user_id_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
+    """source_id -> target_id table used to auto-resolve chat members and channel
+    message senders when an entry has no explicit user_map. Hierarchical plans
+    already expose the resolved `users` list (see load_hierarchical_plan);
+    standalone plans (e.g. teams-pilot.yaml) can point `user_mapping` at the
+    same kind of file (config/mapping.example.json) directly."""
+    users = plan.get("users")
+    if users is None:
+        source = plan.get("user_mapping")
+        if not source:
+            return {}
+        users = _load_data((plan_dir / source).resolve()) if isinstance(source, str) else source
+    if not isinstance(users, list):
+        return {}
+    return {
+        user["source_id"]: user["target_id"]
+        for user in users
+        if isinstance(user, dict) and user.get("source_id") and user.get("target_id")
+    }
+
+
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     content_concurrency = max(1, _concurrency(plan, "teams", "content", default=4))
     entries = list(plan.get("chats", []))
+    global_id_map = _global_user_id_map(plan, plan_dir)
     
+    total_chats = len(entries)
+
     def migrate_chat(entry: dict[str, Any], index: int) -> dict[str, Any]:
         name = entry.get("name", f"chat-{index}")
         source_chat_id = entry.get("source_chat_id")
         user_key = entry.get("user_key")
-        bundle: dict[str, Any] | None = None
-        teams_type = bundle["chat"].get("chatType") if bundle else None
+        teams_type: str | None = None
         result: dict[str, Any] = {"workload": "teams-chat", "name": name, "source_chat_id": source_chat_id, "user_key": user_key, "status": "failed", "messages": 0}
+        print(f"[chat {index}/{total_chats}] {name}: starting")
         try:
             source_chat_id = entry.get("source_chat_id")
             if not isinstance(source_chat_id, str) or not source_chat_id:
@@ -138,13 +146,24 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             if state.status("batch-chat", source_chat_id) == "completed":
                 result["status"] = "skipped"
                 result["reason"] = "already completed"
+                print(f"[chat {index}/{total_chats}] {name}: skipped (already completed)")
                 return result
-            user_map = _mapping(entry, plan_dir)
+            user_map: dict[str, str]
             bundle = extract_chat(source_graph, source_chat_id)
+            teams_type = bundle["chat"].get("chatType")
             member_ids = {member.get("userId") for member in bundle["members"]}
+            if entry.get("user_map") is not None:
+                # Explicit per-chat mapping still supported for manual overrides.
+                user_map = _mapping(entry, plan_dir)
+            else:
+                # Default path: auto-resolve chat members against the plan's
+                # global source_id -> target_id table (see _global_user_id_map).
+                user_map = {member_id: global_id_map[member_id] for member_id in member_ids if member_id in global_id_map}
             missing = sorted(member_id for member_id in member_ids if member_id not in user_map)
             if missing:
-                raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
+                if not user_map and not global_id_map:
+                    raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
+                print(f"[chat {index}/{total_chats}] {name}: {len(missing)} member(s) have no target mapping - continuing without them: {missing}")
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
@@ -172,6 +191,7 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                     user_key=user_key,
                     teams_type=teams_type,
                 )
+            print(f"[chat {index}/{total_chats}] {name}: {result['status']} ({count} messages)")
             return result
         
         except (GraphError, OSError, TypeError, ValueError, KeyError) as e:
@@ -179,6 +199,7 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             result["error"] = error_msg
             if not dry_run:
                 state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=error_msg, user_key=user_key, teams_type=teams_type)
+            print(f"[chat {index}/{total_chats}] {name}: failed - {error_msg}")
         return result
     
     with ThreadPoolExecutor(max_workers=content_concurrency) as executor:
@@ -221,10 +242,17 @@ def _run_batch_channels(
     if not isinstance(channels_config, list):
         raise TypeError("Teams channels must be a list")
 
+    # Same global source_id -> target_id table as chats, so channel message
+    # senders are remapped to a valid target-tenant identity (fixes Graph 400
+    # "message sender/initiator must be same as tenantId on the token").
+    global_id_map = _global_user_id_map(plan, plan_dir)
+
     content_concurrency = max(
         1,
         _concurrency(plan, "teams", "content", default=4),
     )
+
+    total_channels = len(channels_config)
 
     seen_keys: set[str] = set()
 
@@ -274,6 +302,8 @@ def _run_batch_channels(
             "messages": 0,
         }
 
+        print(f"[channel {index}/{total_channels}] {name}: starting")
+
         try:
             if not target_team_id or not target_channel_id:
                 raise ValueError(
@@ -290,6 +320,7 @@ def _run_batch_channels(
                     "status": "skipped",
                     "reason": "already completed",
                 })
+                print(f"[channel {index}/{total_channels}] {name}: skipped (already completed)")
                 return result
 
             messages_path = (plan_dir / messages_file).resolve()
@@ -314,6 +345,7 @@ def _run_batch_channels(
                 messages,
                 state,
                 dry_run,
+                user_map=global_id_map or None,
             )
 
             result.update({
@@ -330,6 +362,8 @@ def _run_batch_channels(
                     target_channel_id,
                     teams_type="channel_batch",
                 )
+
+            print(f"[channel {index}/{total_channels}] {name}: {result['status']} ({imported_count} messages)")
 
         except (
             GraphError,
@@ -352,6 +386,8 @@ def _run_batch_channels(
                     detail=str(error)[:400],
                     teams_type="channel_batch",
                 )
+
+            print(f"[channel {index}/{total_channels}] {name}: failed - {result['error']}")
 
         return result
 
