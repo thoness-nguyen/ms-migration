@@ -88,7 +88,7 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         state.mark("teams-channel", target_channel, "started", teams_type="channel")
     for message in ordered:
         source_id = str(message["id"])
-        if state.status("teams-message", source_id) == "completed":
+        if state.status("channel-message", source_id) == "completed":
             continue
         payload = {
             "createdDateTime": _timestamp(message["createdDateTime"], last),
@@ -99,7 +99,7 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
             payload["hostedContents"] = message["hostedContents"]
         if not dry_run:
             graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
-            state.mark("teams-message", source_id, "completed", teams_type="channel_message")
+            state.mark("channel-message", source_id, "completed", teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
     if not dry_run:

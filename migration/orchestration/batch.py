@@ -344,7 +344,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             else:
                 error_msg = (
                     f"{type(last_error).__name__}: "
-                    f"{str(last_error)[:200]}"
+                    f"{str(last_error)[:400]}"
                     if last_error
                     else "Copy failed"
                 )
@@ -363,7 +363,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                         source_id,
                         "failed",
                         target_id,
-                        detail=error_msg[:200],
+                        detail=error_msg[:400],
                         user_key=user_key,
                     )
 
@@ -374,7 +374,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             ValueError,
             KeyError,
         ) as error:
-            error_msg = f"{type(error).__name__}: {str(error)[:200]}"
+            error_msg = f"{type(error).__name__}: {str(error)[:400]}"
 
             result.update({
                 "status": "failed",
