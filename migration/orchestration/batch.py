@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from datetime import UTC, datetime
 from pathlib import Path
@@ -14,7 +15,7 @@ from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_chat, import_chat
+from ..teams.services import extract_chat, import_channel_messages, import_chat
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -59,8 +60,27 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
         missing = [key for key in member_keys if key not in user_map]
         if missing:
             raise ValueError(f"Chat {entry.get('name', entry.get('source_chat_id'))} references unknown users: {', '.join(missing)}")
-        chats.append({"name": entry.get("name"), "source_chat_id": entry.get("source_chat_id"), "user_map": {next(user["source_id"] for user in users if user["key"] == key): user_map[key] for key in member_keys}})
+        chats.append(
+            {
+                "name": entry.get("name"),
+                "source_chat_id": entry.get("source_chat_id"),
+                "user_key": entry.get("user_key"),
+                "user_map": {
+                    next(
+                        user["source_id"]
+                        for user in users
+                        if user["key"] == key
+                    ): user_map[key]
+                    for key in member_keys
+                },
+            }
+        )
+    channels_config = teams.get("channels", []) if isinstance(teams, dict) else []
+    if not isinstance(channels_config, list):
+        raise TypeError("workloads.teams.channels must be a list")
     normalized_workloads: dict[str, Any] = {key: value for key, value in workloads.items() if key != "teams"}
+    if channels_config:
+        normalized_workloads["teams"] = {"channels": channels_config}
     if isinstance(normalized_workloads.get("onedrive"), str):
         normalized_workloads["onedrive"] = _load_data((plan_dir / normalized_workloads["onedrive"]).resolve())
     if isinstance(normalized_workloads.get("exchange"), str):
@@ -100,19 +120,25 @@ def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) 
 
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
-    content_concurrency = _concurrency(plan, "teams", "content", default=4)
-    for index, entry in enumerate(plan.get("chats", []), start=1):
+    content_concurrency = max(1, _concurrency(plan, "teams", "content", default=4))
+    entries = list(plan.get("chats", []))
+    
+    def migrate_chat(entry: dict[str, Any], index: int) -> dict[str, Any]:
         name = entry.get("name", f"chat-{index}")
-        result: dict[str, Any] = {"name": name, "source_chat_id": entry.get("source_chat_id"), "status": "failed", "messages": 0}
+        source_chat_id = entry.get("source_chat_id")
+        user_key = entry.get("user_key")
+        bundle: dict[str, Any] | None = None
+        teams_type = bundle["chat"].get("chatType") if bundle else None
+        result: dict[str, Any] = {"workload": "teams-chat", "name": name, "source_chat_id": source_chat_id, "user_key": user_key, "status": "failed", "messages": 0}
         try:
             source_chat_id = entry.get("source_chat_id")
             if not isinstance(source_chat_id, str) or not source_chat_id:
                 raise ValueError("source_chat_id is required")
+            # Batch checkpoint: skip only when the whole chat was completed.
             if state.status("batch-chat", source_chat_id) == "completed":
                 result["status"] = "skipped"
                 result["reason"] = "already completed"
-                results.append(result)
-                continue
+                return result
             user_map = _mapping(entry, plan_dir)
             bundle = extract_chat(source_graph, source_chat_id)
             member_ids = {member.get("userId") for member in bundle["members"]}
@@ -122,15 +148,237 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats)
-            result.update({"status": "dry-run" if dry_run else "completed", "target_chat_id": target_chat_id, "messages": count, "bundle": str(bundle_path), "skipped_system_messages": stats.get("skipped_system", 0), "unsupported_features": stats.get("unsupported_features", 0)})
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key)
+            result.update(
+                {
+                    "status": "dry-run" if dry_run else "completed",
+                    "target_chat_id": target_chat_id,
+                    "messages": count,
+                    "bundle": str(bundle_path),
+                    "chat_type": bundle["chat"].get("chatType"),
+                    "skipped_system_messages": stats.get("skipped_system", 0),
+                    "unsupported_features": stats.get("unsupported_features", 0)
+                }
+            )
+            
+            # Batch-level checkpoint is only written after import_chat()
+            # returns successfully.
             if not dry_run:
-                state.mark("batch-chat", source_chat_id, "completed", target_chat_id)
-        except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
-            result["error"] = str(error)
+                state.mark(
+                    "batch-chat",
+                    source_chat_id,
+                    "completed",
+                    target_chat_id,
+                    user_key=user_key,
+                    teams_type=teams_type,
+                )
+            return result
+        
+        except (GraphError, OSError, TypeError, ValueError, KeyError) as e:
+            error_msg = f"{type(e).__name__}: {e}"
+            result["error"] = error_msg
             if not dry_run:
-                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=str(error))
-        results.append(result)
+                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=error_msg, user_key=user_key, teams_type=teams_type)
+        return result
+    
+    with ThreadPoolExecutor(max_workers=content_concurrency) as executor:
+        futures = [executor.submit(migrate_chat, entry, index) for index, entry in enumerate(entries, start=1)]
+        
+        for future in as_completed(futures):
+            result = future.result()
+            results.append(result)
+            
+    entry_order = {
+        entry.get("source_chat_id"): index
+        for index, entry in enumerate(entries)
+    }
+    
+    results.sort(
+        key=lambda item: entry_order.get(
+            item.get("source_chat_id"),
+            len(entries),
+        )
+    )
+    
+    return results
+
+def _run_batch_channels(
+    source_graph: Any,
+    target_graph: Any,
+    plan: dict[str, Any],
+    plan_dir: Path,
+    state: StateStore,
+    dry_run: bool,
+) -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+
+    channels_config = (
+        plan.get("workloads", {})
+        .get("teams", {})
+        .get("channels", [])
+    )
+
+    if not isinstance(channels_config, list):
+        raise TypeError("Teams channels must be a list")
+
+    content_concurrency = max(
+        1,
+        _concurrency(plan, "teams", "content", default=4),
+    )
+
+    seen_keys: set[str] = set()
+
+    for entry in channels_config:
+        source_team_id = entry.get("source_team_id")
+        source_channel_id = entry.get("source_channel_id")
+
+        if not source_team_id or not source_channel_id:
+            raise ValueError(
+                "Each channel requires source_team_id and source_channel_id"
+            )
+
+        batch_key = f"{source_team_id}:{source_channel_id}"
+
+        if batch_key in seen_keys:
+            raise ValueError(
+                f"Duplicate Teams channel in batch plan: {batch_key}"
+            )
+
+        seen_keys.add(batch_key)
+
+    def migrate_channel(
+        entry: dict[str, Any],
+        index: int,
+    ) -> dict[str, Any]:
+        name = entry.get(
+            "name",
+            f"channel-{index}",
+        )
+
+        source_team_id = entry.get("source_team_id")
+        source_channel_id = entry.get("source_channel_id")
+        target_team_id = entry.get("target_team_id")
+        target_channel_id = entry.get("target_channel_id")
+        messages_file = entry.get("messages")
+
+        batch_key = f"{source_team_id}:{source_channel_id}"
+
+        result: dict[str, Any] = {
+            "workload": "teams-channel",
+            "name": name,
+            "source_team_id": source_team_id,
+            "source_channel_id": source_channel_id,
+            "target_team_id": target_team_id,
+            "target_channel_id": target_channel_id,
+            "status": "failed",
+            "messages": 0,
+        }
+
+        try:
+            if not target_team_id or not target_channel_id:
+                raise ValueError(
+                    f"Channel {name} requires target_team_id and target_channel_id"
+                )
+
+            if not messages_file:
+                raise ValueError(
+                    f"Channel {name} requires a messages file"
+                )
+
+            if state.status("batch-channel", batch_key) == "completed":
+                result.update({
+                    "status": "skipped",
+                    "reason": "already completed",
+                })
+                return result
+
+            messages_path = (plan_dir / messages_file).resolve()
+
+            if not messages_path.exists():
+                raise FileNotFoundError(
+                    f"Messages file not found: {messages_path}"
+                )
+
+            with messages_path.open(encoding="utf-8") as stream:
+                messages = json.load(stream)
+
+            if not isinstance(messages, list):
+                raise TypeError(
+                    f"Messages file must contain a JSON list: {messages_path}"
+                )
+
+            imported_count = import_channel_messages(
+                target_graph,
+                target_team_id,
+                target_channel_id,
+                messages,
+                state,
+                dry_run,
+            )
+
+            result.update({
+                "status": "dry-run" if dry_run else "completed",
+                "messages": imported_count,
+                "messages_file": str(messages_path),
+            })
+
+            if not dry_run:
+                state.mark(
+                    "batch-channel",
+                    batch_key,
+                    "completed",
+                    target_channel_id,
+                    teams_type="channel_batch",
+                )
+
+        except (
+            GraphError,
+            OSError,
+            TypeError,
+            ValueError,
+            KeyError,
+        ) as error:
+            result.update({
+                "status": "failed",
+                "error": f"{type(error).__name__}: {error}",
+            })
+
+            if not dry_run:
+                state.mark(
+                    "batch-channel",
+                    batch_key,
+                    "failed",
+                    target_channel_id,
+                    detail=str(error)[:400],
+                    teams_type="channel_batch",
+                )
+
+        return result
+
+    with ThreadPoolExecutor(
+        max_workers=content_concurrency,
+        thread_name_prefix="teams-channel",
+    ) as executor:
+        futures = {
+            executor.submit(
+                migrate_channel,
+                entry,
+                index,
+            ): index
+            for index, entry in enumerate(channels_config, start=1)
+        }
+
+        completed: dict[int, dict[str, Any]] = {}
+
+        for future in as_completed(futures):
+            index = futures[future]
+            completed[index] = future.result()
+
+    results.extend(
+        completed[index]
+        for index in sorted(completed)
+    )
+
     return results
 
 
@@ -564,15 +812,25 @@ def run_batch(
     dry_run: bool = False,
     retry_failed_only: bool = False,
     area: str | None = None,
+    teams_scope: str = "both",
 ) -> dict[str, Any]:
     """Coordinate execution across domains, one <area>-migration-result.json report per area.
-    Contains no domain-specific migration logic itself."""
+    Contains no domain-specific migration logic itself.
+
+    teams_scope restricts the "teams" area to just "chats", just "channels", or
+    "both" (default) - it has no effect on the other areas."""
+    if teams_scope not in ("chats", "channels", "both"):
+        raise ValueError("teams_scope must be 'chats', 'channels', or 'both'")
     report_dir.mkdir(parents=True, exist_ok=True)
     areas_to_run = [area] if area else ["sharepoint", "onedrive", "teams"]
     area_reports: dict[str, Any] = {}
     for current_area in areas_to_run:
         if current_area == "teams":
-            results = _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
+            results = []
+            if teams_scope in ("chats", "both"):
+                results += _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
+            if teams_scope in ("channels", "both"):
+                results += _run_batch_channels(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
         elif current_area == "onedrive":
             results = _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only)
         elif current_area == "sharepoint":

@@ -79,10 +79,31 @@ def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: dat
         payload["_unsupported"] = unsupported
     return payload
 
+def _channel_already_has_messages(graph: GraphClient, target_team: str, target_channel: str) -> bool:
+    """Best-effort check for messages already present on the target channel -
+    guards against duplicate imports when the local checkpoint db was lost/reset
+    but the target channel was already migrated in a prior run."""
+    try:
+        existing = graph.request("GET", f"/teams/{target_team}/channels/{target_channel}/messages?$top=1")
+    except GraphError:
+        return False
+    values = existing.get("value") if isinstance(existing, dict) else None
+    return bool(values)
+
+
 def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False) -> int:
     ordered = sorted(messages, key=lambda message: message["createdDateTime"])
     last: datetime | None = None
     imported = 0
+    if state.status("teams-channel", target_channel) == "completed":
+        return 0
+    if (
+        not dry_run
+        and state.status("teams-channel", target_channel) is None
+        and _channel_already_has_messages(graph, target_team, target_channel)
+    ):
+        state.mark("teams-channel", target_channel, "completed", detail="target channel already had messages - skipped to avoid duplicates", teams_type="channel")
+        return 0
     if not dry_run and state.status("teams-channel", target_channel) != "started":
         graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/startMigration")
         state.mark("teams-channel", target_channel, "started", teams_type="channel")

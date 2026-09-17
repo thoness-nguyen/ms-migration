@@ -74,10 +74,20 @@ def select_area() -> str:
     return {"1": "sharepoint", "2": "teams", "3": "onedrive"}.get(choice, "sharepoint")
 
 
+def select_teams_scope() -> str:
+    print("\nTeams Workload")
+    print("  [1] Chats only")
+    print("  [2] Channels only")
+    print("  [3] Both (default)")
+    choice = input("Select scope (1-3): ").strip()
+    return {"1": "chats", "2": "channels", "3": "both"}.get(choice, "both")
+
+
 def start_migration(area: str, retry_failed_only: bool = False) -> None:
     """Start migration for the selected area."""
 
     config_file = _config_path(area)
+    teams_scope = "both"
 
     print()
     print(f"🚀 Starting migration ({area})...")
@@ -92,10 +102,11 @@ def start_migration(area: str, retry_failed_only: bool = False) -> None:
         )
 
     elif area == "teams":
+        teams_scope = select_teams_scope()
         print(
             "   ℹ️  Teams runs through the same 'batch' command — "
             "it only processes what's defined under "
-            "'workloads.teams' in the selected config."
+            f"'workloads.teams' in the selected config (scope: {teams_scope})."
         )
 
     elif area == "sharepoint":
@@ -119,6 +130,8 @@ def start_migration(area: str, retry_failed_only: bool = False) -> None:
         "--area",
         area,
     ]
+    if area == "teams":
+        cmd += ["--teams-scope", teams_scope]
     if retry_failed_only:
         cmd.append("--retry-failed-only")
 
