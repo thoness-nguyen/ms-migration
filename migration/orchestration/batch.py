@@ -100,6 +100,7 @@ def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) 
 
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
+    content_concurrency = _concurrency(plan, "teams", "content", default=4)
     for index, entry in enumerate(plan.get("chats", []), start=1):
         name = entry.get("name", f"chat-{index}")
         result: dict[str, Any] = {"name": name, "source_chat_id": entry.get("source_chat_id"), "status": "failed", "messages": 0}

@@ -79,14 +79,13 @@ def _import_payload(message: dict[str, Any], user_map: dict[str, str], last: dat
         payload["_unsupported"] = unsupported
     return payload
 
-
 def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False) -> int:
     ordered = sorted(messages, key=lambda message: message["createdDateTime"])
     last: datetime | None = None
     imported = 0
     if not dry_run and state.status("teams-channel", target_channel) != "started":
         graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/startMigration")
-        state.mark("teams-channel", target_channel, "started")
+        state.mark("teams-channel", target_channel, "started", teams_type="channel")
     for message in ordered:
         source_id = str(message["id"])
         if state.status("teams-message", source_id) == "completed":
@@ -100,12 +99,12 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
             payload["hostedContents"] = message["hostedContents"]
         if not dry_run:
             graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
-            state.mark("teams-message", source_id, "completed")
+            state.mark("teams-message", source_id, "completed", teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
     if not dry_run:
         graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/completeMigration")
-        state.mark("teams-channel", target_channel, "completed")
+        state.mark("teams-channel", target_channel, "completed", teams_type="channel")
     return imported
 
 
@@ -145,7 +144,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         else:
             target_chat_id = graph.request("POST", "/chats", json=payload)["id"]
         if not dry_run:
-            state.mark("teams-chat", source_chat_id, "created", target_chat_id, user_key=user_key)
+            state.mark("teams-chat", source_chat_id, "created", target_chat_id, user_key=user_key, teams_type=chat_type)
             print(f"  [+] {who}Created chat: {target_chat_id}")
     messages = sorted(bundle["messages"], key=lambda message: message["createdDateTime"])
     total = len(messages)
@@ -157,7 +156,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             f"/chats/{target_chat_id}/startMigration",
             json={"conversationCreationDateTime": bundle["chat"]["createdDateTime"]},
         )
-        state.mark("teams-chat", source_chat_id, "started", target_chat_id, user_key=user_key)
+        state.mark("teams-chat", source_chat_id, "started", target_chat_id, user_key=user_key, teams_type=chat_type)
     for message in messages:
         source_id = str(message["id"])
         if state.status("teams-chat-message", source_id) == "completed":
@@ -167,11 +166,11 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             if stats is not None:
                 stats["skipped_system"] = stats.get("skipped_system", 0) + 1
             if not dry_run:
-                state.mark("teams-chat-message", source_id, "skipped", detail=f"Unsupported message type: {message.get('messageType', 'unknown')}", user_key=user_key)
+                state.mark("teams-chat-message", source_id, "skipped", detail=f"Unsupported message type: {message.get('messageType', 'unknown')}", user_key=user_key, teams_type=chat_type)
             continue
         if message.get("deletedDateTime"):
             if not dry_run:
-                state.mark("teams-chat-message", source_id, "skipped", detail="deleted", user_key=user_key)
+                state.mark("teams-chat-message", source_id, "skipped", detail="deleted", user_key=user_key, teams_type=chat_type)
             continue
         payload = _import_payload(message, user_map, last)
         unsupported = payload.pop("_unsupported", [])
@@ -179,7 +178,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             stats["unsupported_features"] = stats.get("unsupported_features", 0) + len(unsupported)
         if not dry_run:
             graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
-            state.mark("teams-chat-message", source_id, "completed", user_key=user_key)
+            state.mark("teams-chat-message", source_id, "completed", user_key=user_key, teams_type=chat_type)
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
         if stats is not None:
@@ -206,7 +205,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
                     })
                 except GraphError:
                     pass
-        state.mark("teams-chat", source_chat_id, "completed", target_chat_id, user_key=user_key)
+        state.mark("teams-chat", source_chat_id, "completed", target_chat_id, user_key=user_key, teams_type=chat_type)
         print(f"  [+] {who}Completed chat migration: {imported} messages")
     return target_chat_id, imported
 
