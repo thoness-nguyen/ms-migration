@@ -5,6 +5,7 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import yaml
 
@@ -15,7 +16,7 @@ from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver
+from ..teams.services import extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -136,6 +137,31 @@ def _global_upn_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
     }
 
 
+def _teams_site_map(plan: dict[str, Any]) -> dict[str, str]:
+    """source '{host}/sites/{site}' (lowercased) -> target_site_id, used to resolve
+    channel-message attachment links that point at a SharePoint TEAM SITE document
+    library (as opposed to a personal OneDrive) - see
+    teams.services.make_attachment_resolver's site_map parameter. Configured under
+    `workloads.teams.site_map` as a list of {source_site_url, target_site_id}
+    entries (same target_site_id shape as config/sharepoint-pilot.yaml)."""
+    site_map: dict[str, str] = {}
+    entries = plan.get("workloads", {}).get("teams", {}).get("site_map", []) or []
+    if not isinstance(entries, list):
+        return site_map
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        source_site_url = entry.get("source_site_url")
+        target_site_id = entry.get("target_site_id")
+        if not source_site_url or not target_site_id:
+            continue
+        parsed = urlparse(source_site_url)
+        key = f"{parsed.netloc}{parsed.path}".strip("/").lower()
+        if key:
+            site_map[key] = target_site_id
+    return site_map
+
+
 def _ensure_guest_mapping(state: StateStore, target_graph: Any, users_by_source_id: dict[str, Any], source_id: str) -> str | None:
     """Best-effort B2B guest invite for a source user with no target-tenant account,
     cached in the checkpoint db (workload 'user-invite') so repeat runs don't
@@ -161,8 +187,23 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
     entries = list(plan.get("chats", []))
     global_id_map = _global_user_id_map(plan, plan_dir)
     upn_map = _global_upn_map(plan, plan_dir)
-    attachment_resolver = make_attachment_resolver(target_graph, upn_map) if upn_map else None
+    site_map = _teams_site_map(plan)
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
+    image_resolver = make_image_resolver(source_graph)
     invite_missing_users = bool(plan.get("invite_missing_users"))
+    # Opt-in fallback for chats whose target thread creation time got permanently
+    # stuck (see _wait_for_chat_migration_window) - imports with sequential,
+    # non-historical timestamps instead of failing outright. Per-chat override
+    # supported via entry["allow_non_historical_import"].
+    allow_non_historical_import_default = bool(plan.get("allow_non_historical_import"))
+    # Opt-in: re-check already-completed chats for messages sent since the last
+    # run instead of skipping them outright (see teams.services.import_chat's
+    # sync_new_messages parameter). Per-chat override via entry["sync_new_messages"].
+    sync_new_messages_default = bool(plan.get("sync_new_messages"))
+    # Opt-in: migrate messages from senders with no target mapping under a proxy
+    # identity (with a note) instead of dropping them - trades sender fidelity for
+    # completeness. Per-chat override via entry["include_unmapped_senders"].
+    include_unmapped_senders_default = bool(plan.get("include_unmapped_senders"))
     users_by_source_id = {
         user["source_id"]: user
         for user in _global_users_list(plan, plan_dir)
@@ -182,8 +223,12 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             source_chat_id = entry.get("source_chat_id")
             if not isinstance(source_chat_id, str) or not source_chat_id:
                 raise ValueError("source_chat_id is required")
-            # Batch checkpoint: skip only when the whole chat was completed.
-            if state.status("batch-chat", source_chat_id) == "completed":
+            sync_new_messages = bool(entry.get("sync_new_messages", sync_new_messages_default))
+            # Batch checkpoint: skip only when the whole chat was completed -
+            # unless sync_new_messages is on, in which case fall through so
+            # import_chat can check the (freshly re-extracted) bundle for
+            # messages sent since the last run.
+            if state.status("batch-chat", source_chat_id) == "completed" and not sync_new_messages:
                 result["status"] = "skipped"
                 result["reason"] = "already completed"
                 print(f"[chat {index}/{total_chats}] {name}: skipped (already completed)")
@@ -216,7 +261,9 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver)
+            allow_non_historical_import = bool(entry.get("allow_non_historical_import", allow_non_historical_import_default))
+            include_unmapped_senders = bool(entry.get("include_unmapped_senders", include_unmapped_senders_default))
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver, image_resolver=image_resolver, allow_non_historical_import=allow_non_historical_import, sync_new_messages=sync_new_messages, include_unmapped_senders=include_unmapped_senders)
             result.update(
                 {
                     "status": "dry-run" if dry_run else "completed",
@@ -296,7 +343,22 @@ def _run_batch_channels(
     # "message sender/initiator must be same as tenantId on the token").
     global_id_map = _global_user_id_map(plan, plan_dir)
     upn_map = _global_upn_map(plan, plan_dir)
-    attachment_resolver = make_attachment_resolver(target_graph, upn_map) if upn_map else None
+    site_map = _teams_site_map(plan)
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
+    image_resolver = make_image_resolver(source_graph)
+    # Same opt-in fallback as chats (see _run_batch_chats) - channels can't have
+    # their creation time backdated after the fact via startMigration, so a
+    # channel created with "now" as its creation time can never accept truly
+    # historical timestamps; per-channel override via entry["allow_non_historical_import"].
+    allow_non_historical_import_default = bool(plan.get("allow_non_historical_import"))
+    # Opt-in: re-check already-completed channels for messages added to the
+    # `messages` file since the last run instead of skipping them outright (see
+    # teams.services.import_channel_messages's sync_new_messages parameter).
+    # Per-channel override via entry["sync_new_messages"].
+    sync_new_messages_default = bool(plan.get("sync_new_messages"))
+    # Same opt-in as chats (see _run_batch_chats) - migrate unmapped-sender
+    # messages under a proxy identity instead of dropping them.
+    include_unmapped_senders_default = bool(plan.get("include_unmapped_senders"))
 
     content_concurrency = max(
         1,
@@ -366,7 +428,8 @@ def _run_batch_channels(
                     f"Channel {name} requires a messages file"
                 )
 
-            if state.status("batch-channel", batch_key) == "completed":
+            sync_new_messages = bool(entry.get("sync_new_messages", sync_new_messages_default))
+            if state.status("batch-channel", batch_key) == "completed" and not sync_new_messages:
                 result.update({
                     "status": "skipped",
                     "reason": "already completed",
@@ -398,6 +461,10 @@ def _run_batch_channels(
                 dry_run,
                 user_map=global_id_map or None,
                 attachment_resolver=attachment_resolver,
+                image_resolver=image_resolver,
+                allow_non_historical_import=bool(entry.get("allow_non_historical_import", allow_non_historical_import_default)),
+                sync_new_messages=sync_new_messages,
+                include_unmapped_senders=bool(entry.get("include_unmapped_senders", include_unmapped_senders_default)),
             )
 
             result.update({

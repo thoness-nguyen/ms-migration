@@ -8,25 +8,28 @@
 user_mapping: mapping.example.json
 
 chats:
-  - name: one-on-one-015
+  - name: one-on-one-610 
     source_chat_id: 19:954eadfd-14da-4167-86de-f1e37e1f8e78_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces
-  - name: group-009
-    source_chat_id: 19:5bb175ea45f24cf48ef0d43c4725e75e@thread.v2
+    sync_new_messages: true
+  - name: group-010
+    source_chat_id: 19:ab2b3da95fc54108aed2c04b89653c36@thread.v2
+    # completeMigration already ran on this chat (584/819 messages imported
+    # before the "migrate everything" fix landed) - import_chat now reopens
+    # the migration window via startMigration before syncing the remaining
+    # messages, then completes it again.
 
 workloads:
   teams:
+    site_map:
+      - source_site_url: "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD"
+        target_site_id: "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
     channels:
-      - name: ALL APPROVED DWG RH HO CONTRACT
+      - name: General
         source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
-        source_channel_id: 19:207dda3e513f420eaafca826095363ea@thread.tacv2
+        source_channel_id: 19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2
         target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
-        target_channel_id: 19:233894f4ae314485aac22c45618a8f1a@thread.tacv2
-        messages: ../data/teams/harbour-pd-work-flow-all-approved-dwg-rh-ho-contract.messages.json
-
-      - name: ALL APPROVED HO DWG FILES
-        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
-        source_channel_id: 19:5b5994750df149b08dc54babe00ac783@thread.tacv2
-        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
-        target_channel_id: 19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2
-        messages: ../data/teams/harbour-pd-work-flow-all-approved-ho-dwg-files.messages.json
+        target_channel_id: 19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-general.messages.json
+        sync_new_messages: true
+        include_unmapped_senders: true
 

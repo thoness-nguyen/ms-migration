@@ -1,20 +1,129 @@
+# Standalone plan consumed directly via --config (migration-panel / CLI batch).
+# This file has no top-level "users" mapping, so batch.load_plan() does NOT
+# run hierarchical key resolution on it - but chats/channels still auto-resolve
+# member and message-sender identities from `user_mapping` below (source_id ->
+# target_id), so chats only need a source_chat_id. Members/senders with no
+# target_id (source tenant has more users than target) are skipped gracefully
+# instead of failing the migration; channels can keep their explicit ids as-is.
+user_mapping: mapping.example.json
+
 chats:
-  - name: one-on-one-015
-    source_chat_id: 19:954eadfd-14da-4167-86de-f1e37e1f8e78_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces
+  - name: one-on-one-020 
+    source_chat_id: 19:954eadfd-14da-4167-86de-f1e37e1f8e78_f9feb8b8-26dc-41ad-9972-e5cad130422a@unq.gbl.spaces
   - name: group-009
     source_chat_id: 19:5bb175ea45f24cf48ef0d43c4725e75e@thread.v2
 
-channels:
-  - name: ALL APPROVED DWG RH HO CONTRACT
-    source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
-    source_channel_id: 19:207dda3e513f420eaafca826095363ea@thread.tacv2
-    target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
-    target_channel_id: 19:233894f4ae314485aac22c45618a8f1a@thread.tacv2
-    messages: ../data/teams/harbour-pd-work-flow-all-approved-dwg-rh-ho-contract.messages.json
-
-  - name: ALL APPROVED HO DWG FILES
-    source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
-    source_channel_id: 19:5b5994750df149b08dc54babe00ac783@thread.tacv2
-    target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
-    target_channel_id: 19:71dbd45a91c4449781fbe82e9814a4f3@thread.tacv2
-    messages: ../data/teams/harbour-pd-work-flow-all-approved-ho-dwg-files.messages.json
+workloads:
+  teams:
+    site_map:
+      - source_site_url: "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD"
+        target_site_id: "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
+    channels:
+      - name: ALL APPROVED HO DWG FILES
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:5b5994750df149b08dc54babe00ac783@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:b62dd5883a564459a6ef360eaed20e36@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-all-approved-ho-dwg-files.messages.json
+      - name: AOMEI PD PHOTOGRAPHY
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:e3505fbb064f48689021432d529da569@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:4b58ebf3913e46ee9fdb433d6009ec3f@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-aomei-pd-photography.messages.json
+      - name: AOMEI PPIC AND SHIPPING
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:e5498d9f1c5543d1b9cc68ba4fd68379@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:c614569ed36f49f98313327aa2da66c9@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-aomei-ppic-and-shipping.messages.json
+      - name: BACKBONE (PD SYSTEM)  PLUS SALES FORCE
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:f854190788474b9f8f58ad1e701d4483@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:f32dfedba62a4304aec307400dc1c088@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-backbone-pd-system-plus-sales-force.messages.json
+      - name: CONTRACT HOSPITALITY
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:b869488beb094c4aa51f4ff539ed7548@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:40756e6e1dfb4b46ab32fdabf90b797a@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-contract-hospitality.messages.json
+      - name: EASYWAY FABRIC STOCK
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:acf4722e7eb34daea47e44565576a28f@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:8865c6a8cccf4634bf162a3395a3f1f7@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-easyway-fabric-stock.messages.json
+      - name: Harbour Approved DWG China
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:06cd9919421043e78c77a0452d0176ff@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:4fa73aac50fc46508cdd8f55ddffc235@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-harbour-approved-dwg-china.messages.json
+      - name: HARBOUR STUDIO
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:81ba52c4cc3042d79df392f564fb4477@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-harbour-studio.messages.json
+      - name: INDOOR PD (CHINA)
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:aa0903a8789b4f489ea8cd46ae4b7130@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-indoor-pd-china.messages.json
+      - name: INDOOR PD (INDONESIA)
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:1b9ae9abaf4644279d5db206f60861cb@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-indoor-pd-indonesia.messages.json
+      - name: INDOOR PD (VIETNAM)
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:793a5145a6334552829646fcaa8b78ea@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-indoor-pd-vietnam.messages.json
+      - name: MASTER DIMENSIONS SHEET
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:ab4c7f400df74b308fce1b8539329ca3@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:4e74a7fa767a4996b9f882dbbdfb32e7@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-master-dimensions-sheet.messages.json
+      - name: MEXICO PRODUCTION
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:ec4cdc6356164fbc865ce6fa9a912592@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:611a86ee1471484fb4411445ee2c6018@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-mexico-production.messages.json
+      - name: OUTDOOR (CHINA) NON-AOMEI
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:870fd063a3724b76a8b97752879a816e@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:0c0aa182df264941897c811b016f14ab@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-outdoor-china-non-aomei.messages.json
+      - name: PMT FILES
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:32e707c25f5e44129699d20adff99eec@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:c2a1295c1a6c4b0d9b74f89fe939277c@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-pmt-files.messages.json
+      - name: RH EU PROGRAM
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:fa5f850b5609494d8cf6d6c9f1e5a916@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:ce7ddde5f02645ab9444c818bfafcddd@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-rh-eu-program.messages.json
+      - name: SUPPLIER PRICING
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:f27b4ce703e947b3bf347216476de530@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:ce35ea9599844cadb7c3b06d4fd17ae7@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-supplier-pricing.messages.json
+      - name: TEAK (INDONESIA)
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:735d1507dd4c48c78892ef45f060a097@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:c2a6782a091f44e6868bfb190abbbefc@thread.tacv2
+        messages: ../data/teams/harbour-pd-work-flow-teak-indonesia.messages.json
