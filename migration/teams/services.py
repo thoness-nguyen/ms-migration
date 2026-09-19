@@ -146,6 +146,29 @@ def _is_migration_window_closed(error: GraphError) -> bool:
     return "MessageWritesBlocked" in message or "is less than thread creation time" in message
 
 
+def _is_duplicate_message(error: GraphError) -> bool:
+    """True for the Graph 409 raised when a message with the same identity already
+    exists on the target thread - happens when a prior run's POST succeeded but the
+    local checkpoint db doesn't know it (e.g. checkpoint reset/lost mid-migration, or
+    the process crashed after the write but before the checkpoint mark). Safe to treat
+    as already-migrated rather than failing the whole chat/channel."""
+    message = str(error)
+    return "(409)" in message and ("CreateConflictException" in message or '"code":"Conflict"' in message)
+
+
+def create_backdated_channel(graph: GraphClient, target_team_id: str, display_name: str, membership_type: str, earliest_message_iso: str) -> str:
+    """Provisions a replacement channel whose createdDateTime is set safely before
+    the earliest historical message. A channel's createdDateTime can't be changed
+    after creation, so if an existing target channel was provisioned with "now" as
+    its creation time, no historical message can ever be migrated into it - the only
+    fix is a new, properly backdated channel (see _is_migration_window_closed)."""
+    earliest = datetime.fromisoformat(earliest_message_iso.replace("Z", "+00:00")).astimezone(timezone.utc)
+    backdated = (earliest - timedelta(days=1)).isoformat(timespec="milliseconds").replace("+00:00", "Z")
+    payload = {"displayName": display_name, "membershipType": membership_type, "createdDateTime": backdated}
+    result = graph.request("POST", f"/teams/{target_team_id}/channels", json=payload)
+    return result["id"]
+
+
 def _channel_already_has_messages(graph: GraphClient, target_team: str, target_channel: str) -> bool:
     """Best-effort check for messages already present on the target channel -
     guards against duplicate imports when the local checkpoint db was lost/reset
@@ -216,7 +239,9 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
             try:
                 graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
             except GraphError as error:
-                if _is_migration_window_closed(error):
+                if _is_duplicate_message(error):
+                    print(f"  [!] channel {target_channel}: message {source_id} already exists on target - marking completed")
+                elif _is_migration_window_closed(error):
                     raise GraphError(
                         f"Channel {target_channel} is no longer accepting historical (migration-mode) "
                         "timestamps - it was likely already fully migrated in a prior run (completeMigration "
@@ -224,7 +249,8 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
                         f"before retrying. {imported}/{total} messages were imported before this happened. "
                         f"Original error: {error}"
                     ) from error
-                raise
+                else:
+                    raise
             state.mark("channel-message", source_id, "completed", teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
@@ -375,7 +401,9 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             try:
                 graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
             except GraphError as error:
-                if _is_migration_window_closed(error):
+                if _is_duplicate_message(error):
+                    print(f"  [!] {who}chat {source_chat_id}: message {source_id} already exists on target - marking completed")
+                elif _is_migration_window_closed(error):
                     raise GraphError(
                         f"Chat {source_chat_id} is no longer accepting historical (migration-mode) "
                         "timestamps - it was likely already fully migrated in a prior run (completeMigration "
@@ -383,7 +411,8 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
                         f"content before retrying. {imported}/{total} messages were imported before this happened. "
                         f"Original error: {error}"
                     ) from error
-                raise
+                else:
+                    raise
             state.mark("teams-chat-message", source_id, "completed", user_key=user_key, teams_type=chat_type)
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
