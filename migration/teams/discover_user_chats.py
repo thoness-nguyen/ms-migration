@@ -251,8 +251,8 @@ def build_output(
             {
                 "name": f"chat-{index:03d}",
                 "source_chat_id": chat_id,
-                "sync_new_messages": true,
-                "include_unmapped_senders": true,
+                "sync_new_messages": True,
+                "include_unmapped_senders": True,
             }
         )
 
