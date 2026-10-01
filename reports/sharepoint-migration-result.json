@@ -1,7 +1,73 @@
 {
-  "migration_id": null,
+  "migration_id": "sharepoint-pilot-001",
   "area": "sharepoint",
-  "generated_at": "2026-09-17T12:52:51.004251+00:00",
-  "dry_run": true,
-  "results": []
+  "generated_at": "2026-09-20T15:38:29.391314+00:00",
+  "dry_run": false,
+  "results": [
+    {
+      "workload": "sharepoint",
+      "site": "Harbour PD Work Flow",
+      "source_site_id": "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06",
+      "status": "completed",
+      "libraries": [
+        {
+          "name": "Documents",
+          "status": "completed_with_failures",
+          "items": 5718,
+          "stats": {
+            "files_copied": 97,
+            "folders_created": 5621,
+            "skipped": 270876,
+            "failed": 2,
+            "oversized_skipped": 0,
+            "errors": [
+              {
+                "item": "BYRON STONE TOP COFFEE TABLE 64 - light OAK - BYRON STONE TOP COFFEE TABLE 64 - light change to brown-  - Whitewood Report vi.pdf",
+                "type": "file",
+                "size_mb": 0.8181943893432617,
+                "error": "GraphError: PUT https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsTK"
+              },
+              {
+                "item": "200413_ID_JH_MUR ISSUED FOR 100\ufffd DD.pdf",
+                "type": "file",
+                "size_mb": 5.807188987731934,
+                "error": "GraphError: POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsT"
+              },
+              {
+                "item": "0. Report",
+                "type": "permission",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsTK0LJLIoq07f/items/01WPIJATDJQ3KAQOWLUNF32YSFW5XW43"
+              },
+              {
+                "item": "0. Report",
+                "type": "permission",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsTK0LJLIoq07f/items/01WPIJATESHEZG64RPHVD2XQNIZCW7GY"
+              },
+              {
+                "item": "0. Report",
+                "type": "permission",
+                "error": "POST https://graph.microsoft.com/v1.0/drives/b!J3hVEvCiHky2t6sB0virD7Gk3i1MYjtMqrdmrwxC6khfmgcJPCNsTK0LJLIoq07f/items/01WPIJATHJB677KA6DKVALQFLPTJQXJ6"
+              }
+            ],
+            "throttle_events": 4
+          },
+          "retries": 0,
+          "validation": {
+            "source_files": 250715,
+            "target_files": 250664,
+            "source_folders": 25881,
+            "target_folders": 25881,
+            "missing_files": [],
+            "status": "mismatch",
+            "match": false
+          }
+        },
+        {
+          "name": "Teams Wiki Data",
+          "status": "skipped",
+          "reason": "target library not found"
+        }
+      ]
+    }
+  ]
 }
