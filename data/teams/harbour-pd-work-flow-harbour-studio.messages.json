@@ -1,0 +1,346 @@
+[
+  {
+    "id": "1616634646971",
+    "replyToId": null,
+    "etag": "1616634750416",
+    "messageType": "message",
+    "createdDateTime": "2021-03-25T01:10:46.971Z",
+    "lastModifiedDateTime": "2021-03-25T01:12:30.416Z",
+    "lastEditedDateTime": "2021-03-25T01:12:30.416Z",
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A57183c1564964ef39f6a3dda19b5f667%40thread.tacv2/1616634646971?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1616634646971&parentMessageId=1616634646971",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "99bbbd8f-89a2-4f9f-a01c-4deb7883622e",
+        "displayName": "jacob",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>\n<div>\n<div><at id=\"0\">Paul Gerrard</at> Let the sourcing begin!&nbsp;</div>\n</div>\n</div>\n</div><attachment id=\"633ef72f-9bbb-4bb0-9fea-7467805e447e\"></attachment><attachment id=\"c7a4303b-422e-4366-9e73-8d31b151f9e3\"></attachment><attachment id=\"156296d0-44bb-40dd-8218-58e78fb78f83\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "633ef72f-9bbb-4bb0-9fea-7467805e447e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/HAYMAN SLIM METAL+WOOD - SPECS - Rev C.pdf",
+        "content": null,
+        "name": "HAYMAN SLIM METAL+WOOD - SPECS - Rev C.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c7a4303b-422e-4366-9e73-8d31b151f9e3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/SANTORINI SLIM - SPECS -REV A (2).pdf",
+        "content": null,
+        "name": "SANTORINI SLIM - SPECS -REV A (2).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "156296d0-44bb-40dd-8218-58e78fb78f83",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope_Specs-REV B (1).pdf",
+        "content": null,
+        "name": "Harbour Studio Rope_Specs-REV B (1).pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1635296670884",
+    "replyToId": null,
+    "etag": "1635296670884",
+    "messageType": "message",
+    "createdDateTime": "2021-10-27T01:04:30.884Z",
+    "lastModifiedDateTime": "2021-10-27T01:04:30.884Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HARBOUR STUDIO ROPE COLLECTION - FINAL PRICES & DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A57183c1564964ef39f6a3dda19b5f667%40thread.tacv2/1635296670884?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1635296670884&parentMessageId=1635296670884",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"115ed5ec-dcc7-4e70-a1fe-67456b1462eb\"></attachment><attachment id=\"59029c05-af8b-4a52-983f-731ebfe7bb4b\"></attachment><attachment id=\"4fe1ed55-c707-425f-a09f-75c27255aada\"></attachment><attachment id=\"c7bf6030-7921-48f1-92d3-281bc833cded\"></attachment><attachment id=\"36e684b2-8d63-40c3-9542-10175caa0494\"></attachment><attachment id=\"781c5a70-408e-4245-93db-c703e7df4aa3\"></attachment><attachment id=\"01d292b3-bfa4-450d-88fa-291fb0713ff7\"></attachment><attachment id=\"8549c909-4557-4c65-aafe-549833eead44\"></attachment><attachment id=\"72e3c842-52c0-488d-ae84-94f2f72f123b\"></attachment><attachment id=\"121ae8df-a9a3-4614-a625-3fde61670f4c\"></attachment><attachment id=\"9f8d97de-48b2-44f9-8e6c-c2c178c54931\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "115ed5ec-dcc7-4e70-a1fe-67456b1462eb",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-COFFEE TABLE-2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-COFFEE TABLE-2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "59029c05-af8b-4a52-983f-731ebfe7bb4b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-CORNER -2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-CORNER -2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4fe1ed55-c707-425f-a09f-75c27255aada",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-DINING CHAIR01-2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-DINING CHAIR01-2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "c7bf6030-7921-48f1-92d3-281bc833cded",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-LOUNGE CHAIR -2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-LOUNGE CHAIR -2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "36e684b2-8d63-40c3-9542-10175caa0494",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-SIDE TABLE-2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-SIDE TABLE-2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "781c5a70-408e-4245-93db-c703e7df4aa3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-SINGLE ARMLESS-2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-SINGLE ARMLESS-2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "01d292b3-bfa4-450d-88fa-291fb0713ff7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-SINGLE ARMLESS-2021-10-25.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-SINGLE ARMLESS-2021-10-25.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8549c909-4557-4c65-aafe-549833eead44",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-SQ DINING-2021-04-20.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-SQ DINING-2021-04-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "72e3c842-52c0-488d-ae84-94f2f72f123b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Harbour Studio Rope-SUNLOUNGE -2021-07-07.pdf",
+        "content": null,
+        "name": "Harbour Studio Rope-SUNLOUNGE -2021-07-07.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "121ae8df-a9a3-4614-a625-3fde61670f4c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/QO - Harbour Rope Collection.xls",
+        "content": null,
+        "name": "QO - Harbour Rope Collection.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9f8d97de-48b2-44f9-8e6c-c2c178c54931",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Rope Dining Table -2021-9-01.pdf",
+        "content": null,
+        "name": "Rope Dining Table -2021-9-01.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1635313636881",
+    "replyToId": null,
+    "etag": "1635313636881",
+    "messageType": "message",
+    "createdDateTime": "2021-10-27T05:47:16.881Z",
+    "lastModifiedDateTime": "2021-10-27T05:47:16.881Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HARBOUR STUDIO SANTORINI COLLECTION - FINAL PRICES & DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A57183c1564964ef39f6a3dda19b5f667%40thread.tacv2/1635313636881?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1635313636881&parentMessageId=1635313636881",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "..<attachment id=\"e1df52df-c2ee-4c71-b032-db601efd1a7e\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "e1df52df-c2ee-4c71-b032-db601efd1a7e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Santorini Slim price comparison-KD (1).xlsx",
+        "content": null,
+        "name": "Santorini Slim price comparison-KD (1).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1645428642103",
+    "replyToId": null,
+    "etag": "1645428642103",
+    "messageType": "message",
+    "createdDateTime": "2022-02-21T07:30:42.103Z",
+    "lastModifiedDateTime": "2022-02-21T07:30:42.103Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "FINAL PRICES",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A57183c1564964ef39f6a3dda19b5f667%40thread.tacv2/1645428642103?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1645428642103&parentMessageId=1645428642103",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"759efe0b-96bd-433a-8090-370a18faa8a7\"></attachment><attachment id=\"4a4acb5e-f9f8-406f-b8f8-574e8c9e6385\"></attachment><attachment id=\"9c9a83ab-777c-46db-b7aa-9fd57c1a4e1c\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:57183c1564964ef39f6a3dda19b5f667@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "759efe0b-96bd-433a-8090-370a18faa8a7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Aomei Hayman Slim price 2022.02.09.xls",
+        "content": null,
+        "name": "Aomei Hayman Slim price 2022.02.09.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4a4acb5e-f9f8-406f-b8f8-574e8c9e6385",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/Santorini Slim price comparison-KD 1-6-22.xlsx",
+        "content": null,
+        "name": "Santorini Slim price comparison-KD 1-6-22.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9c9a83ab-777c-46db-b7aa-9fd57c1a4e1c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/HARBOUR STUDIO/QO - Harbour Rope Collection 11-30-20.xls",
+        "content": null,
+        "name": "QO - Harbour Rope Collection 11-30-20.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

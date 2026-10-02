@@ -1,0 +1,774 @@
+[
+  {
+    "id": "1626250770088",
+    "replyToId": null,
+    "etag": "1634258581174",
+    "messageType": "message",
+    "createdDateTime": "2021-07-14T08:19:30.088Z",
+    "lastModifiedDateTime": "2021-10-15T00:43:01.174Z",
+    "lastEditedDateTime": "2021-10-15T00:43:01.174Z",
+    "deletedDateTime": null,
+    "subject": "INDONEISA - TEAK PMT (DIAN)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1626250770088?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1626250770088&parentMessageId=1626250770088",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "JULY 14th<attachment id=\"f850c2b3-3d94-4fe5-beba-3ec2aec7f77f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f850c2b3-3d94-4fe5-beba-3ec2aec7f77f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/Sample Tracker_13 July 2021.xlsx",
+        "content": null,
+        "name": "Sample Tracker_13 July 2021.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1626250825825",
+    "replyToId": null,
+    "etag": "1634258422643",
+    "messageType": "message",
+    "createdDateTime": "2021-07-14T08:20:25.825Z",
+    "lastModifiedDateTime": "2021-10-15T00:40:22.643Z",
+    "lastEditedDateTime": "2021-10-15T00:40:22.643Z",
+    "deletedDateTime": null,
+    "subject": "CHINA - INDOOR PMT (ALLY)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1626250825825?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1626250825825&parentMessageId=1626250825825",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "JULY 13th<attachment id=\"1b6c938a-0f56-4585-8289-c7ab7a78f37d\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "1b6c938a-0f56-4585-8289-c7ab7a78f37d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/HO and RH Samples On 7-12-21 (1).xlsx",
+        "content": null,
+        "name": "HO and RH Samples On 7-12-21 (1).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1626250837389",
+    "replyToId": null,
+    "etag": "1634258608584",
+    "messageType": "message",
+    "createdDateTime": "2021-07-14T08:20:37.389Z",
+    "lastModifiedDateTime": "2021-10-15T00:43:28.584Z",
+    "lastEditedDateTime": "2021-10-15T00:43:28.584Z",
+    "deletedDateTime": null,
+    "subject": "VIETNAM - INDOOR PMT (TBA)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1626250837389?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1626250837389&parentMessageId=1626250837389",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "TBA"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1627266752325",
+    "replyToId": null,
+    "etag": "1627266752325",
+    "messageType": "message",
+    "createdDateTime": "2021-07-26T02:32:32.325Z",
+    "lastModifiedDateTime": "2021-07-26T02:32:32.325Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1627266752325?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627266752325&parentMessageId=1627266752325",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+        "displayName": "Dian Darmono",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"c2af0999-b95d-4908-a9c0-cfede5a6e0b3\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c2af0999-b95d-4908-a9c0-cfede5a6e0b3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/Sample Tracker_26 July 2021.xlsx",
+        "content": null,
+        "name": "Sample Tracker_26 July 2021.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1627887956494",
+    "replyToId": null,
+    "etag": "1627887956494",
+    "messageType": "message",
+    "createdDateTime": "2021-08-02T07:05:56.494Z",
+    "lastModifiedDateTime": "2021-08-02T07:05:56.494Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1627887956494?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627887956494&parentMessageId=1627887956494",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+        "displayName": "Dian Darmono",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"589584aa-57d8-46c1-9109-02e89386bd28\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "589584aa-57d8-46c1-9109-02e89386bd28",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/PMT_2 August 2021.xlsx",
+        "content": null,
+        "name": "PMT_2 August 2021.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1628477315208",
+    "replyToId": null,
+    "etag": "1628477315208",
+    "messageType": "message",
+    "createdDateTime": "2021-08-09T02:48:35.208Z",
+    "lastModifiedDateTime": "2021-08-09T02:48:35.208Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1628477315208?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1628477315208&parentMessageId=1628477315208",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+        "displayName": "Dian Darmono",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"2a54a8f0-9346-463f-966b-8fca69f18275\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2a54a8f0-9346-463f-966b-8fca69f18275",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/PMT_8 August 2021.xlsx",
+        "content": null,
+        "name": "PMT_8 August 2021.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1629708745964",
+    "replyToId": null,
+    "etag": "1629708745964",
+    "messageType": "message",
+    "createdDateTime": "2021-08-23T08:52:25.964Z",
+    "lastModifiedDateTime": "2021-08-23T08:52:25.964Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1629708745964?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1629708745964&parentMessageId=1629708745964",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+        "displayName": "Dian Darmono",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"ebf6bad8-aa56-47db-bfd3-24035874a1df\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "ebf6bad8-aa56-47db-bfd3-24035874a1df",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/2021 OUTDOOR SAMPLE TRACKER-2.xlsx",
+        "content": null,
+        "name": "2021 OUTDOOR SAMPLE TRACKER-2.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1629771613907",
+    "replyToId": null,
+    "etag": "1634258389372",
+    "messageType": "message",
+    "createdDateTime": "2021-08-24T02:20:13.907Z",
+    "lastModifiedDateTime": "2021-10-15T00:39:49.372Z",
+    "lastEditedDateTime": "2021-10-15T00:39:49.372Z",
+    "deletedDateTime": null,
+    "subject": "CHINA - AOMEI PMT (JASON)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1629771613907?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1629771613907&parentMessageId=1629771613907",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "AUG 24TH<attachment id=\"d0753383-1aac-423f-bb3c-8b6e8aa2d6dc\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "d0753383-1aac-423f-bb3c-8b6e8aa2d6dc",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/Harbour PD Tracker - AOMEI.xls",
+        "content": null,
+        "name": "Harbour PD Tracker - AOMEI.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1630899928727",
+    "replyToId": null,
+    "etag": "1630899928727",
+    "messageType": "message",
+    "createdDateTime": "2021-09-06T03:45:28.727Z",
+    "lastModifiedDateTime": "2021-09-06T03:45:28.727Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1630899928727?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1630899928727&parentMessageId=1630899928727",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+        "displayName": "Ally",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "SEP 6th 2021<attachment id=\"f9209e49-adae-4baa-8845-63b1b0b2ed10\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f9209e49-adae-4baa-8845-63b1b0b2ed10",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/2021 Harbour PD Tracker - China Indoor & Outdoor.xls",
+        "content": null,
+        "name": "2021 Harbour PD Tracker - China Indoor & Outdoor.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1631521704173",
+    "replyToId": null,
+    "etag": "1631521704173",
+    "messageType": "message",
+    "createdDateTime": "2021-09-13T08:28:24.173Z",
+    "lastModifiedDateTime": "2021-09-13T08:28:24.173Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1631521704173?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1631521704173&parentMessageId=1631521704173",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+        "displayName": "Ally",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "SEP 13th 2021<attachment id=\"f9209e49-adae-4baa-8845-63b1b0b2ed10\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f9209e49-adae-4baa-8845-63b1b0b2ed10",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/2021 Harbour PD Tracker - China Indoor & Outdoor.xls",
+        "content": null,
+        "name": "2021 Harbour PD Tracker - China Indoor & Outdoor.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1634258372043",
+    "replyToId": null,
+    "etag": "1636076407343",
+    "messageType": "message",
+    "createdDateTime": "2021-10-15T00:39:32.043Z",
+    "lastModifiedDateTime": "2021-11-05T01:40:07.343Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2021-11-05T01:40:07.343Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1634258372043?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1634258372043&parentMessageId=1634258372043",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1636022247240",
+    "replyToId": null,
+    "etag": "1636022247240",
+    "messageType": "message",
+    "createdDateTime": "2021-11-04T10:37:27.24Z",
+    "lastModifiedDateTime": "2021-11-04T10:37:27.24Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1636022247240?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1636022247240&parentMessageId=1636022247240",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "b3260c73-e24c-4bc2-b8fb-a9a285a3b79f",
+        "displayName": "Jason",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div><at id=\"0\">Katherine Garrison</at> &nbsp;<at id=\"1\">Harriet Condos</at>&nbsp; <at id=\"2\">jacob</at></div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Katherine Garrison",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "2bc95fc7-a090-465b-933d-54e58e599358",
+            "displayName": "Katherine Garrison",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Harriet Condos",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "c2daf009-1c76-4092-b3bc-7b6d2b0864f9",
+            "displayName": "Harriet Condos",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "mentionText": "jacob",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "99bbbd8f-89a2-4f9f-a01c-4deb7883622e",
+            "displayName": "jacob",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1644997752184",
+    "replyToId": null,
+    "etag": "1644997752184",
+    "messageType": "message",
+    "createdDateTime": "2022-02-16T07:49:12.184Z",
+    "lastModifiedDateTime": "2022-02-16T07:49:12.184Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1644997752184?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1644997752184&parentMessageId=1644997752184",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "dc61c173-9cd9-4c9f-95a4-e94f0dd87e7b",
+        "displayName": "maureen Tang",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Hi Paul and Kim, Attached pls find the payment request for Alibaba Cloud . (Mini program for CIFF) <attachment id=\"47d725b1-c6b5-4c0a-bdda-bfda9ab75a3b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "47d725b1-c6b5-4c0a-bdda-bfda9ab75a3b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/OUTSTANDING PAYMENT REQUEST MAUREEN 220216.xlsx",
+        "content": null,
+        "name": "OUTSTANDING PAYMENT REQUEST MAUREEN 220216.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1645610736853",
+    "replyToId": null,
+    "etag": "1645610736853",
+    "messageType": "message",
+    "createdDateTime": "2022-02-23T10:05:36.853Z",
+    "lastModifiedDateTime": "2022-02-23T10:05:36.853Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1645610736853?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1645610736853&parentMessageId=1645610736853",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "dc61c173-9cd9-4c9f-95a4-e94f0dd87e7b",
+        "displayName": "maureen Tang",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Hi Paul and Kim, Attached pls find the payment request for LiLA ( the small booth we worked with HKFA) in CIFF.  Thanks<attachment id=\"d3745d15-4263-4510-92b9-14d4f5713c17\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "d3745d15-4263-4510-92b9-14d4f5713c17",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/OUTSTANDING PAYMENT REQUEST MAUREEN 220223.xlsx",
+        "content": null,
+        "name": "OUTSTANDING PAYMENT REQUEST MAUREEN 220223.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1645783815188",
+    "replyToId": null,
+    "etag": "1645783815188",
+    "messageType": "message",
+    "createdDateTime": "2022-02-25T10:10:15.188Z",
+    "lastModifiedDateTime": "2022-02-25T10:10:15.188Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A32e707c25f5e44129699d20adff99eec%40thread.tacv2/1645783815188?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1645783815188&parentMessageId=1645783815188",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "dc61c173-9cd9-4c9f-95a4-e94f0dd87e7b",
+        "displayName": "maureen Tang",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Hi Paul and Kim, Attached pls find the payment request for advertisement in CIFF Mini Program<attachment id=\"2d80a3d6-f1d1-470f-8a12-fb9eb87f6fad\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:32e707c25f5e44129699d20adff99eec@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2d80a3d6-f1d1-470f-8a12-fb9eb87f6fad",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/PMT FILES/OUTSTANDING PAYMENT REQUEST MAUREEN 220225.xlsx",
+        "content": null,
+        "name": "OUTSTANDING PAYMENT REQUEST MAUREEN 220225.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "id": "1605687385676",
+    "replyToId": null,
+    "etag": "1605687385676",
+    "messageType": "message",
+    "createdDateTime": "2020-11-18T08:16:25.676Z",
+    "lastModifiedDateTime": "2020-11-18T08:16:25.676Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HEATHCOATE - SELECT FACTORY",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af27b4ce703e947b3bf347216476de530%40thread.tacv2/1605687385676?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605687385676&parentMessageId=1605687385676",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "NOV 2020<attachment id=\"5198597b-8517-46fc-85e7-ddb6721116ae\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f27b4ce703e947b3bf347216476de530@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "5198597b-8517-46fc-85e7-ddb6721116ae",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/SUPPLIER PRICING/HEATH COATE PRICES - SELECT.xls",
+        "content": null,
+        "name": "HEATH COATE PRICES - SELECT.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1608532151680",
+    "replyToId": null,
+    "etag": "1608532151680",
+    "messageType": "message",
+    "createdDateTime": "2020-12-21T06:29:11.68Z",
+    "lastModifiedDateTime": "2020-12-21T06:29:11.68Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af27b4ce703e947b3bf347216476de530%40thread.tacv2/1608532151680?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1608532151680&parentMessageId=1608532151680",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "AOMEI PRODUCT SPECS"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f27b4ce703e947b3bf347216476de530@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1611555960289",
+    "replyToId": null,
+    "etag": "1611555960289",
+    "messageType": "message",
+    "createdDateTime": "2021-01-25T06:26:00.289Z",
+    "lastModifiedDateTime": "2021-01-25T06:26:00.289Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "PTK HO product specs",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af27b4ce703e947b3bf347216476de530%40thread.tacv2/1611555960289?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1611555960289&parentMessageId=1611555960289",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"04ddfa3c-8af3-424a-977c-5a7b6f20d264\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f27b4ce703e947b3bf347216476de530@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "04ddfa3c-8af3-424a-977c-5a7b6f20d264",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/SUPPLIER PRICING/HO INDOOR WOOD Spec Data of Harbour (1).docx",
+        "content": null,
+        "name": "HO INDOOR WOOD Spec Data of Harbour (1).docx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618301614007",
+    "replyToId": null,
+    "etag": "1618301614007",
+    "messageType": "message",
+    "createdDateTime": "2021-04-13T08:13:34.007Z",
+    "lastModifiedDateTime": "2021-04-13T08:13:34.007Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Af27b4ce703e947b3bf347216476de530%40thread.tacv2/1618301614007?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618301614007&parentMessageId=1618301614007",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:22px\">Typhoon Umbrellas price list 2021</span></div>\n</div><attachment id=\"c7c1a95a-a5c7-4f78-b16c-4a531312edd4\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:f27b4ce703e947b3bf347216476de530@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c7c1a95a-a5c7-4f78-b16c-4a531312edd4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/SUPPLIER PRICING/TYPHOON_COLLECTION_HKD 2021副本.xlsx",
+        "content": null,
+        "name": "TYPHOON_COLLECTION_HKD 2021副本.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

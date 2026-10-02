@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import yaml
 
@@ -14,7 +16,7 @@ from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_chat, import_chat
+from ..teams.services import extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -38,7 +40,6 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
     users = _load_data((plan_dir / plan["users"]).resolve()) if isinstance(plan["users"], str) else plan["users"]
     if not isinstance(users, list):
         raise TypeError("users must be a list or a mapping-file path")
-    user_map: dict[str, str] = {}
     seen_keys: set[str] = set()
     for user in users:
         if not isinstance(user, dict) or not user.get("key") or not user.get("source_id"):
@@ -46,21 +47,25 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
         if user["key"] in seen_keys:
             raise ValueError(f"Duplicate user key: {user['key']}")
         seen_keys.add(user["key"])
-        if user.get("target_id"):
-            user_map[user["key"]] = user["target_id"]
 
     workloads = plan.get("workloads", {})
     if not isinstance(workloads, dict):
         raise TypeError("workloads must be an object")
     teams = _load_data((plan_dir / workloads["teams"]).resolve()) if isinstance(workloads.get("teams"), str) else workloads.get("teams", {})
-    chats = []
-    for entry in teams.get("chats", []) if isinstance(teams, dict) else []:
-        member_keys = entry.get("users", [])
-        missing = [key for key in member_keys if key not in user_map]
-        if missing:
-            raise ValueError(f"Chat {entry.get('name', entry.get('source_chat_id'))} references unknown users: {', '.join(missing)}")
-        chats.append({"name": entry.get("name"), "source_chat_id": entry.get("source_chat_id"), "user_map": {next(user["source_id"] for user in users if user["key"] == key): user_map[key] for key in member_keys}})
+    chats = [
+        {
+            "name": entry.get("name"),
+            "source_chat_id": entry.get("source_chat_id"),
+            "user_key": entry.get("user_key"),
+        }
+        for entry in (teams.get("chats", []) if isinstance(teams, dict) else [])
+    ]
+    channels_config = teams.get("channels", []) if isinstance(teams, dict) else []
+    if not isinstance(channels_config, list):
+        raise TypeError("workloads.teams.channels must be a list")
     normalized_workloads: dict[str, Any] = {key: value for key, value in workloads.items() if key != "teams"}
+    if channels_config:
+        normalized_workloads["teams"] = {"channels": channels_config}
     if isinstance(normalized_workloads.get("onedrive"), str):
         normalized_workloads["onedrive"] = _load_data((plan_dir / normalized_workloads["onedrive"]).resolve())
     if isinstance(normalized_workloads.get("exchange"), str):
@@ -98,38 +103,437 @@ def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) 
     return int(value) if isinstance(value, (int, float)) else default
 
 
+def _global_users_list(plan: dict[str, Any], plan_dir: Path) -> list[Any]:
+    """Shared users list backing both _global_user_id_map and _global_upn_map.
+    Hierarchical plans already expose the resolved `users` list (see
+    load_hierarchical_plan); standalone plans (e.g. teams-pilot.yaml) can point
+    `user_mapping` at the same kind of file (config/mapping.example.json) directly."""
+    users = plan.get("users")
+    if users is None:
+        source = plan.get("user_mapping")
+        if not source:
+            return []
+        users = _load_data((plan_dir / source).resolve()) if isinstance(source, str) else source
+    return users if isinstance(users, list) else []
+
+
+def _global_user_id_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
+    """source_id -> target_id table used to auto-resolve chat members and channel
+    message senders when an entry has no explicit user_map."""
+    return {
+        user["source_id"]: user["target_id"]
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_id") and user.get("target_id")
+    }
+
+
+def _global_upn_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
+    """source_upn -> target_upn table used to rewrite SharePoint/OneDrive attachment
+    links in migrated messages (see teams.services.make_attachment_resolver)."""
+    return {
+        user["source_upn"]: user["target_upn"]
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_upn") and user.get("target_upn")
+    }
+
+
+def _teams_site_map(plan: dict[str, Any]) -> dict[str, str]:
+    """source '{host}/sites/{site}' (lowercased) -> target_site_id, used to resolve
+    channel-message attachment links that point at a SharePoint TEAM SITE document
+    library (as opposed to a personal OneDrive) - see
+    teams.services.make_attachment_resolver's site_map parameter. Configured under
+    `workloads.teams.site_map` as a list of {source_site_url, target_site_id}
+    entries (same target_site_id shape as config/sharepoint-pilot.yaml)."""
+    site_map: dict[str, str] = {}
+    entries = plan.get("workloads", {}).get("teams", {}).get("site_map", []) or []
+    if not isinstance(entries, list):
+        return site_map
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        source_site_url = entry.get("source_site_url")
+        target_site_id = entry.get("target_site_id")
+        if not source_site_url or not target_site_id:
+            continue
+        parsed = urlparse(source_site_url)
+        key = f"{parsed.netloc}{parsed.path}".strip("/").lower()
+        if key:
+            site_map[key] = target_site_id
+    return site_map
+
+
+def _ensure_guest_mapping(state: StateStore, target_graph: Any, users_by_source_id: dict[str, Any], source_id: str) -> str | None:
+    """Best-effort B2B guest invite for a source user with no target-tenant account,
+    cached in the checkpoint db (workload 'user-invite') so repeat runs don't
+    re-invite the same person. Opt-in only: plan must set `invite_missing_users: true`
+    (see _run_batch_chats) - untested against a live tenant, verify on a small pilot
+    chat before relying on it broadly."""
+    cached = state.target("user-invite", source_id)
+    if cached:
+        return cached
+    user = users_by_source_id.get(source_id)
+    if not user or not user.get("source_upn"):
+        return None
+    guest_id = invite_guest_user(target_graph, user["source_upn"], user.get("display_name"))
+    if guest_id:
+        state.mark("user-invite", source_id, "invited", guest_id)
+        print(f"  [+] Invited {user['source_upn']} as a target-tenant guest: {guest_id}")
+    return guest_id
+
+
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
-    for index, entry in enumerate(plan.get("chats", []), start=1):
+    content_concurrency = max(1, _concurrency(plan, "teams", "content", default=4))
+    entries = list(plan.get("chats", []))
+    global_id_map = _global_user_id_map(plan, plan_dir)
+    upn_map = _global_upn_map(plan, plan_dir)
+    site_map = _teams_site_map(plan)
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
+    image_resolver = make_image_resolver(source_graph)
+    invite_missing_users = bool(plan.get("invite_missing_users"))
+    # Opt-in fallback for chats whose target thread creation time got permanently
+    # stuck (see _wait_for_chat_migration_window) - imports with sequential,
+    # non-historical timestamps instead of failing outright. Per-chat override
+    # supported via entry["allow_non_historical_import"].
+    allow_non_historical_import_default = bool(plan.get("allow_non_historical_import"))
+    # Opt-in: re-check already-completed chats for messages sent since the last
+    # run instead of skipping them outright (see teams.services.import_chat's
+    # sync_new_messages parameter). Per-chat override via entry["sync_new_messages"].
+    sync_new_messages_default = bool(plan.get("sync_new_messages"))
+    # Opt-in: migrate messages from senders with no target mapping under a proxy
+    # identity (with a note) instead of dropping them - trades sender fidelity for
+    # completeness. Per-chat override via entry["include_unmapped_senders"].
+    include_unmapped_senders_default = bool(plan.get("include_unmapped_senders"))
+    users_by_source_id = {
+        user["source_id"]: user
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_id")
+    }
+
+    total_chats = len(entries)
+
+    def migrate_chat(entry: dict[str, Any], index: int) -> dict[str, Any]:
         name = entry.get("name", f"chat-{index}")
-        result: dict[str, Any] = {"name": name, "source_chat_id": entry.get("source_chat_id"), "status": "failed", "messages": 0}
+        source_chat_id = entry.get("source_chat_id")
+        user_key = entry.get("user_key")
+        teams_type: str | None = None
+        result: dict[str, Any] = {"workload": "teams-chat", "name": name, "source_chat_id": source_chat_id, "user_key": user_key, "status": "failed", "messages": 0}
+        print(f"[chat {index}/{total_chats}] {name}: starting")
         try:
             source_chat_id = entry.get("source_chat_id")
             if not isinstance(source_chat_id, str) or not source_chat_id:
                 raise ValueError("source_chat_id is required")
-            if state.status("batch-chat", source_chat_id) == "completed":
+            sync_new_messages = bool(entry.get("sync_new_messages", sync_new_messages_default))
+            # Batch checkpoint: skip only when the whole chat was completed -
+            # unless sync_new_messages is on, in which case fall through so
+            # import_chat can check the (freshly re-extracted) bundle for
+            # messages sent since the last run.
+            if state.status("batch-chat", source_chat_id) == "completed" and not sync_new_messages:
                 result["status"] = "skipped"
                 result["reason"] = "already completed"
-                results.append(result)
-                continue
-            user_map = _mapping(entry, plan_dir)
+                print(f"[chat {index}/{total_chats}] {name}: skipped (already completed)")
+                return result
+            user_map: dict[str, str]
             bundle = extract_chat(source_graph, source_chat_id)
+            teams_type = bundle["chat"].get("chatType")
             member_ids = {member.get("userId") for member in bundle["members"]}
+            if entry.get("user_map") is not None:
+                # Explicit per-chat mapping still supported for manual overrides.
+                user_map = _mapping(entry, plan_dir)
+            else:
+                # Default path: auto-resolve chat members against the plan's
+                # global source_id -> target_id table (see _global_user_id_map).
+                user_map = {member_id: global_id_map[member_id] for member_id in member_ids if member_id in global_id_map}
             missing = sorted(member_id for member_id in member_ids if member_id not in user_map)
+            if missing and invite_missing_users and not dry_run:
+                still_missing = []
+                for member_id in missing:
+                    guest_id = _ensure_guest_mapping(state, target_graph, users_by_source_id, member_id)
+                    if guest_id:
+                        user_map[member_id] = guest_id
+                    else:
+                        still_missing.append(member_id)
+                missing = still_missing
             if missing:
-                raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
+                if not user_map and not global_id_map:
+                    raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
+                print(f"[chat {index}/{total_chats}] {name}: {len(missing)} member(s) have no target mapping - continuing without them: {missing}")
             bundle_path = plan_dir / f"{name}.chat-bundle.json"
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats)
-            result.update({"status": "dry-run" if dry_run else "completed", "target_chat_id": target_chat_id, "messages": count, "bundle": str(bundle_path), "skipped_system_messages": stats.get("skipped_system", 0), "unsupported_features": stats.get("unsupported_features", 0)})
+            allow_non_historical_import = bool(entry.get("allow_non_historical_import", allow_non_historical_import_default))
+            include_unmapped_senders = bool(entry.get("include_unmapped_senders", include_unmapped_senders_default))
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver, image_resolver=image_resolver, allow_non_historical_import=allow_non_historical_import, sync_new_messages=sync_new_messages, include_unmapped_senders=include_unmapped_senders)
+            result.update(
+                {
+                    "status": "dry-run" if dry_run else "completed",
+                    "target_chat_id": target_chat_id,
+                    "messages": count,
+                    "bundle": str(bundle_path),
+                    "chat_type": bundle["chat"].get("chatType"),
+                    "skipped_system_messages": stats.get("skipped_system", 0),
+                    "unsupported_features": stats.get("unsupported_features", 0)
+                }
+            )
+            
+            # Batch-level checkpoint is only written after import_chat()
+            # returns successfully.
             if not dry_run:
-                state.mark("batch-chat", source_chat_id, "completed", target_chat_id)
-        except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
-            result["error"] = str(error)
+                state.mark(
+                    "batch-chat",
+                    source_chat_id,
+                    "completed",
+                    target_chat_id,
+                    user_key=user_key,
+                    teams_type=teams_type,
+                )
+            print(f"[chat {index}/{total_chats}] {name}: {result['status']} ({count} messages)")
+            return result
+        
+        except (GraphError, OSError, TypeError, ValueError, KeyError) as e:
+            error_msg = f"{type(e).__name__}: {e}"
+            result["error"] = error_msg
             if not dry_run:
-                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=str(error))
-        results.append(result)
+                state.mark("batch-chat", str(entry.get("source_chat_id", name)), "failed", detail=error_msg, user_key=user_key, teams_type=teams_type)
+            print(f"[chat {index}/{total_chats}] {name}: failed - {error_msg}")
+        return result
+    
+    with ThreadPoolExecutor(max_workers=content_concurrency) as executor:
+        futures = [executor.submit(migrate_chat, entry, index) for index, entry in enumerate(entries, start=1)]
+        
+        for future in as_completed(futures):
+            result = future.result()
+            results.append(result)
+            
+    entry_order = {
+        entry.get("source_chat_id"): index
+        for index, entry in enumerate(entries)
+    }
+    
+    results.sort(
+        key=lambda item: entry_order.get(
+            item.get("source_chat_id"),
+            len(entries),
+        )
+    )
+    
+    return results
+
+def _run_batch_channels(
+    source_graph: Any,
+    target_graph: Any,
+    plan: dict[str, Any],
+    plan_dir: Path,
+    state: StateStore,
+    dry_run: bool,
+) -> list[dict[str, Any]]:
+    results: list[dict[str, Any]] = []
+
+    channels_config = (
+        plan.get("workloads", {})
+        .get("teams", {})
+        .get("channels", [])
+    )
+
+    if not isinstance(channels_config, list):
+        raise TypeError("Teams channels must be a list")
+
+    # Same global source_id -> target_id table as chats, so channel message
+    # senders are remapped to a valid target-tenant identity (fixes Graph 400
+    # "message sender/initiator must be same as tenantId on the token").
+    global_id_map = _global_user_id_map(plan, plan_dir)
+    upn_map = _global_upn_map(plan, plan_dir)
+    site_map = _teams_site_map(plan)
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
+    image_resolver = make_image_resolver(source_graph)
+    # Same opt-in fallback as chats (see _run_batch_chats) - channels can't have
+    # their creation time backdated after the fact via startMigration, so a
+    # channel created with "now" as its creation time can never accept truly
+    # historical timestamps; per-channel override via entry["allow_non_historical_import"].
+    allow_non_historical_import_default = bool(plan.get("allow_non_historical_import"))
+    # Opt-in: re-check already-completed channels for messages added to the
+    # `messages` file since the last run instead of skipping them outright (see
+    # teams.services.import_channel_messages's sync_new_messages parameter).
+    # Per-channel override via entry["sync_new_messages"].
+    sync_new_messages_default = bool(plan.get("sync_new_messages"))
+    # Same opt-in as chats (see _run_batch_chats) - migrate unmapped-sender
+    # messages under a proxy identity instead of dropping them.
+    include_unmapped_senders_default = bool(plan.get("include_unmapped_senders"))
+
+    content_concurrency = max(
+        1,
+        _concurrency(plan, "teams", "content", default=4),
+    )
+
+    total_channels = len(channels_config)
+
+    seen_keys: set[str] = set()
+
+    for entry in channels_config:
+        source_team_id = entry.get("source_team_id")
+        source_channel_id = entry.get("source_channel_id")
+
+        if not source_team_id or not source_channel_id:
+            raise ValueError(
+                "Each channel requires source_team_id and source_channel_id"
+            )
+
+        batch_key = f"{source_team_id}:{source_channel_id}"
+
+        if batch_key in seen_keys:
+            raise ValueError(
+                f"Duplicate Teams channel in batch plan: {batch_key}"
+            )
+
+        seen_keys.add(batch_key)
+
+    def migrate_channel(
+        entry: dict[str, Any],
+        index: int,
+    ) -> dict[str, Any]:
+        name = entry.get(
+            "name",
+            f"channel-{index}",
+        )
+
+        source_team_id = entry.get("source_team_id")
+        source_channel_id = entry.get("source_channel_id")
+        target_team_id = entry.get("target_team_id")
+        target_channel_id = entry.get("target_channel_id")
+        messages_file = entry.get("messages")
+
+        batch_key = f"{source_team_id}:{source_channel_id}"
+
+        result: dict[str, Any] = {
+            "workload": "teams-channel",
+            "name": name,
+            "source_team_id": source_team_id,
+            "source_channel_id": source_channel_id,
+            "target_team_id": target_team_id,
+            "target_channel_id": target_channel_id,
+            "status": "failed",
+            "messages": 0,
+        }
+
+        print(f"[channel {index}/{total_channels}] {name}: starting")
+
+        try:
+            if not target_team_id or not target_channel_id:
+                raise ValueError(
+                    f"Channel {name} requires target_team_id and target_channel_id"
+                )
+
+            if not messages_file:
+                raise ValueError(
+                    f"Channel {name} requires a messages file"
+                )
+
+            sync_new_messages = bool(entry.get("sync_new_messages", sync_new_messages_default))
+            if state.status("batch-channel", batch_key) == "completed" and not sync_new_messages:
+                result.update({
+                    "status": "skipped",
+                    "reason": "already completed",
+                })
+                print(f"[channel {index}/{total_channels}] {name}: skipped (already completed)")
+                return result
+
+            messages_path = (plan_dir / messages_file).resolve()
+
+            if not messages_path.exists():
+                raise FileNotFoundError(
+                    f"Messages file not found: {messages_path}"
+                )
+
+            with messages_path.open(encoding="utf-8") as stream:
+                messages = json.load(stream)
+
+            if not isinstance(messages, list):
+                raise TypeError(
+                    f"Messages file must contain a JSON list: {messages_path}"
+                )
+
+            imported_count = import_channel_messages(
+                target_graph,
+                target_team_id,
+                target_channel_id,
+                messages,
+                state,
+                dry_run,
+                user_map=global_id_map or None,
+                attachment_resolver=attachment_resolver,
+                image_resolver=image_resolver,
+                allow_non_historical_import=bool(entry.get("allow_non_historical_import", allow_non_historical_import_default)),
+                sync_new_messages=sync_new_messages,
+                include_unmapped_senders=bool(entry.get("include_unmapped_senders", include_unmapped_senders_default)),
+            )
+
+            result.update({
+                "status": "dry-run" if dry_run else "completed",
+                "messages": imported_count,
+                "messages_file": str(messages_path),
+            })
+
+            if not dry_run:
+                state.mark(
+                    "batch-channel",
+                    batch_key,
+                    "completed",
+                    target_channel_id,
+                    teams_type="channel_batch",
+                )
+
+            print(f"[channel {index}/{total_channels}] {name}: {result['status']} ({imported_count} messages)")
+
+        except (
+            GraphError,
+            OSError,
+            TypeError,
+            ValueError,
+            KeyError,
+        ) as error:
+            result.update({
+                "status": "failed",
+                "error": f"{type(error).__name__}: {error}",
+            })
+
+            if not dry_run:
+                state.mark(
+                    "batch-channel",
+                    batch_key,
+                    "failed",
+                    target_channel_id,
+                    detail=str(error)[:400],
+                    teams_type="channel_batch",
+                )
+
+            print(f"[channel {index}/{total_channels}] {name}: failed - {result['error']}")
+
+        return result
+
+    with ThreadPoolExecutor(
+        max_workers=content_concurrency,
+        thread_name_prefix="teams-channel",
+    ) as executor:
+        futures = {
+            executor.submit(
+                migrate_channel,
+                entry,
+                index,
+            ): index
+            for index, entry in enumerate(channels_config, start=1)
+        }
+
+        completed: dict[int, dict[str, Any]] = {}
+
+        for future in as_completed(futures):
+            index = futures[future]
+            completed[index] = future.result()
+
+    results.extend(
+        completed[index]
+        for index in sorted(completed)
+    )
+
     return results
 
 
@@ -343,7 +747,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             else:
                 error_msg = (
                     f"{type(last_error).__name__}: "
-                    f"{str(last_error)[:200]}"
+                    f"{str(last_error)[:400]}"
                     if last_error
                     else "Copy failed"
                 )
@@ -362,7 +766,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                         source_id,
                         "failed",
                         target_id,
-                        detail=error_msg[:200],
+                        detail=error_msg[:400],
                         user_key=user_key,
                     )
 
@@ -373,7 +777,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             ValueError,
             KeyError,
         ) as error:
-            error_msg = f"{type(error).__name__}: {str(error)[:200]}"
+            error_msg = f"{type(error).__name__}: {str(error)[:400]}"
 
             result.update({
                 "status": "failed",
@@ -563,15 +967,25 @@ def run_batch(
     dry_run: bool = False,
     retry_failed_only: bool = False,
     area: str | None = None,
+    teams_scope: str = "both",
 ) -> dict[str, Any]:
     """Coordinate execution across domains, one <area>-migration-result.json report per area.
-    Contains no domain-specific migration logic itself."""
+    Contains no domain-specific migration logic itself.
+
+    teams_scope restricts the "teams" area to just "chats", just "channels", or
+    "both" (default) - it has no effect on the other areas."""
+    if teams_scope not in ("chats", "channels", "both"):
+        raise ValueError("teams_scope must be 'chats', 'channels', or 'both'")
     report_dir.mkdir(parents=True, exist_ok=True)
     areas_to_run = [area] if area else ["sharepoint", "onedrive", "teams"]
     area_reports: dict[str, Any] = {}
     for current_area in areas_to_run:
         if current_area == "teams":
-            results = _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
+            results = []
+            if teams_scope in ("chats", "both"):
+                results += _run_batch_chats(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
+            if teams_scope in ("channels", "both"):
+                results += _run_batch_channels(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
         elif current_area == "onedrive":
             results = _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only)
         elif current_area == "sharepoint":

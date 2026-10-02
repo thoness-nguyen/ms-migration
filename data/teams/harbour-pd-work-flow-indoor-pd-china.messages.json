@@ -1,0 +1,2054 @@
+[
+  {
+    "id": "1604364828220",
+    "replyToId": null,
+    "etag": "1622161432637",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:53:48.22Z",
+    "lastModifiedDateTime": "2021-05-28T00:23:52.637Z",
+    "lastEditedDateTime": "2021-05-28T00:23:52.637Z",
+    "deletedDateTime": null,
+    "subject": "TRAVERTINE (INDOOR PD)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364828220?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364828220&parentMessageId=1604364828220",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "(Upload details)"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604364848217",
+    "replyToId": null,
+    "etag": "1604364848217",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:54:08.217Z",
+    "lastModifiedDateTime": "2020-11-03T00:54:08.217Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SAN BIANCO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364848217?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364848217&parentMessageId=1604364848217",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604364860248",
+    "replyToId": null,
+    "etag": "1604364860248",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:54:20.248Z",
+    "lastModifiedDateTime": "2020-11-03T00:54:20.248Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SANTA BARBARA",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364860248?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364860248&parentMessageId=1604364860248",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604364909491",
+    "replyToId": null,
+    "etag": "1604364909491",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:55:09.491Z",
+    "lastModifiedDateTime": "2020-11-03T00:55:09.491Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MARCELLO, SIENNA, FLORENCE (STONE COLLECTIONS)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364909491?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364909491&parentMessageId=1604364909491",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604364936777",
+    "replyToId": null,
+    "etag": "1604364936777",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:55:36.777Z",
+    "lastModifiedDateTime": "2020-11-03T00:55:36.777Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UPHOLSTRY (MARK D. SERIES) MORDERN SLOPE ARM",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364936777?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364936777&parentMessageId=1604364936777",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604364980382",
+    "replyToId": null,
+    "etag": "1604364980382",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:56:20.382Z",
+    "lastModifiedDateTime": "2020-11-03T00:56:20.382Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UPHOLSTRY: GABRIEL, SONOMA, LORENZO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604364980382?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604364980382&parentMessageId=1604364980382",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604365019645",
+    "replyToId": null,
+    "etag": "1604365019645",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T00:56:59.645Z",
+    "lastModifiedDateTime": "2020-11-03T00:56:59.645Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "OCCASSIONAL (MARK D. SERIES)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604365019645?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604365019645&parentMessageId=1604365019645",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">(Upload details)</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604383355195",
+    "replyToId": null,
+    "etag": "1604383698264",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T06:02:35.195Z",
+    "lastModifiedDateTime": "2020-11-03T06:08:18.264Z",
+    "lastEditedDateTime": "2020-11-03T06:08:18.264Z",
+    "deletedDateTime": null,
+    "subject": "CHINA SOFA PROGRAM (CLASSIC SIZES)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604383355195?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604383355195&parentMessageId=1604383355195",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>\n<div>\n<div>\n\n<div itemprop=\"copy-paste-block\">\n<div><b><u>TARGET TIME LINE 2-3 MONTHS</u></b></div>\n\n<div>&nbsp;</div>\n\n<div><b>STEP 1/</b>&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>NEW DWG REQUEST SENT TO HK OFFICE FOR REVIEW AND COMMENTS&nbsp;</div>\n\n<div>IF OK WILL PROCEED TO STEP 2</div>\n\n<div>&nbsp;</div>\n\n<div><b>STEP 2/</b></div>\n\n<div>DWG's PRESENTED TO ABOO FOR REViEW&nbsp;+ COMMENTS</div>\n\n<div>PRICES PRESENTED by ABOO</div>\n\n<div>SAMPLES COMMENCED // APPROVED // SIGNED OFF&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div><b>STEP 3/</b></div>\n\n<div>RELAUNCH UPHOLSTRY PROGRAM\n<div>&nbsp;</div>\n\n<div>Attached please find the proposal for adding our indoor sofa model and sizes highlighed in&nbsp;<b><span style=\"background-color:#fcd116\">YELLOW</span><span style=\"background-color:#f0f2f4\">&nbsp;t</span></b>hese are new SKUs for CHINA market</div>\n\n<div>&nbsp;</div>\n\n<div><b><u>PRIORITY 1</u></b></div>\n\n<div>- For ITHICA, KOS, we propose to add 2.5 Seat as we don't have this size.&nbsp;&nbsp;</div>\n\n<div>- For SAMOS, we propose to add both Armchair &amp; 2.5 Seat as we don't have these sizes.</div>\n\n<div>- For KOS, SAMOS &amp; 2026, we propose to add Classic size.</div>\n\n<div>&nbsp;</div>\n\n<div>All sizes mentioned is for the overall product size, technical details we will leave to Felix / Ally / Eric<br>\n\n&nbsp;</div>\n\n<div>- KD means we want to split the sofa into 2 pieces for easy delivery due to the size is too big. Thanks.</div>\n\n<div>&nbsp;</div>\n\n<div><b><u>PRIOTITY 2</u></b></div>\n\n<div>- BONDI CLASSIC (all sku's)</div>\n\n<div>- OCEAN CLASSIC&nbsp;(all sku's)</div>\n\n<div>- SAIL CLASSIC&nbsp;(all sku's)</div>\n\n<div>&nbsp;</div>\n\n<div>These collections the factory has asked HO to prepare shop DWG;s for redevelopment - currently we only have LINE DWG whish is not good enough</div>\n\n<div>&nbsp;</div>\n\n<div>NB:2026 &amp; MONTAUK HOLD FOR NOW&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div><at id=\"0\">Ally</at>&nbsp;<at id=\"1\">arnold</at>&nbsp;<at id=\"2\">Felix</at>&nbsp;BELOW Ive attached the tracking file for the PD development&nbsp;</div>\n\n<div>Please upload the DWG's into the files section of this thread</div>\n\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"3a6eff97-6453-4dd5-a1c0-3ff2e30e8fdc\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "3a6eff97-6453-4dd5-a1c0-3ff2e30e8fdc",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/CHINA INDOOR SIZE.xlsx",
+        "content": null,
+        "name": "CHINA INDOOR SIZE.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Ally",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+            "displayName": "Ally",
+            "userIdentityType": "aadUser"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "arnold",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "08d59d9a-2341-41f0-b781-830a11c31028",
+            "displayName": "arnold",
+            "userIdentityType": "aadUser"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "mentionText": "Felix",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "73dd6840-0b54-4e6a-ab8a-f46aa1075acb",
+            "displayName": "Felix",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1604472568693",
+    "replyToId": null,
+    "etag": "1604472568693",
+    "messageType": "message",
+    "createdDateTime": "2020-11-04T06:49:28.693Z",
+    "lastModifiedDateTime": "2020-11-04T06:49:28.693Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SKM CUSTOM UNITS SHOP MATE (@jacob TO ADVISE COLLECTION NAME)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604472568693?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604472568693&parentMessageId=1604472568693",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "PRODUCT INSPIRATION<attachment id=\"888d1d4f-55ba-4e50-ac87-fbee87339f97\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "888d1d4f-55ba-4e50-ac87-fbee87339f97",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/SKM_C30820101306590.pdf",
+        "content": null,
+        "name": "SKM_C30820101306590.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1604708807383",
+    "replyToId": null,
+    "etag": "1606760160488",
+    "messageType": "message",
+    "createdDateTime": "2020-11-07T00:26:47.383Z",
+    "lastModifiedDateTime": "2020-11-30T18:16:00.488Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2020-11-30T18:16:00.488Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1604708807383?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604708807383&parentMessageId=1604708807383",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "99bbbd8f-89a2-4f9f-a01c-4deb7883622e",
+        "displayName": "jacob",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605158695156",
+    "replyToId": null,
+    "etag": "1605158695156",
+    "messageType": "message",
+    "createdDateTime": "2020-11-12T05:24:55.156Z",
+    "lastModifiedDateTime": "2020-11-12T05:24:55.156Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HO.SPO(USA)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1605158695156?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605158695156&parentMessageId=1605158695156",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div><span style=\"font-family:Arial,Helvetica,sans-serif; font-size:small; widows:2; background-color:rgb(240,242,244)\">(from Jacob email thread) 1 of 2</span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\">\n\n<div style=\"margin-top:8px; padding:0px\">\n\n<div dir=\"ltr\">\n<div><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Let me know about below.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Stock Orders:</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<ul>\n\n\t\n<li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Attached is a very loose plan by quantity by fabric/leather for April-December buys</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t</li><li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">**Note - this projection is very loose but we want to be able to meet these quantities&nbsp;without delay</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t\n<ul>\n\n\t\t\n<li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">If Aboo adds the yards by frame, could they work out the fabric&nbsp;consumption on the plan?</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t\t</li><li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">They should add&nbsp;+20% to accommodate&nbsp;SPO orders as well</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t</li></ul>\n\n\t\n</li></ul>\n\n\n<div><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Fabrics / Leathers not in Stock:</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div>\n\n<ul>\n\n\t\n<li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Since we do not want to fall out of stock can Aboo commit&nbsp;to the following?</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\t\n<ul>\n\n\t\t\n<li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Anything we do not use in 6 months - 1 year can be used for RH as needed:</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t\t</li><li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Fabrics: 60 yards OH for Harbour</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t\t</li><li style=\"margin-left:15px\"><span style=\"font-size:medium\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"word-spacing:0px\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span style=\"font-variant-ligatures:normal\"><span><span style=\"widows:2\"><span style=\"background-color:#f0f2f4\"><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span style=\"font-size:small\">Leathers: 500 sqft of leather OH for Harbour </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\t</li></ul>\n\n\t\n</li></ul>\n\n</div>\n\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606105391378",
+    "replyToId": null,
+    "etag": "1606105391378",
+    "messageType": "message",
+    "createdDateTime": "2020-11-23T04:23:11.378Z",
+    "lastModifiedDateTime": "2020-11-23T04:23:11.378Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "CASTE GLASS COLLECTION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1606105391378?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606105391378&parentMessageId=1606105391378",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "NEW ORDER REQUEST <attachment id=\"fc850178-905a-461e-aaa9-f1ef0aed1000\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "fc850178-905a-461e-aaa9-f1ef0aed1000",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Ice Glass 11.20.20.xlsx",
+        "content": null,
+        "name": "Ice Glass 11.20.20.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606706385348",
+    "replyToId": null,
+    "etag": "1606717818262",
+    "messageType": "message",
+    "createdDateTime": "2020-11-30T03:19:45.348Z",
+    "lastModifiedDateTime": "2020-11-30T06:30:18.262Z",
+    "lastEditedDateTime": "2020-11-30T06:30:18.262Z",
+    "deletedDateTime": null,
+    "subject": "MARK D OCCASSIONAL TABLES",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1606706385348?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606706385348&parentMessageId=1606706385348",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "Shop mate prices Nov 26th<attachment id=\"029bd759-27e5-458c-8332-a992b4e47006\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "029bd759-27e5-458c-8332-a992b4e47006",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Shop-mate list 11-25 - SENT(2) (1).xlsx",
+        "content": null,
+        "name": "Shop-mate list 11-25 - SENT(2) (1).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606706488726",
+    "replyToId": null,
+    "etag": "1606706549744",
+    "messageType": "message",
+    "createdDateTime": "2020-11-30T03:21:28.726Z",
+    "lastModifiedDateTime": "2020-11-30T03:22:29.744Z",
+    "lastEditedDateTime": "2020-11-30T03:22:29.744Z",
+    "deletedDateTime": null,
+    "subject": "ICE COLLECTION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1606706488726?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606706488726&parentMessageId=1606706488726",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>\n<div>\n\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\">Hi Felix, (ALLY EMAIL)</div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">Noted with thanks,</div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">Here are attached both Satin Nickel &amp; Bronzn on brass color pictures marked approved information for record. YF is working Brass colors still...</div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">Please help to confirm with RH for the production drawings. Can we use the sample approved drawings for production or not? See below attached approved sample drawings on 8/10.&nbsp;</div>\n\n\n<div style=\"font-size:small\">YF is pushing us to get drawings and they will start preparing S.S materials.&nbsp;<span>Thanks.</span></div>\n\n\n\n\n\n\n</div>\n</div>\n</div>\n</div><attachment id=\"ba89be2c-4dd9-4740-b31b-70052badfce2\"></attachment><attachment id=\"7a71b2e7-c200-4ef6-9449-07dcafac4ad1\"></attachment><attachment id=\"b635fc6b-7719-4dd5-bc43-d7b8030b0c35\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "ba89be2c-4dd9-4740-b31b-70052badfce2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Catch2315.jpg",
+        "content": null,
+        "name": "Catch2315.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7a71b2e7-c200-4ef6-9449-07dcafac4ad1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Catch (3).jpg",
+        "content": null,
+        "name": "Catch (3).jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b635fc6b-7719-4dd5-bc43-d7b8030b0c35",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/ICE TABLE 8-5-20.pdf",
+        "content": null,
+        "name": "ICE TABLE 8-5-20.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606706611418",
+    "replyToId": null,
+    "etag": "1606706611418",
+    "messageType": "message",
+    "createdDateTime": "2020-11-30T03:23:31.418Z",
+    "lastModifiedDateTime": "2020-11-30T03:23:31.418Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "NEW CONCEPTS 2021",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1606706611418?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606706611418&parentMessageId=1606706611418",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"b4ef8fbe-0516-4a27-b60a-21c869a6ea05\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "b4ef8fbe-0516-4a27-b60a-21c869a6ea05",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/RH Contemporary 11-24-2020-REV B_compressed.pdf",
+        "content": null,
+        "name": "RH Contemporary 11-24-2020-REV B_compressed.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1606965755068",
+    "replyToId": null,
+    "etag": "1606965755068",
+    "messageType": "message",
+    "createdDateTime": "2020-12-03T03:22:35.068Z",
+    "lastModifiedDateTime": "2020-12-03T03:22:35.068Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SYDNEY CHAIR (DINING AND CLUB)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1606965755068?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1606965755068&parentMessageId=1606965755068",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><at id=\"0\">Felix Ho</at>&nbsp;to follow up with aboo in SPO prices</div>\n\n\n<div itemprop=\"copy-paste-block\">&nbsp;</div>\n\n\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:small\">3 finish options (?): Brass, S.S. and Gunmetal?</span></div>\n</div>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Felix Ho",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "73dd6840-0b54-4e6a-ab8a-f46aa1075acb",
+            "displayName": "Felix Ho",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1607600857678",
+    "replyToId": null,
+    "etag": "1607600857678",
+    "messageType": "message",
+    "createdDateTime": "2020-12-10T11:47:37.678Z",
+    "lastModifiedDateTime": "2020-12-10T11:47:37.678Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MAYA SOFA",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1607600857678?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607600857678&parentMessageId=1607600857678",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"text-align:start; text-indent:0px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span>Hi Harrison,</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span style=\"font-size:small\"><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-ligatures:normal\"><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:2\"><span style=\"word-spacing:0px\"><span style=\"background-color:#f0f2f4\"><span><span>Please see attached picture for Maya seat foam construction.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<blockquote style=\"margin-left:7px; font-family:Arial,Helvetica,sans-serif; font-size:small; font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px\">\n\n<div>\n<div>\n<div>\n\n<p><span style=\"font-family:宋体\"><span lang=\"EN-US\" style=\"font-size:15px\"><span style=\"font-family:等线\">Maya cushion construction</span></span></span></p>\n\n\n\n<p><span style=\"font-family:宋体\"><span lang=\"EN-US\" style=\"font-size:15px\"><span style=\"font-family:等线\"><b>Back cushion: 50% feather + 50% polyester fiber</b></span></span></span></p>\n\n\n\n<p><span style=\"font-family:宋体\"><span lang=\"EN-US\" style=\"font-size:15px\"><span style=\"font-family:等线\"><b>Seat cushion: see the photo as attached</b></span></span></span></p>\n\n\n\n<p style=\"text-indent:21pt\"><span style=\"font-family:宋体\"><span style=\"font-size:15px\"><b><span lang=\"EN-US\" style=\"font-family:等线\">1.&nbsp;&nbsp;&nbsp;</span><span lang=\"EN-US\" style=\"font-family:等线\">Foam: 38kgs/m3 density, 5 inch thickness</span></b></span></span></p>\n\n\n\n<p style=\"text-indent:21pt\"><span style=\"font-family:宋体\"><span style=\"font-size:15px\"><b><span lang=\"EN-US\" style=\"font-family:等线\">2.&nbsp;&nbsp;&nbsp;</span><span lang=\"EN-US\" style=\"font-family:等线\">Foam: 25kgs/m3 density, 1 inch thickness</span></b></span></span></p>\n\n\n\n<p style=\"text-indent:21pt\"><span style=\"font-family:宋体\"><span style=\"font-size:15px\"><b><span lang=\"EN-US\" style=\"font-family:等线\">3.&nbsp;&nbsp;&nbsp;</span><span lang=\"EN-US\" style=\"font-family:等线\">Feather blend jacket on the top only: 50% feather + 50% polyester fiber</span></b></span></span></p>\n\n\n\n<p style=\"text-indent:21pt\"><span style=\"font-family:宋体\"><span style=\"font-size:15px\"><b><span lang=\"EN-US\" style=\"font-family:等线\">4.&nbsp;&nbsp;&nbsp;</span></b><span lang=\"EN-US\" style=\"font-family:等线\"><b>Dacron wrapped at seat cushion front</b></span></span></span></p>\n\n\n\n<p><span style=\"font-size:12pt\"><span style=\"font-family:宋体\">Best Regards,</span></span></p>\n\n</div>\n</div>\n</div>\n</blockquote>\n\n</div>\n</div><attachment id=\"40ce5628-2a94-4a4d-b534-36de56ccfd73\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "40ce5628-2a94-4a4d-b534-36de56ccfd73",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Maya seat cushion.jpg",
+        "content": null,
+        "name": "Maya seat cushion.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1607931950782",
+    "replyToId": null,
+    "etag": "1607931950782",
+    "messageType": "message",
+    "createdDateTime": "2020-12-14T07:45:50.782Z",
+    "lastModifiedDateTime": "2020-12-14T07:45:50.782Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Devlin Furniture",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1607931950782?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607931950782&parentMessageId=1607931950782",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\">They want to know since only sample quantities&nbsp;if this can ship before CNY</div>\n\n\n<ul style=\"font-size:small\">\n\n\t\n<li>I told them it's very tight but will ask\n</li></ul>\n\n\n<div>All prices / samples are COM / COL</div>\n\n\n<ul>\n\n\t\n<li>Customer will provide\n</li></ul>\n\n\n\n<ul type=\"disc\" style=\"font-size:small\">\n\n\t\n<li><em>Walnut coffee table x1</em>\n\t</li><li><em>Armchair (under stairs option a) x2</em>\n\t</li><li><em>Armchair (under stairs option b) x2</em>\n\t</li><li><em>Curved sofa x1</em>\n\t</li><li><em>Master bedrooms side tables x2</em>\n\t</li><li><em>Master bedroom bench x1</em>\n\t</li><li><em>Light oak armchair to The Den x1</em>\n\t</li><li><em>Armchair, ottoman &amp; side table to master bedroom x1 each</em>\n\t</li><li><em>Outdoor table x1</em>\n\t</li><li><em>Dining chairs (to outdoor table) x12</em>\n\t</li><li><em>Bench to spare bedroom x 1</em>\n\t</li><li><em>Sofa outside gym x1</em>\n\t</li><li><em>Travertine outdoor bench x1</em>\n\t</li><li><em>Armchair to spa x2</em>\n\t</li><li><em>Sofa to spa x1</em>\n\t</li><li><em>Bench (to downstairs) x1</em>\n\t</li><li><em>Armchair to living room x1</em>\n\t</li><li><em>Dining chairs to round table x6</em>\n\t</li><li><em>Dining chair to indoor table x10</em>\n\t</li><li><em>Side table to spare bedroom x2</em>\n\t</li><li><em>Coffee table outside gym x1</em>\n\t</li><li><em>4 door cabinet in gym x1</em>\n\t</li><li><em>Light oak armchair x1</em>\n\t</li><li><em>Entry chair x1</em>\n\t</li><li><em>Bronze console x1</em>\n\t</li><li><em>Round outdoor dining table x1</em>\n\t</li><li><em>Black metal side table x1 each of various size</em>\n\t</li><li><em>Travertine side table x2</em>\n\t</li><li><em>Travertine indoor dining table x1</em>\n\t</li><li><em>Travertine outdoor chair x1</em>\n</li></ul>\n\n</div>\n</div><attachment id=\"54f6e4c4-8dc5-4109-8539-a102b56916b6\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "54f6e4c4-8dc5-4109-8539-a102b56916b6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Devlin Furniture.pdf",
+        "content": null,
+        "name": "Devlin Furniture.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1612141219491",
+    "replyToId": null,
+    "etag": "1612141219491",
+    "messageType": "message",
+    "createdDateTime": "2021-02-01T01:00:19.491Z",
+    "lastModifiedDateTime": "2021-02-01T01:00:19.491Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MLB Mykonos Chair in leather (indoor)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1612141219491?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1612141219491&parentMessageId=1612141219491",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"5f6144ac-809c-4115-8e07-0ace27e2c87f\"></attachment><attachment id=\"7651335f-4bef-4f85-a0b1-080ebd7954e0\"></attachment><attachment id=\"1f01dfe5-3914-4aa3-9558-e8231b28f1d1\"></attachment><attachment id=\"f1e41063-c2e8-4b98-8154-f7ba904c6dab\"></attachment><attachment id=\"4e40fe2b-5bd0-49c9-ae7d-cd2d005d24ce\"></attachment><attachment id=\"59597714-64e1-4181-a7f0-b697169c4200\"></attachment><attachment id=\"ddf7cd8a-407b-4cc7-956f-f10a8b4cd8f0\"></attachment><attachment id=\"ffbdd048-ddec-4683-afc7-08520bc8a97b\"></attachment><attachment id=\"edf64536-fbd7-494f-8831-94b80867b986\"></attachment><attachment id=\"5a1442ea-71de-48c8-9ff0-5a3950553dbf\"></attachment><attachment id=\"e50fbd17-1fa5-4619-b87a-dd1d2646c1e8\"></attachment><attachment id=\"5d08c957-f6b0-4b89-836c-901d8980cff9\"></attachment><attachment id=\"9637df60-67fa-48ce-88af-e377a44d80f5\"></attachment><attachment id=\"a5fa5473-3a46-48bd-bfba-5e0bf4f55fe9\"></attachment><attachment id=\"8deff96c-64c7-4bd1-b499-8e541355b7f7\"></attachment><attachment id=\"8db868f5-ed50-4113-9bf8-496f8f6f6f8a\"></attachment><attachment id=\"9e451d20-bfeb-4607-856a-98623d655a5b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "5f6144ac-809c-4115-8e07-0ace27e2c87f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/1.jpeg",
+        "content": null,
+        "name": "1.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7651335f-4bef-4f85-a0b1-080ebd7954e0",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/2.jpeg",
+        "content": null,
+        "name": "2.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1f01dfe5-3914-4aa3-9558-e8231b28f1d1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/3.jpeg",
+        "content": null,
+        "name": "3.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "f1e41063-c2e8-4b98-8154-f7ba904c6dab",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/4.jpeg",
+        "content": null,
+        "name": "4.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4e40fe2b-5bd0-49c9-ae7d-cd2d005d24ce",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/5.jpeg",
+        "content": null,
+        "name": "5.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "59597714-64e1-4181-a7f0-b697169c4200",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/6.jpeg",
+        "content": null,
+        "name": "6.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ddf7cd8a-407b-4cc7-956f-f10a8b4cd8f0",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/7.jpeg",
+        "content": null,
+        "name": "7.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ffbdd048-ddec-4683-afc7-08520bc8a97b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/8.jpeg",
+        "content": null,
+        "name": "8.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "edf64536-fbd7-494f-8831-94b80867b986",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/9.jpeg",
+        "content": null,
+        "name": "9.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5a1442ea-71de-48c8-9ff0-5a3950553dbf",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/10.jpeg",
+        "content": null,
+        "name": "10.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "e50fbd17-1fa5-4619-b87a-dd1d2646c1e8",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/11.jpeg",
+        "content": null,
+        "name": "11.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "5d08c957-f6b0-4b89-836c-901d8980cff9",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/12.jpeg",
+        "content": null,
+        "name": "12.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9637df60-67fa-48ce-88af-e377a44d80f5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/13.jpeg",
+        "content": null,
+        "name": "13.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a5fa5473-3a46-48bd-bfba-5e0bf4f55fe9",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Mykonos Dining Chair and Arm Chair 3-15-19.dwg",
+        "content": null,
+        "name": "Mykonos Dining Chair and Arm Chair 3-15-19.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8deff96c-64c7-4bd1-b499-8e541355b7f7",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/14.jpeg",
+        "content": null,
+        "name": "14.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8db868f5-ed50-4113-9bf8-496f8f6f6f8a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/MLB 2 - Dining Chair_2020 March 19.dwg",
+        "content": null,
+        "name": "MLB 2 - Dining Chair_2020 March 19.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9e451d20-bfeb-4607-856a-98623d655a5b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/MLB 2 - Lounge Chair_2020 March 20.dwg",
+        "content": null,
+        "name": "MLB 2 - Lounge Chair_2020 March 20.dwg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614224835108",
+    "replyToId": null,
+    "etag": "1616042887479",
+    "messageType": "message",
+    "createdDateTime": "2021-02-25T03:47:15.108Z",
+    "lastModifiedDateTime": "2021-03-18T04:48:07.479Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2021-03-18T04:48:07.479Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1614224835108?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614224835108&parentMessageId=1614224835108",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614908466779",
+    "replyToId": null,
+    "etag": "1614908466779",
+    "messageType": "message",
+    "createdDateTime": "2021-03-05T01:41:06.779Z",
+    "lastModifiedDateTime": "2021-03-05T01:41:06.779Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Monaco Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1614908466779?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614908466779&parentMessageId=1614908466779",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">&nbsp;\n\n<div style=\"padding:20px 0px 0px; text-align:start; text-indent:0px\"><span style=\"font-size:0.875rem\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n<table itemprop=\"copy-paste-table\">\n<tbody>\n<tr>\n<td>\n<table itemprop=\"copy-paste-table\">\n<tbody>\n<tr>\n<td>\n<h3><br>\n<span style=\"font-size:0.875rem\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>Sarah\n Greshowak</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></h3>\n</td>\n</tr>\n</tbody>\n</table>\n</td>\n<td><span style=\"font-size:0.875rem\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><img alt=\"Attachments\" height=\"1\" src=\"https://graph.microsoft.com/v1.0/teams/570cfa6a-8cc0-44b9-9059-e427f8c7afc2/channels/19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2/messages/1614908466779/hostedContents/aWQ9eF8wLWVhLWQ4LWY1MTI0ZWEyMzNkOGJmMDhlMGJkNWRjOWJiNTc0NWYxLHR5cGU9MSx1cmw9aHR0cHM6Ly9hcy1hcGkuYXNtLnNreXBlLmNvbS92MS9vYmplY3RzLzAtZWEtZDgtZjUxMjRlYTIzM2Q4YmYwOGUwYmQ1ZGM5YmI1NzQ1ZjEvdmlld3MvaW1nbw==/$value\" title=\"Monaco Collection.pdf\" width=\"1\" style=\"vertical-align:bottom; width:1px; height:1px\">8:08\n AM (1 hour ago)</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></td>\n<td>&nbsp;</td>\n<td rowspan=\"2\"><span style=\"font-size:0.875rem\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><img alt=\"\" height=\"1\" src=\"https://graph.microsoft.com/v1.0/teams/570cfa6a-8cc0-44b9-9059-e427f8c7afc2/channels/19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2/messages/1614908466779/hostedContents/aWQ9eF8wLWVhLWQ1LTk4ZDJiMTE1MmVlMGRkMDgwMzVmMjMzNjdmMTgwODA5LHR5cGU9MSx1cmw9aHR0cHM6Ly9hcy1hcGkuYXNtLnNreXBlLmNvbS92MS9vYmplY3RzLzAtZWEtZDUtOThkMmIxMTUyZWUwZGQwODAzNWYyMzM2N2YxODA4MDkvdmlld3MvaW1nbw==/$value\" width=\"1\" style=\"vertical-align:bottom; width:1px; height:1px\"><img alt=\"\" height=\"1\" src=\"https://graph.microsoft.com/v1.0/teams/570cfa6a-8cc0-44b9-9059-e427f8c7afc2/channels/19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2/messages/1614908466779/hostedContents/aWQ9eF8wLWVhLWQzLTFjNzMxNjA0YTBhODc5OTk2MmUyMjhmZjM3M2FjNWExLHR5cGU9MSx1cmw9aHR0cHM6Ly9hcy1hcGkuYXNtLnNreXBlLmNvbS92MS9vYmplY3RzLzAtZWEtZDMtMWM3MzE2MDRhMGE4Nzk5OTYyZTIyOGZmMzczYWM1YTEvdmlld3MvaW1nbw==/$value\" width=\"1\" style=\"vertical-align:bottom; width:1px; height:1px\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<table itemprop=\"copy-paste-table\">\n<tbody>\n<tr>\n<td><span style=\"font-size:0.875rem\"><span><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>to&nbsp;Paul,&nbsp;felix,&nbsp;allyzhou,&nbsp;Harrison,&nbsp;nicholas,&nbsp;Jacob,&nbsp;Kira,&nbsp;me<img alt=\"\" height=\"1\" src=\"https://graph.microsoft.com/v1.0/teams/570cfa6a-8cc0-44b9-9059-e427f8c7afc2/channels/19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2/messages/1614908466779/hostedContents/aWQ9eF8wLWVhLWQ1LWUxOWY1OGY2MDllMDk4ZDhhMTEwZmNmODVkZmMzZmRkLHR5cGU9MSx1cmw9aHR0cHM6Ly9hcy1hcGkuYXNtLnNreXBlLmNvbS92MS9vYmplY3RzLzAtZWEtZDUtZTE5ZjU4ZjYwOWUwOThkOGExMTBmY2Y4NWRmYzNmZGQvdmlld3MvaW1nbw==/$value\" width=\"1\" style=\"vertical-align:bottom; width:1px; height:1px\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></td>\n</tr>\n</tbody>\n</table>\n</td>\n</tr>\n</tbody>\n</table>\n\n</div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n<div>&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>&nbsp;</div>\n</div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<div style=\"margin-left:-38px\">&nbsp;</div>\n\n<div>&nbsp;</div>\n\n\n<div style=\"margin-top:8px; padding:0px\"><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n<div><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<div dir=\"ltr\">\n<div><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\">Hello Paul and Team-&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div>&nbsp;</div>\n\n<div><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\">Please see attached specs for a new indoor collection! This one is called Monaco, which is a collection of travertine stone tables. Can you please begin creating CADs for this collection? We would love to start getting costing and samples. Paul I can also create and add to teams channel.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div>&nbsp;</div>\n\n<div><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\">Also... this collection might be a little tricky to execute properly given some of the challenges we've seen with stone laminations... can you give us feedback Ally and Felix if you think this can be achieved as solid tops? Also you'll notice the leg detail where it attaches to the top panels is a curve-meeting-curve situation, again let us know if you think this is feasible.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div>&nbsp;</div>\n\n<div><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\">Thank you!</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n&nbsp;\n\n<div>\n\n<div dir=\"ltr\">\n\n<div dir=\"ltr\">\n\n<div dir=\"ltr\"><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span><b>Sarah Greshowak</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"ltr\"><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span>Senior Designer</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"ltr\">\n<div>\n\n<p><span style=\"font-size:16px\"><span><span><span style=\"font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span style=\"font-size:0.875rem\"><span style=\"position:relative\"><span style=\"font-size:small\"><span style=\"overflow:hidden\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"font-stretch:normal\"><span style=\"line-height:1.5\"><span style=\"font-family:Arial,Helvetica,sans-serif\"><font><strong><font>E:</font></strong></font><font><b>&nbsp;</b><a href=\"mailto:sarah@harbouroutdoor.com\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"mailto:sarah@harbouroutdoor.com\" style=\"color:rgb(104,136,201)\">sarah@harbouroutdoor.com</a></font></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"a00a522f-3f05-4dc9-9bd4-2530df27c892\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "a00a522f-3f05-4dc9-9bd4-2530df27c892",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Monaco Collection.pdf",
+        "content": null,
+        "name": "Monaco Collection.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614908669456",
+    "replyToId": null,
+    "etag": "1614908669456",
+    "messageType": "message",
+    "createdDateTime": "2021-03-05T01:44:29.456Z",
+    "lastModifiedDateTime": "2021-03-05T01:44:29.456Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Ava Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1614908669456?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614908669456&parentMessageId=1614908669456",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>Hello Paul and Team-&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Here are specs for another new indoor collection called Ava, which is a sculptural wood collection for dining and living room. We were wondering if we wanted to try Jonathan Charles for this collection? It would be great to get CADs going and send on to the team at JC for costing and sampling.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div><a href=\"mailto:Paul.gerrard@harbouroutdoor.com\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"mailto:paul.gerrard@harbouroutdoor.com\" style=\"color:rgb(104,136,201)\">@Paul Gerrard</a>&nbsp;I can add to Teams as well... do you think we ought to create a Vietnam channel for these developments?&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank you!</div>\n\n<div>&nbsp;</div>\n\n<div>\n<div>\n<div>\n<div><span><b>Sarah Greshowak</b></span></div>\n\n<div><span>Senior Designer</span></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"2adbde30-4178-4f6e-b4c6-b28612b36e9a\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2adbde30-4178-4f6e-b4c6-b28612b36e9a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Ava Collection .pdf",
+        "content": null,
+        "name": "Ava Collection .pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614932240612",
+    "replyToId": null,
+    "etag": "1614932240612",
+    "messageType": "message",
+    "createdDateTime": "2021-03-05T08:17:20.612Z",
+    "lastModifiedDateTime": "2021-03-05T08:17:20.612Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Travertine Planters for Harbour",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1614932240612?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614932240612&parentMessageId=1614932240612",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<blockquote type=\"cite\" style=\"font-family:Arial,Helvetica,sans-serif; font-variant-caps:normal; letter-spacing:normal; text-align:start; text-indent:0px; text-transform:none; white-space:normal; word-spacing:0px\">\n\n\n<div dir=\"ltr\">\n<div>\n\n<blockquote style=\"border-left-width:1px; border-left-style:solid; border-left-color:#cccccc; padding-left:1ex; margin-left:6px\">\n\n\n<div lang=\"EN-AU\">\n<div>\n<div>\n\n<blockquote style=\"border-style:none none none solid; border-left-width:1pt; border-left-color:#cccccc; padding:0cm 0cm 0cm 6pt; margin-bottom:7px; margin-left:6px\">\n\n<div>\n<div>\n\n<p><span style=\"font-size:12pt\">Hi Ally and Harriet,</span></p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p><span style=\"font-size:12pt\">We are thinking about introducing the Travertine planters we developed for RH for Harbour USA.</span></p>\n\n</div>\n\n<div>\n\n<p><span style=\"font-size:12pt\">We would do the Italian Silver (not Mexican White like RH).</span></p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p><span style=\"font-size:12pt\">What samples in Italian Silver are OK for us to take and ship to Harbour (RH no longer needs)?</span></p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p><span style=\"font-size:12pt\">Can you also help to fill out the costing in Italian Silver&nbsp;+ Alu liner? I only have the RH cost so was hoping for the factory buy cost</span></p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p><span style=\"font-size:12pt\">Thank&nbsp;you</span></p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<table itemprop=\"copy-paste-table\" width=\"485\">\n<tbody>\n<tr>\n<td nowrap=\"nowrap\" width=\"131\">SQUARE PLANTERS</td>\n<td nowrap=\"nowrap\" width=\"160\">TRAVERTINE PLANTER COST</td>\n<td nowrap=\"nowrap\" width=\"93\">ALU LINER COST</td>\n<td nowrap=\"nowrap\" width=\"101\">TOTAL UNIT COST</td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">18\" x 18\" x 18\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">22\" x 22\" x 22\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">28\" x 28\" x 28\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">RECTANGLE PLANTERS</td>\n<td nowrap=\"nowrap\">TRAVERTINE PLANTER COST</td>\n<td nowrap=\"nowrap\">ALU LINER COST</td>\n<td nowrap=\"nowrap\">TOTAL UNIT COST</td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">15.75\" x 15.75\" x 31,5\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">39.5 x \"19.75\" x 19.75\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">ROUND PLANTERS</td>\n<td nowrap=\"nowrap\">TRAVERTINE PLANTER COST</td>\n<td nowrap=\"nowrap\">ALU LINER COST</td>\n<td nowrap=\"nowrap\">TOTAL UNIT COST</td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">22\"Dia x 28\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">28\" Dia x 28\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n<tr>\n<td nowrap=\"nowrap\">15.75\" Dia x 31.5\"</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\">&nbsp;</td>\n<td nowrap=\"nowrap\"><b>&nbsp;</b></td>\n</tr>\n</tbody>\n</table>\n\n\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n\n<p>&nbsp;</p>\n\n</div>\n\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n\n<p><span style=\"background-position:initial initial\"><span style=\"background-repeat:initial initial\"><b><span style=\"font-size:9pt\"><span style=\"font-family:Arial,sans-serif\"><span>Jacob Greenberg</span></span></span></b></span></span></p>\n\n\n\n<p><span style=\"background-position:initial initial\"><span style=\"background-repeat:initial initial\"><span style=\"font-size:9pt\"><span style=\"font-family:Arial,sans-serif\"><span>VP, Merchandising</span></span></span></span></span></p>\n\n\n\n<p><span style=\"background-position:initial initial\"><span style=\"background-repeat:initial initial\"><span style=\"font-size:9pt\"><span style=\"font-family:Arial,sans-serif\"><span>Harbour Outdoor</span></span></span></span></span></p>\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</blockquote>\n\n</div>\n</div>\n</div>\n</blockquote>\n\n</div>\n</div>\n</blockquote>\n\n</div>\n</div><attachment id=\"2693f4c4-a190-4753-bcc0-f717fbacfbd2\"></attachment><attachment id=\"cddf9014-b689-4d92-ae42-3b20a802e164\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2693f4c4-a190-4753-bcc0-f717fbacfbd2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Harbour-Travertine-TRAVERTINE ROUND PLANTERS-20210220.xlsx",
+        "content": null,
+        "name": "Harbour-Travertine-TRAVERTINE ROUND PLANTERS-20210220.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "cddf9014-b689-4d92-ae42-3b20a802e164",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Harbour-Travertine-TRAVERTINE SQUARE AND RECTANGLE PLANTERS-20210220.xlsx",
+        "content": null,
+        "name": "Harbour-Travertine-TRAVERTINE SQUARE AND RECTANGLE PLANTERS-20210220.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615348785925",
+    "replyToId": null,
+    "etag": "1617177235296",
+    "messageType": "message",
+    "createdDateTime": "2021-03-10T03:59:45.925Z",
+    "lastModifiedDateTime": "2021-03-31T07:53:55.296Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": "2021-03-31T07:53:55.296Z",
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1615348785925?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615348785925&parentMessageId=1615348785925",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": ""
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615946954936",
+    "replyToId": null,
+    "etag": "1615946954936",
+    "messageType": "message",
+    "createdDateTime": "2021-03-17T02:09:14.936Z",
+    "lastModifiedDateTime": "2021-03-17T02:09:14.936Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "New Dining Chairs",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1615946954936?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615946954936&parentMessageId=1615946954936",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>Hello <at id=\"0\">Paul Gerrard</at>, <at id=\"1\">Ally</at> and Team-&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Please see attached for specs on some new dining chairs for Harbour!</div>\n\n<div>&nbsp;</div>\n\n<div>Gianna Dining Chair - \"Bolster Back\" chair with wood legs and framing (would like to sample in Boucle fabric)</div>\n\n<div>Logan Dining Chair - Upholstered seat and back, wood legs with leather strapping detail</div>\n\n<div>Fiona Dining Chair - Upholstered seat and back split apart with wooden tapering legs</div>\n\n<div>Blake Dining Chair - Wooden arms and legs wrap to back of upholstered seat and back</div>\n\n<div>&nbsp;</div>\n\n<div>Ally at your earliest convenience would you be able to provide CADs based on these drawings? Would like to send on to Aboo for costing and sampling.&nbsp;&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank you!</div>\n\n<div>&nbsp;</div>\n\n<div>\n<div>\n<div>\n<div><span><b>Sarah Greshowak</b></span></div>\n\n<div><span>Senior Designer</span></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"e7234dc8-0838-4bd8-b646-357949b24bf2\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "e7234dc8-0838-4bd8-b646-357949b24bf2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/renewdiningchairs.zip",
+        "content": null,
+        "name": "renewdiningchairs.zip",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Ally",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "2842e681-2ddd-4f3c-bc36-70a09a44a36e",
+            "displayName": "Ally",
+            "userIdentityType": "aadUser"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1617416153622",
+    "replyToId": null,
+    "etag": "1617416153622",
+    "messageType": "message",
+    "createdDateTime": "2021-04-03T02:15:53.622Z",
+    "lastModifiedDateTime": "2021-04-03T02:15:53.622Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "DAVOS EXTENSION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1617416153622?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1617416153622&parentMessageId=1617416153622",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"b170188e-a1f9-47f5-a86a-c2a1fdd4bd06\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "b170188e-a1f9-47f5-a86a-c2a1fdd4bd06",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/HT-Harbour price quotation of Davos extension 2021.3.31.xlsx",
+        "content": null,
+        "name": "HT-Harbour price quotation of Davos extension 2021.3.31.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618273985161",
+    "replyToId": null,
+    "etag": "1618273985161",
+    "messageType": "message",
+    "createdDateTime": "2021-04-13T00:33:05.161Z",
+    "lastModifiedDateTime": "2021-04-13T00:33:05.161Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UBUD",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1618273985161?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618273985161&parentMessageId=1618273985161",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"a5019372-c9cf-46e2-a0fa-7e6e09654bd8\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "a5019372-c9cf-46e2-a0fa-7e6e09654bd8",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Harbour UBUD presentaton V1 20210203.pdf",
+        "content": null,
+        "name": "Harbour UBUD presentaton V1 20210203.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618288410343",
+    "replyToId": null,
+    "etag": "1618288410343",
+    "messageType": "message",
+    "createdDateTime": "2021-04-13T04:33:30.343Z",
+    "lastModifiedDateTime": "2021-04-13T04:33:30.343Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1618288410343?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618288410343&parentMessageId=1618288410343",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"77cdaf4a-4d38-45f1-a133-39fc2051b39b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "77cdaf4a-4d38-45f1-a133-39fc2051b39b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Swatch Panel List.pdf",
+        "content": null,
+        "name": "Swatch Panel List.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618361945643",
+    "replyToId": null,
+    "etag": "1618361945643",
+    "messageType": "message",
+    "createdDateTime": "2021-04-14T00:59:05.643Z",
+    "lastModifiedDateTime": "2021-04-14T00:59:05.643Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MARK D OCCASSIONAL TABLES",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1618361945643?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618361945643&parentMessageId=1618361945643",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><a href=\"https://assets.adobe.com/public/bf667233-79c8-4934-4f5d-26ae3fc00a68\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://assets.adobe.com/public/bf667233-79c8-4934-4f5d-26ae3fc00a68\">https://assets.adobe.com/public/bf667233-79c8-4934-4f5d-26ae3fc00a68</a></div>\n\n\n<div itemprop=\"copy-paste-block\">&nbsp;</div>\n\n\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\">Mark's intention here was to have the factory making the ICE Tables quote this product also. The reason being that they already make the approved metal finishes.</div>\n\n\n<div style=\"font-size:small\">What factory is this again?</div>\n\n\n<div style=\"font-size:small\">Can they quote these items for us also so we can compare?</div>\n</div>\n</div><attachment id=\"6acb6fc1-4e3b-409e-aac3-898720b2958b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "6acb6fc1-4e3b-409e-aac3-898720b2958b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/QUOTATION---SM 0409---HARBOUR (1).xlsx",
+        "content": null,
+        "name": "QUOTATION---SM 0409---HARBOUR (1).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1618998751976",
+    "replyToId": null,
+    "etag": "1618998751976",
+    "messageType": "message",
+    "createdDateTime": "2021-04-21T09:52:31.976Z",
+    "lastModifiedDateTime": "2021-04-21T09:52:31.976Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "HO UPH tracker",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1618998751976?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1618998751976&parentMessageId=1618998751976",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"bd35120b-8f0d-4715-99e1-1d7558e32e0b\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "bd35120b-8f0d-4715-99e1-1d7558e32e0b",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Harbour Indoor Upholstery Tracker 4-20-21.xlsx",
+        "content": null,
+        "name": "Harbour Indoor Upholstery Tracker 4-20-21.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1619048710620",
+    "replyToId": null,
+    "etag": "1619415351913",
+    "messageType": "message",
+    "createdDateTime": "2021-04-21T23:45:10.62Z",
+    "lastModifiedDateTime": "2021-04-26T05:35:51.913Z",
+    "lastEditedDateTime": "2021-04-26T05:35:51.913Z",
+    "deletedDateTime": null,
+    "subject": "NEW DINING CHAIRS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1619048710620?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1619048710620&parentMessageId=1619048710620",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>&nbsp;\n\n<div style=\"font-size:0.875rem\">\n\n<table itemprop=\"copy-paste-table\">\n<tbody>\n<tr>\n<td>\n<table itemprop=\"copy-paste-table\">\n<tbody>\n<tr>\n<td>\n<h3>Sarah Greshowak</h3>\n</td>\n</tr>\n</tbody>\n</table>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n</tbody>\n</table>\n\n</div>\n\n\n<div style=\"font-size:medium\">\n<div>&nbsp;</div>\n\n<div>&nbsp;</div>\n\n\n<div style=\"font-size:0.875rem\">\n<div>\n<div>Hello Ally-\n<div>&nbsp;</div>\n\n<div>Thank you for sending the revisions. See attached-</div>\n\n<div>&nbsp;</div>\n\n<div>Arch Back- Approved to sample</div>\n\n<div>Gianna- Approved to sample</div>\n\n<div>Fiona- Approved to sample</div>\n\n<div>Logan- One more change, then we should be good&nbsp;</div>\n\n<div>Blake- One more change, then we should be good</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"dd11054a-7b6f-4489-a2bd-db4bc22ccb4e\"></attachment><attachment id=\"ddeccc8f-810a-4ce7-b02d-0b0e4dfe4b27\"></attachment><attachment id=\"a636848a-abb4-4cde-8ba0-39e9005f937e\"></attachment><attachment id=\"2a6ea3fc-3adc-4b91-9244-ebdf597fba94\"></attachment><attachment id=\"e8543cb5-290b-4a21-ac1e-4a71f13f6458\"></attachment><attachment id=\"e07d75c3-e089-423f-8352-b970b676f429\"></attachment><attachment id=\"80a6239d-9b0b-4d52-ad9e-1e8a5c08f0c1\"></attachment><attachment id=\"37531869-21be-4df9-9b57-df33b03a1ff2\"></attachment><attachment id=\"237b269a-3d9d-430d-aee5-eee1e57b7984\"></attachment><attachment id=\"a182f04b-2c68-4997-8675-30f4b9cc78e0\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "dd11054a-7b6f-4489-a2bd-db4bc22ccb4e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Arch Back Dining Chair.pdf",
+        "content": null,
+        "name": "Arch Back Dining Chair.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ddeccc8f-810a-4ce7-b02d-0b0e4dfe4b27",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/dining chair CAD notes and approval.pdf",
+        "content": null,
+        "name": "dining chair CAD notes and approval.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a636848a-abb4-4cde-8ba0-39e9005f937e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/New chairs for HB-2021-4-24.pdf",
+        "content": null,
+        "name": "New chairs for HB-2021-4-24.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "2a6ea3fc-3adc-4b91-9244-ebdf597fba94",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/New chairs for HB-Arch Back Dining Chair-2021-04-23.pdf",
+        "content": null,
+        "name": "New chairs for HB-Arch Back Dining Chair-2021-04-23.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "e8543cb5-290b-4a21-ac1e-4a71f13f6458",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/stacking chair spec.png",
+        "content": null,
+        "name": "stacking chair spec.png",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "e07d75c3-e089-423f-8352-b970b676f429",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/IMG_2068.png",
+        "content": null,
+        "name": "IMG_2068.png",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "80a6239d-9b0b-4d52-ad9e-1e8a5c08f0c1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Blake Dining Chair.pdf",
+        "content": null,
+        "name": "Blake Dining Chair.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "37531869-21be-4df9-9b57-df33b03a1ff2",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Fiona Dining Chair.pdf",
+        "content": null,
+        "name": "Fiona Dining Chair.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "237b269a-3d9d-430d-aee5-eee1e57b7984",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Logan Dining Chair.pdf",
+        "content": null,
+        "name": "Logan Dining Chair.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a182f04b-2c68-4997-8675-30f4b9cc78e0",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Gianna Dining Chair .pdf",
+        "content": null,
+        "name": "Gianna Dining Chair .pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1620795812270",
+    "replyToId": null,
+    "etag": "1622161940775",
+    "messageType": "message",
+    "createdDateTime": "2021-05-12T05:03:32.27Z",
+    "lastModifiedDateTime": "2021-05-28T00:32:20.775Z",
+    "lastEditedDateTime": "2021-05-28T00:32:20.775Z",
+    "deletedDateTime": null,
+    "subject": "(no longer TRAVERTINE) WOD ONLY (LUCY INDOOR PD)",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1620795812270?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1620795812270&parentMessageId=1620795812270",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>&nbsp;</div><attachment id=\"b53edf63-5e52-489f-b18b-207b620a0408\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "b53edf63-5e52-489f-b18b-207b620a0408",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/LucyTravertine.pdf",
+        "content": null,
+        "name": "LucyTravertine.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1621231992431",
+    "replyToId": null,
+    "etag": "1621231992431",
+    "messageType": "message",
+    "createdDateTime": "2021-05-17T06:13:12.431Z",
+    "lastModifiedDateTime": "2021-05-17T06:13:12.431Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Indoor Sofa construction",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1621231992431?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1621231992431&parentMessageId=1621231992431",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<ol>\n\n\t\n<li>Santorini\n</li></ol>\n\n</div><attachment id=\"84b7241b-5193-4535-832e-36d341c33929\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "84b7241b-5193-4535-832e-36d341c33929",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Product Information - Harbour Santorini.docx",
+        "content": null,
+        "name": "Product Information - Harbour Santorini.docx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1623890636431",
+    "replyToId": null,
+    "etag": "1623890636431",
+    "messageType": "message",
+    "createdDateTime": "2021-06-17T00:43:56.431Z",
+    "lastModifiedDateTime": "2021-06-17T00:43:56.431Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Wire Travertine Dining & Occasional | Harbour",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1623890636431?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1623890636431&parentMessageId=1623890636431",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"c7bacb04-f8f8-4e47-b22c-9735e88c8e84\"></attachment><attachment id=\"87927e6d-dbd3-4662-a06e-ab00c2de2e84\"></attachment><attachment id=\"a2a0aabf-6110-43b8-9ba9-05a46fda69d6\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c7bacb04-f8f8-4e47-b22c-9735e88c8e84",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/tables.pdf",
+        "content": null,
+        "name": "tables.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "87927e6d-dbd3-4662-a06e-ab00c2de2e84",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Wire_Dining.jpg",
+        "content": null,
+        "name": "Wire_Dining.jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a2a0aabf-6110-43b8-9ba9-05a46fda69d6",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/table screenshot rendering info.pdf",
+        "content": null,
+        "name": "table screenshot rendering info.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1628124219077",
+    "replyToId": null,
+    "etag": "1628124219077",
+    "messageType": "message",
+    "createdDateTime": "2021-08-05T00:43:39.077Z",
+    "lastModifiedDateTime": "2021-08-05T00:43:39.077Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "CARRERA MARBLE PRODUCT STANDARD",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1628124219077?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1628124219077&parentMessageId=1628124219077",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"b28bc420-91c1-4ca9-8340-1483b19e1658\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "b28bc420-91c1-4ca9-8340-1483b19e1658",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/Harbour Product Standard - Carrera White Marble 20210804.pdf",
+        "content": null,
+        "name": "Harbour Product Standard - Carrera White Marble 20210804.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1629343717493",
+    "replyToId": null,
+    "etag": "1629343717493",
+    "messageType": "message",
+    "createdDateTime": "2021-08-19T03:28:37.493Z",
+    "lastModifiedDateTime": "2021-08-19T03:28:37.493Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "TERNTO + OLIVIA GRIDS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Ad91f6e16ca214e41a96657b59aa9aada%40thread.tacv2/1629343717493?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1629343717493&parentMessageId=1629343717493",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"8a2f19af-3443-4953-bb25-69716b9f3fd1\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:d91f6e16ca214e41a96657b59aa9aada@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "8a2f19af-3443-4953-bb25-69716b9f3fd1",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (CHINA)/HarbourContemporary.pdf",
+        "content": null,
+        "name": "HarbourContemporary.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

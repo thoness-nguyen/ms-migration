@@ -1,0 +1,707 @@
+[
+  {
+    "id": "1604374202352",
+    "replyToId": null,
+    "etag": "1604374202352",
+    "messageType": "message",
+    "createdDateTime": "2020-11-03T03:30:02.352Z",
+    "lastModifiedDateTime": "2020-11-03T03:30:02.352Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "SAN BIANCO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1604374202352?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1604374202352&parentMessageId=1604374202352",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"7cd3b289-368a-42a4-a54a-fc7699b00233\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "7cd3b289-368a-42a4-a54a-fc7699b00233",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/WhatsApp Video 2020-11-03 at 11.29.00.mp4",
+        "content": null,
+        "name": "WhatsApp Video 2020-11-03 at 11.29.00.mp4",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1605790652880",
+    "replyToId": null,
+    "etag": "1605790652880",
+    "messageType": "message",
+    "createdDateTime": "2020-11-19T12:57:32.88Z",
+    "lastModifiedDateTime": "2020-11-19T12:57:32.88Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1605790652880?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1605790652880&parentMessageId=1605790652880",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "377c338f-ace6-437d-9bc7-d78becaa50a1",
+        "displayName": "Efri",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div><strong>PD Report 19.11.20</strong></div>\n\n<div>Dear <at id=\"0\">Paul Gerrard</at>&nbsp;- Please see attached an update PD report</div>\n</div><attachment id=\"dd5cb698-67cf-4fdb-9005-660b39fc3517\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "dd5cb698-67cf-4fdb-9005-660b39fc3517",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Product Development Matrix INDOOR 19.11.20.xls",
+        "content": null,
+        "name": "Product Development Matrix INDOOR 19.11.20.xls",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1607646143988",
+    "replyToId": null,
+    "etag": "1607646143988",
+    "messageType": "message",
+    "createdDateTime": "2020-12-11T00:22:23.988Z",
+    "lastModifiedDateTime": "2020-12-11T00:22:23.988Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "MILOS - Venetian Plaster / Plaster White Finish",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1607646143988?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607646143988&parentMessageId=1607646143988",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:small\"><em>Hello Team- we are working on some new indoor concepts in a white plaster finish. We're looking for a slightly textured, hand applied white plaster finish with a slight texture to it, matte sheen level. Could you see if any of the current&nbsp;vendors would be able to achieve such a finish? (Reference images attached). Typically I've seen this type of finish applied over an MDF or resin substrate, open to whatever works best for the vendor.&nbsp;</em></div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\"><em>Also attached some of the overall concepts/shapes we are thinking of... please note we are still working on the shapes, this is just for reference to show the type of more sculptural forms we are looking at.</em></div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\"><em>We'd love to have a vendor start working on some different panel options showing a few different textures/techniques/sheen levels. Let us know your thoughts.</em></div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\"><em>Thank you!&nbsp;</em></div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n&nbsp;\n\n\n<div style=\"font-size:small\">\n<div>\n<div>\n<div><em><span><b>Sarah Greshowak</b></span></em></div>\n\n<div><em><span>Senior Designer</span></em></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"2916b1c9-d931-4dbe-832e-b1ce0fb7454e\"></attachment><attachment id=\"7bd6f46e-5761-40df-a5f0-32ae643651d9\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "2916b1c9-d931-4dbe-832e-b1ce0fb7454e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Milos Collection Concepts.pdf",
+        "content": null,
+        "name": "Milos Collection Concepts.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "7bd6f46e-5761-40df-a5f0-32ae643651d9",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/venetian plaster reference images.jpeg",
+        "content": null,
+        "name": "venetian plaster reference images.jpeg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1608541073116",
+    "replyToId": null,
+    "etag": "1608541073116",
+    "messageType": "message",
+    "createdDateTime": "2020-12-21T08:57:53.116Z",
+    "lastModifiedDateTime": "2020-12-21T08:57:53.116Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LUCY COLLECTION (RH) INDO",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1608541073116?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1608541073116&parentMessageId=1608541073116",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"64c851f3-1d63-4f75-afbb-1540120b1e94\"></attachment><attachment id=\"3a8e55da-18ce-4169-959e-b9786d70936a\"></attachment><attachment id=\"ea86b311-00d8-41fc-9c3c-5937fca9d105\"></attachment><attachment id=\"8f5b0863-0429-4d4a-9f55-053649d34b47\"></attachment><attachment id=\"0b991b86-d5c4-44f9-bbed-757689199622\"></attachment><attachment id=\"54229533-32c8-4c0a-92dc-f7b9b87908ba\"></attachment><attachment id=\"8d6b7c48-e181-4353-97a3-a8e791324f2a\"></attachment><attachment id=\"340b0d69-2635-434a-8ca9-a48e2c671cd5\"></attachment><attachment id=\"9d60851b-9707-427b-90c8-d82e86b968e5\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "64c851f3-1d63-4f75-afbb-1540120b1e94",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Console Table_2020 March 09.pdf",
+        "content": null,
+        "name": "Lucy - Console Table_2020 March 09.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "3a8e55da-18ce-4169-959e-b9786d70936a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Rect Dining Table Opt 1_2020 March 10.pdf",
+        "content": null,
+        "name": "Lucy - Rect Dining Table Opt 1_2020 March 10.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "ea86b311-00d8-41fc-9c3c-5937fca9d105",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Rect.Coffee Table_ 2020 March 10.pdf",
+        "content": null,
+        "name": "Lucy - Rect.Coffee Table_ 2020 March 10.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8f5b0863-0429-4d4a-9f55-053649d34b47",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Rect.Dining Table Opt 2_2020 March 12.pdf",
+        "content": null,
+        "name": "Lucy - Rect.Dining Table Opt 2_2020 March 12.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "0b991b86-d5c4-44f9-bbed-757689199622",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Rect.Side Table_2020 March 11.pdf",
+        "content": null,
+        "name": "Lucy - Rect.Side Table_2020 March 11.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "54229533-32c8-4c0a-92dc-f7b9b87908ba",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Round Coffee Table_2020 March 10.pdf",
+        "content": null,
+        "name": "Lucy - Round Coffee Table_2020 March 10.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8d6b7c48-e181-4353-97a3-a8e791324f2a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Round Dining Table_2020 March 11.pdf",
+        "content": null,
+        "name": "Lucy - Round Dining Table_2020 March 11.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "340b0d69-2635-434a-8ca9-a48e2c671cd5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Round Side Table_2020 March 11.pdf",
+        "content": null,
+        "name": "Lucy - Round Side Table_2020 March 11.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "9d60851b-9707-427b-90c8-d82e86b968e5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy - Sideboard 90in_2020 March 12.pdf",
+        "content": null,
+        "name": "Lucy - Sideboard 90in_2020 March 12.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1609384678795",
+    "replyToId": null,
+    "etag": "1609384678795",
+    "messageType": "message",
+    "createdDateTime": "2020-12-31T03:17:58.795Z",
+    "lastModifiedDateTime": "2020-12-31T03:17:58.795Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "BALI / UBUD - BEDROOM / DINING / LIVING ROOM CASE",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1609384678795?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1609384678795&parentMessageId=1609384678795",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "6a6ced06-e23f-4797-8f3f-9d6a6248cb81",
+        "displayName": "Sarah Greshowak",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">Hello - Starting a conversation in Teams for BALI / UBUD, <at id=\"0\">Dian</at>&nbsp;please see updated specs attached adding-\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">-Page 15- Barstool</div>\n\n\n<div style=\"font-size:small\">-Page 18- Nine Drawer Dresser</div>\n\n\n<div style=\"font-size:small\">-Page 19- Twelve Drawer Dresser</div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">Also Updated-&nbsp;</div>\n\n\n<div style=\"font-size:small\">Page 1- Edited height to 100mm (vs 102mm from before)</div>\n\n\n<div style=\"font-size:small\">Page 3- Edited height to 100mm (vs 102mm from before)</div>\n\n\n<div style=\"font-size:small\">Page 12- Sideboard- I noticed on latest tracker from Burree the Sideboard height was revised to 34\"H (vs 32\" H before)</div>\n\n\n<div style=\"font-size:small\">&nbsp;</div>\n\n\n<div style=\"font-size:small\">Also list of CADs needed for RH by Jan 04. Can you let us know if this is workable? Thank you!</div>\n\n\n</div>\n</div><attachment id=\"F8BD8758-BB44-4274-8863-5411C49E2EA5\"></attachment><attachment id=\"8f5bb9ad-385a-4d5b-902c-5ece25b2a9f4\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "F8BD8758-BB44-4274-8863-5411C49E2EA5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/BALI UBUD/BALI UBUD SPECS rev 03.pdf",
+        "content": null,
+        "name": "BALI UBUD SPECS rev 03.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "8f5bb9ad-385a-4d5b-902c-5ece25b2a9f4",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/BALI CADs needed .jpg",
+        "content": null,
+        "name": "BALI CADs needed .jpg",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Dian",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+            "displayName": "Dian",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1611824100075",
+    "replyToId": null,
+    "etag": "1611824100075",
+    "messageType": "message",
+    "createdDateTime": "2021-01-28T08:55:00.075Z",
+    "lastModifiedDateTime": "2021-01-28T08:55:00.075Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "RH - DAVOS CRIBS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1611824100075?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1611824100075&parentMessageId=1611824100075",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"71dad58b-0265-4149-8345-a39a34308caa\"></attachment><attachment id=\"26582c12-9267-4684-9062-65ea6699841d\"></attachment><attachment id=\"115cff82-993c-40eb-9c81-6931f884607a\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "71dad58b-0265-4149-8345-a39a34308caa",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/BCT EU&UK spec.xlsx",
+        "content": null,
+        "name": "BCT EU&UK spec.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "26582c12-9267-4684-9062-65ea6699841d",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/RH crib standard.pptx",
+        "content": null,
+        "name": "RH crib standard.pptx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "115cff82-993c-40eb-9c81-6931f884607a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/RHBC_DAVOSCOLLECTION.pdf",
+        "content": null,
+        "name": "RHBC_DAVOSCOLLECTION.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1612230493150",
+    "replyToId": null,
+    "etag": "1612230493150",
+    "messageType": "message",
+    "createdDateTime": "2021-02-02T01:48:13.15Z",
+    "lastModifiedDateTime": "2021-02-02T01:48:13.15Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "DAVOS EXPANSIONS",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1612230493150?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1612230493150&parentMessageId=1612230493150",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "6a6ced06-e23f-4797-8f3f-9d6a6248cb81",
+        "displayName": "Sarah Greshowak",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Getting a thread going with regards to Davos Expansions.</div>\n\n<div>&nbsp;</div>\n\n<div><at id=\"0\">Dian Darmono</at>&nbsp;<at id=\"1\">Paul Gerrard</at>&nbsp;<at id=\"2\">Felix Ho</at>&nbsp;FYI latest tracker attached here... some items are Approved for Production, some are Approved to Sample.</div>\n\n<div>&nbsp;</div>\n\n<div>I am checking with Team RH on&nbsp;their top priorities for sampling.&nbsp;</div>\n</div><attachment id=\"c6145daa-0297-4a12-9134-16a379d471f0\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "c6145daa-0297-4a12-9134-16a379d471f0",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Davos Extensions 02 01 21 (2).xlsx",
+        "content": null,
+        "name": "Davos Extensions 02 01 21 (2).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Dian Darmono",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+            "displayName": "Dian Darmono",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "mentionText": "Felix Ho",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "73dd6840-0b54-4e6a-ab8a-f46aa1075acb",
+            "displayName": "Felix Ho",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1615359410706",
+    "replyToId": null,
+    "etag": "1615359410706",
+    "messageType": "message",
+    "createdDateTime": "2021-03-10T06:56:50.706Z",
+    "lastModifiedDateTime": "2021-03-10T06:56:50.706Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": null,
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1615359410706?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615359410706&parentMessageId=1615359410706",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>Hello Dian, Felix, Paul-&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>Here are specs for a new collection for you! It's called Bella. It's an indoor collection with chamfered edge detail. The chamfered edge shifts shape and form as it goes around the table edges.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>We were thinking maybe this would be a good new collection to try out in Vietnam (Jonathan Charles) or any other vendors there.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>Can you work on CADs for this, as well as work towards getting costing/sampling going? For the wood finish I just wrote Dark Brown Oak veneer, but could also consider other wood finishes.&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span>Thank you!</span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n&nbsp;\n\n\n<div style=\"text-align:start; text-indent:0px\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<div dir=\"ltr\">\n\n<div dir=\"ltr\">\n\n<div dir=\"ltr\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span><span><b>Sarah Greshowak</b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"ltr\"><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span><span>Senior Designer</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n\n<div dir=\"ltr\">\n<div>\n\n<p><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><font><strong><font>E:</font></strong></font><font><b>&nbsp;</b><a href=\"mailto:sarah@harbouroutdoor.com\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"mailto:sarah@harbouroutdoor.com\" style=\"color:rgb(104,136,201)\">sarah@harbouroutdoor.com</a></font></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\n\n\n\n<p><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span><font><b>Harbour Outdoor | New York Office &amp; Showroom</b></font><br>\n\n<span>200 Lexington Ave, New York, NY, 10016&nbsp;</span><br>\n\n<span><b>O:&nbsp;</b></span><b><font>&nbsp;</font><font color=\"#6888c9\"><a rel=\"noreferrer noopener\" target=\"_blank\" title=\"tel:(646)%20692-4227\" value=\"+16466924227\" style=\"color:rgb(104,136,201)\">646 692 4227</a></font></b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\n\n</div>\n\n<div><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>\n\n\n<div dir=\"ltr\">\n\n<p><span><span><span style=\"font-family:Arial,Helvetica,sans-serif\"><span><span style=\"font-variant-caps:normal\"><span><span style=\"letter-spacing:normal\"><span><span style=\"text-transform:none\"><span style=\"white-space:normal\"><span style=\"widows:auto\"><span style=\"word-spacing:0px\"><span><span><span><font><b>Harbour Outdoor | Los Angeles Office</b></font><br>\n\n<span>3240 Helms Ave, Los Angeles, CA, 90034</span><br>\n\n<span><b>O:&nbsp;</b></span><b><font color=\"#6888c9\"><a rel=\"noreferrer noopener\" target=\"_blank\" title=\"tel:(310)%20439-5972\" value=\"+13104395972\" style=\"color:rgb(104,136,201)\">310 439 5972</a></font></b></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"caed1de9-7f3f-47f6-8d76-a9535dc777e5\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "caed1de9-7f3f-47f6-8d76-a9535dc777e5",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Bella Collection.pdf",
+        "content": null,
+        "name": "Bella Collection.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615359451451",
+    "replyToId": null,
+    "etag": "1615359451451",
+    "messageType": "message",
+    "createdDateTime": "2021-03-10T06:57:31.451Z",
+    "lastModifiedDateTime": "2021-03-10T06:57:31.451Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Victoria Teak - Comments Pre-Production",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1615359451451?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615359451451&parentMessageId=1615359451451",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:14px\">\n<div>\n<div>\n<div>\n<div>\n<div>\n<div>\n\n<h2><span style=\"font-size:14px\"><span><span><span><span><span><span><span><span><span><span><span><span><span style=\"font-size:small\"><span><span>Hi Dian,</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></h2>\n\n\n<div>\n<div>\n<div>\n<div><span style=\"font-size:14px\"><span><span><span><span><span><span><span><span><span><span><span><span><span style=\"font-size:16px\"><span><span><span><span><span><span><span><span style=\"font-size:0.875rem\"><span><span style=\"font-size:small\"><span><span><span><span><span><span style=\"font-size:small\">Kira and I just reviewed the Victoria Teak photos now that we have received them in teams.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:14px\"><span><span><span><span><span><span><span><span><span><span><span><span><span style=\"font-size:16px\"><span><span><span><span><span><span><span><span style=\"font-size:0.875rem\"><span><span style=\"font-size:small\"><span><span><span><span><span><span style=\"font-size:small\">These samples do not look 100% there yet. While we can use this for photography for now, we need to fix these (RE: the comments in attached) for production.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:14px\"><span><span><span><span><span><span><span><span><span><span><span><span><span style=\"font-size:16px\"><span><span><span><span><span><span><span><span style=\"font-size:0.875rem\"><span><span style=\"font-size:small\"><span><span><span><span><span><span style=\"font-size:small\">How can we receive better quality samples going forward also? We waited a long time for these and some of the details are not very impressive. </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n\n<div><span style=\"font-size:14px\"><span><span><span><span><span><span><span><span><span><span><span><span><span style=\"font-size:16px\"><span><span><span><span><span><span><span><span style=\"font-size:0.875rem\"><span><span style=\"font-size:small\"><span><span><span><span><span><span style=\"font-size:small\">Please share back your feedback/corrective plan for production orders we have placed.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n\n</div>\n</div>\n</div><attachment id=\"bd349238-f0a3-48f2-a075-3ecc2d87aa57\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "bd349238-f0a3-48f2-a075-3ecc2d87aa57",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/VICTORIA TEAK SAMPLES COMMENTS 2.22.21.pdf",
+        "content": null,
+        "name": "VICTORIA TEAK SAMPLES COMMENTS 2.22.21.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1621828677302",
+    "replyToId": null,
+    "etag": "1621828997928",
+    "messageType": "message",
+    "createdDateTime": "2021-05-24T03:57:57.302Z",
+    "lastModifiedDateTime": "2021-05-24T04:03:17.928Z",
+    "lastEditedDateTime": "2021-05-24T04:03:17.928Z",
+    "deletedDateTime": null,
+    "subject": "LUCY",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A710d8b6659ff4676a0f0d66de7f42698%40thread.tacv2/1621828677302?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1621828677302&parentMessageId=1621828677302",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>&nbsp;</div><attachment id=\"1c557fde-42a0-4379-aa73-e3cb8699b150\"></attachment><attachment id=\"a5153228-d92b-4c04-af8a-09420a8ee52f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:710d8b6659ff4676a0f0d66de7f42698@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "1c557fde-42a0-4379-aa73-e3cb8699b150",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/Lucy Wood_5.21.xlsx",
+        "content": null,
+        "name": "Lucy Wood_5.21.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "a5153228-d92b-4c04-af8a-09420a8ee52f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (INDONESIA)/LUCYPACKET.pdf",
+        "content": null,
+        "name": "LUCYPACKET.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

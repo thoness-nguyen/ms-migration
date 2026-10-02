@@ -74,10 +74,20 @@ def select_area() -> str:
     return {"1": "sharepoint", "2": "teams", "3": "onedrive"}.get(choice, "sharepoint")
 
 
+def select_teams_scope() -> str:
+    print("\nTeams Workload")
+    print("  [1] Chats only")
+    print("  [2] Channels only")
+    print("  [3] Both (default)")
+    choice = input("Select scope (1-3): ").strip()
+    return {"1": "chats", "2": "channels", "3": "both"}.get(choice, "both")
+
+
 def start_migration(area: str, retry_failed_only: bool = False) -> None:
     """Start migration for the selected area."""
 
     config_file = _config_path(area)
+    teams_scope = "both"
 
     print()
     print(f"🚀 Starting migration ({area})...")
@@ -92,10 +102,11 @@ def start_migration(area: str, retry_failed_only: bool = False) -> None:
         )
 
     elif area == "teams":
+        teams_scope = select_teams_scope()
         print(
             "   ℹ️  Teams runs through the same 'batch' command — "
             "it only processes what's defined under "
-            "'workloads.teams' in the selected config."
+            f"'workloads.teams' in the selected config (scope: {teams_scope})."
         )
 
     elif area == "sharepoint":
@@ -119,6 +130,8 @@ def start_migration(area: str, retry_failed_only: bool = False) -> None:
         "--area",
         area,
     ]
+    if area == "teams":
+        cmd += ["--teams-scope", teams_scope]
     if retry_failed_only:
         cmd.append("--retry-failed-only")
 
@@ -130,6 +143,32 @@ def start_migration(area: str, retry_failed_only: bool = False) -> None:
     except KeyboardInterrupt:
         print()
         print("⏹️ Migration stopped by user.")
+
+
+def _print_skip_breakdown(area: str, limit: int = 6) -> None:
+    """Groups skipped checkpoint rows by their detail reason (e.g. "sender X has
+    no target mapping", "deleted", "Unsupported message type: ...") so a "N items
+    skipped" total doesn't read as one opaque bucket."""
+    import re
+    from collections import Counter
+
+    reasons: Counter[str] = Counter()
+    for a in _areas_for(area):
+        path = _db_path(a)
+        if not os.path.exists(path):
+            continue
+        conn = sqlite3.connect(path)
+        cur = conn.cursor()
+        cur.execute("SELECT detail FROM checkpoints WHERE status = 'skipped'")
+        for (detail,) in cur.fetchall():
+            # Collapse the variable sender-id suffix so all "sender X has no
+            # target mapping" rows group into one reason instead of one per user.
+            reason = re.sub(r"sender \S+ has no target mapping", "sender has no target mapping", detail or "unknown")
+            reasons[reason] += 1
+        conn.close()
+    print("\n  Skip reasons:")
+    for reason, count in reasons.most_common(limit):
+        print(f"    {count:>6,}  {reason}")
 
 
 def monitor_progress(area: str) -> None:
@@ -149,12 +188,17 @@ def monitor_progress(area: str) -> None:
                     stats[status] = stats.get(status, 0) + count
                 conn.close()
             completed = stats.get("completed", 0)
+            skipped = stats.get("skipped", 0)
             pending = stats.get("pending", 0) + stats.get("started", 0) + stats.get("created", 0)
             failed = stats.get("failed", 0)
+            # "skipped" (e.g. sender has no target mapping) is a deliberate,
+            # terminal outcome, not incomplete work - excluded from both
+            # pending and the completion percentage so it doesn't read as an
+            # in-progress/failed migration.
             total = completed + pending + failed
             pct = (completed / total * 100) if total else 0
             ts = time.strftime("%H:%M:%S")
-            print(f"[{ts}] Progress: {completed}/{total} ({pct:.1f}%) | Completed: {completed} | Pending: {pending} | Failed: {failed}")
+            print(f"[{ts}] Progress: {completed}/{total} ({pct:.1f}%) | Completed: {completed} | Pending: {pending} | Failed: {failed} | Skipped: {skipped}")
             time.sleep(5)
     except KeyboardInterrupt:
         print("\n⏹️  Monitoring stopped")
@@ -177,16 +221,25 @@ def show_status(area: str) -> None:
                 stats[status] = stats.get(status, 0) + count
             conn.close()
         completed = stats.get("completed", 0)
-        pending = sum(v for k, v in stats.items() if k not in ("completed", "failed"))
+        skipped = stats.get("skipped", 0)
+        # "skipped" (e.g. sender has no target mapping, deleted message,
+        # unsupported message type) is a deliberate, terminal outcome - it
+        # was previously lumped into "pending", which made an otherwise fully
+        # processed migration look stuck/incomplete (e.g. 70% instead of 100%
+        # attempted, ~30% skipped by design).
+        pending = sum(v for k, v in stats.items() if k not in ("completed", "failed", "skipped"))
         failed = stats.get("failed", 0)
         total = completed + pending + failed
         pct = (completed / total * 100) if total else 0
         print(f"\n  Completed: {completed:,} items")
         print(f"  Pending:   {pending:,} items")
         print(f"  Failed:    {failed:,} items")
+        print(f"  Skipped:   {skipped:,} items (deliberately excluded - see below)")
         print(f"  ────────────────────────")
-        print(f"  Total:     {total:,} items")
+        print(f"  Total:     {total:,} items (+{skipped:,} skipped)")
         print(f"  Success:   {pct:.1f}%")
+        if skipped:
+            _print_skip_breakdown(area)
         if failed:
             print(f"\n  ⚠️  {failed} items failed - option 5 to see details, option 6 to retry")
         elif pending:

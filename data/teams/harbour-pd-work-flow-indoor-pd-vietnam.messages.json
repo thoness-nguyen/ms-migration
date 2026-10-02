@@ -1,0 +1,576 @@
+[
+  {
+    "id": "1614932315138",
+    "replyToId": null,
+    "etag": "1614932315138",
+    "messageType": "message",
+    "createdDateTime": "2021-03-05T08:18:35.138Z",
+    "lastModifiedDateTime": "2021-03-05T08:18:35.138Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Ava Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1614932315138?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614932315138&parentMessageId=1614932315138",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>Hello Paul and Team-&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Here are specs for another new indoor collection called Ava, which is a sculptural wood collection for dining and living room. We were wondering if we wanted to try Jonathan Charles for this collection? It would be great to get CADs going and send on to the team at JC for costing and sampling.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div><a href=\"mailto:Paul.gerrard@harbouroutdoor.com\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"mailto:paul.gerrard@harbouroutdoor.com\" style=\"color:rgb(104,136,201)\">@Paul Gerrard</a>&nbsp;I can add to Teams as well... do you think we ought to create a Vietnam channel for these developments?&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank you!</div>\n\n<div>&nbsp;</div>\n\n<div>\n<div>\n<div>\n<div><span><b>Sarah Greshowak</b></span></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"5558b766-afe1-4b16-ab98-a9828df89b9e\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "5558b766-afe1-4b16-ab98-a9828df89b9e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Ava Collection .pdf",
+        "content": null,
+        "name": "Ava Collection .pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615236511675",
+    "replyToId": null,
+    "etag": "1615236511675",
+    "messageType": "message",
+    "createdDateTime": "2021-03-08T20:48:31.675Z",
+    "lastModifiedDateTime": "2021-03-08T20:48:31.675Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Charles Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1615236511675?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615236511675&parentMessageId=1615236511675",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "6a6ced06-e23f-4797-8f3f-9d6a6248cb81",
+        "displayName": "Sarah Greshowak",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hello- Here is another new collection which we thought would be good in Vietnam- the Charles Collection. It has a rounded shape, bleached oak case, honed carrera marble top, and white bronze handles. Could you please share the specs for this with Jonathan Charles? Thank you! <at id=\"0\">Paul Gerrard</at>&nbsp;<at id=\"1\">Emily Choi</at></div>\n\n\n</div><attachment id=\"f2446f5f-eb42-41d3-b407-f9dfa8dd699c\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "f2446f5f-eb42-41d3-b407-f9dfa8dd699c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/CHARLES COLLECTION SPECS .pdf",
+        "content": null,
+        "name": "CHARLES COLLECTION SPECS .pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Emily Choi",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+            "displayName": "Emily Choi",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1615236740132",
+    "replyToId": null,
+    "etag": "1615236740132",
+    "messageType": "message",
+    "createdDateTime": "2021-03-08T20:52:20.132Z",
+    "lastModifiedDateTime": "2021-03-08T20:52:20.132Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Bella Collection",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1615236740132?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615236740132&parentMessageId=1615236740132",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "6a6ced06-e23f-4797-8f3f-9d6a6248cb81",
+        "displayName": "Sarah Greshowak",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>Hello- Here are the specs for the Bella Collection- which is a wood collection (oak) in a Brown finish and the collection has a chamfered edge detail along the top surfaces. Could be a good one to try in Vietnam. Thank you! <at id=\"0\">Paul Gerrard</at>&nbsp;<at id=\"1\">Emily Choi</at></div>\n</div><attachment id=\"b727f22a-2224-4266-9e4c-a1c23f85e541\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "b727f22a-2224-4266-9e4c-a1c23f85e541",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Bella Collection.pdf",
+        "content": null,
+        "name": "Bella Collection.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [
+      {
+        "id": 0,
+        "mentionText": "Paul Gerrard",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+            "displayName": "Paul Gerrard",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "mentionText": "Emily Choi",
+        "mentioned": {
+          "application": null,
+          "device": null,
+          "conversation": null,
+          "tag": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+            "displayName": "Emily Choi",
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    ],
+    "reactions": []
+  },
+  {
+    "id": "1615276448583",
+    "replyToId": null,
+    "etag": "1615276448583",
+    "messageType": "message",
+    "createdDateTime": "2021-03-09T07:54:08.583Z",
+    "lastModifiedDateTime": "2021-03-09T07:54:08.583Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Jonathan Charles - Collections",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1615276448583?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615276448583&parentMessageId=1615276448583",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\"><span style=\"font-size:small\">Hello Paul-&nbsp;</span>\n<div>&nbsp;</div>\n\n<div>As discussed on our call this evening, here are specs for the following&nbsp;collections&nbsp;to share with Jonathan Charles and get their feedback-</div>\n\n<div>&nbsp;</div>\n\n<div>Taverna</div>\n\n<div>Charles</div>\n\n<div>Bella</div>\n\n<div>Ava</div>\n\n<div>&nbsp;</div>\n\n<div>If we need more detailed CADs we will need to do those yet internally but you could share these specs with them if they have an internal CAD person there.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank you!</div>\n\n<div>&nbsp;</div>\n\n<div>\n<div>\n<div>\n<div>\n<div><span><b>Sarah Greshowak</b></span></div>\n\n<div><span>Senior Designer</span>\n\n<div><span><img height=\"250\" src=\"https://graph.microsoft.com/v1.0/teams/570cfa6a-8cc0-44b9-9059-e427f8c7afc2/channels/19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2/messages/1615276448583/hostedContents/aWQ9eF8wLWVhLWQ3LTg5YjNiYTRhYWI0ZmE5MjhkMzEwNjQ5YWFhYmMzNjFlLHR5cGU9MSx1cmw9aHR0cHM6Ly9hcy1hcGkuYXNtLnNreXBlLmNvbS92MS9vYmplY3RzLzAtZWEtZDctODliM2JhNGFhYjRmYTkyOGQzMTA2NDlhYWFiYzM2MWUvdmlld3MvaW1nbw==/$value\" width=\"386.3636363636364\" style=\"vertical-align:bottom; width:386px; height:250px\"></span>\n\n<div>&nbsp;</div>\n</div>\n<span></span></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"8610db06-4271-4be5-a8bf-70aabd0cbeea\"></attachment><attachment id=\"1fb8ce63-9203-490e-add7-60a8d22e59a8\"></attachment><attachment id=\"e3078c2f-ec7d-4f24-873b-5f4af15d9a5e\"></attachment><attachment id=\"b727f22a-2224-4266-9e4c-a1c23f85e541\"></attachment><attachment id=\"f2446f5f-eb42-41d3-b407-f9dfa8dd699c\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "8610db06-4271-4be5-a8bf-70aabd0cbeea",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/AVA COLLECTION SPECS.pdf",
+        "content": null,
+        "name": "AVA COLLECTION SPECS.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "1fb8ce63-9203-490e-add7-60a8d22e59a8",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Harbour Collections - Jonathan Charles.pdf",
+        "content": null,
+        "name": "Harbour Collections - Jonathan Charles.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "e3078c2f-ec7d-4f24-873b-5f4af15d9a5e",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/TAVERNA COLLECTION SPECS.pdf",
+        "content": null,
+        "name": "TAVERNA COLLECTION SPECS.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "b727f22a-2224-4266-9e4c-a1c23f85e541",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Bella Collection.pdf",
+        "content": null,
+        "name": "Bella Collection.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "f2446f5f-eb42-41d3-b407-f9dfa8dd699c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/CHARLES COLLECTION SPECS .pdf",
+        "content": null,
+        "name": "CHARLES COLLECTION SPECS .pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1615773336101",
+    "replyToId": null,
+    "etag": "1615773336101",
+    "messageType": "message",
+    "createdDateTime": "2021-03-15T01:55:36.101Z",
+    "lastModifiedDateTime": "2021-03-15T01:55:36.101Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UBUD Collection - Packet to share with JC",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1615773336101?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1615773336101&parentMessageId=1615773336101",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n<div>Hello Harrison-&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>See attached PDF for Ubud collection references to share with Jonathan Charles. PDF includes material reference images, sample of renderings, SKU types, and a handful of CADS to share some of the details of the collection and gauge his interest.&nbsp;</div>\n\n<div>&nbsp;</div>\n\n<div>Thank&nbsp;you!</div>\n&nbsp;\n\n<div>\n<div>\n<div>\n<div><span><b>Sarah Greshowak</b></span></div>\n\n<div><span>Senior Designer</span></div>\n</div>\n</div>\n</div>\n</div>\n</div><attachment id=\"dd6f960a-a2c0-4750-a3ee-84920ead61a8\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "dd6f960a-a2c0-4750-a3ee-84920ead61a8",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/UBUD COLLECTION PRESENTATION.pdf",
+        "content": null,
+        "name": "UBUD COLLECTION PRESENTATION.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1620007105469",
+    "replyToId": null,
+    "etag": "1620007105469",
+    "messageType": "message",
+    "createdDateTime": "2021-05-03T01:58:25.469Z",
+    "lastModifiedDateTime": "2021-05-03T01:58:25.469Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "Baby and Child",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1620007105469?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1620007105469&parentMessageId=1620007105469",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"619ca8b1-b3ef-4afa-8d12-9812e0cd6156\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "619ca8b1-b3ef-4afa-8d12-9812e0cd6156",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/DAVOS BCT TRACKER 20210430.xlsx",
+        "content": null,
+        "name": "DAVOS BCT TRACKER 20210430.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1621492711804",
+    "replyToId": null,
+    "etag": "1621492711804",
+    "messageType": "message",
+    "createdDateTime": "2021-05-20T06:38:31.804Z",
+    "lastModifiedDateTime": "2021-05-20T06:38:31.804Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "LODESTAR - DAVOS PRICING",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1621492711804?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1621492711804&parentMessageId=1621492711804",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"0118c257-89a9-4945-bbeb-6fe0d7c7d727\"></attachment><attachment id=\"6803af61-7328-410e-9fb7-8ffc433bd13a\"></attachment><attachment id=\"4a873aaa-5292-4eef-a5ae-4143847a4c13\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "0118c257-89a9-4945-bbeb-6fe0d7c7d727",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Cost Sheet for Davos BCT.pdf",
+        "content": null,
+        "name": "Cost Sheet for Davos BCT.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "6803af61-7328-410e-9fb7-8ffc433bd13a",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Cost Sheet for Davos main brand.pdf",
+        "content": null,
+        "name": "Cost Sheet for Davos main brand.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "4a873aaa-5292-4eef-a5ae-4143847a4c13",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Harbour DAVOS Bedroom Resource Tracker 20210520.xlsx",
+        "content": null,
+        "name": "Harbour DAVOS Bedroom Resource Tracker 20210520.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1639577522127",
+    "replyToId": null,
+    "etag": "1639577522127",
+    "messageType": "message",
+    "createdDateTime": "2021-12-15T14:12:02.127Z",
+    "lastModifiedDateTime": "2021-12-15T14:12:02.127Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "ORGANIC COLLECTION",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1639577522127?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1639577522127&parentMessageId=1639577522127",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">Grids for new collection\n\n<div style=\"font-size:small\">Models:</div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.box.com/s/71t13jcr8f1o8a1fxvhrn8yaojm79y3j\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.box.com/s/71t13jcr8f1o8a1fxvhrn8yaojm79y3j\">Wing here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.app.box.com/folder/151952281514\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.app.box.com/folder/151952281514\">Solid here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.app.box.com/folder/151952226146\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.app.box.com/folder/151952226146\">Open here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.app.box.com/folder/151951259316\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.app.box.com/folder/151951259316\">Plinth Solid here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.box.com/s/obrvvtvffknsi12znm9h26xe5kh5qigq\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.box.com/s/obrvvtvffknsi12znm9h26xe5kh5qigq\">Plinth Open here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.box.com/s/9z24m0u16dd2yhmktm93mg8u2hjmufzn\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.box.com/s/9z24m0u16dd2yhmktm93mg8u2hjmufzn\">Cylinder here</a></div>\n\n\n<div style=\"font-size:small\"><a href=\"https://restorationhardware.box.com/s/dromu076qpfebl3vvpkumgf4danb18m2\" rel=\"noreferrer noopener\" target=\"_blank\" title=\"https://restorationhardware.box.com/s/dromu076qpfebl3vvpkumgf4danb18m2\">Case here</a></div>\n</div>\n</div><attachment id=\"93b1e0de-6702-46f9-a40b-5752529f6539\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "93b1e0de-6702-46f9-a40b-5752529f6539",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Organic_12.10.pdf",
+        "content": null,
+        "name": "Organic_12.10.pdf",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1642218635491",
+    "replyToId": null,
+    "etag": "1773631877404",
+    "messageType": "message",
+    "createdDateTime": "2022-01-15T03:50:35.491Z",
+    "lastModifiedDateTime": "2026-03-16T03:31:17.404Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "UBUD",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A68a5eb17d9fd437bbe1c1e63e6040365%40thread.tacv2/1642218635491?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1642218635491&parentMessageId=1642218635491",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div><div>PRODUCT TO BE PRODUCED IN VN</div>\n\n<div>&nbsp;</div>\n\n\n<ul>\n\n\t\n<li>KA samples will be shipped to VN&nbsp;</li>\n</ul>\n\n</div><attachment id=\"4989efe9-afe9-482a-9ae3-64d2b5ec3de3\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "4989efe9-afe9-482a-9ae3-64d2b5ec3de3",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/INDOOR PD (VIETNAM)/Updated Ubud NIS 3.29 - 5.3.21.xlsx",
+        "content": null,
+        "name": "Updated Ubud NIS 3.29 - 5.3.21.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

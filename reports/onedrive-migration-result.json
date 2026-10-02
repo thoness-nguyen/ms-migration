@@ -1,7 +1,7 @@
 {
   "migration_id": "onedrive-pilot-001",
   "area": "onedrive",
-  "generated_at": "2026-09-16T08:35:09.249501+00:00",
+  "generated_at": "2026-09-20T05:22:15.143742+00:00",
   "dry_run": false,
   "results": [
     {
@@ -429,7 +429,7 @@
       "user": "toan",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/d24c753e-be1a-4afb-9423-8d6f77b79c76/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/d24c753e-be1a-4afb-9423-8d6f77b79c76/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:21:08\",\"request-id\":\"7dfb1da9-a58d-4072-950b-4e5b00240e4a\",\"client-request-id\":\"7dfb1da9-a58d-4072-950b-4e5b00240e4a\"}}}",
       "stats": {},
       "retry_count": 2
     },
@@ -457,12 +457,9 @@
     {
       "workload": "onedrive",
       "user": "travis",
-      "status": "completed",
+      "status": "skipped",
       "items": 0,
-      "stats": {
-        "files_copied": 0
-      },
-      "retry_count": 1
+      "reason": "already completed"
     },
     {
       "workload": "onedrive",
@@ -476,7 +473,7 @@
       "user": "uyen",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/ea2bbfca-95e9-4b0b-8ec1-57527e8355eb/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/ea2bbfca-95e9-4b0b-8ec1-57527e8355eb/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:21:41\",\"request-id\":\"dbce26e4-445c-453b-a60b-dd1eb38bedb9\",\"client-request-id\":\"dbce26e4-445c-453b-a60b-dd1eb38bedb9\"}}}",
       "stats": {},
       "retry_count": 2
     },
@@ -513,7 +510,7 @@
       "user": "yen",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/c194948e-3e13-4f8e-b070-343c47dcda7c/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"inner",
+      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/c194948e-3e13-4f8e-b070-343c47dcda7c/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:22:13\",\"request-id\":\"7a04cf22-7c4b-400f-9622-803ca78d6304\",\"client-request-id\":\"7a04cf22-7c4b-400f-9622-803ca78d6304\"}}}",
       "stats": {},
       "retry_count": 2
     },

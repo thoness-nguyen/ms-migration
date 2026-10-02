@@ -39,6 +39,7 @@ def main() -> int:
     batch.add_argument("--report-dir", type=Path, default=Path("reports"), help="Directory to write <area>-migration-result.json reports into")
     batch.add_argument("--area", choices=["sharepoint", "onedrive", "teams"], help="Restrict the run to a single migration area (omit to run every area defined in the config)")
     batch.add_argument("--retry-failed-only", action="store_true", help="Skip the full folder-tree walk on libraries/drives that already have a checkpoint and only re-attempt items previously marked failed (SharePoint + OneDrive)")
+    batch.add_argument("--teams-scope", choices=["chats", "channels", "both"], default="both", help="Restrict the 'teams' area to just chats, just channels, or both (default)")
     validate = sub.add_parser("validate", help="Post-migration integrity check (size/hash for onedrive, message+member counts for teams) - a separate pass from 'batch'")
     validate.add_argument("--config", type=Path, required=True, help="YAML or JSON batch plan (same file used for 'batch')")
     validate.add_argument("--area", choices=["onedrive", "teams"], required=True)
@@ -72,7 +73,7 @@ def main() -> int:
             target_client = GraphClient(target_token())
             areas = [args.area] if args.area else ["sharepoint", "onedrive", "teams"]
             states = {a: area_state(a) for a in areas}
-            report = run_batch(source_client, target_client, plan, args.config.parent, states, args.report_dir, args.dry_run, args.retry_failed_only, args.area)
+            report = run_batch(source_client, target_client, plan, args.config.parent, states, args.report_dir, args.dry_run, args.retry_failed_only, args.area, args.teams_scope)
             count = sum(len(area_report.get("results", [])) for area_report in report["areas"].values())
         elif args.command == "validate":
             plan = load_plan(args.config)

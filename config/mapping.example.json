@@ -1,19 +1,131 @@
 [
     {
+        "key": "angel",
+        "display_name": "Angel Wong",
+        "source_upn": "angel@harbouroutdoor.com",
+        "target_upn": "angel_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "target_id": "d820e199-d352-489f-8ed0-1a8e2898c25e"
+    },
+    {
+        "key": "bindy",
+        "display_name": "bindy",
+        "source_upn": "bindy@harbouroutdoor.com",
+        "target_upn": "bindy_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "4fbd7276-3fa6-4a8a-8773-61435edd857e",
+        "target_id": "caed2fda-4aa7-46b0-b9e7-3590347ada24"
+    },
+    {
+        "key": "cami",
+        "display_name": "cami",
+        "source_upn": "cami@harbouroutdoor.com",
+        "target_upn": "cami_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "7e34fd3c-84bf-482f-bfed-0e90298960d9",
+        "target_id": "bee4b929-4e66-4abd-9020-7bd54af4a675"
+    },
+    {
+        "key": "cecilia",
+        "display_name": "Cecilia Lee",
+        "source_upn": "cecilia@harbouroutdoor.com",
+        "target_upn": "cecilia_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "e5643974-5571-4d22-85c8-c895d37d11de",
+        "target_id": "b57be904-907d-4d75-a800-37c2161dab51"
+    },
+    {
+        "key": "dian",
+        "display_name": "Dian Darmono",
+        "source_upn": "dian_harbouroutdoor.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "ddarmono@paizes.com",
+        "source_id": "1f9bde68-59e3-4e1c-be03-4a3a3fc7de73",
+        "target_id": "d37d0018-33d8-4798-88b2-b4f687486ad5"
+    },
+    {
+        "key": "doris.xu",
+        "display_name": "Doris Xu",
+        "source_upn": "doris-xu_aomeifurniture.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "doris@paizes.com",
+        "source_id": "a34fe315-313e-45de-bb6b-e63858da803e",
+        "target_id": "9513e9a7-d6b2-4815-9416-5b6aa53a39d3"
+    },
+    {
+        "key": "jessica",
+        "display_name": "jessica",
+        "source_upn": "jessica@harbouroutdoor.com",
+        "target_upn": "jessica_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "cb320a36-9905-4e62-8573-e8b711feac38",
+        "target_id": "a8e24162-fe5a-484e-884b-e764a2c232be"
+    },
+    {
+        "key": "julia",
+        "display_name": "julia",
+        "source_upn": "julia@harbouroutdoor.com",
+        "target_upn": "julia_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "addac81a-0ebc-409b-a0ad-0f8b88b62d94",
+        "target_id": "f2b99a21-dc54-42b1-9db7-c126807f5a85"
+    },
+    {
+        "key": "kaitlin",
+        "display_name": "kaitlin",
+        "source_upn": "kaitlin@harbouroutdoor.com",
+        "target_upn": "kaitlin_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "0d7c9c0d-04d8-49af-97be-7e8592d021ba",
+        "target_id": "0ad4a85a-672d-4f30-b70c-0a3a62d39e4f"
+    },
+    {
+        "key": "Katherine",
+        "display_name": "katherine",
+        "source_upn": "Katherine@harbouroutdoor.com",
+        "target_upn": "katherine_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "2bc95fc7-a090-465b-933d-54e58e599358",
+        "target_id": "822bae7c-8b81-4993-be96-5c972dc43fb8"
+    },
+    {
+        "key": "kevinc",
+        "display_name": "kevinc",
+        "source_upn": "kevinc@harbouroutdoor.com",
+        "target_upn": "kevinc_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "b00aa0d7-5df9-4b82-b29f-d09346224496",
+        "target_id": "ca112d40-dc58-46f1-be57-f0e205a3cb2d"
+    },
+    {
+        "key": "Laura",
+        "display_name": "laura",
+        "source_upn": "Laura@harbouroutdoor.com",
+        "target_upn": "laura_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "d543eea2-2279-4978-992f-92dd1e293e89",
+        "target_id": "7754268b-a72f-4055-8bd5-02d6cbd22ea3"
+    },
+    {
+        "key": "pj",
+        "display_name": "pj",
+        "source_upn": "pj@harbouroutdoor.com",
+        "target_upn": "pj_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "94e28736-d926-4704-90d1-3115e15b7db8",
+        "target_id": "39251a06-dd26-47fc-8b15-7eaed8cb0855"
+    },
+    {
+        "key": "wendy",
+        "display_name": "wendy",
+        "source_upn": "wendy@harbouroutdoor.com",
+        "target_upn": "wendy_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "6e1f45fa-d109-47ed-91f4-b2f0be81a670",
+        "target_id": "b45a714a-e40c-4287-8a59-8dfe0c85b5ca"
+    },
+    {
+        "key": "yoko",
+        "display_name": "Yoko Sasaki",
+        "source_upn": "yoko@harbouroutdoor.com",
+        "target_upn": "yoko@paizes.com",
+        "source_id": "9bd34bd2-9e3a-4c7e-ad1e-ea2807b455f0",
+        "target_id": "201ed0eb-ace3-4ad5-bbad-f28aee42b77a"
+    },
+    {
         "key": "andrew",
         "display_name": "Andrew Schoonewagen",
         "source_upn": "andrew@harbouroutdoor.com",
         "target_upn": "andrew@paizes.com",
         "source_id": "14f67cc9-a31f-4e00-8885-5a43a822e8df",
         "target_id": "3342f354-9a26-49a4-a49f-7448f046e4b1"
-    },
-    {
-        "key": "angel",
-        "display_name": "Angel Wong",
-        "source_upn": "angel@harbouroutdoor.com",
-        "target_upn": "angel@paizesoffice.onmicrosoft.com",
-        "source_id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
-        "target_id": "71ab8aa3-c604-41cb-a658-62b4251ed56a"
     },
     {
         "key": "anh",
@@ -43,17 +155,17 @@
         "key": "anthony",
         "display_name": "Anthony Beran",
         "source_upn": "anthony@harbouroutdoor.com",
-        "target_upn": "anthony@paizes.com",
+        "target_upn": "Anthony@paizes.com",
         "source_id": "f9feb8b8-26dc-41ad-9972-e5cad130422a",
         "target_id": "26d33db0-aea4-4d7f-aa61-9837b9647d8b"
     },
     {
-        "key": "cecilia",
-        "display_name": "Cecilia Lee",
-        "source_upn": "cecilia@harbouroutdoor.com",
-        "target_upn": "cecilia@paizesoffice.onmicrosoft.com",
-        "source_id": "e5643974-5571-4d22-85c8-c895d37d11de",
-        "target_id": "c1cfc006-0c43-4fee-8c48-4e38a4956552"
+        "key": "bosco",
+        "display_name": "Bosco Mai",
+        "source_upn": "bosco_harbouroutdoor.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "bosco@paizesoffice.onmicrosoft.com",
+        "source_id": "f55349c7-7291-4689-89d0-005b51af906b",
+        "target_id": "c8923019-6bd8-494b-8de4-672f6fdec192"
     },
     {
         "key": "chinh",
@@ -107,7 +219,7 @@
         "key": "dung.nguyen",
         "display_name": "Dung Nguyen",
         "source_upn": "dung.nguyen@harbouroutdoor.com",
-        "target_upn": "dung.nguyen@paizes.com",
+        "target_upn": "dung@paizes.com",
         "source_id": "9863b4dd-8086-4b2b-8d19-9064186aa653",
         "target_id": "5b25cb69-5efe-423d-9a9e-bbbb9bf212fa"
     },
@@ -179,7 +291,7 @@
         "key": "hoaianh",
         "display_name": "Hoai Anh",
         "source_upn": "hoaianh@harbouroutdoor.com",
-        "target_upn": "hoaianh@paizes.com",
+        "target_upn": "anh.vu@paizes.com",
         "source_id": "a138dfd6-0569-4c91-938b-d3ed732ed45a",
         "target_id": "dcbcba0d-fa6b-4a04-82ae-91b1cdcf412f"
     },
@@ -195,7 +307,7 @@
         "key": "hongan",
         "display_name": "Vu Hong An",
         "source_upn": "hongan@harbouroutdoor.com",
-        "target_upn": "hongan@paizes.com",
+        "target_upn": "an.vu@paizes.com",
         "source_id": "ce74576f-a3eb-4c44-9a8c-030732ec28fc",
         "target_id": "6e6c81ab-9c58-4959-9c69-73e832ec9055"
     },
@@ -211,7 +323,7 @@
         "key": "hung",
         "display_name": "Hung",
         "source_upn": "hung@harbouroutdoor.com",
-        "target_upn": "hung@paizes.com",
+        "target_upn": "hunghuynh@paizes.com",
         "source_id": "7035f79d-896a-4b28-9d7c-746f2002665b",
         "target_id": "68e179db-7184-4870-aa67-7c5221f13699"
     },
@@ -240,6 +352,22 @@
         "target_id": "58b033f6-588f-42ca-aa13-5510c332a8d7"
     },
     {
+        "key": "jason-ye",
+        "display_name": "Jason Ye",
+        "source_upn": "jason-ye_aomeifurniture.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "jason-ye_aomeifurniture.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "b3260c73-e24c-4bc2-b8fb-a9a285a3b79f",
+        "target_id": "b835bab4-361a-4ab6-a212-f253fed8186b"
+    },
+    {
+        "key": "jacobg",
+        "display_name": "Jacob Greenberg",
+        "source_upn": "jacobg@harbouroutdoor.com",
+        "target_upn": "jacobg@paizes.com",
+        "source_id": "99bbbd8f-89a2-4f9f-a01c-4deb7883622e",
+        "target_id": "e9efc57b-a4a5-4ab2-a8ff-5be4cf71bf53"
+    },
+    {
         "key": "kevin",
         "display_name": "Kevin Vu",
         "source_upn": "kevin@harbouroutdoor.com",
@@ -248,18 +376,10 @@
         "target_id": "68e91f0c-964d-4203-9c62-bdc5cedf9132"
     },
     {
-        "key": "kevinc",
-        "display_name": "Kevin Cyferman",
-        "source_upn": "kevinc@harbouroutdoor.com",
-        "target_upn": "kevinc@paizes.com",
-        "source_id": "b00aa0d7-5df9-4b82-b29f-d09346224496",
-        "target_id": "5aded254-f6cc-490d-8213-adfb28a64aea"
-    },
-    {
         "key": "khanhha",
         "display_name": "Khánh Hà Vũ",
         "source_upn": "khanhha@harbouroutdoor.com",
-        "target_upn": "khanhha@paizes.com",
+        "target_upn": "ha.vu@paizes.com",
         "source_id": "aea0570c-897a-4ed4-9938-2c4917b420fd",
         "target_id": "c46438d1-5cb8-4f2b-824b-bb42138ea4ef"
     },
@@ -280,6 +400,14 @@
         "target_id": "0fbe54e3-9b14-42d7-acb8-6714e889e672"
     },
     {
+        "key": "miffy",
+        "display_name": "Miffy",
+        "source_upn": "miffy_harbour1976.com.cn#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "miffy@paizesoffice.onmicrosoft.com",
+        "source_id": "21848f78-9800-4881-bfc9-5d4285cd657e",
+        "target_id": "6d08e8be-2a3f-4b3b-9381-a70aae6e65e0"
+    },
+    {
         "key": "ngoc",
         "display_name": "Thị Ngọc Phan",
         "source_upn": "ngoc@harbouroutdoor.com",
@@ -291,7 +419,7 @@
         "key": "nguyen",
         "display_name": "Nguyen Pham",
         "source_upn": "nguyen@harbouroutdoor.com",
-        "target_upn": "nguyen@paizesoffice.onmicrosoft.com",
+        "target_upn": "Nguyen@paizesoffice.onmicrosoft.com",
         "source_id": "57018891-95a3-42ce-9fe6-080311fd42eb",
         "target_id": "3a2c1020-6c80-40e7-811b-8f8e3256cd71"
     },
@@ -315,7 +443,7 @@
         "key": "nhuy",
         "display_name": "Nhu Y",
         "source_upn": "nhuy@harbouroutdoor.com",
-        "target_upn": "nhuy@paizes.com",
+        "target_upn": "y.tran@paizes.com",
         "source_id": "d390f8b6-2211-40c9-a612-d1c37c31946d",
         "target_id": "8d194ed0-3a17-4951-8abe-a3a6a8830856"
     },
@@ -339,7 +467,7 @@
         "key": "patryc",
         "display_name": "Pat",
         "source_upn": "patryc@harbouroutdoor.com",
-        "target_upn": "patryc@paizesoffice.onmicrosoft.com",
+        "target_upn": "Patryc@paizesoffice.onmicrosoft.com",
         "source_id": "0c228bd5-8cc7-4334-b18f-56417037231b",
         "target_id": "a7e7768f-fce5-4133-8866-f0495ff1c7c0"
     },
@@ -355,7 +483,7 @@
         "key": "phuongchi",
         "display_name": "Phuong Chi",
         "source_upn": "phuongchi@harbouroutdoor.com",
-        "target_upn": "phuongchi@paizes.com",
+        "target_upn": "chi.nguyen@paizes.com",
         "source_id": "17251d35-e93a-417d-aa34-749933db1a74",
         "target_id": "10a41be5-aa1c-495a-9e68-e81ea367bdfd"
     },
@@ -387,7 +515,7 @@
         "key": "sana",
         "display_name": "sana@harbouroutdoor.com",
         "source_upn": "sana@harbouroutdoor.com",
-        "target_upn": "sana@paizesoffice.onmicrosoft.com",
+        "target_upn": "Sana@paizesoffice.onmicrosoft.com",
         "source_id": "58ca459e-bc92-418f-bb81-7b0f56b8d848",
         "target_id": "64d9ddf0-c8a3-490e-adcf-ab8b716bcb9e"
     },
@@ -424,6 +552,14 @@
         "target_id": "c3fa963b-efbc-407d-a9a9-927a68844fd2"
     },
     {
+        "key": "swallow.zhao",
+        "display_name": "Swallow Zhao",
+        "source_upn": "swallow-zhao_aomeifurniture.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "swallow.zhao@paizesoffice.onmicrosoft.com",
+        "source_id": "f4c50254-cafe-460c-936f-ae590e324265",
+        "target_id": "92cea426-ba68-42a7-8818-0866a68adf7f"
+    },
+    {
         "key": "tam",
         "display_name": "Mr. Tam",
         "source_upn": "tam@harbouroutdoor.com",
@@ -443,7 +579,7 @@
         "key": "thohuong",
         "display_name": "Thọ Hưởng Tống",
         "source_upn": "thohuong@harbouroutdoor.com",
-        "target_upn": "thohuong@paizes.com",
+        "target_upn": "huong.tong@paizes.com",
         "source_id": "efdd5e21-2d78-4d40-8c44-dbbea8683016",
         "target_id": "31b6d76a-365a-418a-b8c3-a1da4e64d5cf"
     },
@@ -459,7 +595,7 @@
         "key": "thuy",
         "display_name": "Thuy Mai Diem",
         "source_upn": "thuy@harbouroutdoor.com",
-        "target_upn": "thuy@paizes.com",
+        "target_upn": "Thuy@paizes.com",
         "source_id": "2afc4a07-758d-4670-88d0-34fb5734871a",
         "target_id": "c89a5809-ce1d-472f-9bec-81465d7393ea"
     },
@@ -515,7 +651,7 @@
         "key": "travis",
         "display_name": "Travis",
         "source_upn": "travis@harbouroutdoor.com",
-        "target_upn": "travis@paizesoffice.onmicrosoft.com",
+        "target_upn": "Travis@paizesoffice.onmicrosoft.com",
         "source_id": "d9760a17-1602-4813-a066-ade6443e4c27",
         "target_id": "050bf40e-dcd1-4234-8271-ef3ca9906cef"
     },
@@ -547,7 +683,7 @@
         "key": "vanlanh",
         "display_name": "Văn Lành Phan",
         "source_upn": "vanlanh@harbouroutdoor.com",
-        "target_upn": "vanlanh@paizes.com",
+        "target_upn": "lanh.phan@paizes.com",
         "source_id": "84e4168b-4ea9-44ec-b806-abec2eeda099",
         "target_id": "860e535e-9324-44b7-92c9-cc9eb416b6fd"
     },
@@ -606,5 +742,13 @@
         "target_upn": "trinh@paizes.com",
         "source_id": "900a6bec-7ece-4590-a867-c73cee95aeab",
         "target_id": "b7bf45e2-63e7-477b-9114-ff017414a2f3"
+    },
+    {
+        "key": "yansen",
+        "display_name": "Yansen",
+        "source_upn": "yansen_harbouroutdoor.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "yansen@paizes.com",
+        "source_id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
+        "target_id": "ce15d39c-4b9a-4dbb-ad15-c638dafeaf4f"
     }
 ]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1627607843036",
+    "replyToId": null,
+    "etag": "1627607887280",
+    "messageType": "message",
+    "createdDateTime": "2021-07-30T01:17:23.036Z",
+    "lastModifiedDateTime": "2021-07-30T01:18:07.28Z",
+    "lastEditedDateTime": "2021-07-30T01:18:07.28Z",
+    "deletedDateTime": null,
+    "subject": "TEAK DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A5b5994750df149b08dc54babe00ac783%40thread.tacv2/1627607843036?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627607843036&parentMessageId=1627607843036",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "."
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:5b5994750df149b08dc54babe00ac783@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1627607859899",
+    "replyToId": null,
+    "etag": "1627607882473",
+    "messageType": "message",
+    "createdDateTime": "2021-07-30T01:17:39.899Z",
+    "lastModifiedDateTime": "2021-07-30T01:18:02.473Z",
+    "lastEditedDateTime": "2021-07-30T01:18:02.473Z",
+    "deletedDateTime": null,
+    "subject": "ALU DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A5b5994750df149b08dc54babe00ac783%40thread.tacv2/1627607859899?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627607859899&parentMessageId=1627607859899",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "."
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:5b5994750df149b08dc54babe00ac783@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1627607876535",
+    "replyToId": null,
+    "etag": "1627607876535",
+    "messageType": "message",
+    "createdDateTime": "2021-07-30T01:17:56.535Z",
+    "lastModifiedDateTime": "2021-07-30T01:17:56.535Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "INDOOR DWG",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3A5b5994750df149b08dc54babe00ac783%40thread.tacv2/1627607876535?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1627607876535&parentMessageId=1627607876535",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "."
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:5b5994750df149b08dc54babe00ac783@thread.tacv2"
+    },
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  }
+]

@@ -1,12 +1,3 @@
-# Standalone plan consumed directly via --config (migration-panel / CLI batch).
-# This file has no top-level "users" mapping, so batch.load_plan() does NOT
-# run hierarchical key resolution on it - but chats/channels still auto-resolve
-# member and message-sender identities from `user_mapping` below (source_id ->
-# target_id), so chats only need a source_chat_id. Members/senders with no
-# target_id (source tenant has more users than target) are skipped gracefully
-# instead of failing the migration; channels can keep their explicit ids as-is.
-user_mapping: mapping.example.json
-
 chats:
   - name: chat-001
     source_chat_id: 19:baf3fcdb-8883-43a8-a38f-f6b011ef8607_e5643974-5571-4d22-85c8-c895d37d11de@unq.gbl.spaces
@@ -6644,19 +6635,3 @@ chats:
     source_chat_id: 19:meeting_YmFhN2E2ODgtODA4MS00NTc2LTk1N2EtZWU1OTY1Y2MyZmZl@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-
-workloads:
-  teams:
-    site_map:
-      - source_site_url: "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD"
-        target_site_id: "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
-    channels:
-      - name: General
-        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
-        source_channel_id: 19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2
-        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
-        target_channel_id: 19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2
-        messages: ../data/teams/harbour-pd-work-flow-general.messages.json
-        sync_new_messages: true
-        include_unmapped_senders: true
-

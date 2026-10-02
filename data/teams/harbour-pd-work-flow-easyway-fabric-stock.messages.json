@@ -1,0 +1,152 @@
+[
+  {
+    "id": "1607917095652",
+    "replyToId": null,
+    "etag": "1607994970697",
+    "messageType": "message",
+    "createdDateTime": "2020-12-14T03:38:15.652Z",
+    "lastModifiedDateTime": "2020-12-15T01:16:10.697Z",
+    "lastEditedDateTime": "2020-12-15T01:16:10.697Z",
+    "deletedDateTime": null,
+    "subject": "INVENTORY LEVELS AS OF DEC 12th 2020",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aacf4722e7eb34daea47e44565576a28f%40thread.tacv2/1607917095652?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1607917095652&parentMessageId=1607917095652",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "will change daily<attachment id=\"9bfd9a15-fd94-4587-b1e0-5b97dcbb6841\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:acf4722e7eb34daea47e44565576a28f@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "9bfd9a15-fd94-4587-b1e0-5b97dcbb6841",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/EASYWAY FABRIC STOCK/Harbour Fabric Inventory 12.10.20.xlsx",
+        "content": null,
+        "name": "Harbour Fabric Inventory 12.10.20.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1613981647308",
+    "replyToId": null,
+    "etag": "1613981647308",
+    "messageType": "message",
+    "createdDateTime": "2021-02-22T08:14:07.308Z",
+    "lastModifiedDateTime": "2021-02-22T08:14:07.308Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "INVENTORY LEVELS AS OF FEB 8th 2020",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aacf4722e7eb34daea47e44565576a28f%40thread.tacv2/1613981647308?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1613981647308&parentMessageId=1613981647308",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<div>\n<div itemprop=\"copy-paste-block\">\n\n<div style=\"font-size:14px\">will change daily</div>\n</div>\n</div><attachment id=\"ca9f5bd3-65ec-46c6-98c8-2f954c354f1c\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:acf4722e7eb34daea47e44565576a28f@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "ca9f5bd3-65ec-46c6-98c8-2f954c354f1c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/EASYWAY FABRIC STOCK/FabricReport_HF_2.9.21.xlsx",
+        "content": null,
+        "name": "FabricReport_HF_2.9.21.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  },
+  {
+    "id": "1614567978776",
+    "replyToId": null,
+    "etag": "1614567978776",
+    "messageType": "message",
+    "createdDateTime": "2021-03-01T03:06:18.776Z",
+    "lastModifiedDateTime": "2021-03-01T03:06:18.776Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "INVENTORY LEVELS AS OF Mar 1st 2021",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aacf4722e7eb34daea47e44565576a28f%40thread.tacv2/1614567978776?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614567978776&parentMessageId=1614567978776",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1",
+        "displayName": "Paul Gerrard",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"284025b2-1622-4c11-afb1-045589f42d5c\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:acf4722e7eb34daea47e44565576a28f@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "284025b2-1622-4c11-afb1-045589f42d5c",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/EASYWAY FABRIC STOCK/Harbour Fabric Inventory 2.26.21.xlsx",
+        "content": null,
+        "name": "Harbour Fabric Inventory 2.26.21.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]

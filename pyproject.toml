@@ -7,7 +7,12 @@ name = "migration-platform"
 version = "0.2.0"
 description = "In-house cross-domain Microsoft 365 migration platform (SharePoint, Teams, OneDrive)"
 requires-python = ">=3.11"
-dependencies = ["msal>=1.30", "requests>=2.32", "PyYAML>=6.0", "python-dotenv>=1.0"]
+dependencies = [
+    "msal>=1.30",
+    "requests>=2.32",
+    "PyYAML>=6.0",
+    "python-dotenv>=1.0",
+]
 
 [project.scripts]
 tenant-migrator = "migration.orchestration.cli:main"

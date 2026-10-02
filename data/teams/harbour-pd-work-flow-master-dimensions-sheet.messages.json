@@ -1,0 +1,61 @@
+[
+  {
+    "id": "1614582432560",
+    "replyToId": null,
+    "etag": "1614582432560",
+    "messageType": "message",
+    "createdDateTime": "2021-03-01T07:07:12.56Z",
+    "lastModifiedDateTime": "2021-03-01T07:07:12.56Z",
+    "lastEditedDateTime": null,
+    "deletedDateTime": null,
+    "subject": "ALUMINIUM (Aomei)/TEAK (INDO factories)  Master Dimensions sheet",
+    "summary": null,
+    "chatId": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "webUrl": "https://teams.microsoft.com/l/message/19%3Aab4c7f400df74b308fce1b8539329ca3%40thread.tacv2/1614582432560?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1614582432560&parentMessageId=1614582432560",
+    "policyViolation": null,
+    "eventDetail": null,
+    "from": {
+      "application": null,
+      "device": null,
+      "user": {
+        "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+        "id": "baf3fcdb-8883-43a8-a38f-f6b011ef8607",
+        "displayName": "Emily Choi",
+        "userIdentityType": "aadUser",
+        "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+      }
+    },
+    "body": {
+      "contentType": "text",
+      "content": "<attachment id=\"393357b3-cf49-4f7c-bc75-f6f199acf918\"></attachment><attachment id=\"92692b12-41ae-42a0-97f3-54f5da70b74f\"></attachment>"
+    },
+    "channelIdentity": {
+      "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+      "channelId": "19:ab4c7f400df74b308fce1b8539329ca3@thread.tacv2"
+    },
+    "attachments": [
+      {
+        "id": "393357b3-cf49-4f7c-bc75-f6f199acf918",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/Master Dimensions sheet/ALUMINIUM (Aomei)-HAR PRODUCT INFORMATION UPDATE LIST   2020.02.18.xlsx",
+        "content": null,
+        "name": "ALUMINIUM (Aomei)-HAR PRODUCT INFORMATION UPDATE LIST   2020.02.18.xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      },
+      {
+        "id": "92692b12-41ae-42a0-97f3-54f5da70b74f",
+        "contentType": "reference",
+        "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD/Shared Documents/Master Dimensions sheet/TEAK (INDO factories).xlsx",
+        "content": null,
+        "name": "TEAK (INDO factories).xlsx",
+        "thumbnailUrl": null,
+        "teamsAppId": null
+      }
+    ],
+    "mentions": [],
+    "reactions": []
+  }
+]
