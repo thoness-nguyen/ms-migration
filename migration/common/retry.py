@@ -21,12 +21,15 @@ def with_retry(
     max_retries: int = 3,
     backoff_base_seconds: int = 10,
     on_retry: Callable[[int, BaseException], None] | None = None,
+    is_permanent: Callable[[BaseException], bool] | None = None,
     **kwargs: Any,
 ) -> tuple[T | None, bool, BaseException | None, int]:
     """Call func(*args, **kwargs), retrying transient/per-item failures with backoff.
 
     Shared across every migration domain (SharePoint, Teams, OneDrive) so retry
     behavior stays consistent instead of being reimplemented per domain.
+    `is_permanent` (opt-in) stops immediately, without backoff, for errors that
+    retrying cannot fix.
 
     Returns (result, success, last_error, attempts_made). result is None when all attempts fail.
     """
@@ -42,5 +45,7 @@ def with_retry(
             last_error = error
             if on_retry:
                 on_retry(attempt, error)
+            if is_permanent is not None and is_permanent(error):
+                return None, False, error, attempt
             continue
     return None, False, last_error, max_retries

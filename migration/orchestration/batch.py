@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import yaml
 
 from ..common.checkpoint import StateStore
-from ..common.graph import GraphError
+from ..common.graph import GraphError, is_mysite_not_found
 from ..common.retry import with_retry
 from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure_user_drive
 from ..sharepoint.migration import copy_library
@@ -537,10 +537,39 @@ def _run_batch_channels(
     return results
 
 
-def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False) -> list[dict[str, Any]]:
+def _is_permanent_onedrive_error(error: BaseException) -> bool:
+    """Permanent: missing MySite or 400/403. Transient (429/5xx/network) is retried."""
+    if is_mysite_not_found(error):
+        return True
+    return isinstance(error, GraphError) and error.status_code in (400, 403)
+
+
+def _onedrive_incomplete_reason(
+    state: StateStore,
+    source_id: str,
+    user_key: str | None,
+    stats: dict[str, Any],
+    retry_failed_only: bool,
+) -> str | None:
+    """Return why a user cannot be marked completed, or None if truly complete."""
+    if retry_failed_only:
+        return "retry-only run cannot prove completeness; run a full pass"
+    if not stats.get("discovery_complete", False):
+        return "source tree not fully discovered"
+    if int(stats.get("failed", 0) or 0) > 0:
+        return f"{stats['failed']} item(s) failed in this run"
+    prefix = f"{source_id}:"
+    for status in ("failed", "pending"):
+        left = [i for i in state.list_ids("onedrive", status) if i.startswith(prefix)]
+        if left:
+            return f"{len(left)} item(s) still {status}"
+    return None
+
+
+def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False, verify_completed: bool = False) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
 
-    content_concurrency = _concurrency(plan, "onedrive", "content", default=4)
+    content_concurrency = _concurrency(plan, "onedrive", "content", default=6)
 
     onedrive_config = plan.get("workloads", {}).get("onedrive", {})
 
@@ -634,6 +663,14 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 results.append(result)
                 continue
 
+            # Target OneDrive must exist too; a permanent "mysite not found" is not retried.
+            if not dry_run and not ensure_user_drive(target_graph, target_id, side="target"):
+                reason = "target OneDrive not provisioned (User's mysite not found)"
+                result.update({"status": "skipped", "reason": reason, "items": 0})
+                state.mark("batch-onedrive", source_id, "skipped", target_id, detail=reason, user_key=user_key)
+                results.append(result)
+                continue
+
             # A completed batch can be skipped during a normal resume.
             # retry_failed_only intentionally bypasses this check.
             if (
@@ -652,8 +689,13 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
 
             if retry_failed_only:
                 call_args = (source_graph, target_graph, source_id, target_id, state)
+                extra_kwargs: dict[str, Any] = {}
             else:
                 call_args = (source_graph, target_graph, source_id, target_id, state, dry_run)
+                # verify_completed re-checks already-"completed" files against the
+                # target (size match) instead of trusting the checkpoint blindly -
+                # a one-time repair pass for rows left over from before this fix.
+                extra_kwargs = {"verify_completed": verify_completed}
 
             stats, success, last_error, attempts = with_retry(
                 copy_fn,
@@ -662,7 +704,9 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 user_key=user_key,
                 user_map=tenant_user_map,
                 migrate_permissions=migrate_permissions,
+                **extra_kwargs,
                 max_retries=3,
+                is_permanent=_is_permanent_onedrive_error,
                 on_retry=lambda attempt, error, user_key=user_key: print(
                     f"[RETRY] OneDrive {user_key} attempt {attempt} failed: "
                     f"{type(error).__name__}: {error}"
@@ -701,14 +745,30 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 results.append(result)
                 continue
 
+            if not success and last_error is not None and is_mysite_not_found(last_error):
+                reason = "OneDrive not provisioned (User's mysite not found); not retried"
+                result.update({"status": "skipped", "reason": reason, "items": items,
+                               "stats": stats_dict, "retry_count": attempts - 1})
+                if not dry_run:
+                    state.mark("batch-onedrive", source_id, "skipped", target_id,
+                               detail=reason, user_key=user_key)
+                results.append(result)
+                continue
+
             if success:
                 # A successful function call does not necessarily mean that
                 # every individual file succeeded. copy_drive() catches
                 # per-file failures and reports them in stats["failed"].
+                incomplete_reason = None
+                if not dry_run:
+                    incomplete_reason = _onedrive_incomplete_reason(
+                        state, source_id, user_key, stats_dict, retry_failed_only
+                    )
                 if dry_run:
                     batch_status = "dry-run"
-                elif failed_count > 0:
+                elif incomplete_reason:
                     batch_status = "completed_with_failures"
+                    result["reason"] = incomplete_reason
                 else:
                     batch_status = "completed"
 
@@ -720,7 +780,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 })
 
                 if not dry_run:
-                    if failed_count == 0:
+                    if incomplete_reason is None:
                         state.mark(
                             "batch-onedrive",
                             source_id,
@@ -737,10 +797,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                             source_id,
                             "pending",
                             target_id,
-                            detail=(
-                                f"{failed_count} item(s) failed; "
-                                "the user remains resumable"
-                            ),
+                            detail=f"incomplete: {incomplete_reason}"[:400],
                             user_key=user_key,
                         )
 
@@ -770,13 +827,13 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                         user_key=user_key,
                     )
 
-        except (
-            GraphError,
-            OSError,
-            TypeError,
-            ValueError,
-            KeyError,
-        ) as error:
+        except KeyboardInterrupt:
+            # Interrupted run: never completed, stay resumable.
+            if not dry_run and source_id:
+                state.mark("batch-onedrive", source_id, "pending", target_id,
+                           detail="interrupted; resume to continue", user_key=user_key)
+            raise
+        except Exception as error:  # noqa: BLE001 - one user must not stop the batch
             error_msg = f"{type(error).__name__}: {str(error)[:400]}"
 
             result.update({
@@ -968,6 +1025,7 @@ def run_batch(
     retry_failed_only: bool = False,
     area: str | None = None,
     teams_scope: str = "both",
+    verify_completed: bool = False,
 ) -> dict[str, Any]:
     """Coordinate execution across domains, one <area>-migration-result.json report per area.
     Contains no domain-specific migration logic itself.
@@ -987,7 +1045,7 @@ def run_batch(
             if teams_scope in ("channels", "both"):
                 results += _run_batch_channels(source_graph, target_graph, plan, plan_dir, states["teams"], dry_run)
         elif current_area == "onedrive":
-            results = _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only)
+            results = _run_batch_onedrive(source_graph, target_graph, plan, states["onedrive"], dry_run, retry_failed_only, verify_completed)
         elif current_area == "sharepoint":
             results = _run_batch_sharepoint(source_graph, target_graph, plan, states["sharepoint"], dry_run)
         else:

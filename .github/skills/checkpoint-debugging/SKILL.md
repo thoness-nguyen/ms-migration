@@ -1,60 +1,38 @@
 ---
 name: checkpoint-debugging
-description: Investigate checkpoint, resume, retry, and duplicate migration issues.
+description: Debug OneDrive and Teams checkpoint, resume, completion, retry, and duplicate-migration issues.
 ---
 
 # Checkpoint Debugging
 
-## Scope
+## Purpose
 
-Investigate migration state and checkpoint behavior.
+Use this skill when migration state does not match the actual migration
+result.
 
-## Main Implementation
+Primary focus:
 
-`migration/common/checkpoint.py`
+- OneDrive completion problems.
+- OneDrive resume/retry problems.
 
-Teams usage:
+---
 
-`migration/teams/services.py`
+# Core Principle
 
-## Investigation Procedure
+A checkpoint is a record of migration state.
 
-1. Identify the migration workload.
-2. Identify the source record ID.
-3. Find the checkpoint key.
-4. Trace checkpoint reads.
-5. Trace checkpoint writes.
-6. Identify status transitions.
-7. Check retry and resume behavior.
-8. Inspect relevant tests.
+It is not automatically proof that the target data is correct.
 
-## Important Statuses
+Always understand:
 
-Inspect the actual StateStore implementation before assuming
-which statuses are supported.
-
-Relevant Teams keys:
-
-- `teams-channel`
-- `teams-message`
-- `teams-chat`
-- `teams-chat-message`
-
-## Debugging Rules
-
-- Do not change checkpoint behavior without understanding the full flow.
-- Do not mark work completed before successful processing.
-- Preserve resumability.
-- Prevent duplicate migration.
-- Handle partial failures correctly.
-- Do not reset existing migration state without explicit approval.
-
-## Output
-
-Return:
-
-- Current checkpoint flow.
-- Root cause.
-- Affected files.
-- Minimal fix.
-- Tests required.
+```text
+What happened
+    ↓
+What state was recorded
+    ↓
+Why that state was recorded
+    ↓
+What the report says
+    ↓
+What validation says
+```

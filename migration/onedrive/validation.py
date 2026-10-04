@@ -36,7 +36,11 @@ def validate_user_drive(
     prefix = f"{source_user}:"
     completed_ids = [source_id for source_id in state.list_ids("onedrive", "completed") if source_id.startswith(prefix)]
     select = "id,name,size,folder" + (",file" if verify_hash else "")
-    report: dict[str, Any] = {"user": source_user, "checked": 0, "verified": 0, "mismatched": [], "missing_target": [], "errors": []}
+    report: dict[str, Any] = {"user": source_user, "checked": 0, "verified": 0, "mismatched": [], "missing_target": [], "errors": [], "unfinished": []}
+    for unfinished_status in ("failed", "pending"):
+        for source_id in state.list_ids("onedrive", unfinished_status):
+            if source_id.startswith(prefix):
+                report["unfinished"].append({"item": source_id[len(prefix):], "status": unfinished_status})
 
     for source_id in completed_ids:
         item_id = source_id[len(prefix):]
@@ -76,5 +80,5 @@ def validate_user_drive(
                 **({"source_hash": source_hash, "target_hash": target_hash} if verify_hash else {}),
             })
 
-    report["status"] = "verified" if not report["mismatched"] and not report["missing_target"] and not report["errors"] else "mismatch"
+    report["status"] = "verified" if not report["mismatched"] and not report["missing_target"] and not report["errors"] and not report["unfinished"] else "mismatch"
     return report

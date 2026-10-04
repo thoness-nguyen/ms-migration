@@ -1,546 +1,576 @@
 {
   "migration_id": "onedrive-pilot-001",
   "area": "onedrive",
-  "generated_at": "2026-09-20T05:22:15.143742+00:00",
+  "generated_at": "2026-10-02T17:38:43.705497+00:00",
   "dry_run": false,
   "results": [
     {
       "workload": "onedrive",
       "user": "andrew",
-      "status": "skipped",
-      "items": 0,
-      "reason": "already completed"
+      "status": "completed",
+      "items": 2,
+      "stats": {
+        "files_copied": 2,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": true,
+        "permission_private": 2
+      },
+      "retry_count": 0
     },
     {
       "workload": "onedrive",
       "user": "angel",
       "status": "skipped",
       "items": 0,
-      "reason": "already completed"
+      "reason": "target OneDrive not provisioned (User's mysite not found)"
     },
     {
       "workload": "onedrive",
       "user": "anh",
-      "status": "skipped",
-      "items": 0,
-      "reason": "already completed"
+      "status": "completed",
+      "items": 1,
+      "stats": {
+        "files_copied": 1,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": true,
+        "permission_private": 1
+      },
+      "retry_count": 0
     },
     {
       "workload": "onedrive",
       "user": "anh.thi",
-      "status": "skipped",
-      "items": 0,
-      "reason": "already completed"
+      "status": "completed",
+      "items": 1343,
+      "stats": {
+        "files_copied": 1343,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": true,
+        "permission_private": 1299
+      },
+      "retry_count": 0
     },
     {
       "workload": "onedrive",
       "user": "anna",
-      "status": "skipped",
-      "items": 0,
-      "reason": "already completed"
+      "status": "completed",
+      "items": 1,
+      "stats": {
+        "files_copied": 1,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": true,
+        "permission_private": 1
+      },
+      "retry_count": 0
     },
     {
       "workload": "onedrive",
       "user": "anthony",
-      "status": "skipped",
-      "items": 0,
-      "reason": "already completed"
+      "status": "completed",
+      "items": 2,
+      "stats": {
+        "files_copied": 2,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": true
+      },
+      "retry_count": 0
     },
     {
       "workload": "onedrive",
       "user": "cecilia",
       "status": "skipped",
       "items": 0,
-      "reason": "already completed"
+      "reason": "target OneDrive not provisioned (User's mysite not found)"
     },
     {
       "workload": "onedrive",
       "user": "chinh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/3f92c20f-d02e-4d91-ad9a-3ec8bd3c8d9b/drive/root/children (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))",
+      "stats": {},
+      "retry_count": 2
     },
     {
       "workload": "onedrive",
       "user": "chloe",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/e628ad45-be90-410a-a553-691cde743c1d/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "daisy",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/bc5d4c2f-9451-489b-8cb5-e3eccb551b21/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "danny",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/d0495c6d-551f-4562-b2d5-9450f67a42d0/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "daphnee",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/076eaa16-3729-404f-8bab-78eceb86b979/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "diep",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/f8ed8f92-8adf-4455-897d-8c7157ff979f/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "dung.nguyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/9863b4dd-8086-4b2b-8d19-9064186aa653/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "emma",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/e5f4ed3d-d090-4cc6-a1b2-10fadf079d62/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "felix",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/73dd6840-0b54-4e6a-ab8a-f46aa1075acb/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "fred",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/a595d81e-8425-4422-9fe4-67b8c3a6eabf/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "glen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/c3b56ede-e5b5-4574-ad8a-881dc08cb69a/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "ha.ho",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/a56b966b-429d-4717-aaf5-9a5d3386734c/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hana",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/7015c170-e736-4608-9ac5-5078271bef29/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hank",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/fb4a4c53-2b03-4a30-a887-92d1ac097edc/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hien",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/06bcf493-552f-44e4-a009-c83186b70feb/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hoaianh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/a138dfd6-0569-4c91-938b-d3ed732ed45a/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hoanganh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/bfff8b64-60bf-426e-9a83-90cdc77945e7/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hongan",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "source OneDrive is not provisioned"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/ce74576f-a3eb-4c44-9a8c-030732ec28fc/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hop",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/dc58f0a2-7e88-43d9-b38b-9b9ea067720c/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "hung",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/7035f79d-896a-4b28-9d7c-746f2002665b/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "huyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/26e295fa-30bc-40ed-b532-d95c2a30d6aa/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "james",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/d52b3ca5-7582-476a-be24-dc34acadab62/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "jason",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/7946a48a-ac2f-4530-9710-67862fba4d1a/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "kevin",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/5c0cb3a7-23b6-4617-8809-976ab83d562b/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "kevinc",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/b00aa0d7-5df9-4b82-b29f-d09346224496/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "khanhha",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "source OneDrive is not provisioned"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/aea0570c-897a-4ed4-9938-2c4917b420fd/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "kim.loan",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/ca6a075b-4ce3-4069-ab48-2c35437ff96e/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "marcus",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/84b01180-bd22-44d5-8a44-6aa7e265bb69/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "ngoc",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/0a028059-2f75-456f-bdde-03354ef37796/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "nguyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/57018891-95a3-42ce-9fe6-080311fd42eb/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "nguyet",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/f2b1962c-48d6-4757-ae44-aa45f638a2f9/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "nhattan",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/13a3fc34-e594-40ad-89c4-4d37c37baeaa/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "nhuy",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/d390f8b6-2211-40c9-a612-d1c37c31946d/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "ni",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/4aa3a486-1cf3-4b26-9d22-dfd92af5502b/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "oanh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "source OneDrive is not provisioned"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/02813354-ccc5-488c-82ff-93cca6972948/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "patryc",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/0c228bd5-8cc7-4334-b18f-56417037231b/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "paul.gerrard",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "phuongchi",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/17251d35-e93a-417d-aa34-749933db1a74/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "quoc",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/8a494f5f-db0c-4172-a10c-e93f722b8a4e/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "quynh.anh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/30a91470-298e-436a-bc60-934f482867c1/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "raymond",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/eba3ad13-491d-4bd5-9206-caaa1959b001/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "sana",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/58ca459e-bc92-418f-bb81-7b0f56b8d848/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "sarah",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/8574a676-4bf9-4e4a-924e-01b55f9cfe7e/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "sophia",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/4865eed9-b691-4b20-8076-6ece9eac59fd/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "su",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/0d09a2e4-fd20-4e7e-b933-4134bc67a246/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "suong",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/cc8ebddf-19eb-4904-8370-c7c0dedb12d4/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "tam",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/3dc9880f-9039-4187-a24e-e1e43df3f815/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "thanh.nguyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/954eadfd-14da-4167-86de-f1e37e1f8e78/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "thohuong",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/efdd5e21-2d78-4d40-8c44-dbbea8683016/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "thu.truong",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/f7024ea7-497d-47f7-b974-28c2ea06fec7/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "thuy",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/2afc4a07-758d-4670-88d0-34fb5734871a/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "thuydung",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/322601d5-7a4c-4861-8bff-10326a99f0a6/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "tinh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/acebbf4e-1dbe-4f25-9b93-6b867cb39d53/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "toan",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/d24c753e-be1a-4afb-9423-8d6f77b79c76/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:21:08\",\"request-id\":\"7dfb1da9-a58d-4072-950b-4e5b00240e4a\",\"client-request-id\":\"7dfb1da9-a58d-4072-950b-4e5b00240e4a\"}}}",
-      "stats": {},
-      "retry_count": 2
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/d4729c54-45c0-4059-a325-86704df23e63/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "toan.le",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/f5c3eb1d-d2e3-4d54-b277-4f94a6e73e4d/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "trang",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/16454715-c207-49c6-86a8-2e68a65ac5be/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "trang.nguyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/6031f9ba-6936-4ba7-8307-d9cb46e71eb6/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "travis",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/d9760a17-1602-4813-a066-ade6443e4c27/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "truc",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/ee778d98-41a5-40a0-b5e5-2d89391145d0/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "uyen",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/ea2bbfca-95e9-4b0b-8ec1-57527e8355eb/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:21:41\",\"request-id\":\"dbce26e4-445c-453b-a60b-dd1eb38bedb9\",\"client-request-id\":\"dbce26e4-445c-453b-a60b-dd1eb38bedb9\"}}}",
-      "stats": {},
-      "retry_count": 2
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/7d06b708-b4d7-4f4f-8ab1-974623b7b86f/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "van",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/7ec799ef-9523-4e92-9263-9a1912650e5c/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "vanlanh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/84e4168b-4ea9-44ec-b806-abec2eeda099/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "winnie",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "winson",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/2bb06cea-83cb-4137-826e-cf696a7df4f1/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "yen",
       "status": "failed",
       "items": 0,
-      "error": "GraphError: POST https://graph.microsoft.com/v1.0/users/c194948e-3e13-4f8e-b070-343c47dcda7c/drive/items/root/children failed (404): {\"error\":{\"code\":\"ResourceNotFound\",\"message\":\"User's mysite not found.\",\"innerError\":{\"date\":\"2026-09-20T05:22:13\",\"request-id\":\"7a04cf22-7c4b-400f-9622-803ca78d6304\",\"client-request-id\":\"7a04cf22-7c4b-400f-9622-803ca78d6304\"}}}",
-      "stats": {},
-      "retry_count": 2
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/15f4b19f-5395-45d9-9df3-d8ccd95b2ba3/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "yen.hoang",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/2bd260aa-2acf-491b-8c6e-fa51487d6c15/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "jimmy",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/441ebc80-da33-4aca-b5ba-6ec392230c6b/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "khanh",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "source OneDrive is not provisioned"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/47f399ec-2848-44af-aad1-f087018273b0/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     },
     {
       "workload": "onedrive",
       "user": "trinh.nguyen",
-      "status": "skipped",
+      "status": "failed",
       "items": 0,
-      "reason": "already completed"
+      "error": "ConnectionError: HTTPSConnectionPool(host='graph.microsoft.com', port=443): Max retries exceeded with url: /v1.0/users/900a6bec-7ece-4590-a867-c73cee95aeab/drive?$select=id,driveType,webUrl (Caused by NameResolutionError(\"HTTPSConnection(host='graph.microsoft.com', port=443): Failed to resolve 'graph.microsoft.com' ([Errno 11001] getaddrinfo failed)\"))"
     }
   ]
 }

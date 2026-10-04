@@ -1,99 +1,232 @@
 ---
 name: project-registry
-description: Locate relevant code, documentation, and architecture for the MS migration repository.
+description: Locate the smallest relevant set of code, documentation, checkpoints, reports, and tests for OneDrive and Teams migration tasks.
 ---
 
 # Project Registry
 
 ## Purpose
 
-Help the agent locate the smallest relevant set of files before
-investigating or modifying code.
+Use this skill to quickly locate the relevant parts of the repository
+without scanning the entire codebase.
 
-## Repository Scope
+The goal is to minimize unnecessary context while still understanding
+the execution path required for a task.
 
-This repository migrates Microsoft 365 workloads across tenants.
+---
 
-Current focus:
-- Teams migration
-- Teams messages (group chat, 1:1 chat)
-- Teams channels (channel messages)
-- Teams files and attachments
-- Checkpointing
-- Migration performance
+# Current Priorities
 
-SharePoint and OneDrive migration are currently out of scope unless
-explicitly requested.
+## Priority 1 — OneDrive
 
-## Repository Map
+Active debugging and maintenance.
 
-### Teams
+Main concern:
+
+Users may be marked as completed while their OneDrive content is
+still incomplete.
+
+## Priority 2 — Teams
+
+Maintenance only.
+
+## Priority 3 — SharePoint
+
+Stable.
+
+Do not inspect SharePoint unless explicitly requested or a shared
+infrastructure change directly affects it.
+
+---
+
+# Repository Map
+
+## Orchestration
 
 Path:
-`migration/teams/`
 
-Responsibilities:
-- Chat extraction
-- Chat migration
-- Channel message migration
-- Teams-specific migration logic
-
-### Orchestration
-
-Path:
 `migration/orchestration/`
 
-Responsibilities:
-- CLI
-- Migration plan
-- Batch execution
-- Workload orchestration
+Important files:
 
-### Common Infrastructure
+- `cli.py`
+- `batch.py`
+- `validate.py`
+
+Responsibilities:
+
+- Load migration plans.
+- Create Graph clients.
+- Open checkpoint stores.
+- Coordinate workloads.
+- Execute migrations.
+- Generate reports.
+- Execute post-migration validation.
+
+---
+
+# OneDrive
 
 Path:
+
+`migration/onedrive/`
+
+Important files:
+
+- `migration.py`
+- `validation.py`
+
+Important functions:
+
+- `copy_drive()`
+- `retry_failed_onedrive_files()`
+- `validate_user_drive()`
+
+Responsibilities:
+
+- Per-user OneDrive migration.
+- Folder discovery.
+- Folder preparation.
+- Permission migration where enabled.
+- User-level migration completion.
+- File transfer.
+- Concurrent file workers.
+- Per-item checkpointing.
+- Post-migration validation.
+
+---
+
+# OneDrive Checkpoint Model
+
+## Per-item
+
+Workload:
+
+`onedrive`
+
+Key format:
+
+`{source_user}:{item_id}`
+
+Represents:
+
+- Files
+- Folders
+
+## Per-user
+
+Workload:
+
+`batch-onedrive`
+
+Represents:
+
+- Overall user migration state.
+
+Important:
+
+The per-user checkpoint must not be treated as authoritative without
+considering the underlying per-item state.
+
+---
+
+# Teams
+
+Path:
+
+`migration/teams/`
+
+Important files:
+
+- `services.py`
+- `validation.py`
+
+Important functions:
+
+- `extract_chat()`
+- `import_chat()`
+- `import_channel_messages()`
+- `validate_chat_migration()`
+
+Responsibilities:
+
+- Chat migration.
+- Chat message migration.
+- Channel message migration.
+- Member handling.
+- Attachment handling.
+- Message validation.
+
+---
+
+# Common Infrastructure
+
+Path:
+
 `migration/common/`
 
 Important modules:
-- `graph.py` — Graph API client
-- `checkpoint.py` — StateStore
-- `concurrency.py` — concurrency utilities
-- `auth.py` — authentication
 
-### Configuration
+### `checkpoint.py`
 
-Path:
-`config/`
+SQLite-based `StateStore`.
 
-### Tests
+Used for:
 
-Path:
-`tests/`
+- Resume.
+- Deduplication.
+- Completion state.
+- Failed state.
+- Per-item migration state.
 
-## Investigation Procedure
+### `graph.py`
 
-1. Identify the requested workload.
-2. Search for the relevant function or symbol.
-3. Read its implementation.
-4. Identify direct callers and dependencies.
-5. Read relevant tests.
-6. Read the relevant documentation.
-7. Stop investigating when sufficient evidence exists.
+Graph API client.
 
-## Context Rules
+Handles:
 
-- Do not read the entire repository.
-- Do not inspect unrelated workloads.
-- Do not read large logs unless explicitly requested.
-- Do not duplicate architecture documentation in the response.
-- Prefer file paths and function names over large code excerpts.
-- Do not modify files during investigation unless requested.
+- Authentication headers.
+- Requests.
+- Pagination.
+- 401 refresh.
+- 429 handling.
+- 5xx retry behavior.
+- Raw file transfers.
 
-## Output
+### `retry.py`
 
-Return:
-- Relevant files.
-- Relevant functions.
-- Execution flow.
-- Findings.
-- Recommended next step.
+Shared retry wrapper.
+
+### `concurrency.py`
+
+Bounded workers and adaptive throttling.
+
+### `reporting.py`
+
+Shared reporting helpers.
+
+---
+
+# OneDrive Investigation Path
+
+When investigating:
+
+> User marked completed but OneDrive is incomplete.
+
+Start here:
+
+```text
+migration/orchestration/batch.py
+        ↓
+OneDrive user processing
+        ↓
+copy_drive()
+        ↓
+onedrive checkpoint writes
+        ↓
+batch-onedrive checkpoint
+        ↓
+report
+        ↓
+validate_user_drive()
+```

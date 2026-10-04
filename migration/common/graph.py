@@ -10,7 +10,28 @@ from requests.adapters import HTTPAdapter
 
 
 class GraphError(RuntimeError):
-    pass
+    def __init__(self, message: str = "", status_code: int | None = None):
+        super().__init__(message)
+        self.status_code = status_code
+
+
+# Statuses that will not change by retrying the same request. 429/5xx/408 are
+# transient and are handled (or retried) elsewhere.
+_PERMANENT_STATUSES = (400, 403, 404, 409, 410)
+
+
+def is_mysite_not_found(error: BaseException) -> bool:
+    """True for the permanent 404 'User's mysite not found.' (OneDrive not provisioned)."""
+    text = str(error).lower()
+    return "mysite not found" in text
+
+
+def is_permanent_graph_error(error: BaseException) -> bool:
+    """Permanent Graph failure (retrying the same request cannot succeed)."""
+    if not isinstance(error, GraphError):
+        return False
+    status = getattr(error, "status_code", None)
+    return status in _PERMANENT_STATUSES
 
 
 class GraphClient:
@@ -78,29 +99,52 @@ class GraphClient:
                 time.sleep(delay)
                 continue
             if not response.ok:
-                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:500]}")
+                raise GraphError(f"{method} {url} failed ({response.status_code}): {response.text[:500]}", status_code=response.status_code)
             return response.json() if response.content else None
         raise GraphError(f"{method} {url} failed after retries")
 
     def raw_request(self, method: str, url: str, **kwargs: Any) -> requests.Response:
         """Like session.request(), for raw byte transfers (file download/upload chunks)
         that need direct access to the response instead of the JSON-decoding wrapper above.
-        Refreshes the token and retries on 401 so long transfers don't die on an expired token.
+        Shares the same resilience as request(): refreshes the token on 401, retries
+        429/5xx with backoff (honoring Retry-After, same as request()), and retries
+        transient network errors (connection reset/timeout/etc.) with backoff. A
+        permanent 4xx (other than 401/429) is returned as-is - the caller's own
+        raise_for_status()/`.ok` check records it, same as before.
         """
         self._record("requests")
-        for attempt in range(3):
-            response = self.session.request(method, url, **kwargs)
-            if response.status_code == 401 and attempt < 2:
+        last_response: requests.Response | None = None
+        for attempt in range(6):
+            try:
+                response = self.session.request(method, url, **kwargs)
+            except requests.exceptions.RequestException as error:
+                if attempt == 5:
+                    raise
+                delay = min(60, 2**attempt)
+                print(f"  [retry] network error during transfer on {method} {url}: {error} - waiting {delay}s (attempt {attempt + 1}/6)")
+                time.sleep(delay)
+                continue
+            last_response = response
+            if response.status_code == 401 and attempt < 5:
                 self._record("auth_refreshes")
                 print(f"  [auth] Token rejected (401) during transfer, refreshing: {method} {url}")
                 self._apply_token(self._token_provider())
                 continue
-            if response.status_code == 429:
-                self._record("throttled_429")
-                if self._on_throttle:
-                    self._on_throttle()
+            if response.status_code in (429, 500, 502, 503, 504):
+                if response.status_code == 429:
+                    self._record("throttled_429")
+                    if self._on_throttle:
+                        self._on_throttle()
+                else:
+                    self._record("server_errors_5xx")
+                if attempt == 5:
+                    return response
+                delay = int(response.headers.get("Retry-After", min(60, 2**attempt)))
+                print(f"  [throttle] {response.status_code} during transfer on {method} {url} - waiting {delay}s (attempt {attempt + 1}/6)")
+                time.sleep(delay)
+                continue
             return response
-        return response
+        return last_response
 
     def pages(self, path: str, **kwargs: Any) -> Iterator[dict[str, Any]]:
         next_url: str | None = path

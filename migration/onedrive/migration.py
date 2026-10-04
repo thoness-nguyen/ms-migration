@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from shlex import quote
+from urllib.parse import quote
 import threading
 from dataclasses import dataclass
 from typing import Any
 
 from ..common.checkpoint import StateStore
 from ..common.concurrency import AdaptiveGate, run_workers
-from ..common.graph import GraphClient, GraphError
+from ..common.graph import GraphClient, GraphError, is_mysite_not_found
 
 CHUNK_SIZE = 10 * 320 * 1024
 
@@ -170,7 +170,9 @@ def encode_graph_path_segment(value: str) -> str:
     """
     return quote(str(value), safe="")
 
-def ensure_user_drive(source_graph: GraphClient, source_user: str) -> bool:
+def ensure_user_drive(source_graph: GraphClient, source_user: str, side: str = "source") -> bool:
+    """Return False when the user's OneDrive (MySite) is not provisioned on
+    `side` ("source" or "target"). Any other Graph error is re-raised."""
     try:
         source_graph.request(
             "GET",
@@ -179,16 +181,10 @@ def ensure_user_drive(source_graph: GraphClient, source_user: str) -> bool:
         return True
 
     except GraphError as error:
-        message = str(error).lower()
-
-        if (
-            "user's mysite not found" in message
-            or '"code":"resourcenotfound"' in message
-            and "mysite" in message
-        ):
+        if is_mysite_not_found(error):
             print(
                 f"[SKIP] OneDrive is not provisioned for "
-                f"{source_user}; skipping this user."
+                f"{side} user {source_user}; skipping this user."
             )
             return False
 
@@ -216,18 +212,25 @@ def _transfer_one_file(
         existing = target_graph.request(
             "GET", f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}"
         )
+    except GraphError:
+        existing = None
+
+    # A same-name item only counts as "already migrated" when it is the same
+    # size; a partial/stale upload is re-uploaded (replace) instead of accepted.
+    source_size = item.get("size")
+    if existing and existing.get("id") and (
+        source_size is None or existing.get("size") == source_size
+    ):
         state.mark(
             "onedrive",
             source_id,
             "completed",
-            existing.get("id") if existing else None,
+            existing.get("id"),
             user_key=user_key,
         )
         with stats_lock:
             stats["files_copied"] += 1
         return
-    except GraphError:
-        pass
 
     try:
         content = source_graph.raw_request(
@@ -279,28 +282,34 @@ def _transfer_one_file(
                     print(
                         f"    >> {who}{item_name}: {pct}% ({uploaded_mb:.1f} MB / {file_size_mb:.1f} MB)"
                     )
-    except (GraphError, OSError) as error:
+        # An upload session whose last response has no item id did not finish.
+        if not target or not target.get("id"):
+            raise GraphError(f"upload of {item_name} did not return a target item")
+    except Exception as error:  # noqa: BLE001 - any per-file failure must be recorded, never swallowed
         state.mark(
-            "onedrive", source_id, "failed", detail=str(error)[:200], user_key=user_key
+            "onedrive", source_id, "failed", detail=f"{type(error).__name__}: {error}"[:200], user_key=user_key
         )
         with stats_lock:
             stats["failed"] = stats.get("failed", 0) + 1
         return
 
-    target_item_id = target.get("id") if target else None
+    target_item_id = target.get("id")
     state.mark("onedrive", source_id, "completed", target_item_id, user_key=user_key)
 
     permission_status = None
     if migrate_permissions and user_map and target_item_id:
-        perm_result = _copy_item_permissions(
-            source_graph,
-            target_graph,
-            source_user,
-            target_user,
-            item["id"],
-            target_item_id,
-            user_map,
-        )
+        try:
+            perm_result = _copy_item_permissions(
+                source_graph,
+                target_graph,
+                source_user,
+                target_user,
+                item["id"],
+                target_item_id,
+                user_map,
+            )
+        except Exception as error:  # noqa: BLE001 - file is already copied; report permissions separately
+            perm_result = {"errors": [f"permissions failed: {error}"[:200]]}
         if perm_result["errors"]:
             with stats_lock:
                 stats.setdefault("permission_errors", []).append(
@@ -337,104 +346,133 @@ def copy_drive(
     user_key: str | None = None,
     user_map: dict[str, str] | None = None,
     migrate_permissions: bool = False,
+    verify_completed: bool = False,
 ) -> dict[str, Any]:
     """Copy a user's OneDrive. Sequential discovery + folder pre-creation
     (parent must exist before child), then concurrent bounded file-content
     workers - same pipeline as sharepoint/migration.py's copy_library()."""
-    stats: dict[str, Any] = {"files_copied": 0}
+    stats: dict[str, Any] = {
+        "files_copied": 0,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": True,
+    }
     stats_lock = threading.Lock()
     file_work: list[_FileWork] = []
     who = f"[{user_key}] " if user_key else ""
 
-    def discover_and_prepare_folders(source_parent: str, target_parent: str) -> None:
-        for item in source_graph.pages(
-            f"/users/{source_user}/drive/items/{source_parent}/children"
-            if source_parent != "root"
-            else f"/users/{source_user}/drive/root/children"
-        ):
-            item_id = item["id"]
-            source_id = f"{source_user}:{item_id}"
-            if state.status("onedrive", source_id) == "completed":
-                if "folder" in item and not dry_run:
-                    # still recurse to pick up new files added since last run
-                    stored = state.target("onedrive", source_id)
-                    if stored:
-                        discover_and_prepare_folders(item_id, stored)
-                continue
-            if "folder" in item:
-                if not dry_run:
-                    # Idempotency check: reuse an existing target folder instead of creating
-                    # a duplicate / risking data loss via conflictBehavior=replace
-                    target_folder_id = None
-                    try:
-                        existing = target_graph.request(
-                            "GET",
-                            f"/users/{target_user}/drive/items/{target_parent}:/{item['name']}",
-                        )
-                        target_folder_id = existing["id"]
-                        state.mark(
-                            "onedrive",
-                            source_id,
-                            "completed",
-                            target_folder_id,
-                            user_key=user_key,
-                        )
-                    except GraphError:
-                        pass  # Folder doesn't exist yet, proceed with creation
-                    if target_folder_id is None:
-                        created = target_graph.request(
-                            "POST",
-                            f"/users/{target_user}/drive/items/{target_parent}/children",
-                            json={
-                                "name": item["name"],
-                                "folder": {},
-                                "@microsoft.graph.conflictBehavior": "fail",
-                            },
-                        )
-                        target_folder_id = created["id"]
-                        state.mark(
-                            "onedrive",
-                            source_id,
-                            "completed",
-                            target_folder_id,
-                            user_key=user_key,
-                        )
-                    if migrate_permissions and user_map:
-                        perm_result = _copy_item_permissions(
-                            source_graph,
-                            target_graph,
-                            source_user,
-                            target_user,
-                            item_id,
-                            target_folder_id,
-                            user_map,
-                        )
-                        if perm_result["errors"]:
-                            with stats_lock:
-                                stats.setdefault("permission_errors", []).append(
-                                    {
-                                        "item": item["name"],
-                                        "errors": perm_result["errors"],
-                                    }
-                                )
-                        state.mark(
-                            "onedrive",
-                            source_id,
-                            "completed",
-                            target_folder_id,
-                            user_key=user_key,
-                            permission_status=_permission_status_for(perm_result),
-                        )
-                    print(f"  [+] {who}Created folder: {item['name']}")
-                    discover_and_prepare_folders(item_id, target_folder_id)
-                else:
-                    discover_and_prepare_folders(item_id, target_parent)
-                continue
+    def record_discovery_problem(kind: str, name: str, error: Any) -> None:
+        with stats_lock:
+            stats["discovery_complete"] = False
+            stats.setdefault("discovery_errors", []).append(f"{kind} {name}: {error}"[:300])
+
+    def ensure_target_folder(item: dict[str, Any], source_id: str, target_parent: str) -> str:
+        # Idempotency check: reuse an existing target folder instead of creating
+        # a duplicate / risking data loss via conflictBehavior=replace
+        target_folder_id = None
+        try:
+            existing = target_graph.request(
+                "GET",
+                f"/users/{target_user}/drive/items/{target_parent}:/{item['name']}",
+            )
+            target_folder_id = existing["id"]
+        except GraphError:
+            pass  # Folder doesn't exist yet, proceed with creation
+        if target_folder_id is None:
+            created = target_graph.request(
+                "POST",
+                f"/users/{target_user}/drive/items/{target_parent}/children",
+                json={
+                    "name": item["name"],
+                    "folder": {},
+                    "@microsoft.graph.conflictBehavior": "fail",
+                },
+            )
+            target_folder_id = created["id"]
+        state.mark(
+            "onedrive", source_id, "completed", target_folder_id, user_key=user_key
+        )
+        return target_folder_id
+
+    def handle_item(item: dict[str, Any], target_parent: str) -> None:
+        item_id = item["id"]
+        source_id = f"{source_user}:{item_id}"
+        is_folder = "folder" in item
+        if state.status("onedrive", source_id) == "completed":
+            if is_folder:
+                if dry_run:
+                    return
+                # still recurse to pick up new files added since last run
+                stored = state.target("onedrive", source_id)
+                if stored:
+                    discover_and_prepare_folders(item_id, stored)
+                    return
+                # completed without a target id cannot be resumed: re-resolve it below
+            elif dry_run or not verify_completed:
+                return
+            # file + verify_completed + not dry_run: fall through and re-queue it.
+            # _transfer_one_file's existing same-name+size check already skips it
+            # for free when the target copy is still intact, or re-uploads it when
+            # it is missing/truncated - no separate verification path needed.
+        if is_folder:
             if dry_run:
+                discover_and_prepare_folders(item_id, target_parent)
+                return
+            try:
+                target_folder_id = ensure_target_folder(item, source_id, target_parent)
+            except Exception as error:  # noqa: BLE001
+                if isinstance(error, GraphError) and is_mysite_not_found(error):
+                    raise
+                state.mark(
+                    "onedrive", source_id, "failed",
+                    detail=f"{type(error).__name__}: {error}"[:200], user_key=user_key,
+                )
                 with stats_lock:
-                    stats["files_copied"] += 1
-                continue
-            file_work.append(_FileWork(item, source_id, target_parent))
+                    stats["failed"] += 1
+                    stats["folders_failed"] += 1
+                record_discovery_problem("folder", item.get("name", item_id), error)
+                return
+            if migrate_permissions and user_map:
+                try:
+                    perm_result = _copy_item_permissions(
+                        source_graph, target_graph, source_user, target_user,
+                        item_id, target_folder_id, user_map,
+                    )
+                except Exception as error:  # noqa: BLE001 - folder exists; report permissions separately
+                    perm_result = {"errors": [f"permissions failed: {error}"[:200]]}
+                if perm_result["errors"]:
+                    with stats_lock:
+                        stats.setdefault("permission_errors", []).append(
+                            {"item": item["name"], "errors": perm_result["errors"]}
+                        )
+                state.mark(
+                    "onedrive", source_id, "completed", target_folder_id,
+                    user_key=user_key,
+                    permission_status=_permission_status_for(perm_result),
+                )
+            print(f"  [+] {who}Created folder: {item['name']}")
+            discover_and_prepare_folders(item_id, target_folder_id)
+            return
+        if dry_run:
+            with stats_lock:
+                stats["files_copied"] += 1
+            return
+        file_work.append(_FileWork(item, source_id, target_parent))
+
+    def discover_and_prepare_folders(source_parent: str, target_parent: str) -> None:
+        try:
+            for item in source_graph.pages(
+                f"/users/{source_user}/drive/items/{source_parent}/children"
+                if source_parent != "root"
+                else f"/users/{source_user}/drive/root/children"
+            ):
+                handle_item(item, target_parent)
+        except GraphError as error:
+            if is_mysite_not_found(error):
+                raise
+            # Listing failed part-way: items not yet seen are undiscovered, so the
+            # user must not be treated as fully migrated.
+            record_discovery_problem("list", source_parent, error)
 
     discover_and_prepare_folders("root", "root")
 
@@ -449,28 +487,34 @@ def copy_drive(
 
     def copy_one_file(work: _FileWork) -> None:
         _transfer_one_file(
-            source_graph,
-            target_graph,
-            source_user,
-            target_user,
-            work.item,
-            work.source_id,
-            work.target_parent,
-            state,
-            user_key,
-            user_map,
-            migrate_permissions,
-            stats,
-            stats_lock,
+            source_graph, target_graph, source_user, target_user,
+            work.item, work.source_id, work.target_parent,
+            state, user_key, user_map, migrate_permissions, stats, stats_lock,
         )
 
-    run_workers(
-        file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
-    )
-
-    source_graph.set_throttle_hook(None)
-    target_graph.set_throttle_hook(None)
+    try:
+        outcomes = run_workers(
+            file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
+        )
+    finally:
+        source_graph.set_throttle_hook(None)
+        target_graph.set_throttle_hook(None)
+    _record_worker_errors(outcomes, state, user_key, stats)
     return stats
+
+
+def _record_worker_errors(
+    outcomes: list[Any], state: StateStore, user_key: str | None, stats: dict[str, Any]
+) -> None:
+    """run_workers() returns exceptions instead of raising them; never let one vanish."""
+    for work, _result, error in outcomes:
+        if error is None:
+            continue
+        state.mark(
+            "onedrive", work.source_id, "failed",
+            detail=f"{type(error).__name__}: {error}"[:200], user_key=user_key,
+        )
+        stats["failed"] = stats.get("failed", 0) + 1
 
 
 def retry_failed_onedrive_files(
@@ -485,8 +529,17 @@ def retry_failed_onedrive_files(
     migrate_permissions: bool = False,
 ) -> dict[str, Any]:
     """Re-attempt only items previously marked "failed" for this drive, without
-    re-walking the whole folder tree - used by `batch --retry-failed-only`."""
-    stats: dict[str, Any] = {"files_copied": 0}
+    re-walking the whole folder tree - used by `batch --retry-failed-only`.
+
+    This is never a full walk (`discovery_complete` is always False), so it can
+    never prove a user is fully migrated. Failed items it cannot retry (folders,
+    unreadable items, parents with no checkpoint) are counted in `failed`."""
+    stats: dict[str, Any] = {
+        "files_copied": 0,
+        "failed": 0,
+        "folders_failed": 0,
+        "discovery_complete": False,
+    }
     stats_lock = threading.Lock()
     prefix = f"{source_user}:"
     failed_ids = [
@@ -501,16 +554,25 @@ def retry_failed_onedrive_files(
         try:
             item = source_graph.request(
                 "GET",
-                f"/users/{source_user}/drive/items/{item_id}?$select=id,name,folder,parentReference",
+                f"/users/{source_user}/drive/items/{item_id}?$select=id,name,size,folder,parentReference",
             )
         except GraphError:
+            stats["failed"] += 1
             continue
         if "folder" in item:
+            # folders are re-created by a normal (full) run, not here
+            stats["failed"] += 1
+            stats["folders_failed"] += 1
             continue
         parent_ref = item.get("parentReference") or {}
-        target_parent = (
-            state.target("onedrive", f"{source_user}:{parent_ref.get('id')}") or "root"
-        )
+        parent_target = state.target("onedrive", f"{source_user}:{parent_ref.get('id')}")
+        if parent_target:
+            target_parent = parent_target
+        elif str(parent_ref.get("path", "")).endswith("root:"):
+            target_parent = "root"
+        else:
+            stats["failed"] += 1
+            continue
         file_work.append(_FileWork(item, source_id, target_parent))
 
     if not file_work:
@@ -524,25 +586,17 @@ def retry_failed_onedrive_files(
 
     def copy_one_file(work: _FileWork) -> None:
         _transfer_one_file(
-            source_graph,
-            target_graph,
-            source_user,
-            target_user,
-            work.item,
-            work.source_id,
-            work.target_parent,
-            state,
-            user_key,
-            user_map,
-            migrate_permissions,
-            stats,
-            stats_lock,
+            source_graph, target_graph, source_user, target_user,
+            work.item, work.source_id, work.target_parent,
+            state, user_key, user_map, migrate_permissions, stats, stats_lock,
         )
 
-    run_workers(
-        file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
-    )
-
-    source_graph.set_throttle_hook(None)
-    target_graph.set_throttle_hook(None)
+    try:
+        outcomes = run_workers(
+            file_work, copy_one_file, max_workers=content_concurrency, gate=content_gate
+        )
+    finally:
+        source_graph.set_throttle_hook(None)
+        target_graph.set_throttle_hook(None)
+    _record_worker_errors(outcomes, state, user_key, stats)
     return stats
