@@ -213,6 +213,7 @@ performance:
 
 ## 10. Known Limitations
 
+- OneDrive copies only each drive item's current content; historical versions are not copied. Retained versions contribute to reported storage usage, so source and target usage totals can differ substantially even when current file content is migrated ([Microsoft versioning limits](https://learn.microsoft.com/en-us/sharepoint/document-library-version-history-limits)).
 - SharePoint site-column metadata, version history, and sharing links are **not** migrated (Graph has no supported API for the first two; the third would need manual reconfiguration post-migration).
 - No wall-clock per-attempt timeout enforcement on Windows (the previous `SIGALRM`-based timeout was always a no-op on Windows; retry is bounded by attempt count + backoff only, not elapsed time).
 - `common/reporting.py`'s standardized report helpers are not yet used by `orchestration/batch.py`'s hand-rolled report construction — the report shape works today but isn't yet unified through that module.

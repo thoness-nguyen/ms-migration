@@ -80,7 +80,15 @@ class GraphClient:
         url = path if path.startswith("https://") else f"{self.base_url}/{path.lstrip('/')}"
         self._record("requests")
         for attempt in range(6):
-            response = self.session.request(method, url, timeout=120, **kwargs)
+            try:
+                response = self.session.request(method, url, timeout=120, **kwargs)
+            except requests.exceptions.RequestException as error:
+                if attempt == 5:
+                    raise
+                delay = min(120, 5 * 2**attempt)
+                print(f"  [retry] network error on {method} {url}: {type(error).__name__} - waiting {delay}s (attempt {attempt + 1}/6)")
+                time.sleep(delay)
+                continue
             if response.status_code == 401 and attempt < 5:
                 # Token expired/invalid mid-run - refresh and retry once per attempt
                 self._record("auth_refreshes")
@@ -120,7 +128,7 @@ class GraphClient:
             except requests.exceptions.RequestException as error:
                 if attempt == 5:
                     raise
-                delay = min(60, 2**attempt)
+                delay = min(120, 5 * 2**attempt)
                 print(f"  [retry] network error during transfer on {method} {url}: {error} - waiting {delay}s (attempt {attempt + 1}/6)")
                 time.sleep(delay)
                 continue

@@ -218,8 +218,11 @@ def _transfer_one_file(
     # A same-name item only counts as "already migrated" when it is the same
     # size; a partial/stale upload is re-uploaded (replace) instead of accepted.
     source_size = item.get("size")
-    if existing and existing.get("id") and (
-        source_size is None or existing.get("size") == source_size
+    if (
+        existing
+        and existing.get("id")
+        and source_size is not None
+        and existing.get("size") == source_size
     ):
         state.mark(
             "onedrive",
@@ -346,9 +349,10 @@ def copy_drive(
     user_key: str | None = None,
     user_map: dict[str, str] | None = None,
     migrate_permissions: bool = False,
-    verify_completed: bool = False,
+    verify_completed: bool = True,
 ) -> dict[str, Any]:
-    """Copy a user's OneDrive. Sequential discovery + folder pre-creation
+    """Copy current file content from a user's OneDrive, not historical versions.
+    Sequential discovery + folder pre-creation
     (parent must exist before child), then concurrent bounded file-content
     workers - same pipeline as sharepoint/migration.py's copy_library()."""
     stats: dict[str, Any] = {
@@ -376,8 +380,9 @@ def copy_drive(
                 f"/users/{target_user}/drive/items/{target_parent}:/{item['name']}",
             )
             target_folder_id = existing["id"]
-        except GraphError:
-            pass  # Folder doesn't exist yet, proceed with creation
+        except GraphError as error:
+            if error.status_code != 404:
+                raise
         if target_folder_id is None:
             created = target_graph.request(
                 "POST",
@@ -389,6 +394,7 @@ def copy_drive(
                 },
             )
             target_folder_id = created["id"]
+            print(f"  [+] {who}Created folder: {item['name']}")
         state.mark(
             "onedrive", source_id, "completed", target_folder_id, user_key=user_key
         )
@@ -402,12 +408,8 @@ def copy_drive(
             if is_folder:
                 if dry_run:
                     return
-                # still recurse to pick up new files added since last run
-                stored = state.target("onedrive", source_id)
-                if stored:
-                    discover_and_prepare_folders(item_id, stored)
-                    return
-                # completed without a target id cannot be resumed: re-resolve it below
+                # Resolve the folder under its current parent so source moves
+                # are reflected on the target instead of reusing a stale path.
             elif dry_run or not verify_completed:
                 return
             # file + verify_completed + not dry_run: fall through and re-queue it.
@@ -450,7 +452,6 @@ def copy_drive(
                     user_key=user_key,
                     permission_status=_permission_status_for(perm_result),
                 )
-            print(f"  [+] {who}Created folder: {item['name']}")
             discover_and_prepare_folders(item_id, target_folder_id)
             return
         if dry_run:
