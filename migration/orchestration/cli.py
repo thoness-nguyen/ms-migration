@@ -39,7 +39,12 @@ def main() -> int:
     batch.add_argument("--report-dir", type=Path, default=Path("reports"), help="Directory to write <area>-migration-result.json reports into")
     batch.add_argument("--area", choices=["sharepoint", "onedrive", "teams"], help="Restrict the run to a single migration area (omit to run every area defined in the config)")
     batch.add_argument("--retry-failed-only", action="store_true", help="Skip the full folder-tree walk on libraries/drives that already have a checkpoint and only re-attempt items previously marked failed (SharePoint + OneDrive)")
-    batch.add_argument("--verify-completed", action="store_true", help="OneDrive only: re-check files already marked 'completed' against the target (size match) instead of trusting the checkpoint - a one-time repair pass for rows written before the completion-tracking fix")
+    batch.add_argument(
+        "--verify-completed",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="OneDrive only: re-check completed files against their current target path and size (default; use --no-verify-completed to trust item checkpoints)",
+    )
     batch.add_argument("--teams-scope", choices=["chats", "channels", "both"], default="both", help="Restrict the 'teams' area to just chats, just channels, or both (default)")
     validate = sub.add_parser("validate", help="Post-migration integrity check (size/hash for onedrive, message+member counts for teams) - a separate pass from 'batch'")
     validate.add_argument("--config", type=Path, required=True, help="YAML or JSON batch plan (same file used for 'batch')")

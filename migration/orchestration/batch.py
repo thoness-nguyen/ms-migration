@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+import time
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -537,6 +538,10 @@ def _run_batch_channels(
     return results
 
 
+ONEDRIVE_EXTRA_PASSES = 2
+ONEDRIVE_PASS_COOLDOWN = 60
+
+
 def _is_permanent_onedrive_error(error: BaseException) -> bool:
     """Permanent: missing MySite or 400/403. Transient (429/5xx/network) is retried."""
     if is_mysite_not_found(error):
@@ -566,7 +571,7 @@ def _onedrive_incomplete_reason(
     return None
 
 
-def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False, verify_completed: bool = False) -> list[dict[str, Any]]:
+def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False, verify_completed: bool = True) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
 
     content_concurrency = _concurrency(plan, "onedrive", "content", default=6)
@@ -676,6 +681,7 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             if (
                 state.status("batch-onedrive", source_id) == "completed"
                 and not retry_failed_only
+                and not verify_completed
             ):
                 result.update({
                     "status": "skipped",
@@ -692,9 +698,8 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
                 extra_kwargs: dict[str, Any] = {}
             else:
                 call_args = (source_graph, target_graph, source_id, target_id, state, dry_run)
-                # verify_completed re-checks already-"completed" files against the
-                # target (size match) instead of trusting the checkpoint blindly -
-                # a one-time repair pass for rows left over from before this fix.
+                # Re-check already-"completed" files against their current target
+                # path and size instead of trusting the checkpoint blindly.
                 extra_kwargs = {"verify_completed": verify_completed}
 
             stats, success, last_error, attempts = with_retry(
@@ -714,6 +719,27 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
             )
 
             stats_dict = stats if isinstance(stats, dict) else {}
+            # In-run recovery: failed items stay "failed" and are re-attempted by a
+            # fresh copy_drive pass (completed rows are skipped) after a cool-down,
+            # so a transient outage doesn't leave the user pending until a rerun.
+            if success and not dry_run and not retry_failed_only:
+                for extra_pass in range(1, ONEDRIVE_EXTRA_PASSES + 1):
+                    if int(stats_dict.get("failed", 0) or 0) <= 0 or stats_dict.get("skipped"):
+                        break
+                    print(f"[RETRY] OneDrive {user_key}: {stats_dict['failed']} item(s) failed; "
+                          f"recovery pass {extra_pass}/{ONEDRIVE_EXTRA_PASSES} in {ONEDRIVE_PASS_COOLDOWN}s")
+                    time.sleep(ONEDRIVE_PASS_COOLDOWN)
+                    prev_items = int(stats_dict.get("files_copied", 0) or 0)
+                    stats2, ok2, err2, _ = with_retry(
+                        copy_fn, *call_args,
+                        content_concurrency=content_concurrency, user_key=user_key,
+                        user_map=tenant_user_map, migrate_permissions=migrate_permissions,
+                        **extra_kwargs, max_retries=1, is_permanent=_is_permanent_onedrive_error,
+                    )
+                    if not ok2 or not isinstance(stats2, dict):
+                        break
+                    stats2["files_copied"] = int(stats2.get("files_copied", 0) or 0) + prev_items
+                    stats_dict = stats2
             items = stats_dict.get("files_copied", 0)
             failed_count = int(stats_dict.get("failed", 0) or 0)
             skipped = bool(stats_dict.get("skipped", False))
@@ -1025,7 +1051,7 @@ def run_batch(
     retry_failed_only: bool = False,
     area: str | None = None,
     teams_scope: str = "both",
-    verify_completed: bool = False,
+    verify_completed: bool = True,
 ) -> dict[str, Any]:
     """Coordinate execution across domains, one <area>-migration-result.json report per area.
     Contains no domain-specific migration logic itself.

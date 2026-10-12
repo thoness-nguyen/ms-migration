@@ -93,6 +93,11 @@ def d(i):
     return {"id": i, "name": i, "folder": {}}
 
 
+@pytest.fixture(autouse=True)
+def _no_cooldown(monkeypatch):
+    monkeypatch.setattr("migration.orchestration.batch.ONEDRIVE_PASS_COOLDOWN", 0)
+
+
 @pytest.fixture
 def state(tmp_path):
     return StateStore(tmp_path / "onedrive-checkpoint.sqlite")
@@ -115,10 +120,62 @@ def test_same_name_different_size_is_reuploaded(state):
     assert state.target("onedrive", "S:a") == "T-file"
 
 
-def test_same_name_same_size_is_skipped(state):
+def test_same_name_same_size_is_skipped_without_log(state, capsys):
     tgt = TargetGraph(existing={"a.txt": {"id": "OLD", "size": 3}})
     run(SourceGraph({"root": [f("a")]}), tgt, state)
     assert not tgt.puts and state.target("onedrive", "S:a") == "OLD"
+    assert capsys.readouterr().out == ""
+
+
+def test_uploaded_file_logs_copy(state, capsys):
+    stats = run(SourceGraph({"root": [f("a")]}), TargetGraph(), state)
+    assert stats["failed"] == 0
+    assert "Copied file: a.txt" in capsys.readouterr().out
+
+
+def test_existing_file_with_unknown_source_size_is_not_trusted(state):
+    tgt = TargetGraph(existing={"a.txt": {"id": "OLD", "size": 3}})
+    stats = run(SourceGraph({"root": [f("a", size=None)]}), tgt, state)
+    assert tgt.puts and stats["failed"] == 0
+
+
+def test_completed_file_moved_to_new_path_is_copied_to_current_parent(state):
+    class TargetWithCurrentPath(TargetGraph):
+        def request(self, method, path, **kw):
+            if method == "GET" and "/items/T-dir:/a.txt" in path:
+                raise GraphError("not found", status_code=404)
+            return super().request(method, path, **kw)
+
+    state.mark("onedrive", "S:a", "completed", "OLD", user_key="u")
+    src = SourceGraph({"root": [d("dir")], "dir": [f("a")]})
+    tgt = TargetWithCurrentPath(existing={"a.txt": {"id": "OLD", "size": 3}})
+
+    run(src, tgt, state)
+
+    assert any("/items/T-dir:/a.txt:/content" in path for path in tgt.puts)
+    assert state.target("onedrive", "S:a") == "T-file"
+
+
+def test_completed_folder_move_resolves_under_current_parent(state):
+    class TargetWithCurrentPath(TargetGraph):
+        def request(self, method, path, **kw):
+            if method == "GET" and path.endswith(":/moved"):
+                raise GraphError("not found", status_code=404)
+            return super().request(method, path, **kw)
+
+    state.mark("onedrive", "S:parent", "completed", "T-parent", user_key="u")
+    state.mark("onedrive", "S:moved", "completed", "OLD-MOVED", user_key="u")
+    src = SourceGraph({
+        "root": [d("parent")],
+        "parent": [d("moved")],
+        "moved": [f("child")],
+    })
+    tgt = TargetWithCurrentPath(existing={"parent": {"id": "T-parent", "folder": {}}})
+
+    run(src, tgt, state)
+
+    assert state.target("onedrive", "S:moved") == "T-moved"
+    assert any("/items/T-moved:/child.txt:/content" in path for path in tgt.puts)
 
 
 def test_folder_failure_does_not_hide_siblings(state):
@@ -128,6 +185,39 @@ def test_folder_failure_does_not_hide_siblings(state):
     assert state.status("onedrive", "S:bad") == "failed"
     assert state.status("onedrive", "S:a") == "completed"
     assert state.status("onedrive", "S:b") == "completed"
+
+
+def test_existing_folder_is_reused_without_log(state, capsys):
+    tgt = TargetGraph(existing={"folder": {"id": "T-folder", "folder": {}}})
+    stats = run(SourceGraph({"root": [d("folder")]}), tgt, state)
+    assert stats["failed"] == 0
+    assert state.target("onedrive", "S:folder") == "T-folder"
+    assert capsys.readouterr().out == ""
+
+
+def test_new_folder_logs_created(state, capsys):
+    stats = run(SourceGraph({"root": [d("folder")]}), TargetGraph(), state)
+    assert stats["failed"] == 0
+    assert "Created folder: folder" in capsys.readouterr().out
+
+
+def test_folder_lookup_error_does_not_create_duplicate_folder(state):
+    class ForbiddenTarget(TargetGraph):
+        posts = 0
+
+        def request(self, method, path, **kw):
+            if method == "GET" and path.endswith(":/folder"):
+                raise GraphError("forbidden", status_code=403)
+            if method == "POST":
+                self.posts += 1
+            return super().request(method, path, **kw)
+
+    tgt = ForbiddenTarget()
+    stats = run(SourceGraph({"root": [d("folder")]}), tgt, state)
+
+    assert stats["folders_failed"] == 1
+    assert state.status("onedrive", "S:folder") == "failed"
+    assert tgt.posts == 0
 
 
 def test_listing_failure_marks_discovery_incomplete(state):
@@ -167,6 +257,20 @@ def test_leftover_failed_rows_keep_user_pending(state):
 
 def test_clean_full_run_completes(state):
     _run_batch_onedrive(SourceGraph({"root": [f("a")]}), TargetGraph(), plan(), state, False)
+    assert state.status("batch-onedrive", "S") == "completed"
+
+
+def test_default_full_run_rechecks_completed_user(state):
+    state.mark("batch-onedrive", "S", "completed", "T", user_key="u")
+    state.mark("onedrive", "S:a", "completed", "OLD", user_key="u")
+    tgt = TargetGraph(existing={"a.txt": {"id": "OLD", "size": 1}})
+
+    results = _run_batch_onedrive(
+        SourceGraph({"root": [f("a", size=3)]}), tgt, plan(), state, False
+    )
+
+    assert results[0]["status"] == "completed"
+    assert tgt.puts
     assert state.status("batch-onedrive", "S") == "completed"
 
 
@@ -267,14 +371,12 @@ def test_verify_completed_skips_intact_file_without_reupload(state):
     assert state.target("onedrive", "S:a") == "OLD"
 
 
-def test_verify_completed_off_by_default_trusts_stale_checkpoint(state):
-    # Same truncated scenario as above, but without opting in: the existing
-    # "completed" row is trusted as-is (current default/steady-state behavior).
+def test_default_run_repairs_truncated_completed_checkpoint(state):
     state.mark("onedrive", "S:a", "completed", "OLD", user_key="u")
     tgt = TargetGraph(existing={"a.txt": {"id": "OLD", "size": 1}})
     stats = run(SourceGraph({"root": [f("a", size=3)]}), tgt, state)
-    assert not tgt.puts and tgt.calls == 0  # checkpoint trusted - no target call at all
-    assert state.target("onedrive", "S:a") == "OLD"
+    assert tgt.puts and stats["failed"] == 0
+    assert state.target("onedrive", "S:a") == "T-file"
 
 
 # --- raw_request: 429/5xx/network retry with backoff; permanent 4xx is not retried ---
@@ -345,3 +447,51 @@ def test_raw_request_does_not_retry_permanent_4xx(monkeypatch):
     response = client.raw_request("GET", "https://x")
     assert response.status_code == 404
     assert client.session.calls == 1  # no retry - caller's raise_for_status() handles it
+
+
+def test_request_retries_network_errors(monkeypatch):
+    monkeypatch.setattr("migration.common.graph.time.sleep", lambda s: None)
+
+    class Ok(_FakeResponse):
+        content = b""
+        ok = True
+
+    client, _ = _client([requests.exceptions.ConnectionError("max retries"), Ok(200)])
+    assert client.request("GET", "/x") is None
+    assert client.session.calls == 2
+
+
+def test_request_network_error_eventually_raises(monkeypatch):
+    monkeypatch.setattr("migration.common.graph.time.sleep", lambda s: None)
+    client, _ = _client([requests.exceptions.ConnectionError("down")] * 6)
+    with pytest.raises(requests.exceptions.ConnectionError):
+        client.request("GET", "/x")
+    assert client.session.calls == 6
+
+
+class _FlakyTarget(TargetGraph):
+    """PUT fails for the first `fail_puts` attempts, then succeeds."""
+
+    def __init__(self, fail_puts, **kw):
+        super().__init__(**kw)
+        self.fail_puts = fail_puts
+
+    def request(self, method, path, **kw):
+        if method == "PUT" and self.fail_puts > 0:
+            self.fail_puts -= 1
+            raise requests.exceptions.ConnectionError("reset")
+        return super().request(method, path, **kw)
+
+
+def test_transient_failure_recovered_in_run_completes_user(state):
+    tgt = _FlakyTarget(fail_puts=1)
+    res = _run_batch_onedrive(SourceGraph({"root": [f("a")]}), tgt, plan(), state, False)
+    assert state.status("onedrive", "S:a") == "completed"
+    assert state.status("batch-onedrive", "S") == "completed"
+
+
+def test_persistent_failure_stays_pending_with_reason(state):
+    tgt = _FlakyTarget(fail_puts=10_000)
+    _run_batch_onedrive(SourceGraph({"root": [f("a")]}), tgt, plan(), state, False)
+    assert state.status("onedrive", "S:a") == "failed"
+    assert state.status("batch-onedrive", "S") == "pending"
