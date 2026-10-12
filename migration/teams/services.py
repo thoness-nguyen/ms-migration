@@ -755,6 +755,12 @@ def extract_chat(graph: GraphClient, chat_id: str) -> dict[str, Any]:
     return {"chat": chat, "members": members, "messages": messages}
 
 
+def extract_channel(graph: GraphClient, team_id: str, channel_id: str) -> dict[str, Any]:
+    channel = graph.request("GET", f"/teams/{team_id}/channels/{channel_id}")
+    messages = list(graph.pages(f"/teams/{team_id}/channels/{channel_id}/messages"))
+    return {"channel": channel, "messages": messages}
+
+
 def invite_guest_user(target_graph: GraphClient, source_upn: str, display_name: str | None = None, redirect_url: str = "https://myapps.microsoft.com") -> str | None:
     """Best-effort B2B guest invite for a source-tenant user with no target-tenant
     account, so chats/messages can still reference them instead of being skipped.
@@ -1172,4 +1178,3 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         else:
             print(f"  [+] {who}Completed chat migration: {imported} messages")
     return target_chat_id, imported
-

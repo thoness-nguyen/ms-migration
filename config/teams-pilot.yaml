@@ -6656,7 +6656,5 @@ workloads:
         source_channel_id: 19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2
         target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
         target_channel_id: 19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2
-        messages: ../data/teams/harbour-pd-work-flow-general.messages.json
         sync_new_messages: true
         include_unmapped_senders: true
-

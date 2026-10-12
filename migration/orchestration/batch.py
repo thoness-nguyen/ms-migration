@@ -16,7 +16,7 @@ from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
+from ..teams.services import extract_channel, extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -258,7 +258,8 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                 if not user_map and not global_id_map:
                     raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
                 print(f"[chat {index}/{total_chats}] {name}: {len(missing)} member(s) have no target mapping - continuing without them: {missing}")
-            bundle_path = plan_dir / f"{name}.chat-bundle.json"
+            bundle_path = plan_dir.parent / "data" / "team-chats" / f"{name}.chat-bundle.json"
+            bundle_path.parent.mkdir(parents=True, exist_ok=True)
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
             stats: dict[str, int] = {}
             allow_non_historical_import = bool(entry.get("allow_non_historical_import", allow_non_historical_import_default))
@@ -400,8 +401,6 @@ def _run_batch_channels(
         source_channel_id = entry.get("source_channel_id")
         target_team_id = entry.get("target_team_id")
         target_channel_id = entry.get("target_channel_id")
-        messages_file = entry.get("messages")
-
         batch_key = f"{source_team_id}:{source_channel_id}"
 
         result: dict[str, Any] = {
@@ -423,11 +422,6 @@ def _run_batch_channels(
                     f"Channel {name} requires target_team_id and target_channel_id"
                 )
 
-            if not messages_file:
-                raise ValueError(
-                    f"Channel {name} requires a messages file"
-                )
-
             sync_new_messages = bool(entry.get("sync_new_messages", sync_new_messages_default))
             if state.status("batch-channel", batch_key) == "completed" and not sync_new_messages:
                 result.update({
@@ -437,20 +431,11 @@ def _run_batch_channels(
                 print(f"[channel {index}/{total_channels}] {name}: skipped (already completed)")
                 return result
 
-            messages_path = (plan_dir / messages_file).resolve()
-
-            if not messages_path.exists():
-                raise FileNotFoundError(
-                    f"Messages file not found: {messages_path}"
-                )
-
-            with messages_path.open(encoding="utf-8") as stream:
-                messages = json.load(stream)
-
-            if not isinstance(messages, list):
-                raise TypeError(
-                    f"Messages file must contain a JSON list: {messages_path}"
-                )
+            bundle = extract_channel(source_graph, source_team_id, source_channel_id)
+            messages = bundle["messages"]
+            bundle_path = plan_dir.parent / "data" / "teams" / f"{name}.channel-bundle.json"
+            bundle_path.parent.mkdir(parents=True, exist_ok=True)
+            bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
 
             imported_count = import_channel_messages(
                 target_graph,
@@ -470,7 +455,7 @@ def _run_batch_channels(
             result.update({
                 "status": "dry-run" if dry_run else "completed",
                 "messages": imported_count,
-                "messages_file": str(messages_path),
+                "bundle": str(bundle_path),
             })
 
             if not dry_run:

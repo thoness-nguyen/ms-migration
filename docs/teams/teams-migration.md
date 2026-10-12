@@ -106,6 +106,18 @@ Before changing checkpoint behavior, inspect:
 
 `migration/common/checkpoint.py`
 
+## Message bundle snapshots
+
+Each batch run extracts the configured source chats from Microsoft Graph and
+overwrites their snapshots under `data/team-chats/` as
+`<name>.chat-bundle.json`. Channel entries likewise fetch the source channel
+and its messages from Graph on each run, then overwrite
+`data/teams/<name>.channel-bundle.json` before importing the messages.
+Channel plans therefore need source and target team/channel IDs, not a
+manually maintained messages JSON file. With `sync_new_messages: true`, the
+fresh snapshot is checked against the existing message checkpoints so only
+uncheckpointed messages are imported.
+
 ## Current Limitations
 
 - Channel messages are processed sequentially.
