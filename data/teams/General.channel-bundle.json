@@ -15,11 +15,431 @@
     "summary": {
       "ownersCount": 10,
       "membersCount": 144,
-      "guestsCount": 0,
+      "guestsCount": 5,
       "hasMembersFromOtherTenants": false
     }
   },
   "messages": [
+    {
+      "id": "1793155557592",
+      "replyToId": null,
+      "etag": "1793155557592",
+      "messageType": "message",
+      "createdDateTime": "2026-10-28T02:45:57.592Z",
+      "lastModifiedDateTime": "2026-10-28T02:45:57.592Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "PD WEEKLY CALL (OCTOBER 28 2026)",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1793155557592?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793155557592&parentMessageId=1793155557592",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "30a91470-298e-436a-bc60-934f482867c1",
+          "displayName": "Quynh Anh Pham",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>SCALA<br>\n-Kidney coffee table: The new stone top is ready and It's fine for photograph then can ship it<br>\n-Chinh will share photos&nbsp;<br>\n-Chinh will share the Eco price- Jacob suggesting if we go with Elephant for watches after review it<br>\n-They didn't reduce lamination, do the full solid top</p>\n<p>&nbsp;</p>\n<p>EMERALD<br>\n-Finish: fuming is a reaction with the wood and get some variation - we need to manage for production<br>\n-Do sample with the lighter one<br>\n-Sampling nightstand , we want both hardware options (with and without backplate)</p>\n<p>&nbsp;</p>\n<p>OXLEY<br>\n-Move forward with 68mm version featuring curved drawers</p>\n<p>&nbsp;</p>\n<p>BEDFORD<br>\n-Need to remake the nightstand drawing - Chinh will review and send back<br>\n-Key lock have non-functional key, just like a handle appearance&nbsp; - Chinh will study it<br>\n-Mayfair has a similar hardware: it's lock and key - KP will discuss with RH and feedback to Chinh<br>\n-Mayfair finish:&nbsp; Chinh to check the finish from VFR- to re-confirm with Nick and get back to Chinh</p>\n<p>-Chinh will ask the factory for color panels</p>\n<p><br>\n-Smoked oak finishes - the darker brown one - maybe need the tolerance / shade band for smoked oak</p>\n<p>-Andrew talking to Chinh to order some extra veneer from Flizt Kohl to get some color panels&nbsp;<br>\n-Asking them about veneer variation color from light to dark</p>\n<p>&nbsp;</p>\n<p>OLIVER<br>\n-Change the wood grain direction on the body of nightstand to match the drawers horizontally and KS will send markup via email</p>\n<p>&nbsp;</p>\n<p>BOBBIN<br>\n- Chinh will send photos to show the damage of sample before deciding we shoot professionally or resample then shooting</p>\n<p>&nbsp;</p>\n<p>DIAMOND<br>\n-Jason is in VN, and he want to make the sample in VN , but it takes too long and it need to be in China - he confirms today<br>\n-Sample takes 2 weeks from today</p>\n<p>&nbsp;</p>\n<p>ELLIOT TEAK<br>\n-Still on track and Dian will send pics today&nbsp;<br>\n-Some products are in the assemble<br>\n- Dian will send the sectional ETD tmr, the factory focusing on samples</p>\n<p>&nbsp;</p>\n<p>ELLIOT ALU<br>\n-Lounge chair , ottoman, dining tables drawings update at end of this week<br>\n-The rest of drawings: Changing the seat depth from RH - Dian check and get back to KP</p>\n<p>&nbsp;</p>\n<p>DICRECTOR'S CHAIR<br>\n-The frame is ready&nbsp;<br>\n-The high gloss arm is waiting the material arriving - it is still on track<br>\n-Is there any cracking at the joints - do the mockups for solution</p>\n<p>&nbsp;</p>\n<p>RIVIERA<br>\n-Sample is supposed to be done end of the month<br>\n-We haven't applied high gloss<br>\n-The armrest is failed in house testing</p>\n<p>&nbsp;</p>\n<p>OXFORD<br>\n-The armrest is failed in house testing&nbsp;<br>\n&nbsp;</p>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1792551259046",
+      "replyToId": null,
+      "etag": "1792551259046",
+      "messageType": "message",
+      "createdDateTime": "2026-10-21T02:54:19.046Z",
+      "lastModifiedDateTime": "2026-10-21T02:54:19.046Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "PD WEEKLY CALL (OCTOBER 21 2026)",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1792551259046?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1792551259046&parentMessageId=1792551259046",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "30a91470-298e-436a-bc60-934f482867c1",
+          "displayName": "Quynh Anh Pham",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>We have good feedback in HP, we might change the scale of a couple things - Billy will review with Nick<br>\n-Dimitri and Harriet: Billy will review with Nick, glides might change<br>\n-Dimitri arm chair got the cracks - It's welding issue - Jason will fix it&nbsp;<br>\n-Harriet Sun lounge: round back cushion instead of square shape<br>\n-Harriet: Jason will propose new slat placement and send us side chair drawing<br>\n-Marco update apron - can't use lamination because we would see the joint<br>\n-Dimitri sun lounge can we hide the bolts on the bottom and on the side like dining chair - Jason will fix it<br>\n-All Harriet pedestal tables change name to Athena<br>\n-Jason suggests to test new powder coat (Onyx) 5 years, and give updates to Paul<br>\n-Odette chair Vega were beautiful in our showroom</p>\n<p>&nbsp;</p>\n<p>CELINE<br>\n-The back cushions look a little lumpy, a little soft - if another material is a little bit heavier weight, down feather and give more supportive and doesn't increase the price - Daisy has been working on updating them&nbsp;<br>\n- Increase the fill, adding thin piece of thin foam inside back cushions - it's an idea</p>\n<p>&nbsp;</p>\n<p>ELLIOT<br>\n-RH want to change the leg placement - matching Striata - need drawings updates<br>\n-Side table ETD : Nov 12<br>\n-Sectional: Dian will try to accommodate and call out which legs need to be kept</p>\n<p>&nbsp;</p>\n<p>ELLIOT ALU<br>\n-Mandiri will send Drawings tomorrow<br>\n-Once we get approvals on Lounge chair, the rest moulds will arrive<br>\n<br>\nRIVIERA<br>\n-PE is very hard to repair. Dian suggest to send the back first to weaver for weaving, put together for the legs and do high gloss - keep fully assembled<br>\n-Planning do in house test, Dian concerns the backrest is not strong enough<br>\n-Billy concerns two fasteners to five. Is there any way to keep as is?<br>\n-Apply the high gloss on sample, how about the rest of finishes?</p>\n<p>&nbsp;</p>\n<p>DIAMOND<br>\n-Seat depth 23\": Dian check the drawing and feedback to Billy</p>\n<p>&nbsp;</p>\n<p>RH INDOOR<br>\n-Nick concern that he doesn't want to use many factories - Paul advices against it , we need at least two<br>\n-We start on the oak now - Chinh received the raw material for the smoked oak from supplier on monday<br>\n-Factory is preparing the chemical and be ready next week<br>\n-Need apply sealant to make it bright<br>\n-Chinh will share the silver fir info<br>\n-We want to look at oak and sandblasted fir as the oak finishes, want to see the textures of different materials<br>\n-Billy to look at the oxidized</p>\n<p>&nbsp;</p>\n<p>OLIVER<br>\n-Laura will send the reference for the standard shooting<br>\n-Billy will talk with Nick about dark color background</p>\n<p>&nbsp;</p>\n<p>EMERALD<br>\n-Working on sideboard ETD&nbsp;<br>\n-The price is high<br>\n-It takes 4-6 weeks once we approve the panels<br>\n-Oxley will be placed on outsourcing to controll quality and stone and collection will start once we align with the factory - Paul meet Anthony mid Nov</p>\n<p>&nbsp;</p>\n<p>PRASSO<br>\nBilly will review the photos with Nick<br>\n&nbsp;</p>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1791991731465",
+      "replyToId": null,
+      "etag": "1791991731465",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-10-14T15:28:51.465Z",
+      "lastModifiedDateTime": "2026-10-14T15:28:51.465Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791991731465?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791991731465&parentMessageId=1791991731465",
+      "from": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+        "members": [
+          {
+            "id": "45146962-1aee-4f03-9946-b6146b26ba0a",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    },
+    {
+      "id": "1791991711195",
+      "replyToId": null,
+      "etag": "1791991711195",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-10-14T15:28:31.195Z",
+      "lastModifiedDateTime": "2026-10-14T15:28:31.195Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791991711195?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791991711195&parentMessageId=1791991711195",
+      "from": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+        "members": [
+          {
+            "id": "fcd6a19d-2e73-4041-ad8c-05d3c87b07c8",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    },
+    {
+      "id": "1791991686623",
+      "replyToId": null,
+      "etag": "1791991686623",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-10-14T15:28:06.623Z",
+      "lastModifiedDateTime": "2026-10-14T15:28:06.623Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791991686623?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791991686623&parentMessageId=1791991686623",
+      "from": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+        "members": [
+          {
+            "id": "bbb7c2c2-5f46-4b09-a4b0-b0724b73fd39",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    },
+    {
+      "id": "1791991598594",
+      "replyToId": null,
+      "etag": "1791991598594",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-10-14T15:26:38.594Z",
+      "lastModifiedDateTime": "2026-10-14T15:26:38.594Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791991598594?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791991598594&parentMessageId=1791991598594",
+      "from": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+        "members": [
+          {
+            "id": "c414d129-5213-46ed-a1aa-ea9f0d877217",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    },
+    {
+      "id": "1791991576782",
+      "replyToId": null,
+      "etag": "1791991576782",
+      "messageType": "unknownFutureValue",
+      "createdDateTime": "2026-10-14T15:26:16.782Z",
+      "lastModifiedDateTime": "2026-10-14T15:26:16.782Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791991576782?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791991576782&parentMessageId=1791991576782",
+      "from": null,
+      "policyViolation": null,
+      "body": {
+        "contentType": "html",
+        "content": "<systemEventMessage/>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [],
+      "eventDetail": {
+        "@odata.type": "#microsoft.graph.membersAddedEventMessageDetail",
+        "visibleHistoryStartDateTime": "0001-01-01T00:00:00Z",
+        "members": [
+          {
+            "id": "a8b31dd2-bcaf-4876-9407-9c36aa2fb71b",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        ],
+        "initiator": {
+          "application": null,
+          "device": null,
+          "user": {
+            "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+            "id": "954eadfd-14da-4167-86de-f1e37e1f8e78",
+            "displayName": null,
+            "userIdentityType": "aadUser",
+            "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+          }
+        }
+      }
+    },
+    {
+      "id": "1791944453072",
+      "replyToId": null,
+      "etag": "1791948741062",
+      "messageType": "message",
+      "createdDateTime": "2026-10-14T02:20:53.072Z",
+      "lastModifiedDateTime": "2026-10-14T03:32:21.062Z",
+      "lastEditedDateTime": "2026-10-14T03:32:20.636Z",
+      "deletedDateTime": null,
+      "subject": "PD WEEKLY CALL (OCTOBER 14 2026)",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791944453072?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791944453072&parentMessageId=1791944453072",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "30a91470-298e-436a-bc60-934f482867c1",
+          "displayName": "Quynh Anh Pham",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>OLIVER<br>\n-Sideboard shipping to US: Original sample is not the first quality and move it to the showroom -&gt; Chinh will discuss with the factory and get back Laura about shipment<br>\n-Sample ETD: Chinh will discuss with factory and reply email</p>\n<p>&nbsp;</p>\n<p>SCALA:<br>\n-Coffee table supposed to be ready at the end of this week - Chinh will send the photos (360 angle shots) once done before shipment for web photography</p>\n<p>&nbsp;</p>\n<p>ELLIOT<br>\n-Ottoman got the approval and RH want to change it - follow Vigo, end grain cracking concern - KS will talk with RH to keep current design<br>\n-Pending approvals on dining table and coffee table 76<br>\n-Double check RH need square or round side table tomorrow<br>\n-Dian will provide ETD asap via email</p>\n<p>&nbsp;</p>\n<p>ELLIOT ALU<br>\n-Dian pushing the factory for sampling - concern about back legs, Dian will discuss the factory regarding casting before moving sampling<br>\n-Once teak lounge chair is approved , we will move on alu lounge chair</p>\n<p>&nbsp;</p>\n<p>MUSTIQUE<br>\n-The teak and metal approval drawings&nbsp; - Dian to send them via email<br>\n-Billy to double check with RH if they need the samples because they already have them</p>\n<p>&nbsp;</p>\n<p>BONDI<br>\n-Dian did send drawings to Billy are correct for sample and production via email&nbsp;</p>\n<p>&nbsp;</p>\n<p>RIVIERA<br>\n-Concern with scratching on high gloss - discuss more with RH</p>\n<p>&nbsp;</p>\n<p>OXFORD<br>\n-Laura will clarify which Cane samples RH need and feedback Dian<br>\n&nbsp;</p>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1791341555258",
+      "replyToId": null,
+      "etag": "1791512567478",
+      "messageType": "message",
+      "createdDateTime": "2026-10-07T02:52:35.258Z",
+      "lastModifiedDateTime": "2026-10-09T02:22:47.478Z",
+      "lastEditedDateTime": "2026-10-09T02:22:46.965Z",
+      "deletedDateTime": null,
+      "subject": "PD WEEKLY CALL (OCTOBER 07 2026)",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3A4e87db6e54e24d609aab8b9ed6e36c0e%40thread.tacv2/1791341555258?groupId=570cfa6a-8cc0-44b9-9059-e427f8c7afc2&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1791341555258&parentMessageId=1791341555258",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "30a91470-298e-436a-bc60-934f482867c1",
+          "displayName": "Quynh Anh Pham",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>EMERALD<br>\n-Hardware: do the sampling then do the hardware - Nick choose the handle- markup will be sent today&nbsp;<br>\n-Do the handle without the backplate<br>\n-Smoked oak finish, brown emperador stone top - the swatch from Robertson, send oxidized bronze for Oliver<br>\n-Billy send the&nbsp;Emeral and Oliver specs and information to Chinh to go ahead</p>\n<p>&nbsp;</p>\n<p>PRASSO ROUND<br>\n-Urecel will send cushion tomorrow</p>\n<p>&nbsp;</p>\n<p>ELLIOT<br>\n-The revised drawings is waiting the RH's approval before setting new prices - Lounge chair, swivel and dining<br>\n-The cost now much higher compared to the previous due to the wider back legs , increase up 15%<br>\n-Sofa: RH want the leg come closer to the middle of the back - may cause the tipping issue - Nick determines that we can't move it for stability - Matira has the same placement</p>\n<p>&nbsp;</p>\n<p>ELLIOT ALU<br>\n-Need to finish the teak first then move to alu<br>\n-Dian will start getting costing within 1 week then confirm sampling and production timelines - 4 week if new dies are required - Dian will check the dies<br>\n-Dian will update the drawing with new specs<br>\n-Production timeline 90 or 120 dates - discuss tomorrow</p>\n<p>&nbsp;</p>\n<p>-Dian to send&nbsp; the approval drawings on Mustique teak and metal&nbsp;</p>\n<p>&nbsp;</p>\n<p>BONDI<br>\n-Dian will send the table for calculation<br>\n-Can PTK&nbsp; hitting globalindo quality?<br>\n-Submitted low seating<br>\n-Jacob will get pricing on tables for teak and alu. Not included the sealant<br>\n-Billy to check with Carina if they&nbsp;need new one&nbsp;because of removeable cushion<br>\n-RH need restamp all dwgs with removable back cushion</p>\n<p>&nbsp;</p>\n<p>OXFORD&nbsp;<br>\n-Let sample it at 40 and do in-house test&nbsp;&nbsp;<br>\n-BLHM the price is cheaper to Mandiri - double sourcing<br>\n-Take 30 days to sampling<br>\n-PTK is 10% cheaper than current price - discuss with Paul the margin</p>\n<p>&nbsp;</p>\n<p>- We don't have the PO at the moment - we asking to push it to start preparing and buliding this market</p>\n<p>&nbsp;</p>\n<p>-Dian will send new drawings for Riviera and Oxford today</p>\n<p>&nbsp;</p>\n<p>DIRECTOR CHAIR<br>\n-Come along with the stainless from 20 to 25, RH may go down to 20<br>\n-Billy to follow up with RH the drawings<br>\n&nbsp;</p>"
+      },
+      "channelIdentity": {
+        "teamId": "570cfa6a-8cc0-44b9-9059-e427f8c7afc2",
+        "channelId": "19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
     {
       "id": "1790735509142",
       "replyToId": null,

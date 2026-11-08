@@ -1,60 +1,75 @@
 ---
 name: onedrive-migration
-description: Debug and maintain OneDrive migration, especially completion, checkpoints, validation, retries, and user-level status.
+description: Maintain OneDrive migration correctness, per-item and per-user checkpoint consistency, safe recovery, and source-to-target validation.
 ---
 
 # OneDrive Migration
 
 ## Priority
 
-OneDrive is the current primary migration workload.
+OneDrive is the primary current workload. Known concern: users may be marked `completed` even when content is missing or incomplete.
 
-Known issue: users may be marked `completed` while their OneDrive is still incomplete.
+## Efficient investigation
 
-## Token Efficiency
-
-Use the minimum context required.
-
-Before reading files:
-
-1. Search for the relevant symbol/status.
-2. Read its definition.
-3. Read direct callers/callees only.
-4. Inspect targeted tests.
-5. Read docs only if needed.
-
-Do not:
-
-- Scan the whole repository.
-- Read unrelated workloads.
-- Read large logs unless required.
-- Refactor unrelated code.
-- Repeat information already established.
-
-Stop investigating once the root cause is supported by evidence.
-
-## Key Files
-
-Start with only the files relevant to the task:
-
+Start with only the relevant files:
 - `migration/onedrive/migration.py`
 - `migration/onedrive/validation.py`
 - `migration/orchestration/batch.py`
 - `migration/orchestration/validate.py`
 - `migration/common/checkpoint.py`
 
-Search for the actual function/symbol before opening additional files.
+Search for the symbol first, then read its definition, direct callers, dependencies, and targeted tests. Do not scan unrelated workloads.
 
-## Completion Model
+## Completion model
 
-Important checkpoints:
+Important state scopes:
+- `onedrive`: per-file/folder work.
+- `batch-onedrive`: per-user summary.
 
-- `onedrive` → per file/folder.
-- `batch-onedrive` → per user.
+Never assume `copy_drive()` returning successfully means the user is complete. Inspect copied counts, failed/pending/skipped items, retries, child checkpoints, parent checkpoint, report counters, and validation output.
 
-Never assume:
+Completion must be derived from required child results and configured validation. Preserve a clear distinction between execution-complete and audit-passed.
 
-```text
-copy_drive() returned successfully
-→ user completed
-```
+## Resume and idempotency
+
+- Checkpoint only after destination success is confirmed.
+- Handle timeouts and crashes where the destination may have accepted a write but checkpoint commit did not occur.
+- Before retrying ambiguous creates, reconcile target state using stable identifiers and path/metadata evidence.
+- Preserve bounded concurrency, retry behavior, and Graph `Retry-After`.
+- Do not delete/reset state to mask false completion.
+- Avoid manual checkpoint DB writes during an active migration.
+
+## Cloud-worker compatibility
+
+Migration logic should not depend on an interactive terminal, current working directory, laptop-local files, or browser lifetime. Inputs and outputs should be explicit:
+- versioned job manifest and mappings;
+- configured persistent state location;
+- configured log/report output;
+- server-side secret references;
+- stable job ID and code/config version.
+
+Do not embed deployment credentials or production mappings in source control. Do not make cloud-specific changes to OneDrive domain logic unless needed; prefer a hosting/orchestration adapter.
+
+## Validation and audit
+
+For each user, reconcile source inventory against target outcomes using the checks supported by the implementation, such as item identity, hierarchy/path, file/folder counts, sizes, required metadata, and permissions where in scope.
+
+Report separately:
+- migrated and validated;
+- failed or retry-exhausted;
+- skipped/excluded;
+- missing or mismatched;
+- unsupported;
+- unverified.
+
+A user-level checkpoint cannot override failed child items or failed validation. Keep discrepancy evidence and do not silently convert exceptions to success.
+
+## Tests
+
+Add regression coverage for:
+- partial per-file failure with user-level completion blocked;
+- crash/restart and resume;
+- destination write succeeded but checkpoint commit failed;
+- duplicate retry;
+- report/checkpoint/validation disagreement;
+- Graph throttling and retry exhaustion.

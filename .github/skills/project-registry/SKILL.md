@@ -1,232 +1,88 @@
 ---
 name: project-registry
-description: Locate the smallest relevant set of code, documentation, checkpoints, reports, and tests for OneDrive and Teams migration tasks.
+description: Locate the smallest relevant code and documentation for migration correctness, cloud hosting, checkpoints, configuration, and audit.
 ---
 
 # Project Registry
 
-## Purpose
+Use this skill to locate the relevant implementation and documentation without scanning the entire repository.
 
-Use this skill to quickly locate the relevant parts of the repository
-without scanning the entire codebase.
+## Current priorities
 
-The goal is to minimize unnecessary context while still understanding
-the execution path required for a task.
+1. **OneDrive:** completion correctness, per-item/user checkpoint consistency, reconciliation.
+2. **Cloud execution:** move long-running execution off the operator laptop while keeping the initial deployment simple.
+3. **Checkpoint/recovery and audit:** durable state, safe resume, source/target validation.
+4. **Teams:** maintenance and regression fixes.
+5. **SharePoint:** stable; inspect only when requested or a shared change affects it.
 
----
+## Architecture and deployment documents
 
-# Current Priorities
+- `docs/ARCHITECTURE.md` — current application architecture; verify its contents before relying on it.
+- `docs/ARCHITECHTURE_UPGRADE.md` — existing performance/concurrency architecture; note the filename spelling.
+- `docs/CLOUD_HOSTED_MIGRATION_ROADMAP.md` — proposed hosting, checkpoint, configuration, recovery, and audit roadmap.
+- `AGENTS.md` — repository-wide engineering and safety rules.
 
-## Priority 1 — OneDrive
+## Repository map
 
-Active debugging and maintenance.
-
-Main concern:
-
-Users may be marked as completed while their OneDrive content is
-still incomplete.
-
-## Priority 2 — Teams
-
-Maintenance only.
-
-## Priority 3 — SharePoint
-
-Stable.
-
-Do not inspect SharePoint unless explicitly requested or a shared
-infrastructure change directly affects it.
-
----
-
-# Repository Map
-
-## Orchestration
-
-Path:
-
+### Orchestration
 `migration/orchestration/`
-
-Important files:
-
 - `cli.py`
 - `batch.py`
 - `validate.py`
 
-Responsibilities:
+Responsibilities: load migration plans, create Graph clients, open checkpoint stores, coordinate workloads, execute jobs, generate reports, and run validation.
 
-- Load migration plans.
-- Create Graph clients.
-- Open checkpoint stores.
-- Coordinate workloads.
-- Execute migrations.
-- Generate reports.
-- Execute post-migration validation.
-
----
-
-# OneDrive
-
-Path:
-
+### OneDrive
 `migration/onedrive/`
-
-Important files:
-
 - `migration.py`
 - `validation.py`
 
-Important functions:
+Important functions: `copy_drive()`, `retry_failed_onedrive_files()`, `validate_user_drive()`.
 
-- `copy_drive()`
-- `retry_failed_onedrive_files()`
-- `validate_user_drive()`
+State:
+- `onedrive`: per-file/folder state; key format documented in current code/config.
+- `batch-onedrive`: per-user summary state.
 
-Responsibilities:
+Do not assume a user-level checkpoint is authoritative without examining child item states and validation.
 
-- Per-user OneDrive migration.
-- Folder discovery.
-- Folder preparation.
-- Permission migration where enabled.
-- User-level migration completion.
-- File transfer.
-- Concurrent file workers.
-- Per-item checkpointing.
-- Post-migration validation.
-
----
-
-# OneDrive Checkpoint Model
-
-## Per-item
-
-Workload:
-
-`onedrive`
-
-Key format:
-
-`{source_user}:{item_id}`
-
-Represents:
-
-- Files
-- Folders
-
-## Per-user
-
-Workload:
-
-`batch-onedrive`
-
-Represents:
-
-- Overall user migration state.
-
-Important:
-
-The per-user checkpoint must not be treated as authoritative without
-considering the underlying per-item state.
-
----
-
-# Teams
-
-Path:
-
+### Teams
 `migration/teams/`
-
-Important files:
-
 - `services.py`
 - `validation.py`
 
-Important functions:
+Important functions include `extract_chat()`, `import_chat()`, `import_channel_messages()`, and `validate_chat_migration()`.
 
-- `extract_chat()`
-- `import_chat()`
-- `import_channel_messages()`
-- `validate_chat_migration()`
+Preserve workload-specific API limitations, ordering, identity mapping, and validation semantics.
 
-Responsibilities:
-
-- Chat migration.
-- Chat message migration.
-- Channel message migration.
-- Member handling.
-- Attachment handling.
-- Message validation.
-
----
-
-# Common Infrastructure
-
-Path:
-
+### Shared infrastructure
 `migration/common/`
+- `checkpoint.py`: SQLite `StateStore`, resume and deduplication.
+- `graph.py`: authentication headers, requests, pagination, token refresh, throttling/retries, transfers.
+- `retry.py`: shared retry wrapper.
+- `concurrency.py`: bounded workers/adaptive throttling.
+- `reporting.py`: shared reporting helpers.
+- `auth.py`: authentication.
 
-Important modules:
+Before modifying a shared module, identify callers and test affected workloads.
 
-### `checkpoint.py`
+## Cloud execution boundary
 
-SQLite-based `StateStore`.
+The target direction separates the operator interface from the long-running worker:
+- Operator interface submits/inspects a job.
+- Server-side worker owns execution.
+- Durable state and reports survive laptop/browser shutdown.
+- Hosting, credentials, and persistent storage are configured per environment.
 
-Used for:
+Do not introduce a web UI, queue, or multi-worker design before the single-worker deployment and recovery model is proven. SQLite is currently a single-host assumption until code inspection and tests prove otherwise.
 
-- Resume.
-- Deduplication.
-- Completion state.
-- Failed state.
-- Per-item migration state.
+## Investigation path for false OneDrive completion
 
-### `graph.py`
+`migration/orchestration/batch.py`
+→ OneDrive user processing
+→ `copy_drive()`
+→ per-item checkpoint writes
+→ `batch-onedrive` checkpoint
+→ report
+→ `validate_user_drive()`
 
-Graph API client.
-
-Handles:
-
-- Authentication headers.
-- Requests.
-- Pagination.
-- 401 refresh.
-- 429 handling.
-- 5xx retry behavior.
-- Raw file transfers.
-
-### `retry.py`
-
-Shared retry wrapper.
-
-### `concurrency.py`
-
-Bounded workers and adaptive throttling.
-
-### `reporting.py`
-
-Shared reporting helpers.
-
----
-
-# OneDrive Investigation Path
-
-When investigating:
-
-> User marked completed but OneDrive is incomplete.
-
-Start here:
-
-```text
-migration/orchestration/batch.py
-        ↓
-OneDrive user processing
-        ↓
-copy_drive()
-        ↓
-onedrive checkpoint writes
-        ↓
-batch-onedrive checkpoint
-        ↓
-report
-        ↓
-validate_user_drive()
-```
+Find the earliest transition where incomplete work becomes completed. Do not fix by clearing state or hiding failures.

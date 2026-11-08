@@ -1,239 +1,93 @@
 # MS Migration Agent Instructions
 
-## Purpose
+## Purpose and operating model
 
-This repository is an in-house Microsoft 365 migration platform using
-Microsoft Graph APIs to migrate data between source and target tenants.
+This repository is an in-house Microsoft 365 migration engine for OneDrive, Teams, and SharePoint using Microsoft Graph.
 
-Supported workloads:
+**Architectural direction:** evolve from a laptop-bound terminal workflow to a server-hosted, resumable migration service. Migration execution must not depend on an operator keeping a laptop or browser open.
 
-- OneDrive
-- Teams
-- SharePoint
+Preferred progression:
+1. Prove a single persistent worker on approved, cost-effective Azure compute.
+2. Harden durable checkpoints, recovery, observability, configuration, and audit.
+3. Add an authenticated web/API control plane and durable queue only when justified.
 
-## Current Engineering Focus
+Do not assume hosting, pricing, service limits, or company Azure access. Verify them before selecting a service. A server-hosted job continues only while its compute resource remains running and healthy.
 
-### 1. OneDrive — HIGH PRIORITY
+## Workload priorities
 
-OneDrive is currently the main area requiring investigation and maintenance.
+### OneDrive — HIGH PRIORITY
+Known correctness concern: a user may be marked completed while some source content is not fully present in the target.
 
-Known issue:
+Trace the full flow:
+`orchestration -> user processing -> copy_drive() -> per-item checkpoint -> batch-onedrive checkpoint -> report -> validation`.
 
-> Some users are marked as completed even though their OneDrive content
-> is not fully migrated when the migration report is cross-checked against
-> the actual source and target data.
+A successful function return or user-level checkpoint is not sufficient proof of completion.
 
-This is a correctness issue, not simply a reporting issue.
+### Teams — MAINTENANCE
+Preserve message ordering, sender mapping, member handling, attachments, retries, checkpoint semantics, and idempotency. Avoid broad redesign unless requested.
 
-When working on OneDrive completion, checkpoint, reporting, or validation,
-trace the complete flow:
+### SharePoint — STABLE
+Avoid unrelated changes. Modify only when requested or when a shared infrastructure change requires it; include regression tests.
 
-    orchestration
-        ↓
-    OneDrive user processing
-        ↓
-    copy_drive()
-        ↓
-    per-item checkpoint
-        ↓
-    batch-onedrive user checkpoint
-        ↓
-    migration report
-        ↓
-    validation
+## Non-negotiable engineering principles
 
-Do not assume that one successful function return means the user's
-OneDrive migration is complete.
+- Correctness before throughput.
+- Resumable, idempotent, retry-safe, observable execution.
+- Completion means required work has succeeded and configured validation has passed.
+- Separate execution status from validation/audit status.
+- Never hide failures by changing reports, clearing checkpoints, or marking unresolved work complete.
+- Preserve Graph throttling behavior and honor `Retry-After`.
+- Avoid unrelated refactors and speculative implementation.
 
-### 2. Teams — MAINTENANCE
+## Cloud execution and architecture rules
 
-Teams is currently a maintenance workload.
+- Treat the CLI/`migration-panel` as an operator interface, not as the long-term owner of a multi-day process.
+- The worker must execute on persistent server-side compute. Closing the browser or shutting down the operator laptop must not stop it.
+- Start with one worker on one approved host if sufficient; do not introduce Kubernetes, microservices, or distributed coordination without a demonstrated need.
+- Evaluate Azure VM and supported container hosting against current price, runtime limits, persistent storage, restart behavior, network access, and company policy.
+- Do not assume short-lived/serverless jobs can run for days without limits.
+- Keep the Synology NAS as optional file/archive storage only unless IT explicitly approves and validates another role. Do not use SQLite over SMB as a distributed coordination database.
+- Keep workload/domain logic separate from hosting and job orchestration so hosting can change without rewriting migration behavior.
+- Before multiple workers share state, design atomic job claiming, leases/heartbeats, conflict prevention, and a transactional shared state store.
 
-Typical tasks:
+## Checkpoint and recovery rules
 
-- Bug fixes
-- Checkpoint issues
-- Retry issues
-- Chat/message issues
-- Channel/message issues
-- Attachment issues
-- Small performance improvements
-- Regression fixes
+- Inspect `migration/common/checkpoint.py` before changing state behavior.
+- Document the meaning of each state and its legal transitions.
+- Record job ID, item identity, attempt count, timestamps, error category, and relevant source/target references.
+- Update successful checkpoints only after the destination operation is confirmed.
+- Reconcile the ambiguous case where a destination write succeeds but the process crashes before checkpoint commit.
+- Ensure parent completion is blocked by required pending, failed, unknown, or unvalidated children.
+- Never manually update/delete live checkpoint rows while a worker is active unless a documented maintenance procedure proves it safe.
+- Test recovery after process termination, host restart, network loss, authentication renewal, and Graph throttling.
 
-Do not redesign the Teams architecture unless explicitly requested.
+## Configuration and security
 
-### 3. SharePoint — STABLE
+- Separate code, non-secret deployment settings, per-job manifest, and credentials.
+- Validate source/target tenant IDs, workload scope, mappings, permissions, concurrency, storage, and output paths before starting.
+- Store secrets in an approved server-side secret store such as Azure Key Vault where available; never commit tokens, certificates/private keys, client secrets, production mappings, or `.env` files.
+- Prefer managed identity for Azure resource access where compatible. Do not assume it replaces the app registrations/credentials required for Microsoft Graph tenant-to-tenant access.
+- Apply least privilege, restricted admin access, secret rotation, and redaction of tokens/sensitive data from logs.
+- Log who starts, retries, cancels, or approves jobs.
 
-SharePoint migration is currently considered stable.
+## Post-migration audit
 
-Do not modify SharePoint migration logic for unrelated tasks.
+Every run must produce a durable audit manifest and exception report. Report migrated, failed, retry-exhausted, skipped, excluded, unsupported, and unverified items separately.
 
-Only touch SharePoint when:
+Validation must compare expected source inventory with target results using workload-appropriate identifiers and checks. Checkpoint `completed` is not proof that target data is correct. A final status must distinguish passed, passed-with-approved-exceptions, failed, and inconclusive.
 
-- explicitly requested; or
-- a shared infrastructure change directly requires it.
+## Investigation efficiency
 
-Avoid unnecessary regression risk in the stable SharePoint workload.
+Use the smallest context that can establish the root cause:
+1. Identify workload and observed symptom.
+2. Search for relevant symbol/state/checkpoint key.
+3. Read definition, direct callers, dependencies, and targeted tests.
+4. Inspect report and validation path when completion is involved.
+5. Read architecture documentation when hosting, state, or cross-workload behavior is involved.
 
----
+Do not scan the whole repository, inspect unrelated workloads, or read large logs unnecessarily.
 
-# Core Engineering Principles
-
-## Correctness before speed
-
-Never sacrifice migration correctness for throughput.
-
-The system must remain:
-
-- Resumable
-- Idempotent
-- Retry-safe
-- Observable
-- Deduplicated
-
-## Completion must represent real work
-
-Never mark a workload as `completed` simply because:
-
-- a function returned without raising;
-- a worker pool finished;
-- a folder walk completed;
-- a report was generated.
-
-Completion must reflect the actual required migration result.
-
-For per-user workloads such as OneDrive, verify the relationship between:
-
-- per-item results;
-- user-level checkpoint;
-- migration statistics;
-- report status;
-- validation status.
-
-## Preserve existing reliability behavior
-
-When changing code:
-
-- Preserve checkpoint semantics.
-- Preserve retry behavior.
-- Preserve Graph throttling behavior.
-- Preserve idempotency.
-- Preserve existing public interfaces unless change is required.
-- Avoid unrelated refactoring.
-
----
-
-# Token / Context Efficiency
-
-Use the smallest amount of repository context necessary.
-
-## Investigation order
-
-1. Identify the exact workload.
-2. Search for the relevant function, symbol, status, or checkpoint key.
-3. Read the defining function.
-4. Read its direct callers.
-5. Read its direct dependencies.
-6. Inspect related tests.
-7. Inspect reporting/validation if relevant.
-8. Read architecture documentation only when necessary.
-
-## Do not
-
-- Read the entire repository.
-- Read every file in a workload.
-- Inspect unrelated workloads.
-- Read large historical logs unnecessarily.
-- Repeatedly rediscover repository structure.
-- Perform broad refactoring during a focused bug fix.
-- Copy large amounts of source code into the response.
-
-## Prefer
-
-- Symbol search.
-- Targeted file reads.
-- Existing documentation.
-- Existing abstractions.
-- Targeted tests.
-- Small root-cause fixes.
-
----
-
-# OneDrive Debugging Rules
-
-When investigating OneDrive completion problems, explicitly inspect:
-
-### Per-item state
-
-`onedrive`
-
-Represents individual files/folders.
-
-### Per-user state
-
-`batch-onedrive`
-
-Represents the user's overall migration status.
-
-Do not assume:
-
-    copy_drive() returned successfully
-        =
-    user migration completed
-
-A successful `copy_drive()` call may still contain per-file failures.
-
-Always investigate:
-
-- `files_copied`
-- failed items
-- pending items
-- skipped items
-- retry results
-- `onedrive` checkpoints
-- `batch-onedrive` checkpoint
-- generated migration report
-- validation result
-
-Find the earliest point where incomplete work becomes `completed`.
-
-Do not solve a completion bug by simply:
-
-- clearing checkpoints;
-- deleting the database;
-- rerunning the entire migration;
-- changing the report to hide failures.
-
-Fix the state transition or underlying logic.
-
----
-
-# Teams Maintenance Rules
-
-When working on Teams:
-
-1. Identify the exact failing operation.
-2. Trace the relevant call chain.
-3. Inspect checkpoint behavior.
-4. Inspect Graph API calls and retry behavior.
-5. Inspect relevant tests.
-6. Make the smallest safe change.
-7. Run targeted tests.
-
-Preserve:
-
-- message ordering;
-- message IDs;
-- sender mapping;
-- checkpoint semantics;
-- idempotency;
-- retry behavior.
-
----
-
-# Shared Infrastructure
-
-Important common modules:
+## Shared infrastructure
 
 - `migration/common/graph.py`
 - `migration/common/auth.py`
@@ -242,77 +96,19 @@ Important common modules:
 - `migration/common/concurrency.py`
 - `migration/common/reporting.py`
 
-Changes to these modules may affect multiple workloads.
+Before changing shared code, identify all callers, affected workloads, and regression tests.
 
-Before modifying shared infrastructure:
+## Required implementation workflow
 
-1. Identify all callers.
-2. Determine affected workloads.
-3. Run broader tests.
-4. Check SharePoint regression risk.
+1. Inspect current code and document assumptions.
+2. Explain root cause or architecture decision before a large change.
+3. Propose the smallest safe change and rollout/rollback approach.
+4. Add targeted regression/recovery tests.
+5. Run targeted tests first, then broaden as risk requires.
+6. Report changed files, tests run, untested scenarios, and remaining risks.
 
----
+## Response format
 
-# Architecture References
-
-Primary architecture:
-
-`docs/ARCHITECTURE.md`
-
-Performance/concurrency architecture:
-
-`docs/ARCHITECHTURE_UPGRADE.md`
-
-Project registry:
-
-`.github/skills/project-registry/SKILL.md`
-
-OneDrive skill:
-
-`.github/skills/onedrive-migration/SKILL.md`
-
-Teams skill:
-
-`.github/skills/teams-migration/SKILL.md`
-
-Checkpoint debugging:
-
-`.github/skills/checkpoint-debugging/SKILL.md`
-
----
-
-# Change Discipline
-
-For focused tasks:
-
-- Inspect first.
-- Explain the root cause before making a large change.
-- Prefer the smallest viable implementation.
-- Reuse existing code.
-- Avoid unrelated cleanup.
-- Add regression tests for bugs.
-- Run targeted tests first.
-- Expand testing only when necessary.
-
-Do not implement speculative improvements unless requested.
-
----
-
-# Response Format
-
-For investigation tasks, return:
-
-1. Findings
-2. Root cause
-3. Relevant files
-4. Recommended change
-5. Tests required
-
-For implementation tasks, return:
-
-1. Summary
-2. Changed files
-3. Tests executed
-4. Remaining risks / limitations
-
-Do not include large code blocks unless explicitly requested.
+For investigations: findings, root cause, relevant files, recommended change, tests.
+For implementation: summary, changed files, tests executed, remaining risks/limitations.
+Do not claim a deployment or repository change succeeded unless verified.
