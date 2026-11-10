@@ -43,8 +43,153 @@ _SHAREPOINT_SITE_LIBRARY_URL = re.compile(r"https://(?P<host>[^/]+)/sites/(?P<si
 # - unreachable once the message is re-created on the target tenant.
 _IMG_HOSTED_CONTENT_SRC = re.compile(r'(<img\b[^>]*\bsrc=")(https://graph\.microsoft\.com/[^"]*/hostedContents/[^"/?]+/\$value[^"]*)(")', re.IGNORECASE)
 
+# Teams emoji markup whose alt text is empty, e.g.
+# <emoji id="praying" alt="" title=""></emoji> - Graph rejects the whole message
+# POST with 400 "Unicode '' in the payload is null or empty" for these.
+_EMOJI_EMPTY_ALT = re.compile(r'<emoji\b(?=[^>]*\salt="")(?:(?=[^>]*\sid="(?P<id>[^"]*)"))?[^>]*>(?:\s*</emoji>)?', re.IGNORECASE)
+
+# Any Teams emoji element. Graph also rejects some tags whose alt IS set, e.g.
+# <emoji id="1f603_grinningfacewithbigeyes" alt="😀"> -> 400 "Unicode '😀' in
+# the payload is not supported"; those messages are retried with the tags
+# flattened to plain text (see _flatten_emoji).
+_EMOJI_TAG = re.compile(r'<emoji\b(?:(?=[^>]*\salt="(?P<alt>[^"]*)"))?(?:(?=[^>]*\sid="(?P<id>[^"]*)"))?[^>]*>(?:\s*</emoji>)?', re.IGNORECASE)
+
+# <img src=""> (source image reference already gone) - Graph rejects the whole
+# message with 400 "Invalid source in image element".
+_IMG_EMPTY_SRC = re.compile(r'<img\b[^>]*\ssrc=""[^>]*>', re.IGNORECASE)
+
+
+def _emoji_name(emoji_id: str | None) -> str:
+    # "1f603_grinningfacewithbigeyes" -> "grinningfacewithbigeyes"
+    return re.sub(r"^[0-9a-f]{4,6}(?:[-_][0-9a-f]{4,6})*_", "", emoji_id or "") or "emoji"
+
+
+def _flatten_emoji(content: str, use_alt: bool) -> str:
+    def replace(match: re.Match) -> str:  # type: ignore[type-arg]
+        alt = match.group("alt")
+        return alt if use_alt and alt else f"({_emoji_name(match.group('id'))})"
+
+    return _EMOJI_TAG.sub(replace, content)
+
+
+def _is_unsupported_unicode(error: GraphError) -> bool:
+    text = str(error)
+    return "Unicode '" in text and "in the payload" in text
+
+
+def _is_empty_body(body: dict[str, Any]) -> bool:
+    content = body.get("content") or ""
+    lowered = content.lower()
+    # emoji-only messages (e.g. a lone thumbs-up) are content too
+    if "<img" in lowered or "<emoji" in lowered:
+        return False
+    text = re.sub(r"<[^>]+>", "", content).replace("&nbsp;", " ")
+    return not text.strip()
+
+# Extra page-level retries for source extraction, on top of GraphClient's own
+# (~1 min) 429/5xx retry budget - large chats regularly exhaust that budget on a
+# single $skiptoken page and previously failed the whole chat.
+_PAGE_RETRY_DELAYS = (15, 30, 60, 120, 240)
+
 AttachmentResolver = Callable[[str], str]
 ImageResolver = Callable[[str], tuple[bytes, str] | None]
+
+
+class ChatNotMigratableError(ValueError):
+    """A chat that can never be migrated with the current mapping/permissions
+    (e.g. a 1:1 chat whose other participant has no target account, or a source
+    chat hosted in another tenant). Raised instead of a generic error so the
+    batch can record it as an explained exclusion rather than a retryable
+    failure. `reason` is a short stable category used in checkpoints/reports."""
+
+    def __init__(self, reason: str, message: str):
+        super().__init__(message)
+        self.reason = reason
+
+
+def _is_transient_page_error(error: Exception) -> bool:
+    if isinstance(error, GraphError):
+        # status_code None == GraphClient exhausted its own 429/5xx retries.
+        return error.status_code is None or error.status_code in (429, 500, 502, 503, 504)
+    return isinstance(error, OSError)  # requests' network errors subclass OSError
+
+
+class _PatientRequests:
+    """Wraps a GraphClient so each request that is still failing transiently
+    after GraphClient's own retries is retried again after a longer wait. Chat
+    message paging is throttled with "Retry-After: 0", which exhausts
+    GraphClient's 6 attempts within seconds - the page needs minutes, not a
+    restart of the whole listing."""
+
+    def __init__(self, graph: GraphClient):
+        self._graph = graph
+
+    def request(self, method: str, path: str, **kwargs: Any) -> Any:
+        for attempt in range(len(_PAGE_RETRY_DELAYS) + 1):
+            try:
+                return self._graph.request(method, path, **kwargs)
+            except Exception as error:  # noqa: BLE001 - filtered just below
+                if attempt == len(_PAGE_RETRY_DELAYS) or not _is_transient_page_error(error):
+                    raise
+                delay = _PAGE_RETRY_DELAYS[attempt]
+                print(f"  [retry] page still throttled/failing ({type(error).__name__}) - waiting {delay}s, then retrying the same page")
+                time.sleep(delay)
+        return None  # unreachable
+
+
+def _pages_resilient(graph: GraphClient, path: str) -> list[dict[str, Any]]:
+    """list(graph.pages(path)), resilient to transient errors that survive
+    GraphClient's own retries: a real GraphClient retries the SAME page with a
+    longer backoff (see _PatientRequests); other clients (test doubles) re-read
+    the listing from the start. Neither path can skip or duplicate items."""
+    if isinstance(graph, GraphClient):
+        return list(GraphClient.pages(_PatientRequests(graph), path))  # type: ignore[arg-type]
+    for attempt in range(len(_PAGE_RETRY_DELAYS) + 1):
+        try:
+            return list(graph.pages(path))
+        except Exception as error:  # noqa: BLE001 - filtered just below
+            if attempt == len(_PAGE_RETRY_DELAYS) or not _is_transient_page_error(error):
+                raise
+            delay = _PAGE_RETRY_DELAYS[attempt]
+            print(f"  [retry] listing {path} still failing ({type(error).__name__}) - waiting {delay}s, then re-reading it")
+            time.sleep(delay)
+    return []  # unreachable
+
+
+_COMPLETE_MIGRATION_CONFLICT_DELAYS = (5, 15, 30)
+
+
+def _complete_migration(graph: GraphClient, path: str) -> None:
+    """completeMigration, treating "has already completed migration" as success -
+    the thread is already in the desired final state (e.g. a prior run completed
+    it but the process stopped before its checkpoint was written) - and retrying
+    the transient 412 "Version mismatch for thread resource" (the thread was
+    still being updated by the message writes just before)."""
+    for attempt in range(len(_COMPLETE_MIGRATION_CONFLICT_DELAYS) + 1):
+        try:
+            graph.request("POST", path)
+            return
+        except GraphError as error:
+            if "already completed migration" in str(error):
+                print(f"  [=] {path}: already completed on target - treating as done")
+                return
+            if "Version mismatch" not in str(error) or attempt == len(_COMPLETE_MIGRATION_CONFLICT_DELAYS):
+                raise
+            delay = _COMPLETE_MIGRATION_CONFLICT_DELAYS[attempt]
+            print(f"  [retry] {path}: thread version conflict (412) - waiting {delay}s")
+            time.sleep(delay)
+
+
+_SENDER_NOT_IN_TENANT = re.compile(r"Specified user with Id '([^']+)' could not be found in the tenant")
+
+
+def _sender_not_in_tenant(error: GraphError) -> str | None:
+    """Target user id from the Graph 400 raised when a mapped target identity
+    can't author messages in the target tenant (deleted/invalid account) - the
+    mapping exists but is unusable, so the message should be handled exactly like
+    an unmapped sender instead of failing the whole chat."""
+    match = _SENDER_NOT_IN_TENANT.search(str(error))
+    return match.group(1) if match else None
 
 
 def _upn_to_personal_segment(upn: str) -> str:
@@ -339,7 +484,9 @@ def _timestamp(
 
 def _import_body(message: dict[str, Any], attachment_resolver: AttachmentResolver | None = None, image_resolver: ImageResolver | None = None) -> dict[str, Any]:
     body = message.get("body") or {"contentType": "html", "content": ""}
-    content = body.get("content", "")
+    content = body.get("content", "") or ""
+    content = _EMOJI_EMPTY_ALT.sub(lambda match: f"({_emoji_name(match.group('id'))})", content)
+    content = _IMG_EMPTY_SRC.sub("<em>[image not available]</em>", content)
     hosted_contents: list[dict[str, Any]] = []
 
     if image_resolver:
@@ -395,6 +542,19 @@ def _import_body(message: dict[str, Any], attachment_resolver: AttachmentResolve
                 return fwd.get("originalMessageContent", "")
             except json.JSONDecodeError:
                 return ""
+        if ctype == "messageReference":
+            # Quoted reply - previously rendered as nothing, so a message that
+            # was only a quote failed with 400 "Missing body content".
+            try:
+                ref = json.loads(att.get("content") or "{}")
+            except json.JSONDecodeError:
+                return ""
+            sender = (((ref.get("messageSender") or {}).get("user")) or {}).get("displayName")
+            preview = ref.get("messagePreview") or ""
+            if not preview:
+                return ""
+            prefix = f"{escape(str(sender))}: " if sender else ""
+            return f"<blockquote>{prefix}{escape(str(preview))}</blockquote>"
         url = att.get("contentUrl")
         if url and attachment_resolver:
             url = attachment_resolver(url)
@@ -524,19 +684,6 @@ def _is_duplicate_message(error: GraphError) -> bool:
     return "(409)" in message and ("CreateConflictException" in message or '"code":"Conflict"' in message)
 
 
-def create_backdated_channel(graph: GraphClient, target_team_id: str, display_name: str, membership_type: str, earliest_message_iso: str) -> str:
-    """Provisions a replacement channel whose createdDateTime is set safely before
-    the earliest historical message. A channel's createdDateTime can't be changed
-    after creation, so if an existing target channel was provisioned with "now" as
-    its creation time, no historical message can ever be migrated into it - the only
-    fix is a new, properly backdated channel (see _is_timestamp_too_early)."""
-    earliest = datetime.fromisoformat(earliest_message_iso.replace("Z", "+00:00")).astimezone(timezone.utc)
-    backdated = (earliest - timedelta(days=1)).isoformat(timespec="milliseconds").replace("+00:00", "Z")
-    payload = {"displayName": display_name, "membershipType": membership_type, "createdDateTime": backdated}
-    result = graph.request("POST", f"/teams/{target_team_id}/channels", json=payload)
-    return result["id"]
-
-
 def _channel_already_has_messages(graph: GraphClient, target_team: str, target_channel: str) -> bool:
     """Best-effort check for messages already present on the target channel -
     guards against duplicate imports when the local checkpoint db was lost/reset
@@ -564,7 +711,7 @@ def _channel_created_datetime(graph: GraphClient, target_team: str, target_chann
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
 
 
-def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False, user_map: dict[str, str] | None = None, attachment_resolver: AttachmentResolver | None = None, image_resolver: ImageResolver | None = None, allow_non_historical_import: bool = False, sync_new_messages: bool = False, include_unmapped_senders: bool = False) -> int:
+def import_channel_messages(graph: GraphClient, target_team: str, target_channel: str, messages: list[dict[str, Any]], state: StateStore, dry_run: bool = False, user_map: dict[str, str] | None = None, attachment_resolver: AttachmentResolver | None = None, image_resolver: ImageResolver | None = None, allow_non_historical_import: bool = False, sync_new_messages: bool = False, include_unmapped_senders: bool = False, skip_sender_ids: set[str] | None = None) -> int:
     # user_map is optional: when omitted, the source "from" identity is sent as-is
     # (only valid if the caller already sends target-tenant ids). When provided,
     # senders without a target mapping are skipped instead of failing the batch -
@@ -581,11 +728,17 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
     # fidelity for those, so fall back to any known target user instead of
     # dropping the message.
     fallback_sender_id = next(iter(user_map.values()), None) if user_map else None
+    skip_sender_ids = skip_sender_ids or set()
+    # source root id -> createdDateTime it was posted with on the target (replies
+    # must not predate their parent, e.g. after the non-historical fallback).
+    posted_root_times: dict[str, datetime] = {}
     already_completed = not dry_run and state.status("teams-channel", target_channel) == "completed"
     if already_completed and not sync_new_messages:
         print(f"  [=] channel {target_channel}: already completed - skipping")
         return 0
-    pending_exists = dry_run or any(state.status("channel-message", str(message["id"])) != "completed" for message in ordered)
+    # Replies count too: channels migrated before reply support reopen once to
+    # backfill every thread's replies.
+    pending_exists = dry_run or any(state.status("channel-message", str(message["id"])) != "completed" for message in ordered) or _pending_replies(ordered, state)
     if already_completed and not pending_exists:
         print(f"  [=] channel {target_channel}: already completed - no new messages to sync")
         return 0
@@ -640,6 +793,10 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
             if not dry_run:
                 state.mark("channel-message", source_id, "skipped", detail="deleted", teams_type="channel_message")
             continue
+        elif sender_id in skip_sender_ids:
+            if not dry_run:
+                state.mark("channel-message", source_id, "skipped", detail=f"sender {sender_id} excluded by plan (skip: true)", teams_type="channel_message")
+            continue
         else:
             from_field = message.get("from")
             if user_map is not None:
@@ -652,15 +809,17 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
                         if hosted_contents:
                             fallback_payload["hostedContents"] = hosted_contents
                         if not dry_run:
+                            created_root: dict[str, Any] = {}
                             try:
-                                graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=fallback_payload)
+                                created_root = graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=fallback_payload) or {}
                             except GraphError as error:
                                 if _is_duplicate_message(error):
                                     print(f"  [!] channel {target_channel}: message {source_id} already exists on target - marking completed")
                                 else:
                                     raise
-                            state.mark("channel-message", source_id, "completed", detail=f"sender {sender_id} has no target mapping - migrated under fallback identity", teams_type="channel_message")
+                            state.mark("channel-message", source_id, "completed", created_root.get("id"), detail=f"sender {sender_id} has no target mapping - migrated under fallback identity", teams_type="channel_message")
                         last = datetime.fromisoformat(fallback_payload["createdDateTime"].replace("Z", "+00:00"))
+                        posted_root_times[source_id] = last
                         imported += 1
                         continue
                     skipped_no_mapping += 1
@@ -680,8 +839,9 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
         elif message.get("hostedContents"):
             payload["hostedContents"] = message["hostedContents"]
         if not dry_run:
+            created_root = {}
             try:
-                graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
+                created_root = graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload) or {}
             except GraphError as error:
                 if _is_duplicate_message(error):
                     print(f"  [!] channel {target_channel}: message {source_id} already exists on target - marking completed")
@@ -724,7 +884,7 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
                     print(f"  [!] channel {target_channel}: target creation time was never backdated - falling back to non-historical (sequential) timestamps")
                     payload["createdDateTime"] = _timestamp(message["createdDateTime"], last)
                     try:
-                        graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload)
+                        created_root = graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/messages", json=payload) or {}
                     except GraphError as retry_error:
                         if _is_duplicate_message(retry_error):
                             print(f"  [!] channel {target_channel}: message {source_id} already exists on target - marking completed")
@@ -732,33 +892,237 @@ def import_channel_messages(graph: GraphClient, target_team: str, target_channel
                             raise
                 else:
                     raise
-            state.mark("channel-message", source_id, "completed", teams_type="channel_message")
+            # Target id recorded so this post's replies can be attached to it.
+            state.mark("channel-message", source_id, "completed", created_root.get("id"), teams_type="channel_message")
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
+        posted_root_times[source_id] = last
         imported += 1
         if total and (imported % 20 == 0 or imported == total):
             pct = int(imported / total * 100)
             print(f"    >> channel {target_channel}: {imported}/{total} messages migrated ({pct}%)")
+    replies_imported, replies_unresolved = 0, 0
     if not dry_run and should_open_session:
-        graph.request("POST", f"/teams/{target_team}/channels/{target_channel}/completeMigration")
+        replies_imported, replies_unresolved = _import_channel_replies(
+            graph, target_team, target_channel, ordered, state, user_map, fallback_sender_id,
+            include_unmapped_senders, skip_sender_ids, attachment_resolver, image_resolver, posted_root_times,
+        )
+        _complete_migration(graph, f"/teams/{target_team}/channels/{target_channel}/completeMigration")
         state.mark("teams-channel", target_channel, "completed", teams_type="channel")
         if already_completed:
             print(f"  [+] channel {target_channel}: synced {imported} new message(s)")
     skip_suffix = f", {skipped_no_mapping} skipped (no target mapping)" if skipped_no_mapping else ""
-    print(f"  [+] channel {target_channel}: completed ({imported}/{total} messages migrated{skip_suffix})")
-    return imported
+    print(f"  [+] channel {target_channel}: completed ({imported}/{total} messages, {replies_imported} replies migrated{skip_suffix})")
+    if replies_unresolved:
+        # Parent gating: never report the channel complete while replies are
+        # still pending - batch marks it failed, and the next run
+        # (sync_new_messages) reopens the channel and retries them.
+        raise GraphError(f"Channel {target_channel}: {replies_unresolved} repl(ies) could not be migrated because their parent post was not found on the target - left pending for the next run")
+    return imported + replies_imported
 
 
-def extract_chat(graph: GraphClient, chat_id: str) -> dict[str, Any]:
+def extract_chat(graph: GraphClient, chat_id: str, modified_since: str | None = None) -> dict[str, Any]:
+    """Full chat bundle, or - with `modified_since` (ISO UTC) - only messages
+    created/edited after it (Graph: $filter on lastModifiedDateTime requires
+    $orderby=lastModifiedDateTime desc). Used to re-sync already-completed chats
+    without re-reading their whole history."""
     chat = graph.request("GET", f"/chats/{chat_id}")
-    members = list(graph.pages(f"/chats/{chat_id}/members"))
-    messages = list(graph.pages(f"/chats/{chat_id}/messages"))
-    return {"chat": chat, "members": members, "messages": messages}
+    members = _pages_resilient(graph, f"/chats/{chat_id}/members")
+    if modified_since:
+        messages = _pages_resilient(graph, f"/chats/{chat_id}/messages?$top=50&$orderby=lastModifiedDateTime desc&$filter=lastModifiedDateTime gt {modified_since}")
+    else:
+        messages = _pages_resilient(graph, f"/chats/{chat_id}/messages")
+    bundle = {"chat": chat, "members": members, "messages": messages}
+    if modified_since:
+        bundle["incremental_since"] = modified_since
+    return bundle
 
 
 def extract_channel(graph: GraphClient, team_id: str, channel_id: str) -> dict[str, Any]:
     channel = graph.request("GET", f"/teams/{team_id}/channels/{channel_id}")
-    messages = list(graph.pages(f"/teams/{team_id}/channels/{channel_id}/messages"))
+    messages = _pages_resilient(graph, f"/teams/{team_id}/channels/{channel_id}/messages")
+    # The channel messages listing returns root posts only - each thread's
+    # replies are a separate listing (stored on the root under "replies").
+    for message in messages:
+        message["replies"] = _pages_resilient(graph, f"/teams/{team_id}/channels/{channel_id}/messages/{message['id']}/replies")
     return {"channel": channel, "messages": messages}
+
+
+def _reply_key(root_id: str, reply_id: str) -> str:
+    return f"{root_id}/{reply_id}"
+
+
+def _parse_dt(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+
+def _pending_replies(messages: list[dict[str, Any]], state: StateStore) -> bool:
+    return any(
+        state.status("channel-reply", _reply_key(str(m["id"]), str(r["id"]))) not in ("completed", "skipped")
+        for m in messages for r in (m.get("replies") or [])
+    )
+
+
+def _post_channel_with_recovery(graph: GraphClient, path: str, payload: dict[str, Any], user_map: dict[str, str] | None, sender_id: str | None, base_body: dict[str, Any], include_unmapped_senders: bool) -> tuple[dict[str, Any] | None, str | None]:
+    """POST a channel reply with the same bounded recoveries as chat messages.
+    Returns (created message or {} for an already-existing duplicate, skip_detail)."""
+    recovered: set[str] = set()
+    emoji_source: str | None = None
+    while True:
+        try:
+            return graph.request("POST", path, json=payload) or {}, None
+        except GraphError as error:
+            if _is_duplicate_message(error):
+                return {}, None
+            if _is_unsupported_unicode(error) and _EMOJI_TAG.search(emoji_source or payload["body"].get("content") or ""):
+                emoji_source = emoji_source or payload["body"]["content"]
+                use_alt = "emoji-alt" not in recovered
+                if use_alt or "emoji-name" not in recovered:
+                    recovered.add("emoji-alt" if use_alt else "emoji-name")
+                    payload["body"] = {**payload["body"], "contentType": "html", "content": _flatten_emoji(emoji_source, use_alt)}
+                    continue
+            invalid_target_id = _sender_not_in_tenant(error)
+            if invalid_target_id and invalid_target_id not in recovered and user_map:
+                recovered.add(invalid_target_id)
+                for key in [key for key, value in user_map.items() if value == invalid_target_id]:
+                    del user_map[key]
+                fallback = next(iter(user_map.values()), None)
+                if fallback and (not sender_id or include_unmapped_senders):
+                    replacement = _fallback_identity_payload(base_body, sender_id, fallback, payload["createdDateTime"], None) if sender_id else {**payload, "from": {"user": {"id": fallback, "userIdentityType": "aadUser"}}}
+                    replacement["createdDateTime"] = payload["createdDateTime"]
+                    if payload.get("hostedContents"):
+                        replacement["hostedContents"] = payload["hostedContents"]
+                    payload = replacement
+                    continue
+                return None, f"sender {sender_id} target identity {invalid_target_id} not found in target tenant"
+            raise
+
+
+def _import_channel_replies(
+    graph: GraphClient,
+    target_team: str,
+    target_channel: str,
+    ordered_roots: list[dict[str, Any]],
+    state: StateStore,
+    user_map: dict[str, str] | None,
+    fallback_sender_id: str | None,
+    include_unmapped_senders: bool,
+    skip_sender_ids: set[str],
+    attachment_resolver: AttachmentResolver | None,
+    image_resolver: ImageResolver | None,
+    posted_root_times: dict[str, datetime],
+) -> tuple[int, int]:
+    """Import every pending reply under its (already migrated) target root post.
+    Returns (replies imported, replies left pending because their parent could
+    not be located on the target - the caller must not report the channel as
+    completed while this is > 0)."""
+    base = f"/teams/{target_team}/channels/{target_channel}/messages"
+    target_index: dict[str, str] | None = None
+    imported = 0
+    unresolved = 0
+
+    def locate_parent(root: dict[str, Any]) -> str | None:
+        nonlocal target_index
+        root_id = str(root["id"])
+        known = state.target("channel-message", root_id)
+        if known:
+            return known
+        if target_index is None:
+            # Roots migrated before target ids were recorded: they were posted
+            # with their source createdDateTime (possibly +n ms to stay unique).
+            target_index = {}
+            for item in _pages_resilient(graph, base):
+                if item.get("createdDateTime"):
+                    target_index.setdefault(_parse_dt(item["createdDateTime"]).isoformat(timespec="milliseconds"), item["id"])
+        source_dt = _parse_dt(root["createdDateTime"])
+        for offset in range(0, 6):
+            hit = target_index.get((source_dt + timedelta(milliseconds=offset)).isoformat(timespec="milliseconds"))
+            if hit:
+                state.mark("channel-message", root_id, state.status("channel-message", root_id) or "completed", hit, detail="target id located by timestamp", teams_type="channel_message")
+                posted_root_times.setdefault(root_id, source_dt + timedelta(milliseconds=offset))
+                return hit
+        status = state.status("channel-message", root_id)
+        if status == "skipped" and fallback_sender_id:
+            # The root itself was not migrated (deleted / unsupported / excluded
+            # sender) but people replied to it - post a labelled placeholder so the
+            # replies keep their thread instead of being lost.
+            reason = "deleted" if root.get("deletedDateTime") else "not migrated"
+            placeholder = {
+                "createdDateTime": _timestamp(root["createdDateTime"], None),
+                "from": {"user": {"id": fallback_sender_id, "userIdentityType": "aadUser"}},
+                "body": {"contentType": "html", "content": f"<p><em>[Original post {reason} - replies below were migrated]</em></p>"},
+            }
+            created = graph.request("POST", base, json=placeholder) or {}
+            if created.get("id"):
+                state.mark("channel-message", root_id, "skipped", created["id"], detail=f"{reason}; placeholder parent posted for replies", teams_type="channel_message")
+                posted_root_times[root_id] = _parse_dt(placeholder["createdDateTime"])
+                return created["id"]
+        return None
+
+    for root in ordered_roots:
+        root_id = str(root["id"])
+        replies = sorted(root.get("replies") or [], key=lambda reply: reply.get("createdDateTime") or "")
+        pending = [r for r in replies if state.status("channel-reply", _reply_key(root_id, str(r["id"]))) not in ("completed", "skipped")]
+        if not pending:
+            continue
+        parent_id = locate_parent(root)
+        if not parent_id:
+            unresolved += len(pending)
+            print(f"  [!] channel {target_channel}: parent post {root_id} not found on target - {len(pending)} repl(ies) left pending")
+            continue
+        last = posted_root_times.get(root_id) or _parse_dt(root["createdDateTime"])
+        for reply in pending:
+            key = _reply_key(root_id, str(reply["id"]))
+            sender_id = ((reply.get("from") or {}).get("user") or {}).get("id")
+            skip_detail = None
+            base_body: dict[str, Any] = {}
+            hosted = None
+            if reply.get("deletedDateTime"):
+                skip_detail = "deleted"
+            elif sender_id and sender_id in skip_sender_ids:
+                skip_detail = f"sender {sender_id} excluded by plan (skip: true)"
+            elif not sender_id:
+                event_text = _event_detail_text(reply)
+                if event_text is None or fallback_sender_id is None:
+                    skip_detail = f"Unsupported message type: {reply.get('messageType', 'unknown')}"
+                else:
+                    from_id, base_body = fallback_sender_id, {"contentType": "text", "content": event_text}
+            else:
+                base_body = _import_body(reply, attachment_resolver, image_resolver)
+                hosted = base_body.pop("_hosted_contents", None) or reply.get("hostedContents")
+                target_sender = (user_map or {}).get(sender_id) if user_map is not None else sender_id
+                if target_sender:
+                    from_id = target_sender
+                elif include_unmapped_senders and fallback_sender_id:
+                    from_id = None
+                else:
+                    skip_detail = f"sender {sender_id} has no target mapping"
+                if not skip_detail and not hosted and _is_empty_body(base_body):
+                    skip_detail = "empty body content"
+            if skip_detail:
+                state.mark("channel-reply", key, "skipped", detail=skip_detail, teams_type="channel_reply")
+                continue
+            created_at = _timestamp(reply["createdDateTime"], last)
+            if from_id is None:
+                payload = _fallback_identity_payload(base_body, sender_id, fallback_sender_id, reply["createdDateTime"], last)
+            else:
+                payload = {"createdDateTime": created_at, "from": {"user": {"id": from_id, "userIdentityType": "aadUser"}}, "body": base_body}
+            if hosted:
+                payload["hostedContents"] = hosted
+            try:
+                created, skip_detail = _post_channel_with_recovery(graph, f"{base}/{parent_id}/replies", payload, user_map, sender_id, base_body, include_unmapped_senders)
+            except GraphError as error:
+                if _is_migration_mode_closed(error):
+                    raise GraphError(f"Channel {target_channel} is no longer in migration mode while importing replies - {imported} repl(ies) were imported before this happened. Original error: {error}") from error
+                raise
+            if skip_detail:
+                state.mark("channel-reply", key, "skipped", detail=skip_detail, teams_type="channel_reply")
+                continue
+            state.mark("channel-reply", key, "completed", (created or {}).get("id"), teams_type="channel_reply")
+            last = _parse_dt(payload["createdDateTime"])
+            imported += 1
+        if imported and imported % 50 == 0:
+            print(f"    >> channel {target_channel}: {imported} replies migrated")
+    return imported, unresolved
 
 
 def invite_guest_user(target_graph: GraphClient, source_upn: str, display_name: str | None = None, redirect_url: str = "https://myapps.microsoft.com") -> str | None:
@@ -802,22 +1166,6 @@ def _migration_conversation_creation_time(value: str) -> str:
     )
     return parsed.isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
-def _chat_already_has_messages(
-    graph: GraphClient,
-    target_chat_id: str,
-) -> bool:
-    """Return True if the target chat contains at least one message."""
-    try:
-        existing = graph.request(
-            "GET",
-            f"/chats/{target_chat_id}/messages?$top=1",
-        )
-    except GraphError:
-        return False
-
-    values = existing.get("value") if isinstance(existing, dict) else None
-    return bool(values)
-
 def _chat_created_datetime(graph: GraphClient, chat_id: str) -> datetime | None:
     """Best-effort read of the target chat's current createdDateTime - used to
     confirm a startMigration backdate has actually propagated (see
@@ -830,6 +1178,25 @@ def _chat_created_datetime(graph: GraphClient, chat_id: str) -> datetime | None:
     if not value:
         return None
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+
+def _reopen_chat_migration(graph: GraphClient, chat_id: str, migration_time: str | None) -> bool:
+    """Best-effort startMigration on a chat whose migration window was closed.
+    Tries the original backdated creation time first (needed if the chat never
+    had it applied), then a plain reopen (the form used for already-backdated
+    chats). True if Graph accepted either, or reports the chat already open."""
+    attempts: list[dict[str, Any]] = []
+    if migration_time:
+        attempts.append({"json": {"conversationCreationDateTime": migration_time}})
+    attempts.append({})
+    for kwargs in attempts:
+        try:
+            graph.request("POST", f"/chats/{chat_id}/startMigration", **kwargs)
+            return True
+        except GraphError as error:
+            if "already in migration mode" in str(error):
+                return True
+    return False
 
 
 def _wait_for_chat_migration_window(graph: GraphClient, chat_id: str, migration_time_iso: str, who: str, source_chat_id: str) -> bool:
@@ -851,17 +1218,24 @@ def _wait_for_chat_migration_window(graph: GraphClient, chat_id: str, migration_
     return False
 
 
-def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, str], state: StateStore, dry_run: bool = False, stats: dict[str, int] | None = None, user_key: str | None = None, attachment_resolver: AttachmentResolver | None = None, image_resolver: ImageResolver | None = None, allow_non_historical_import: bool = False, sync_new_messages: bool = False, include_unmapped_senders: bool = False) -> tuple[str, int]:
+def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, str], state: StateStore, dry_run: bool = False, stats: dict[str, int] | None = None, user_key: str | None = None, attachment_resolver: AttachmentResolver | None = None, image_resolver: ImageResolver | None = None, allow_non_historical_import: bool = False, sync_new_messages: bool = False, include_unmapped_senders: bool = False, skip_sender_ids: set[str] | None = None) -> tuple[str, int]:
     source_chat_id = bundle["chat"]["id"]
     chat_type = bundle["chat"].get("chatType")
     who = f"[{user_key}] " if user_key else ""
     target_chat_id = state.target("teams-chat", source_chat_id)
+    # Private copy: target ids that turn out to be unusable as message authors
+    # (see _sender_not_in_tenant) are dropped from it mid-run.
+    user_map = dict(user_map)
 
+    # Driven by the checkpoint alone. It used to also require a target-side
+    # "has at least one message" GET, which is False for chats whose messages were
+    # all skipped (or when that GET itself failed) - those completed chats were
+    # then re-run as brand-new migrations and failed on completeMigration with
+    # "has already completed migration".
     already_completed = bool(
         not dry_run
         and target_chat_id
         and state.status("teams-chat", source_chat_id) == "completed"
-        and _chat_already_has_messages(graph, target_chat_id)
     )
     if already_completed and not sync_new_messages:
         print(
@@ -886,7 +1260,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
     if not target_chat_id:
         chat_type = bundle["chat"].get("chatType")
         if chat_type not in {"oneOnOne", "group"}:
-            raise ValueError(f"Unsupported chat type: {chat_type}")
+            raise ChatNotMigratableError("unsupported-chat-type", f"Unsupported chat type: {chat_type}")
         members: list[dict[str, Any]] = []
         unmapped_members: list[str] = []
         for member in bundle["members"]:
@@ -897,13 +1271,13 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         if chat_type == "oneOnOne":
             # A 1:1 chat needs both parties to exist in the target tenant.
             if unmapped_members:
-                raise ValueError(f"Missing target mapping for source user(s): {', '.join(unmapped_members)}")
+                raise ChatNotMigratableError("unmapped-participant", f"Missing target mapping for source user(s): {', '.join(unmapped_members)}")
         else:
             # Group chats can tolerate some source members having no target
             # account (e.g. source tenant has more users than target) -
             # skip them instead of failing the whole chat migration.
             if len(members) < 2:
-                raise ValueError(f"Not enough target-mapped members to create chat (no target mapping for: {', '.join(unmapped_members)})")
+                raise ChatNotMigratableError("insufficient-mapped-members", f"Not enough target-mapped members to create chat (no target mapping for: {', '.join(unmapped_members)})")
             if unmapped_members:
                 print(f"  [!] {who}Skipping {len(unmapped_members)} member(s) with no target mapping: {', '.join(unmapped_members)}")
         payload: dict[str, Any] = {"chatType": chat_type, "members": members}
@@ -912,7 +1286,14 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         if dry_run:
             target_chat_id = f"dry-run:{source_chat_id}"
         else:
-            target_chat_id = graph.request("POST", "/chats", json=payload)["id"]
+            try:
+                target_chat_id = graph.request("POST", "/chats", json=payload)["id"]
+            except GraphError as error:
+                if "requires 2 members" not in str(error):
+                    raise
+                # The source members list omits deleted/departed users, so a 1:1
+                # chat with such a participant reaches here with only one member.
+                raise ChatNotMigratableError("unmapped-participant", f"Only {len(members)} target-mapped member(s) available - the other participant has no target account or no longer exists in the source tenant. Original error: {error}") from error
         if not dry_run:
             state.mark("teams-chat", source_chat_id, "created", target_chat_id, user_key=user_key, teams_type=chat_type)
             print(f"  [+] {who}Created chat: {target_chat_id}")
@@ -932,9 +1313,15 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
     # pending messages - per Graph docs, startMigration can be called again after
     # completeMigration to import additional historical messages.
     should_open_session = not already_completed or pending_exists
+    # Whether THIS run has sent startMigration. When it hasn't (resume of a chat
+    # checkpointed as "started"), a "not marked for import" rejection may just mean
+    # the window was closed since, and is worth one reopen attempt (see below).
+    migration_session_opened = False
+    migration_time: str | None = None
     if already_completed:
         print(f"  [=] {who}chat {source_chat_id}: already completed - reopening migration mode for new messages")
     if not dry_run and should_open_session and already_completed:
+        migration_session_opened = True
         # The target chat's createdDateTime was already backdated during the
         # original migration, so re-sending the same conversationCreationDateTime
         # here would fail (Graph requires it to be strictly older than the
@@ -961,6 +1348,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             # migration mode - only call it once, on the run that actually
             # created/started the chat, so resumes don't hit that error.
             if state.status("teams-chat", source_chat_id) != "started":
+                migration_session_opened = True
                 try:
                     graph.request(
                         "POST",
@@ -1041,6 +1429,8 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             continue
         source_from = (message.get("from") or {}).get("user") or {}
         sender_id = source_from.get("id")
+        # Un-noted body, kept so a later identity swap doesn't stack two notes.
+        base_body: dict[str, Any] | None = None
         if not sender_id:
             # System/event message (member added/removed, rename, etc.) -
             # Graph never lets these be authored by a real user, so recreate
@@ -1064,10 +1454,17 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             if not dry_run:
                 state.mark("teams-chat-message", source_id, "skipped", detail="deleted", user_key=user_key, teams_type=chat_type)
             continue
+        elif skip_sender_ids and sender_id in skip_sender_ids:
+            # User excluded by the plan ("skip": true in the mapping) - recorded,
+            # never re-posted under someone else's identity.
+            if not dry_run:
+                state.mark("teams-chat-message", source_id, "skipped", detail=f"sender {sender_id} excluded by plan (skip: true)", user_key=user_key, teams_type=chat_type)
+            continue
         elif sender_id not in user_map:
             if include_unmapped_senders and fallback_sender_id:
                 raw_body = _import_body(message, attachment_resolver, image_resolver)
                 hosted_contents = raw_body.pop("_hosted_contents", None)
+                base_body = raw_body
                 payload = _fallback_identity_payload(raw_body, sender_id, fallback_sender_id, message["createdDateTime"], last)
                 if hosted_contents:
                     payload["hostedContents"] = hosted_contents
@@ -1091,58 +1488,127 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
         unsupported = payload.pop("_unsupported", [])
         if stats is not None:
             stats["unsupported_features"] = stats.get("unsupported_features", 0) + len(unsupported)
+        if sender_id and not payload.get("hostedContents") and _is_empty_body(base_body or payload["body"]):
+            # Nothing to migrate (e.g. empty text message, or an attachment type
+            # that renders to nothing) - Graph would reject it with 400
+            # "Missing body content". Recorded, not silently dropped.
+            if stats is not None:
+                stats["skipped_empty"] = stats.get("skipped_empty", 0) + 1
+            if not dry_run:
+                state.mark("teams-chat-message", source_id, "skipped", detail="empty body content", user_key=user_key, teams_type=chat_type)
+            continue
         if not dry_run:
-            try:
-                graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
-            except GraphError as error:
-                if _is_duplicate_message(error):
-                    print(f"  [!] {who}chat {source_chat_id}: message {source_id} already exists on target - marking completed")
-                elif _is_migration_mode_closed(error):
-                    # Unfixable: completeMigration already ran for this chat -
-                    # Graph blocks ALL application-permission message writes to it
-                    # now, no matter the timestamp (see _is_migration_mode_closed).
-                    # A sync_new_messages resume of an already-completed chat will
-                    # always hit this for any message not previously imported - the
-                    # only way to add more history is to recreate the target chat
-                    # and re-run the migration in one pass before completeMigration.
-                    raise GraphError(
-                        f"Chat {source_chat_id} is no longer in migration mode (completeMigration already ran) - "
-                        "Microsoft Graph only accepts application-permission message writes while a chat is in "
-                        "migration mode, so no further messages can be added to this chat via this tool. Verify "
-                        f"target chat content before retrying. {imported}/{total} messages were imported before "
-                        f"this happened. Original error: {error}"
-                    ) from error
-                elif _is_timestamp_too_early(error):
-                    # The pre-loop backdate check already confirmed the window was
-                    # open, so hitting this mid-loop is unexpected but potentially
-                    # recoverable - retry once with a later, sequential timestamp.
-                    if not allow_non_historical_import or non_historical_fallback:
+            # Each recovery below is attempted at most once per message, so this
+            # loop always terminates: it either posts, recognizes a duplicate,
+            # decides to skip, or raises.
+            recovered: set[str] = set()
+            skip_detail: str | None = None
+            emoji_source: str | None = None  # content before any emoji flattening
+            while True:
+                try:
+                    graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
+                except GraphError as error:
+                    if _is_duplicate_message(error):
+                        print(f"  [!] {who}chat {source_chat_id}: message {source_id} already exists on target - marking completed")
+                        break
+                    if _is_migration_mode_closed(error) and not migration_session_opened and "reopen" not in recovered:
+                        # Resume of a chat checkpointed as "started": this run never
+                        # sent startMigration, and the window has since been closed.
+                        # Per Graph docs startMigration may be called again on an
+                        # existing chat, so reopen once and retry before giving up.
+                        recovered.add("reopen")
+                        migration_session_opened = True
+                        if _reopen_chat_migration(graph, target_chat_id, migration_time):
+                            print(f"  [!] {who}chat {source_chat_id}: migration mode had been closed - reopened it, retrying")
+                            continue
+                    if _is_migration_mode_closed(error):
+                        # Unfixable: completeMigration already ran for this chat and
+                        # this run already (re)opened the window - Graph blocks ALL
+                        # application-permission message writes to it now, no matter
+                        # the timestamp (see _is_migration_mode_closed).
                         raise GraphError(
-                            f"Chat {source_chat_id} rejected a historical timestamp as earlier than its own "
-                            "creation time. "
-                            f"{imported}/{total} messages were imported before this happened. "
-                            f"Original error: {error}"
+                            f"Chat {source_chat_id} is no longer in migration mode (completeMigration already ran) - "
+                            "Microsoft Graph only accepts application-permission message writes while a chat is in "
+                            "migration mode, so no further messages can be added to this chat via this tool. Verify "
+                            f"target chat content before retrying. {imported}/{total} messages were imported before "
+                            f"this happened. Original error: {error}"
                         ) from error
-                    frozen_created = _chat_created_datetime(graph, target_chat_id)
-                    if frozen_created is None:
+                    if _is_unsupported_unicode(error) and _EMOJI_TAG.search(emoji_source or payload["body"].get("content") or ""):
+                        # Retry with emoji elements flattened: first to their own
+                        # unicode text, then (if that is rejected too) to "(name)".
+                        emoji_source = emoji_source or payload["body"]["content"]
+                        use_alt = "emoji-alt" not in recovered
+                        if use_alt or "emoji-name" not in recovered:
+                            recovered.add("emoji-alt" if use_alt else "emoji-name")
+                            payload["body"] = {**payload["body"], "contentType": "html", "content": _flatten_emoji(emoji_source, use_alt)}
+                            continue
+                    if "not present in the P2P roster" in str(error):
+                        # The target 1:1 chat was created under a DIFFERENT user
+                        # mapping than the current one. Posting under a fallback
+                        # identity would misattribute the message, so stop with a
+                        # precise diagnosis instead.
                         raise GraphError(
-                            f"Chat {source_chat_id}: could not read the chat's current creation time to apply "
-                            f"the non-historical fallback. {imported}/{total} messages were imported before this "
-                            f"happened. Original error: {error}"
+                            f"Chat {source_chat_id}: sender {sender_id} maps to target user "
+                            f"{payload['from']['user']['id']}, who is not a participant of existing target chat "
+                            f"{target_chat_id} - the user mapping changed after this chat was created. Restore the "
+                            "original mapping for this user, or recreate the target chat. "
+                            f"{imported}/{total} messages were imported before this happened. Original error: {error}"
                         ) from error
-                    last = frozen_created
-                    non_historical_fallback = True
-                    print(f"  [!] {who}chat {source_chat_id}: target creation time was never backdated - falling back to non-historical (sequential) timestamps")
-                    payload["createdDateTime"] = _timestamp(message["createdDateTime"], last)
-                    try:
-                        graph.request("POST", f"/chats/{target_chat_id}/messages", json=payload)
-                    except GraphError as retry_error:
-                        if _is_duplicate_message(retry_error):
-                            print(f"  [!] {who}chat {source_chat_id}: message {source_id} already exists on target - marking completed")
-                        else:
-                            raise
-                else:
+                    invalid_target_id = _sender_not_in_tenant(error)
+                    if invalid_target_id and invalid_target_id not in recovered:
+                        # The mapped target identity can't author messages in the
+                        # target tenant - treat that source user as unmapped from now
+                        # on (this message and every later one in this chat).
+                        recovered.add(invalid_target_id)
+                        for key in [key for key, value in user_map.items() if value == invalid_target_id]:
+                            del user_map[key]
+                        fallback_sender_id = next(
+                            (user_map[m["userId"]] for m in bundle["members"] if user_map.get(m.get("userId"))),
+                            None,
+                        )
+                        print(f"  [!] {who}chat {source_chat_id}: target user {invalid_target_id} not found in target tenant - treating as unmapped")
+                        if fallback_sender_id and not sender_id:
+                            payload["from"] = {"user": {"id": fallback_sender_id, "userIdentityType": "aadUser"}}
+                            continue
+                        if fallback_sender_id and include_unmapped_senders:
+                            replacement = _fallback_identity_payload(base_body or payload["body"], sender_id, fallback_sender_id, message["createdDateTime"], last)
+                            replacement["createdDateTime"] = payload["createdDateTime"]
+                            if payload.get("hostedContents"):
+                                replacement["hostedContents"] = payload["hostedContents"]
+                            payload = replacement
+                            continue
+                        skip_detail = f"sender {sender_id} target identity {invalid_target_id} not found in target tenant"
+                        break
+                    if _is_timestamp_too_early(error):
+                        # The pre-loop backdate check already confirmed the window was
+                        # open, so hitting this mid-loop is unexpected but potentially
+                        # recoverable - retry once with a later, sequential timestamp.
+                        if not allow_non_historical_import or non_historical_fallback:
+                            raise GraphError(
+                                f"Chat {source_chat_id} rejected a historical timestamp as earlier than its own "
+                                "creation time. "
+                                f"{imported}/{total} messages were imported before this happened. "
+                                f"Original error: {error}"
+                            ) from error
+                        frozen_created = _chat_created_datetime(graph, target_chat_id)
+                        if frozen_created is None:
+                            raise GraphError(
+                                f"Chat {source_chat_id}: could not read the chat's current creation time to apply "
+                                f"the non-historical fallback. {imported}/{total} messages were imported before this "
+                                f"happened. Original error: {error}"
+                            ) from error
+                        last = frozen_created
+                        non_historical_fallback = True
+                        print(f"  [!] {who}chat {source_chat_id}: target creation time was never backdated - falling back to non-historical (sequential) timestamps")
+                        payload["createdDateTime"] = _timestamp(message["createdDateTime"], last)
+                        continue
                     raise
+                break
+            if skip_detail:
+                if stats is not None:
+                    stats["skipped_no_mapping"] = stats.get("skipped_no_mapping", 0) + 1
+                state.mark("teams-chat-message", source_id, "skipped", detail=skip_detail, user_key=user_key, teams_type=chat_type)
+                continue
             state.mark("teams-chat-message", source_id, "completed", user_key=user_key, teams_type=chat_type)
         last = datetime.fromisoformat(payload["createdDateTime"].replace("Z", "+00:00"))
         imported += 1
@@ -1152,7 +1618,7 @@ def import_chat(graph: GraphClient, bundle: dict[str, Any], user_map: dict[str, 
             pct = int(imported / total * 100) if total else 100
             print(f"    >> {who}chat {source_chat_id}: {imported}/{total} messages migrated ({pct}%)")
     if not dry_run and should_open_session:
-        graph.request("POST", f"/chats/{target_chat_id}/completeMigration")
+        _complete_migration(graph, f"/chats/{target_chat_id}/completeMigration")
         # PATCH (405) is unsupported; delete+re-add each member with full history for
         # group chats - only needed once, on the initial full migration.
         if not already_completed and bundle["chat"].get("chatType") == "group":

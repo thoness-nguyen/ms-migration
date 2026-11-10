@@ -1,0 +1,28 @@
+[
+    {
+        "key": "alice",
+        "display_name": "Alice Example",
+        "source_upn": "alice@source.example.com",
+        "target_upn": "alice@target.example.com",
+        "source_id": "00000000-0000-0000-0000-00000000a001",
+        "target_id": "00000000-0000-0000-0000-00000000b001"
+    },
+    {
+        "key": "bob",
+        "display_name": "Bob Example",
+        "source_upn": "bob@source.example.com",
+        "target_upn": "bob@target.example.com",
+        "source_id": "00000000-0000-0000-0000-00000000a002",
+        "target_id": "00000000-0000-0000-0000-00000000b002"
+    },
+    {
+        "key": "carol",
+        "display_name": "Carol Example (excluded)",
+        "source_upn": "carol@source.example.com",
+        "target_upn": "carol@target.example.com",
+        "source_id": "00000000-0000-0000-0000-00000000a003",
+        "target_id": "00000000-0000-0000-0000-00000000b003",
+        "skip": true,
+        "skip_reason": "Example of a user excluded from migration"
+    }
+]

@@ -1,12 +1,22 @@
+# Secrets
 .env
+
+# Live checkpoints (machine-local, never commit)
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+
+# Python / tooling
 .venv/
 __pycache__/
 *.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Extracted Teams content (real message data)
+*.chat-bundle.json
+*.chat-delta.json
 messages.json
 chat-bundle.json
 user-map.json
-*.chat-bundle.json
 migration-report.json

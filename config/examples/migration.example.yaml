@@ -1,0 +1,29 @@
+# Example hierarchical plan (fake ids). The live plans are config/<area>-pilot.yaml.
+# Plans must live directly in config/: mapping paths are relative to the plan,
+# and chat/channel bundles are written to <plan folder>/../data/.
+migration_id: example-001
+users: users.mapping.example.json          # key/source_id/target_id per user; "skip": true excludes one
+workloads:
+  sharepoint:
+    sites:
+      - name: "Example site"
+        source_site_id: "source.sharepoint.com,00000000-0000-0000-0000-000000000001,00000000-0000-0000-0000-000000000002"
+        target_site_id: "target.sharepoint.com,00000000-0000-0000-0000-000000000003,00000000-0000-0000-0000-000000000004"
+      - name: "Large site already migrated - copy only recent changes"
+        source_site_url: "https://source.sharepoint.com/sites/Big"
+        target_site_url: "https://target.sharepoint.com/sites/Big"
+        modified_since: "2026-09-10"
+  teams:
+    channels:
+      - name: General
+        source_team_id: 00000000-0000-0000-0000-0000000000a1
+        source_channel_id: "19:example-source@thread.tacv2"
+        target_team_id: 00000000-0000-0000-0000-0000000000b1
+        target_channel_id: "19:example-target@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+  exchange: exchange.mapping.example.yaml
+performance:
+  concurrency:
+    sharepoint: {content: 8, permissions: 4}
+    teams: {content: 6}

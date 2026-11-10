@@ -5,7 +5,7 @@
 # target_id), so chats only need a source_chat_id. Members/senders with no
 # target_id (source tenant has more users than target) are skipped gracefully
 # instead of failing the migration; channels can keep their explicit ids as-is.
-user_mapping: mapping.example.json
+user_mapping: users.mapping.json
 
 chats:
   - name: chat-001
@@ -596,48 +596,8 @@ chats:
     source_chat_id: 19:27701f3218fa4149acba981faa96a278@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-148
-    source_chat_id: 19:meeting_YTBlY2JmN2MtYjRmNC00NDM4LWFkZGMtZTQyMzVjMzJmMzgz@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-149
-    source_chat_id: 19:meeting_NWEyNDNmZDEtZmQyNy00MDRiLTg0YzMtMGFjNGI4ZTM0MDhi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-150
-    source_chat_id: 19:meeting_ZjJkZjhmNWYtNDRkNy00NmQzLTlkYTUtZmNjM2Y3MzAwMzFi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-151
-    source_chat_id: 19:meeting_ODUwMTE1MzUtOGFjMC00YjViLTk1NzEtOWUyOGMzZmYxM2Nj@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-152
-    source_chat_id: 19:meeting_M2NlYWJiZmUtMDJkNS00YzFjLWIxOGYtYmU1ODRiOWNkM2Iw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-153
-    source_chat_id: 19:meeting_NjhiZTcxMzUtM2VjZC00MzAyLWE0MzMtYzYyNWI5MTczYjA5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-154
     source_chat_id: 19:4fbd7276-3fa6-4a8a-8773-61435edd857e_e5643974-5571-4d22-85c8-c895d37d11de@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-155
-    source_chat_id: 19:meeting_MjI4ZGI0YWUtZGIxOS00ZmUyLTk2NWMtOTZmY2QxNjc1YzZi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-156
-    source_chat_id: 19:meeting_YThmNzBhMjYtNWIxMy00ZDA2LWE5NjAtYjI0MWNjNmMyMGU2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-157
-    source_chat_id: 19:meeting_ZjQwMjFiOGUtMTIxNy00ZjNlLTkzNDItZDI1ZDY4OThkNWQx@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-158
-    source_chat_id: 19:meeting_YjAwODgyM2EtMmM3ZC00Y2RjLTk5ZWMtNzc4NTJkYjc2MWFl@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-159
@@ -940,10 +900,6 @@ chats:
     source_chat_id: 19:ff02330a57ee4843a077f6b6b9d4f13e@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-234
-    source_chat_id: 19:meeting_Yjk4MWIxZDMtODA3Yy00YmFmLWIzNWItZjBjN2EyZDFkNDY1@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-235
     source_chat_id: 19:076eaa16-3729-404f-8bab-78eceb86b979_e5643974-5571-4d22-85c8-c895d37d11de@unq.gbl.spaces
     sync_new_messages: true
@@ -1062,10 +1018,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-264
     source_chat_id: 19:582d86be54554d1192fdc56c49e1a7a3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-265
-    source_chat_id: 19:meeting_ZjFlMjI5ZmUtMTMzMS00OGQ0LTkyMjQtZTY5ODBmOThjMjc2@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-266
@@ -1988,10 +1940,6 @@ chats:
     source_chat_id: 19:80c16316c432435296887a84a031cd80@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-496
-    source_chat_id: 19:meeting_ZGY1Y2NjMmItM2MwMC00YThhLTkwZGItN2QwOTBkMTk3MzI0@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-497
     source_chat_id: 19:0d7c9c0d-04d8-49af-97be-7e8592d021ba_b3260c73-e24c-4bc2-b8fb-a9a285a3b79f@unq.gbl.spaces
     sync_new_messages: true
@@ -2008,16 +1956,8 @@ chats:
     source_chat_id: 19:9382d42e5db94fa7af67ad83b0104371@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-501
-    source_chat_id: 19:meeting_MmE3YzIyMjMtOTk5Ni00NmJlLWIyNWEtZTQyN2MxYzA0NzU3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-502
     source_chat_id: 19:6014c46f0ddc4988ae2eaff74e5abc69@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-503
-    source_chat_id: 19:meeting_NDRkNTVkNzMtZTcyNS00ODUyLWIyZGMtMjM2M2QwYzNkOGY0@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-504
@@ -2102,10 +2042,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-524
     source_chat_id: 19:2bc95fc7-a090-465b-933d-54e58e599358_d543eea2-2279-4978-992f-92dd1e293e89@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-525
-    source_chat_id: 19:meeting_ODRhNzkxMjItODJkYS00ZDUyLTkwNWItNjFlZjViMTNhYjdh@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-526
@@ -2356,10 +2292,6 @@ chats:
     source_chat_id: 19:7e2281599e3546e4802de9ab7e680575@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-588
-    source_chat_id: 19:meeting_OGRjMWU3MTEtMDk1OC00OGQyLThiYTUtOWM2OGMxNjQxYThi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-589
     source_chat_id: 19:8d070c99369f4dedbb69cc80da0b0f54@thread.v2
     sync_new_messages: true
@@ -2492,10 +2424,6 @@ chats:
     source_chat_id: 19:e1b795d6c74e4aada479aab6c3955ac1@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-622
-    source_chat_id: 19:meeting_ZmQ2NTI2MzQtNDAxNC00NmM4LWI0ZTMtMWY0MTE0NTE5NWU3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-623
     source_chat_id: 19:4bbba725238747b4ac26ee6b2230d494@thread.v2
     sync_new_messages: true
@@ -2518,10 +2446,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-628
     source_chat_id: 19:2bc95fc7-a090-465b-933d-54e58e599358_9c554ad4-91ab-4545-a337-13a0e71e551c@fed.unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-629
-    source_chat_id: 19:meeting_ZmRjZjA2ZWItZjA0NS00OWM3LWI1MzAtYzlkMzFjODBiNjJm@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-630
@@ -2560,28 +2484,12 @@ chats:
     source_chat_id: 19:c5a2923956624574abee3b0bd36ff43d@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-639
-    source_chat_id: 19:meeting_MGQ4NGVlOGItN2RkNi00MjJjLWI5NTgtMmYxMTQ3NDFjYzNl@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-640
     source_chat_id: 19:2bc95fc7-a090-465b-933d-54e58e599358_8e260826-e49b-45bd-a298-4e1d9d79259e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-641
-    source_chat_id: 19:meeting_Y2RmNWI0NzEtZjFhYS00MDNlLWI5OTgtNGFjMDAzNWMyNWMw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-642
-    source_chat_id: 19:meeting_NzI5NDVhOTAtZTY4Zi00NjJhLWFiNTktYzVkY2FiMGEzOWZi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-643
     source_chat_id: 19:98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6_b00aa0d7-5df9-4b82-b29f-d09346224496@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-644
-    source_chat_id: 19:meeting_Njc0N2Q0MTQtZmE3Zi00ZjYyLTk5NmUtNjA5NjdmNWQzYzFl@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-645
@@ -2656,24 +2564,8 @@ chats:
     source_chat_id: 19:7946a48a-ac2f-4530-9710-67862fba4d1a_b00aa0d7-5df9-4b82-b29f-d09346224496@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-663
-    source_chat_id: 19:meeting_MDM2OGViYWItY2U1OS00NjVjLTgxNTUtMTk3Zjc3YzA5NzBh@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-664
     source_chat_id: 19:b00aa0d7-5df9-4b82-b29f-d09346224496_e628ad45-be90-410a-a553-691cde743c1d@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-665
-    source_chat_id: 19:meeting_NjM4NGVkNGItNzIwZC00ZjJlLWJkZWYtOWMyMmE2MmYwOWY2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-666
-    source_chat_id: 19:meeting_MTQ3NzVlYzUtNWU5Ny00NDM1LTg0YjAtMmIxNGI5ZDEyYzA5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-667
-    source_chat_id: 19:meeting_YzgwOGRmOTMtZmFjOS00ODMwLWEyNTEtZWM2YzRhZDFjMzQ3@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-668
@@ -2682,14 +2574,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-669
     source_chat_id: 19:b00aa0d7-5df9-4b82-b29f-d09346224496_c3b56ede-e5b5-4574-ad8a-881dc08cb69a@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-670
-    source_chat_id: 19:meeting_ODM1YjBkZGItZWM2NC00NTA2LWJkNzgtYzJmYTkzYjgzMDc0@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-671
-    source_chat_id: 19:meeting_MDc0ZmUyZTUtNjc0ZS00YzUyLWJkZTItMWRiOWY3ZTU5N2E3@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-672
@@ -2720,10 +2604,6 @@ chats:
     source_chat_id: 19:b00aa0d7-5df9-4b82-b29f-d09346224496_bc5d4c2f-9451-489b-8cb5-e3eccb551b21@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-679
-    source_chat_id: 19:meeting_MGM1YjU5ZmYtYTJhZS00MmE4LWI2ZTUtN2E3YTY4Y2E0YjVl@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-680
     source_chat_id: 19:2041b71a82fb45c1b516b3665f9bd47f@thread.v2
     sync_new_messages: true
@@ -2734,18 +2614,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-682
     source_chat_id: 19:be7601fb689345a584b8b4299bd7f15d@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-683
-    source_chat_id: 19:meeting_MGQ0NGY2YTgtZjg2OC00NWRhLWEzMWItMjUwM2YxMmQ0N2Zh@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-684
-    source_chat_id: 19:meeting_ZGFhYTQ2MWMtNTA5ZC00NWU1LWIyMzctNzY4NGZmYzdhOGUw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-685
-    source_chat_id: 19:meeting_NTBlMzNlMzItODZhZi00ZWFlLWIzMTMtZDQxM2ZmYWI4YzVm@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-686
@@ -2762,10 +2630,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-689
     source_chat_id: 19:b00aa0d7-5df9-4b82-b29f-d09346224496_d9760a17-1602-4813-a066-ade6443e4c27@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-690
-    source_chat_id: 19:meeting_ZGRhZTY4ODYtNDBjNC00YWFlLWE1NzktZDMwMjgzOWNlMTFm@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-691
@@ -2844,10 +2708,6 @@ chats:
     source_chat_id: 19:3f92c20f-d02e-4d91-ad9a-3ec8bd3c8d9b_d543eea2-2279-4978-992f-92dd1e293e89@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-710
-    source_chat_id: 19:meeting_NWRlMWMzMWItZWUzOS00MTNhLTk1MjAtNjdiYjAzM2NlNzAw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-711
     source_chat_id: 19:2afc4a07-758d-4670-88d0-34fb5734871a_94e28736-d926-4704-90d1-3115e15b7db8@unq.gbl.spaces
     sync_new_messages: true
@@ -2874,14 +2734,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-717
     source_chat_id: 19:2bb06cea-83cb-4137-826e-cf696a7df4f1_6e1f45fa-d109-47ed-91f4-b2f0be81a670@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-718
-    source_chat_id: 19:meeting_ZWMzOWMxYzYtMTZlZi00Njc0LThlNmQtNTZlZmEzMmUwM2M5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-719
-    source_chat_id: 19:meeting_NDQ1OGUwOGItOWE3NS00ZjkxLWE3MGMtYTczNDI5OTE3ZTU3@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-720
@@ -2920,10 +2772,6 @@ chats:
     source_chat_id: 19:9bd34bd2-9e3a-4c7e-ad1e-ea2807b455f0_d9760a17-1602-4813-a066-ade6443e4c27@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-729
-    source_chat_id: 19:meeting_YWY5NGRlNjItMGI0ZS00YWZmLTlhNGUtNWJhZjU5ZWYxZDU0@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-730
     source_chat_id: 19:2afc4a07-758d-4670-88d0-34fb5734871a_9bd34bd2-9e3a-4c7e-ad1e-ea2807b455f0@unq.gbl.spaces
     sync_new_messages: true
@@ -2950,10 +2798,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-736
     source_chat_id: 19:9bd34bd2-9e3a-4c7e-ad1e-ea2807b455f0_e8f45053-184b-4185-ad24-87c6b71274ba@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-737
-    source_chat_id: 19:meeting_MjAzYWNiNGYtYjY3NS00MWZkLTliYjItOGViNmVmZjhjZGQ4@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-738
@@ -3212,10 +3056,6 @@ chats:
     source_chat_id: 19:1589be4a62614054a2f6698e9184f058@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-802
-    source_chat_id: 19:meeting_MTM2ZDJlZmMtYmUwYy00ODIzLTg0ZjktMjY1NDg3MWRlNzYy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-803
     source_chat_id: 19:14f67cc9-a31f-4e00-8885-5a43a822e8df_4865eed9-b691-4b20-8076-6ece9eac59fd@unq.gbl.spaces
     sync_new_messages: true
@@ -3302,10 +3142,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-824
     source_chat_id: 19:da9aeadc0c6b44f79cbcee0f431421c7@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-825
-    source_chat_id: 19:meeting_MzI0OTU2YzEtY2M4OS00M2Y3LThiNjUtNTVlYTA1YmM5MTg2@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-826
@@ -3736,10 +3572,6 @@ chats:
     source_chat_id: 19:0c228bd5-8cc7-4334-b18f-56417037231b_f9feb8b8-26dc-41ad-9972-e5cad130422a@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-933
-    source_chat_id: 19:meeting_MjcyNjVlMjktYmRjNC00OTFiLTljMDYtMGZiY2I4ZjZmOTMy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-934
     source_chat_id: 19:2d624c72-1639-4ac1-9343-ff3cc87c7271_f9feb8b8-26dc-41ad-9972-e5cad130422a@unq.gbl.spaces
     sync_new_messages: true
@@ -3766,10 +3598,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-940
     source_chat_id: 19:2994d7a33abe486ead41d2dbf88418f7@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-941
-    source_chat_id: 19:meeting_ZGE0YWI0MjEtNWVhZS00MGMxLWE3MDUtMjU0ZjMyOWU2MWZi@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-942
@@ -3922,10 +3750,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-979
     source_chat_id: 19:bc5d4c2f-9451-489b-8cb5-e3eccb551b21_f55349c7-7291-4689-89d0-005b51af906b@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-980
-    source_chat_id: 19:meeting_ZDY5NGY4NzAtYmQxZC00OTFkLWFjNDMtNjViODYyMTA4YmE5@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-981
@@ -4222,10 +4046,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1054
     source_chat_id: 19:076eaa16-3729-404f-8bab-78eceb86b979_b3260c73-e24c-4bc2-b8fb-a9a285a3b79f@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1055
-    source_chat_id: 19:meeting_MGZhZWMxYzQtZDEzNC00NzhkLWFmOTItY2U2ODkzNGU2ZjMw@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1056
@@ -4572,10 +4392,6 @@ chats:
     source_chat_id: 19:fa33bd4961984264ae0163477fe6a3d4@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1142
-    source_chat_id: 19:meeting_YTEwMWQxODgtMGE3YS00NDI0LTk5ZDUtNDlmYmRkMWQwZTIy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1143
     source_chat_id: 19:415c6776-1df7-4453-acda-6d51dbdac84c_73dd6840-0b54-4e6a-ab8a-f46aa1075acb@unq.gbl.spaces
     sync_new_messages: true
@@ -4586,10 +4402,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1145
     source_chat_id: 19:f941a595699a47c4a9f72ebe39ca60c7@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1146
-    source_chat_id: 19:meeting_OTk2M2NhZWYtNjgyYi00MTBhLWIyZTQtNTgyNDAzY2QyNzEy@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1147
@@ -4692,22 +4504,6 @@ chats:
     source_chat_id: 19:73dd6840-0b54-4e6a-ab8a-f46aa1075acb_358f0194-6b0e-4dd3-af35-c24fe8a9ec87@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1172
-    source_chat_id: 19:meeting_NDVjMGVlMTEtMTA5My00ZDZlLTk0ODktYTBjMzI5YTFiNThl@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1173
-    source_chat_id: 19:meeting_NDBmZjYzNjUtMzRhNi00MTc4LWI5NDYtNzI0M2JlYTY5ZjM5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1174
-    source_chat_id: 19:meeting_ZDc3YTVkMjMtZjRjZC00OTI2LTliYTYtMTk5OTRjMjcxYmE3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1175
-    source_chat_id: 19:meeting_NmZlZWRiMTEtYTU3ZC00OWQ4LTlmNTUtMzI2ZWI2NmM4Zjkx@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1176
     source_chat_id: 19:441ebc80-da33-4aca-b5ba-6ec392230c6b_73dd6840-0b54-4e6a-ab8a-f46aa1075acb@unq.gbl.spaces
     sync_new_messages: true
@@ -4738,10 +4534,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1183
     source_chat_id: 19:73dd6840-0b54-4e6a-ab8a-f46aa1075acb_b1460e41-0f44-4500-93f5-dfb068be57d8@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1184
-    source_chat_id: 19:meeting_MzRhODM4ZTMtNjk1MC00NmU0LTg3YmQtY2M1ZjFiOThkNTRh@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1185
@@ -4840,10 +4632,6 @@ chats:
     source_chat_id: 19:2b97382a17da4dfb9e9c32308e57951e@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1209
-    source_chat_id: 19:meeting_MGRjYWM0Y2MtZmRkNy00OTMxLWI1NTAtODQ5MjRkYjNmY2Ez@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1210
     source_chat_id: 19:0774556f-1a01-4d04-bdfd-3aafccb8f266_7015c170-e736-4608-9ac5-5078271bef29@unq.gbl.spaces
     sync_new_messages: true
@@ -4908,14 +4696,6 @@ chats:
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_fb4a4c53-2b03-4a30-a887-92d1ac097edc@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1226
-    source_chat_id: 19:meeting_ZjM1ZGM2MzgtYTFhZi00M2RlLTgzNzgtZTQ0YWEzOWNhM2Nj@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1227
-    source_chat_id: 19:meeting_ZTE3ZjQyNmItYjA1OS00ZmVlLTk3ZGEtODk5YzdiYTExYTYw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1228
     source_chat_id: 19:06bcf493-552f-44e4-a009-c83186b70feb_ee778d98-41a5-40a0-b5e5-2d89391145d0@unq.gbl.spaces
     sync_new_messages: true
@@ -4938,10 +4718,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1233
     source_chat_id: 19:06bcf493-552f-44e4-a009-c83186b70feb_16454715-c207-49c6-86a8-2e68a65ac5be@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1234
-    source_chat_id: 19:meeting_ODk1YjE1YjktMmYxNy00YjYxLWJhNzgtN2FhMzc2NzhmNWVi@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1235
@@ -5034,10 +4810,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1257
     source_chat_id: 19:3064b75303974ae9a9477c2df0212c06@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1258
-    source_chat_id: 19:meeting_MTVjOTUyYTYtNmYwNi00MjNlLWI3N2UtOTAyNTI2MTdhZDdi@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1259
@@ -5436,28 +5208,8 @@ chats:
     source_chat_id: 19:358841c1-3582-4081-9a2d-835ebdaad6a6_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1358
-    source_chat_id: 19:meeting_NDY4YzYzMzAtMTc2Zi00Y2I1LTk2MjYtZTRhZWRlYTk4ODc4@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1359
-    source_chat_id: 19:meeting_MWRkNWQyZGQtZGM0Ni00NDNmLTkzMWMtZjk4Njk2MGMyZDU5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1360
-    source_chat_id: 19:meeting_YWUzYmI2MmQtMjBhOC00YjYwLThhOTItNDZkOGNjM2VhZTMx@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1361
-    source_chat_id: 19:meeting_NGIxNjljMTctNjA3Zi00YmY3LThjNTktMzAwZWFmNjRiMDBm@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1362
     source_chat_id: 19:85998a61d699434daebe1de02d012cf4@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1363
-    source_chat_id: 19:meeting_ZWI5YTAwZDQtMDdiMC00ODM2LThjZmUtNDNhZjE4Yzg5YjM3@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1364
@@ -5468,76 +5220,16 @@ chats:
     source_chat_id: 19:98036a30-0629-4786-8e7f-8ea235c06ba7_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1366
-    source_chat_id: 19:meeting_NDFlZjRlNmQtZDczNy00N2VhLTlmMmMtZTYyZjFmODI4NjVi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1367
     source_chat_id: 19:8574a676-4bf9-4e4a-924e-01b55f9cfe7e_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1368
-    source_chat_id: 19:meeting_NTFhNDYyNWYtNGFlMC00N2U2LTk0NjEtN2IwMmMwYzhjMjE1@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1369
-    source_chat_id: 19:meeting_MTFkMGE3YjEtMjM4My00ZGFlLTg1NzItYWVkMzIzMmMyMGMw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1370
-    source_chat_id: 19:meeting_ZWI0N2M1ZTItMzU4ZS00NWY5LWFlN2MtY2ZlZGMwN2Y0ZGNh@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1371
-    source_chat_id: 19:meeting_OWZkMDRkZmUtZDlkNS00NzZkLTgyODgtYjQ4MDcxNTk3OGQy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1372
-    source_chat_id: 19:meeting_NGMxMTQzMTgtYjg4Yi00MDM4LThjMDMtMmFmNzlhZGU0ODNl@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1373
-    source_chat_id: 19:meeting_NDNlMTMwOWUtOGZkZC00MGY3LWJmMzgtZTI3YTUwY2QwODM3@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1374
     source_chat_id: 19:0c228bd5-8cc7-4334-b18f-56417037231b_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1375
-    source_chat_id: 19:meeting_NjEzNDhhYzctNDM0NC00NzI1LWJkNTItNWI0OTg4ZDk5OGI2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1376
-    source_chat_id: 19:meeting_ZTgxNTgyYzktNDdlZS00NDFjLTg5MzAtZjk0MjFiOTcwOTYz@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1377
-    source_chat_id: 19:meeting_NTI1NGZhYzMtNzBkYy00YjE3LWE5ZGUtM2E2Y2ZmNmRhOTc5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1378
-    source_chat_id: 19:meeting_ODMzMDMwNzEtYzk1Mi00YWRhLWEyMGQtNWVkOTEyYjNiNjhk@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1379
     source_chat_id: 19:2371445c742d4639912b6e53bb715e62@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1380
-    source_chat_id: 19:meeting_NTYwZmNmYTUtN2ZlMC00MDEyLTg3ODAtMWMwMWRhNzE2Njcz@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1381
-    source_chat_id: 19:meeting_YWFmODVjODEtNzFiMi00NTQ5LWJiZjctMDk3MTYwZWUzNGU2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1382
-    source_chat_id: 19:meeting_NzEwMzM1NTctMTViMy00ZWJjLThkN2YtZjY1MDc3YWExMjYy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1383
-    source_chat_id: 19:meeting_NDljYjllZmUtMTg0MS00Y2UzLTkyOTItMTg2ODdhYWViZTA5@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1384
@@ -5556,22 +5248,6 @@ chats:
     source_chat_id: 19:2842e681-2ddd-4f3c-bc36-70a09a44a36e_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1388
-    source_chat_id: 19:meeting_NDNmZWIwYmItNzM1Yi00NGRkLWFjMWQtOTY5MTQzZDRlMDU5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1389
-    source_chat_id: 19:meeting_ZTJiODg4ZDEtZmRjOS00MGJmLThhZGMtYTQyM2NjNDY3NWE3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1390
-    source_chat_id: 19:meeting_MDgzNDhiMWMtNjhmNy00ZDFjLTljOTMtMzY2NjBiZmIzM2Ji@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1391
-    source_chat_id: 19:meeting_YzAwNjk1NWEtZGMxZC00ZDVkLWJmNjItMjNkZjc4YmY5MzE3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1392
     source_chat_id: 19:99bbbd8f-89a2-4f9f-a01c-4deb7883622e_e549e923-bcc7-45d1-84fa-ad0554a3aa87@unq.gbl.spaces
     sync_new_messages: true
@@ -5588,32 +5264,12 @@ chats:
     source_chat_id: 19:1813cd065a6a4ed2b88a7cde4300efcf@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1396
-    source_chat_id: 19:meeting_ZDZjNmQyNTUtYTJiMi00NjQyLWJmMDktNmFiMWFkNGRhMjU2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1397
-    source_chat_id: 19:meeting_MjVkNTZiYzktMjgxMi00YzBkLTgzY2UtMjA2NGJiZjJiNTc2@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1398
     source_chat_id: 19:21848f78-9800-4881-bfc9-5d4285cd657e_99bbbd8f-89a2-4f9f-a01c-4deb7883622e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1399
-    source_chat_id: 19:meeting_Y2FkY2Y3YmYtZGRkNC00MmJlLTk0NzItY2E5M2ExZDVjN2U3@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1400
-    source_chat_id: 19:meeting_M2U5ZDY2OTgtZWU2Yy00ODBkLWE2YjItY2UyZjY1ZDgzMGRk@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1401
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_5c0cb3a7-23b6-4617-8809-976ab83d562b@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1402
-    source_chat_id: 19:meeting_ZTdmZGMyMmUtNDY4MS00MGFiLWE1ODMtNGJlY2EzNGNjNDEw@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1403
@@ -5780,10 +5436,6 @@ chats:
     source_chat_id: 19:4865eed9-b691-4b20-8076-6ece9eac59fd_4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1444
-    source_chat_id: 19:meeting_ZmZkYjhhMDUtZDcxMS00YTIwLWE1ZDMtODRlZTIyMjY4ZWVk@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1445
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_824b93d2-98c2-4dbb-a6ae-88c6e4412076@unq.gbl.spaces
     sync_new_messages: true
@@ -5820,10 +5472,6 @@ chats:
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_dc2d2cc6-ffd9-423d-a248-abd3da750a86@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1454
-    source_chat_id: 19:meeting_YjViYTE3MmUtM2UzOS00MzA3LThlNTItM2I5M2UwOTYzYzYw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1455
     source_chat_id: 19:28bce264e31549d7b8d20f56f72845a5@thread.v2
     sync_new_messages: true
@@ -5836,10 +5484,6 @@ chats:
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_8574a676-4bf9-4e4a-924e-01b55f9cfe7e@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1458
-    source_chat_id: 19:meeting_NDM5NWRiODYtMTA2NS00OGU4LWEwZDgtYjExYTlmNjQwOTYz@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1459
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_510f54b0-652c-43b8-8e71-4a3cbf04045a@unq.gbl.spaces
     sync_new_messages: true
@@ -5850,14 +5494,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1461
     source_chat_id: 19:ce544b1e7be743c9a6a29ac0897628da@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1462
-    source_chat_id: 19:meeting_MzMwZDYxNDUtNDQxYi00YTVlLTkyMzEtM2YzNjAwMmRmMjJl@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1463
-    source_chat_id: 19:meeting_NGVkZjg3NGUtYjU3ZC00MWRjLWE0YmMtNzQ5ZGJlNjI4NDhk@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1464
@@ -6016,10 +5652,6 @@ chats:
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_6ee579bb-ec07-4da9-bb0c-8ad45961450f@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1503
-    source_chat_id: 19:meeting_ZjJmMGM5ZmQtODhkOS00ZWMyLTg2MjAtZDUzNjFhMjI5Mzhi@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1504
     source_chat_id: 19:73aee46a282a4dafb08d7ec35f84e999@thread.v2
     sync_new_messages: true
@@ -6072,16 +5704,8 @@ chats:
     source_chat_id: 19:6a94f937a1e9420a95226ca713b4e074@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1517
-    source_chat_id: 19:meeting_MzUxZTE2NjgtMDA5Ni00MzIxLTlmMDMtMTMyNWUxMWE0NzAw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1518
     source_chat_id: 19:02fce1e897e74477819ec8e985b132f7@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1519
-    source_chat_id: 19:meeting_MzQ1NjIxMjktZTExMC00NTY5LTllYjUtMWE0YjdiMjJiNTUw@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1520
@@ -6100,10 +5724,6 @@ chats:
     source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_a1aeb408-2a4f-4b9a-bf6f-07171608d4fa@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1524
-    source_chat_id: 19:meeting_MGJhNWRlMjItOGRiYS00ODgxLThhMjktN2NlY2I1YjI0OTY5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1525
     source_chat_id: 19:3b466079-a8e3-42c6-8424-77ebaa6b9850_4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1@unq.gbl.spaces
     sync_new_messages: true
@@ -6116,32 +5736,8 @@ chats:
     source_chat_id: 19:377c338f-ace6-437d-9bc7-d78becaa50a1_4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1528
-    source_chat_id: 19:meeting_YTBkZGI0MDItZWQwYS00YmUyLTgyYTgtZDYxYmZjYTEwYmI1@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1529
-    source_chat_id: 19:meeting_ZGNlYjA3ZmYtZjQ4OC00ZTRmLTkxMWMtMDU0MzU3NjA4OTlh@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1530
-    source_chat_id: 19:meeting_YmQ0ODgwMGUtMjJiYy00YTA1LWIyYmQtZjg1ZTU4MTA5YTM1@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1531
-    source_chat_id: 19:meeting_ZjAzNjYzNjAtYjVkMS00MmE1LTlkMDEtMmZjMDAxYzVhNmMx@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1532
-    source_chat_id: 19:meeting_ZmFlMDc2ZGUtMWFmMC00YjVlLThhNzktNWIxNGQ0NGZjZjcx@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1533
     source_chat_id: 19:08d59d9a-2341-41f0-b781-830a11c31028_4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1534
-    source_chat_id: 19:meeting_ZTAzZTAzZjItZDI2ZC00MmI5LThiNGQtM2U3N2FkMTdiYmJi@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1535
@@ -6162,10 +5758,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1539
     source_chat_id: 19:uni01_qe3uelmtdcd2iuysoyenpnprk5dwda7dz6vvr4kquqmnabpzpo7a@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1540
-    source_chat_id: 19:meeting_NzEyYWQyNWItMWMxNS00MDNiLTgxMjctZDNkMThlN2Y0YmJh@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1541
@@ -6210,14 +5802,6 @@ chats:
     include_unmapped_senders: true
   - name: chat-1551
     source_chat_id: 19:93f46b48-612c-47cf-b88d-201fd98e75f2_f4c50254-cafe-460c-936f-ae590e324265@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1552
-    source_chat_id: 19:meeting_Nzk5YmQzZmItZjFkMS00MzJiLTk2YzAtMzZmNmQ2ZWZlN2Q0@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1553
-    source_chat_id: 19:meeting_ZmM4NDgzM2YtNWUyZC00NWQ2LWI3ZWEtMThkYmI4ZjllNDBk@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1554
@@ -6384,10 +5968,6 @@ chats:
     source_chat_id: 19:e5075587fb324fd19e95308f748458fa@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1595
-    source_chat_id: 19:meeting_ZWE4MDFlNjYtZmIxOC00ZmRiLWIzMmYtMDRlNzQ1ZWY2Njkw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1596
     source_chat_id: 19:f2dda95b6ad44d7ba118ad82276a37be@thread.v2
     sync_new_messages: true
@@ -6524,10 +6104,6 @@ chats:
     source_chat_id: 19:2bb06cea-83cb-4137-826e-cf696a7df4f1_98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1630
-    source_chat_id: 19:meeting_YmExMjA0ZDUtYTViYy00NmYxLWE0M2EtZDgzYWQ4MjhkZjJm@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1631
     source_chat_id: 19:2bd260aa-2acf-491b-8c6e-fa51487d6c15_98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6@unq.gbl.spaces
     sync_new_messages: true
@@ -6556,20 +6132,8 @@ chats:
     source_chat_id: 19:8ef95ebee092487683cc59bb45d5e8a9@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1638
-    source_chat_id: 19:meeting_NGFkOWQ5NTctMzZjYS00NGZkLWIwM2EtODg0NjM3MDUzZjE5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1639
     source_chat_id: 19:358841c1-3582-4081-9a2d-835ebdaad6a6_98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6@unq.gbl.spaces
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1640
-    source_chat_id: 19:meeting_ZDA4YzU2ODMtNDQ4MC00MTBhLTgwYjMtZTlhYzM3NWZkMmQy@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1641
-    source_chat_id: 19:meeting_OTBkYTQ0MmQtZTg0Ni00NzlhLTliYTQtM2E1ODI3Mzk1Yzk0@thread.v2
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1642
@@ -6624,24 +6188,188 @@ chats:
     source_chat_id: 19:3d4e48b1-b3fb-4739-b27e-8988d67911f7_bcee772e-3650-4854-a5f1-5f7819300256@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
-  - name: chat-1655
-    source_chat_id: 19:meeting_YmUzODg2YzQtNDA3Zi00ODcxLWFlOWMtNmMxMjY0ZmMwMWQw@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
-  - name: chat-1656
-    source_chat_id: 19:meeting_ZDJhYmJmMGEtMjY1MS00ZWIwLTg4MzYtOWRmNzk0ODk4MjA5@thread.v2
-    sync_new_messages: true
-    include_unmapped_senders: true
   - name: chat-1657
     source_chat_id: 19:3d4e48b1-b3fb-4739-b27e-8988d67911f7_efcb3a58-8bd6-461b-b273-948d9213d7e3@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1658
-    source_chat_id: 19:meeting_NTMxZjRmMDUtZDk3Yy00MmVmLTgzNzYtZDUxMTdjNzU4NGMz@thread.v2
+    source_chat_id: 19:2b2d05e8-e67c-4180-a28d-b1658158f162_e5643974-5571-4d22-85c8-c895d37d11de@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
   - name: chat-1659
-    source_chat_id: 19:meeting_YmFhN2E2ODgtODA4MS00NTc2LTk1N2EtZWU1OTY1Y2MyZmZl@thread.v2
+    source_chat_id: 19:acf8a867d873499da44c52bce9887b62@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1660
+    source_chat_id: 19:d97bc73ce8624cfba4e1e10961006f68@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1661
+    source_chat_id: 19:6df428540023498ea8d0dea4738d91ca@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1662
+    source_chat_id: 19:6711b5787ebf4503a2585224bb8572ba@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1663
+    source_chat_id: 19:2b2d05e8-e67c-4180-a28d-b1658158f162_b00aa0d7-5df9-4b82-b29f-d09346224496@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1664
+    source_chat_id: 19:b5061a9eba12480f96b74dd880fd4d7c@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1665
+    source_chat_id: 19:14f67cc9-a31f-4e00-8885-5a43a822e8df_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1666
+    source_chat_id: 19:7c516c7651e14488880bb2a60a172272@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1667
+    source_chat_id: 19:7052b87615c847498c410a71ddd2b0ca@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1668
+    source_chat_id: 19:fcb15b088fc04bb093204f0a0d33b0d1@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1669
+    source_chat_id: 19:2b2d05e8-e67c-4180-a28d-b1658158f162_e628ad45-be90-410a-a553-691cde743c1d@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1670
+    source_chat_id: 19:b3260c73-e24c-4bc2-b8fb-a9a285a3b79f_bc5d4c2f-9451-489b-8cb5-e3eccb551b21@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1671
+    source_chat_id: 19:2bb06cea-83cb-4137-826e-cf696a7df4f1_9863b4dd-8086-4b2b-8d19-9064186aa653@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1672
+    source_chat_id: 19:682b6375-fd8c-4045-ac38-cd81af04f7ef_9863b4dd-8086-4b2b-8d19-9064186aa653@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1673
+    source_chat_id: 19:34a04632-b3a2-4a1d-9f2d-c3640427d71b_9863b4dd-8086-4b2b-8d19-9064186aa653@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1674
+    source_chat_id: 19:06bcf493-552f-44e4-a009-c83186b70feb_900a6bec-7ece-4590-a867-c73cee95aeab@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1675
+    source_chat_id: 19:26e295fa-30bc-40ed-b532-d95c2a30d6aa_2b2d05e8-e67c-4180-a28d-b1658158f162@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1676
+    source_chat_id: 19:26e295fa-30bc-40ed-b532-d95c2a30d6aa_acebbf4e-1dbe-4f25-9b93-6b867cb39d53@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1677
+    source_chat_id: 19:1dc2abb7c3d4492393690a6daddf412b@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1678
+    source_chat_id: 19:600f45e107cb48f195f9b8a860256417@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1679
+    source_chat_id: 19:5e35964b-d0df-47ec-9219-4178ca857446_b3260c73-e24c-4bc2-b8fb-a9a285a3b79f@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1680
+    source_chat_id: 19:84b01180-bd22-44d5-8a44-6aa7e265bb69_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1681
+    source_chat_id: 19:0a028059-2f75-456f-bdde-03354ef37796_2bb06cea-83cb-4137-826e-cf696a7df4f1@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1682
+    source_chat_id: 19:0a028059-2f75-456f-bdde-03354ef37796_98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1683
+    source_chat_id: 19:12b930e172044b6ab323eda2a4cc879d@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1684
+    source_chat_id: 19:98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6_f2b1962c-48d6-4757-ae44-aa45f638a2f9@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1685
+    source_chat_id: 19:2b2d05e8-e67c-4180-a28d-b1658158f162_4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1686
+    source_chat_id: 19:4e889aff-70d8-46f1-9a5c-52a4f8e0c2c1_e0c4c8bb-ed06-4f0b-b6d8-e865686e8d56@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1687
+    source_chat_id: 19:3dc9880f-9039-4187-a24e-e1e43df3f815_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1688
+    source_chat_id: 19:321275e4-70d6-4e5e-9c31-2eca9216b8a1_3dc9880f-9039-4187-a24e-e1e43df3f815@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1689
+    source_chat_id: 19:34a04632-b3a2-4a1d-9f2d-c3640427d71b_3dc9880f-9039-4187-a24e-e1e43df3f815@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1690
+    source_chat_id: 19:15f4b19f-5395-45d9-9df3-d8ccd95b2ba3_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1691
+    source_chat_id: 19:321275e4-70d6-4e5e-9c31-2eca9216b8a1_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1692
+    source_chat_id: 19:34a04632-b3a2-4a1d-9f2d-c3640427d71b_954eadfd-14da-4167-86de-f1e37e1f8e78@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1693
+    source_chat_id: 19:9349237664ea476aab55ff42cfd293ef@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1694
+    source_chat_id: 19:2afc4a07-758d-4670-88d0-34fb5734871a_e623e9a6-776d-448b-8bc5-941142f634ae@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1695
+    source_chat_id: 19:2afc4a07-758d-4670-88d0-34fb5734871a_2bd260aa-2acf-491b-8c6e-fa51487d6c15@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1696
+    source_chat_id: 19:2bb06cea-83cb-4137-826e-cf696a7df4f1_acebbf4e-1dbe-4f25-9b93-6b867cb39d53@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1697
+    source_chat_id: 19:53124e1771374535a7e013d9310ff8ab@thread.v2
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1698
+    source_chat_id: 19:2bd260aa-2acf-491b-8c6e-fa51487d6c15_ee778d98-41a5-40a0-b5e5-2d89391145d0@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1699
+    source_chat_id: 19:8e22c9f5-1251-428e-8686-fa0d0fcc502d_ee778d98-41a5-40a0-b5e5-2d89391145d0@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1700
+    source_chat_id: 19:2f9af4d5-390d-414b-8406-f9896588a687_98d2054e-900d-4e5f-ae5c-6dfbb68e0dd6@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1701
+    source_chat_id: 19:2bb06cea-83cb-4137-826e-cf696a7df4f1_900a6bec-7ece-4590-a867-c73cee95aeab@unq.gbl.spaces
+    sync_new_messages: true
+    include_unmapped_senders: true
+  - name: chat-1702
+    source_chat_id: 19:900a6bec-7ece-4590-a867-c73cee95aeab_dd85ba4f-6dca-446b-9ee6-5cab5ff1592d@unq.gbl.spaces
     sync_new_messages: true
     include_unmapped_senders: true
 
@@ -6658,3 +6386,117 @@ workloads:
         target_channel_id: 19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2
         sync_new_messages: true
         include_unmapped_senders: true
+
+      # Channels with activity in 2026 (migration.teams.discover_channels
+      # --since 2026-01-01). Only channels whose target team/channel already
+      # exists are listed here; the 14 active channels in teams with no target
+      # team yet are under `unresolved` in config/discovery/channels.yaml.
+      - name: INDOOR PD (VIETNAM)
+        source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+        source_channel_id: 19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2
+        target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+        target_channel_id: 19:793a5145a6334552829646fcaa8b78ea@thread.tacv2
+        sync_new_messages: true
+        include_unmapped_senders: true
+
+      # Provisioned 2026-11-10 by migration.teams.provision_targets (migration mode,
+      # backdated to the source creation time) - see config/discovery/provisioned-teams.yaml.
+      - name: "Marketing materials / General"
+        source_team_id: "f2e70f8b-e38a-4d23-b046-28cbf32d0ffe"
+        source_channel_id: "19:hhx8F11Y7Vzlz217e0ld6GKW8wOzeQjV9mcNujaaGwU1@thread.tacv2"
+        target_team_id: "48f750da-bfb4-4f61-9d50-ad5a4cbddb1c"
+        target_channel_id: "19:3d90a41309514332b4738fc000266480@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "Merchandising / General"
+        source_team_id: "dae10a3e-0e63-4eab-beaa-a17d71e306b1"
+        source_channel_id: "19:ceHedA6_CfUaeCTY71-_HUIXfOoDk525m8omCVltg3g1@thread.tacv2"
+        target_team_id: "e4234614-0723-426e-874b-ecde9ed5d243"
+        target_channel_id: "19:2c65064f335247199b6f38c8132acc93@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "QC TEAM FOR INDOOR (CHINA+INDO) / General"
+        source_team_id: "9c72e17b-4dec-4e16-bdcd-769d155ad530"
+        source_channel_id: "19:e525e4dcf3694e48a3b1a8d2aba4f7fc@thread.tacv2"
+        target_team_id: "c7e4fa50-a5f2-4f56-91a9-10a214d50efd"
+        target_channel_id: "19:9a51180355b44001903be6194711378f@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "HO.VN / General"
+        source_team_id: "3127f6de-ba13-46d6-a8ce-ec5f4976c12c"
+        source_channel_id: "19:jaA2D5jRTfdgkQyxi1QtooS6AYkt2yyN_o9Y8C-uWe01@thread.tacv2"
+        target_team_id: "7e9176a1-4b8f-46f4-bfd5-7d2b35ced386"
+        target_channel_id: "19:cabd16ad860942159ce17ef3c07fc15a@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "HO.HK / General"
+        source_team_id: "f5ef4b9c-ca9c-4825-85f1-b80007a46695"
+        source_channel_id: "19:3703bfe95a2147e2a81cb54270945d71@thread.tacv2"
+        target_team_id: "77183538-79ac-4aaf-848b-60ebdb5b13eb"
+        target_channel_id: "19:6b7f3f74305d4fd484e54b34676bf84e@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "HO.HK / STOCK CHINA"
+        source_team_id: "f5ef4b9c-ca9c-4825-85f1-b80007a46695"
+        source_channel_id: "19:c11739fa31574f5a8c41b06079d76233@thread.tacv2"
+        target_team_id: "77183538-79ac-4aaf-848b-60ebdb5b13eb"
+        target_channel_id: "19:0ae2071876174d82b4b790fbbaa6e333@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "Sales Asia Pacific / General"
+        source_team_id: "44001713-88a3-4615-9c16-0bd11b1bbef4"
+        source_channel_id: "19:bEObuD2fPNbG1e9K4stbCSc7-tx9kJ1qt5CDqn4mZuk1@thread.tacv2"
+        target_team_id: "91e7d477-8e03-4f1b-925c-943c70e0cba5"
+        target_channel_id: "19:fda00906759d4f7babe5138804ebf936@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "PI PER PO ZIP FILE ARCHIVE / zip file for June-December 2026"
+        source_team_id: "4619d5c6-e279-4312-86d0-3473528dd8c6"
+        source_channel_id: "19:7190ca1a3d7a45e391394021004e148e@thread.tacv2"
+        target_team_id: "9044c320-0a52-441f-b183-3874c687f4d5"
+        target_channel_id: "19:8730869b1d694ea9b623b83e9f2064f3@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "PI PER PO ZIP FILE ARCHIVE / ZIP FILE FOR JAN 2026"
+        source_team_id: "4619d5c6-e279-4312-86d0-3473528dd8c6"
+        source_channel_id: "19:71a6047d438d408a871ebf5c5b5718ec@thread.tacv2"
+        target_team_id: "9044c320-0a52-441f-b183-3874c687f4d5"
+        target_channel_id: "19:7bcfc8072f0449e6b41a487b0441ce45@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "PI PER PO ZIP FILE ARCHIVE / PI PER PO ZIP ZIP FILE ARCHIVE"
+        source_team_id: "4619d5c6-e279-4312-86d0-3473528dd8c6"
+        source_channel_id: "19:WIMJzVf6g4q5SWDsH7fwQIiECoUM6AqkYXCpSSguDMo1@thread.tacv2"
+        target_team_id: "9044c320-0a52-441f-b183-3874c687f4d5"
+        target_channel_id: "19:98a65a2d0b264778ae4dd2a729ee9588@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "PI PER PO ZIP FILE ARCHIVE / PI PER PO June-December 2026"
+        source_team_id: "4619d5c6-e279-4312-86d0-3473528dd8c6"
+        source_channel_id: "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+        target_team_id: "9044c320-0a52-441f-b183-3874c687f4d5"
+        target_channel_id: "19:55bd678023dd416c8631837d635ce3eb@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "PI PER PO ZIP FILE ARCHIVE / zip file March-may 2026"
+        source_team_id: "4619d5c6-e279-4312-86d0-3473528dd8c6"
+        source_channel_id: "19:ee6d66686c134bcba58858c76ce609f0@thread.tacv2"
+        target_team_id: "9044c320-0a52-441f-b183-3874c687f4d5"
+        target_channel_id: "19:ebe157bac0cf468481e3dbb7bd147b27@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+      - name: "EU Group / EU Group"
+        source_team_id: "62436455-8504-46d9-aa57-4a54b05e3bf4"
+        source_channel_id: "19:mTtLdmPWYPk-dstLzab0RXfQiO-PUNAglOCfY56CXZI1@thread.tacv2"
+        target_team_id: "ba922423-854a-4566-8458-08f4f147d5bc"
+        target_channel_id: "19:39dd42a36da74981931fc46e2a800bbb@thread.tacv2"
+        sync_new_messages: true
+        include_unmapped_senders: true
+
+# Throughput tuning (2026-11-10): chats/channels migrated in parallel (messages
+# within one chat are always posted in order). Throttling is handled by
+# GraphClient retries honoring Retry-After.
+performance:
+  concurrency:
+    teams:
+      content: 6

@@ -1,0 +1,293 @@
+channels:
+- name: Marketing materials / General
+  source_team_id: f2e70f8b-e38a-4d23-b046-28cbf32d0ffe
+  source_channel_id: 19:hhx8F11Y7Vzlz217e0ld6GKW8wOzeQjV9mcNujaaGwU1@thread.tacv2
+  target_team_id: 48f750da-bfb4-4f61-9d50-ad5a4cbddb1c
+  target_channel_id: 19:3d90a41309514332b4738fc000266480@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: Merchandising / General
+  source_team_id: dae10a3e-0e63-4eab-beaa-a17d71e306b1
+  source_channel_id: 19:ceHedA6_CfUaeCTY71-_HUIXfOoDk525m8omCVltg3g1@thread.tacv2
+  target_team_id: e4234614-0723-426e-874b-ecde9ed5d243
+  target_channel_id: 19:2c65064f335247199b6f38c8132acc93@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: QC TEAM FOR INDOOR (CHINA+INDO) / General
+  source_team_id: 9c72e17b-4dec-4e16-bdcd-769d155ad530
+  source_channel_id: 19:e525e4dcf3694e48a3b1a8d2aba4f7fc@thread.tacv2
+  target_team_id: c7e4fa50-a5f2-4f56-91a9-10a214d50efd
+  target_channel_id: 19:9a51180355b44001903be6194711378f@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: HO.VN / General
+  source_team_id: 3127f6de-ba13-46d6-a8ce-ec5f4976c12c
+  source_channel_id: 19:jaA2D5jRTfdgkQyxi1QtooS6AYkt2yyN_o9Y8C-uWe01@thread.tacv2
+  target_team_id: 7e9176a1-4b8f-46f4-bfd5-7d2b35ced386
+  target_channel_id: 19:cabd16ad860942159ce17ef3c07fc15a@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: HO.HK / General
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:3703bfe95a2147e2a81cb54270945d71@thread.tacv2
+  target_team_id: 77183538-79ac-4aaf-848b-60ebdb5b13eb
+  target_channel_id: 19:6b7f3f74305d4fd484e54b34676bf84e@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: HO.HK / STOCK CHINA
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:c11739fa31574f5a8c41b06079d76233@thread.tacv2
+  target_team_id: 77183538-79ac-4aaf-848b-60ebdb5b13eb
+  target_channel_id: 19:0ae2071876174d82b4b790fbbaa6e333@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: Sales Asia Pacific / General
+  source_team_id: 44001713-88a3-4615-9c16-0bd11b1bbef4
+  source_channel_id: 19:bEObuD2fPNbG1e9K4stbCSc7-tx9kJ1qt5CDqn4mZuk1@thread.tacv2
+  target_team_id: 91e7d477-8e03-4f1b-925c-943c70e0cba5
+  target_channel_id: 19:fda00906759d4f7babe5138804ebf936@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: PI PER PO ZIP FILE ARCHIVE / zip file for June-December 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:7190ca1a3d7a45e391394021004e148e@thread.tacv2
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  target_channel_id: 19:8730869b1d694ea9b623b83e9f2064f3@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: PI PER PO ZIP FILE ARCHIVE / ZIP FILE FOR JAN 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:71a6047d438d408a871ebf5c5b5718ec@thread.tacv2
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  target_channel_id: 19:7bcfc8072f0449e6b41a487b0441ce45@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: PI PER PO ZIP FILE ARCHIVE / PI PER PO ZIP ZIP FILE ARCHIVE
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:WIMJzVf6g4q5SWDsH7fwQIiECoUM6AqkYXCpSSguDMo1@thread.tacv2
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  target_channel_id: 19:98a65a2d0b264778ae4dd2a729ee9588@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: PI PER PO ZIP FILE ARCHIVE / PI PER PO June-December 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  target_channel_id: 19:55bd678023dd416c8631837d635ce3eb@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: PI PER PO ZIP FILE ARCHIVE / zip file March-may 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:ee6d66686c134bcba58858c76ce609f0@thread.tacv2
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  target_channel_id: 19:ebe157bac0cf468481e3dbb7bd147b27@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+- name: EU Group / EU Group
+  source_team_id: 62436455-8504-46d9-aa57-4a54b05e3bf4
+  source_channel_id: 19:mTtLdmPWYPk-dstLzab0RXfQiO-PUNAglOCfY56CXZI1@thread.tacv2
+  target_team_id: ba922423-854a-4566-8458-08f4f147d5bc
+  target_channel_id: 19:39dd42a36da74981931fc46e2a800bbb@thread.tacv2
+  sync_new_messages: true
+  include_unmapped_senders: true
+teams:
+- name: Marketing materials
+  source_team_id: f2e70f8b-e38a-4d23-b046-28cbf32d0ffe
+  target_team_id: 48f750da-bfb4-4f61-9d50-ad5a4cbddb1c
+  created_by_script: true
+- name: Merchandising
+  source_team_id: dae10a3e-0e63-4eab-beaa-a17d71e306b1
+  target_team_id: e4234614-0723-426e-874b-ecde9ed5d243
+  created_by_script: true
+- name: QC TEAM FOR INDOOR (CHINA+INDO)
+  source_team_id: 9c72e17b-4dec-4e16-bdcd-769d155ad530
+  target_team_id: c7e4fa50-a5f2-4f56-91a9-10a214d50efd
+  created_by_script: true
+- name: HO.VN
+  source_team_id: 3127f6de-ba13-46d6-a8ce-ec5f4976c12c
+  target_team_id: 7e9176a1-4b8f-46f4-bfd5-7d2b35ced386
+  created_by_script: true
+- name: HO.HK
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  target_team_id: 77183538-79ac-4aaf-848b-60ebdb5b13eb
+  created_by_script: true
+- name: Sales Asia Pacific
+  source_team_id: 44001713-88a3-4615-9c16-0bd11b1bbef4
+  target_team_id: 91e7d477-8e03-4f1b-925c-943c70e0cba5
+  created_by_script: true
+- name: PI PER PO ZIP FILE ARCHIVE
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  target_team_id: 9044c320-0a52-441f-b183-3874c687f4d5
+  created_by_script: true
+- name: EU Group
+  source_team_id: 62436455-8504-46d9-aa57-4a54b05e3bf4
+  target_team_id: ba922423-854a-4566-8458-08f4f147d5bc
+  created_by_script: true
+- name: PG
+  source_team_id: 1c9d63ca-3b29-4424-ae0c-fbd4e45a184c
+  target_team_id: 3e2a845a-31a8-4744-92c2-94227f8ced59
+  created_by_script: true
+- name: HO.CHINA (MANAGEMENT)
+  source_team_id: 471bcf37-c2f6-44c8-9e6e-4de6bdb6328d
+  target_team_id: 086f2e64-58d3-4517-9d17-356d90c19e3d
+  created_by_script: true
+- name: HARBOUR HK MARKTING BOARD
+  source_team_id: 1cac8819-0cde-4811-a853-5b8bd39b6241
+  target_team_id: 7e9594e4-c7b6-4e4b-861b-dc7856356f5f
+  created_by_script: true
+- name: To-Do
+  source_team_id: 40ac5c19-3c13-4b37-9736-6012b79779b4
+  target_team_id: a9571a37-0c63-43b6-a05d-7af7b80133aa
+  created_by_script: true
+- name: QC TEAM FOR OUTDOOR
+  source_team_id: 00205e60-b161-4394-95d5-e8531d6067c3
+  target_team_id: e90a8569-5a3e-4ece-b2c5-4ce845cc5663
+  created_by_script: true
+- name: Asia Pacific  Sales Teams
+  source_team_id: b87b1d0f-6d9d-4b02-972a-b343b06071e8
+  target_team_id: 9210636b-f99e-4809-a1c0-a38fe048eab3
+  created_by_script: true
+- name: 'HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA'
+  source_team_id: 4244d075-3234-4770-9b4a-c4344c5301c7
+  target_team_id: ed53dce4-2b2a-4a19-9505-a09b135a1938
+  created_by_script: true
+- name: BACKBONE
+  source_team_id: 4710267f-8324-4ffe-852d-a6dede507f28
+  target_team_id: e8ada9f9-3ac9-4e90-93b3-50bf8be129f3
+  created_by_script: true
+- name: ha
+  source_team_id: 8c2fc032-a17a-4175-aa21-24cbb7edf445
+  target_team_id: c3a3ff7c-be3d-43c3-97dd-aa457f425528
+  created_by_script: true
+- name: HOA
+  source_team_id: 3c2acd7b-1ff6-4cbb-ba79-fd067d4241c3
+  target_team_id: f210dbda-841e-435c-9885-e1885de9a574
+  created_by_script: true
+- name: HK Sales
+  source_team_id: f35e16e4-7241-417d-93fc-6f88a8b21c17
+  target_team_id: 676acb79-60d8-4e46-ae04-76190c59145b
+  created_by_script: true
+- name: QC REPORT
+  source_team_id: 397b4a51-dc28-44f5-b968-d1f8af9f794a
+  target_team_id: 1d3ef62c-150b-40e2-9c45-1bc5bcb9eed4
+  created_by_script: true
+- name: CMS
+  source_team_id: df48549b-c550-45b5-8620-feddd94c3e59
+  target_team_id: d191c5ea-9157-480d-a538-39a03528f98a
+  created_by_script: true
+skipped:
+- name: Contracts to Tricor
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:1242bb15b54b40a79ca6aa8b2ddda22e@thread.tacv2
+  team: HO.HK
+  membership_type: private
+  target_team_id: null
+  last_activity: '2026-07-19'
+  reason: private channel - not provisioned (would become visible to the whole team
+    as a standard channel)
+sharepoint_sites:
+- name: Marketing materials
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,325085ce-9050-40fa-9567-4e6c71d15479,c0a7238d-d3df-487b-a763-80ade77ba880
+  target_site_id: paizesoffice.sharepoint.com,7d3314c5-7929-4e0a-97bb-a9edc554333c,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/Marketingmaterials
+  target_site_url: https://paizesoffice.sharepoint.com/sites/Marketingmaterials
+- name: Merchandising
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,3ccd1ead-3be3-4964-9f67-a33d681840ec,504d648f-6d95-415b-89e2-259dc56dc894
+  target_site_id: paizesoffice.sharepoint.com,318ce9ae-f5be-401d-bb3a-a6b8d1cc9823,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HKMerchandising
+  target_site_url: https://paizesoffice.sharepoint.com/sites/Merchandising
+- name: QC TEAM FOR INDOOR (CHINA+INDO)
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,447650e6-a07f-4df9-90b7-5cd93493111c,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,c4849c42-5b3d-477d-b52f-9f5fbe74d704,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCTEAMFORINDOORCHINA617
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCTEAMFORINDOORCHINAINDO
+- name: HO.VN
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,6ae2adcb-2d24-40ed-bc0f-d9f5ef7f68f2,2d46c7e8-2cf0-47fc-adfb-86e6c55af199
+  target_site_id: paizesoffice.sharepoint.com,ac933393-9292-4d04-ab12-94dd14a2e3f0,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HO.VN
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HO.VN
+- name: HO.HK
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,80d9189e-d83b-49c0-be0a-4ec386685a35,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,c9aca1ad-4d62-4f1d-9b64-e2610b4810a3,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourOutdoorAsiaLimited271
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HO.HK
+- name: Sales Asia Pacific
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,ebbef1e3-9ce8-451d-ae1e-8f8c95bf21b2,6d53cd26-91d9-4c80-a11f-2263295166a5
+  target_site_id: paizesoffice.sharepoint.com,6b004084-ccf8-4b0e-8d09-c5f974f28bff,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/SalesAsiaPacific
+  target_site_url: https://paizesoffice.sharepoint.com/sites/SalesAsiaPacific
+- name: PI PER PO ZIP FILE ARCHIVE
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,83be13d1-7ce3-47c5-9d46-97a594a87951,88ec9da8-ded1-4764-b12d-3f4c7e2e08ef
+  target_site_id: paizesoffice.sharepoint.com,7c94d81c-e6a9-4b78-85d6-2d01fdd6afc0,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE
+  target_site_url: https://paizesoffice.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE
+- name: EU Group
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,5c9168f9-98f1-4483-8ee5-eda7c9a258a4,bfc595de-4c23-4f8b-a3d3-8b7396dc054b
+  target_site_id: paizesoffice.sharepoint.com,ee5ed909-ee83-45ea-907e-33dacb0240ea,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/EUGroup
+  target_site_url: https://paizesoffice.sharepoint.com/sites/EUGroup
+- name: PG
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,b3fef104-954b-43f1-b3ab-836d96ae36b4,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,ce84d270-22bd-4337-b421-d6a6258df0b9,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/TO-DO
+  target_site_url: https://paizesoffice.sharepoint.com/sites/PG
+- name: HO.CHINA (MANAGEMENT)
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,a8f9bfdd-962c-4bf7-919a-76e953c374bd,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,e2a110d3-2b2a-4889-995d-7b629021130b,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HO.CHINA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HO.CHINAMANAGEMENT
+- name: HARBOUR HK MARKTING BOARD
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,38596c70-317c-436d-b484-c37a602580f0,38039b6a-9dd4-4d53-b8b0-8aecaac60685
+  target_site_id: paizesoffice.sharepoint.com,45161547-2e9f-4a9c-90a4-ebb9314f0f3a,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/MARKTING
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HARBOURHKMARKTINGBOARD
+- name: To-Do
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,97574d75-f4a2-470d-990d-90b24d987bff,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,1ed7e436-4bd1-4314-91d0-8472a2cc8690,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/To-Do61
+  target_site_url: https://paizesoffice.sharepoint.com/sites/To-Do
+- name: QC TEAM FOR OUTDOOR
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,887f4b8d-e54a-42ad-9dbe-883477844ed5,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,331c140a-94f0-4fd5-a2e3-ec5faa5bd460,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCTEAMFOROUTDOOR
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCTEAMFOROUTDOOR
+- name: Asia Pacific  Sales Teams
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,a5b4f6d4-4ebc-443d-b160-53c50a66e70b,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,249995a6-92a0-4f25-9bf1-8a69d1dd7106,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AsiaPacificSalesTeams
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AsiaPacificSalesTeams
+- name: 'HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA'
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,2314b866-7a75-4e7b-95fe-c04353db595e,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,d4fabfc9-9f70-4eeb-a6de-2b99d3aa15c3,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/CV.HO.INDONESIA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HARBOURUKMIDDLEEASTANDNORTHAFRICA
+- name: BACKBONE
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,d00c351c-84f6-4d4c-a84d-fdc23aaf1020,ef4ef297-ffa0-443e-97be-f6295045880c
+  target_site_id: paizesoffice.sharepoint.com,55383c3c-9dd6-476d-88fd-ebad6eb7f08e,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/BACKBONE
+  target_site_url: https://paizesoffice.sharepoint.com/sites/BACKBONE
+- name: ha
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f7400c58-776e-4c4e-bccb-857f2235abb4,ef858b52-1c52-4502-9b7f-a1537de6fe7c
+  target_site_id: paizesoffice.sharepoint.com,ad21fef1-d253-4863-910b-737962d67571,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/ha
+  target_site_url: https://paizesoffice.sharepoint.com/sites/ha
+- name: HOA
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,4f0e7e39-4f3f-465e-b7ef-d06f89abdc83,6d53cd26-91d9-4c80-a11f-2263295166a5
+  target_site_id: paizesoffice.sharepoint.com,645a15fc-ef92-4e70-b961-46947317cad1,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HOA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HOA
+- name: HK Sales
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,07d638fb-4774-4fef-bb63-a2a39d2526b7,6d53cd26-91d9-4c80-a11f-2263295166a5
+  target_site_id: paizesoffice.sharepoint.com,121ae4cb-a1f2-4d07-873c-420d17680b79,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HKSales
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HKSales
+- name: QC REPORT
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,7cb43fc7-38e5-4301-b793-3484aeaa050f,7534c371-c3c4-4c4c-903d-df27c3a5827b
+  target_site_id: paizesoffice.sharepoint.com,d880383d-df1c-46b8-8cdf-0972f1cfdee3,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCREPORT
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCREPORT
+- name: CMS
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c
+  target_site_id: paizesoffice.sharepoint.com,2937a5e5-0f3e-465e-954e-10501e0c942b,6a633222-60c1-4e13-9080-937ca58836de
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/CMS
+  target_site_url: https://paizesoffice.sharepoint.com/sites/CMS

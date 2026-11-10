@@ -8,11 +8,12 @@ from pathlib import Path
 import yaml
 
 from migration.common.auth import source_token
+from migration.common.env import load_env_file
 from migration.common.graph import GraphClient
 
 
-DEFAULT_INPUT = "config/mapping.example.json"
-DEFAULT_OUTPUT = "config/source.chats.yaml"
+DEFAULT_INPUT = "config/users.mapping.json"
+DEFAULT_OUTPUT = "config/discovery/chats.yaml"
 
 
 def parse_args() -> argparse.Namespace:
@@ -41,43 +42,17 @@ def parse_args() -> argparse.Namespace:
         help="Path to .env file.",
     )
 
+    parser.add_argument(
+        "--existing",
+        default=None,
+        help=(
+            "Existing plan/chats YAML (e.g. config/teams-pilot.yaml). Chats "
+            "already listed there keep their name and settings; newly "
+            "discovered chats are appended after them."
+        ),
+    )
+
     return parser.parse_args()
-
-
-def load_env_file(path: Path) -> None:
-    """
-    Load variables from .env without modifying auth.py.
-    """
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Environment file not found: {path}"
-        )
-
-    with path.open("r", encoding="utf-8") as file:
-        for raw_line in file:
-            line = raw_line.strip()
-
-            if not line or line.startswith("#"):
-                continue
-
-            if "=" not in line:
-                continue
-
-            key, value = line.split("=", 1)
-
-            key = key.strip()
-            value = value.strip()
-
-            # Remove optional surrounding quotes.
-            if (
-                len(value) >= 2
-                and value[0] == value[-1]
-                and value[0] in {"'", '"'}
-            ):
-                value = value[1:-1]
-
-            # Do not overwrite an existing environment variable.
-            os.environ.setdefault(key, value)
 
 
 def validate_environment() -> None:
@@ -190,8 +165,9 @@ def discover_chats(
 
             chat_type = chat.get("chatType")
 
-            # Exclude meeting chats.
-            if chat_type == "meeting":
+            # Exclude meeting chats (Graph cannot create them on the target).
+            # Some come back with a non-"meeting" chatType but a meeting thread id.
+            if chat_type == "meeting" or chat_id.startswith("19:meeting_"):
                 meeting_count += 1
 
                 print(
@@ -233,28 +209,52 @@ def discover_chats(
     return unique_chats
 
 
+def load_existing_chats(path: Path | None) -> list[dict]:
+    if path is None:
+        return []
+    with path.open("r", encoding="utf-8") as file:
+        data = yaml.safe_load(file) or {}
+    chats = data.get("chats", []) if isinstance(data, dict) else []
+    return [chat for chat in chats if isinstance(chat, dict) and chat.get("source_chat_id")]
+
+
 def build_output(
     unique_chats: dict[str, dict],
+    existing: list[dict] | None = None,
 ) -> dict:
     """
     Build the requested YAML structure.
 
-    Names are generic and incremental.
+    Names are generic and incremental. Existing entries (if given) are kept
+    first, unchanged, so a chat's name - and therefore its
+    data/team-chats/<name>.chat-bundle.json - stays stable across rediscovery.
+    Existing meeting chats are dropped (they can never be migrated); existing
+    chats no longer returned by discovery are kept (a user may have left them).
     """
-    chats = []
+    chats = [
+        chat for chat in (existing or [])
+        if not str(chat["source_chat_id"]).startswith("19:meeting_")
+    ]
+    known = {chat["source_chat_id"] for chat in chats}
+    used_numbers = [
+        int(chat["name"].split("-")[-1])
+        for chat in chats
+        if str(chat.get("name", "")).startswith("chat-") and chat["name"].split("-")[-1].isdigit()
+    ]
+    next_number = max(used_numbers, default=0) + 1
 
-    for index, chat_id in enumerate(
-        unique_chats.keys(),
-        start=1,
-    ):
+    for chat_id in unique_chats:
+        if chat_id in known:
+            continue
         chats.append(
             {
-                "name": f"chat-{index:03d}",
+                "name": f"chat-{next_number:03d}",
                 "source_chat_id": chat_id,
                 "sync_new_messages": True,
                 "include_unmapped_senders": True,
             }
         )
+        next_number += 1
 
     return {
         "chats": chats,
@@ -318,7 +318,8 @@ def main() -> None:
         users=users,
     )
 
-    output = build_output(unique_chats)
+    existing = load_existing_chats(Path(args.existing) if args.existing else None)
+    output = build_output(unique_chats, existing)
 
     save_yaml(
         path=output_path,

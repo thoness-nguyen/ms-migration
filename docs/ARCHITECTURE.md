@@ -167,7 +167,7 @@ Lightweight terminal control panel (per ADR's mockup): select area (SharePoint /
 
 ## 9. Performance & Concurrency
 
-Status: implemented (2026-08-30), scoped from [ARCHITECHTURE_UPGRADE.md](../ARCHITECHTURE_UPGRADE.md). Evolves the platform from strictly sequential item-at-a-time processing to bounded, adaptive concurrent execution, without weakening any of the reliability guarantees in §8.
+Status: implemented (2026-08-30), scoped from [ARCHITECTURE_UPGRADE.md](../ARCHITECTURE_UPGRADE.md). Evolves the platform from strictly sequential item-at-a-time processing to bounded, adaptive concurrent execution, without weakening any of the reliability guarantees in §8.
 
 ### 9.1 `common/concurrency.py`
 - **`AdaptiveGate`** — a resizable semaphore. `record_throttle()` halves its capacity (down to a configured minimum) whenever the Graph API returns 429; `record_success()` grows capacity by 1 after a run of consecutive successes (up to a configured maximum). This implements the upgrade doc's "429 is a control signal, not just a retry" principle (§9 Principle 4).

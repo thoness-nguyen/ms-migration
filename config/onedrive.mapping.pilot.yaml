@@ -1,230 +1,312 @@
 migrate_permissions: true
 
+# Per user, modified_since: "YYYY-MM-DD" = incremental re-copy: only files
+# created/modified on the source on or after that date (UTC) are copied again
+# (overwriting the target copy), plus files that failed in the earlier full copy.
+# A user without modified_since gets a full copy. skip: true excludes a user.
+
 users:
   - user: andrew
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: angel
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: anh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: anh.thi
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: anna
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: anthony
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: cecilia
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: chinh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: chloe
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: daisy
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: danny
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: daphnee
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: diep
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: dung.nguyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: emma
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: felix
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: fred
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: glen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: ha.ho
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hana
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hank
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hien
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hoaianh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hoanganh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hongan
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hop
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: hung
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: huyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: james
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: jason
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: kevin
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: kevinc
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: khanhha
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: kim.loan
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: marcus
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: ngoc
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: nguyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: nguyet
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: nhattan
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: nhuy
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: ni
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: oanh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: patryc
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: paul.gerrard
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: phuongchi
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: quoc
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: quynh.anh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: raymond
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: sana
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: sarah
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: sophia
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: su
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: suong
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: tam
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: thanh.nguyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: thohuong
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: thu.truong
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: thuy
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: thuydung
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: tinh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: toan
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: toan.le
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: trang
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: trang.nguyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: travis
     action: graph-copy
+    skip: true
+    skip_reason: "special case - migrated separately later"
 
   - user: truc
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: uyen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: van
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: vanlanh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: winnie
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: winson
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: yen
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: yen.hoang
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: jimmy
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: khanh
+    modified_since: "2026-10-20"
     action: graph-copy
 
   - user: trinh.nguyen
+    modified_since: "2026-10-20"
     action: graph-copy

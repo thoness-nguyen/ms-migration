@@ -11,10 +11,7 @@ from urllib.parse import quote
 
 from dotenv import load_dotenv
 
-# Permit running this file directly from the repository root.
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+# Run from the repository root: python -m migration.onedrive.compare_report
 
 from migration.common.auth import source_token, target_token
 from migration.common.graph import GraphClient

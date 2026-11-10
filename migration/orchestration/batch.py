@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+import re
 import time
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -13,11 +14,43 @@ import yaml
 from ..common.checkpoint import StateStore
 from ..common.graph import GraphError, is_mysite_not_found
 from ..common.retry import with_retry
+from ..onedrive.incremental import USER_WORKLOAD as INCREMENTAL_USER_WORKLOAD, UserJob, copy_changes_since, incomplete_reason as incremental_incomplete_reason, user_key_for
 from ..onedrive.migration import copy_drive, retry_failed_onedrive_files, ensure_user_drive
+from ..sharepoint.incremental import copy_library_changes_since, parse_since
 from ..sharepoint.migration import copy_library
 from ..sharepoint.services import get_site_libraries, resolve_site_url
 from ..sharepoint.validation import validate_library_migration
-from ..teams.services import extract_channel, extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
+from ..teams.services import ChatNotMigratableError, extract_channel, extract_chat, import_channel_messages, import_chat, invite_guest_user, make_attachment_resolver, make_image_resolver
+
+# 1:1 chat ids embed both participants' AAD object ids:
+# 19:{userA}_{userB}@unq.gbl.spaces
+_ONE_ON_ONE_CHAT_ID = re.compile(r"^19:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})_([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})@unq\.gbl\.spaces$", re.IGNORECASE)
+
+
+def _chat_precheck_exclusion(source_chat_id: str, global_id_map: dict[str, str], skipped_users: set[str] | None = None) -> ChatNotMigratableError | None:
+    """Exclusions decidable from the chat id alone - avoids extracting every
+    message of a chat that can never be created on the target."""
+    if source_chat_id.startswith("19:meeting_"):
+        return ChatNotMigratableError("unsupported-chat-type", "Meeting chats cannot be created on the target via Microsoft Graph")
+    match = _ONE_ON_ONE_CHAT_ID.match(source_chat_id)
+    if match and skipped_users and set(match.groups()) & skipped_users:
+        return ChatNotMigratableError("excluded-user", f"1:1 chat with a user excluded by the plan (skip: true): {', '.join(sorted(set(match.groups()) & skipped_users))}")
+    if match:
+        unmapped = [participant for participant in match.groups() if participant not in global_id_map]
+        if unmapped:
+            return ChatNotMigratableError("unmapped-participant", f"Missing target mapping for source user(s): {', '.join(unmapped)}")
+    return None
+
+
+def _source_chat_exclusion_reason(error: GraphError) -> str | None:
+    """Permanent source-side extraction failures (retrying cannot help)."""
+    if error.status_code == 404:
+        return "source-chat-not-found"
+    if error.status_code == 403 and "Tenant Id mismatch" in str(error):
+        # Chat hosted in another tenant (external/federated) - the source app
+        # registration has no access to its messages.
+        return "source-chat-external-tenant"
+    return None
 
 
 def load_plan(path: Path) -> dict[str, Any]:
@@ -30,6 +63,16 @@ def load_plan(path: Path) -> dict[str, Any]:
     if not isinstance(plan.get("chats"), list):
         raise TypeError("Batch plan must contain a chats list")
     return plan
+
+
+def _safe_filename(name: str) -> str:
+    """Bundle file name for a chat/channel display name. Names like
+    "Team / Channel" contain path separators (and Windows also forbids the
+    characters : * ? " < > |), so those become " - "; names without them are
+    unchanged, keeping existing bundle files (and the sync watermark seeded from
+    them) valid."""
+    cleaned = re.sub(r'\s*[\\/:*?"<>|]+\s*', " - ", name).strip(" .-")
+    return cleaned or "unnamed"
 
 
 def _load_data(path: Path) -> Any:
@@ -80,6 +123,10 @@ def load_hierarchical_plan(plan: dict[str, Any], plan_dir: Path) -> dict[str, An
                 raise ValueError(f"{workload} mapping references unknown user: {entry.get('user')}")
     normalized = {"migration_id": plan.get("migration_id"), "chats": chats, "workloads": normalized_workloads}
     normalized["users"] = users
+    # Keep performance.concurrency.<workload>.<stage> (see _concurrency) - it was
+    # silently dropped here, so hierarchical plans always ran at the defaults.
+    if isinstance(plan.get("performance"), dict):
+        normalized["performance"] = plan["performance"]
     return normalized
 
 
@@ -95,7 +142,7 @@ def _mapping(entry: dict[str, Any], plan_dir: Path) -> dict[str, str]:
 
 
 def _concurrency(plan: dict[str, Any], workload: str, stage: str, default: int) -> int:
-    """Optional performance.concurrency.<workload>.<stage> config (ARCHITECHTURE_UPGRADE.md ss9/ss25).
+    """Optional performance.concurrency.<workload>.<stage> config (ARCHITECTURE_UPGRADE.md ss9/ss25).
     Absent entirely by default, so existing plans behave the same except for
     the new (safe default) concurrency instead of one-item-at-a-time."""
     concurrency = plan.get("performance", {}).get("concurrency", {}) if isinstance(plan.get("performance"), dict) else {}
@@ -108,7 +155,7 @@ def _global_users_list(plan: dict[str, Any], plan_dir: Path) -> list[Any]:
     """Shared users list backing both _global_user_id_map and _global_upn_map.
     Hierarchical plans already expose the resolved `users` list (see
     load_hierarchical_plan); standalone plans (e.g. teams-pilot.yaml) can point
-    `user_mapping` at the same kind of file (config/mapping.example.json) directly."""
+    `user_mapping` at the same kind of file (config/users.mapping.json) directly."""
     users = plan.get("users")
     if users is None:
         source = plan.get("user_mapping")
@@ -124,7 +171,18 @@ def _global_user_id_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
     return {
         user["source_id"]: user["target_id"]
         for user in _global_users_list(plan, plan_dir)
-        if isinstance(user, dict) and user.get("source_id") and user.get("target_id")
+        if isinstance(user, dict) and user.get("source_id") and user.get("target_id") and not user.get("skip")
+    }
+
+
+def _skipped_user_ids(plan: dict[str, Any], plan_dir: Path) -> set[str]:
+    """Source users marked `"skip": true` in the mapping: excluded from migration
+    entirely - their 1:1 chats are not migrated and their messages are skipped
+    (recorded), never re-posted under a proxy identity."""
+    return {
+        user["source_id"]
+        for user in _global_users_list(plan, plan_dir)
+        if isinstance(user, dict) and user.get("source_id") and user.get("skip")
     }
 
 
@@ -134,7 +192,7 @@ def _global_upn_map(plan: dict[str, Any], plan_dir: Path) -> dict[str, str]:
     return {
         user["source_upn"]: user["target_upn"]
         for user in _global_users_list(plan, plan_dir)
-        if isinstance(user, dict) and user.get("source_upn") and user.get("target_upn")
+        if isinstance(user, dict) and user.get("source_upn") and user.get("target_upn") and not user.get("skip")
     }
 
 
@@ -182,6 +240,24 @@ def _ensure_guest_mapping(state: StateStore, target_graph: Any, users_by_source_
     return guest_id
 
 
+def _chat_sync_watermark(state: StateStore, source_chat_id: str, bundle_path: Path) -> str | None:
+    """Incremental-sync start point for a FULLY completed chat, else None (new,
+    failed, started or excluded chats are always read in full).
+
+    Recorded after each successful sync; for chats completed before this
+    existed, seeded from the full bundle's write time (it was written right
+    after that chat's last full extraction) minus a 1-hour safety margin."""
+    if state.status("batch-chat", source_chat_id) != "completed" or state.status("teams-chat", source_chat_id) != "completed":
+        return None
+    recorded = state.target("chat-sync-watermark", source_chat_id)
+    if recorded:
+        return recorded
+    if bundle_path.exists():
+        written = datetime.fromtimestamp(bundle_path.stat().st_mtime, UTC) - timedelta(hours=1)
+        return written.strftime("%Y-%m-%dT%H:%M:%SZ")
+    return None
+
+
 def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any], plan_dir: Path, state: StateStore, dry_run: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     content_concurrency = max(1, _concurrency(plan, "teams", "content", default=4))
@@ -189,9 +265,16 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
     global_id_map = _global_user_id_map(plan, plan_dir)
     upn_map = _global_upn_map(plan, plan_dir)
     site_map = _teams_site_map(plan)
-    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
-    image_resolver = make_image_resolver(source_graph)
+    # Not in dry-run: the attachment resolver migrates missing attachment files
+    # to the target on demand (a target WRITE), so a dry run must not build it.
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) and not dry_run else None
+    image_resolver = make_image_resolver(source_graph) if not dry_run else None
     invite_missing_users = bool(plan.get("invite_missing_users"))
+    skipped_users = _skipped_user_ids(plan, plan_dir)
+    # `full_sync: true` re-reads every completed chat's whole history (e.g. after
+    # adding users to the mapping, so their earlier skipped messages are
+    # re-evaluated). Default: completed chats sync incrementally.
+    full_sync = bool(plan.get("full_sync"))
     # Opt-in fallback for chats whose target thread creation time got permanently
     # stuck (see _wait_for_chat_migration_window) - imports with sequential,
     # non-historical timestamps instead of failing outright. Per-chat override
@@ -234,8 +317,21 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                 result["reason"] = "already completed"
                 print(f"[chat {index}/{total_chats}] {name}: skipped (already completed)")
                 return result
+            if entry.get("user_map") is None and not invite_missing_users:
+                precheck = _chat_precheck_exclusion(source_chat_id, global_id_map, skipped_users)
+                if precheck is not None:
+                    raise precheck
             user_map: dict[str, str]
-            bundle = extract_chat(source_graph, source_chat_id)
+            bundle_path = plan_dir.parent / "data" / "team-chats" / f"{_safe_filename(name)}.chat-bundle.json"
+            watermark = None if full_sync else _chat_sync_watermark(state, source_chat_id, bundle_path)
+            extraction_started = datetime.now(UTC)
+            try:
+                bundle = extract_chat(source_graph, source_chat_id, modified_since=watermark)
+            except GraphError as error:
+                reason = _source_chat_exclusion_reason(error)
+                if reason is None:
+                    raise
+                raise ChatNotMigratableError(reason, str(error)) from error
             teams_type = bundle["chat"].get("chatType")
             member_ids = {member.get("userId") for member in bundle["members"]}
             if entry.get("user_map") is not None:
@@ -245,7 +341,9 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                 # Default path: auto-resolve chat members against the plan's
                 # global source_id -> target_id table (see _global_user_id_map).
                 user_map = {member_id: global_id_map[member_id] for member_id in member_ids if member_id in global_id_map}
-            missing = sorted(member_id for member_id in member_ids if member_id not in user_map)
+            # str(): anonymous/federated members can have userId None, which
+            # made sorted() raise TypeError (str vs NoneType) and fail the chat.
+            missing = sorted(str(member_id) for member_id in member_ids if member_id not in user_map)
             if missing and invite_missing_users and not dry_run:
                 still_missing = []
                 for member_id in missing:
@@ -259,13 +357,17 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                 if not user_map and not global_id_map:
                     raise ValueError(f"Missing target mappings for source users: {', '.join(str(item) for item in missing)}")
                 print(f"[chat {index}/{total_chats}] {name}: {len(missing)} member(s) have no target mapping - continuing without them: {missing}")
-            bundle_path = plan_dir.parent / "data" / "team-chats" / f"{name}.chat-bundle.json"
-            bundle_path.parent.mkdir(parents=True, exist_ok=True)
-            bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
+            # An incremental bundle holds only new messages - never let it
+            # overwrite the full history bundle.
+            written_path = bundle_path.with_name(f"{_safe_filename(name)}.chat-delta.json") if watermark else bundle_path
+            written_path.parent.mkdir(parents=True, exist_ok=True)
+            written_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
+            if watermark:
+                print(f"[chat {index}/{total_chats}] {name}: incremental sync since {watermark} - {len(bundle['messages'])} new/changed message(s)")
             stats: dict[str, int] = {}
             allow_non_historical_import = bool(entry.get("allow_non_historical_import", allow_non_historical_import_default))
             include_unmapped_senders = bool(entry.get("include_unmapped_senders", include_unmapped_senders_default))
-            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver, image_resolver=image_resolver, allow_non_historical_import=allow_non_historical_import, sync_new_messages=sync_new_messages, include_unmapped_senders=include_unmapped_senders)
+            target_chat_id, count = import_chat(target_graph, bundle, user_map, state, dry_run, stats, user_key=user_key, attachment_resolver=attachment_resolver, image_resolver=image_resolver, allow_non_historical_import=allow_non_historical_import, sync_new_messages=sync_new_messages, include_unmapped_senders=include_unmapped_senders, skip_sender_ids=skipped_users)
             result.update(
                 {
                     "status": "dry-run" if dry_run else "completed",
@@ -289,9 +391,33 @@ def _run_batch_chats(source_graph: Any, target_graph: Any, plan: dict[str, Any],
                     user_key=user_key,
                     teams_type=teams_type,
                 )
+                if state.status("teams-chat", source_chat_id) == "completed":
+                    # Next sync reads only messages modified after this point.
+                    # 10-minute margin before extraction started covers clock
+                    # skew and messages posted while this run was reading.
+                    state.mark("chat-sync-watermark", source_chat_id, "completed", (extraction_started - timedelta(minutes=10)).strftime("%Y-%m-%dT%H:%M:%SZ"))
             print(f"[chat {index}/{total_chats}] {name}: {result['status']} ({count} messages)")
             return result
-        
+
+        except ChatNotMigratableError as e:
+            if state.status("batch-chat", source_chat_id) == "completed":
+                # Migrated on an earlier run; only this run's new-message sync
+                # could not proceed (e.g. source chat since deleted) - never
+                # downgrade a completed chat.
+                result.update({"status": "skipped", "reason": f"already completed; new-message sync not possible ({e.reason})"})
+                print(f"[chat {index}/{total_chats}] {name}: already completed - new-message sync skipped ({e.reason})")
+                return result
+            # Permanent, explained exclusion (unmapped 1:1 participant, chat in
+            # another tenant, ...). Recorded as checkpoint "skipped" - the status
+            # the panel already reports as deliberately excluded, grouped by this
+            # detail - and NOT "completed", so it is re-evaluated every run and
+            # migrates automatically once e.g. the missing user gets a mapping.
+            result.update({"status": "excluded", "reason": e.reason, "error": str(e)})
+            if not dry_run:
+                state.mark("batch-chat", source_chat_id, "skipped", detail=f"excluded ({e.reason}): {e}"[:1000], user_key=user_key, teams_type=teams_type)
+            print(f"[chat {index}/{total_chats}] {name}: excluded ({e.reason}) - {e}")
+            return result
+
         except (GraphError, OSError, TypeError, ValueError, KeyError) as e:
             error_msg = f"{type(e).__name__}: {e}"
             result["error"] = error_msg
@@ -346,8 +472,10 @@ def _run_batch_channels(
     global_id_map = _global_user_id_map(plan, plan_dir)
     upn_map = _global_upn_map(plan, plan_dir)
     site_map = _teams_site_map(plan)
-    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) else None
-    image_resolver = make_image_resolver(source_graph)
+    # Not in dry-run: the attachment resolver migrates missing attachment files
+    # to the target on demand (a target WRITE), so a dry run must not build it.
+    attachment_resolver = make_attachment_resolver(source_graph, target_graph, upn_map, global_id_map, site_map) if (upn_map or site_map) and not dry_run else None
+    image_resolver = make_image_resolver(source_graph) if not dry_run else None
     # Same opt-in fallback as chats (see _run_batch_chats) - channels can't have
     # their creation time backdated after the fact via startMigration, so a
     # channel created with "now" as its creation time can never accept truly
@@ -434,7 +562,7 @@ def _run_batch_channels(
 
             bundle = extract_channel(source_graph, source_team_id, source_channel_id)
             messages = bundle["messages"]
-            bundle_path = plan_dir.parent / "data" / "teams" / f"{name}.channel-bundle.json"
+            bundle_path = plan_dir.parent / "data" / "teams" / f"{_safe_filename(name)}.channel-bundle.json"
             bundle_path.parent.mkdir(parents=True, exist_ok=True)
             bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
 
@@ -451,6 +579,7 @@ def _run_batch_channels(
                 allow_non_historical_import=bool(entry.get("allow_non_historical_import", allow_non_historical_import_default)),
                 sync_new_messages=sync_new_messages,
                 include_unmapped_senders=bool(entry.get("include_unmapped_senders", include_unmapped_senders_default)),
+                skip_sender_ids=_skipped_user_ids(plan, plan_dir),
             )
 
             result.update({
@@ -556,6 +685,97 @@ def _onedrive_incomplete_reason(
     return None
 
 
+def _onedrive_skip_reason(plan: dict[str, Any], entry: dict[str, Any]) -> str | None:
+    """Why a OneDrive entry is excluded from this run, or None.
+    `skip: true` on the OneDrive entry (e.g. a user handled separately) or on
+    the user in the users mapping (excluded user) - reported, never checkpointed,
+    so removing the flag later makes the user run normally."""
+    if entry.get("skip"):
+        return f"excluded: {entry.get('skip_reason') or 'skip: true in the OneDrive mapping'}"
+    user = next((u for u in plan.get("users", []) if u.get("key") == entry.get("user")), None)
+    if user and user.get("skip"):
+        return f"excluded: {user.get('skip_reason') or 'skip: true in the users mapping'}"
+    return None
+
+
+def _run_batch_onedrive_incremental(
+    source_graph: Any,
+    target_graph: Any,
+    plan: dict[str, Any],
+    state: StateStore,
+    dry_run: bool,
+    modified_since: str,
+    onedrive_users: list[dict[str, Any]],
+    tenant_user_map: dict[str, str],
+    migrate_permissions: bool,
+) -> list[dict[str, Any]]:
+    """`modified_since` mode: re-copy only files changed since the date, all
+    users through one shared worker pool (see onedrive/incremental.py)."""
+    since = parse_since(modified_since)
+    results: list[dict[str, Any]] = []
+    jobs: list[UserJob] = []
+    for entry in onedrive_users:
+        user_key = entry.get("user")
+        result: dict[str, Any] = {"workload": "onedrive", "user": user_key, "mode": "incremental", "since": since.isoformat(), "items": 0}
+        user = next((u for u in plan.get("users", []) if u.get("key") == user_key), None) or {}
+        skip_reason = _onedrive_skip_reason(plan, entry)
+        if not skip_reason and not (user.get("source_id") and user.get("target_id")):
+            skip_reason = "no source_id/target_id mapped for this user"
+        if skip_reason:
+            print(f"[onedrive {user_key}] skipped: {skip_reason}")
+            results.append({**result, "status": "skipped", "reason": skip_reason})
+            continue
+        job = UserJob(user_key=user_key, source_id=user["source_id"], target_id=user["target_id"])
+        if state.status(INCREMENTAL_USER_WORKLOAD, user_key_for(job, since)) == "completed":
+            results.append({**result, "status": "skipped", "reason": f"changes since {modified_since} already copied"})
+            continue
+        try:
+            if not ensure_user_drive(source_graph, job.source_id) or not ensure_user_drive(target_graph, job.target_id, side="target"):
+                results.append({**result, "status": "skipped", "reason": "OneDrive not provisioned on source or target"})
+                continue
+        except GraphError as error:
+            results.append({**result, "status": "failed", "error": f"GraphError: {str(error)[:300]}"})
+            continue
+        jobs.append(job)
+
+    try:
+        copy_changes_since(
+            source_graph, target_graph, jobs, state, since, dry_run,
+            content_concurrency=_concurrency(plan, "onedrive", "content", default=8),
+            discovery_concurrency=_concurrency(plan, "onedrive", "discovery", default=4),
+            user_map=tenant_user_map, migrate_permissions=migrate_permissions,
+        )
+    except KeyboardInterrupt:
+        for job in jobs:
+            if not dry_run:
+                state.mark(INCREMENTAL_USER_WORKLOAD, user_key_for(job, since), "pending", job.target_id,
+                           detail="interrupted; resume to continue", user_key=job.user_key)
+        raise
+
+    for job in jobs:
+        stats = {**job.stats, "scanned": job.scanned, "changed": len(job.changed), "unresolved": len(job.unresolved),
+                 "unresolved_items": [item.get("name") for item in job.unresolved][:50]}
+        reason = incremental_incomplete_reason(job)
+        if not reason and job.unresolved:
+            reason = f"{len(job.unresolved)} changed file(s) with an unresolvable folder path (e.g. OneNote notebook) not copied"
+        result = {"workload": "onedrive", "user": job.user_key, "mode": "incremental", "since": since.isoformat(),
+                  "items": job.stats["files_copied"], "stats": stats}
+        if dry_run:
+            result["status"] = "dry-run"
+        elif reason:
+            result.update({"status": "completed_with_failures", "reason": reason})
+            state.mark(INCREMENTAL_USER_WORKLOAD, user_key_for(job, since), "pending", job.target_id,
+                       detail=f"incomplete: {reason}"[:400], user_key=job.user_key)
+        else:
+            result["status"] = "completed"
+            state.mark(INCREMENTAL_USER_WORKLOAD, user_key_for(job, since), "completed", job.target_id,
+                       detail=f"{job.stats['files_copied']} file(s) copied", user_key=job.user_key)
+        print(f"[onedrive {job.user_key}] {result['status']}: {job.stats['files_copied']} copied, "
+              f"{job.stats['skipped']} already done, {job.stats['failed']} failed" + (f" ({reason})" if reason else ""))
+        results.append(result)
+    return results
+
+
 def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, Any], state: StateStore, dry_run: bool, retry_failed_only: bool = False, verify_completed: bool = True) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
 
@@ -581,8 +801,31 @@ def _run_batch_onedrive(source_graph: Any, target_graph: Any, plan: dict[str, An
         else []
     )
 
+    # modified_since: per user entry, or for every user at the top of the
+    # mapping (an entry's own value wins). Those users get the incremental copy
+    # (grouped per date); users without one get the full copy below.
+    default_since = onedrive_config.get("modified_since") if isinstance(onedrive_config, dict) else None
+    by_since: dict[str, list[dict[str, Any]]] = {}
+    full_copy_users: list[dict[str, Any]] = []
     for entry in onedrive_users:
+        since_value = entry.get("modified_since") or default_since
+        if since_value:
+            by_since.setdefault(str(since_value), []).append(entry)
+        else:
+            full_copy_users.append(entry)
+    for since_value, entries in by_since.items():
+        results.extend(_run_batch_onedrive_incremental(
+            source_graph, target_graph, plan, state, dry_run, since_value,
+            entries, tenant_user_map, migrate_permissions,
+        ))
+
+    for entry in full_copy_users:
         user_key = entry.get("user")
+        skip_reason = _onedrive_skip_reason(plan, entry)
+        if skip_reason:
+            print(f"[onedrive {user_key}] skipped: {skip_reason}")
+            results.append({"workload": "onedrive", "user": user_key, "status": "skipped", "reason": skip_reason, "items": 0})
+            continue
 
         result: dict[str, Any] = {
             "workload": "onedrive",
@@ -955,7 +1198,37 @@ def _run_batch_sharepoint(source_graph: Any, target_graph: Any, plan: dict[str, 
                     continue
                 
                 state_key = f"{source_site_id}:{src_lib_id}"
-                
+
+                modified_since = site.get("modified_since")
+                if modified_since:
+                    # Incremental mode: only files created/modified since the cutoff
+                    # (+ items that failed in the earlier full copy) - see
+                    # sharepoint.incremental. Own parent key per cutoff, so the
+                    # earlier full-copy row is never reinterpreted.
+                    inc_key = f"{state_key}:since:{modified_since}"
+                    if state.status("batch-sharepoint", inc_key) == "completed":
+                        lib_result.update({"status": "skipped", "reason": f"incremental since {modified_since} already completed"})
+                        result["libraries"].append(lib_result)
+                        continue
+                    try:
+                        stats = copy_library_changes_since(
+                            source_graph, target_graph, src_lib_id, tgt_lib_id, state, parse_since(str(modified_since)), dry_run,
+                            content_concurrency=content_concurrency, permission_concurrency=permission_concurrency,
+                        )
+                        failed_count = stats.get("failed", 0)
+                        lib_result.update({"status": "dry-run" if dry_run else ("completed" if failed_count == 0 else "completed_with_failures"), "stats": stats})
+                        if not dry_run:
+                            if failed_count == 0:
+                                state.mark("batch-sharepoint", inc_key, "completed", tgt_lib_id)
+                            else:
+                                state.mark("batch-sharepoint", inc_key, "pending", detail=f"{failed_count} item(s) failed - will retry on next run")
+                    except (GraphError, OSError, TypeError, ValueError, KeyError) as error:
+                        lib_result["error"] = str(error)[:200]
+                        if not dry_run:
+                            state.mark("batch-sharepoint", inc_key, "failed", detail=str(error)[:200])
+                    result["libraries"].append(lib_result)
+                    continue
+
                 if state.status("batch-sharepoint", state_key) == "completed":
                     lib_result.update({"status": "skipped", "reason": "already completed"})
                     result["libraries"].append(lib_result)

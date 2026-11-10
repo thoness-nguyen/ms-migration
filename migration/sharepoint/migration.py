@@ -9,7 +9,56 @@ from ..common.concurrency import AdaptiveGate, run_workers
 from ..common.graph import GraphClient, GraphError
 from .services import copy_item_permissions
 
-CHUNK_SIZE = 10 * 320 * 1024
+# Upload-session piece size. Must be a multiple of 320 KiB (Graph rule); 10 MiB
+# keeps per-request overhead low (was 3.2 MiB = ~830 sequential calls for a
+# 2.6 GB file) while staying well under Graph's 60 MiB maximum.
+CHUNK_SIZE = 32 * 320 * 1024
+SIMPLE_UPLOAD_LIMIT = 4 * 1024 * 1024
+_CHUNK_ATTEMPTS = 4
+
+
+def stream_copy_large_file(source_graph: GraphClient, target_graph: GraphClient, source_drive_id: str, source_item_id: str, size: int, upload_url: str, chunk_size: int = CHUNK_SIZE) -> dict[str, Any] | None:
+    """Copy one large file into an already-created upload session, piece by
+    piece: each piece is read from the source with an HTTP Range request and
+    uploaded straight away, so memory stays at ~one piece per worker no matter
+    how big the file is. If a piece fails, the session is asked where to
+    continue (nextExpectedRanges) instead of restarting the whole file.
+    Returns the created target driveItem (from the final piece's response)."""
+    content_url = f"{source_graph.base_url}/drives/{source_drive_id}/items/{source_item_id}/content"
+    start = 0
+    target_item: dict[str, Any] | None = None
+    failures = 0
+    while start < size:
+        end = min(start + chunk_size, size) - 1
+        try:
+            piece = source_graph.raw_request("GET", content_url, headers={"Range": f"bytes={start}-{end}"}, timeout=300)
+            piece.raise_for_status()
+            data = piece.content
+            if len(data) != end - start + 1:
+                raise OSError(f"source returned {len(data)} bytes for range {start}-{end}")
+            response = target_graph.raw_request("PUT", upload_url, data=data, timeout=300, headers={
+                "Content-Length": str(len(data)), "Content-Range": f"bytes {start}-{end}/{size}"})
+            response.raise_for_status()
+            if response.content:
+                body = response.json()
+                if body.get("id"):
+                    target_item = body
+            start = end + 1
+            failures = 0
+        except (GraphError, OSError, ValueError) as error:
+            failures += 1
+            if failures >= _CHUNK_ATTEMPTS:
+                raise
+            # Ask the session which bytes it still needs, then continue there.
+            try:
+                status = target_graph.raw_request("GET", upload_url, timeout=60)
+                ranges = (status.json() or {}).get("nextExpectedRanges") or [] if status.ok else []
+                if ranges:
+                    start = int(str(ranges[0]).split("-")[0])
+            except (OSError, ValueError):
+                pass
+            print(f"  [retry] piece at byte {start} failed ({type(error).__name__}) - resuming (attempt {failures + 1}/{_CHUNK_ATTEMPTS})")
+    return target_item
 
 
 @dataclass
@@ -40,7 +89,7 @@ def copy_library(
 ) -> dict[str, Any]:
     """Copy files and folders from source to target library.
 
-    Runs in stages (ARCHITECHTURE_UPGRADE.md ss8): a sequential discovery pass
+    Runs in stages (ARCHITECTURE_UPGRADE.md ss8): a sequential discovery pass
     that also creates/reuses folders (parent must exist before its children,
     and folder creation is cheap), followed by concurrent bounded file-content
     workers, followed by concurrent bounded permission-grant workers. A file
@@ -208,6 +257,24 @@ def copy_library(
                     stats["oversized_skipped"] += 1
                 return
             
+            if file_size_bytes > SIMPLE_UPLOAD_LIMIT:
+                # Large file: stream piece by piece (constant memory, resumable
+                # within the file) instead of holding the whole file in RAM.
+                session = target_graph.request(
+                    "POST",
+                    f"/drives/{target_drive_id}/items/{target_parent}:/{item_name}:/createUploadSession",
+                    json={"item": {"@microsoft.graph.conflictBehavior": "replace", "name": item_name}},
+                )
+                target_item = stream_copy_large_file(source_graph, target_graph, source_drive_id, item["id"], file_size_bytes, session["uploadUrl"])
+                if not target_item or not target_item.get("id"):
+                    raise GraphError(f"upload session for {item_name} finished without returning the created item")
+                state.mark("sharepoint", source_id, "completed", target_item.get("id"))
+                print(f"  [+] Copied file: {item_name} ({file_size_mb:.2f} MB, streamed)")
+                with stats_lock:
+                    stats["files_copied"] += 1
+                    permission_work.append(_PermissionWork(item["id"], target_item.get("id"), item_name))
+                return
+
             # Download source file
             content_response = source_graph.raw_request(
                 "GET",
@@ -217,7 +284,7 @@ def copy_library(
             content_response.raise_for_status()
             data = content_response.content
             file_size_mb = len(data) / (1024 * 1024)
-            
+
             # Upload to target
             if len(data) <= 4 * 1024 * 1024:
                 # Simple upload for small files

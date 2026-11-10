@@ -1,3 +1,0 @@
-[console_scripts]
-migration-panel = migration.orchestration.panel:main
-tenant-migrator = migration.orchestration.cli:main

@@ -1,4 +1,4 @@
-"""Bounded, adaptive concurrency for migration workers (ARCHITECHTURE_UPGRADE.md ss9).
+"""Bounded, adaptive concurrency for migration workers (ARCHITECTURE_UPGRADE.md ss9).
 
 Two pieces:
 - AdaptiveGate: a resizable semaphore. Shrinks when the Graph API throttles

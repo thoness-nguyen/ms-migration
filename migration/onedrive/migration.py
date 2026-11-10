@@ -8,8 +8,9 @@ from typing import Any
 from ..common.checkpoint import StateStore
 from ..common.concurrency import AdaptiveGate, run_workers
 from ..common.graph import GraphClient, GraphError, is_mysite_not_found
+from ..sharepoint.migration import SIMPLE_UPLOAD_LIMIT, stream_copy_large_file
 
-CHUNK_SIZE = 10 * 320 * 1024
+CHUNK_SIZE = 32 * 320 * 1024  # 10 MiB; must be a multiple of 320 KiB
 
 
 @dataclass
@@ -236,55 +237,71 @@ def _transfer_one_file(
         return
 
     try:
-        content = source_graph.raw_request(
-            "GET",
-            f"{source_graph.base_url}/users/{source_user}/drive/items/{item['id']}/content",
-            timeout=120,
-        )
-        content.raise_for_status()
-        data = content.content
-        file_size_mb = len(data) / (1024 * 1024)
-        if len(data) <= 4 * 1024 * 1024:
-            target = target_graph.request(
-                "PUT",
-                f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/content",
-                data=data,
-            )
-        else:
+        source_drive_id = (item.get("parentReference") or {}).get("driveId")
+        if source_drive_id and source_size and source_size > SIMPLE_UPLOAD_LIMIT:
+            # Large file: streamed piece by piece (HTTP Range -> upload session),
+            # constant memory and resumable within the file, instead of holding
+            # the whole file in memory.
             session = target_graph.request(
                 "POST",
                 f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/createUploadSession",
-                json={
-                    "item": {
-                        "@microsoft.graph.conflictBehavior": "replace",
-                        "name": item_name,
-                    }
-                },
+                json={"item": {"@microsoft.graph.conflictBehavior": "replace", "name": item_name}},
             )
-            upload_url = session["uploadUrl"]
-            target = None
-            for chunk_index, start in enumerate(
-                range(0, len(data), CHUNK_SIZE), start=1
-            ):
-                chunk = data[start : start + CHUNK_SIZE]
-                response = target_graph.raw_request(
+            print(f"    >> {who}{item_name}: streaming {source_size / (1024 * 1024):.1f} MB")
+            target = stream_copy_large_file(
+                source_graph, target_graph, source_drive_id, item["id"], source_size, session["uploadUrl"]
+            )
+            file_size_mb = source_size / (1024 * 1024)
+        else:
+            content = source_graph.raw_request(
+                "GET",
+                f"{source_graph.base_url}/users/{source_user}/drive/items/{item['id']}/content",
+                timeout=120,
+            )
+            content.raise_for_status()
+            data = content.content
+            file_size_mb = len(data) / (1024 * 1024)
+            if len(data) <= 4 * 1024 * 1024:
+                target = target_graph.request(
                     "PUT",
-                    upload_url,
-                    headers={
-                        "Content-Length": str(len(chunk)),
-                        "Content-Range": f"bytes {start}-{start + len(chunk) - 1}/{len(data)}",
-                    },
-                    data=chunk,
-                    timeout=120,
+                    f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/content",
+                    data=data,
                 )
-                response.raise_for_status()
-                target = response.json() if response.content else target
-                if chunk_index % 5 == 0:
-                    uploaded_mb = (start + len(chunk)) / (1024 * 1024)
-                    pct = int(100 * (start + len(chunk)) / len(data))
-                    print(
-                        f"    >> {who}{item_name}: {pct}% ({uploaded_mb:.1f} MB / {file_size_mb:.1f} MB)"
+            else:
+                session = target_graph.request(
+                    "POST",
+                    f"/users/{target_user}/drive/items/{target_parent}:/{encode_graph_path_segment(item_name)}:/createUploadSession",
+                    json={
+                        "item": {
+                            "@microsoft.graph.conflictBehavior": "replace",
+                            "name": item_name,
+                        }
+                    },
+                )
+                upload_url = session["uploadUrl"]
+                target = None
+                for chunk_index, start in enumerate(
+                    range(0, len(data), CHUNK_SIZE), start=1
+                ):
+                    chunk = data[start : start + CHUNK_SIZE]
+                    response = target_graph.raw_request(
+                        "PUT",
+                        upload_url,
+                        headers={
+                            "Content-Length": str(len(chunk)),
+                            "Content-Range": f"bytes {start}-{start + len(chunk) - 1}/{len(data)}",
+                        },
+                        data=chunk,
+                        timeout=120,
                     )
+                    response.raise_for_status()
+                    target = response.json() if response.content else target
+                    if chunk_index % 5 == 0:
+                        uploaded_mb = (start + len(chunk)) / (1024 * 1024)
+                        pct = int(100 * (start + len(chunk)) / len(data))
+                        print(
+                            f"    >> {who}{item_name}: {pct}% ({uploaded_mb:.1f} MB / {file_size_mb:.1f} MB)"
+                        )
         # An upload session whose last response has no item id did not finish.
         if not target or not target.get("id"):
             raise GraphError(f"upload of {item_name} did not return a target item")

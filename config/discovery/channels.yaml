@@ -1,0 +1,127 @@
+since: '2026-01-01T00:00:00Z'
+channels:
+- name: General
+  source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+  source_channel_id: 19:4e87db6e54e24d609aab8b9ed6e36c0e@thread.tacv2
+  target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+  target_channel_id: 19:cNGYqU2W46pO2yfhWZt2uyKzmCO4l7CnLPta_PLm0rI1@thread.tacv2
+  last_activity: '2026-11-04'
+- name: INDOOR PD (VIETNAM)
+  source_team_id: 570cfa6a-8cc0-44b9-9059-e427f8c7afc2
+  source_channel_id: 19:68a5eb17d9fd437bbe1c1e63e6040365@thread.tacv2
+  target_team_id: 80c11791-41a0-48ad-b394-063b75595b32
+  target_channel_id: 19:793a5145a6334552829646fcaa8b78ea@thread.tacv2
+  last_activity: '2026-03-16'
+unresolved:
+- name: General
+  source_team_id: f2e70f8b-e38a-4d23-b046-28cbf32d0ffe
+  source_channel_id: 19:hhx8F11Y7Vzlz217e0ld6GKW8wOzeQjV9mcNujaaGwU1@thread.tacv2
+  team: Marketing materials
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-07-07'
+  reason: no matching target team
+- name: General
+  source_team_id: dae10a3e-0e63-4eab-beaa-a17d71e306b1
+  source_channel_id: 19:ceHedA6_CfUaeCTY71-_HUIXfOoDk525m8omCVltg3g1@thread.tacv2
+  team: Merchandising
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-04-01'
+  reason: no matching target team
+- name: General
+  source_team_id: 9c72e17b-4dec-4e16-bdcd-769d155ad530
+  source_channel_id: 19:e525e4dcf3694e48a3b1a8d2aba4f7fc@thread.tacv2
+  team: QC TEAM FOR INDOOR (CHINA+INDO)
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-07-19'
+  reason: no matching target team
+- name: General
+  source_team_id: 3127f6de-ba13-46d6-a8ce-ec5f4976c12c
+  source_channel_id: 19:jaA2D5jRTfdgkQyxi1QtooS6AYkt2yyN_o9Y8C-uWe01@thread.tacv2
+  team: HO.VN
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-07-06'
+  reason: no matching target team
+- name: Contracts to Tricor
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:1242bb15b54b40a79ca6aa8b2ddda22e@thread.tacv2
+  team: HO.HK
+  membership_type: private
+  target_team_id: null
+  last_activity: '2026-07-19'
+  reason: no matching target team
+- name: General
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:3703bfe95a2147e2a81cb54270945d71@thread.tacv2
+  team: HO.HK
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-09-07'
+  reason: no matching target team
+- name: STOCK CHINA
+  source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
+  source_channel_id: 19:c11739fa31574f5a8c41b06079d76233@thread.tacv2
+  team: HO.HK
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-11-07'
+  reason: no matching target team
+- name: General
+  source_team_id: 44001713-88a3-4615-9c16-0bd11b1bbef4
+  source_channel_id: 19:bEObuD2fPNbG1e9K4stbCSc7-tx9kJ1qt5CDqn4mZuk1@thread.tacv2
+  team: Sales Asia Pacific
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-01-28'
+  reason: no matching target team
+- name: zip file for June-December 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:7190ca1a3d7a45e391394021004e148e@thread.tacv2
+  team: PI PER PO ZIP FILE ARCHIVE
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-09-15'
+  reason: no matching target team
+- name: ZIP FILE FOR JAN 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:71a6047d438d408a871ebf5c5b5718ec@thread.tacv2
+  team: PI PER PO ZIP FILE ARCHIVE
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-02-08'
+  reason: no matching target team
+- name: PI PER PO ZIP ZIP FILE ARCHIVE
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:WIMJzVf6g4q5SWDsH7fwQIiECoUM6AqkYXCpSSguDMo1@thread.tacv2
+  team: PI PER PO ZIP FILE ARCHIVE
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-11-04'
+  reason: no matching target team
+- name: PI PER PO June-December 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2
+  team: PI PER PO ZIP FILE ARCHIVE
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-11-05'
+  reason: no matching target team
+- name: zip file March-may 2026
+  source_team_id: 4619d5c6-e279-4312-86d0-3473528dd8c6
+  source_channel_id: 19:ee6d66686c134bcba58858c76ce609f0@thread.tacv2
+  team: PI PER PO ZIP FILE ARCHIVE
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-07-09'
+  reason: no matching target team
+- name: EU Group
+  source_team_id: 62436455-8504-46d9-aa57-4a54b05e3bf4
+  source_channel_id: 19:mTtLdmPWYPk-dstLzab0RXfQiO-PUNAglOCfY56CXZI1@thread.tacv2
+  team: EU Group
+  membership_type: standard
+  target_team_id: null
+  last_activity: '2026-07-01'
+  reason: no matching target team

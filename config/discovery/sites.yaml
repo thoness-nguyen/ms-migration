@@ -1,0 +1,250 @@
+since: '2026-01-01T00:00:00Z'
+sites:
+- name: Harbour PD Work Flow
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  target_site_id: paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourPD
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HarbourPDWorkFlow
+  last_activity: '2026-11-09'
+  libraries_missing_on_target:
+  - Teams Wiki Data
+needs_review:
+- name: All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f7209b2c-90af-4cdf-a62a-358bc915eae0,c8106fc7-a80d-434d-98e6-69a886f1e1bb
+  target_site_id: paizesoffice.sharepoint.com,ac0aec79-7300-4a53-9102-6efb84669f24,f5956f11-a10d-4700-bae5-4c75189c755a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/allcompany
+  target_site_url: https://paizesoffice.sharepoint.com/sites/allcompany
+  last_activity: '2026-06-12'
+  reason: same-path match is the target tenant's own default site - confirm before
+    merging into it
+- name: Communication site
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,7d7c41e2-b3ea-468f-9553-93cc4819b453,7082c7dd-64ba-43c9-8aba-4097e092a99b
+  target_site_id: paizesoffice.sharepoint.com,e819d2de-4cfa-4c75-be96-963ea47aa04b,f078a742-7c61-4b5a-9e8b-2ca53e63402f
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/
+  target_site_url: https://paizesoffice.sharepoint.com
+  last_activity: '2026-11-08'
+  reason: same-path match is the target tenant's own default site - confirm before
+    merging into it
+unresolved:
+- name: Deprecated - All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,a68501ea-8d01-447f-aad5-df9a21853715,29d19799-7ea7-4c57-9b2a-a61371546b3a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AllCompany.36923031552.azkahdtl
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AllCompany.36923031552.azkahdtl
+  last_activity: '2026-07-06'
+  reason: target site with the same path does not exist
+- name: All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,7e0eb4ce-3e51-4880-bc1f-2f4eb9937471,29d19799-7ea7-4c57-9b2a-a61371546b3a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AllCompany.36923031552.wteladua
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AllCompany.36923031552.wteladua
+  last_activity: '2026-07-06'
+  reason: target site with the same path does not exist
+- name: All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f22f393a-4c6c-4fed-a3b6-bb5b3d0f5e80,29d19799-7ea7-4c57-9b2a-a61371546b3a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AllCompany.36923031552.obqcxwuh
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AllCompany.36923031552.obqcxwuh
+  last_activity: '2026-09-05'
+  reason: target site with the same path does not exist
+- name: All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,51a96de5-185b-4b30-bffa-cc9fa16cd523,29d19799-7ea7-4c57-9b2a-a61371546b3a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AllCompany.36923031552.hjaobqlg
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AllCompany.36923031552.hjaobqlg
+  last_activity: '2026-07-06'
+  reason: target site with the same path does not exist
+- name: All Company
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,ee35add0-fa32-4f4b-aeae-20939a22cb6e,29d19799-7ea7-4c57-9b2a-a61371546b3a
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AllCompany.36923031552.bftrwbpl
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AllCompany.36923031552.bftrwbpl
+  last_activity: '2026-07-06'
+  reason: target site with the same path does not exist
+- name: EU Group
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,5c9168f9-98f1-4483-8ee5-eda7c9a258a4,bfc595de-4c23-4f8b-a3d3-8b7396dc054b
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/EUGroup
+  target_site_url: https://paizesoffice.sharepoint.com/sites/EUGroup
+  last_activity: '2026-11-04'
+  reason: target site with the same path does not exist
+- name: Copilot Studio
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,d2e324fc-b3bd-40a7-9cdb-a08b019c644f,9d1bc40f-8d62-4c93-9638-74d99d581af0
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/copilot
+  target_site_url: https://paizesoffice.sharepoint.com/sites/copilot
+  last_activity: '2026-02-23'
+  reason: target site with the same path does not exist
+- name: Harbour SSR
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,73e32163-7a6f-43e2-a980-b3a21108539f,6ec39565-7372-4c2a-921a-2e6deb3f86ea
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourSSR
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HarbourSSR
+  last_activity: '2026-06-08'
+  reason: target site with the same path does not exist
+- name: Project Web App
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,188d269e-c19f-4957-b6d7-e12fb969b913,d2b0f6bd-3692-4242-a756-655a0026ab47
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/pwa
+  target_site_url: https://paizesoffice.sharepoint.com/sites/pwa
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: PI PER PO ZIP FILE ARCHIVE
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,83be13d1-7ce3-47c5-9d46-97a594a87951,88ec9da8-ded1-4764-b12d-3f4c7e2e08ef
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE
+  target_site_url: https://paizesoffice.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE
+  last_activity: '2026-11-09'
+  reason: target site with the same path does not exist
+- name: QC REPORT
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,7cb43fc7-38e5-4301-b793-3484aeaa050f,7534c371-c3c4-4c4c-903d-df27c3a5827b
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCREPORT
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCREPORT
+  last_activity: '2026-05-21'
+  reason: target site with the same path does not exist
+- name: CMS
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/CMS
+  target_site_url: https://paizesoffice.sharepoint.com/sites/CMS
+  last_activity: '2026-09-05'
+  reason: target site with the same path does not exist
+- name: HOA
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,4f0e7e39-4f3f-465e-b7ef-d06f89abdc83,6d53cd26-91d9-4c80-a11f-2263295166a5
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HOA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HOA
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: HARBOUR VN/RH - Merchandising
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,d865b0bf-db0d-4e1b-b3dc-fe61367f9bbb,6d53cd26-91d9-4c80-a11f-2263295166a5
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HARBOUR_RH_Merchant
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HARBOUR_RH_Merchant
+  last_activity: '2026-11-07'
+  reason: target site with the same path does not exist
+- name: Sales Asia Pacific
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,ebbef1e3-9ce8-451d-ae1e-8f8c95bf21b2,6d53cd26-91d9-4c80-a11f-2263295166a5
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/SalesAsiaPacific
+  target_site_url: https://paizesoffice.sharepoint.com/sites/SalesAsiaPacific
+  last_activity: '2026-11-09'
+  reason: target site with the same path does not exist
+- name: HK Sales
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,07d638fb-4774-4fef-bb63-a2a39d2526b7,6d53cd26-91d9-4c80-a11f-2263295166a5
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HKSales
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HKSales
+  last_activity: '2026-08-10'
+  reason: target site with the same path does not exist
+- name: Marketing materials
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,325085ce-9050-40fa-9567-4e6c71d15479,c0a7238d-d3df-487b-a763-80ade77ba880
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/Marketingmaterials
+  target_site_url: https://paizesoffice.sharepoint.com/sites/Marketingmaterials
+  last_activity: '2026-05-21'
+  reason: target site with the same path does not exist
+- name: Merchandising
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,3ccd1ead-3be3-4964-9f67-a33d681840ec,504d648f-6d95-415b-89e2-259dc56dc894
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HKMerchandising
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HKMerchandising
+  last_activity: '2026-07-07'
+  reason: target site with the same path does not exist
+- name: HO.HK-Asia Design Discussion Group
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f8c8cb19-52dc-42b6-9739-53aecce01a0d,0a4f8c74-c7ce-4d49-9df3-83ead510bb71
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourOutdoorAsiaLimited271-AsiaDesignDiscussionGroup
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HarbourOutdoorAsiaLimited271-AsiaDesignDiscussionGroup
+  last_activity: '2026-02-19'
+  reason: target site with the same path does not exist
+- name: HO.VN
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,6ae2adcb-2d24-40ed-bc0f-d9f5ef7f68f2,2d46c7e8-2cf0-47fc-adfb-86e6c55af199
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HO.VN
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HO.VN
+  last_activity: '2026-11-04'
+  reason: target site with the same path does not exist
+- name: HB Showroom and Office
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,d99ce5a1-dc4d-4ee8-88b2-448604a55ea4,405f4a42-4c5e-40bc-9ccd-0da79efebf94
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HBShowroomandOffice
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HBShowroomandOffice
+  last_activity: '2026-01-09'
+  reason: target site with the same path does not exist
+- name: Design Team Tasks
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f214e993-9c32-4d7e-9dad-ffa29395cff2,b02e5875-364b-4306-8e3b-12810bf9af6b
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/DesignTeamTasks519
+  target_site_url: https://paizesoffice.sharepoint.com/sites/DesignTeamTasks519
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: HO.HK-Contracts to Tricor
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,0f0c7348-2918-4e2d-aafc-5d307aff3ca1,de85ba4d-6983-46ce-9f8b-095fefbb075d
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourOutdoorAsiaLimited271-ContractstoTricor
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HarbourOutdoorAsiaLimited271-ContractstoTricor
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: Zhente
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,e7f87cdf-8a51-45b5-b1be-603d555eb405,7ab5a170-4c94-4b2e-acfc-f6fc06dc74b0
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/Zhente
+  target_site_url: https://paizesoffice.sharepoint.com/sites/Zhente
+  last_activity: '2026-01-14'
+  reason: target site with the same path does not exist
+- name: 05 PARNELL LAYOUT
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f001378b-2b12-468e-b387-7a3d297474db,0bfe4420-c4ec-4718-9bb1-116d43b0dbf9
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/05PARNELLLAYOUT
+  target_site_url: https://paizesoffice.sharepoint.com/sites/05PARNELLLAYOUT
+  last_activity: '2026-01-18'
+  reason: target site with the same path does not exist
+- name: BACKBONE
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,d00c351c-84f6-4d4c-a84d-fdc23aaf1020,ef4ef297-ffa0-443e-97be-f6295045880c
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/BACKBONE
+  target_site_url: https://paizesoffice.sharepoint.com/sites/BACKBONE
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: Product Information
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,157362cd-9026-480b-b781-dcf99dd934fd,de4c3453-4e90-456c-aed4-3a1da8579813
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/ProductInformation
+  target_site_url: https://paizesoffice.sharepoint.com/sites/ProductInformation
+  last_activity: '2026-02-04'
+  reason: target site with the same path does not exist
+- name: MARKTING
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,38596c70-317c-436d-b484-c37a602580f0,38039b6a-9dd4-4d53-b8b0-8aecaac60685
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/MARKTING
+  target_site_url: https://paizesoffice.sharepoint.com/sites/MARKTING
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: ha
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,f7400c58-776e-4c4e-bccb-857f2235abb4,ef858b52-1c52-4502-9b7f-a1537de6fe7c
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/ha
+  target_site_url: https://paizesoffice.sharepoint.com/sites/ha
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: QC TEAM FOR INDOOR (CHINA+INDO)
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,447650e6-a07f-4df9-90b7-5cd93493111c,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCTEAMFORINDOORCHINA617
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCTEAMFORINDOORCHINA617
+  last_activity: '2026-10-18'
+  reason: target site with the same path does not exist
+- name: To-Do
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,97574d75-f4a2-470d-990d-90b24d987bff,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/To-Do61
+  target_site_url: https://paizesoffice.sharepoint.com/sites/To-Do61
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: QC TEAM FOR OUTDOOR
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,887f4b8d-e54a-42ad-9dbe-883477844ed5,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/QCTEAMFOROUTDOOR
+  target_site_url: https://paizesoffice.sharepoint.com/sites/QCTEAMFOROUTDOOR
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: PG
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,b3fef104-954b-43f1-b3ab-836d96ae36b4,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/TO-DO
+  target_site_url: https://paizesoffice.sharepoint.com/sites/TO-DO
+  last_activity: '2026-10-18'
+  reason: target site with the same path does not exist
+- name: HO.CHINA
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,a8f9bfdd-962c-4bf7-919a-76e953c374bd,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HO.CHINA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HO.CHINA
+  last_activity: '2026-05-22'
+  reason: target site with the same path does not exist
+- name: 'HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA'
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,2314b866-7a75-4e7b-95fe-c04353db595e,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/CV.HO.INDONESIA
+  target_site_url: https://paizesoffice.sharepoint.com/sites/CV.HO.INDONESIA
+  last_activity: '2026-10-05'
+  reason: target site with the same path does not exist
+- name: Asia Pacific  Sales Teams
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,a5b4f6d4-4ebc-443d-b160-53c50a66e70b,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/AsiaPacificSalesTeams
+  target_site_url: https://paizesoffice.sharepoint.com/sites/AsiaPacificSalesTeams
+  last_activity: '2026-09-08'
+  reason: target site with the same path does not exist
+- name: HO.HK
+  source_site_id: harbouroutdoorasialimited.sharepoint.com,80d9189e-d83b-49c0-be0a-4ec386685a35,c9539bff-caa4-4ef7-8c9c-b47643762e06
+  source_site_url: https://harbouroutdoorasialimited.sharepoint.com/sites/HarbourOutdoorAsiaLimited271
+  target_site_url: https://paizesoffice.sharepoint.com/sites/HarbourOutdoorAsiaLimited271
+  last_activity: '2026-11-08'
+  reason: target site with the same path does not exist

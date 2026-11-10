@@ -1,0 +1,729 @@
+{
+  "channel": {
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#teams('4619d5c6-e279-4312-86d0-3473528dd8c6')/channels/$entity",
+    "id": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2",
+    "createdDateTime": "2026-09-17T05:55:44.164Z",
+    "displayName": "PI PER PO June-December 2026",
+    "description": null,
+    "isFavoriteByDefault": null,
+    "email": null,
+    "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa",
+    "webUrl": "https://teams.cloud.microsoft/l/channel/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/PI%20PER%20PO%20June-December%202026?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&allowXTenantAccess=False",
+    "membershipType": "standard",
+    "layoutType": "chat",
+    "isArchived": false,
+    "summary": {
+      "ownersCount": 1,
+      "membersCount": 7,
+      "guestsCount": 2,
+      "hasMembersFromOtherTenants": false
+    }
+  },
+  "messages": [
+    {
+      "id": "1793870487586",
+      "replyToId": null,
+      "etag": "1793870489043",
+      "messageType": "message",
+      "createdDateTime": "2026-11-05T09:21:27.586Z",
+      "lastModifiedDateTime": "2026-11-05T09:21:29.043Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1793870487586?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793870487586&parentMessageId=1793870487586",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"7617abd3-843b-4d3d-994b-8a71eeed6f82\"></attachment><attachment id=\"f5b76d56-047d-42df-a5ca-04d6af7e0d6f\"></attachment><attachment id=\"3a62eb6f-5366-4260-98f0-34ec09a00c3f\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "7617abd3-843b-4d3d-994b-8a71eeed6f82",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1733PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1733PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "f5b76d56-047d-42df-a5ca-04d6af7e0d6f",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1734PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1734PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "3a62eb6f-5366-4260-98f0-34ec09a00c3f",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1735PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1735PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1793870384168",
+      "replyToId": null,
+      "etag": "1793870386133",
+      "messageType": "message",
+      "createdDateTime": "2026-11-05T09:19:44.168Z",
+      "lastModifiedDateTime": "2026-11-05T09:19:46.133Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1793870384168?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793870384168&parentMessageId=1793870384168",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"46be3708-1a6c-4bb9-b071-e698075ee1d5\"></attachment><attachment id=\"b5432581-95db-421c-b73b-a091c11a6950\"></attachment><attachment id=\"b0a54ba8-a946-4c12-a022-2205ecaa1dbe\"></attachment><attachment id=\"e5e07644-d7b3-4d13-896d-ae2e935eae5a\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "46be3708-1a6c-4bb9-b071-e698075ee1d5",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1729PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1729PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "b5432581-95db-421c-b73b-a091c11a6950",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1730PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1730PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "b0a54ba8-a946-4c12-a022-2205ecaa1dbe",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1731PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1731PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "e5e07644-d7b3-4d13-896d-ae2e935eae5a",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1732PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1732PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1793870265730",
+      "replyToId": null,
+      "etag": "1793870267663",
+      "messageType": "message",
+      "createdDateTime": "2026-11-05T09:17:45.73Z",
+      "lastModifiedDateTime": "2026-11-05T09:17:47.663Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1793870265730?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793870265730&parentMessageId=1793870265730",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"b8efb8a9-34ca-4cc2-beb9-d2b5c05fe625\"></attachment><attachment id=\"d34d7077-2365-4e02-b37d-0671e3026def\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "b8efb8a9-34ca-4cc2-beb9-d2b5c05fe625",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1727PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1727PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "d34d7077-2365-4e02-b37d-0671e3026def",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1728PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1728PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1793685930963",
+      "replyToId": null,
+      "etag": "1793685933322",
+      "messageType": "message",
+      "createdDateTime": "2026-11-03T06:05:30.963Z",
+      "lastModifiedDateTime": "2026-11-03T06:05:33.322Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1793685930963?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793685930963&parentMessageId=1793685930963",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"af53059f-1f43-477a-924f-0a5278697922\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "af53059f-1f43-477a-924f-0a5278697922",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1726PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1726PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1793147968867",
+      "replyToId": null,
+      "etag": "1793147970676",
+      "messageType": "message",
+      "createdDateTime": "2026-10-28T00:39:28.867Z",
+      "lastModifiedDateTime": "2026-10-28T00:39:30.676Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1793147968867?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1793147968867&parentMessageId=1793147968867",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"3acfda2d-b9b0-4901-8c83-659ae410b671\"></attachment><attachment id=\"76fc04f7-d98e-4e6a-b685-d34940c3f159\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "3acfda2d-b9b0-4901-8c83-659ae410b671",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1721PI PER PO 1.zip",
+          "content": null,
+          "name": "M-HO1721PI PER PO 1.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "76fc04f7-d98e-4e6a-b685-d34940c3f159",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1724PI PER PO 1.zip",
+          "content": null,
+          "name": "M-HO1724PI PER PO 1.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1792573099769",
+      "replyToId": null,
+      "etag": "1792573103073",
+      "messageType": "message",
+      "createdDateTime": "2026-10-21T08:58:19.769Z",
+      "lastModifiedDateTime": "2026-10-21T08:58:23.073Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1792573099769?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1792573099769&parentMessageId=1792573099769",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"a011a0a3-3bb6-43cd-846f-e505b4776404\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "a011a0a3-3bb6-43cd-846f-e505b4776404",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1725PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1725PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1792573013320",
+      "replyToId": null,
+      "etag": "1792573016622",
+      "messageType": "message",
+      "createdDateTime": "2026-10-21T08:56:53.32Z",
+      "lastModifiedDateTime": "2026-10-21T08:56:56.622Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": "",
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1792573013320?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1792573013320&parentMessageId=1792573013320",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"fa14673f-b526-4d71-88fe-70a8e0450966\"></attachment><attachment id=\"1d947cc7-b478-4b74-9fd7-ef49dcea9dbf\"></attachment><attachment id=\"4f94b4d9-2121-4a7d-a069-5963e877afd2\"></attachment><attachment id=\"937ba0c5-46e9-468c-a9eb-408cf669ffde\"></attachment><attachment id=\"64ddcf5f-ff7d-4f04-b008-72bffa0c893d\"></attachment><attachment id=\"41e2a2dd-ebb3-493e-bb0b-3b4e4b669ba9\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "fa14673f-b526-4d71-88fe-70a8e0450966",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1719PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1719PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "1d947cc7-b478-4b74-9fd7-ef49dcea9dbf",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1720PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1720PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "4f94b4d9-2121-4a7d-a069-5963e877afd2",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1721PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1721PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "937ba0c5-46e9-468c-a9eb-408cf669ffde",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1722PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1722PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "64ddcf5f-ff7d-4f04-b008-72bffa0c893d",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1723PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1723PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "41e2a2dd-ebb3-493e-bb0b-3b4e4b669ba9",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1724PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1724PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1790672815076",
+      "replyToId": null,
+      "etag": "1790672818059",
+      "messageType": "message",
+      "createdDateTime": "2026-09-29T09:06:55.076Z",
+      "lastModifiedDateTime": "2026-09-29T09:06:58.059Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1790672815076?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1790672815076&parentMessageId=1790672815076",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"15feb77e-6f72-4c99-ae65-c5bd45d4d23c\"></attachment><attachment id=\"6aed8502-eda4-4ed4-bb8f-41cb081333d6\"></attachment><attachment id=\"187ca302-ddb9-404b-a275-defc0a132826\"></attachment><attachment id=\"b014bd53-16c1-43b5-8ed8-909240f11bdd\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "15feb77e-6f72-4c99-ae65-c5bd45d4d23c",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1710PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1710PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "6aed8502-eda4-4ed4-bb8f-41cb081333d6",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1711PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1711PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "187ca302-ddb9-404b-a275-defc0a132826",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1712PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1712PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "b014bd53-16c1-43b5-8ed8-909240f11bdd",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1713PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1713PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1790230635184",
+      "replyToId": null,
+      "etag": "1790230637674",
+      "messageType": "message",
+      "createdDateTime": "2026-09-24T06:17:15.184Z",
+      "lastModifiedDateTime": "2026-09-24T06:17:17.674Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1790230635184?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1790230635184&parentMessageId=1790230635184",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"67431b27-642b-4710-b2b3-c371a320d1f5\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "67431b27-642b-4710-b2b3-c371a320d1f5",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1709PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1709PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1790142717479",
+      "replyToId": null,
+      "etag": "1790142720439",
+      "messageType": "message",
+      "createdDateTime": "2026-09-23T05:51:57.479Z",
+      "lastModifiedDateTime": "2026-09-23T05:52:00.439Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1790142717479?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1790142717479&parentMessageId=1790142717479",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"53d3025c-799d-4636-8834-de49917a1423\"></attachment><attachment id=\"6a4f522a-cae9-4d2b-ba80-01bb77fc2960\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "53d3025c-799d-4636-8834-de49917a1423",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1707PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1707PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        },
+        {
+          "id": "6a4f522a-cae9-4d2b-ba80-01bb77fc2960",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1708PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1708PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    },
+    {
+      "id": "1789624619484",
+      "replyToId": null,
+      "etag": "1789624622028",
+      "messageType": "message",
+      "createdDateTime": "2026-09-17T05:56:59.484Z",
+      "lastModifiedDateTime": "2026-09-17T05:57:02.028Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "summary": null,
+      "chatId": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "webUrl": "https://teams.microsoft.com/l/message/19%3Aabda3cb2f87f41ca9672ac43a920db7c%40thread.tacv2/1789624619484?groupId=4619d5c6-e279-4312-86d0-3473528dd8c6&tenantId=d8ff7b02-502f-4629-9429-e4735e2ee1aa&createdTime=1789624619484&parentMessageId=1789624619484",
+      "policyViolation": null,
+      "eventDetail": null,
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+          "id": "fb4a4c53-2b03-4a30-a887-92d1ac097edc",
+          "displayName": "Hank",
+          "userIdentityType": "aadUser",
+          "tenantId": "d8ff7b02-502f-4629-9429-e4735e2ee1aa"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<attachment id=\"a0857794-3626-48d4-8281-fb344705dad4\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "4619d5c6-e279-4312-86d0-3473528dd8c6",
+        "channelId": "19:abda3cb2f87f41ca9672ac43a920db7c@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "a0857794-3626-48d4-8281-fb344705dad4",
+          "contentType": "reference",
+          "contentUrl": "https://harbouroutdoorasialimited.sharepoint.com/sites/PIPERPOZIPFILEARCHIVE/Shared Documents/PI PER PO June-December 2026/M-HO1706PI PER PO.zip",
+          "content": null,
+          "name": "M-HO1706PI PER PO.zip",
+          "thumbnailUrl": null,
+          "teamsAppId": null
+        }
+      ],
+      "mentions": [],
+      "reactions": [],
+      "replies": []
+    }
+  ]
+}

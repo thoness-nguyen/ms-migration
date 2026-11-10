@@ -1,8 +1,117 @@
 migration_id: sharepoint-pilot-001
-users: mapping.example.json
+users: users.mapping.json
 workloads:
   sharepoint:
     sites:
-      - name: "Harbour PD Work Flow"
+      # Harbour PD Work Flow excluded (already completed - decision 2026-11-10).
+      # Target tenant's own default sites (same path) - merge approved 2026-11-10.
+      - name: "All Company"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,f7209b2c-90af-4cdf-a62a-358bc915eae0,c8106fc7-a80d-434d-98e6-69a886f1e1bb"
+        target_site_id: "paizesoffice.sharepoint.com,ac0aec79-7300-4a53-9102-6efb84669f24,f5956f11-a10d-4700-bae5-4c75189c755a"
+      - name: "Communication site (root)"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,7d7c41e2-b3ea-468f-9553-93cc4819b453,7082c7dd-64ba-43c9-8aba-4097e092a99b"
+        target_site_id: "paizesoffice.sharepoint.com,e819d2de-4cfa-4c75-be96-963ea47aa04b,f078a742-7c61-4b5a-9e8b-2ca53e63402f"
+      # Team sites with 2026 file activity. Target sites were created with their
+      # teams by migration.teams.provision_targets; some target URLs follow the
+      # new team name (see config/discovery/provisioned-teams.yaml sharepoint_sites).
+      - name: "Marketing materials"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,325085ce-9050-40fa-9567-4e6c71d15479,c0a7238d-d3df-487b-a763-80ade77ba880"
+        target_site_id: "paizesoffice.sharepoint.com,7d3314c5-7929-4e0a-97bb-a9edc554333c,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Merchandising"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,3ccd1ead-3be3-4964-9f67-a33d681840ec,504d648f-6d95-415b-89e2-259dc56dc894"
+        target_site_id: "paizesoffice.sharepoint.com,318ce9ae-f5be-401d-bb3a-a6b8d1cc9823,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "QC TEAM FOR INDOOR (CHINA+INDO)"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,447650e6-a07f-4df9-90b7-5cd93493111c,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,c4849c42-5b3d-477d-b52f-9f5fbe74d704,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HO.VN"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,6ae2adcb-2d24-40ed-bc0f-d9f5ef7f68f2,2d46c7e8-2cf0-47fc-adfb-86e6c55af199"
+        target_site_id: "paizesoffice.sharepoint.com,ac933393-9292-4d04-ab12-94dd14a2e3f0,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HO.HK"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,80d9189e-d83b-49c0-be0a-4ec386685a35,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,c9aca1ad-4d62-4f1d-9b64-e2610b4810a3,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Sales Asia Pacific"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,ebbef1e3-9ce8-451d-ae1e-8f8c95bf21b2,6d53cd26-91d9-4c80-a11f-2263295166a5"
+        target_site_id: "paizesoffice.sharepoint.com,6b004084-ccf8-4b0e-8d09-c5f974f28bff,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "PI PER PO ZIP FILE ARCHIVE"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,83be13d1-7ce3-47c5-9d46-97a594a87951,88ec9da8-ded1-4764-b12d-3f4c7e2e08ef"
+        target_site_id: "paizesoffice.sharepoint.com,7c94d81c-e6a9-4b78-85d6-2d01fdd6afc0,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "EU Group"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,5c9168f9-98f1-4483-8ee5-eda7c9a258a4,bfc595de-4c23-4f8b-a3d3-8b7396dc054b"
+        target_site_id: "paizesoffice.sharepoint.com,ee5ed909-ee83-45ea-907e-33dacb0240ea,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "PG"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,b3fef104-954b-43f1-b3ab-836d96ae36b4,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,ce84d270-22bd-4337-b421-d6a6258df0b9,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HO.CHINA (MANAGEMENT)"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,a8f9bfdd-962c-4bf7-919a-76e953c374bd,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,e2a110d3-2b2a-4889-995d-7b629021130b,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HARBOUR HK MARKTING BOARD"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,38596c70-317c-436d-b484-c37a602580f0,38039b6a-9dd4-4d53-b8b0-8aecaac60685"
+        target_site_id: "paizesoffice.sharepoint.com,45161547-2e9f-4a9c-90a4-ebb9314f0f3a,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "To-Do"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,97574d75-f4a2-470d-990d-90b24d987bff,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,1ed7e436-4bd1-4314-91d0-8472a2cc8690,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "QC TEAM FOR OUTDOOR"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,887f4b8d-e54a-42ad-9dbe-883477844ed5,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,331c140a-94f0-4fd5-a2e3-ec5faa5bd460,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Asia Pacific  Sales Teams"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,a5b4f6d4-4ebc-443d-b160-53c50a66e70b,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,249995a6-92a0-4f25-9bf1-8a69d1dd7106,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,2314b866-7a75-4e7b-95fe-c04353db595e,c9539bff-caa4-4ef7-8c9c-b47643762e06"
+        target_site_id: "paizesoffice.sharepoint.com,d4fabfc9-9f70-4eeb-a6de-2b99d3aa15c3,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "BACKBONE"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,d00c351c-84f6-4d4c-a84d-fdc23aaf1020,ef4ef297-ffa0-443e-97be-f6295045880c"
+        target_site_id: "paizesoffice.sharepoint.com,55383c3c-9dd6-476d-88fd-ebad6eb7f08e,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "ha"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,f7400c58-776e-4c4e-bccb-857f2235abb4,ef858b52-1c52-4502-9b7f-a1537de6fe7c"
+        target_site_id: "paizesoffice.sharepoint.com,ad21fef1-d253-4863-910b-737962d67571,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HOA"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,4f0e7e39-4f3f-465e-b7ef-d06f89abdc83,6d53cd26-91d9-4c80-a11f-2263295166a5"
+        target_site_id: "paizesoffice.sharepoint.com,645a15fc-ef92-4e70-b961-46947317cad1,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HK Sales"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,07d638fb-4774-4fef-bb63-a2a39d2526b7,6d53cd26-91d9-4c80-a11f-2263295166a5"
+        target_site_id: "paizesoffice.sharepoint.com,121ae4cb-a1f2-4d07-873c-420d17680b79,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "QC REPORT"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,7cb43fc7-38e5-4301-b793-3484aeaa050f,7534c371-c3c4-4c4c-903d-df27c3a5827b"
+        target_site_id: "paizesoffice.sharepoint.com,d880383d-df1c-46b8-8cdf-0972f1cfdee3,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "CMS"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,96ba51f2-3509-4826-be23-d17eff6eb1bf,614a0f05-aebd-4523-8bee-c5c65970143c"
+        target_site_id: "paizesoffice.sharepoint.com,2937a5e5-0f3e-465e-954e-10501e0c942b,6a633222-60c1-4e13-9080-937ca58836de"
+      # Group sites created manually 2026-11-10 with the same site address.
+      - name: "Harbour SSR"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,73e32163-7a6f-43e2-a980-b3a21108539f,6ec39565-7372-4c2a-921a-2e6deb3f86ea"
+        target_site_id: "paizesoffice.sharepoint.com,597bbe3a-1082-4a05-9282-fe108e432c8a,6a633222-60c1-4e13-9080-937ca58836de"
+      # Recreated 2026-11-10 as group-connected site /sites/PZ_HARBOUR_RH_Merchant
+      - name: "HARBOUR VN/RH - Merchandising"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,d865b0bf-db0d-4e1b-b3dc-fe61367f9bbb,6d53cd26-91d9-4c80-a11f-2263295166a5"
+        target_site_id: "paizesoffice.sharepoint.com,5bb98882-a615-4067-852b-aee51bf2ad2f,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "HB Showroom and Office"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,d99ce5a1-dc4d-4ee8-88b2-448604a55ea4,405f4a42-4c5e-40bc-9ccd-0da79efebf94"
+        target_site_id: "paizesoffice.sharepoint.com,6ec62a10-4509-4103-a892-02ca9763fa66,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Design Team Tasks"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,f214e993-9c32-4d7e-9dad-ffa29395cff2,b02e5875-364b-4306-8e3b-12810bf9af6b"
+        target_site_id: "paizesoffice.sharepoint.com,65ad292d-4bd2-4a4d-a19c-f9526bffeac5,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Zhente"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,e7f87cdf-8a51-45b5-b1be-603d555eb405,7ab5a170-4c94-4b2e-acfc-f6fc06dc74b0"
+        target_site_id: "paizesoffice.sharepoint.com,c2d2a67f-87c4-4ed2-847c-98f9694cad4f,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "05 PARNELL LAYOUT"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,f001378b-2b12-468e-b387-7a3d297474db,0bfe4420-c4ec-4718-9bb1-116d43b0dbf9"
+        target_site_id: "paizesoffice.sharepoint.com,1fa5ce69-b121-4fe2-a6b3-701c3a77e7f4,6a633222-60c1-4e13-9080-937ca58836de"
+      - name: "Product Information"
+        source_site_id: "harbouroutdoorasialimited.sharepoint.com,157362cd-9026-480b-b781-dcf99dd934fd,de4c3453-4e90-456c-aed4-3a1da8579813"
+        target_site_id: "paizesoffice.sharepoint.com,8534a3f3-6311-40aa-b158-2be9e43ee485,6a633222-60c1-4e13-9080-937ca58836de"
+      # Harbour PD Work Flow: fully migrated earlier (very large) - INCREMENTAL only:
+      # files created/modified since 10 Sep 2026 00:00 local (UTC+8) plus items that
+      # failed in the earlier full copy. Newer versions overwrite the target copy.
+      - name: "Harbour PD Work Flow (changes since 2026-09-10)"
         source_site_id: "harbouroutdoorasialimited.sharepoint.com,7837dbde-8906-450a-a5a5-4edd4f500c69,c9539bff-caa4-4ef7-8c9c-b47643762e06"
         target_site_id: "paizesoffice.sharepoint.com,12557827-a2f0-4c1e-b6b7-ab01d2f8ab0f,2ddea4b1-624c-4c3b-aab7-66af0c42ea48"
+        modified_since: "2026-09-09T16:00:00Z"
+# Throughput tuning (2026-11-10). Ceilings only - AdaptiveGate halves on 429 and
+# grows back after successes. 8 parallel files is memory-safe because large
+# files are streamed in 10 MiB pieces (sharepoint.migration.stream_copy_large_file).
+performance:
+  concurrency:
+    sharepoint:
+      content: 8
+      permissions: 4

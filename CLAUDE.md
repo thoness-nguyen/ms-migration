@@ -14,7 +14,7 @@ Python >=3.11, dependencies pinned in `uv.lock`, package installed editable (con
 uv sync                                              # create .venv and install
 uv run pytest                                        # full suite (testpaths = tests/)
 uv run pytest tests/test_onedrive_completion.py      # one file
-uv run pytest tests/test_state.py -k <name>          # one test by name
+uv run pytest tests/test_checkpoint.py -k <name>     # one test by name
 
 # Migration engine (console script = migration.orchestration.cli:main)
 uv run tenant-migrator batch --config config/onedrive-pilot.yaml --area onedrive [--dry-run] [--retry-failed-only]
@@ -25,7 +25,19 @@ uv run migration-panel                               # interactive terminal pane
 
 Other subcommands: `onedrive` (single user pair), `teams-channel`, `extract-chat`, `teams-chat`, `complete-chat`, `list-drives`.
 
-Credentials are read from process environment variables (`SOURCE_TENANT_ID`, `SOURCE_GRAPH_CLIENT_ID`, `SOURCE_GRAPH_CLIENT_SECRET`, and `TARGET_*` equivalents; see `config/config.example.env`). The CLI does not call `load_dotenv`. Only `migration/account_password.py` does.
+Scope discovery / provisioning (read `.env` themselves; set `PYTHONIOENCODING=utf-8` when redirecting output on Windows):
+
+```powershell
+uv run python -m migration.teams.discover_chats --existing config/teams-pilot.yaml --output config/discovery/chats.yaml   # all chats of mapped users; keeps existing chat names
+uv run python -m migration.teams.discover_channels --existing config/discovery/legacy-teams-channels.yaml --since 2026-01-01T00:00:00Z   # -> config/discovery/channels.yaml (channels + unresolved)
+uv run python -m migration.sharepoint.discover_sites --target-host paizesoffice.sharepoint.com --existing config/sharepoint-pilot.yaml   # -> config/discovery/sites.yaml
+uv run python -m migration.teams.provision_targets [--team "<name>"] [--apply]   # create missing target teams/channels in migration mode; DRY RUN unless --apply
+uv run python -m migration.teams.provision_targets --finalize [--apply]          # after batch completes a team's channels: completeMigration on the team + add members
+```
+
+Teams chats that can never migrate (unmapped 1:1 participant, meeting chat, source chat 404 / other tenant, <2 mapped group members) are checkpointed `skipped` with detail `excluded (<reason>): ...` and reported as `excluded` - not `failed`. They are re-evaluated every run, so adding a user to the mapping picks them up automatically.
+
+Credentials are read from process environment variables (`SOURCE_TENANT_ID`, `SOURCE_GRAPH_CLIENT_ID`, `SOURCE_GRAPH_CLIENT_SECRET`, and `TARGET_*` equivalents; see `config/examples/config.example.env`). The CLI does not call `load_dotenv`. Only `migration/accounts/password_reset.py` does.
 
 ## Architecture
 
@@ -47,7 +59,7 @@ migration-panel (panel.py) --subprocess--> tenant-migrator (cli.py) --> run_batc
   - `teams-message`, `teams-chat-message` (per Graph message id) / `teams-chat`, `teams-channel` (migration-mode lifecycle)
 - **Parent gating**: a `batch-*` parent row must be marked `completed` only when it has zero child failures. Otherwise it stays `pending` so the next run re-enters it. This was a real false-completion bug in SharePoint, and OneDrive has the same open concern (see AGENTS.md).
 - **Resume** works by re-running the same command against the same state dir. `completed` rows are skipped. `failed` and `pending` rows are retried.
-- **Reports**: `batch` writes `reports/<area>-migration-result.json` and `validate` writes `reports/<area>-validation-result.json`. `validate` is a separate pass from `batch`. `onedrive_compare_report.py` at the repo root is an ad-hoc source/target comparison script that writes a CSV.
+- **Reports**: `batch` writes `reports/<area>-migration-result.json` and `validate` writes `reports/<area>-validation-result.json`. `validate` is a separate pass from `batch`. `python -m migration.onedrive.compare_report` is an ad-hoc source/target comparison script that writes a CSV.
 - **Config**: active plans are `config/<area>-pilot.yaml` (panel defaults, overridable with `MIGRATION_CONFIG`). Plans can reference mapping fragments such as `config/*.mapping.pilot.yaml`. `*.example.*` files are templates.
 
 `docs/ARCHITECTURE.md` explains the design, but parts of it are out of date. It describes a single root-level `sharepoint-pilot.sqlite` and `sharepoint-pilot.yaml`. The code now uses per-area files under `state/` and `config/`. Trust the code.

@@ -31,7 +31,7 @@ def validate_user_drive(
     source_id/target_id already recorded in `state` - no need to re-walk the
     whole tree. This is meant to run as a separate pass after the copy, not
     inline during upload (hashing everything during upload is expensive at
-    scale; see ARCHITECHTURE_UPGRADE.md discussion of post-migration validation).
+    scale; see ARCHITECTURE_UPGRADE.md discussion of post-migration validation).
     """
     prefix = f"{source_user}:"
     completed_ids = [source_id for source_id in state.list_ids("onedrive", "completed") if source_id.startswith(prefix)]

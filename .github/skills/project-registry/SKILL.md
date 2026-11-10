@@ -18,7 +18,7 @@ Use this skill to locate the relevant implementation and documentation without s
 ## Architecture and deployment documents
 
 - `docs/ARCHITECTURE.md` — current application architecture; verify its contents before relying on it.
-- `docs/ARCHITECHTURE_UPGRADE.md` — existing performance/concurrency architecture; note the filename spelling.
+- `docs/ARCHITECTURE_UPGRADE.md` — existing performance/concurrency architecture; note the filename spelling.
 - `docs/CLOUD_HOSTED_MIGRATION_ROADMAP.md` — proposed hosting, checkpoint, configuration, recovery, and audit roadmap.
 - `AGENTS.md` — repository-wide engineering and safety rules.
 

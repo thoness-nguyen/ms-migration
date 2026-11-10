@@ -1,0 +1,15 @@
+# One-site pilot for the streamed large-file copy (2026-11-10). Same state
+# DB as the full run, so the full run later skips everything copied here.
+migration_id: sharepoint-pilot-001
+users: users.mapping.json
+workloads:
+  sharepoint:
+    sites:
+    - name: PI PER PO ZIP FILE ARCHIVE
+      source_site_id: harbouroutdoorasialimited.sharepoint.com,83be13d1-7ce3-47c5-9d46-97a594a87951,88ec9da8-ded1-4764-b12d-3f4c7e2e08ef
+      target_site_id: paizesoffice.sharepoint.com,7c94d81c-e6a9-4b78-85d6-2d01fdd6afc0,6a633222-60c1-4e13-9080-937ca58836de
+performance:
+  concurrency:
+    sharepoint:
+      content: 8
+      permissions: 4

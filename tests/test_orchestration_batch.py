@@ -31,7 +31,10 @@ def test_batch_rejects_unmapped_member(tmp_path):
     }
     report = run_batch(Source(), FakeGraph(), {"chats": [{"source_chat_id": "chat-1", "user_map": {"source-1": "target-1"}}]}, tmp_path, states, tmp_path, True)
     teams_report = report["areas"]["teams"]
-    assert teams_report["results"][0]["status"] == "failed"
+    # Permanent, explained exclusion - reported separately from failures, and
+    # never as completed.
+    assert teams_report["results"][0]["status"] == "excluded"
+    assert teams_report["results"][0]["reason"] == "unmapped-participant"
     assert "source-2" in teams_report["results"][0]["error"]
 
 
@@ -96,6 +99,8 @@ def test_batch_channel_fetches_and_overwrites_bundle_without_messages_file(tmp_p
             return {"id": "source-channel", "displayName": "General"}
 
         def pages(self, path):
+            if path == "/teams/source-team/channels/source-channel/messages/message-1/replies":
+                return iter([{"id": "reply-1", "createdDateTime": "2025-01-02T00:05:00Z", "from": {"user": {"id": "source-1"}}, "body": {"contentType": "text", "content": "a reply"}}])
             assert path == "/teams/source-team/channels/source-channel/messages"
             return iter([{
                 "id": "message-1",
@@ -138,3 +143,16 @@ def test_batch_channel_fetches_and_overwrites_bundle_without_messages_file(tmp_p
     assert bundle["channel"]["displayName"] == "General"
     assert bundle["messages"][0]["id"] == "message-1"
     assert bundle["messages"][0]["body"]["content"] == "fresh channel message"
+    # replies are extracted with their root post
+    assert bundle["messages"][0]["replies"][0]["id"] == "reply-1"
+
+
+def test_safe_filename_keeps_plain_names_and_replaces_path_separators():
+    from migration.orchestration.batch import _safe_filename
+
+    assert _safe_filename("General") == "General"
+    assert _safe_filename("INDOOR PD (VIETNAM)") == "INDOOR PD (VIETNAM)"
+    assert _safe_filename("Merchandising / General") == "Merchandising - General"
+    assert _safe_filename("HO.HK / STOCK CHINA") == "HO.HK - STOCK CHINA"
+    assert _safe_filename(r'a\b:c*d?"e<f>g|h') == "a - b - c - d - e - f - g - h"
+    assert _safe_filename("/") == "unnamed"

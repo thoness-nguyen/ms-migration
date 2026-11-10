@@ -1,4 +1,9 @@
 migration_id: onedrive-pilot-001
-users: mapping.example.json
+users: users.mapping.json
 workloads:
   onedrive: onedrive.mapping.pilot.yaml
+performance:
+  concurrency:
+    # content: file copy workers (one shared pool across users in modified_since mode)
+    # discovery: users scanned in parallel in modified_since mode
+    onedrive: {content: 8, discovery: 4}

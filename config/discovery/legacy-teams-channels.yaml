@@ -5,7 +5,7 @@
 # target_id), so chats only need a source_chat_id. Members/senders with no
 # target_id (source tenant has more users than target) are skipped gracefully
 # instead of failing the migration; channels can keep their explicit ids as-is.
-user_mapping: mapping.example.json
+user_mapping: ../users.mapping.json
 
 chats:
   - name: one-on-one-020 

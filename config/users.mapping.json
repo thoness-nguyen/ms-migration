@@ -29,7 +29,9 @@
         "source_upn": "cecilia@harbouroutdoor.com",
         "target_upn": "cecilia_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
         "source_id": "e5643974-5571-4d22-85c8-c895d37d11de",
-        "target_id": "b57be904-907d-4d75-a800-37c2161dab51"
+        "target_id": "b57be904-907d-4d75-a800-37c2161dab51",
+        "skip": true,
+        "skip_reason": "Excluded by decision 2026-11-10: original target account deleted; existing target chats use it"
     },
     {
         "key": "dian",
@@ -83,9 +85,9 @@
         "key": "kevinc",
         "display_name": "kevinc",
         "source_upn": "kevinc@harbouroutdoor.com",
-        "target_upn": "kevinc_harbouroutdoor.com#EXT#@paizesoffice.onmicrosoft.com",
+        "target_upn": "kevinc@paizes.com",
         "source_id": "b00aa0d7-5df9-4b82-b29f-d09346224496",
-        "target_id": "ca112d40-dc58-46f1-be57-f0e205a3cb2d"
+        "target_id": "5aded254-f6cc-490d-8213-adfb28a64aea"
     },
     {
         "key": "Laura",
@@ -750,5 +752,29 @@
         "target_upn": "yansen@paizes.com",
         "source_id": "3d4e48b1-b3fb-4739-b27e-8988d67911f7",
         "target_id": "ce15d39c-4b9a-4dbb-ad15-c638dafeaf4f"
+    },
+    {
+        "key": "chris-yao",
+        "display_name": "Chris Yao",
+        "source_upn": "chris-yao_aomeifurniture.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "chris.yao@paizesoffice.onmicrosoft.com",
+        "source_id": "5c5bda7d-5fef-4f63-9fe4-369bf7984dd2",
+        "target_id": "810ecda9-06bb-4917-acce-f7282181c644"
+    },
+    {
+        "key": "william.novielli",
+        "display_name": "William Novielli",
+        "source_upn": "william.novielli@harbouroutdoor.com",
+        "target_upn": "william.novielli@paizes.com",
+        "source_id": "e623e9a6-776d-448b-8bc5-941142f634ae",
+        "target_id": "363fbd53-35a6-4de7-a8f5-cae66e87f383"
+    },
+    {
+        "key": "1192071302",
+        "display_name": "1192071302",
+        "source_upn": "1192071302_qq.com#EXT#@HarbourOutdoorAsiaLimited.onmicrosoft.com",
+        "target_upn": "1192071302_qq.com#EXT#@paizesoffice.onmicrosoft.com",
+        "source_id": "552f2fa5-e20b-4b1d-b9c8-aa4480532924",
+        "target_id": "58fdbc85-67ef-45f8-aa56-6545b86e71d9"
     }
 ]

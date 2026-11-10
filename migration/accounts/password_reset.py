@@ -20,7 +20,7 @@ from migration.common.graph import GraphClient
 # Environment
 # ============================================================
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 ENV_FILE = REPO_ROOT / ".env"
 load_dotenv(ENV_FILE)
 
@@ -826,7 +826,7 @@ def execute_report(
         raise SystemExit(
             "\nReport not found.\n\n"
             "Run Phase 1 first:\n\n"
-            "  python -m migration.account_password report\n"
+            "  python -m migration.accounts.password_reset report\n"
         )
 
     if not meta_path.exists():
