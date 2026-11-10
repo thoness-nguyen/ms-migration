@@ -127,54 +127,67 @@ teams:
   source_team_id: 1c9d63ca-3b29-4424-ae0c-fbd4e45a184c
   target_team_id: 3e2a845a-31a8-4744-92c2-94227f8ced59
   created_by_script: true
+  finalized: true
 - name: HO.CHINA (MANAGEMENT)
   source_team_id: 471bcf37-c2f6-44c8-9e6e-4de6bdb6328d
   target_team_id: 086f2e64-58d3-4517-9d17-356d90c19e3d
   created_by_script: true
+  finalized: true
 - name: HARBOUR HK MARKTING BOARD
   source_team_id: 1cac8819-0cde-4811-a853-5b8bd39b6241
   target_team_id: 7e9594e4-c7b6-4e4b-861b-dc7856356f5f
   created_by_script: true
+  finalized: true
 - name: To-Do
   source_team_id: 40ac5c19-3c13-4b37-9736-6012b79779b4
   target_team_id: a9571a37-0c63-43b6-a05d-7af7b80133aa
   created_by_script: true
+  finalized: true
 - name: QC TEAM FOR OUTDOOR
   source_team_id: 00205e60-b161-4394-95d5-e8531d6067c3
   target_team_id: e90a8569-5a3e-4ece-b2c5-4ce845cc5663
   created_by_script: true
+  finalized: true
 - name: Asia Pacific  Sales Teams
   source_team_id: b87b1d0f-6d9d-4b02-972a-b343b06071e8
   target_team_id: 9210636b-f99e-4809-a1c0-a38fe048eab3
   created_by_script: true
+  finalized: true
 - name: 'HARBOUR: UK, MIDDLE EAST AND NORTH AFRICA'
   source_team_id: 4244d075-3234-4770-9b4a-c4344c5301c7
   target_team_id: ed53dce4-2b2a-4a19-9505-a09b135a1938
   created_by_script: true
+  finalized: true
 - name: BACKBONE
   source_team_id: 4710267f-8324-4ffe-852d-a6dede507f28
   target_team_id: e8ada9f9-3ac9-4e90-93b3-50bf8be129f3
   created_by_script: true
+  finalized: true
 - name: ha
   source_team_id: 8c2fc032-a17a-4175-aa21-24cbb7edf445
   target_team_id: c3a3ff7c-be3d-43c3-97dd-aa457f425528
   created_by_script: true
+  finalized: true
 - name: HOA
   source_team_id: 3c2acd7b-1ff6-4cbb-ba79-fd067d4241c3
   target_team_id: f210dbda-841e-435c-9885-e1885de9a574
   created_by_script: true
+  finalized: true
 - name: HK Sales
   source_team_id: f35e16e4-7241-417d-93fc-6f88a8b21c17
   target_team_id: 676acb79-60d8-4e46-ae04-76190c59145b
   created_by_script: true
+  finalized: true
 - name: QC REPORT
   source_team_id: 397b4a51-dc28-44f5-b968-d1f8af9f794a
   target_team_id: 1d3ef62c-150b-40e2-9c45-1bc5bcb9eed4
   created_by_script: true
+  finalized: true
 - name: CMS
   source_team_id: df48549b-c550-45b5-8620-feddd94c3e59
   target_team_id: d191c5ea-9157-480d-a538-39a03528f98a
   created_by_script: true
+  finalized: true
 skipped:
 - name: Contracts to Tricor
   source_team_id: f5ef4b9c-ca9c-4825-85f1-b80007a46695
